@@ -1,6 +1,6 @@
 ---
 name: print-design
-description: Design and prepare print-ready material - stationery, business cards, brochures, flyers, posters, roll-ups, signage, packaging. Use when the user asks for anything that will be printed or produced physically, or asks to prepare or check a file for a printer.
+description: Design and prepare print-ready material - stationery, business cards, brochures, flyers, posters, catalogues, roll-ups, signage, outdoor advertising, packaging. Use when the user asks for anything that will be printed or produced physically, or asks to prepare or check a file for a printer.
 ---
 
 # Print design
@@ -19,6 +19,12 @@ Covers stage 5 (print): `05-designs/<project>/`. Lead: graphic-designer agent.
 8. **Preflight and quality gate.** Verify page size, bleed, colour mode, resolution and fonts in the exported PDF, then run `quality-control` with `design-checklist.md`.
 
 Specialist skills: `collateral-design`, `canvas-design`, `pdf`, `brand-packaging`.
+
+## By deliverable
+
+- **Catalogue:** agree the product data sheet first (names, codes, specs, prices come from the client only); one product-page system repeated; index and section tabs.
+- **Packaging:** get the die line from the printer or manufacturer before designing; follow `brand-packaging`; mandatory information (ingredients, weights, barcodes, regulatory marks) comes from the client.
+- **Outdoor advertising:** design at scale (often 1:10) at the resolution the printer specifies; seven words or fewer; test legibility by viewing the artwork at thumbnail size; keep text clear of the structure's edges.
 
 ## Common finished sizes
 

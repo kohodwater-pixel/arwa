@@ -1,6 +1,6 @@
 ---
 name: presentation-design
-description: Plan and design a presentation or slide template - pitch deck, credentials, proposal, brand presentation. Use when the user asks for a deck, slides, presentation, pitch, or a PowerPoint/Keynote/Google Slides/Canva template.
+description: Plan and design a presentation or slide template - corporate presentation, investor presentation, pitch deck, company proposal, business presentation. Use when the user asks for a deck, slides, presentation, pitch, or a PowerPoint/Keynote/Google Slides/Canva template.
 ---
 
 # Presentation design
@@ -14,9 +14,10 @@ Covers stage 7: `07-presentations/`. Lead: presentation-designer agent.
 3. **Get the storyline approved** before designing.
 4. **Build the master.** Title, section, content, image, data, quote and closing layouts on the brand grid with brand colours and fonts.
 5. **Design the slides.** One idea per slide; charts redrawn in brand style; real images; consistent margins. A deck sent to read may carry more text than one presented live; decide which it is.
-6. **Arabic decks** are right to left throughout, including masters, bullets, chart axes and animation direction.
-7. **Export** the source plus a PDF; package or list the fonts.
-8. **Quality gate.** Run `quality-control` with `design-checklist.md`.
+6. **Investor decks** follow: problem, solution, market, product, business model, traction, competition, team, financials, the ask. Every figure comes from the client; nothing is estimated on their behalf without being labelled an assumption.
+7. **Arabic decks** are right to left throughout, including masters, bullets, chart axes and animation direction.
+8. **Export** the source plus a PDF; package or list the fonts.
+9. **Quality gate.** Run `quality-control` with `design-checklist.md`.
 
 Specialist skills: `pptx`, `collateral-design`, `theme-factory`, `huashu-design` (HTML slides); Canva connector for Canva decks.
 

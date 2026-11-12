@@ -12,11 +12,12 @@ Covers stage 6: `06-profiles/`. Lead: corporate-designer agent.
 1. **Define the job.** Who reads it (clients, government tenders, investors, partners), what they should do next, print or digital or both, languages, page count, and deadline.
 2. **Gather content.** Company facts, services, projects with figures, client list and logos (with permission to use them), team, certifications, photos, contact details. List what is missing and ask for it.
 3. **Outline.** Start from `templates/company-profile/outline.md`, cut sections that have no real content, and write `06-profiles/content-outline.md`.
-4. **Write the copy** in the brand voice, natively in each language. Short paragraphs, concrete numbers, proof over adjectives.
-5. **Get content approval** before layout.
-6. **Design.** Grid and master pages first, then spreads. Turn numbers into infographics. Follow the bilingual structure agreed in step 1. Skills: `collateral-design`, `pdf`, `docx`, `canvas-design`.
-7. **Export** print (CMYK, bleed, crop marks) and screen (RGB, hyperlinked, compressed) versions.
-8. **Quality gate.** Run `quality-control` with `design-checklist.md`.
+4. **List the gaps** in `06-profiles/content-gaps.md`. Never fill a gap with an invented project, client, figure or certification.
+5. **Write the copy** in the brand voice, natively in each language. Short paragraphs, concrete numbers, proof over adjectives.
+6. **Get content approval** before layout.
+7. **Design** in HTML + CSS with fonts from `assets/fonts/` (the standard route for Arabic). Grid and master pages first, then spreads. Turn numbers into infographics. Follow the bilingual structure agreed in step 1. Skills: `collateral-design`, `pdf`, `docx`, `canvas-design`.
+8. **Export** with `node scripts/html2pdf.cjs`, then run `python3 scripts/check_arabic_pdf.py --png <dir>` and view every page. Produce print (CMYK, bleed, crop marks) and screen (RGB, hyperlinked, compressed) versions.
+9. **Quality gate.** Run `quality-control` with `design-checklist.md`.
 
 ## Done when
 

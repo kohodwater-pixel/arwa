@@ -33,5 +33,7 @@ A deliverable is done when it passes every point below. "Almost" is a fail.
 
 ## Review
 
+- Every project passes the mandatory ten-point review in `quality-control/project-review.md`. Review notes are shown, not hidden, and work is not approved until every critical and major issue is fixed and re-reviewed.
+
 - The maker checks their own work against the relevant checklist in `quality-control/` before handing it over.
 - The quality-reviewer then reviews independently and reports each failed item with its location and the fix required. Failed work goes back; it is not patched by the reviewer silently.

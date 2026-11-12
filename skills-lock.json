@@ -295,12 +295,6 @@
       "skillPath": "skills/target-audience/SKILL.md",
       "computedHash": "c451779959f49272967f8d1bc9428c393ffb61b0c1bd90dd6f24b7d2c64aac4f"
     },
-    "template-skill": {
-      "source": "anthropics/skills",
-      "sourceType": "github",
-      "skillPath": "template/SKILL.md",
-      "computedHash": "143ecbef94ad1b41d05d13ed6a1f52a80aef7ae7114d9cfa88a3fdf2f2049754"
-    },
     "theme-factory": {
       "source": "anthropics/skills",
       "sourceType": "github",

@@ -1,6 +1,6 @@
 ---
 name: marketing-design
-description: Design marketing and social media material from an approved identity - social posts and templates, stories, ads, campaign key visuals, banners, email graphics. Use when the user asks for social media designs, ad creatives, a campaign, or a content calendar's visuals.
+description: Design marketing and social media material from an approved identity - social posts and templates, stories, advertising campaigns, key visuals, banners, infographics, email graphics. Use when the user asks for social media designs, ad creatives, a campaign, or a content calendar's visuals.
 ---
 
 # Marketing design
@@ -13,10 +13,11 @@ Covers stage 5 (digital): `05-designs/<project>/`. Lead: graphic-designer agent.
 2. **Read the brand.** `brand-context.md` and the guidelines. Use only approved assets.
 3. **For a campaign,** agree the key visual and headline first, then adapt it to each format.
 4. **For recurring content,** build a template system from `templates/social-media/`: grid, type scale, colour rotation, and 4-6 post types (announcement, quote, product, tip, offer, carousel).
-5. **Design at exact size.** Keep text inside platform safe areas; keep text short enough to read on a phone.
-6. **Write Arabic natively** and follow `.claude/rules/arabic-design.md`.
-7. **Export** sRGB PNG or JPG (MP4 for motion), named per `file-delivery.md`, plus editable sources or Canva/Figma links.
-8. **Quality gate.** Self-check with `quality-control/design-checklist.md`, then run `quality-control`.
+5. **Infographics:** one story per graphic; verified data only, with the source noted; a reading order that works right to left in Arabic.
+6. **Design at exact size.** Keep text inside platform safe areas; keep text short enough to read on a phone.
+7. **Write Arabic natively** and follow `.claude/rules/arabic-design.md`.
+8. **Export** sRGB PNG or JPG (MP4 for motion), named per `file-delivery.md`, plus editable sources or Canva/Figma links.
+9. **Quality gate.** Self-check with `quality-control/design-checklist.md`, then run `quality-control`.
 
 Specialist skills: `collateral-design`, `canvas-design`, `art-direction`, `motion-design`; for channel strategy `meta-ads`, `google-ads`, `email-marketing`, `influencer-marketing`, `ugc-strategy`, `whatsapp-marketing`.
 

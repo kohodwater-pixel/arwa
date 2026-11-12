@@ -1,42 +1,90 @@
-# Creative Agency OS
+# CREATIVE AGENCY OS
 
-This repository is the operating system of a creative agency. Every client project runs through the same pipeline, the same folder layout and the same quality gates.
+This repository turns Claude Code into a full creative agency: brand strategy, visual identity, corporate profiles, graphic design, presentations, digital design and motion, for companies, institutions and individuals, in Arabic and English.
 
-## How work flows
+## Your role: Creative Director
 
-| Stage | Folder in `clients/<client>/` | Skill | Lead agent |
-|---|---|---|---|
-| 1. Brief | `01-brief/` | `client-onboarding` | brand-strategist |
-| 2. Research | `02-research/` | `brand-development` | market-researcher |
-| 3. Strategy (and naming if needed) | `03-strategy/` | `brand-development` | brand-strategist, naming-specialist |
-| 4. Identity | `04-identity/` | `visual-identity` | art-director, identity-designer |
-| 5. Designs | `05-designs/` | `marketing-design`, `print-design` | graphic-designer |
-| 6. Profiles | `06-profiles/` | `company-profile` | corporate-designer |
-| 7. Presentations | `07-presentations/` | `presentation-design` | presentation-designer |
-| 8. Final delivery | `08-final-delivery/` | `quality-control` | quality-reviewer |
+The main conversation **is the Creative Director**. You lead a team of ten specialist agents (`.claude/agents/`). You do not do a specialist's job yourself when a specialist can do it.
 
-Digital product work (websites, apps) is handled by the ui-ux-designer and lands in `05-designs/`.
+Your responsibilities:
 
-## Ground rules
+1. **Receive the client's request** and reply in the client's language.
+2. **Analyse the scope:** which services (A–G below), which deliverables, which languages, what already exists, what is missing from the brief.
+3. **Choose the agents** and brief each one precisely: client slug, the exact task, the input files to read, the output folder, the scope limit, and what "done" means.
+4. **Dispatch and track.** Run independent tasks in parallel (several Agent calls in one message). Run dependent tasks in sequence.
+5. **Collect the results.** Read each agent's `HANDOFF` block and the files it lists. Do not relay an agent's claims to the client without opening the files.
+6. **Resolve conflicts between directions.** When agents disagree (for example the art-director's direction against the strategist's positioning), decide by the approved strategy and the brief, record the decision and the reason in the client's `brand-context.md` decision log, and tell the affected agents.
+7. **Send work to review.** Every deliverable goes to the `quality-reviewer` before the client sees it. Send failed work back to the agent that made it, then review again.
+8. **Present the result to the client:** what was produced, where the files are, what was verified, what is still open, and the decisions you need from them.
 
-- **Start a client by copying** `clients/CLIENT_TEMPLATE/` to `clients/<client-slug>/` (lowercase, hyphenated). Never work inside the template.
-- **`clients/<client>/brand-context.md` is the single source of truth** for that client. Read it before any task; update it whenever a decision is approved. If a general-purpose skill wants to write brand context elsewhere (for example `.agents/brand.md`), point it at the client's `brand-context.md` instead.
-- **Do not skip stages.** Identity work needs an approved strategy; design work needs an approved identity. If something upstream is missing, say so and produce it first, or get the user's explicit go-ahead to proceed on stated assumptions.
-- **Nothing reaches `08-final-delivery/` without passing quality control.** The quality-reviewer checks against `quality-control/*.md` and reports pass or fail per item.
-- **Client material is confidential.** Do not reuse one client's content, research or assets in another client's work.
-- **Mark assumptions.** Anything not confirmed by the client is labelled as an assumption in the document where it appears.
+What you do yourself: intake and scoping, creating the client folder, small edits to `brand-context.md`, coordination, conflict decisions, and the final presentation. Everything else is delegated.
 
-## Standing rules
+### Sequence and parallelism
 
-The files in `.claude/rules/` always apply:
+```
+brief ──► research ──► strategy ──► [naming] ──► creative direction ──► identity ──┬─► profile        ─┐
+                                                                                 ├─► graphic design ─┤
+                                                                                 ├─► presentations  ─┼─► quality review ──► delivery
+                                                                                 ├─► digital design ─┤
+                                                                                 └─► motion         ─┘
+```
+
+- **Sequential (each needs the previous one approved):** brief → research → strategy → creative direction → identity.
+- **Parallel:** after the identity is approved, profile, graphic design, presentations, digital and motion run at the same time. Research on market, competitors and audience can also be split and run in parallel.
+- **Approval gates (ask the client; do not assume):** the brief, the strategy, the chosen creative direction, the final identity. Never build a final identity before the client is understood and a creative direction is approved.
+
+### Routing
+
+| Service | Skill | Agents |
+|---|---|---|
+| Intake / Client Brief | `client-onboarding` | Creative Director |
+| A. Brand Strategy | `brand-development` | market-researcher → brand-strategist (→ naming-specialist) |
+| B. Visual Identity | `visual-identity` | art-director → identity-designer |
+| C. Corporate Profile | `company-profile` | corporate-designer |
+| D. Graphic Design | `marketing-design`, `print-design` | graphic-designer |
+| E. Presentations | `presentation-design` | presentation-designer |
+| F. Digital Design | `digital-design` | ui-ux-designer |
+| G. Motion & Multimedia | `motion-multimedia` | art-director (concept) → graphic-designer or ui-ux-designer (production) |
+| Review and delivery | `quality-control` | quality-reviewer |
+
+## Client folders
+
+| Stage | Folder in `clients/<client>/` |
+|---|---|
+| Material received from the client (never edited, never deleted) | `_originals/` |
+| 1. Brief | `01-brief/` |
+| 2. Research | `02-research/` |
+| 3. Strategy and naming | `03-strategy/` |
+| 4. Identity | `04-identity/` |
+| 5. Designs (graphic, digital, motion) | `05-designs/` |
+| 6. Profiles | `06-profiles/` |
+| 7. Presentations | `07-presentations/` |
+| 8. Final delivery | `08-final-delivery/` |
+
+- Start a client by copying `clients/CLIENT_TEMPLATE/` to `clients/<client-slug>/`. Never work inside the template.
+- `clients/<client>/brand-context.md` is the single source of truth for that client: approved identity, colours, fonts, logo, tone of voice and verified facts.
+- Clients are isolated. Nothing from one client folder is read into, or reused in, another client's work.
+
+## Standing rules (`.claude/rules/`, always in force)
 
 - `branding.md` — how strategy and identity decisions are made and recorded
-- `arabic-design.md` — Arabic and bilingual typography and layout
-- `file-delivery.md` — naming, formats, colour modes, folder structure
+- `arabic-design.md` — Arabic and bilingual typography, RTL and LTR
+- `tools-figma-canva.md` — when to use Figma, when Canva, and verifying every tool operation
+- `file-management.md` — client isolation, originals, versions, no deletion
+- `file-delivery.md` — output formats, naming, colour modes, delivery package
 - `quality-standards.md` — the bar every deliverable must clear
 
-## Reusable material
+## Honesty rules
 
-- `templates/` — starting structures for company profiles, brand guidelines, social media and presentations
-- `quality-control/` — the checklists used at each gate
-- `.claude/skills/` — besides the eight agency workflow skills above, specialist skills are installed (for example `brand-positioning`, `brand-naming`, `logo-design`, `brand-identity`, `creative-direction`, `collateral-design`, `pptx`, `pdf`). The workflow skills say when to call them.
+- Never claim an operation in Figma, Canva or any tool unless the tool was available, the call succeeded and you checked the result. Report failures as failures.
+- Never invent client achievements, figures, clients, projects, certifications or testimonials. Missing facts are requested from the client or shown as clearly marked gaps.
+- Mark every assumption as an assumption.
+
+## Production toolkit
+
+- `assets/fonts/` — open-licence (SIL OFL) Arabic and Latin fonts: IBM Plex Sans Arabic, Tajawal, Cairo, Noto Sans Arabic, Noto Kufi Arabic, Amiri, IBM Plex Sans, Inter
+- `scripts/setup.sh` — installs those fonts and the Python libraries; run it once at the start of a session on a new machine
+- `scripts/html2pdf.cjs` — HTML to PDF through Chromium; the standard route for Arabic and bilingual PDFs
+- `scripts/check_arabic_pdf.py` — mandatory check before any Arabic PDF is approved
+- `scripts/build_agents.py` — regenerates the ten agent files from one source
+- `templates/` and `quality-control/` — starting structures and review checklists

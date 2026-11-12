@@ -22,6 +22,18 @@ Never name a file `final2`, `new`, `last` or `edited`.
 | Documents | PDF for reading plus the editable source |
 | Guidelines | PDF plus colour tokens (JSON or CSS) and font list with licence notes |
 
+## Output formats by project
+
+Deliver what the project needs from: **PDF, PPTX, DOCX, SVG, PNG, JPG, HTML** (and MP4 for motion). Every deliverable ships with an editable source so work can continue: HTML/CSS, SVG, PPTX, DOCX, or a Figma/Canva edit link.
+
+## Arabic and English
+
+- Both languages are supported on every project. Arabic is right to left (`dir="rtl"`, right-aligned, mirrored layout); English is left to right.
+- Arabic and bilingual PDFs are produced from HTML with `node scripts/html2pdf.cjs` using fonts from `assets/fonts/`.
+- **Before any Arabic PDF is approved** run `python3 scripts/check_arabic_pdf.py <file.pdf> --png <dir>` and open the previews. It must report PASS, name the intended fonts (no DejaVu, FreeSerif or other fallback), and the letters must be visibly connected and in the right order.
+- PPTX and DOCX with Arabic are rendered to PDF with LibreOffice and checked the same way; set paragraph direction to RTL, not just right alignment.
+- For print, use static font files rather than variable fonts so the fonts embed by name.
+
 ## Colour
 
 - Print files are CMYK with spot colours named exactly as in the guidelines. Rich black only for large solids; body text is 100K.
