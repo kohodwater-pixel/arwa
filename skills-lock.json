@@ -1,0 +1,347 @@
+{
+  "version": 2,
+  "skills": {
+    "academy-guide": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/academy-guide/SKILL.md",
+      "computedHash": "cc7e2ace6f4953fc564189865fb5529ba557a322826bbc73f3599d6441ce741f"
+    },
+    "algorithmic-art": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/algorithmic-art/SKILL.md",
+      "computedHash": "4a85abfeaa09f2dd2c4b76c85d57b65f61dc10d55c3cca245989cee8897c2be5"
+    },
+    "art-direction": {
+      "source": "zstvns/design-skills",
+      "sourceType": "github",
+      "skillPath": "skills/art-direction/SKILL.md",
+      "computedHash": "6e4482370d7f124f8dc59a2e43dbfc627f8e59bdaec9111889bd98e65c0ae0fb"
+    },
+    "aso": {
+      "source": "harveyiam/brand-building-skills",
+      "sourceType": "github",
+      "skillPath": "skills/aso/SKILL.md",
+      "computedHash": "4fe9eafa2ad0168ffb5e493060982968abe12e652d33ae7abccd0cabe1406b4b"
+    },
+    "b2b-brand-marketing": {
+      "source": "harveyiam/brand-building-skills",
+      "sourceType": "github",
+      "skillPath": "skills/b2b-brand-marketing/SKILL.md",
+      "computedHash": "60e1d2a84a706e8821543ecd3febbcb4fba172ef4cfd5798b4eece650ebb4c89"
+    },
+    "brand": {
+      "source": "zstvns/design-skills",
+      "sourceType": "github",
+      "skillPath": "skills/brand/SKILL.md",
+      "computedHash": "5c191fa424ba16e72d2285a9c7f377e77d10d659865c427fd7600a6b58c2b79e"
+    },
+    "brand-architecture": {
+      "source": "harveyiam/brand-building-skills",
+      "sourceType": "github",
+      "skillPath": "skills/brand-architecture/SKILL.md",
+      "computedHash": "38ffd582ddb23b4115c31842f6295603bce2acc40ea9bb6faa60899f89d8cba7"
+    },
+    "brand-audit": {
+      "source": "harveyiam/brand-building-skills",
+      "sourceType": "github",
+      "skillPath": "skills/brand-audit/SKILL.md",
+      "computedHash": "24aed8086fe2be5b917dc36cdebfa9a9cdc35826ee4e80fae1a072e90e406748"
+    },
+    "brand-context": {
+      "source": "harveyiam/brand-building-skills",
+      "sourceType": "github",
+      "skillPath": "skills/brand-context/SKILL.md",
+      "computedHash": "fadf4cdab626a5c657e4969d506fd970dea6a32592089e07f5606cc1d0bb844a"
+    },
+    "brand-guidelines": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/brand-guidelines/SKILL.md",
+      "computedHash": "10067cdd9be9cd5d97c741fc6e25830135afa0e11cc71e567b75763e26d08799"
+    },
+    "brand-identity": {
+      "source": "fatihaydost/brand-identity-skill",
+      "sourceType": "github",
+      "skillPath": "skills/brand-identity/SKILL.md",
+      "computedHash": "2802d12477604668c11ae11998f9ace509dfb386dd1f83da550e3deb37871edc"
+    },
+    "brand-launch": {
+      "source": "harveyiam/brand-building-skills",
+      "sourceType": "github",
+      "skillPath": "skills/brand-launch/SKILL.md",
+      "computedHash": "f394a7d79ed3033e6ee2bf16d48fb76a8b654458258e6701bbbd35e913d0e3e0"
+    },
+    "brand-manifesto": {
+      "source": "harveyiam/brand-building-skills",
+      "sourceType": "github",
+      "skillPath": "skills/brand-manifesto/SKILL.md",
+      "computedHash": "ea83963831c7b9f9d3fd80b2d64f46feb5863623ea073ba4a24b87fabc9e0b40"
+    },
+    "brand-measurement": {
+      "source": "harveyiam/brand-building-skills",
+      "sourceType": "github",
+      "skillPath": "skills/brand-measurement/SKILL.md",
+      "computedHash": "01ccf12915b28b5102d547da15143859de437bef39d46030cebffbfeacbc9705"
+    },
+    "brand-messaging": {
+      "source": "harveyiam/brand-building-skills",
+      "sourceType": "github",
+      "skillPath": "skills/brand-messaging/SKILL.md",
+      "computedHash": "e923d66b841ca45ae63a7979c8e6cd43eccf7e1daceb60528f92f56ee88402c4"
+    },
+    "brand-naming": {
+      "source": "harveyiam/brand-building-skills",
+      "sourceType": "github",
+      "skillPath": "skills/brand-naming/SKILL.md",
+      "computedHash": "c30afc64d46f2b3fcc5f7c73e16ffd8a8ce42d4d7f486bdb3f238a460a7d5f76"
+    },
+    "brand-packaging": {
+      "source": "harveyiam/brand-building-skills",
+      "sourceType": "github",
+      "skillPath": "skills/brand-packaging/SKILL.md",
+      "computedHash": "3803fa0069f1bf7bbdc43835b5cbc246036b79fb327989b7c90f5fb43324e21b"
+    },
+    "brand-partnerships": {
+      "source": "harveyiam/brand-building-skills",
+      "sourceType": "github",
+      "skillPath": "skills/brand-partnerships/SKILL.md",
+      "computedHash": "75825346e26df96176971895742df9b1884509e4973a78f7eed9af1656538848"
+    },
+    "brand-positioning": {
+      "source": "harveyiam/brand-building-skills",
+      "sourceType": "github",
+      "skillPath": "skills/brand-positioning/SKILL.md",
+      "computedHash": "006bea97fb75210ef6e0c6215530cf77106ba2b9de35e3a1d65383b74e47891d"
+    },
+    "brand-story": {
+      "source": "harveyiam/brand-building-skills",
+      "sourceType": "github",
+      "skillPath": "skills/brand-story/SKILL.md",
+      "computedHash": "4d0b2e45f97eaaf8cf9e4b2ddc915fae50e1ac2bfb9854d21211c6a8036e0324"
+    },
+    "brand-strategy": {
+      "source": "zstvns/design-skills",
+      "sourceType": "github",
+      "skillPath": "skills/brand-strategy/SKILL.md",
+      "computedHash": "60cfba3dcb9552073a9d51c88754b1ac8c945eb412baf640c2a3870211e1ec73"
+    },
+    "brand-voice": {
+      "source": "harveyiam/brand-building-skills",
+      "sourceType": "github",
+      "skillPath": "skills/brand-voice/SKILL.md",
+      "computedHash": "e54f0dfe3c7f0805f199adce5b0f1d5ddbab327ef4bdf2a0a92b7cad07cdb53a"
+    },
+    "canvas-design": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/canvas-design/SKILL.md",
+      "computedHash": "1866477474e694f562261008bb6a817e53f027b6347b062fbd1e2ee2eb83f20d"
+    },
+    "claude-api": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/claude-api/SKILL.md",
+      "computedHash": "c567eeb8da5332098cb747d97f1a1f482c401a80e089ee069e673744575191bf"
+    },
+    "collateral-design": {
+      "source": "zstvns/design-skills",
+      "sourceType": "github",
+      "skillPath": "skills/collateral-design/SKILL.md",
+      "computedHash": "44eab90af7292eb4e610d7466ddb5de55c7240b0e16946546b0a6af6b31b2948"
+    },
+    "competitor-branding": {
+      "source": "harveyiam/brand-building-skills",
+      "sourceType": "github",
+      "skillPath": "skills/competitor-branding/SKILL.md",
+      "computedHash": "58b45eafdcaacac5d09b7602ee13a8355b24555d2350ad4ad836b0b7140a3eac"
+    },
+    "creative-direction": {
+      "source": "zstvns/design-skills",
+      "sourceType": "github",
+      "skillPath": "skills/creative-direction/SKILL.md",
+      "computedHash": "ee5e6981572b870a4f464f05fe04184247a868172666005643fdd6cccaae25e0"
+    },
+    "d2c-marketing": {
+      "source": "harveyiam/brand-building-skills",
+      "sourceType": "github",
+      "skillPath": "skills/d2c-marketing/SKILL.md",
+      "computedHash": "ec2002807629909426a500ac09edbabb59d9d5984eb2f6cbd13fd76321c8e340"
+    },
+    "design-principles": {
+      "source": "zstvns/design-skills",
+      "sourceType": "github",
+      "skillPath": "skills/design-principles/SKILL.md",
+      "computedHash": "436ba1e627cf5339274153a9e3019b34648047b82bb277ccd688b8d9c5b3ea2c"
+    },
+    "discernment-nudge": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/discernment-nudge/SKILL.md",
+      "computedHash": "c3f503f343e5e32f7c8539e47853ca4d69e0cfdbd294789510c8203ae8f92e1d"
+    },
+    "doc-coauthoring": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/doc-coauthoring/SKILL.md",
+      "computedHash": "d32facc16a25b47a21a90e79c1e6c072d342a9e41b595b58b86f869ff33ccc26"
+    },
+    "docx": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/docx/SKILL.md",
+      "computedHash": "566b0933d95f5a2f981050e781162e19cebacfdff5608ab23dbe556aaf7a59e5"
+    },
+    "email-marketing": {
+      "source": "harveyiam/brand-building-skills",
+      "sourceType": "github",
+      "skillPath": "skills/email-marketing/SKILL.md",
+      "computedHash": "8fc7f722cc7bae71e78d42564fd636d94c940561de8bded49dae0a3cfcebec24"
+    },
+    "frontend-design": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/frontend-design/SKILL.md",
+      "computedHash": "83485963700bcf11d5bf78118facb301676b69d918fee2e45a95e7f1a2840f6c"
+    },
+    "google-ads": {
+      "source": "harveyiam/brand-building-skills",
+      "sourceType": "github",
+      "skillPath": "skills/google-ads/SKILL.md",
+      "computedHash": "954b3af63cd1cd9be694f5b154bb4470ac0335e82f2ade5707f1a3ce44e37b8a"
+    },
+    "huashu-design": {
+      "source": "alchaincyf/huashu-design",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "e269c779a575e6404e36ff3caf740667a9dc062a24967fa5d486226d2d39b2ed"
+    },
+    "influencer-marketing": {
+      "source": "harveyiam/brand-building-skills",
+      "sourceType": "github",
+      "skillPath": "skills/influencer-marketing/SKILL.md",
+      "computedHash": "d86d477397fedc360c967b9028025439e4c0742171ef848a6fc7b3fb9e2e4ffd"
+    },
+    "internal-comms": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/internal-comms/SKILL.md",
+      "computedHash": "a864e111fed981a514102493dafd2bf426929af06cf35e8943ccbdeb4be65724"
+    },
+    "logo-design": {
+      "source": "zstvns/design-skills",
+      "sourceType": "github",
+      "skillPath": "skills/logo-design/SKILL.md",
+      "computedHash": "d14c467d0e1595f92d5a4cfc0271f7b56b53e87943a85934e6f3d48108c1c2bc"
+    },
+    "mcp-builder": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/mcp-builder/SKILL.md",
+      "computedHash": "5a699fa929d99d7e6b1ebe10f13bf960d9ad452b70bd0733efd5d1de9524e285"
+    },
+    "meta-ads": {
+      "source": "harveyiam/brand-building-skills",
+      "sourceType": "github",
+      "skillPath": "skills/meta-ads/SKILL.md",
+      "computedHash": "60e121215d06a8a011e5d63c7ebf634bc0ad1de77afb62e3175949b44e2e42a4"
+    },
+    "motion-design": {
+      "source": "zstvns/design-skills",
+      "sourceType": "github",
+      "skillPath": "skills/motion-design/SKILL.md",
+      "computedHash": "853f770752f81cf0a9a77b53bf2aae98b387b19c55403f1097c452429673e533"
+    },
+    "pdf": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/pdf/SKILL.md",
+      "computedHash": "48032992527f297b532782a85f9d4132417805eff1630944009bceb990d93f9a"
+    },
+    "personal-brand": {
+      "source": "harveyiam/brand-building-skills",
+      "sourceType": "github",
+      "skillPath": "skills/personal-brand/SKILL.md",
+      "computedHash": "86c8451cce10d0d61c8aa0271ebf11601505822e4c5bde3a265f20aa26733276"
+    },
+    "pptx": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/pptx/SKILL.md",
+      "computedHash": "cdec30578287eed9c8cdb12391f8a464c349ad9f9ea2543b3d9ad7d73b372c5c"
+    },
+    "rebranding": {
+      "source": "harveyiam/brand-building-skills",
+      "sourceType": "github",
+      "skillPath": "skills/rebranding/SKILL.md",
+      "computedHash": "da323b9796eaa016c68b65ad9f3141f702605d67d031ce0129431e23668535a6"
+    },
+    "skill-creator": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/skill-creator/SKILL.md",
+      "computedHash": "2d7f889e6ae93c6c27d699856942c336b5b8644537496987d5571043d059b1dc"
+    },
+    "slack-gif-creator": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/slack-gif-creator/SKILL.md",
+      "computedHash": "25581243f719e75121f9051ec671e810e53375fe648a6362d673d6bfbbe9d479"
+    },
+    "target-audience": {
+      "source": "harveyiam/brand-building-skills",
+      "sourceType": "github",
+      "skillPath": "skills/target-audience/SKILL.md",
+      "computedHash": "c451779959f49272967f8d1bc9428c393ffb61b0c1bd90dd6f24b7d2c64aac4f"
+    },
+    "template-skill": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "template/SKILL.md",
+      "computedHash": "143ecbef94ad1b41d05d13ed6a1f52a80aef7ae7114d9cfa88a3fdf2f2049754"
+    },
+    "theme-factory": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/theme-factory/SKILL.md",
+      "computedHash": "f426a07c06316201360be19324f2689c5bd3ab2d1669848c9383c321efa4386f"
+    },
+    "ugc-strategy": {
+      "source": "harveyiam/brand-building-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ugc-strategy/SKILL.md",
+      "computedHash": "0b20e3d322fc3b1354c4fbf256a5e65b75865c16b9f1a1ba6bb23d1c6121acac"
+    },
+    "web-artifacts-builder": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/web-artifacts-builder/SKILL.md",
+      "computedHash": "7a081b86fd5068d3ca2c4d9c059956634feff65ccbf1c39c3d34a6e5d0971139"
+    },
+    "web-design": {
+      "source": "zstvns/design-skills",
+      "sourceType": "github",
+      "skillPath": "skills/web-design/SKILL.md",
+      "computedHash": "957a8f551297c2b119a7a7113635fd1c7f3a9a4fec74d156d53b812e044fb6cf"
+    },
+    "webapp-testing": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/webapp-testing/SKILL.md",
+      "computedHash": "48cd9a742a59250edec6db89cf081ef5465f365e2133f6d6c5e29c380b754b7d"
+    },
+    "whatsapp-marketing": {
+      "source": "harveyiam/brand-building-skills",
+      "sourceType": "github",
+      "skillPath": "skills/whatsapp-marketing/SKILL.md",
+      "computedHash": "22309c165eb39f40dbc6724cb646e4f27c55c6cd0baca87ac6d6e3c79b667dfb"
+    },
+    "xlsx": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/xlsx/SKILL.md",
+      "computedHash": "3572b018005308f765480622987ef576fcdf9ea332d1024d3fe6c58cd65566a1"
+    }
+  }
+}
