@@ -1,0 +1,18 @@
+{
+ "primary 16px-high (28x16px)": 6,
+ "bilingual 16px-high (22x16px)": 6,
+ "latin 16px-high (70x16px)": 7,
+ "icon 16px-high (16x16px)": 1,
+ "primary 24px-high (42x24px)": 7,
+ "bilingual 24px-high (33x24px)": 6,
+ "latin 24px-high (105x24px)": 7,
+ "icon 24px-high (24x24px)": 7,
+ "primary 32px-high (55x32px)": 7,
+ "bilingual 32px-high (44x32px)": 7,
+ "latin 32px-high (140x32px)": 7,
+ "icon 32px-high (32x32px)": 5,
+ "primary 48px-high (83x48px)": 7,
+ "bilingual 48px-high (66x48px)": 7,
+ "latin 48px-high (210x48px)": 7,
+ "icon 48px-high (48x48px)": 7
+}
