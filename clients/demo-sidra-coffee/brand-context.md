@@ -4,7 +4,7 @@
 
 > Single source of truth for this client. Read before every task; update when a decision is approved. Use `TBC` for unknowns and label assumptions.
 
-**Last updated:** 2026-11-12  **Current stage:** 04-identity
+**Last updated:** 2026-11-13  **Current stage:** quality review round 3
 
 ## 1. Client
 
@@ -32,8 +32,8 @@
 - **Purpose / vision / mission:** Purpose: so that an independent café never has to wonder what is in the bag or when it will arrive. Vision: to be the roaster Riyadh's independent cafés name first. Mission: roast every order in the weekly roast, for Riyadh's independent cafés and home brewers, and help café teams brew it well.
 - **Values:** On schedule (على الموعد); Plain facts (كلام واضح); On the café's side (في صفّ المقهى); Hospitality (ضيافة).
 - **Target audience:** Primary: independent café owners in Riyadh. Secondary: home brewers aged 22 to 40 buying online, Arabic first. Motives are assumptions pending validation.
-- **Competitors:** Camel Step, Elixir Bunn, Brew92 (visual and messaging details unverified; see `02-research/competitor-audit.md`).
-- **Positioning statement:** For independent café owners in Riyadh, and for home brewers who want the same standard, Sidra Coffee is the Riyadh roastery built around a weekly roast-to-order rhythm rather than around its own café counters: an Arabic-first supplier that roasts what you ordered in that week's roast. (Clause "and runs no cafés of its own": TBC, client to confirm.)
+- **Competitors:** Camel Step, Elixir Bunn, Brew92 (home pages viewed 2026-11-13; see `04-identity/01-direction/distinctiveness-check.md` and `02-research/competitor-audit_v02.md`).
+- **Positioning statement:** For independent café owners in Riyadh, and for home brewers who want the same standard, Sidra Coffee is the Riyadh roastery built around a weekly roast-to-order rhythm rather than around its own café counters: a supplier that roasts what you ordered in that week's roast. (Clause "and runs no cafés of its own": TBC, client to confirm.)
 - **Personality (is / is not):** Dependable, not rigid or corporate. Rooted and Arabic-led, not folkloric. Plain-spoken, not technical for show or boastful. Hospitable, not chatty or salesy.
 - **Brand promise and proof points:** Promise: "Your order, roasted this week." / «طلبك يُحمَّص هذا الأسبوع.» Proof (verified): roasts to order weekly; based in Riyadh; weekly roasted-to-order wholesale; 250 g and 1 kg; barista courses; monthly subscription; founded 2023. TBC: roast date on bag, published roast and delivery days, no own cafés, roast-to-order for single online orders.
 - **Tagline (EN / AR):** CONFIRMED 2026-11-13 (test): "Roasted for your order. Every week." / «تُحمَّص لطلبك، كل أسبوع.»
@@ -46,19 +46,19 @@
 - **Words we use / avoid:** Use: محمصة، يُحمَّص لطلبك، كل أسبوع، على الموعد، طازجة / roastery, roasted to order, every week, on schedule, fresh. Avoid: الأفضل، الأجود، رقم 1، فاخر، حصري، شغف، رحلة / best, finest, premium, award-winning, passion, journey; any claim about awards, customers, certifications or Saudi-grown beans.
 - **Numerals:** Western (0123)
 
-## 5. Visual identity (v01 accepted for system test only, 2026-11-13 — not client-approved)
+## 5. Visual identity (v02 accepted for system test only, 2026-11-13 — not client-approved)
 
 - **Creative direction (one sentence):** Weekly Beat — a seven-part system with the centre part lit in Ember; see `04-identity/01-direction/creative-direction.md`
-- **Logo files and usage:** `04-identity/02-logo/` (outlined SVG). Primary = Arabic wordmark سدرة over the seven-bar rule row; bilingual adds SIDRA COFFEE; Latin-led for English-only; icon = seven bars in a square. Clear space = height of the letter د (0.27 × logo width). Seven bars from 32 px high / 10 mm wide (bilingual 48 px / 18 mm); below that the `-small` version (solid rule, centre seventh lit) down to 16 px / 6 mm; below that the wordmark alone. Print minimums to be confirmed on a proof.
+- **Logo files and usage:** `04-identity/02-logo/` (outlined SVG). Primary = Arabic wordmark سدرة over the seven-bar rule row; bilingual adds SIDRA COFFEE; Latin-led for English-only; icon = three stacked rows of seven bars in a square, centre column lit (v02). Clear space = height of the letter د (0.27 × logo width). Seven bars from 32 px high / 10 mm wide (bilingual 48 px / 18 mm); below that the `-small` version (solid rule, centre seventh lit) down to 16 px / 6 mm; below that the wordmark alone. Print minimums to be confirmed on a proof.
 - **Colours:**
 
 | Name | HEX | RGB | CMYK | Pantone | Use |
 |---|---|---|---|---|---|
-| Paper — ورق | #F3ECE0 | 243 236 224 | 4 6 12 0 (approx.) | to be matched by printer | Default background, about 45% |
-| Crema — كريما | #E3C9A0 | 227 201 160 | 10 20 40 0 (approx.) | to be matched by printer | Warm second ground, about 25% |
-| Ink — حبر | #1F1B18 | 31 27 24 | 60 60 60 85 (approx.); text 0 0 0 100 | to be matched by printer | Text, unlit bars, rules, about 15% |
-| Ember — جمر | #C23A20 | 194 58 32 | 15 90 100 5 (approx.) | to be matched by printer | Lit bar; one field or headline per layout; 1 kg bag, about 10% |
-| Ash — رماد | #6F6861 | 111 104 97 | 50 47 50 20 (approx.) | to be matched by printer | Captions on Paper only, about 5% |
+| Paper — ورق | #F3ECE0 | 243 236 224 | 4 6 12 0 (approx.) | waived for system test; required before print | Default background, about 45% |
+| Crema — كريما | #E3C9A0 | 227 201 160 | 10 20 40 0 (approx.) | waived for system test; required before print | Warm second ground, about 25% |
+| Ink — حبر | #1F1B18 | 31 27 24 | 60 60 60 85 (approx.); text 0 0 0 100 | waived for system test; required before print | Text, unlit bars, rules, about 15% |
+| Ember — جمر | #C23A20 | 194 58 32 | 15 90 100 5 (approx.) | waived for system test; required before print | Lit bar; one field or headline per layout; 1 kg bag, about 10% |
+| Ash — رماد | #6F6861 | 111 104 97 | 50 47 50 20 (approx.) | waived for system test; required before print | Captions on Paper only, about 5% |
 
 - **Typefaces:** Arabic — IBM Plex Sans Arabic; Latin — IBM Plex Sans (both SIL OFL 1.1); Arabic set 15–20% larger than adjacent Latin; scale 0.65 / 1 / 1.6 / 5; licences in `04-identity/licences.md`
 - **Imagery and graphic style:** flat colour, 2 px Ink hairlines, the seven-bar row (rule 2:1, band 1:2 to 1:4, gap 1/5 bar, fourth bar lit), seven-column grid. No icons or illustration. Photography of beans, bags and equipment only, flat and frontal on Paper or Crema.
@@ -75,6 +75,8 @@
 | 2026-11-13 | Quality review round 1: ALL FOUR deliverables FAIL (2 critical, 14 major issues). Nothing enters final delivery. Report: `08-final-delivery/_reviews/review_all-deliverables_2026-11-13_r1.md` | quality-reviewer |
 | 2026-11-13 | Round-2 rulings after review r1 (Creative Director acting as client for the test): (a) Tagline option 1 «تُحمَّص لطلبك، كل أسبوع.» / "Roasted for your order. Every week." CONFIRMED; the company profile is wholesale/B2B material, so it may carry it. (b) Phone number removed from every piece until supplied. (c) The only enquiry channel is the email hello@sidra-coffee.example; no social handle or direct-message channel exists. (d) Outlined IBM Plex Sans Arabic Bold wordmark ACCEPTED for the test; redraw required before real use. (e) Pantone and ICC-calibrated CMYK WAIVED for this test: no print deliverable is in scope. (f) Bar device: steps or content are never tied to individual bars; the band is a device, not a chart. (g) Logo fallback ladder accepted: seven bars from 32 px (primary) / 48 px (bilingual, icon), small version from 16 px, wordmark alone below. (h) Display headlines may span all seven columns; bars may bleed off the bottom edge on social formats. (i) Delivery timing and roast date on bag remain unconfirmed: no piece may imply them | Creative Director |
 | 2026-11-13 | Distinctiveness check completed against the three competitors' live home pages: all distinct; Ember stays. Icon v02 (three stacked rows) accepted. Latin line stays "SIDRA COFFEE". Wordmark redraw remains required before real use (Camel Step sets its site in IBM Plex Sans Arabic). "Arabic-first" is no longer claimed as a differentiator: two competitors are Arabic-led | Creative Director |
+| 2026-11-13 | Quality review round 2: profile v02, presentation v02 and social post v02 PASS WITH MINOR FIXES (subject to a native Arabic proofread, which still blocks client delivery); identity, logo animation and landing page FAIL. Report: `08-final-delivery/_reviews/review_all-deliverables_2026-11-13_r2.md` | quality-reviewer |
+| 2026-11-13 | Round-3 rulings: (j) No sample offer exists; the landing page's call to action is a wholesale enquiry. (k) A 3-second logo animation is added to the test scope (service G). (l) Ember may be used for the single primary action button in each screenful of a web page, in addition to the lit bar. (m) v01 deliverables moved to each stage's `_archive/` | Creative Director |
 
 ## 7. Deliveries
 
