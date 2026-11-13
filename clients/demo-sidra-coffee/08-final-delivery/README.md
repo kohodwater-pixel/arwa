@@ -10,14 +10,14 @@
 
 1. **تدقيق لغوي بشري.** لم يدقّق أي نص عربي قارئٌ متمكّن بعد.
 2. **مشاهدة تحريك الشعار مُشغَّلاً.** فُحص إطاراً بإطار فقط.
-3. **رأي محامي علامات تجارية.** البحث الأولي وجد مخاطرة عالية في الاسم: مجمّع مطاعم باسم «Sidra» في الرياض. انظر `02-brand-guidelines/mark-check.md`.
+3. **رأي محامي علامات تجارية.** البحث الأولي وجد مخاطرة عالية في الاسم: أُعلن عام 2018 عن مجمّع مطاعم باسم «Sidra» في الرياض (ولا يُعرف إن كان ما زال يعمل بهذا الاسم). انظر `02-brand-guidelines/mark-check.md`.
 4. **إعادة رسم الشعار اللفظي.** هو حالياً بخط IBM Plex Sans Arabic العريض دون رسم خاص.
 5. **ألوان الطباعة.** لا توجد مراجع Pantone ولا قيم CMYK معايَرة ولا ملفات جاهزة للطباعة.
 6. **بيانات تواصل حقيقية.** البريد `hello@sidra-coffee.example` تجريبي، ولا يوجد رقم هاتف.
-7. **اعتماد العميل.** لم يعتمد أي عميل شيئاً؛ لذلك تحمل أسماء الملفات أرقام إصدارات (`v01` إلى `v04`) وليس كلمة `final`، ولا تُسمّى `final` إلا بعد الاعتماد.
+7. **اعتماد العميل.** لم يعتمد أي عميل شيئاً؛ لذلك تحمل أسماء الملفات أرقام إصدارات (`v01` إلى `v05`) وليس كلمة `final`، ولا تُسمّى `final` إلا بعد الاعتماد.
 8. **تنظيف نسخة العميل.** تُحذف عبارة «SYSTEM TEST» أينما وردت (دليل الهوية، وثيقة الاستراتيجية، `FONTS.md`، عناوين ملفات HTML، `tokens.json`)، وتُحذف النقاط الداخلية «ما زال مفتوحاً» من دليل الهوية، ويُحذف مجلد `_reviews/`.
 
-نقاط صغيرة معروفة (لا تمنع الاستخدام الداخلي): الصفحة الأخيرة من دليل الهوية وملفات `licences.md` و`mark-check.md` و`tokens.json` تذكر مجلدات عمل الوكالة لا مجلدات هذه الحزمة، ويرد في `mark-check.md` الاسم «Sidra Coffee Roastery» بدل «Sidra Coffee»؛ شعارات العرض التقديمي صور وليست متجهات؛ العرض جُرّب على LibreOffice فقط لا PowerPoint؛ عند عرض 320 بكسل ينكسر سطر التعريف في أعلى صفحة الهبوط بشكل غير متوازن؛ تطبيقا الهوية (بطاقة العمل وملصق الكيس) معاينتان داخل دليل الهوية فقط.
+نقاط صغيرة معروفة (لا تمنع الاستخدام الداخلي): ملفات `licences.md` و`mark-check.md` و`tokens.json` والتعليقات داخل ملفات HTML وCSS المصدرية تذكر مجلدات عمل الوكالة وسكربتاتها لا مجلدات هذه الحزمة، وأحد ملفات الخطوط في مصدر المنشور يحمل لاحقة آلية في اسمه (`IBMPlexSans-Regular-f0cfd6.ttf`)، ويرد في `mark-check.md` الاسم «Sidra Coffee Roastery» بدل «Sidra Coffee»؛ شعارات العرض التقديمي صور وليست متجهات؛ العرض جُرّب على LibreOffice فقط لا PowerPoint؛ عند عرض 320 بكسل ينكسر سطر التعريف في أعلى صفحة الهبوط بشكل غير متوازن؛ تطبيقا الهوية (بطاقة العمل وملصق الكيس) معاينتان داخل دليل الهوية فقط.
 
 ## محتوى المجلدات
 
@@ -28,7 +28,7 @@
 | `02-brand-guidelines/` | دليل الهوية PDF (6 صفحات، عربي وإنجليزي)؛ `tokens.json` (الألوان ومقاسات الخط والمسافات كبيانات للمطوّرين)؛ ملاحظات الخطوط والتراخيص؛ فحص الاسم والعلامة | طريقة استخدام الشعار والألوان والخطوط |
 | `03-stationery-print/` | فارغ؛ انظر ملف README داخله | — |
 | `04-digital-social/` | منشور إنستغرام (PNG بمقاس 1080 × 1350)؛ تحريك الشعار (MP4 مدته 3 ثوانٍ) مع صورة غلافه؛ نموذج صفحة الهبوط (افتح `landing-page/index.html` في المتصفح؛ النموذج لا يرسل شيئاً) | وسائل التواصل والويب |
-| `05-profile/` | بروفايل الشركة، 4 صفحات، عربي وإنجليزي، PDF للشاشة | الإرسال لأصحاب المقاهي |
+| `05-profile/` | الملف التعريفي للشركة، 4 صفحات، عربي وإنجليزي، PDF للشاشة | الإرسال لأصحاب المقاهي |
 | `06-presentations/` | عرض لأصحاب المقاهي، 5 شرائح، عربي: PowerPoint قابل للتحرير وPDF. اقرأ `FONTS.md` أولاً | العرض أو الإرسال |
 | `07-fonts-and-licences/` | خطّا IBM Plex Sans Arabic وIBM Plex Sans مع نص ترخيص SIL Open Font | ثبّتها قبل فتح ملف PowerPoint |
 | `08-source-files/` | الملفات المصدرية القابلة للتحرير، كلٌّ في مجلد مكتفٍ بذاته | التعديلات لاحقاً |
@@ -76,14 +76,14 @@ The pieces in this package went through the agency's internal quality review ove
 
 1. **Arabic proofread by a native reader.** No person has proofread any Arabic text.
 2. **Someone watches the logo animation played back.** It was checked frame by frame only.
-3. **Trademark advice.** A preliminary search found a high name risk: a "Sidra" dining complex operates in Riyadh. See `02-brand-guidelines/mark-check.md`.
+3. **Trademark advice.** A preliminary search found a high name risk: a "Sidra" dining complex was announced for Riyadh in 2018 (it is not known whether it still trades under that name). See `02-brand-guidelines/mark-check.md`.
 4. **Wordmark redraw.** The Arabic wordmark is set in IBM Plex Sans Arabic Bold, not custom-drawn.
 5. **Print colour.** No Pantone references, no calibrated CMYK values, no print-ready files.
 6. **Real contact details.** The email `hello@sidra-coffee.example` is a test address; there is no phone number.
-7. **Client approval.** No client has approved anything. That is why file names carry version numbers (`v01` to `v04`) and not the word `final`; files are renamed `final` only after approval.
+7. **Client approval.** No client has approved anything. That is why file names carry version numbers (`v01` to `v05`) and not the word `final`; files are renamed `final` only after approval.
 8. **Client copy clean-up.** Remove "SYSTEM TEST" wherever it appears (guidelines, strategy document, `FONTS.md`, HTML titles, `tokens.json`), remove the internal "still open" points from the guidelines, and delete the `_reviews/` folder.
 
-Known small points (none blocks internal use): the guidelines' last page and the files `licences.md`, `mark-check.md` and `tokens.json` refer to the agency's working folders, not this package's folders, and `mark-check.md` writes "Sidra Coffee Roastery" where the name rule says "Sidra Coffee"; the presentation's logos are images, not vector; the presentation was rendered in LibreOffice only, never opened in PowerPoint; at a 320 px phone width the landing page's hero caption breaks awkwardly; the two identity applications (business card, bag label) appear only as previews inside the guidelines.
+Known small points (none blocks internal use): the files `licences.md`, `mark-check.md` and `tokens.json`, and the comments inside the source HTML and CSS files, refer to the agency's working folders and scripts, not this package's folders; one font file in the post's source carries an automatic suffix in its name (`IBMPlexSans-Regular-f0cfd6.ttf`); and `mark-check.md` writes "Sidra Coffee Roastery" where the name rule says "Sidra Coffee"; the presentation's logos are images, not vector; the presentation was rendered in LibreOffice only, never opened in PowerPoint; at a 320 px phone width the landing page's hero caption breaks awkwardly; the two identity applications (business card, bag label) appear only as previews inside the guidelines.
 
 ## What is in each folder
 
@@ -104,7 +104,7 @@ Out of scope, so not here: print files, an English version of the presentation, 
 
 ## Which logo file?
 
-File names follow `…_logo_<layout>-<colour>_…`. A "lockup" is one arrangement of the logo's parts.
+File names follow `…_logo_<lockup>-<colour>_…`. A "lockup" is one arrangement of the logo's parts.
 
 - **Normal use:** `primary-colour` on light backgrounds; `primary-colour-reversed` on dark ones.
 - **With the English name:** `bilingual-…`. Not smaller than 48 px high on screen.

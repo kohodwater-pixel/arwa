@@ -4,11 +4,11 @@
 
 > **SYSTEM TEST — FICTIONAL CLIENT.** "Sidra Coffee" is invented for testing Creative Agency OS. The three competitors named below are real companies.
 
-- **Version:** v03
+- **Version:** v04
 - **Date:** 2026-11-13
 - **Prepared by:** Brand Strategist
 - **Language:** English, with Arabic for the name, tagline, values and voice examples
-- **Status:** v03, for quality review; test approvals only, no client approval
+- **Status:** v04; passed internal quality review (rounds 5 and 6); test approvals only, no client approval
 
 **How to read the labels:** **[V]** verified fact the client confirmed in the brief · **[D]** decided and recorded in the decision log (test approval) · **[R]** from research, with its limits stated · **[A]** assumption, not confirmed.
 
@@ -56,7 +56,7 @@ What this means:
 
 ## 4. Positioning statement
 
-> For independent café owners in Riyadh, and for home brewers who want the same standard, Sidra Coffee is the Riyadh roastery built around a weekly roast-to-order rhythm rather than around its own café counters: a supplier that roasts what you ordered in that week's roast. [D]
+> For independent café owners in Riyadh, and for home brewers who want the same standard, Sidra Coffee is the Riyadh roastery built around a weekly roast-to-order rhythm rather than around its own café counters: a supplier that roasts each café's order in that week's roast. [D]
 
 Arabic, written natively (for internal use, not a public line):
 
@@ -79,7 +79,7 @@ Standing constraints from the brief [V]: no imagery of people; no green-and-whit
 
 ## 6. Promise and proof points
 
-**Promise [D]:**
+**Promise [D] (wholesale-facing material only):**
 
 > «طلبك يُحمَّص هذا الأسبوع.»
 
@@ -157,7 +157,7 @@ Scope [D]: roast-to-order is stated for cafés only. No piece says or implies th
 
 ## 9. Tone of voice
 
-**Arabic.** Clear modern Arabic (فصحى مبسّطة) with light Gulf warmth; the register is an assumption to confirm with the client [A]. Short sentences, direct verbs, numbers before adjectives. Written natively, never translated from the English. We address the café owner as a peer and the home brewer as a guest, not a pupil. Common coffee terms stay as people say them, for example V60 and إسبريسو. Western numerals (0123) [V]. Arabic punctuation marks are used:
+**Arabic.** Clear modern Arabic (فصحى مبسّطة) with light Gulf warmth; the register is an assumption to confirm with the client [A]. Short sentences, direct verbs, numbers before adjectives. Written natively, never translated from the English. We address the café owner as a peer and the home brewer as a guest, not a pupil. Coffee terms: V60 stays in Latin script; espresso is written إسبريسو in Arabic text. Western numerals (0123) [V]. Arabic punctuation marks are used:
 
 > ، ؛ ؟ «»
 
