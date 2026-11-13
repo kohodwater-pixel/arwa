@@ -48,7 +48,7 @@
 
 ## 5. Visual identity (approved: date)
 
-- **Creative direction (one sentence):**
+- **Creative direction (one sentence):** Weekly Beat — a seven-column grid with one column lit; see `04-identity/01-direction/creative-direction.md`
 - **Logo files and usage:** `04-identity/02-logo/`
 - **Colours:**
 
@@ -66,6 +66,7 @@
 |---|---|---|
 | 2026-11-12 | Brief approved (test) | Creative Director |
 | 2026-11-13 | Strategy Direction A "The weekly roast" approved (test). The "runs no cafés of its own" clause stays out of all deliverables: not confirmed by the client | Creative Director |
+| 2026-11-13 | Creative Direction A "Weekly Beat / إيقاع الأسبوع" approved (test); fourth (centre) bar is the fixed lit bar; Direction B archived. Tagline option 1 for wholesale material only. English copy pairs the name with "roastery"; never place "Sidra" beside an origin or variety word (it is also a coffee variety name) | Creative Director |
 
 ## 7. Deliveries
 
