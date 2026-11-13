@@ -16,7 +16,7 @@
 | Markets / countries | Saudi Arabia (Riyadh); GCC TBC |
 | Website and social | TBC |
 | Figma file (system test) | https://www.figma.com/design/eVmri32ECOTePR0dIWgdRY |
-| Canva design (test social post) | https://www.canva.com/d/cAgvdNFdbYXi3EZ |
+| Canva designs (connector test output, OFF-BRAND, not for use) | https://www.canva.com/d/cAgvdNFdbYXi3EZ (id DAHavyXC4eY) and its 1080x1920 resize (id DAHawovd8j0) |
 | Client contact and approver | Creative Director (test) |
 
 ## 2. Project
@@ -68,6 +68,7 @@
 | 2026-11-13 | Strategy Direction A "The weekly roast" approved (test). The "runs no cafés of its own" clause stays out of all deliverables: not confirmed by the client | Creative Director |
 | 2026-11-13 | Creative Direction A "Weekly Beat / إيقاع الأسبوع" approved (test); fourth (centre) bar is the fixed lit bar; Direction B archived. Tagline option 1 for wholesale material only. English copy pairs the name with "roastery"; never place "Sidra" beside an origin or variety word (it is also a coffee variety name) | Creative Director |
 | 2026-11-13 | Identity v01 accepted FOR SYSTEM TEST ONLY (not client-ready): outlined IBM Plex Sans Arabic Bold wordmark; Ink bars with Paper lit bar on Ember; one-colour versions use seven solid bars; phone number shown only as a marked placeholder; Latin line stays "SIDRA COFFEE" pending art-director review of "SIDRA ROASTERY". Colours: Ember #C23A20, Ink #1F1B18, Paper #F3ECE0, Crema #E3C9A0, Ash #6F6861. Fonts: IBM Plex Sans Arabic + IBM Plex Sans. Tokens: `04-identity/03-system/tokens.json` | Creative Director |
+| 2026-11-13 | Quality review round 1: ALL FOUR deliverables FAIL (2 critical, 14 major issues). Nothing enters final delivery. Report: `08-final-delivery/_reviews/review_all-deliverables_2026-11-13_r1.md` | quality-reviewer |
 
 ## 7. Deliveries
 
