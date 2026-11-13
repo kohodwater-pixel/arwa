@@ -81,3 +81,12 @@ The client asked to add nine parties to the partners page: Manazil Al-Mukhtara (
 - The logo files supplied with this request are approximate recreations and the client confirmed they are wrong: **they must not be used anywhere**.
 - Until official logo files arrive, these nine appear on the partners page as names in text. The page title is «شركاء النجاح».
 - Open: confirm the final list and the exact Arabic and English form of each name; supply official logos.
+
+## Addendum 2 — 2026-11-13 — partner logos supplied by the client
+The client sent eight logos to use on «شركاء النجاح» (in `_originals/partner-logos-client_2026-11-13/`): Manazil Al-Mukhtara Company (شركة منازل المختارة), Novotel Hotels & Resorts, Keeta, Jahez (جاهز), International Medina Festival Dates (مهرجان المدينة المنورة الدولي للتمور), HungerStation, Rotana (روتانا), Chop & Co.
+- These replace the rejected recreated set. Use these eight as supplied: crop away the black bars and outer margins, do not redraw, recolour or retouch the marks themselves.
+- They are screen captures of limited quality (JPEG, about 1290 px): fine at partner-grid size in a screen PDF; official vector files are needed for print.
+- The dates logo reads «مهرجان المدينة المنورة الدولي للتمور / International Medina Festival Dates» and carries the year 1439; the earlier list called it "Medinah Dates Season". Use the name as the logo shows it.
+- **ZERO** was in the earlier list of nine but no logo came for it: shown as a text name only if the client confirms it stays.
+- The 18 logos on the old profile's «أصدقاؤنا» page: to confirm whether they stay alongside the new eight.
+- Using other companies' logos needs their permission; the client is responsible for that.
