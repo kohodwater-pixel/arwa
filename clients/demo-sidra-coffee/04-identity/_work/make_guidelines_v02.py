@@ -41,6 +41,10 @@ g = sub(g, [
   '<li>Pantone and calibrated CMYK values were waived for this test and are required before any print job. Minimum print sizes need a press proof.</li>\n      <li>The wordmark is outlined IBM Plex Sans Arabic Bold, accepted for this test. A redraw is required before real use.</li>'),
  ('<li>ألوان الطباعة والأحجام الدنيا المطبوعة تحتاج إلى تجربة طباعية.</li>',
   '<li>أُجّلت مراجع بانتون وقيم CMYK المعايَرة في هذا الاختبار، وهي لازمة قبل أي طباعة. والأحجام الدنيا المطبوعة تحتاج إلى تجربة طباعية.</li>\n      <li>الكلمة المرسومة مأخوذة من خط IBM Plex Sans Arabic Bold وقُبلت لهذا الاختبار، ويلزم إعادة رسمها قبل الاستعمال الفعلي.</li>'),
+ ('<li>The logo and name have had a first check only. This is not a legal trademark clearance; a formal search is needed before registration.</li>',
+  '<li>The name has had one web search only, and the mark itself has not been compared with other marks. This is not a legal trademark clearance; a formal search is needed before registration.</li>'),
+ ('<li>فُحص الشعار والاسم فحصًا أوليًا فقط. هذا ليس فحصًا قانونيًا للعلامة التجارية، ويلزم بحث رسمي قبل التسجيل.</li>',
+  '<li>أُجري للاسم بحث واحد على الإنترنت فقط، ولم يُقارَن الشعار نفسه بعلامات أخرى. هذا ليس فحصًا قانونيًا للعلامة التجارية، ويلزم بحث رسمي قبل التسجيل.</li>'),
 ])
 assert g.count('<div class="pattern">') == 1 and '966' not in g and 'TBC' not in g
 open(f'05-guidelines/{S}_brand-guidelines_mini_ar-en_v02.html', 'w').write(g)

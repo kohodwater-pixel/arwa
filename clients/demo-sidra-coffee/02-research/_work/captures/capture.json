@@ -1,0 +1,81 @@
+[
+  {
+    "name": "camelstep",
+    "url": "https://camelstep.com/",
+    "title": "خطوة جمل: الصفحة الرئيسية",
+    "lang": "ar / dir=rtl",
+    "fonts": [
+      "IBM Plex Sans Arabic",
+      "Arial"
+    ],
+    "textColours": [
+      "rgb(0, 0, 238)",
+      "rgb(255, 255, 255)",
+      "rgb(54, 90, 122)",
+      "rgb(0, 0, 0)",
+      "rgb(23, 32, 38)"
+    ],
+    "backgroundColoursByArea": [
+      "rgb(255, 255, 255)",
+      "rgb(54, 90, 122)",
+      "rgb(239, 239, 239)",
+      "rgb(19, 63, 87)",
+      "rgb(111, 66, 193)",
+      "rgb(209, 233, 255)"
+    ],
+    "screenshot": "/home/user/arwa/clients/demo-sidra-coffee/02-research/_work/captures/camelstep.png",
+    "ok": true
+  },
+  {
+    "name": "elixirbunn",
+    "url": "https://elixirbunn.com/",
+    "title": "اكسير البن",
+    "lang": "ar / dir=rtl",
+    "fonts": [
+      "Changa",
+      "Arial"
+    ],
+    "textColours": [
+      "rgb(0, 0, 238)",
+      "rgb(0, 0, 0)",
+      "rgb(217, 44, 32)",
+      "rgb(255, 255, 255)",
+      "rgb(116, 98, 244)"
+    ],
+    "backgroundColoursByArea": [
+      "rgb(254, 228, 226)",
+      "rgb(255, 255, 255)",
+      "rgb(239, 239, 239)",
+      "rgb(111, 66, 193)",
+      "rgb(241, 239, 254)",
+      "rgb(254, 248, 216)"
+    ],
+    "screenshot": "/home/user/arwa/clients/demo-sidra-coffee/02-research/_work/captures/elixirbunn.png",
+    "ok": true
+  },
+  {
+    "name": "brew92",
+    "url": "https://www.brew92.com/",
+    "title": "Brew92",
+    "lang": "en / dir=ltr",
+    "fonts": [
+      "TheSansArabicPlain",
+      "TheSansArabicBold"
+    ],
+    "textColours": [
+      "rgb(255, 255, 255)",
+      "rgb(18, 12, 14)",
+      "rgb(0, 0, 0)",
+      "rgb(0, 12, 219)",
+      "rgb(51, 51, 51)"
+    ],
+    "backgroundColoursByArea": [
+      "rgb(201, 205, 208)",
+      "rgb(0, 12, 219)",
+      "rgb(255, 255, 255)",
+      "rgb(0, 0, 0)"
+    ],
+    "screenshot": "/home/user/arwa/clients/demo-sidra-coffee/02-research/_work/captures/brew92.png",
+    "ok": true
+  }
+]
