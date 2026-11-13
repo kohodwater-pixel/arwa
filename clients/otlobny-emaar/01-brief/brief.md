@@ -87,6 +87,6 @@ The client sent eight logos to use on «شركاء النجاح» (in `_original
 - These replace the rejected recreated set. Use these eight as supplied: crop away the black bars and outer margins, do not redraw, recolour or retouch the marks themselves.
 - They are screen captures of limited quality (JPEG, about 1290 px): fine at partner-grid size in a screen PDF; official vector files are needed for print.
 - The dates logo reads «مهرجان المدينة المنورة الدولي للتمور / International Medina Festival Dates» and carries the year 1439; the earlier list called it "Medinah Dates Season". Use the name as the logo shows it.
-- **ZERO** was in the earlier list of nine but no logo came for it: shown as a text name only if the client confirms it stays.
+- **ZERO** logo received 2026-11-13 (`09_zero.jpg`): white on a dark charcoal ground. It is shown on its own dark tile as supplied; do not invert or recolour it. The partner set is now nine logos, confirmed correct by the client.
 - The 18 logos on the old profile's «أصدقاؤنا» page: to confirm whether they stay alongside the new eight.
 - Using other companies' logos needs their permission; the client is responsible for that.
