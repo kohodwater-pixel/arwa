@@ -90,4 +90,4 @@
 
 | Date | What was delivered | Where |
 |---|---|---|
-| | | |
+| 2026-11-13 | Internal delivery package assembled after review round 3 — HELD, not released to a client (see its README for the six conditions) | `08-final-delivery/` |
