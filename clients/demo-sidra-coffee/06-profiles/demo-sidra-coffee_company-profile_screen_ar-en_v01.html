@@ -43,9 +43,9 @@ a { color: inherit; text-decoration: none; }
 .bleed { margin-left: calc(-1 * var(--m)); margin-right: calc(-1 * var(--m)); padding-left: var(--m); padding-right: var(--m); }
 .rule { border-top: 2px solid var(--ink); }
 
-.head { align-items: end; padding-bottom: 16px; border-bottom: 2px solid var(--ink); }
+.head { align-items: end; padding-bottom: 24px; border-bottom: 2px solid var(--ink); }
 .head img { height: 40px; display: block; }
-.head .a { display: flex; align-items: flex-end; gap: 16px; }
+.head .a { display: flex; align-items: flex-end; gap: 24px; }
 .foot { margin-top: auto; padding-top: 16px; display: grid; grid-template-columns: repeat(7, 1fr); column-gap: calc(100% / 41); align-items: baseline; }
 .foot .a { grid-column: 1 / span 3; }
 .foot .n { grid-column: 4; text-align: center; font-family: var(--en); font-weight: 600; font-size: 10pt; direction: ltr; }
@@ -65,7 +65,7 @@ h2.a { font-size: 32pt; line-height: 1.3; font-weight: 700; }
 h2.e { font-size: 28pt; line-height: 1.1; font-weight: 700; letter-spacing: -0.015em; padding-top: 6px; }
 h1.a { font-size: 46pt; line-height: 1.3; font-weight: 700; }
 h1.e { font-size: 40pt; line-height: 1.05; font-weight: 700; letter-spacing: -0.015em; padding-top: 12px; }
-.ltr { direction: ltr; unicode-bidi: isolate; display: inline-block; }
+.ltr { direction: ltr; unicode-bidi: isolate; display: inline-block; font-family: var(--en); font-size: 10pt; }
 
 /* ---------- bar row: 7 bars, gap 1/5 bar, never mirrored ---------- */
 .bars { display: grid; grid-template-columns: repeat(7, 1fr); column-gap: calc(100% / 41); direction: ltr; }
@@ -74,18 +74,19 @@ h1.e { font-size: 40pt; line-height: 1.05; font-weight: 700; letter-spacing: -0.
 
 /* ---------- page 1: cover ---------- */
 .cover .logo { grid-column: 1 / span 3; width: 100%; display: block; }
-.cover .bars { height: 248px; margin-top: 64px; }
-.cover .titles { margin-top: 40px; row-gap: 16px; }
+.cover .bars { height: 280px; margin-top: 104px; }
+.cover .titles { margin-top: 64px; row-gap: 16px; }
 
 /* ---------- page 2 ---------- */
 .title { padding-top: 40px; padding-bottom: 16px; align-items: start; }
-.facts { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 16px; margin-top: 24px; padding-top: 16px; border-top: 2px solid var(--ink); }
+.factrow { margin-top: 24px; }
+.facts { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 16px; padding-top: 16px; border-top: 2px solid var(--ink); }
 .facts .v { display: block; }
 .a .facts .v { font-size: 18.5pt; line-height: 1.5; font-weight: 700; }
 .e .facts .v { font-size: 16pt; line-height: 1.3; font-weight: 700; padding-top: 5px; }
 .a .facts .k { display: block; font-size: 7.5pt; line-height: 1.6; color: var(--ash); }
 .e .facts .k { display: block; font-size: 6.5pt; line-height: 1.4; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ash); padding-top: 4px; }
-.panel { margin-top: auto; padding-top: 40px; padding-bottom: 40px; }
+.panel { margin-top: auto; padding-top: 24px; padding-bottom: 24px; }
 .panel.crema { background: var(--crema); }
 .panel.ink { background: var(--ink); color: var(--paper); }
 .panel .g7 + .g7 { margin-top: 24px; padding-top: 24px; border-top: 2px solid currentColor; }
@@ -94,11 +95,12 @@ h1.e { font-size: 40pt; line-height: 1.05; font-weight: 700; letter-spacing: -0.
 .panel .a .lab { font-size: 7.5pt; line-height: 1.6; font-weight: 600; }
 
 /* ---------- page 3 ---------- */
-.item { padding: 16px 0; border-top: 2px solid var(--ink); align-items: start; }
-.item .no { font-family: var(--en); font-weight: 600; font-size: 10pt; line-height: 1.3; direction: ltr; display: block; margin-bottom: 4px; }
-.item .a .no { text-align: right; }
-.panel.ink h2 { padding-bottom: 16px; }
-.adv { padding: 16px 0; border-top: 2px solid var(--paper); align-items: start; }
+.item { padding: 12px 0; border-top: 2px solid var(--ink); align-items: start; }
+.item .no { font-family: var(--en); font-weight: 600; font-size: 10pt; direction: ltr; unicode-bidi: isolate; display: inline-block; width: 32px; text-indent: 0; }
+.item .sub { padding-inline-start: 32px; text-indent: -32px; }
+.item .a p + p, .item .e p + p { padding-inline-start: 32px; }
+.panel.ink h2 { padding-bottom: 8px; }
+.adv { padding: 12px 0; border-top: 2px solid var(--paper); align-items: start; }
 .adv .e .sub { padding-top: 4px; }
 
 /* ---------- page 4 ---------- */
@@ -106,8 +108,8 @@ h1.e { font-size: 40pt; line-height: 1.05; font-weight: 700; letter-spacing: -0.
 .contact .cap { display: block; margin-bottom: 4px; }
 .gap { display: inline-block; border: 2px dashed var(--ink); padding: 4px 16px; }
 .ember { margin-top: auto; background: var(--ember); color: var(--paper); padding-top: 64px; padding-bottom: 64px; }
-.ember .logo { grid-column: 1 / span 3; width: 100%; display: block; }
-.ember .tag { margin-top: 40px; align-items: start; }
+.ember .logo { grid-column: 1 / span 3; width: 80%; display: block; justify-self: start; }
+.ember .tag { margin-top: 64px; align-items: start; }
 </style>
 </head>
 <body>
@@ -154,6 +156,15 @@ h1.e { font-size: 40pt; line-height: 1.05; font-weight: 700; letter-spacing: -0.
       <div class="a">
         <p>سدرة محمصة قهوة مختصة من الرياض، تأسست عام 2023. نحمّص حبوب القهوة المختصة ونبيعها للمقاهي، ولمن يحضّر قهوته في بيته عبر الإنترنت.</p>
         <p style="margin-top:8px">نحمّص كل أسبوع، وعلى طلبك أنت.</p>
+      </div>
+      <div class="e" lang="en">
+        <p>Sidra is a specialty coffee roastery in Riyadh, founded in 2023. We roast specialty coffee beans and sell them to cafés, and online to people who brew at home.</p>
+        <p style="margin-top:8px">We roast every week, to your order.</p>
+      </div>
+    </div>
+
+    <div class="g7 factrow">
+      <div class="a">
         <div class="facts">
           <div><span class="v">2023</span><span class="k">سنة التأسيس</span></div>
           <div><span class="v">الرياض</span><span class="k">مقرّنا</span></div>
@@ -161,12 +172,10 @@ h1.e { font-size: 40pt; line-height: 1.05; font-weight: 700; letter-spacing: -0.
         </div>
       </div>
       <div class="e" lang="en">
-        <p>Sidra is a specialty coffee roastery in Riyadh, founded in 2023. We roast specialty coffee beans and sell them to cafés, and online to people who brew at home.</p>
-        <p style="margin-top:8px">We roast every week, to your order.</p>
         <div class="facts">
           <div><span class="v">2023</span><span class="k">Founded</span></div>
           <div><span class="v">Riyadh</span><span class="k">Our base</span></div>
-          <div><span class="v">Weekly</span><span class="k">Roasted to order</span></div>
+          <div><span class="v">Weekly</span><span class="k">To order</span></div>
         </div>
       </div>
     </div>
@@ -210,20 +219,20 @@ h1.e { font-size: 40pt; line-height: 1.05; font-weight: 700; letter-spacing: -0.
     </div>
 
     <div class="g7 item">
-      <div class="a"><span class="no">01</span><p class="sub">قهوة مختصة محمّصة</p><p>محاصيل مفردة وخلطات البيت، 250 غ أو 1 كغ.</p></div>
-      <div class="e" lang="en"><span class="no">01</span><p class="sub">Roasted specialty coffee</p><p>Single origins and house blends, 250 g or 1 kg.</p></div>
+      <div class="a"><p class="sub"><span class="no">01</span>قهوة مختصة محمّصة</p><p>محاصيل مفردة وخلطات البيت، 250&nbsp;غ أو 1&nbsp;كغ.</p></div>
+      <div class="e" lang="en"><p class="sub"><span class="no">01</span>Roasted specialty coffee</p><p>Single origins and house blends, 250&nbsp;g or 1&nbsp;kg.</p></div>
     </div>
     <div class="g7 item">
-      <div class="a"><span class="no">02</span><p class="sub">توريد المقاهي بالجملة</p><p>توريد أسبوعي يُحمَّص على طلب مقهاك.</p></div>
-      <div class="e" lang="en"><span class="no">02</span><p class="sub">Wholesale supply for cafés</p><p>A weekly supply, roasted to your café’s order.</p></div>
+      <div class="a"><p class="sub"><span class="no">02</span>توريد المقاهي بالجملة</p><p>توريد أسبوعي يُحمَّص على طلب مقهاك.</p></div>
+      <div class="e" lang="en"><p class="sub"><span class="no">02</span>Wholesale supply for cafés</p><p>A weekly supply, roasted to your café’s order.</p></div>
     </div>
     <div class="g7 item">
-      <div class="a"><span class="no">03</span><p class="sub">اشتراك القهوة</p><p>اشترك، وتصلك قهوتك في بيتك كل شهر.</p></div>
-      <div class="e" lang="en"><span class="no">03</span><p class="sub">Coffee subscription</p><p>Subscribe and your coffee arrives at home every month.</p></div>
+      <div class="a"><p class="sub"><span class="no">03</span>اشتراك القهوة</p><p>اشترك، وتصلك قهوتك في بيتك كل شهر.</p></div>
+      <div class="e" lang="en"><p class="sub"><span class="no">03</span>Coffee subscription</p><p>Subscribe and your coffee arrives at home every month.</p></div>
     </div>
     <div class="g7 item">
-      <div class="a"><span class="no">04</span><p class="sub">تدريب الباريستا</p><p>دورات قصيرة لفريق مقهاك.</p></div>
-      <div class="e" lang="en"><span class="no">04</span><p class="sub">Barista training</p><p>Short courses for your café’s staff.</p></div>
+      <div class="a"><p class="sub"><span class="no">04</span>تدريب الباريستا</p><p>دورات قصيرة لفريق مقهاك.</p></div>
+      <div class="e" lang="en"><p class="sub"><span class="no">04</span>Barista training</p><p>Short courses for your café’s staff.</p></div>
     </div>
 
     <div class="panel ink bleed">

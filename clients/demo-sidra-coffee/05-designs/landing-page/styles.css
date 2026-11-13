@@ -44,7 +44,7 @@
   :root { --fs-body: 1.4375rem; --fs-sub: 2.3125rem; --page-pad: var(--s6); }
 }
 @media (min-width: 1280px) {
-  :root { --fs-display: 7.1875rem; }       /* 115 px */
+  :root { --fs-display: 6.25rem; }         /* 100 px: 115 px overflowed the four-column text span */
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -232,3 +232,6 @@ a { color: inherit; text-underline-offset: 0.25em; text-decoration-thickness: 2p
   .footer__brand { grid-column: 1 / span 4; }
   .footer__lines { grid-column: 5 / span 3; }
 }
+
+/* dir="ltr" inputs (email, phone): keep the error marker on the page's start edge (right in Arabic) */
+.field.is-invalid input[dir="ltr"] { border-inline-start-width: var(--hairline); border-inline-end-width: 8px; }
