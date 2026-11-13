@@ -2,7 +2,7 @@
 
 > **SYSTEM TEST — FICTIONAL CLIENT.** Invented data for testing Creative Agency OS.
 
-**Version:** v03 (fix pass after review r2: full-name rule applied on page 2, English Values line break, 32 px spacing removed, HTML made self-contained with `assets/`; layout file `demo-sidra-coffee_company-profile_screen_ar-en_v03`. v02 layout files are in `_archive/`; the v01 text is kept in `_archive/content-outline_v01.md`)  **Date:** 2026-11-13  **Prepared by:** Corporate Designer  **Status:** revised after review; Arabic not proofread by a native reader.
+**Version:** v04 (rulings (v) and (w) after review r5: "On schedule / على الموعد" removed from the Values line, mission reworded to the approved wording in both languages, About second line scoped to cafés; layout file `demo-sidra-coffee_company-profile_screen_ar-en_v04`; v03 text kept in `_archive/content-outline_v03.md`. Earlier: v03 fix pass after review r2: full-name rule applied on page 2, English Values line break, 32 px spacing removed, HTML made self-contained with `assets/`; layout file `demo-sidra-coffee_company-profile_screen_ar-en_v03`. v02 layout files are in `_archive/`; the v01 text is kept in `_archive/content-outline_v01.md`)  **Date:** 2026-11-13  **Prepared by:** Corporate Designer  **Status:** revised after review; Arabic not proofread by a native reader.
 
 ## The job
 
@@ -46,9 +46,9 @@ Labels: **[V]** verified in the brief · **[S]** from the approved strategy (tes
 ### من نحن / About us
 
 - AR: سدرة للقهوة محمصة قهوة مختصة من الرياض، تأسست عام 2023. نحمّص حبوب القهوة المختصة ونبيعها للمقاهي، وعبر الإنترنت لمن يحضّر قهوته في بيته. [V][D]
-  نحمّص كل أسبوع، وعلى طلبك أنت. [V, messaging]
+  للمقاهي، نحمّص على الطلب كل أسبوع. [V, messaging]
 - EN: Sidra Coffee roastery is based in Riyadh and was founded in 2023. We roast specialty coffee beans and sell them to cafés, and online to people who brew at home. [V][D]
-  We roast every week, to your order. [V, messaging]
+  For cafés, we roast to order every week. [V][D] (v04: scoped to cafés under ruling w, because the sentence before it mentions home brewers)
 
 Facts row (all [V]): 2023 سنة التأسيس / Founded · الرياض مقرّنا / Riyadh, where we are based · كل أسبوع تحميص على الطلب / Every week, roasted to order.
 
@@ -56,9 +56,9 @@ Facts row (all [V]): 2023 سنة التأسيس / Founded · الرياض مقر
 
 - Vision EN [S]: To be the roaster Riyadh's independent cafés name first.
 - Vision AR [D]: أن نكون المحمصة التي تذكرها مقاهي الرياض المستقلة أولًا.
-- Mission EN [S]: To roast every order in the weekly roast, for Riyadh's independent cafés and for people who brew at home, and to help café teams brew it well.
-- Mission AR [D]: أن نحمّص كل طلب في تحميصة الأسبوع، لمقاهي الرياض المستقلة ولمن يحضّر قهوته في بيته، وأن نساعد فرق المقاهي على تحضيرها كما يجب.
-- Values [S], names only: على الموعد · كلام واضح · في صفّ المقهى · ضيافة / On schedule · Plain facts · On the café's side · Hospitality. In the v03 layout the English is set on two lines, two values per line, with the line break in place of the middle separator (no line ends or starts on a "·").
+- Mission EN [S] (ruling w, `brand-context.md` section 3): Roast to order every week for Riyadh's independent cafés, sell our coffee to home brewers, and help café teams brew it well.
+- Mission AR [D] (designer's native draft to the same meaning; not proofread): أن نحمّص على الطلب كل أسبوع لمقاهي الرياض المستقلة، وأن نبيع قهوتنا لمن يحضّرها في بيته، وأن نساعد فرق المقاهي على تحضيرها كما يجب.
+- Values [S], names only, three values (ruling v: "On schedule / على الموعد" is an internal commitment and is not printed until roast and delivery days can be published): كلام واضح · في صفّ المقهى · ضيافة / Plain facts · On the café's side · Hospitality. In the v04 layout each value sits on its own line in both languages, so the two blocks match.
 
 The vision is an ambition, not a claim; it is labelled "Vision" in the layout.
 

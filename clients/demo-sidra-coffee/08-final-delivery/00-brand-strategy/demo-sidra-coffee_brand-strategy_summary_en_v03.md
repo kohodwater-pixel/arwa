@@ -1,10 +1,14 @@
-# Brand strategy summary — Sidra Coffee (سدرة للقهوة)
+# Sidra Coffee: brand strategy summary
+
+«سدرة للقهوة»
 
 > **SYSTEM TEST — FICTIONAL CLIENT.** "Sidra Coffee" is invented for testing Creative Agency OS. The three competitors named below are real companies.
 
-**Version:** v02  **Date:** 2026-11-13  **Prepared by:** Brand Strategist  **Language:** English, with Arabic for the name, tagline, values and voice examples
-**Status:** Direction A approved by the Creative Director acting as client for this test. No real client has approved it. Awaiting quality review.
-**Replaces for client use:** the v01 working drafts `brand-strategy.md` and `messaging.md`, which are kept unchanged as the record.
+- **Version:** v03
+- **Date:** 2026-11-13
+- **Prepared by:** Brand Strategist
+- **Language:** English, with Arabic for the name, tagline, values and voice examples
+- **Status:** v03, for quality review; test approvals only, no client approval
 
 **How to read the labels:** **[V]** verified fact the client confirmed in the brief · **[D]** decided and recorded in the decision log (test approval) · **[R]** from research, with its limits stated · **[A]** assumption, not confirmed.
 
@@ -14,7 +18,11 @@ Sidra Coffee is a specialty coffee roastery, founded in 2023 and based in Riyadh
 
 The approved direction is **"The weekly roast"** [D]: Sidra Coffee is the roastery organised around one dependable rhythm, your order roasted this week. Reliability is the brand; origin stories are supporting detail. The direction was chosen because it rests on the one verified fact that sets the business apart, answers the brief's own words ("a reliable local roaster") and needs no awards or client names to be believed.
 
-The confirmed tagline is «تُحمَّص لطلبك، كل أسبوع.» / "Roasted for your order. Every week." [D]
+The confirmed tagline [D]:
+
+> «تُحمَّص لطلبك، كل أسبوع.»
+
+> "Roasted for your order. Every week."
 
 Two things must be settled before real use: a trademark attorney's opinion on the name (section 11), and four factual questions only the client can answer (section 11).
 
@@ -44,7 +52,7 @@ What this means:
 - **All three run their own cafés and all three also sell wholesale.** Training is standard in the category, so Sidra Coffee's barista courses support the offer but do not set it apart.
 - **None of the summaries shows a weekly roast-to-order rhythm as the main promise.** This is an inference from absence and is weak: whether competitors also roast to order weekly was not checked [A].
 - **"Arabic-first" is not claimed as a differentiator** [D]. Camel Step and Elixir Bunn are both Arabic-led. Arabic as the primary language remains a requirement of the brief and is met in every piece.
-- Sidra Coffee has no awards or certifications to publish [V] and does not compete on credentials.
+- Awards or certifications: not available (not supplied by the client) [V]. Sidra Coffee does not compete on credentials.
 
 ## 4. Positioning statement
 
@@ -52,7 +60,7 @@ What this means:
 
 Arabic, written natively (for internal use, not a public line):
 
-> «سدرة للقهوة محمصة من الرياض، تعمل على إيقاع واحد: طلبك يُحمَّص هذا الأسبوع. نورّد للمقاهي المستقلة ولمن يحضّر قهوته في بيته.»
+> «سدرة للقهوة محمصة من الرياض، تعمل على إيقاع واحد: تحمّص للمقاهي المستقلة على الطلب كل أسبوع، وتبيع قهوتها لمن يحضّرها في بيته.»
 
 **Reading limits.** "Rather than around its own café counters" says what the brand is organised around. It does **not** say that Sidra Coffee runs no cafés, and it must never be paraphrased that way: that claim is unconfirmed and stays out of every piece [D]. The statement is an internal guide; it is not published copy.
 
@@ -60,18 +68,22 @@ Arabic, written natively (for internal use, not a public line):
 
 ## 5. Personality
 
-| Trait | Is | Is not | What a designer or writer does with it |
-|---|---|---|---|
-| **Dependable — يُعتمد عليها** | Regular, exact, the same every week | Rigid, corporate, cold | One repeatable system; weights and facts given real prominence; nothing changed for novelty |
-| **Rooted — بنت الرياض** | Local, Arabic-led, at ease in its own language | Folkloric, nostalgic, desert heritage | Arabic leads every lockup and headline, English as the equal second; restraint, not ornament |
-| **Plain-spoken — واضحة** | Specific, short, factual | Technical for show, poetic, boastful | Short headlines, numbers before adjectives, generous space |
-| **Hospitable — مِضيافة** | Warm, generous with knowledge | Chatty, cute, salesy | Warmth carried by colour, materials and wording, never by pictures of people |
+| Trait | Arabic | Is | Is not | What a designer or writer does with it |
+|---|---|---|---|---|
+| **Dependable** | يُعتمد عليها | Regular, exact, the same every week | Rigid, corporate, cold | One repeatable system; weights and facts given real prominence; nothing changed for novelty |
+| **Rooted** | بنت الرياض | Local, Arabic-led, at ease in its own language | Folkloric, nostalgic, desert heritage | Arabic leads every lockup and headline, English as the equal second; restraint, not ornament |
+| **Plain-spoken** | واضحة | Specific, short, factual | Technical for show, poetic, boastful | Short headlines, numbers before adjectives, generous space |
+| **Hospitable** | مِضيافة | Warm, generous with knowledge | Chatty, cute, salesy | Warmth carried by colour, materials and wording, never by pictures of people |
 
 Standing constraints from the brief [V]: no imagery of people; no green-and-white combinations close to large international coffee chains.
 
 ## 6. Promise and proof points
 
-**Promise:** "Your order, roasted this week." — «طلبك يُحمَّص هذا الأسبوع.» [D]
+**Promise [D]:**
+
+> «طلبك يُحمَّص هذا الأسبوع.»
+
+> "Your order, roasted this week."
 
 Proof points available today, all from the brief [V]:
 
@@ -91,24 +103,40 @@ Not confirmed and never implied [D]: a roast date printed on the bag; a named ro
 
 | Value | Arabic | What it means in practice |
 |---|---|---|
-| On schedule | على الموعد | The weekly roast is a commitment, not a marketing line |
+| On schedule (internal commitment; not printed in public pieces until roast and delivery days can be published) | على الموعد | The weekly roast is a commitment, not a marketing line |
 | Plain facts | كلام واضح | We say what it is and what to do with it. No superlatives |
 | On the café's side | في صفّ المقهى | The café's cup is the product; our name comes second |
 | Hospitality | ضيافة | Expertise is shared generously, never used to talk down |
 
-**Purpose:** so that an independent café never has to wonder what is in the bag or when it will arrive. **Vision:** to be the roaster Riyadh's independent cafés name first. **Mission:** roast every order in the weekly roast, for Riyadh's independent cafés and home brewers, and help café teams brew it well. [D] Purpose and vision are ambitions, not claims. "On schedule" guides behaviour inside the company; in public copy it must not be worded as a delivery promise until the client can publish its days.
+**Purpose:** so that an independent café never has to wonder what is in the bag or when it will arrive.
+
+**Vision:** to be the roaster Riyadh's independent cafés name first.
+
+**Mission:** roast to order every week for Riyadh's independent cafés, sell our coffee to home brewers, and help café teams brew it well. [D]
+
+Purpose and vision are ambitions, not claims. "On schedule" is an internal commitment: it guides behaviour inside the company and is not printed in public pieces until the client can publish its roast and delivery days [D].
 
 ## 8. Messaging and tagline
 
-**Tagline (confirmed) [D]:** «تُحمَّص لطلبك، كل أسبوع.» / "Roasted for your order. Every week."
+**Tagline (confirmed) [D]:**
+
+> «تُحمَّص لطلبك، كل أسبوع.»
+
+> "Roasted for your order. Every week."
 
 - The diacritics on «تُحمَّص» are part of the line and are always set: without them the word can be read as "you roast".
 - It rests on a verified fact for wholesale. Its use towards home brewers placing single online orders waits for the client's answer to question 3 in section 11.
 - It has not been checked for prior use by another brand. This is not a legal clearance.
 
-**Value proposition:**
-«سدرة للقهوة محمصة قهوة مختصة من الرياض، تحمّص طلبك في تحميصة الأسبوع، للمقاهي المستقلة ولمن يحضّر قهوته في بيته.»
-Sidra Coffee is a specialty coffee roastery in Riyadh that roasts your order in the weekly roast, for independent cafés and for people who brew at home.
+**Value proposition (Arabic):**
+
+> «سدرة للقهوة محمصة قهوة مختصة من الرياض. تحمّص للمقاهي المستقلة على الطلب كل أسبوع، وتبيع قهوتها لمن يحضّر قهوته في بيته.»
+
+**Value proposition (English):**
+
+> Sidra Coffee is a specialty coffee roastery in Riyadh. It roasts to order every week for independent cafés, and sells its coffee to people who brew at home.
+
+Scope [D]: roast-to-order is stated for cafés only. No piece says or implies that home orders are roasted to order.
 
 **Key messages:**
 
@@ -120,11 +148,18 @@ Sidra Coffee is a specialty coffee roastery in Riyadh that roasts your order in 
 | Home | محاصيل مفردة وخلطات البيت، 250 غ أو 1 كغ. | Single origins and house blends, 250 g or 1 kg. | [V] |
 | Home | اشترك، وتصلك قهوتك كل شهر. | Subscribe and your coffee arrives every month. | [V] |
 
-Held until confirmed: «نورّد للمقاهي ولا ننافسها.» / "We supply cafés. We do not compete with them." (question 1), and any "roasted for your order" line aimed at single online orders (question 3).
+**Held until confirmed:**
+
+| Held line (Arabic) | Held line (English) | Waits for |
+|---|---|---|
+| نورّد للمقاهي ولا ننافسها. | We supply cafés. We do not compete with them. | Question 1 |
+| Any line built on «يُحمَّص لطلبك» aimed at single online orders | Any "roasted for your order" line aimed at single online orders | Question 3 |
 
 ## 9. Tone of voice
 
-**Arabic.** Clear modern Arabic (فصحى مبسّطة) with light Gulf warmth; the register is an assumption to confirm with the client [A]. Short sentences, direct verbs, numbers before adjectives. Written natively, never translated from the English. We address the café owner as a peer and the home brewer as a guest, not a pupil. Common coffee terms stay as people say them (V60، إسبريسو). Western numerals (0123) [V]. Arabic punctuation: ، ؛ ؟ «».
+**Arabic.** Clear modern Arabic (فصحى مبسّطة) with light Gulf warmth; the register is an assumption to confirm with the client [A]. Short sentences, direct verbs, numbers before adjectives. Written natively, never translated from the English. We address the café owner as a peer and the home brewer as a guest, not a pupil. Common coffee terms stay as people say them, for example V60 and إسبريسو. Western numerals (0123) [V]. Arabic punctuation marks are used:
+
+> ، ؛ ؟ «»
 
 | | اكتب هكذا | لا تكتب هكذا | السبب |
 |---|---|---|---|
@@ -142,8 +177,13 @@ Held until confirmed: «نورّد للمقاهي ولا ننافسها.» / "We
 | Home | Brewing with a V60? Start with this one. | Embark on a sensory journey of exceptional beans. | Decoration without information |
 | Home | Single origins and house blends, 250 g or 1 kg. | Simply the finest coffee in the Kingdom. | Unprovable superlative |
 
-**Words we use:** محمصة، يُحمَّص لطلبك، كل أسبوع، طازجة / roastery, roasted to order, every week, fresh.
-**Words we avoid:** الأفضل، الأجود، رقم 1، فاخر، حصري، شغف، رحلة / best, finest, premium, award-winning, passion, journey.
+**Vocabulary:**
+
+| | Arabic | English |
+|---|---|---|
+| Words we use | محمصة، يُحمَّص لطلبك، كل أسبوع، طازجة | roastery, roasted to order, every week, fresh |
+| Words we avoid | الأفضل، الأجود، رقم 1، فاخر، حصري، شغف، رحلة | best, finest, premium, award-winning, passion, journey |
+
 **Never, in either language:** awards, certifications, customer numbers or named clients; competitor names or comparisons; a roast day, delivery day or delivery time; a roast date on the bag; any claim that beans are Saudi-grown; the placeholder phone number.
 
 ## 10. Name rule
@@ -153,7 +193,7 @@ Held until confirmed: «نورّد للمقاهي ولا ننافسها.» / "We
 3. Never place the name beside an origin or variety word, on a label or in a sentence.
 4. Never pun on or refer to «سدرة المنتهى».
 
-The reason for rules 1 to 3 is in section 11: on its own, the word is a coffee variety on a bag and a place on the Riyadh map. [D]
+The reason for rules 1 to 3 is in section 11: on its own, the word is a coffee variety on a bag and a place on the Riyadh map. All four rules are recorded in the brand context [D].
 
 ## 11. Known risks and open questions for the client
 
@@ -161,7 +201,7 @@ The reason for rules 1 to 3 is in section 11: on its own, the word is a coffee v
 
 | Risk | Rating | What was found |
 |---|---|---|
-| Alshaya "Sidra" dining complex in Riyadh | **High** | Search summaries describe a multi-restaurant dining destination named "Sidra", operated by Alshaya, announced for Riyadh in 2018 (and one in Kuwait), with a Starbucks among its tenants. Same word, same city, food and beverage. Not known: whether it still trades under that name, or what Alshaya has registered |
+| Alshaya "Sidra" dining complex in Riyadh | **High** | Search summaries describe a multi-restaurant dining destination named "Sidra", operated by Alshaya, announced for Riyadh in 2018 (and one in Kuwait); search results suggest a Starbucks outlet at what is probably the same complex (not confirmed). Same word, same city, food and beverage. Not known: whether it still trades under that name, or what Alshaya has registered |
 | "Sidra" is a coffee variety | Medium | "Sidra" is used as a variety name by specialty roasters, and search summaries show Riyadh coffee businesses selling coffee under it. The word may be treated as descriptive for coffee, and buyers may expect that variety in the bag |
 
 **Action required before any real use:** a written opinion from a trademark attorney on "Sidra / سدرة / سدره" in classes 30, 43 and 35, in Saudi Arabia first and then the GCC, covering both points above. The name rule in section 10 reduces confusion; it does not remove the legal question. The logo device needs its own search and is outside this document.

@@ -1,6 +1,6 @@
 /* Sidra Coffee — shared brand CSS v02 (SYSTEM TEST, fictional client).
    Values mirror tokens.json. Paths are relative to 04-identity/03-system/. */
-@font-face { font-family: "IBM Plex Sans Arabic"; font-weight: 300; src: url("IBMPlexSansArabic-Light.ttf"); }
+
 @font-face { font-family: "IBM Plex Sans Arabic"; font-weight: 400; src: url("IBMPlexSansArabic-Regular.ttf"); }
 @font-face { font-family: "IBM Plex Sans Arabic"; font-weight: 500; src: url("IBMPlexSansArabic-Medium.ttf"); }
 @font-face { font-family: "IBM Plex Sans Arabic"; font-weight: 600; src: url("IBMPlexSansArabic-SemiBold.ttf"); }

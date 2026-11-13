@@ -2,7 +2,7 @@
 
 > **SYSTEM TEST — FICTIONAL CLIENT.** Invented data for testing Creative Agency OS.
 
-**Version:** v02 (v01 text kept in `_archive/content-gaps_v01.md`)  **Date:** 2026-11-13  **Prepared by:** Corporate Designer
+**Version:** v03 (updated for profile v04; v02 text kept in `_archive/content-gaps_v02.md`)  **Date:** 2026-11-13  **Prepared by:** Corporate Designer
 
 Nothing in this list was invented or filled in. Each item is left out of the profile. v02 contains no placeholders.
 
@@ -40,6 +40,8 @@ Nothing in this list was invented or filled in. Each item is left out of the pro
 | C3 | Roast-to-order for single online orders | Assumption in `messaging.md` | The home-brewer "roasted for your order" line is not used; subscription copy says only "every month" |
 | C4 | Roast date on the bag; published roast and delivery days | TBC in `brand-context.md` | Left out |
 | C5 | Arabic wording of vision and mission | Strategy holds them in English only; the Arabic is the designer's draft | Used on page 2, marked [D] in the outline |
+| C8 | Value "On schedule / على الموعد" | Ruling (v), 2026-11-13: internal commitment, not printed until roast and delivery days can be published | Removed from the profile in v04; three values shown |
+| C9 | Mission wording | Ruling (w): roast-to-order is stated for cafés only. English follows `brand-context.md` section 3; the Arabic is the designer's draft to the same meaning | Used on page 2 in v04. The About second line is also scoped to cafés |
 | C6 | About and contact paragraphs in both languages | Drafted from verified facts | Used, marked [D] in the outline |
 | C7 | Arabic register (simplified fus'ha with light Gulf warmth) | Assumption from research | Applied |
 | C8 | Native Arabic proofreading | Not done | Required before delivery |
