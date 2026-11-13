@@ -15,6 +15,8 @@
 | Sector | Specialty coffee roastery |
 | Markets / countries | Saudi Arabia (Riyadh); GCC TBC |
 | Website and social | TBC |
+| Figma file (system test) | https://www.figma.com/design/eVmri32ECOTePR0dIWgdRY |
+| Canva design (test social post) | https://www.canva.com/d/cAgvdNFdbYXi3EZ |
 | Client contact and approver | Creative Director (test) |
 
 ## 2. Project
