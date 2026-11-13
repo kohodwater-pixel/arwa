@@ -90,3 +90,6 @@ The client sent eight logos to use on «شركاء النجاح» (in `_original
 - **ZERO** logo received 2026-11-13 (`09_zero.jpg`): white on a dark charcoal ground. It is shown on its own dark tile as supplied; do not invert or recolour it. The partner set is now nine logos, confirmed correct by the client.
 - **CONFIRMED by the client 2026-11-13:** the 18 partner logos already on the old profile's «أصدقاؤنا» page ALL STAY, unchanged. The nine new logos are an ADDITION. The page shows 27 logos in total (18 existing + 9 new), under the title «شركاء النجاح». None of the existing 18 is removed, replaced or redrawn; they are taken from the original PDF as they are.
 - Using other companies' logos needs their permission; the client is responsible for that.
+
+## Addendum 3 — 2026-11-13 — three more partners requested
+The client asked to add to «شركاء النجاح»: مطعم لومي (Loomi restaurant), شاورما ليلى (Shawarma Laila), ذا إند (The End). The client believes their logos were sent earlier. **They are not among the files received** (checked: the original profile's 18 logos, the nine client logos, every upload). Pending: the three logo files, and the exact Arabic/English spelling of each name. Until the files arrive these three are NOT placed on the page (no redrawn or downloaded logos).
