@@ -2,30 +2,37 @@
 
 > **SYSTEM TEST — FICTIONAL CLIENT.**
 
-Applies to `demo-sidra-coffee_presentation_cafe-owners_ar_v02.pptx`. Date: 2026-11-13.
+Applies to `demo-sidra-coffee_presentation_cafe-owners_ar_v03.pptx`. Date: 2026-11-13.
 
-The PPTX does **not** embed its fonts (python-pptx cannot embed fonts in a PowerPoint file). Install the two families below on any machine that opens or presents the deck; otherwise PowerPoint, Keynote or LibreOffice will substitute another typeface and the line breaks will change. The PDF export has its fonts embedded and needs nothing installed.
+## Before you open the PowerPoint file
 
-| Family | Used for | Weights used in the deck | Files in this repository | Licence |
-|---|---|---|---|---|
-| IBM Plex Sans Arabic | All Arabic text (theme complex-script font, major and minor) | Regular 400, Bold 700 | `assets/fonts/ibmplexsansarabic/` (static TTF: Light, Regular, Medium, SemiBold, Bold) | SIL Open Font License 1.1, `OFL.txt` in the same folder |
-| IBM Plex Sans | Latin text and numerals: the email address, 250, 1, step numbers, slide counter (theme Latin font, major and minor) | Regular 400, Bold 700 | `assets/fonts/ibmplexsans-static/` (static TTF: Light, Regular, Medium, SemiBold, Bold) and `assets/fonts/ibmplexsans/` (variable font) | SIL Open Font License 1.1, `OFL.txt` in `assets/fonts/ibmplexsans-static/` |
+The PPTX does not carry its fonts inside it. Install the two families below first; otherwise PowerPoint, Keynote or LibreOffice will substitute another typeface and the line breaks will change. The PDF has its fonts embedded and needs nothing installed.
 
-Copyright © 2017 IBM Corp. with Reserved Font Name "Plex". The OFL allows use, embedding and redistribution with the licence file; the fonts may not be sold on their own. Full licence notes for this client: `04-identity/licences.md`.
+| Family | Used for | Weights used in the deck | Licence |
+|---|---|---|---|
+| IBM Plex Sans Arabic | All Arabic text | Regular, Bold | SIL Open Font License 1.1 |
+| IBM Plex Sans | Latin text and numerals: the email address, 250, 1, the step numbers, the slide counter | Regular, Bold | SIL Open Font License 1.1 |
+
+Both families are supplied in the delivery package, in the folder `07-fonts-and-licences/`, each in its own subfolder with its licence file (`OFL.txt`).
 
 ## How to install
 
-- This repository: `bash scripts/setup.sh` installs both families for the current user.
-- Windows or macOS: open each `.ttf` file from the folders above and choose Install. Use the static files (`ibmplexsans-static/`), not the variable font, for PowerPoint.
+1. Open the folder `07-fonts-and-licences/` in the delivery package.
+2. In each of the two subfolders, open the Regular and Bold `.ttf` files and choose Install (Windows: right-click, Install; macOS: double-click, Install Font).
+3. Close and reopen PowerPoint, then open the deck.
+
+## Licence
+
+Both families are Copyright © 2017 IBM Corp. with Reserved Font Name "Plex", released under the SIL Open Font License 1.1. The licence allows use, embedding and redistribution together with the licence file; the fonts may not be sold on their own. Keep each `OFL.txt` with its font files.
 
 ## How the fonts are set in the file
 
-- Theme font scheme "Sidra Coffee": Latin = IBM Plex Sans, complex script and Arabic script = IBM Plex Sans Arabic, for both headings and body. New slides made from the four layouts pick these up without manual formatting.
-- Latin letters and numerals inside Arabic text are separate runs set explicitly in IBM Plex Sans.
-- No other typeface is used. Bullets take IBM Plex Sans.
+- The deck's theme ("Sidra Coffee") sets IBM Plex Sans for Latin text and IBM Plex Sans Arabic for Arabic text, for headings and body. New slides made from the four layouts pick these up without manual formatting.
+- Latin letters and numerals inside Arabic text are separate runs set in IBM Plex Sans.
+- No other typeface is used.
 
-## Known limits
+## Things to know about this file
 
-- For the delivery package, the font files and both `OFL.txt` files must be copied to `08-final-delivery/07-fonts-and-licences/`. Not done here; this is a working folder.
-- `04-identity/licences.md` warns that static IBM Plex Sans instances cut from the variable font must not be shipped. I have not verified whether the files in `assets/fonts/ibmplexsans-static/` are IBM's own release or cut instances; confirm before they go to a client.
-- On this machine both the variable and the static IBM Plex Sans are installed under the same family name. LibreOffice drew the bold Latin text from the variable font, so in the PDF those glyphs are embedded as Type 3 outlines. They look correct on screen; for print, export on a machine with only the static files installed.
+- **Logos are PNG images.** The logo on each layout is a PNG picture inside the file, not a vector: the tool that built the deck (python-pptx) cannot place SVG. Do not enlarge the logos beyond their placed size. For any larger use, take the vector logo from the logo folder of the delivery package.
+- **Rendered in LibreOffice only.** The deck was built by script and checked by rendering it in LibreOffice. It has not been opened in Microsoft PowerPoint or Keynote. Line breaks and spacing may differ slightly there; check all five slides in PowerPoint before presenting.
+- **PDF for screen, not print.** In the PDF, some glyphs are embedded as outlines (Type 3). They look correct on screen. The PDF is not a print file.

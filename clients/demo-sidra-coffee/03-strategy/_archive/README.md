@@ -1,0 +1,1 @@
+- 2026-11-13: `brand-strategy.md` and `messaging.md` (v01 drafts) superseded by `demo-sidra-coffee_brand-strategy_summary_en_v02.md`.
