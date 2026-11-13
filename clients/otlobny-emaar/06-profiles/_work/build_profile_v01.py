@@ -39,9 +39,9 @@ def icon(name, size_mm, color='#fff', cls=''):
     return (f'<svg class="{cls}" width="{size_mm}mm" height="{size_mm}mm" viewBox="0 0 24 24" fill="none" stroke="{color}" '
             f'stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{ICONS[name]}</svg>')
 
-def holder(name, box=15):
+def holder(name, box=14):
     s = box / math.sqrt(2)
-    ic = box * 0.47
+    ic = box * 0.5
     return (f'<span class="holder" style="width:{box}mm;height:{box}mm">'
             f'<svg width="{box}mm" height="{box}mm" viewBox="0 0 {box} {box}" aria-hidden="true"><rect x="{(box-s)/2+.15:.3f}" y="{(box-s)/2+.15:.3f}" '
             f'width="{s-.3:.3f}" height="{s-.3:.3f}" rx="{s*.16:.3f}" transform="rotate(45 {box/2} {box/2})" fill="none" stroke="#fff" stroke-width=".265"/></svg>'
@@ -98,7 +98,7 @@ def p1():
     return page(1, svg + f'''
 <img class="abs" style="left:178.6mm;top:26mm;width:99.4mm;height:42mm" src="assets/logo/otlobny-emaar_logo_lockup-proposal-colour_ar-en_v01.svg" alt="اطلبني — شركة اطلبني إعمار — OTLOBNY Emaar Co.">
 {band(12, 221, 76, "#9BABD7")}
-<div class="pair abs" style="top:151.5mm"><h1 class="en ttl-c" lang="en" dir="ltr">Company Profile</h1><h1 class="ar ttl-c" lang="ar" dir="rtl">الملف التعريفي</h1></div>
+<div class="pair abs" style="top:160mm"><h1 class="en ttl-c" lang="en" dir="ltr">Company Profile</h1><h1 class="ar ttl-c" lang="ar" dir="rtl">الملف التعريفي</h1></div>
 ''', with_chrome=False)
 
 # ------------------------------------------------------------------ page 2, contents
@@ -129,8 +129,8 @@ def p3():
     return page(3, titles('من نحن', 'About Us', wide=True) + f'''
 <p class="abs en lead w105" lang="en" dir="ltr" style="left:19mm;top:53.5mm">{en}</p>
 <p class="abs ar lead w105" lang="ar" dir="rtl" style="left:173mm;top:53.5mm">{ar}</p>
-<div class="vline abs" style="left:148.5mm;top:53.5mm;height:48mm"></div>
-<div class="rows abs" style="top:110mm">{facts}</div>''')
+<div class="vline abs" style="left:148.5mm;top:53.5mm;height:57.5mm"></div>
+<div class="rows abs" style="top:118mm">{facts}</div>''')
 
 # ------------------------------------------------------------------ pages 4-5, statements
 def statement(p, tar, ten, ar, en, extra=''):
@@ -187,13 +187,13 @@ SERVICES = [
       sen='Comprehensive facility maintenance by a qualified team.',
       iar='تقدم «اطلبني إعمار» خدمات صيانة شاملة للمنشآت، عن طريق فريق احترافي من الكوادر المؤهلة.',
       ien='OTLOBNY Emaar provides comprehensive maintenance services for facilities, delivered by a professional team of qualified staff.',
-      items=[('تشغيل وصيانة أنظمة التكييف المركزية', 'Operation and maintenance of central air-conditioning systems'),
+      items=[('تشغيل وصيانة أنظمة التكييف المركزية', 'Operation and maintenance of central <span class="nw">air-conditioning</span> systems'),
              ('تشغيل وصيانة أنظمة المصاعد', 'Operation and maintenance of lift systems')]),
  dict(p=11, key='cleaning', ar='النظافة', en='Cleaning',
       sar='نظافة المباني ومكافحة الآفات للقطاعات الحكومية والتجارية والخاصة.',
       sen='Building cleaning and pest control for the government, commercial and private sectors.',
       iar='تقدم «اطلبني إعمار» خدمات نظافة عالية المستوى يمكن الوثوق بها، للقطاعات الحكومية والخاصة والتجارية.',
-      ien='OTLOBNY Emaar provides high-standard, dependable cleaning services for the government, private and commercial sectors.',
+      ien='OTLOBNY Emaar provides <span class="nw">high-standard,</span> dependable cleaning services for the government, private and commercial sectors.',
       items=[('نظافة المباني الحكومية والتجارية والمباني الخاصة', 'Cleaning of government, commercial and private buildings'),
              ('مكافحة الآفات والحشرات لجميع المنشآت الحكومية والخاصة', 'Pest and insect control for all government and private facilities')],
       photo=('assets/derived/p11_office-cleaner_duotone.png', 'Cleaner wiping a glass partition, illustrative image')),
@@ -225,7 +225,7 @@ def p7():
                  f'<div class="ar" lang="ar" dir="rtl"><div class="hdg">{s["ar"]}</div><div class="body">{s["sar"]}</div></div></a>')
     return page(7, titles('خدماتنا', 'Our Services', 'ttl-s', top=26, wide=True) + f'''
 <img class="abs" style="left:133.68mm;top:28mm;width:29.64mm;height:12mm" src="assets/logo/otlobny-emaar_logo_wordmark-white_ar_v01.svg" alt="اطلبني">
-<div class="rows svcs abs" style="top:48mm;height:138mm">{rows}</div>''', 'grad dk')
+<div class="rows svcs abs" style="top:46mm;height:141mm">{rows}</div>''', 'grad dk')
 
 # ------------------------------------------------------------------ pages 8-13, service pages
 PILL13 = ('<div class="pill draft abs"><span class="en lbl" lang="en" dir="ltr">Draft — details to be confirmed</span>' + DM +
@@ -234,7 +234,8 @@ PILL13 = ('<div class="pill draft abs"><span class="en lbl" lang="en" dir="ltr">
 def service(i, s):
     lab_ar = f'خدماتنا <span class="num" dir="ltr">{i:02d} / 06</span>'
     lab_en = f'Our Services <span class="num">{i:02d} / 06</span>'
-    cells = (f'<p class="en lead c1" lang="en" dir="ltr">{s["ien"]}</p><p class="ar lead c5" lang="ar" dir="rtl">{s["iar"]}</p><div class="gap6"></div>')
+    bal = ' style="text-wrap:balance"' if s['p'] == 11 else ''   # avoids a one-word last line on p11
+    cells = (f'<p class="en lead c1" lang="en" dir="ltr"{bal}>{s["ien"]}</p><p class="ar lead c5" lang="ar" dir="rtl">{s["iar"]}</p><div class="gap6"></div>')
     for ar, en in s['items']:
         cells += (f'<div class="li en body c1" lang="en" dir="ltr">{DM}<span>{en}</span></div>'
                   f'<div class="li ar body c5" lang="ar" dir="rtl">{DM}<span>{ar}</span></div>')
@@ -264,11 +265,11 @@ def p14():
       'From study to execution', 'Construction projects at every stage, starting with the technical study and design drawings.'),
      ('فريق مؤهل ومعايير الصحة المهنية', 'فريق احترافي من الكوادر المؤهلة، ويجري تأمين الكوادر وفقاً لمعايير الصحة المهنية.',
       'A qualified team and occupational health standards', 'A professional team of qualified staff; manpower is supplied in line with occupational health standards.')]
-    r = ''.join(f'<div class="row5 why fit"><div class="en" lang="en" dir="ltr"><div class="lead b">{ten}</div><div class="body">{den}</div></div>'
+    r = ''.join(f'<div class="row5 why"><div class="en" lang="en" dir="ltr"><div class="lead b">{ten}</div><div class="body">{den}</div></div>'
                 f'<div class="mid"><span class="tocn num" dir="ltr">{i:02d}</span></div>'
                 f'<div class="ar" lang="ar" dir="rtl"><div class="lead b">{tar}</div><div class="body">{dar}</div></div></div>'
                 for i, (tar, dar, ten, den) in enumerate(pts, 1))
-    return page(14, titles('لماذا «اطلبني إعمار»', 'Why OTLOBNY Emaar', wide=True) + f'<div class="rows abs" style="top:47mm">{r}</div>', 'tint')
+    return page(14, titles('لماذا «اطلبني إعمار»', 'Why OTLOBNY Emaar', wide=True) + f'<div class="rows whys abs" style="top:47mm;height:139mm">{r}</div>', 'tint')
 
 # ------------------------------------------------------------------ pages 15-17, projects
 PROJECTS = [
@@ -287,8 +288,8 @@ PROJECTS = [
 ]
 
 def project(i, pr):
-    lab_ar = f'أعمالنا <span class="num" dir="ltr">{i:02d} / 03</span>'
-    lab_en = f'Our Work <span class="num">{i:02d} / 03</span>'
+    lab_ar = f'<span class="num" dir="ltr">{i:02d} / 03</span>'
+    lab_en = f'<span class="num">{i:02d} / 03</span>'
     chips_ar = ''.join(f'<span class="pill ar lbl">{a}</span>' for a, _ in pr['chips'])
     chips_en = ''.join(f'<span class="pill en lbl">{e}</span>' for _, e in pr['chips'])
     idx_ar = ''.join(f'<div class="ar lbl {"cur" if q is pr else ""}" lang="ar" dir="rtl">{DM if q is pr else ""}<span>{q["ar"]}</span></div>' for q in reversed(PROJECTS))
@@ -326,7 +327,7 @@ def partner_dir():
         return t, 'assets/partners-transparent'
     return BASE / 'assets/partners', 'assets/partners'
 
-def logo_cell(stem, alt):
+def logo_cell(stem, alt, first=False):
     d, rel = partner_dir()
     im = Image.open(d / f'{stem}.png')
     W, H = im.size
@@ -339,17 +340,17 @@ def logo_cell(stem, alt):
     ppi = 25.4 / k * ((EFFECTIVE_W[stem] / W) if stem in EFFECTIVE_W else 1)
     PARTNER_LOG.append((stem, w, h, round(w * k, 1), round(h * k, 1), round(ppi)))
     cx, cy = (bb[0] + bb[2]) / 2 * k, (bb[1] + bb[3]) / 2 * k        # centre the visible mark, not the file
-    return (f'<div class="pc"><img src="{rel}/{stem}.png" alt="{alt}" style="width:{W*k:.2f}mm;height:{H*k:.2f}mm;'
+    return (f'<div class="pc{" c0" if first else ""}"><img src="{rel}/{stem}.png" alt="{alt}" style="width:{W*k:.2f}mm;height:{H*k:.2f}mm;'
             f'left:{CELL_W/2-cx:.2f}mm;top:{CELL_H/2-cy:.2f}mm"></div>')
 
 def partners(p):
     if p == 18:
-        cells = (f'<div class="pc ptitle">{spark(2.4, "#5AC584", "pmark")}<div class="pair"><h2 class="en ttl-s" lang="en" dir="ltr">Partners in Success</h2>'
-                 f'<h2 class="ar ttl-s" lang="ar" dir="rtl">شركاء النجاح</h2></div></div>')
-        cells += ''.join(logo_cell(s, a) for s, a in PARTNERS[:12])
+        cells = (f'<div class="pc ptitle">{spark(2.4, "#5AC584", "pmark")}<div class="pair"><h2 class="en ttl-p" lang="en" dir="ltr">Partners in Success</h2>'
+                 f'<h2 class="ar ttl-p" lang="ar" dir="rtl">شركاء النجاح</h2></div></div>')
+        cells += ''.join(logo_cell(s, a, first=(i >= 2 and (i - 2) % 5 == 0)) for i, (s, a) in enumerate(PARTNERS[:12]))
         note = ''
     else:
-        cells = ''.join(logo_cell(s, a) for s, a in PARTNERS[12:])
+        cells = ''.join(logo_cell(s, a, first=(i % 5 == 0)) for i, (s, a) in enumerate(PARTNERS[12:]))
         note = ('<div class="pair abs pnote" style="top:176.5mm"><div class="en lbl" lang="en" dir="ltr">All logos are the property of their respective owners.</div>'
                 '<div class="ar lbl" lang="ar" dir="rtl">جميع الشعارات ملك لأصحابها.</div></div>')
     return page(p, f'<div class="pgrid abs">{cells}</div>{note}')
@@ -367,8 +368,8 @@ def p20():
 <img class="abs" style="left:108.3mm;top:26mm;width:80.4mm;height:34mm" src="assets/logo/otlobny-emaar_logo_lockup-proposal-white_ar-en_v01.svg" alt="اطلبني — شركة اطلبني إعمار — OTLOBNY Emaar Co.">
 <div class="pair abs" style="top:71mm;left:60mm;width:177mm"><h2 class="en ttl-s" lang="en" dir="ltr">Contact</h2><h2 class="ar ttl-s" lang="ar" dir="rtl">تواصل معنا</h2></div>
 <div class="crows abs">{rows}</div>
-<div class="abs en" lang="en" dir="ltr" style="left:41mm;top:153mm;width:83mm"><div class="lbl">Address</div><div class="body">Prince Abdulmajeed bin Abdulaziz Road, Al Madinah Al Munawwarah, Saudi Arabia</div></div>
-<div class="abs ar" lang="ar" dir="rtl" style="left:173mm;top:153mm;width:83mm"><div class="lbl">العنوان</div><div class="body">طريق الأمير عبدالمجيد بن عبدالعزيز، المدينة المنورة، المملكة العربية السعودية</div></div>
+<div class="abs en" lang="en" dir="ltr" style="left:60mm;top:153mm;width:72mm"><div class="lbl">Address</div><div class="body">Prince Abdulmajeed bin Abdulaziz Road,<br>Al Madinah Al Munawwarah, Saudi Arabia</div></div>
+<div class="abs ar" lang="ar" dir="rtl" style="left:165mm;top:153mm;width:72mm"><div class="lbl">العنوان</div><div class="body">طريق الأمير عبدالمجيد بن عبدالعزيز،<br>المدينة المنورة، المملكة العربية السعودية</div></div>
 <div class="abs" style="left:147.4mm;top:160mm">{DM}</div>
 {band(12, 19, 180, "#fff", .3)}''', 'grad dk', with_chrome=False)
 
@@ -410,11 +411,12 @@ a{color:inherit;text-decoration:none}
 .ar.lbl,.ar .lbl{font-weight:500;font-size:9.5pt;line-height:1.6}  .en.lbl,.en .lbl{font-weight:500;font-size:8.5pt;line-height:1.4;text-transform:uppercase;letter-spacing:.06em}
 .dk .en.ttl-s,.dk .en.ttl-p{color:#fff}
 p,h1,h2,h3,.body,.lead{text-wrap:pretty}
-.w83{width:83mm} .w105{width:105mm}
+.nw{white-space:nowrap} .w83{width:83mm} .w105{width:105mm}
+.pair h1,.pair h2{white-space:nowrap}
 .pair{left:19mm;width:259mm;display:flex;flex-direction:row;direction:ltr;justify-content:space-between;align-items:baseline}
 /* running header and folio */
 .hd{position:absolute;left:19mm;top:11.2mm;width:259mm;height:5.6mm;display:flex;direction:ltr;justify-content:space-between;align-items:baseline}
-.hd-ar{display:flex;align-items:center;gap:1.8mm} .hd-ar .num{font-weight:500;font-size:9pt}
+.hd-ar .sp{margin-inline-end:1.8mm;vertical-align:-.15mm} .hd-ar .num{font-weight:500;font-size:9pt;margin-left:1.8mm}
 .hd-line{position:absolute;left:19mm;top:19mm;width:259mm;border-top:var(--hair)}
 .ft{position:absolute;left:19mm;top:193.6mm;width:259mm;display:flex;direction:ltr;justify-content:space-between;align-items:baseline}
 .folio{font-weight:500;font-size:9pt;color:var(--navy)}
@@ -431,13 +433,13 @@ p,h1,h2,h3,.body,.lead{text-wrap:pretty}
 .dk .row5{border-top-color:rgba(255,255,255,.35)}
 .row5>.mid{display:flex;justify-content:center;white-space:nowrap}
 .toc{height:18mm;align-items:center} .tocn{font-weight:700;font-size:26pt;line-height:1;color:var(--blue)}
-.fact{height:18mm;align-items:center} .fact>.mid{align-items:center}
+.fact{height:16mm;align-items:center} .fact .hdg{line-height:1.3 !important} .fact>.mid{align-items:center}
 .bignum{font-weight:700;font-size:40pt;line-height:1;color:var(--blue)} .crnum{font-weight:700;font-size:20pt;line-height:1;color:var(--blue)}
 .goal{height:31mm;padding-top:3.6mm;align-items:start} .goal>.mid{margin-top:-.4mm}
-.why{height:23mm;padding-top:2.4mm;align-items:start} .why>.mid{padding-top:.6mm}
+.whys{display:flex;flex-direction:column} .why{flex:1 1 auto;padding:2mm 0 1mm;align-items:start} .why>.mid{padding-top:.5mm} .why .ar .body{line-height:1.65}
 .svcs{display:flex;flex-direction:column}
-.svc{flex:1 1 auto;align-items:center;padding:1mm 0} .svc .ar .hdg{line-height:1.3} .svc .en .hdg{line-height:1.3}
-.svc .ar .body{line-height:1.65}
+.svc{flex:1 1 auto;align-items:center;padding:1mm 0} .svc .ar .hdg{line-height:1.25} .svc .en .hdg{line-height:1.2}
+.svc .ar .body{line-height:1.6} .svc .en .body,.why .en .body{margin-top:.5mm}
 .mid.col{flex-direction:column;align-items:center;justify-content:center;gap:.4mm}
 .holder{position:relative;display:block} .holder>svg:first-child{position:absolute;left:0;top:0}
 .holder-ic{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
@@ -446,7 +448,7 @@ p,h1,h2,h3,.body,.lead{text-wrap:pretty}
 .trip{left:19mm;width:259mm;display:grid;direction:ltr;grid-template-columns:83mm 83mm 83mm;column-gap:5mm;align-items:start}
 .c1{grid-column:1} .c5{grid-column:3} .gap6{grid-column:1/-1;height:6mm}
 .li{display:flex;align-items:flex-start;gap:2.2mm;min-height:10mm;padding:2mm 0;border-top:var(--hair);align-self:stretch;font-weight:500 !important}
-.li.ar{line-height:1.5} .li.en{line-height:1.5} .li.ar .dm{margin-top:2.26mm} .li.en .dm{margin-top:1.86mm}
+.li.ar{line-height:1.5} .li.en{line-height:1.5} .li.ar .dm{margin-top:1.95mm} .li.en .dm{margin-top:1.86mm}
 .li.ar{color:var(--navy)} .after{margin-top:6mm;padding-top:0}
 .panel{left:107mm;top:26mm;width:83mm;height:132.5mm;overflow:hidden;clip-path:polygon(0 0,100% 0,100% calc(100% - 27.5mm),calc(100% - 27.5mm) 100%,0 100%)}
 .panel img{display:block;width:100%;height:100%;object-fit:cover}
@@ -465,18 +467,23 @@ p,h1,h2,h3,.body,.lead{text-wrap:pretty}
 .pc{position:relative;overflow:hidden;border-inline-start:var(--hair);border-top:var(--hair)}
 .pc img{position:absolute;display:block}
 .pgrid{border-bottom:var(--hair)}
-.ptitle{grid-column:span 3;border-inline-start:0}
+.ptitle{grid-column:span 3;border-inline-start:0} .pc.c0{border-inline-start:0}
 .ptitle .pair{position:absolute;left:3mm;right:0;width:auto;bottom:3.2mm}
 .pmark{position:absolute;right:0;top:4mm}
 .pnote .ar,.pnote .en{color:var(--grey)}
 /* contact */
 .crows{left:60mm;top:92mm;width:177mm}
-.crow{display:grid;direction:ltr;grid-template-columns:50mm 77mm 50mm;height:14mm;align-items:center;border-top:.25pt solid rgba(255,255,255,.35)}
+.crow{display:grid;direction:ltr;grid-template-columns:56mm 65mm 56mm;height:14mm;align-items:center;border-top:.25pt solid rgba(255,255,255,.35)}
 .crow:last-child{border-bottom:.25pt solid rgba(255,255,255,.35)}
 .cval{font-weight:500;font-size:17pt;line-height:1;color:#fff;text-align:center;white-space:nowrap}
 .wpill{border-color:rgba(255,255,255,.8);color:#fff;font-size:10pt;font-weight:500}
 .dk .lbl{color:#fff}
 '''
+
+def grid_overlay():
+    cols = ''.join(f'<i style="left:{278-22*(n-1)-17}mm;top:0;width:17mm;height:210mm;background:rgba(255,0,120,.10)"></i>' for n in range(1, 13))
+    rows = ''.join(f'<i style="left:19mm;top:{26+27.5*r}mm;width:259mm;height:22.5mm;border-top:.2mm solid rgba(0,160,255,.7);border-bottom:.2mm solid rgba(0,160,255,.7)"></i>' for r in range(6))
+    return f'<div class="gridov">{cols}{rows}</div>'
 
 def build():
     pages = [p1(), p2(), p3(), p4(), p5(), p6(), p7()]
@@ -488,6 +495,9 @@ def build():
             '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
             f'<style>{CSS}</style>\n</head>\n<body>\n' + ''.join(pages) + '</body>\n</html>\n')
     OUT.write_text(html, encoding='utf-8')
+    g = html.replace('</section>', grid_overlay() + '</section>').replace('"assets/', '"../assets/').replace('url("../assets/', 'url("../assets/')
+    g = g.replace('</style>', '.gridov i{position:absolute;display:block}</style>')
+    (BASE / '_work' / 'otlobny-emaar_company-profile_grid-proof_v01.html').write_text(g, encoding='utf-8')
     print('wrote', OUT.name, len(pages), 'pages; partner logos from', partner_dir()[1])
     for row in PARTNER_LOG:
         print('  logo %-55s mark %4dx%-4d px -> %5.1f x %4.1f mm, %d ppi' % row)
