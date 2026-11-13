@@ -43,6 +43,7 @@ PATCHES = {
  ],
  'mockup_car-scooter-facade.png': [
   ([(160, 185), (352, 200), (354, 246), (160, 230)], 'v', 'facade sign: «شركة لطليني اللصابة والنظافة» and "OTLOBIY Maintenance & Cleaning Co." (misspelt, old activity)'),
+  (R(316, 234, 358, 252), 'i', 'facade sign: tail of the old Latin line ("...ing Co.") under the perspective'),
   (R(1253, 144, 1325, 159), 'v', 'street banner: descriptor line under the logo (garbled); the slogan «خدمتك بجودة تهمنا» is correct Arabic and kept'),
   (R(528, 655, 682, 696), 'i', 'car door: «شركة اطلبني اللصيانة والنظافة» and "OTLOBHY Maintenance & Cleaning Co." (misspelt, old activity)'),
   (R(1361, 514, 1459, 537), 'v', 'scooter top box: garbled Arabic line and "OTLOBHY Maintenance & Cleaning Co."'),
@@ -53,6 +54,7 @@ PATCHES = {
   (R(357, 352, 402, 370), 'v', 'view 1 cab door: garbled descriptor lines'),
   (R(580, 292, 696, 335), 'v', 'view 1 box side: «شركة اطلبني الخدمات اللوجستية» and "OTLOBY Logistics Services Co." (misspelt)'),
   (R(986, 315, 1089, 364), 'v', 'view 2 box side: garbled Arabic and "OTLOBY Logistics Services Co."'),
+  (R(1040, 344, 1066, 362), 'i', 'view 2 box side: two leftover dots of the old Latin line'),
   (R(1228, 293, 1383, 336), 'v', 'view 2 rear doors: descriptor lines (misspelt)'),
   (R(321, 795, 462, 831), 'v', 'view 3 box side: descriptor lines (misspelt)'),
   (R(64, 840, 111, 855), 'v', 'view 3 cab door: garbled descriptor line'),

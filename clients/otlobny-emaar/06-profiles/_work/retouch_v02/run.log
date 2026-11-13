@@ -1,0 +1,23 @@
+  composite cleaning cart panel at (1402, 657, 1463, 671)
+retouched mockup_cleaning-team.png 6 patches
+  composite delivery bag side panel at (664, 299, 709, 309)
+retouched mockup_delivery-rider.png 3 patches
+  composite facade sign at (171, 188, 338, 241)
+  composite car door at (540, 663, 676, 694)
+  composite scooter top box at (1366, 517, 1454, 537)
+retouched mockup_car-scooter-facade.png 6 patches
+  composite view 1 box side at (586, 296, 692, 320)
+  composite view 2 box side at (988, 318, 1086, 340)
+  composite view 2 rear doors at (1233, 296, 1380, 330)
+  composite view 3 box side at (326, 798, 458, 828)
+  composite view 5 rear doors at (1239, 763, 1388, 797)
+retouched mockup_logistics-trucks.png 10 patches
+crop truck-front34 (0, 0, 700, 582)
+crop truck-rear34 (838, 0, 1536, 582)
+crop truck-side (0, 590, 668, 1024)
+crop truck-front (672, 590, 1104, 1024)
+crop truck-rear (1108, 590, 1536, 1024)
+
+real	0m18.516s
+user	0m18.431s
+sys	0m0.296s
