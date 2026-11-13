@@ -185,7 +185,7 @@ v02 is stable from 41 px up; v01 was not stable until 48 px. Below 41 px the gap
 | Legible at 16 px and 10 mm | **Partial**: only with the fallback ladder, which was accepted for the test (ruling g); bilingual not usable at 16 px or 10 mm |
 | Clear space and minimum size defined | Pass |
 | Vector artwork clean, text outlined | Pass (paths and rects only, XML validated); curves are the font's own, not hand-optimised |
-| Preliminary conflict check; trademark notice | **Done as a preliminary check, with a HIGH name risk found** (Alshaya "Sidra", Riyadh); device not checkable by text search; no register searched; not-legal-clearance notice in `licences.md`, `mark-check.md` and guidelines v04 p6. Counsel's opinion required before real use |
+| Preliminary conflict check; trademark notice | **Done as a preliminary check, with a HIGH name risk found** (Alshaya "Sidra", Riyadh); device not checkable by text search; no register searched; not-legal-clearance notice in `licences.md`, `mark-check.md` and guidelines v05 p6. Counsel's opinion required before real use |
 | HEX, RGB, CMYK, Pantone for every colour | **Waived for the test** (ruling e): CMYK approximate, Pantone not given; required before print |
 | Text pairs meet AA | Pass |
 | Colour-blindness check | Done; one weak pair reported |
@@ -193,7 +193,7 @@ v02 is stable from 41 px up; v01 was not stable until 48 px. Below 41 px the gap
 | Typefaces paired, licensed, hierarchy, fallbacks | Pass (static Latin files in `assets/fonts/ibmplexsans-static/`) |
 | Graphic elements, iconography, imagery defined | Pass (iconography = none, by direction) |
 | At least five applications | **Fail by scope**: two built (test scope set by the Creative Director) |
-| Misuse examples | Pass (8 drawn, 5 written, plus the per-row note for the stacked pattern and icon in guidelines v04) |
+| Misuse examples | Pass (8 drawn, 5 written, plus the per-row note for the stacked pattern and icon in guidelines v05) |
 | Guidelines follow outline and level | **Partial**: 6-page mini, below the "essential" level; sections 10 and 11 are one line each |
 | No spelling errors | Not confirmed: Arabic not proofread by a native reader |
 | Colour values match files | Pass |
@@ -290,3 +290,5 @@ The version stays v03: no value, rule or file specification changed. The text as
 | Section 8 | Rewritten: the per-row wording is in `brand-context.md`; the name rule is added. |
 
 Guidelines v04 (review issue I3) adds the web button rule on p4, a motion block on p5 and the name rule on p6; it changes no value in this file.
+
+Guidelines v05 (review r6, issues G1 and G2; rulings ag and ai) is the current version: `05-guidelines/demo-sidra-coffee_brand-guidelines_mini_ar-en_v05.pdf`. It changes copy only (the "on schedule" value is labelled internal and removed from the "Say" lists, the promise is scoped to wholesale material, the files table describes the delivery package); it changes no value in this file.
