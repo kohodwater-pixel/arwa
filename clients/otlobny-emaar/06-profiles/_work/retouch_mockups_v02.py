@@ -32,7 +32,7 @@ PATCHES = {
   (R(323, 329, 356, 339), 'v', 'chest logo, worker 1: garbled descriptor line'),
   (R(532, 314, 579, 325), 'v', 'chest logo, worker 2: garbled descriptor line'),
   (R(752, 313, 804, 325), 'v', 'chest logo, worker 3: garbled descriptor line'),
-  (R(958, 318, 999, 331), 'v', 'chest logo, worker 4: garbled descriptor line'),
+  (R(958, 318, 1004, 332), 'v', 'chest logo, worker 4: garbled descriptor line'),
   (R(1197, 324, 1250, 336), 'v', 'chest logo, worker 5: garbled descriptor line'),
   (R(1384, 656, 1470, 671), 'v', 'cleaning cart panel: garbled Arabic descriptor line'),
  ],
@@ -42,9 +42,9 @@ PATCHES = {
   (R(661, 297, 710, 320), 'v', 'delivery bag: garbled Arabic line and misspelt "OTLOBY ... Co." line'),
  ],
  'mockup_car-scooter-facade.png': [
-  (R(160, 185, 352, 228), 'v', 'facade sign: «شركة لطليني اللصابة والنظافة» and "OTLOBIY Maintenance & Cleaning Co." (misspelt, old activity)'),
+  ([(160, 185), (352, 200), (356, 250), (160, 230)], 'v', 'facade sign: «شركة لطليني اللصابة والنظافة» and "OTLOBIY Maintenance & Cleaning Co." (misspelt, old activity)'),
   (R(1253, 144, 1325, 159), 'v', 'street banner: descriptor line under the logo (garbled); the slogan «خدمتك بجودة تهمنا» is correct Arabic and kept'),
-  (R(528, 660, 682, 695), 'v', 'car door: «شركة اطلبني اللصيانة والنظافة» and "OTLOBHY Maintenance & Cleaning Co." (misspelt, old activity)'),
+  (R(528, 655, 682, 696), 'v', 'car door: «شركة اطلبني اللصيانة والنظافة» and "OTLOBHY Maintenance & Cleaning Co." (misspelt, old activity)'),
   (R(1361, 514, 1459, 537), 'v', 'scooter top box: garbled Arabic line and "OTLOBHY Maintenance & Cleaning Co."'),
   ([(1222, 683), (1286, 663), (1288, 675), (1224, 696)], 'v', 'scooter side panel: slanted garbled descriptor lines'),
  ],
@@ -84,6 +84,8 @@ def patch(a, poly, mode, rng, logo_kind='blue'):
     logo = logo_mask(sub, logo_kind)
     # protect only logo pixels connected to the area above/inside: grow by 1 px so its anti-aliased edge stays
     logo = np.array(Image.fromarray((logo * 255).astype(np.uint8)).filter(ImageFilter.MaxFilter(3))) > 0
+    if logo_kind == 'bright':   # the wrong line is white too: inside the patch nothing is protected
+        logo &= ~rect[T:B, L:Rr]
     hole = rect[T:B, L:Rr] & ~logo
     hole = (np.array(Image.fromarray((hole * 255).astype(np.uint8)).filter(ImageFilter.MaxFilter(3))) > 0) & ~logo
     usable = ~hole & ~logo
@@ -106,12 +108,50 @@ def patch(a, poly, mode, rng, logo_kind='blue'):
     ring = sub[usable].reshape(-1, 3)
     loc = np.array(Image.fromarray(sub.astype(np.uint8)).filter(ImageFilter.GaussianBlur(2))).astype(float)
     sd = float(np.clip((sub - loc)[usable].std(), 0, 5))
-    f[hole] += rng.normal(0, sd * .7, (hole.sum(), 1))
+    f[hole] += rng.normal(0, sd * .35, (hole.sum(), 1))
     alpha = np.array(Image.fromarray((hole * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(FEATHER * .5))).astype(float) / 255
     alpha[hole] = 1.0; alpha[logo] = 0.0
     a = a.copy()
     a[T:B, L:Rr] = sub * (1 - alpha[:, :, None]) + f * alpha[:, :, None]
     return a
+
+# Correct descriptor composited where the old line sat on a flat surface (Creative Director, client answer 3).
+# Taken from the proposed lockup (04-identity/02-logo, white version): «شركة اطلبني إعمار» over "OTLOBNY Emaar Co.",
+# shaped Arabic as vector paths, rendered with cairosvg. Box = (left, top, right, bottom) the new descriptor is fitted into,
+# right-aligned and top-aligned as the old line was; colour matched to the scene.
+LOCKUP = CLIENT / '04-identity/02-logo/otlobny-emaar_logo_lockup-proposal-white_ar-en_v01.svg'
+WHITE, NAVYGREY = (226, 230, 238), (52, 60, 82)
+COMPOSITES = {
+ 'mockup_cleaning-team.png': [((1388, 657, 1463, 671), WHITE, 'cleaning cart panel')],
+ 'mockup_delivery-rider.png': [((664, 299, 709, 320), WHITE, 'delivery bag side panel')],
+ 'mockup_car-scooter-facade.png': [((166, 188, 338, 226), WHITE, 'facade sign', 0.085), ((536, 663, 676, 694), NAVYGREY, 'car door'),
+                                   ((1366, 517, 1454, 537), WHITE, 'scooter top box')],
+ 'mockup_logistics-trucks.png': [((586, 296, 692, 334), WHITE, 'view 1 box side'), ((988, 318, 1086, 358), WHITE, 'view 2 box side'),
+                                 ((1233, 296, 1380, 334), WHITE, 'view 2 rear doors'), ((326, 798, 458, 830), WHITE, 'view 3 box side'),
+                                 ((1238, 763, 1388, 797), WHITE, 'view 5 rear doors')],
+}
+
+def descriptor_alpha():
+    import cairosvg, io
+    W = 4924   # 4x the 1231 px test render; the descriptor block is x 600-1231, y 395-520 there
+    im = Image.open(io.BytesIO(cairosvg.svg2png(url=str(LOCKUP), output_width=W))).getchannel('A')
+    k = W / 1231
+    crop = im.crop((int(600 * k), int(394 * k), W, im.height))
+    return crop.crop(crop.getbbox())
+
+def composite(res, box, colour, alpha_hi, shear=0.0):
+    l, t, r, b = box
+    s = min((r - l) / alpha_hi.width, (b - t) / alpha_hi.height)
+    w, h = max(1, round(alpha_hi.width * s)), max(1, round(alpha_hi.height * s))
+    al = alpha_hi.resize((w, h), Image.LANCZOS).filter(ImageFilter.GaussianBlur(0.35))
+    al = al.point(lambda v: int(v * 0.94))
+    if shear:   # follow the sign's perspective: the line drops towards the right
+        h2 = h + int(round(shear * w)) + 1
+        al = al.transform((w, h2), Image.AFFINE, (1, 0, 0, -shear, 1, 0), resample=Image.BICUBIC)
+        h = h2
+    layer = Image.new('RGB', (w, h), colour)
+    res.paste(layer, (r - w, t), al)
+    return (r - w, t, r, t + h)
 
 def zoom_sheet(before, after, polys, name):
     tiles = []
@@ -131,6 +171,8 @@ def zoom_sheet(before, after, polys, name):
     s.save(CHK / f'zoom_{name}.png')
 
 def main():
+    global ALPHA
+    ALPHA = descriptor_alpha()
     rng = np.random.default_rng(7)
     done = {}
     for fname, patches in PATCHES.items():
@@ -140,6 +182,10 @@ def main():
             kind = 'bright' if (fname.startswith('mockup_cleaning') and poly[0][1] > 600) else 'blue'
             a = patch(a, poly, mode, rng, kind)
         res = Image.fromarray(np.clip(a, 0, 255).round().astype(np.uint8))
+        for c in COMPOSITES.get(fname, []):
+            box, colour, where = c[:3]
+            got = composite(res, box, colour, ALPHA, c[3] if len(c) > 3 else 0.0)
+            print('  composite', where, 'at', got)
         stem = fname.rsplit('.', 1)[0]
         res.save(OUT / f'{stem}_retouched_v02.png', optimize=True)
         zoom_sheet(im, res, [p for p, _, _ in patches], stem)
