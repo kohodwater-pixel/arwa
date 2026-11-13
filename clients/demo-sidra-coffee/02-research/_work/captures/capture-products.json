@@ -1,0 +1,102 @@
+[
+  {
+    "name": "brew92-products",
+    "url": "https://www.brew92.com/products",
+    "title": "Brew92 Products",
+    "lang": "en / dir=ltr",
+    "fonts": [
+      "TheSansBoldCaps",
+      "TheSansArabicPlain",
+      "TheSansArabicBold"
+    ],
+    "textColours": [
+      "rgb(0, 0, 0)",
+      "rgb(18, 12, 14)",
+      "rgb(255, 255, 255)",
+      "rgb(0, 12, 219)"
+    ],
+    "backgroundColoursByArea": [
+      "rgb(201, 205, 208)",
+      "rgb(0, 12, 219)",
+      "rgb(255, 255, 255)"
+    ],
+    "screenshot": "/home/user/arwa/clients/demo-sidra-coffee/02-research/_work/captures2tmp/brew92-products.png",
+    "ok": true
+  },
+  {
+    "name": "brew92-product-cheetah",
+    "url": "https://www.brew92.com/productdetails/CHEETAH",
+    "title": "CHEETAH",
+    "lang": "en / dir=ltr",
+    "fonts": [
+      "TheSansArabicPlain",
+      "TheSansArabicBold"
+    ],
+    "textColours": [
+      "rgb(0, 12, 219)",
+      "rgb(255, 255, 255)",
+      "rgb(0, 0, 0)"
+    ],
+    "backgroundColoursByArea": [
+      "rgb(201, 205, 208)",
+      "rgb(255, 255, 255)",
+      "rgb(0, 12, 219)"
+    ],
+    "screenshot": "/home/user/arwa/clients/demo-sidra-coffee/02-research/_work/captures2tmp/brew92-product-cheetah.png",
+    "ok": true
+  },
+  {
+    "name": "camelstep-coffee",
+    "url": "https://camelstep.com/categories/1546862/coffee",
+    "title": "القهوة",
+    "lang": "ar / dir=rtl",
+    "fonts": [
+      "IBM Plex Sans Arabic",
+      "Arial"
+    ],
+    "textColours": [
+      "rgb(0, 0, 238)",
+      "rgb(0, 0, 0)",
+      "rgb(255, 255, 255)",
+      "rgb(54, 90, 122)",
+      "rgb(136, 136, 136)"
+    ],
+    "backgroundColoursByArea": [
+      "rgb(255, 255, 255)",
+      "rgb(54, 90, 122)",
+      "rgb(19, 63, 87)",
+      "rgb(239, 239, 239)",
+      "rgb(111, 66, 193)",
+      "rgb(241, 239, 254)"
+    ],
+    "screenshot": "/home/user/arwa/clients/demo-sidra-coffee/02-research/_work/captures2tmp/camelstep-coffee.png",
+    "ok": true
+  },
+  {
+    "name": "elixirbunn-products",
+    "url": "https://elixirbunn.com/products/",
+    "title": "جميع المنتجات | Elixir Bunn",
+    "lang": "ar / dir=rtl",
+    "fonts": [
+      "Changa",
+      "Arial"
+    ],
+    "textColours": [
+      "rgb(0, 0, 238)",
+      "rgb(0, 0, 0)",
+      "rgb(217, 44, 32)",
+      "rgb(255, 255, 255)",
+      "rgb(23, 92, 211)"
+    ],
+    "backgroundColoursByArea": [
+      "rgb(255, 255, 255)",
+      "rgb(239, 239, 239)",
+      "rgb(254, 228, 226)",
+      "rgb(111, 66, 193)",
+      "rgb(254, 248, 216)",
+      "rgb(209, 233, 255)"
+    ],
+    "screenshot": "/home/user/arwa/clients/demo-sidra-coffee/02-research/_work/captures2tmp/elixirbunn-products.png",
+    "ok": true
+  }
+]
