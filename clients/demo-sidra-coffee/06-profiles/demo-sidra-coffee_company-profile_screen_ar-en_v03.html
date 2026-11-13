@@ -34,7 +34,7 @@ body { color: var(--ink); background: var(--paper); font-family: var(--ar); }
 a { color: inherit; text-decoration: none; }
 
 /* ---------- master page ---------- */
-.page { width: 210mm; height: 297mm; padding: 40px var(--m) 40px; background: var(--paper); overflow: hidden;
+.page { width: 210mm; height: 297mm; padding: 40px var(--m) 24px; background: var(--paper); overflow: hidden;
         display: flex; flex-direction: column; direction: rtl; page-break-after: always; break-after: page; }
 .page:last-child { page-break-after: auto; break-after: auto; }
 /* seven columns, gutter = 1/5 column; in RTL column 1 is on the right */
@@ -194,7 +194,7 @@ h1.e { font-size: 40pt; line-height: 1.05; font-weight: 700; letter-spacing: -0.
       </div>
       <div class="g7">
         <div class="a"><p class="lab">القيم</p><p>على الموعد · كلام واضح · في صفّ المقهى · ضيافة</p></div>
-        <div class="e" lang="en"><p class="lab">Values</p><p>On schedule<br>Plain facts<br>On the café’s side<br>Hospitality</p></div>
+        <div class="e" lang="en"><p class="lab">Values</p><p>On schedule · Plain facts<br>On the café’s side · Hospitality</p></div>
       </div>
     </div>
   </div>

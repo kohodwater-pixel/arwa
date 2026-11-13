@@ -1,0 +1,33 @@
+/* Sidra Coffee — shared brand CSS v02 (SYSTEM TEST, fictional client).
+   Values mirror tokens.json. Paths are relative to 04-identity/03-system/. */
+@font-face { font-family: "IBM Plex Sans Arabic"; font-weight: 300; src: url("IBMPlexSansArabic-Light.ttf"); }
+@font-face { font-family: "IBM Plex Sans Arabic"; font-weight: 400; src: url("IBMPlexSansArabic-Regular.ttf"); }
+@font-face { font-family: "IBM Plex Sans Arabic"; font-weight: 500; src: url("IBMPlexSansArabic-Medium.ttf"); }
+@font-face { font-family: "IBM Plex Sans Arabic"; font-weight: 600; src: url("IBMPlexSansArabic-SemiBold.ttf"); }
+@font-face { font-family: "IBM Plex Sans Arabic"; font-weight: 700; src: url("IBMPlexSansArabic-Bold.ttf"); }
+/* Latin: official static IBM Plex Sans files (assets/fonts/ibmplexsans-static/) */
+@font-face { font-family: "IBM Plex Sans"; font-weight: 300; src: url("IBMPlexSans-Light.ttf"); }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 400; src: url("IBMPlexSans-Regular.ttf"); }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 500; src: url("IBMPlexSans-Medium.ttf"); }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 600; src: url("IBMPlexSans-SemiBold.ttf"); }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 700; src: url("IBMPlexSans-Bold.ttf"); }
+
+:root {
+  --paper: #F3ECE0; --crema: #E3C9A0; --ink: #1F1B18; --ember: #C23A20; --ash: #6F6861;
+  --ar: "IBM Plex Sans Arabic", "Noto Sans Arabic", "Geeza Pro", Tahoma, sans-serif;
+  --en: "IBM Plex Sans", "IBM Plex Sans Arabic", "Helvetica Neue", Arial, sans-serif;
+  --fig: "IBM Plex Sans", "IBM Plex Sans Arabic", Arial, sans-serif; /* large Latin figures: Light 300, regular width */
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { color: var(--ink); font-family: var(--en); }
+.ar { font-family: var(--ar); direction: rtl; text-align: right; letter-spacing: 0; }
+.en { font-family: var(--en); direction: ltr; text-align: left; }
+.cap-en { font-family: var(--en); font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; }
+/* the bar row, built in CSS: 7 bars, gap = 1/5 bar. Direction is forced LTR so the row never mirrors. */
+.bars { display: grid; grid-template-columns: repeat(7, 5fr); column-gap: calc(100% / 41); direction: ltr; }
+.bars i { background: var(--ink); display: block; }
+.bars i:nth-child(4) { background: var(--ember); }
+.bars.on-ember i:nth-child(4), .bars.on-ember.paper i { background: var(--paper); }
+.bars.on-ink i { background: var(--paper); }
+.bars.on-ink i:nth-child(4) { background: var(--ember); }

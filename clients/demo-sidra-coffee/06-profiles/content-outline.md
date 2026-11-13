@@ -2,7 +2,7 @@
 
 > **SYSTEM TEST — FICTIONAL CLIENT.** Invented data for testing Creative Agency OS.
 
-**Version:** v02 (after quality review r1; the v01 text is kept in `_archive/content-outline_v01.md`)  **Date:** 2026-11-13  **Prepared by:** Corporate Designer  **Status:** revised after review; Arabic not proofread by a native reader.
+**Version:** v03 (fix pass after review r2: full-name rule applied on page 2, English Values line break, 32 px spacing removed, HTML made self-contained with `assets/`; layout file `demo-sidra-coffee_company-profile_screen_ar-en_v03`. v02 layout files are in `_archive/`; the v01 text is kept in `_archive/content-outline_v01.md`)  **Date:** 2026-11-13  **Prepared by:** Corporate Designer  **Status:** revised after review; Arabic not proofread by a native reader.
 
 ## The job
 
@@ -45,7 +45,7 @@ Labels: **[V]** verified in the brief · **[S]** from the approved strategy (tes
 
 ### من نحن / About us
 
-- AR: سدرة محمصة قهوة مختصة من الرياض، تأسست عام 2023. نحمّص حبوب القهوة المختصة ونبيعها للمقاهي، وعبر الإنترنت لمن يحضّر قهوته في بيته. [V][D]
+- AR: سدرة للقهوة محمصة قهوة مختصة من الرياض، تأسست عام 2023. نحمّص حبوب القهوة المختصة ونبيعها للمقاهي، وعبر الإنترنت لمن يحضّر قهوته في بيته. [V][D]
   نحمّص كل أسبوع، وعلى طلبك أنت. [V, messaging]
 - EN: Sidra Coffee roastery is based in Riyadh and was founded in 2023. We roast specialty coffee beans and sell them to cafés, and online to people who brew at home. [V][D]
   We roast every week, to your order. [V, messaging]
@@ -58,7 +58,7 @@ Facts row (all [V]): 2023 سنة التأسيس / Founded · الرياض مقر
 - Vision AR [D]: أن نكون المحمصة التي تذكرها مقاهي الرياض المستقلة أولًا.
 - Mission EN [S]: To roast every order in the weekly roast, for Riyadh's independent cafés and for people who brew at home, and to help café teams brew it well.
 - Mission AR [D]: أن نحمّص كل طلب في تحميصة الأسبوع، لمقاهي الرياض المستقلة ولمن يحضّر قهوته في بيته، وأن نساعد فرق المقاهي على تحضيرها كما يجب.
-- Values [S], names only: على الموعد · كلام واضح · في صفّ المقهى · ضيافة / On schedule · Plain facts · On the café's side · Hospitality.
+- Values [S], names only: على الموعد · كلام واضح · في صفّ المقهى · ضيافة / On schedule · Plain facts · On the café's side · Hospitality. In the v03 layout the English is set on two lines, two values per line, with the line break in place of the middle separator (no line ends or starts on a "·").
 
 The vision is an ambition, not a claim; it is labelled "Vision" in the layout.
 
@@ -92,7 +92,7 @@ Deliberately left out: "We supply cafés, we do not compete with them" (not conf
 - Phone: **removed** in v02 until the client supplies a number. Email is the only enquiry channel.
 - Closing field: bilingual logo on Ember with the tagline.
 
-## A4 profile type ladder and spacing (v02)
+## A4 profile type ladder and spacing (v02, spacing revised in v03)
 
 The identity ladder in `04-identity/03-system/system.md` has four steps (caption 0.65, body 1, sub-head 1.6, display 5). On A4 with the English block held to three columns (about 73 mm), the display step (50 / 57.5 pt) does not fit a two-word title, and a step is needed between sub-head and display. The profile therefore uses this ladder. Steps marked **added** are not in `system.md` and need the identity-designer to record them there or replace them.
 
@@ -106,7 +106,8 @@ The identity ladder in `04-identity/03-system/system.md` has four steps (caption
 | Section title | 2.8 | 28 pt Bold, -1.5% | 32 pt Bold | 1.1 / 1.3 | **Added** |
 | Cover title | 4 | 40 pt Bold, -1.5% | 46 pt Bold | 1.05 / 1.3 | **Added** (display scaled to 80% to fit three columns) |
 
-- Spacing in v02 uses only the system steps 4, 8, 16, 24, 40, 64, 104 px. The 5, 6 and 12 px optical paddings of v01 are gone: Arabic and English blocks now share a first baseline through the grid instead.
-- Page margins: 64 px at the sides, 40 px top, 32 px bottom. 32 px is not a system step; it is kept so the footer sits at the same height on every page. Listed here as a known exception.
+- Spacing since v02 uses only the system steps 4, 8, 16, 24, 40, 64, 104 px. The 5, 6 and 12 px optical paddings of v01 are gone: Arabic and English blocks now share a first baseline through the grid instead.
+- Page margins (v03): 64 px at the sides, 40 px top, 24 px bottom. The 32 px bottom margin and the 32 px number indent on page 3 of v02 were not system steps; both are now 24 px. No exception remains. The footer sits at the same height on every page.
+- Handover (v03): the HTML loads its fonts and logos from `06-profiles/assets/` (`fonts/` with the two SIL OFL licence texts, `logo/`), so the `06-profiles` folder can be copied elsewhere and the file still opens correctly.
 - Item numbers 01 to 04 are 10 pt SemiBold in both blocks, on the heading baseline.
 - Captions at 6.5 / 7.5 pt follow the system but are small on screen; raised with the identity-designer, not changed here.

@@ -4,7 +4,7 @@
 
 > Single source of truth for this client. Read before every task; update when a decision is approved. Use `TBC` for unknowns and label assumptions.
 
-**Last updated:** 2026-11-13  **Current stage:** quality review round 3
+**Last updated:** 2026-11-13  **Current stage:** delivery package assembled and HELD (not released)
 
 ## 1. Client
 
@@ -23,8 +23,8 @@
 
 - **Scope and deliverables:** see `01-brief/brief.md` section 10 (small test scope)
 - **Languages:** bilingual (primary: Arabic)
-- **Timeline and key dates:**
-- **Mandatory elements and constraints:**
+- **Timeline and key dates:** system test, 2026-11-12 to 2026-11-13; no client dates
+- **Mandatory elements and constraints:** no imagery of people; avoid green-and-white combinations close to large international coffee chains (brief, Additional)
 
 ## 3. Strategy (approved: 2026-11-13, test approval by Creative Director — Direction A "The weekly roast")
 
@@ -43,7 +43,7 @@
 
 - **Tone in Arabic:** clear modern Arabic (فصحى مبسّطة) with light Gulf warmth [register is an assumption from research, to confirm]; direct, specific, peer to peer; written natively, not translated. Common coffee terms stay in Latin script where people use them (V60, espresso).
 - **Tone in English:** plain, specific, short sentences; confident without superlatives; same facts as the Arabic, not a literal rendering of it.
-- **Words we use / avoid:** Use: محمصة، يُحمَّص لطلبك، كل أسبوع، على الموعد، طازجة / roastery, roasted to order, every week, on schedule, fresh. Avoid: الأفضل، الأجود، رقم 1، فاخر، حصري، شغف، رحلة / best, finest, premium, award-winning, passion, journey; any claim about awards, customers, certifications or Saudi-grown beans.
+- **Words we use / avoid:** Use: محمصة، يُحمَّص لطلبك، كل أسبوع، طازجة / roastery, roasted to order, every week, fresh. ("On schedule / على الموعد" stays a value but is not used in public copy until roast and delivery days can be published.) Avoid: الأفضل، الأجود، رقم 1، فاخر، حصري، شغف، رحلة / best, finest, premium, award-winning, passion, journey; any claim about awards, customers, certifications or Saudi-grown beans.
 - **Numerals:** Western (0123)
 
 ## 5. Visual identity (v03 accepted for system test only, 2026-11-13 — not client-approved)
@@ -85,9 +85,10 @@
 | 2026-11-13 | Art-director rulings (amendment 02): logo animation v01 APPROVED (poster frame required); icon v02 confirmed, with the stacked pattern and icon exempt from the "one lit bar, always seven" misuse rule (the rule counts per row); 132 px headline approved as the maximum for 1080-wide social formats; distinctiveness verdicts countersigned by the art-director (`distinctiveness-check_v02.md`). Confirmed: within one screenful the Ember button replaces the Ember field or headline; a persistent header button is Ink. Captions on screen-only pieces have a 9 px floor | art-director / Creative Director |
 | 2026-11-13 | Logo animation: v01 MP4 stands as the approved film; the v02 candidate (0.20 s fill) is held in `05-designs/logo-animation/_archive/` until a person has played both. Poster frame file name `..._logo-animation_poster_ar_v01.png` accepted | Creative Director |
 | 2026-11-13 | Quality review round 3: identity v03, logo animation v01 and landing page v02 PASS WITH MINOR FIXES. All six deliverables now pass with no critical or major issue open. Report: `08-final-delivery/_reviews/review_identity-animation-landing_2026-11-13_r3.md`. Rulings: (n) replies to enquiries are by email (test confirmation); (o) on the landing page the bar row moves to the foot of the "how it works" section so no bar sits over a step; (p) the in-place re-export of the logo PNGs at whole-pixel sizes is accepted and logged; (q) full-name rule recorded in section 5. STANDING HOLDS on client delivery: native Arabic proofread by a person; someone must watch the animation played back | Creative Director |
+| 2026-11-13 | Package review round 4 FAILED the delivery package (strategy missing, sources not collected). Actions: strategy summary v02 written and exported (PDF); profile v03 and presentation v03 apply the full-name rule; landing page v03 and guidelines v04 confirmed fixed; sources collected as self-contained folders; package rebuilt. Rulings: (r) file names keep version numbers and are NOT renamed `final`, because no client has approved anything; (s) the two identity applications are accepted as previews inside the guidelines for the test, and reviewed files are required for a real client; (t) the positioning statement keeps "rather than around its own café counters" as an internal description, never as published copy; (u) the tagline is used on wholesale-facing material only until roast-to-order for single online orders is confirmed. Report: `08-final-delivery/_reviews/review_delivery-package_2026-11-13_r4.md` | Creative Director |
 
 ## 7. Deliveries
 
 | Date | What was delivered | Where |
 |---|---|---|
-| 2026-11-13 | Internal delivery package assembled after review round 3 — HELD, not released to a client (see its README for the six conditions) | `08-final-delivery/` |
+| 2026-11-13 | Internal delivery package assembled after review round 3 — HELD, not released to a client (see its README for the eight conditions) | `08-final-delivery/` |

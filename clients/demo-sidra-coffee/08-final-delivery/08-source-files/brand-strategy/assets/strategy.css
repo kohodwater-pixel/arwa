@@ -1,0 +1,19 @@
+@font-face{font-family:"Plex";src:url("IBMPlexSans-Regular.ttf");font-weight:400}
+@font-face{font-family:"Plex";src:url("IBMPlexSans-SemiBold.ttf");font-weight:600}
+@font-face{font-family:"Plex";src:url("IBMPlexSans-Bold.ttf");font-weight:700}
+@font-face{font-family:"PlexAr";src:url("IBMPlexSansArabic-Regular.ttf");font-weight:400}
+@font-face{font-family:"PlexAr";src:url("IBMPlexSansArabic-SemiBold.ttf");font-weight:600}
+@font-face{font-family:"PlexAr";src:url("IBMPlexSansArabic-Bold.ttf");font-weight:700}
+@page{size:A4;margin:18mm 18mm 20mm}
+body{font-family:"Plex","PlexAr",sans-serif;font-size:10pt;line-height:1.55;color:#1F1B18;background:#fff;margin:0}
+h1{font-size:22pt;line-height:1.2;margin:0 0 8pt;border-bottom:3pt solid #C23A20;padding-bottom:8pt}
+h2{font-size:13pt;margin:16pt 0 5pt;break-after:avoid}
+h3{font-size:10.5pt;margin:10pt 0 3pt;break-after:avoid}
+p,li,td,th,blockquote{unicode-bidi:plaintext;text-align:start}
+table{border-collapse:collapse;width:100%;margin:6pt 0 10pt;font-size:9pt;break-inside:auto}
+tr{break-inside:avoid}
+th,td{border-top:0.75pt solid #1F1B18;padding:4pt 6pt;vertical-align:top}
+th{font-weight:600;background:#F3ECE0}
+blockquote{margin:6pt 0;padding:6pt 10pt;background:#F3ECE0;border-inline-start:3pt solid #C23A20}
+code{font-family:"Plex";font-size:9pt;background:#F3ECE0;padding:0 2pt}
+ul,ol{padding-inline-start:16pt;margin:4pt 0}

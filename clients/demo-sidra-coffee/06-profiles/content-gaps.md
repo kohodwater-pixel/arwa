@@ -51,4 +51,4 @@ Nothing in this list was invented or filled in. Each item is left out of the pro
 |---|---|---|
 | D1 | Identity v01 is accepted for the system test only, not client-ready | Profile inherits this status |
 | D2 | Latin logo line "SIDRA COFFEE" pending review against "SIDRA ROASTERY" | Logo files used as they are |
-| D3 | Latin fonts | v02 loads the official static IBM Plex Sans files from `assets/fonts/ibmplexsans-static/` (SIL OFL) |
+| D3 | Latin fonts | v03 loads the official static IBM Plex Sans files from copies in `06-profiles/assets/fonts/ibmplexsans-static/` (SIL OFL, licence text beside them; source: repo `assets/fonts/ibmplexsans-static/`) |
