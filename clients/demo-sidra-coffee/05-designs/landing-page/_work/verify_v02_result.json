@@ -1,0 +1,178 @@
+{
+ "mobile-390": {
+  "loadRequests": [
+   "./index.html",
+   "./styles.css",
+   "./assets/demo-sidra-coffee_logo_primary-colour_ar_v01.svg",
+   "./assets/demo-sidra-coffee_logo_primary-colour-reversed_ar_v01.svg",
+   "./assets/fonts/IBMPlexSans-Regular.ttf",
+   "./assets/fonts/IBMPlexSans-SemiBold.ttf",
+   "./assets/fonts/IBMPlexSans-Bold.ttf",
+   "./assets/fonts/IBMPlexSans-Medium.ttf",
+   "./assets/fonts/IBMPlexSans-Light.ttf",
+   "./assets/fonts/IBMPlexSansArabic-SemiBold.ttf",
+   "./assets/fonts/IBMPlexSansArabic-Regular.ttf",
+   "./assets/fonts/IBMPlexSansArabic-Bold.ttf",
+   "./assets/fonts/IBMPlexSansArabic-Medium.ttf"
+  ],
+  "outsideFolder": [],
+  "failed": [],
+  "default": {
+   "scrollWidth": 390,
+   "clientWidth": 390,
+   "overflowing": [],
+   "faces": [
+    "IBM Plex Sans Arabic 400 loaded",
+    "IBM Plex Sans Arabic 500 loaded",
+    "IBM Plex Sans Arabic 600 loaded",
+    "IBM Plex Sans Arabic 700 loaded",
+    "IBM Plex Sans 300 loaded",
+    "IBM Plex Sans 400 loaded",
+    "IBM Plex Sans 500 loaded",
+    "IBM Plex Sans 600 loaded",
+    "IBM Plex Sans 700 loaded"
+   ],
+   "h1": "48.75px / 700 / 100%",
+   "body": "18px / 400 / 100%",
+   "sub": "28px / 500 / 100%",
+   "caption": "15px / 400 / 100%",
+   "stepNum": "64px / 300 / 100%",
+   "h1LineWidths": [
+    342,
+    342
+   ],
+   "h1ColumnWidth": 342,
+   "targetsUnder44": [],
+   "emberNonBarElements": [
+    "A.btn btn--primary y=432",
+    "BUTTON.btn btn--primary y=3318"
+   ],
+   "hasSampleWord": false,
+   "pageHeight": 3961,
+   "letterSpacings": [
+    "normal"
+   ]
+  },
+  "error": {
+   "summaryVisible": true,
+   "focusOnSummary": "form-summary",
+   "items": [
+    "اكتب اسمك.",
+    "اكتب اسم المقهى.",
+    "اكتب بريدًا صحيحًا، مثل name@example.com"
+   ],
+   "invalid": [
+    "f-name",
+    "f-cafe",
+    "f-email"
+   ],
+   "scrollWidth": 390
+  },
+  "badEmail": [
+   "f-email"
+  ],
+  "loadingLabel": "جارٍ الإرسال…",
+  "success": {
+   "formHidden": true,
+   "focus": "success-title",
+   "text": "وصلنا استفسارك. | سنردّ عليك على البريد الذي كتبته. | أرسل استفسارًا آخر | نموذج أولي للعرض: لم تُرسَل أي بيانات.",
+   "scrollWidth": 390
+  },
+  "requestsAfterSubmits": 0,
+  "urlUnchanged": true,
+  "reset": {
+   "formVisible": true,
+   "empty": true,
+   "button": "أرسل الاستفسار"
+  },
+  "consoleErrors": []
+ },
+ "desktop-1440": {
+  "loadRequests": [
+   "./index.html",
+   "./styles.css",
+   "./assets/demo-sidra-coffee_logo_primary-colour_ar_v01.svg",
+   "./assets/demo-sidra-coffee_logo_primary-colour-reversed_ar_v01.svg",
+   "./assets/fonts/IBMPlexSans-Regular.ttf",
+   "./assets/fonts/IBMPlexSans-Medium.ttf",
+   "./assets/fonts/IBMPlexSans-SemiBold.ttf",
+   "./assets/fonts/IBMPlexSans-Bold.ttf",
+   "./assets/fonts/IBMPlexSans-Light.ttf",
+   "./assets/fonts/IBMPlexSansArabic-Medium.ttf",
+   "./assets/fonts/IBMPlexSansArabic-SemiBold.ttf",
+   "./assets/fonts/IBMPlexSansArabic-Regular.ttf",
+   "./assets/fonts/IBMPlexSansArabic-Bold.ttf"
+  ],
+  "outsideFolder": [],
+  "failed": [],
+  "default": {
+   "scrollWidth": 1440,
+   "clientWidth": 1440,
+   "overflowing": [],
+   "faces": [
+    "IBM Plex Sans Arabic 400 loaded",
+    "IBM Plex Sans Arabic 500 loaded",
+    "IBM Plex Sans Arabic 600 loaded",
+    "IBM Plex Sans Arabic 700 loaded",
+    "IBM Plex Sans 300 loaded",
+    "IBM Plex Sans 400 loaded",
+    "IBM Plex Sans 500 loaded",
+    "IBM Plex Sans 600 loaded",
+    "IBM Plex Sans 700 loaded"
+   ],
+   "h1": "115px / 700 / 100%",
+   "body": "23px / 400 / 100%",
+   "sub": "37px / 500 / 100%",
+   "caption": "15px / 400 / 100%",
+   "stepNum": "88px / 300 / 100%",
+   "h1LineWidths": [
+    736,
+    736
+   ],
+   "h1ColumnWidth": 736,
+   "targetsUnder44": [],
+   "emberNonBarElements": [
+    "A.btn btn--primary y=686",
+    "BUTTON.btn btn--primary y=3072"
+   ],
+   "hasSampleWord": false,
+   "pageHeight": 3486,
+   "letterSpacings": [
+    "normal"
+   ]
+  },
+  "error": {
+   "summaryVisible": true,
+   "focusOnSummary": "form-summary",
+   "items": [
+    "اكتب اسمك.",
+    "اكتب اسم المقهى.",
+    "اكتب بريدًا صحيحًا، مثل name@example.com"
+   ],
+   "invalid": [
+    "f-name",
+    "f-cafe",
+    "f-email"
+   ],
+   "scrollWidth": 1440
+  },
+  "badEmail": [
+   "f-email"
+  ],
+  "loadingLabel": "جارٍ الإرسال…",
+  "success": {
+   "formHidden": true,
+   "focus": "success-title",
+   "text": "وصلنا استفسارك. | سنردّ عليك على البريد الذي كتبته. | أرسل استفسارًا آخر | نموذج أولي للعرض: لم تُرسَل أي بيانات.",
+   "scrollWidth": 1440
+  },
+  "requestsAfterSubmits": 0,
+  "urlUnchanged": true,
+  "reset": {
+   "formVisible": true,
+   "empty": true,
+   "button": "أرسل الاستفسار"
+  },
+  "consoleErrors": []
+ }
+}
