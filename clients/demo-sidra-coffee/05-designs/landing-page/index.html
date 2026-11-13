@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<!-- Sidra Coffee — wholesale landing page prototype v01. SYSTEM TEST, fictional client. The form does not send data anywhere. -->
+<!-- Sidra Coffee — wholesale landing page prototype v02. SYSTEM TEST, fictional client. The form does not send data anywhere. -->
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>سدرة للقهوة — توريد المقاهي: تُحمَّص لطلبك، كل أسبوع</title>
-  <meta name="description" content="سدرة محمصة قهوة مختصة من الرياض، تحمّص طلب مقهاك في تحميصة الأسبوع.">
+  <meta name="description" content="سدرة محمصة قهوة مختصة من الرياض، تحمّص طلب مقهاك في تحميصة الأسبوع. اسألنا عن التوريد بالجملة.">
   <meta name="robots" content="noindex">
-  <link rel="icon" type="image/svg+xml" href="assets/demo-sidra-coffee_logo_icon-small-colour_ar-en_v01.svg">
+  <link rel="icon" type="image/svg+xml" href="assets/demo-sidra-coffee_logo_icon-colour_ar-en_v02.svg">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,13 +16,13 @@
   <header class="header">
     <div class="wrap">
       <a class="header__logo" href="#main" aria-label="سدرة للقهوة، أعلى الصفحة">
-        <img src="assets/demo-sidra-coffee_logo_primary-colour_ar_v01.svg" alt="سدرة للقهوة" width="97" height="56">
+        <img src="assets/demo-sidra-coffee_logo_primary-colour_ar_v01.svg" alt="سدرة للقهوة" width="83" height="48">
       </a>
       <nav class="nav" aria-label="أقسام الصفحة">
         <a href="#how">كيف نحمّص</a>
         <a href="#offer">ما نقدّمه</a>
       </nav>
-      <a class="btn btn--small" href="#contact">اطلب عيّنة</a>
+      <a class="btn btn--small" href="#contact">استفسر عن التوريد</a>
     </div>
   </header>
 
@@ -34,7 +34,7 @@
           <h1 id="hero-title"><span>تُحمَّص لطلبك،</span> <span>كل أسبوع.</span></h1>
           <p class="hero__lead">سدرة محمصة قهوة مختصة من الرياض، تحمّص طلب مقهاك في تحميصة الأسبوع.</p>
           <div class="hero__actions">
-            <a class="btn btn--primary" href="#contact">اطلب عيّنة لمقهاك</a>
+            <a class="btn btn--primary" href="#contact">استفسر عن التوريد بالجملة</a>
             <a class="text-link" href="#how">كيف نحمّص؟</a>
           </div>
           <p class="caption">الرياض، المملكة العربية السعودية · تأسّست عام 2023</p>
@@ -88,11 +88,11 @@
           </div>
           <div class="offer__row">
             <dt class="label">دورات الباريستا</dt>
-            <dd>دورات قصيرة لفريق مقهاك، ليخرج الكوب كما يجب.</dd>
+            <dd>دورات قصيرة لفريق مقهاك.</dd>
           </div>
           <div class="offer__row">
             <dt class="label">اشتراك القهوة الشهري</dt>
-            <dd>لمن يحضّر قهوته في بيته: اشترك، وتصلك قهوتك كل شهر.</dd>
+            <dd>لمن يحضّر قهوته في بيته: توصيل شهري إلى البيت.</dd>
           </div>
         </dl>
       </div>
@@ -101,17 +101,17 @@
     <section class="section contact" id="contact" aria-labelledby="contact-title">
       <div class="wrap">
         <div class="contact__head">
-          <h2 class="h-sub" id="contact-title">اطلب عيّنة، أو اسألنا.</h2>
-          <p>اكتب لنا عن مقهاك، ونردّ عليك على بريدك.</p>
+          <h2 class="h-sub" id="contact-title">اسألنا عن التوريد لمقهاك.</h2>
+          <p>اكتب لنا عن مقهاك وما يحتاجه، ونردّ عليك على بريدك.</p>
         </div>
         <div class="contact__grid">
           <div class="contact__main">
             <!-- No action attribute and no network call: the prototype never submits. -->
-            <form class="form" id="sample-form" novalidate>
+            <form class="form" id="enquiry-form" novalidate>
               <p class="field__hint">كل الحقول مطلوبة، إلا ما كُتب بجانبه (اختياري).</p>
 
               <div class="form__summary" id="form-summary" role="alert" tabindex="-1">
-                <p class="label">لم يُرسَل الطلب. راجع هذه الحقول:</p>
+                <p class="label">لم يُرسَل الاستفسار. راجع هذه الحقول:</p>
                 <ul id="form-summary-list"></ul>
               </div>
 
@@ -128,44 +128,30 @@
                 </div>
               </div>
 
-              <div class="form__row">
-                <div class="field" data-field="email">
-                  <label for="f-email">البريد الإلكتروني</label>
-                  <input type="email" id="f-email" name="email" dir="ltr" autocomplete="email" inputmode="email" required aria-describedby="e-email">
-                  <p class="field__error" id="e-email">خطأ: اكتب بريدًا صحيحًا، مثل <span class="ltr">name@example.com</span></p>
-                </div>
-                <div class="field" data-field="phone">
-                  <label for="f-phone">رقم الجوال <span class="optional">(اختياري)</span></label>
-                  <input type="tel" id="f-phone" name="phone" dir="ltr" autocomplete="tel" inputmode="tel">
-                </div>
+              <div class="field" data-field="email">
+                <label for="f-email">البريد الإلكتروني</label>
+                <input type="email" id="f-email" name="email" dir="ltr" autocomplete="email" inputmode="email" required aria-describedby="e-email h-email">
+                <p class="field__hint" id="h-email">نردّ على استفسارك على هذا البريد.</p>
+                <p class="field__error" id="e-email">خطأ: اكتب بريدًا صحيحًا، مثل <span class="ltr">name@example.com</span></p>
               </div>
 
-              <fieldset class="field" data-field="want" style="border:0">
-                <legend>ماذا تريد؟</legend>
-                <div class="choices">
-                  <label class="choice"><input type="radio" name="want" value="sample" required aria-describedby="e-want"> عيّنة من القهوة</label>
-                  <label class="choice"><input type="radio" name="want" value="contact"> أن تتواصلوا معي بخصوص التوريد</label>
-                </div>
-                <p class="field__error" id="e-want">خطأ: اختر واحدًا من الخيارين.</p>
-              </fieldset>
-
               <div class="field" data-field="notes">
-                <label for="f-notes">ملاحظات <span class="optional">(اختياري)</span></label>
+                <label for="f-notes">ما الذي يحتاجه مقهاك؟ <span class="optional">(اختياري)</span></label>
                 <textarea id="f-notes" name="notes" rows="4" aria-describedby="h-notes"></textarea>
-                <p class="field__hint" id="h-notes">مثلًا: طريقة التحضير في مقهاك، إسبريسو أو V60.</p>
+                <p class="field__hint" id="h-notes">مثلًا: الكمية التي يحتاجها مقهاك في الأسبوع، وطريقة التحضير.</p>
               </div>
 
               <div class="form__actions">
-                <button class="btn btn--primary" type="submit" id="submit-btn">أرسل الطلب</button>
+                <button class="btn btn--primary" type="submit" id="submit-btn">أرسل الاستفسار</button>
                 <span class="visually-hidden" id="form-status" role="status" aria-live="polite"></span>
               </div>
             </form>
 
             <div class="success on-ink" id="form-success" role="status">
               <div class="bars bars--rule" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-              <h3 id="success-title" tabindex="-1">وصلنا طلبك.</h3>
+              <h3 id="success-title" tabindex="-1">وصلنا استفسارك.</h3>
               <p>سنردّ عليك على البريد الذي كتبته.</p>
-              <button class="btn" type="button" id="reset-btn">أرسل طلبًا آخر</button>
+              <button class="btn" type="button" id="reset-btn">أرسل استفسارًا آخر</button>
               <p class="success__note" data-prototype-note>نموذج أولي للعرض: لم تُرسَل أي بيانات.</p>
             </div>
           </div>
@@ -196,7 +182,7 @@
   <script>
     // Prototype behaviour only: validates in the browser, never sends data anywhere.
     (function () {
-      var form = document.getElementById('sample-form');
+      var form = document.getElementById('enquiry-form');
       var summary = document.getElementById('form-summary');
       var list = document.getElementById('form-summary-list');
       var success = document.getElementById('form-success');
@@ -207,8 +193,7 @@
       var checks = [
         { key: 'name',  target: 'f-name',  ok: function () { return form.elements.name.value.trim() !== ''; } },
         { key: 'cafe',  target: 'f-cafe',  ok: function () { return form.elements.cafe.value.trim() !== ''; } },
-        { key: 'email', target: 'f-email', ok: function () { return emailRe.test(form.elements.email.value.trim()); } },
-        { key: 'want',  target: null,      ok: function () { return form.elements.want.value !== ''; } }
+        { key: 'email', target: 'f-email', ok: function () { return emailRe.test(form.elements.email.value.trim()); } }
       ];
 
       function fieldEl(key) { return form.querySelector('[data-field="' + key + '"]'); }
@@ -229,12 +214,11 @@
         });
         list.innerHTML = '';
         bad.forEach(function (c) {
-          var el = fieldEl(c.key);
-          var input = c.target ? document.getElementById(c.target) : el.querySelector('input');
+          var input = document.getElementById(c.target);
           var li = document.createElement('li');
           var a = document.createElement('a');
-          a.href = '#' + (c.target || 'e-want');
-          a.textContent = el.querySelector('.field__error').textContent.replace('خطأ: ', '');
+          a.href = '#' + c.target;
+          a.textContent = fieldEl(c.key).querySelector('.field__error').textContent.replace('خطأ: ', '');
           a.addEventListener('click', function (e) { e.preventDefault(); input.focus(); });
           li.appendChild(a);
           list.appendChild(li);
@@ -268,7 +252,7 @@
         checks.forEach(function (c) { setInvalid(c.key, false); });
         summary.classList.remove('is-visible');
         btn.removeAttribute('aria-disabled');
-        btn.textContent = 'أرسل الطلب';
+        btn.textContent = 'أرسل الاستفسار';
         status.textContent = '';
         success.classList.remove('is-visible');
         form.classList.remove('is-hidden');
