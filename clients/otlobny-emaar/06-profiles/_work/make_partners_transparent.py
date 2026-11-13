@@ -13,22 +13,24 @@ S8 = np.ones((3, 3), bool)
 
 # per-logo settings. counters: 'all' | 'none' | dict(min_area=, simple=True, box=(x0,y0,x1,y1) fractions)
 D = dict(tol=14, lo=4, k=2, floor=50, counters='none')
-LOW = dict(tol=18, kmax=3)
-KEEP = dict(kmax=0)            # white belongs to the mark: no wide de-fringe band
+LOW = dict(tol=18, t2=70)
+KEEP = dict(t2=40)             # white belongs to the mark: cautious soft flood
+VEC = dict(tol=8, t2=30, speck=0)
 CFG = {
- 'existing-01': dict(KEEP, tol=18), 'existing-02': dict(counters='all', k=3, kmax=7), 'existing-03': dict(LOW, counters='all', tol=24),
- 'existing-04': dict(counters='all', tol=8), 'existing-05': dict(LOW, counters=dict(min_area=60)),
- 'existing-06': dict(counters='all', tol=8), 'existing-07': dict(KEEP, tol=18),
- 'existing-08': dict(KEEP, tol=10, lo=3, counters=dict(min_area=40)),
+ 'existing-01': dict(KEEP, tol=18, t2=30), 'existing-02': dict(counters='all', k=3, r=7, t2=70),
+ 'existing-03': dict(LOW, counters='all', tol=24),
+ 'existing-04': dict(VEC, counters='all'), 'existing-05': dict(LOW, counters=dict(min_area=60)),
+ 'existing-06': dict(VEC, counters='all'), 'existing-07': dict(KEEP, tol=18),
+ 'existing-08': dict(KEEP, tol=10, lo=3, t2=30, counters=dict(min_area=40)),
  'existing-09': dict(LOW, counters='all'), 'existing-10': dict(LOW, counters='all'), 'existing-11': dict(LOW, counters='all'),
- 'existing-12': dict(counters='all'), 'existing-13': dict(KEEP, tol=8, hull=[(0.30, 0.0, 0.70, 0.47)]),
- 'existing-14': dict(counters='all', tol=8),
- 'existing-15': dict(KEEP, tol=18, shadow=7), 'existing-16': dict(KEEP, tol=8, counters=dict(box=(0, .76, 1, 1))),
- 'existing-17': dict(KEEP), 'existing-18': dict(LOW, counters='all'),
- 'new-01': dict(counters='all', tol=18), 'new-02': dict(counters='all', tol=18),
+ 'existing-12': dict(counters='all'), 'existing-13': dict(VEC, hull=[(0.30, 0.0, 0.70, 0.47)]),
+ 'existing-14': dict(VEC, counters='all'),
+ 'existing-15': dict(KEEP, tol=18, shadow=1), 'existing-16': dict(VEC, counters=dict(box=(0, .76, 1, 1))),
+ 'existing-17': dict(KEEP, t2=70), 'existing-18': dict(LOW, counters='all'),
+ 'new-01': dict(counters='all', tol=18, t2=70), 'new-02': dict(counters='all', tol=18),
  'new-04': dict(KEEP, counters=dict(simple=True), tol=18, k=3), 'new-05': dict(KEEP, tol=26, k=3, counters=dict(box=(0, .84, 1, 1))),
  'new-06': dict(KEEP, tol=18, k=3),
- 'new-07': dict(counters='all', tol=16), 'new-08': dict(counters='all', tol=18),
+ 'new-07': dict(counters='all', tol=16, t2=70), 'new-08': dict(counters='all', tol=18),
 }
 try:
     sys.path.insert(0, WORK); from partners_overrides import OV  # optional per-logo overrides
@@ -44,7 +46,8 @@ def cut(a, c):
     cfg = dict(D); cfg.update(c)
     a = a.astype(float); bg = bgcol(a)
     d = np.abs(a - bg).max(2)
-    near = d <= cfg['tol']
+    near = d <= cfg['tol']; prot = np.zeros_like(near)
+    chroma = a.max(2) - a.min(2); shm = (chroma <= 28) & (a.min(2) >= 110) & ~near if cfg.get('shadow') else np.zeros_like(near)
     if cfg.get('protect') is not None:      # boxes (fractions) where near-bg pixels are never background
         h, w = d.shape
         for x0, y0, x1, y1 in cfg['protect']:
@@ -57,10 +60,10 @@ def cut(a, c):
             ys, xs = np.nonzero(sub & (d > 60)); pts = np.c_[xs, ys]
             hv = pts[ConvexHull(pts).vertices]
             m = Image.new('L', (w, h), 0); ImageDraw.Draw(m).polygon([tuple(map(int, q)) for q in hv], fill=1)
-            near[np.array(m, bool)] = False
-    lab, n = ndi.label(near, S8)
+            near[np.array(m, bool)] = False; prot |= np.array(m, bool)
+    lab, n = ndi.label(near | shm, S8)      # a soft grey shadow is passable, and is given its own alpha below
     edge = np.unique(np.concatenate([lab[0], lab[-1], lab[:, 0], lab[:, -1]]))
-    B = np.isin(lab, edge[edge > 0])
+    Bx = np.isin(lab, edge[edge > 0]); B = Bx & near; SH = Bx & shm
     cnt = cfg['counters']; cleared = 0
     if cnt != 'none':
         h, w = d.shape
@@ -86,18 +89,23 @@ def cut(a, c):
     inner = B & ndi.binary_dilation(~B, S8, iterations=k)          # background side of the boundary
     alpha = np.ones_like(d); alpha[B] = 0
     alpha[band] = soft[band]; alpha[inner] = soft[inner]
-    kmax = cfg.get('kmax', 6)
-    if kmax > k:                                                   # de-fringe: leftover light ringing a little further out
-        dm2 = np.maximum(ndi.maximum_filter(d, size=2*kmax + 3), cfg['floor'])
-        s2 = np.clip((d - cfg['lo']) / (dm2 - cfg['lo']), 0, 1)
-        wide = ndi.binary_dilation(B, S8, iterations=kmax) & ~B & ~band & (s2 < 0.6)
-        alpha[wide] = s2[wide]
-    if cfg.get('shadow'):                                          # soft grey shadow on white -> its own darkness as alpha
-        ch = a.max(2) - a.min(2)
-        sh = ndi.binary_dilation(B, S8, iterations=cfg['shadow']) & ~B & (ch <= 28) & (a.min(2) >= 110)
-        lab3, _ = ndi.label(sh | B, S8)                            # only shadow that is connected to the background
-        sh &= np.isin(lab3, np.unique(lab3[B]))
-        alpha[sh] = np.minimum(alpha[sh], (d / np.abs(bg - 0).max())[sh])
+    # soft flood: weak (light) pixels reachable from the background get alpha = their distance from the
+    # background colour relative to the strongest mark pixel nearby. Composited on the old ground this is exact.
+    t2, R = cfg.get('t2', 60), cfg.get('r', 4)
+    weak = ((d <= t2) & ~prot) | B
+    lab3, _ = ndi.label(weak, S8)
+    S = np.isin(lab3, np.unique(lab3[B])) & ~B
+    ref2 = np.maximum(ndi.maximum_filter(d, size=2*R + 1), cfg['floor'])
+    s2 = np.clip((d - cfg['lo']) / (ref2 - cfg['lo']), 0, 1)
+    alpha[S] = np.minimum(alpha, s2)[S]
+    if SH.any():
+        alpha[SH] = np.minimum(alpha, d / 255.0)[SH]
+    sp = cfg.get('speck', 45)                                      # isolated compression specks off the mark
+    if sp:
+        lab4, n4 = ndi.label(alpha > 0, S8)
+        if n4:
+            mx = ndi.maximum(d, lab4, index=np.arange(1, n4 + 1))
+            alpha[np.isin(lab4, np.nonzero(mx < sp)[0] + 1)] = 0
     alpha[alpha < 0.03] = 0
     aa = np.maximum(alpha, 1e-6)[..., None]
     rgb = np.clip(bg + (a - bg) / aa, 0, 255)                      # un-premultiply against the background colour

@@ -80,3 +80,7 @@ Result on a dark ground, as seen on the navy sheet:
 - **Colour clash, not a defect of the cut-out:** marks that are themselves navy, charcoal or black nearly disappear on navy — Imagine More's lettering, Madinah Chamber's calligraphy, Novotel, Al Maqar's wordmark, HSH's rolling pin, the calligraphic mark, Tiny House, Platinum's Latin line, Keeta, ZERO (charcoal version), Manazil's text.
 
 Recommendation for the layout: place the transparent logos on white or a very light ground. A dark partner page would need white/negative versions from the logo owners, which do not exist here and must not be made by us.
+
+## Note on the transparent set — 2026-11-13 (Creative Director)
+
+Two agents produced a transparent set because of a dispatch mistake by the Creative Director. The files now in `assets/partners-transparent/` are the SECOND agent's output (script `_work/make_partners_transparent.py`, final run 17:07), which overwrote the first. The "Transparent set" section above describes the first agent's method and is kept only as a record; where the two differ, the per-logo table in the second agent's handoff applies. Both sets were checked on a white ground and read the same as their sources. The set is for white or very light grounds only: on dark grounds six low-resolution logos look rough (existing-01, 03, 08, 15, new-05, new-07) and dark marks lose contrast.
