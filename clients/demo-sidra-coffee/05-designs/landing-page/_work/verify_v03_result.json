@@ -1,0 +1,600 @@
+{
+ "favicon": {
+  "href": "assets/demo-sidra-coffee_logo_icon-small-colour_ar-en_v01.svg",
+  "exists": true,
+  "otherIconRefs": [
+   "logo_icon-small-colour_ar-en_v01.svg"
+  ],
+  "middleRowAt16px": ".IIIIIIEEIIIIII."
+ },
+ "nameRule": {
+  "total": 7,
+  "standalone": 0
+ },
+ "tokensV02Mentions": [
+  "index.html: 0",
+  "styles.css: 0",
+  "handoff-notes.md: 1"
+ ],
+ "desktop-1440": {
+  "outsideFolder": [],
+  "failed": [],
+  "default": {
+   "scrollWidth": 1440,
+   "clientWidth": 1440,
+   "overflowing": [],
+   "textWiderThanBox": [],
+   "faces": "9 faces, all loaded",
+   "h1": "115px / 700",
+   "body": "23px / 400",
+   "h1Lines": [
+    {
+     "text": "تُحمَّص لطلبك،",
+     "advanceWidth": 702,
+     "top": 241,
+     "bottom": 391,
+     "boxWidth": 723
+    },
+    {
+     "text": "كل أسبوع.",
+     "advanceWidth": 477,
+     "top": 390.5,
+     "bottom": 540.5,
+     "boxWidth": 723
+    }
+   ],
+   "textEdgeRight": 1376,
+   "textEdgeLeft": 640,
+   "captionRight": 1376,
+   "stepLines": [
+    {
+     "title": [
+      "ترسل طلبك"
+     ],
+     "text": [
+      "تخبرنا بما يحتاجه مقهاك: محاصيل مفردة",
+      "أو خلطات البيت، بأكياس 250 غ أو 1 كغ."
+     ]
+    },
+    {
+     "title": [
+      "نحمّصه في تحميصة الأسبوع"
+     ],
+     "text": [
+      "طلبك يدخل تحميصة ذلك",
+      "الأسبوع، ويُحمَّص لك أنت."
+     ]
+    },
+    {
+     "title": [
+      "ويتكرّر كل أسبوع"
+     ],
+     "text": [
+      "التوريد أسبوعي: تحميصة جديدة لطلبك الجديد."
+     ]
+    }
+   ],
+   "heroLeadLines": [
+    "سدرة للقهوة محمصة قهوة مختصة من الرياض،",
+    "تحمّص طلب مقهاك في تحميصة الأسبوع."
+   ],
+   "howBars": {
+    "barsTop": 1433,
+    "stepsBottom": 1369,
+    "barsBelowSteps": true,
+    "gap": 64,
+    "litBarX": "640–800",
+    "sectionBottom": 1617
+   },
+   "targetsUnder44": [],
+   "emberNonBarElements": [
+    "A.btn btn--primary y=686",
+    "BUTTON.btn btn--primary y=3072"
+   ],
+   "hasSampleWord": false,
+   "pageHeight": 3486,
+   "letterSpacings": [
+    "normal"
+   ],
+   "minFontPx": 15,
+   "h1Ink": [
+    {
+     "text": "تُحمَّص لطلبك،",
+     "inkRight": 1366,
+     "inkLeft": 669,
+     "insideRightEdgeBy": 10,
+     "insideLeftEdgeBy": 29
+    },
+    {
+     "text": "كل أسبوع.",
+     "inkRight": 1376,
+     "inkLeft": 895,
+     "insideRightEdgeBy": 0,
+     "insideLeftEdgeBy": 255
+    }
+   ]
+  },
+  "error": {
+   "scrollWidth": 1440,
+   "clientWidth": 1440,
+   "overflowing": [],
+   "textWiderThanBox": [],
+   "focusOnSummary": "form-summary",
+   "items": [
+    "اكتب اسمك.",
+    "اكتب اسم المقهى.",
+    "اكتب بريدًا صحيحًا، مثل name@example.com"
+   ],
+   "invalid": [
+    "f-name",
+    "f-cafe",
+    "f-email"
+   ],
+   "emailError": {
+    "lineCount": 1,
+    "boxWidth": 736,
+    "fieldWidth": 736,
+    "exampleWidth": 155,
+    "exampleInsideField": true
+   }
+  },
+  "badEmail": [
+   "f-email"
+  ],
+  "loadingLabel": "جارٍ الإرسال…",
+  "success": {
+   "scrollWidth": 1440,
+   "clientWidth": 1440,
+   "overflowing": [],
+   "textWiderThanBox": [],
+   "formHidden": true,
+   "focus": "success-title",
+   "text": "وصلنا استفسارك. | سنردّ عليك على البريد الذي كتبته. | أرسل استفسارًا آخر | نموذج أولي للعرض: لم تُرسَل أي بيانات."
+  },
+  "requestsAfterSubmits": 0,
+  "urlUnchanged": true,
+  "reset": {
+   "formVisible": true,
+   "empty": true,
+   "button": "أرسل الاستفسار"
+  },
+  "consoleErrors": []
+ },
+ "mobile-390": {
+  "outsideFolder": [],
+  "failed": [],
+  "default": {
+   "scrollWidth": 390,
+   "clientWidth": 390,
+   "overflowing": [],
+   "textWiderThanBox": [],
+   "faces": "9 faces, all loaded",
+   "h1": "48.75px / 700",
+   "body": "18px / 400",
+   "h1Lines": [
+    {
+     "text": "تُحمَّص لطلبك،",
+     "advanceWidth": 297,
+     "top": 178,
+     "bottom": 241,
+     "boxWidth": 337
+    },
+    {
+     "text": "كل أسبوع.",
+     "advanceWidth": 202,
+     "top": 241.375,
+     "bottom": 304.375,
+     "boxWidth": 337
+    }
+   ],
+   "textEdgeRight": 366,
+   "textEdgeLeft": 24,
+   "captionRight": 366,
+   "stepLines": [
+    {
+     "title": [
+      "ترسل طلبك"
+     ],
+     "text": [
+      "تخبرنا بما يحتاجه مقهاك: محاصيل مفردة",
+      "أو خلطات البيت، بأكياس 250 غ أو 1 كغ."
+     ]
+    },
+    {
+     "title": [
+      "نحمّصه في تحميصة الأسبوع"
+     ],
+     "text": [
+      "طلبك يدخل تحميصة ذلك",
+      "الأسبوع، ويُحمَّص لك أنت."
+     ]
+    },
+    {
+     "title": [
+      "ويتكرّر كل أسبوع"
+     ],
+     "text": [
+      "التوريد أسبوعي: تحميصة جديدة لطلبك الجديد."
+     ]
+    }
+   ],
+   "heroLeadLines": [
+    "سدرة للقهوة محمصة قهوة مختصة من الرياض،",
+    "تحمّص طلب مقهاك في تحميصة الأسبوع."
+   ],
+   "howBars": {
+    "barsTop": 1702,
+    "stepsBottom": 1662,
+    "barsBelowSteps": true,
+    "gap": 40,
+    "litBarX": "174–216",
+    "sectionBottom": 1787
+   },
+   "targetsUnder44": [],
+   "emberNonBarElements": [
+    "A.btn btn--primary y=432",
+    "BUTTON.btn btn--primary y=3318"
+   ],
+   "hasSampleWord": false,
+   "pageHeight": 3961,
+   "letterSpacings": [
+    "normal"
+   ],
+   "minFontPx": 15,
+   "h1Ink": [
+    {
+     "text": "تُحمَّص لطلبك،",
+     "inkRight": 361,
+     "inkLeft": 67,
+     "insideRightEdgeBy": 5,
+     "insideLeftEdgeBy": 43
+    },
+    {
+     "text": "كل أسبوع.",
+     "inkRight": 366,
+     "inkLeft": 162,
+     "insideRightEdgeBy": 0,
+     "insideLeftEdgeBy": 138
+    }
+   ]
+  },
+  "error": {
+   "scrollWidth": 390,
+   "clientWidth": 390,
+   "overflowing": [],
+   "textWiderThanBox": [],
+   "focusOnSummary": "form-summary",
+   "items": [
+    "اكتب اسمك.",
+    "اكتب اسم المقهى.",
+    "اكتب بريدًا صحيحًا، مثل name@example.com"
+   ],
+   "invalid": [
+    "f-name",
+    "f-cafe",
+    "f-email"
+   ],
+   "emailError": {
+    "lineCount": 2,
+    "boxWidth": 304,
+    "fieldWidth": 342,
+    "exampleWidth": 155,
+    "exampleInsideField": true
+   }
+  },
+  "badEmail": [
+   "f-email"
+  ],
+  "loadingLabel": "جارٍ الإرسال…",
+  "success": {
+   "scrollWidth": 390,
+   "clientWidth": 390,
+   "overflowing": [],
+   "textWiderThanBox": [],
+   "formHidden": true,
+   "focus": "success-title",
+   "text": "وصلنا استفسارك. | سنردّ عليك على البريد الذي كتبته. | أرسل استفسارًا آخر | نموذج أولي للعرض: لم تُرسَل أي بيانات."
+  },
+  "requestsAfterSubmits": 0,
+  "urlUnchanged": true,
+  "reset": {
+   "formVisible": true,
+   "empty": true,
+   "button": "أرسل الاستفسار"
+  },
+  "consoleErrors": []
+ },
+ "mobile-360": {
+  "outsideFolder": [],
+  "failed": [],
+  "default": {
+   "scrollWidth": 360,
+   "clientWidth": 360,
+   "overflowing": [],
+   "textWiderThanBox": [],
+   "faces": "9 faces, all loaded",
+   "h1": "45px / 700",
+   "body": "18px / 400",
+   "h1Lines": [
+    {
+     "text": "تُحمَّص لطلبك،",
+     "advanceWidth": 275,
+     "top": 178,
+     "bottom": 236,
+     "boxWidth": 307
+    },
+    {
+     "text": "كل أسبوع.",
+     "advanceWidth": 186,
+     "top": 236.5,
+     "bottom": 294.5,
+     "boxWidth": 307
+    }
+   ],
+   "textEdgeRight": 336,
+   "textEdgeLeft": 24,
+   "captionRight": 336,
+   "stepLines": [
+    {
+     "title": [
+      "ترسل طلبك"
+     ],
+     "text": [
+      "تخبرنا بما يحتاجه مقهاك: محاصيل مفردة",
+      "أو خلطات البيت، بأكياس 250 غ أو 1 كغ."
+     ]
+    },
+    {
+     "title": [
+      "نحمّصه في تحميصة الأسبوع"
+     ],
+     "text": [
+      "طلبك يدخل تحميصة ذلك",
+      "الأسبوع، ويُحمَّص لك أنت."
+     ]
+    },
+    {
+     "title": [
+      "ويتكرّر كل أسبوع"
+     ],
+     "text": [
+      "التوريد أسبوعي: تحميصة",
+      "جديدة لطلبك الجديد."
+     ]
+    }
+   ],
+   "heroLeadLines": [
+    "سدرة للقهوة محمصة قهوة",
+    "مختصة من الرياض، تحمّص",
+    "طلب مقهاك في تحميصة الأسبوع."
+   ],
+   "howBars": {
+    "barsTop": 1748,
+    "stepsBottom": 1708,
+    "barsBelowSteps": true,
+    "gap": 40,
+    "litBarX": "161–199",
+    "sectionBottom": 1831
+   },
+   "targetsUnder44": [],
+   "emberNonBarElements": [
+    "A.btn btn--primary y=454",
+    "BUTTON.btn btn--primary y=3449"
+   ],
+   "hasSampleWord": false,
+   "pageHeight": 4092,
+   "letterSpacings": [
+    "normal"
+   ],
+   "minFontPx": 15,
+   "h1Ink": [
+    {
+     "text": "تُحمَّص لطلبك،",
+     "inkRight": 332,
+     "inkLeft": 60,
+     "insideRightEdgeBy": 4,
+     "insideLeftEdgeBy": 36
+    },
+    {
+     "text": "كل أسبوع.",
+     "inkRight": 336,
+     "inkLeft": 148,
+     "insideRightEdgeBy": 0,
+     "insideLeftEdgeBy": 124
+    }
+   ]
+  },
+  "error": {
+   "scrollWidth": 360,
+   "clientWidth": 360,
+   "overflowing": [],
+   "textWiderThanBox": [],
+   "focusOnSummary": "form-summary",
+   "items": [
+    "اكتب اسمك.",
+    "اكتب اسم المقهى.",
+    "اكتب بريدًا صحيحًا، مثل name@example.com"
+   ],
+   "invalid": [
+    "f-name",
+    "f-cafe",
+    "f-email"
+   ],
+   "emailError": {
+    "lineCount": 2,
+    "boxWidth": 304,
+    "fieldWidth": 312,
+    "exampleWidth": 155,
+    "exampleInsideField": true
+   }
+  },
+  "badEmail": [
+   "f-email"
+  ],
+  "loadingLabel": "جارٍ الإرسال…",
+  "success": {
+   "scrollWidth": 360,
+   "clientWidth": 360,
+   "overflowing": [],
+   "textWiderThanBox": [],
+   "formHidden": true,
+   "focus": "success-title",
+   "text": "وصلنا استفسارك. | سنردّ عليك على البريد الذي كتبته. | أرسل استفسارًا آخر | نموذج أولي للعرض: لم تُرسَل أي بيانات."
+  },
+  "requestsAfterSubmits": 0,
+  "urlUnchanged": true,
+  "reset": {
+   "formVisible": true,
+   "empty": true,
+   "button": "أرسل الاستفسار"
+  },
+  "consoleErrors": []
+ },
+ "mobile-320": {
+  "outsideFolder": [],
+  "failed": [],
+  "default": {
+   "scrollWidth": 320,
+   "clientWidth": 320,
+   "overflowing": [],
+   "textWiderThanBox": [],
+   "faces": "9 faces, all loaded",
+   "h1": "40px / 700",
+   "body": "18px / 400",
+   "h1Lines": [
+    {
+     "text": "تُحمَّص لطلبك،",
+     "advanceWidth": 244,
+     "top": 178,
+     "bottom": 230,
+     "boxWidth": 268
+    },
+    {
+     "text": "كل أسبوع.",
+     "advanceWidth": 166,
+     "top": 230,
+     "bottom": 282,
+     "boxWidth": 268
+    }
+   ],
+   "textEdgeRight": 296,
+   "textEdgeLeft": 24,
+   "captionRight": 296,
+   "stepLines": [
+    {
+     "title": [
+      "ترسل طلبك"
+     ],
+     "text": [
+      "تخبرنا بما يحتاجه مقهاك:",
+      "محاصيل مفردة أو خلطات",
+      "البيت، بأكياس 250 غ أو 1 كغ."
+     ]
+    },
+    {
+     "title": [
+      "نحمّصه في تحميصة الأسبوع"
+     ],
+     "text": [
+      "طلبك يدخل تحميصة ذلك",
+      "الأسبوع، ويُحمَّص لك أنت."
+     ]
+    },
+    {
+     "title": [
+      "ويتكرّر كل أسبوع"
+     ],
+     "text": [
+      "التوريد أسبوعي: تحميصة",
+      "جديدة لطلبك الجديد."
+     ]
+    }
+   ],
+   "heroLeadLines": [
+    "سدرة للقهوة محمصة قهوة",
+    "مختصة من الرياض، تحمّص",
+    "طلب مقهاك في تحميصة الأسبوع."
+   ],
+   "howBars": {
+    "barsTop": 1781,
+    "stepsBottom": 1741,
+    "barsBelowSteps": true,
+    "gap": 40,
+    "litBarX": "143–177",
+    "sectionBottom": 1861
+   },
+   "targetsUnder44": [],
+   "emberNonBarElements": [
+    "A.btn btn--primary y=441",
+    "BUTTON.btn btn--primary y=3521"
+   ],
+   "hasSampleWord": false,
+   "pageHeight": 4164,
+   "letterSpacings": [
+    "normal"
+   ],
+   "minFontPx": 15,
+   "h1Ink": [
+    {
+     "text": "تُحمَّص لطلبك،",
+     "inkRight": 292,
+     "inkLeft": 50,
+     "insideRightEdgeBy": 4,
+     "insideLeftEdgeBy": 26
+    },
+    {
+     "text": "كل أسبوع.",
+     "inkRight": 296,
+     "inkLeft": 129,
+     "insideRightEdgeBy": 0,
+     "insideLeftEdgeBy": 105
+    }
+   ]
+  },
+  "error": {
+   "scrollWidth": 320,
+   "clientWidth": 320,
+   "overflowing": [],
+   "textWiderThanBox": [],
+   "focusOnSummary": "form-summary",
+   "items": [
+    "اكتب اسمك.",
+    "اكتب اسم المقهى.",
+    "اكتب بريدًا صحيحًا، مثل name@example.com"
+   ],
+   "invalid": [
+    "f-name",
+    "f-cafe",
+    "f-email"
+   ],
+   "emailError": {
+    "lineCount": 2,
+    "boxWidth": 272,
+    "fieldWidth": 272,
+    "exampleWidth": 155,
+    "exampleInsideField": true
+   }
+  },
+  "badEmail": [
+   "f-email"
+  ],
+  "loadingLabel": "جارٍ الإرسال…",
+  "success": {
+   "scrollWidth": 320,
+   "clientWidth": 320,
+   "overflowing": [],
+   "textWiderThanBox": [],
+   "formHidden": true,
+   "focus": "success-title",
+   "text": "وصلنا استفسارك. | سنردّ عليك على البريد الذي كتبته. | أرسل استفسارًا آخر | نموذج أولي للعرض: لم تُرسَل أي بيانات."
+  },
+  "requestsAfterSubmits": 0,
+  "urlUnchanged": true,
+  "reset": {
+   "formVisible": true,
+   "empty": true,
+   "button": "أرسل الاستفسار"
+  },
+  "consoleErrors": []
+ }
+}

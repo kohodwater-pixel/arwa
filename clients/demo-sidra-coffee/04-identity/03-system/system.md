@@ -2,8 +2,8 @@
 
 > **SYSTEM TEST — FICTIONAL CLIENT.** Invented data for testing Creative Agency OS.
 
-**Version:** v03  **Date:** 2026-11-13  **Prepared by:** Identity Designer  **Status:** revised after quality review r2; for re-review, not yet approved
-**Previous versions:** `_archive/system_v02.md`, `_archive/system_v01.md`. What changed in v03 is listed in section 12; v02 changes are in section 9.
+**Version:** v03  **Date:** 2026-11-13  **Prepared by:** Identity Designer  **Status:** v03 accepted for the system test only, 2026-11-13 (not client-approved); passed quality review r3 with minor fixes. Stale lines corrected after r3 (issue I2, section 13)
+**Previous versions:** `_archive/system_v03a.md` (v03 as reviewed in r3, before the corrections in section 13), `_archive/system_v02.md`, `_archive/system_v01.md`. What changed in v03 is listed in section 12; v02 changes are in section 9.
 **Built from:** `01-direction/creative-direction.md` (Direction A "Weekly Beat", approved 2026-11-13) as amended by `creative-direction-amendment-01.md` and `creative-direction-amendment-02.md`; where they differ, the later amendment wins. Machine-readable values: `tokens.json`. Shared CSS: `brand-v02.css` (unchanged in v03; `brand.css` is the v01 file, kept because archived v01 HTML files link to it).
 
 ## 1. Palette and roles
@@ -47,7 +47,7 @@ Finding: for red-blind viewers the lit bar is weakly separated from the Ink bars
 
 ## 3. Typography
 
-**Arabic: IBM Plex Sans Arabic. Latin: IBM Plex Sans.** Both SIL OFL 1.1 (see `../licences.md`). Static files: `assets/fonts/ibmplexsansarabic/` and `assets/fonts/ibmplexsans-static/` (static Light, Regular, Medium, SemiBold, Bold; IBM Plex Sans 3.006 by their own metadata, download source not recorded, see `../licences.md`). The variable font and the instances in `_work/fonts/` are no longer used by any v02 file.
+**Arabic: IBM Plex Sans Arabic. Latin: IBM Plex Sans.** Both SIL OFL 1.1 (see `../licences.md`). Static files: `assets/fonts/ibmplexsansarabic/` and `assets/fonts/ibmplexsans-static/` (static Light, Regular, Medium, SemiBold, Bold; IBM Plex Sans 3.006 by their own metadata, download source not recorded, see `../licences.md`). The variable font and the instances in `_work/fonts/` have not been used by any current file since v02.
 Fallbacks: Arabic — Noto Sans Arabic, Geeza Pro, Tahoma. Latin — Helvetica Neue, Arial.
 
 | Level | Scale | Arabic | Latin | Line height AR / EN | Screen px AR / EN | Print pt AR / EN |
@@ -185,7 +185,7 @@ v02 is stable from 41 px up; v01 was not stable until 48 px. Below 41 px the gap
 | Legible at 16 px and 10 mm | **Partial**: only with the fallback ladder, which was accepted for the test (ruling g); bilingual not usable at 16 px or 10 mm |
 | Clear space and minimum size defined | Pass |
 | Vector artwork clean, text outlined | Pass (paths and rects only, XML validated); curves are the font's own, not hand-optimised |
-| Preliminary conflict check; trademark notice | **Done as a preliminary check, with a HIGH name risk found** (Alshaya "Sidra", Riyadh); device not checkable by text search; no register searched; not-legal-clearance notice in `licences.md`, `mark-check.md` and guidelines v03 p6. Counsel's opinion required before real use |
+| Preliminary conflict check; trademark notice | **Done as a preliminary check, with a HIGH name risk found** (Alshaya "Sidra", Riyadh); device not checkable by text search; no register searched; not-legal-clearance notice in `licences.md`, `mark-check.md` and guidelines v04 p6. Counsel's opinion required before real use |
 | HEX, RGB, CMYK, Pantone for every colour | **Waived for the test** (ruling e): CMYK approximate, Pantone not given; required before print |
 | Text pairs meet AA | Pass |
 | Colour-blindness check | Done; one weak pair reported |
@@ -193,7 +193,7 @@ v02 is stable from 41 px up; v01 was not stable until 48 px. Below 41 px the gap
 | Typefaces paired, licensed, hierarchy, fallbacks | Pass (static Latin files in `assets/fonts/ibmplexsans-static/`) |
 | Graphic elements, iconography, imagery defined | Pass (iconography = none, by direction) |
 | At least five applications | **Fail by scope**: two built (test scope set by the Creative Director) |
-| Misuse examples | Pass (8 drawn, 5 written, plus the per-row note for the stacked pattern and icon in guidelines v03) |
+| Misuse examples | Pass (8 drawn, 5 written, plus the per-row note for the stacked pattern and icon in guidelines v04) |
 | Guidelines follow outline and level | **Partial**: 6-page mini, below the "essential" level; sections 10 and 11 are one line each |
 | No spelling errors | Not confirmed: Arabic not proofread by a native reader |
 | Colour values match files | Pass |
@@ -201,8 +201,8 @@ v02 is stable from 41 px up; v01 was not stable until 48 px. Below 41 px the gap
 ## 7. Decisions and deviations (status after round 3)
 
 1. **Wordmark is outlined Plex Bold with custom spacing, not a redrawn custom wordmark.** **Ruled (d): accepted for the test; redraw required before real use.**
-2. **Bars on Ember.** The direction says both "six bars in Paper on Ember, lit bar Paper" (all seven Paper, lit bar invisible) and "1 kg bag in Ember with an Ink band". I resolved it as **Ink bars with a Paper lit bar on Ember**. Needs the art-director's confirmation.
-3. **One-colour versions cannot show the lit bar.** The direction forbids outlines and tints, so v01 uses seven solid bars. Recommendation: accept, and restrict one-colour use to stamps, embossing and single-colour print.
+2. **Bars on Ember.** The direction says both "six bars in Paper on Ember, lit bar Paper" (all seven Paper, lit bar invisible) and "1 kg bag in Ember with an Ink band". I resolved it as **Ink bars with a Paper lit bar on Ember**. **Confirmed: Ink bars with a Paper lit bar on Ember** (decision log 2026-11-13, identity v01 acceptance).
+3. **One-colour versions cannot show the lit bar.** The direction forbids outlines and tints, so v01 uses seven solid bars. **Accepted: one-colour versions use seven solid bars** (decision log 2026-11-13, identity v01 acceptance). One-colour use is restricted to stamps, embossing and single-colour print.
 4. **Phone number.** The direction says the placeholder number appears nowhere; the task brief for this build asked for it to be shown as a clearly marked placeholder. The business card shows it in a dashed box labelled as a placeholder. **Ruled (b): removed. Business card v02 has no phone number; email is the only contact channel.**
 5. **Business card carries no personal name or title**, because no team names were supplied.
 6. **Label size 100 × 170 mm** is my assumption; no bag dieline exists.
@@ -210,11 +210,15 @@ v02 is stable from 41 px up; v01 was not stable until 48 px. Below 41 px the gap
 
 ## 8. `brand-context.md` section 5
 
-The text proposed here in v02 has been written into `brand-context.md` section 5 by the Creative Director (the v02 wording is kept in `_archive/system_v02.md`). One addition is still outstanding there, which amendment 02 section 2 asks for and which is the Creative Director's to make. Proposed wording for the "Do not" line:
+Nothing is outstanding there. `brand-context.md` section 5 now carries, in the Creative Director's wording: the per-row counting of "always seven" and "one lit bar" (the stacked pattern and icon v02 are exempt), the web button rule (section 10), Ink on Ember 3.19:1, the motion summary (section 11) and the name rule below. The wording this file proposed earlier is kept in `_archive/system_v03a.md` and `_archive/system_v02.md`.
 
-> The rules "always seven" and "one lit bar" count per row: the stacked pattern and the icon repeat three or more identical rows, with the lit bars in one centre column. Never light two bars in one row, stagger the lit bars, or stack fewer than three rows.
+**Name rule** (from `brand-context.md` section 5; mitigation for the recorded name risk, section 5 "Conflict check"):
 
-Also for that section when it is next updated: Ember may fill the one primary action button per screenful on web (section 10); the A4 and social ladders and the 9 px screen caption floor are in section 3 of this file and in `tokens.json`.
+- Always the full name: «سدرة للقهوة» in Arabic and "Sidra Coffee" in English, with "roastery" in running English copy.
+- Never «سدرة» or "Sidra" alone in text, and never beside an origin or variety word.
+- The wordmark «سدرة» inside the logo is the only exception.
+
+Held in this file and in `tokens.json` only, not in `brand-context.md` section 5: the A4 and social type ladders (sections 3.1 and 3.2). The 9 px screen caption floor (section 3.3) is in the decision log, not in section 5.
 
 ## 9. What changed in v02 (after quality review r1)
 
@@ -272,3 +276,17 @@ The static rules describe resting states. In any film, animated slide or web ani
 | N10 | Icon v01 SVGs moved to `02-logo/_archive/`; PNGs re-exported at whole-pixel sizes (section 5). |
 
 Not changed in v03: the logo SVGs and PDFs, `brand-v02.css`, the applications, the palette and every measured value.
+
+## 13. Corrections after quality review r3 (issue I2; no version change)
+
+The version stays v03: no value, rule or file specification changed. The text as reviewed in r3 is `_archive/system_v03a.md`.
+
+| Place | Correction |
+|---|---|
+| Header | Status now matches `brand-context.md`: v03 accepted for the system test only, not client-approved. |
+| Section 3 | The line on the variable font no longer names "v02 files". |
+| Section 6 | References to the guidelines now point to v04. |
+| Section 7, points 2 and 3 | Marked as decided: Ink bars with a Paper lit bar on Ember; one-colour versions use seven solid bars. |
+| Section 8 | Rewritten: the per-row wording is in `brand-context.md`; the name rule is added. |
+
+Guidelines v04 (review issue I3) adds the web button rule on p4, a motion block on p5 and the name rule on p6; it changes no value in this file.

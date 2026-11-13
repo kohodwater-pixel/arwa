@@ -1,0 +1,244 @@
+/* Sidra Coffee — wholesale landing page prototype v02 (SYSTEM TEST, fictional client).
+   Tokens mirror 04-identity/03-system/tokens.json v02. Logical properties only:
+   the same stylesheet serves dir="rtl" and dir="ltr".
+   Self-contained: every font and image is inside this folder. */
+
+/* Fonts: static files only, SIL OFL 1.1 (licence texts in assets/fonts/). */
+@font-face { font-family: "IBM Plex Sans Arabic"; font-weight: 400; font-style: normal; font-display: swap; src: url("assets/fonts/IBMPlexSansArabic-Regular.ttf") format("truetype"); }
+@font-face { font-family: "IBM Plex Sans Arabic"; font-weight: 500; font-style: normal; font-display: swap; src: url("assets/fonts/IBMPlexSansArabic-Medium.ttf") format("truetype"); }
+@font-face { font-family: "IBM Plex Sans Arabic"; font-weight: 600; font-style: normal; font-display: swap; src: url("assets/fonts/IBMPlexSansArabic-SemiBold.ttf") format("truetype"); }
+@font-face { font-family: "IBM Plex Sans Arabic"; font-weight: 700; font-style: normal; font-display: swap; src: url("assets/fonts/IBMPlexSansArabic-Bold.ttf") format("truetype"); }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 300; font-style: normal; font-display: swap; src: url("assets/fonts/IBMPlexSans-Light.ttf") format("truetype"); }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 400; font-style: normal; font-display: swap; src: url("assets/fonts/IBMPlexSans-Regular.ttf") format("truetype"); }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 500; font-style: normal; font-display: swap; src: url("assets/fonts/IBMPlexSans-Medium.ttf") format("truetype"); }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 600; font-style: normal; font-display: swap; src: url("assets/fonts/IBMPlexSans-SemiBold.ttf") format("truetype"); }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 700; font-style: normal; font-display: swap; src: url("assets/fonts/IBMPlexSans-Bold.ttf") format("truetype"); }
+
+:root {
+  /* colour */
+  --paper: #F3ECE0;
+  --crema: #E3C9A0;
+  --ink: #1F1B18;
+  --ember: #C23A20;   /* only: the lit bar, and the one primary action button per screenful (ruling l) */
+  --ash: #6F6861;
+
+  /* type: Latin first so Latin letters and Western figures use IBM Plex Sans; Arabic falls through to Plex Arabic */
+  --font: "IBM Plex Sans", "IBM Plex Sans Arabic", "Noto Sans Arabic", "Geeza Pro", Tahoma, sans-serif;
+  --fs-caption: 0.9375rem;                    /* 15 px (Arabic caption) */
+  --fs-body: 1.125rem;                        /* 18 px mobile; 23 px from 1040 */
+  --fs-sub: 1.75rem;                          /* 28 px mobile; 37 px from 1040 */
+  --fs-display: clamp(2.75rem, 12.5vw, 5rem); /* 44–80 px below 1040 */
+  --lh-display: 1.3;
+  --lh-sub: 1.5;
+  --lh-body: 1.75;
+  --lh-caption: 1.6;
+
+  /* space, 4 px base */
+  --s1: 4px; --s2: 8px; --s3: 16px; --s4: 24px; --s5: 40px; --s6: 64px; --s7: 104px;
+
+  /* grid and rules */
+  --hairline: 2px;
+  --gap7: calc(100% / 41);                    /* gutter = 1/5 column in a seven-column row */
+  --page-pad: var(--s4);
+  --page-max: 1312px;                         /* 1440 minus two 64 px margins */
+  --target: 44px;
+}
+
+@media (min-width: 1040px) {
+  :root {
+    --fs-body: 1.4375rem;                     /* 23 px */
+    --fs-sub: 2.3125rem;                      /* 37 px */
+    --fs-display: clamp(5rem, 8vw, 7.1875rem);/* reaches the token size, 115 px, at 1440 */
+    --page-pad: var(--s6);
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  letter-spacing: 0;                          /* Arabic is never tracked */
+  font-weight: 400;
+  font-synthesis: none;                       /* no faux bold or slant */
+  overflow-wrap: break-word;
+  hyphens: none;
+}
+h1, h2, h3, p, ul, ol, dl, dd, fieldset, legend { margin: 0; padding: 0; }
+h2, h3 { text-wrap: balance; }                /* no one-word last lines */
+p, dd { text-wrap: pretty; }
+ul, ol { list-style: none; }
+img { display: block; max-inline-size: 100%; block-size: auto; }
+a { color: inherit; text-underline-offset: 0.25em; text-decoration-thickness: 2px; }
+
+.wrap { inline-size: 100%; max-inline-size: calc(var(--page-max) + 2 * var(--page-pad)); margin-inline: auto; padding-inline: var(--page-pad); }
+.section { padding-block: var(--s6); border-block-start: var(--hairline) solid var(--ink); }
+@media (min-width: 1040px) { .section { padding-block: var(--s7); } }
+.section--crema { background: var(--crema); }
+
+.h-sub { font-size: var(--fs-sub); line-height: var(--lh-sub); font-weight: 500; }
+.label { font-weight: 700; line-height: 1.5; }
+.caption { font-size: var(--fs-caption); line-height: var(--lh-caption); color: var(--ash); } /* Ash on Paper only */
+.ltr { direction: ltr; unicode-bidi: isolate; display: inline-block; }
+
+.visually-hidden { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* focus: Ink ring on light grounds, Paper ring on Ink */
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.on-ink :focus-visible { outline-color: var(--paper); }
+
+.skip { position: absolute; inset-block-start: var(--s2); inset-inline-start: var(--s2); z-index: 10; background: var(--ink); color: var(--paper); padding: var(--s2) var(--s3); transform: translateY(-200%); }
+.skip:focus { transform: none; }
+
+/* ---------- seven-bar device (never mirrored, never labelled) ---------- */
+.bars { display: grid; grid-template-columns: repeat(7, 1fr); column-gap: var(--gap7); direction: ltr; }
+.bars i { display: block; background: var(--ink); }
+.bars i:nth-child(4) { background: var(--ember); }
+.bars--rule i { aspect-ratio: 2 / 1; }
+.bars--band i { aspect-ratio: 1 / 2; }
+.on-ink .bars i { background: var(--paper); }
+.on-ink .bars i:nth-child(4) { background: var(--ember); }
+.pattern { container-type: inline-size; }
+.pattern .bars + .bars { margin-block-start: calc(100cqi / 41); }
+.pattern .bars:nth-child(n+2) { display: none; }          /* mobile: one band row */
+@media (min-width: 1040px) {
+  .pattern .bars:nth-child(n+2) { display: grid; }        /* desktop: three stacked rows, as in the icon */
+  .pattern .bars--band i { aspect-ratio: 1 / 2.6; }
+}
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-block-size: 52px; padding-block: var(--s2); padding-inline: var(--s4);
+  border: var(--hairline) solid var(--ink); border-radius: 0;
+  background: transparent; color: var(--ink);
+  font: inherit; font-weight: 600; line-height: 1.5; text-align: center; text-decoration: none; cursor: pointer;
+}
+.btn:hover { background: var(--ink); color: var(--paper); }
+/* The one Ember button per screenful: hero action, then the form's submit. Paper on Ember 4.56:1. */
+.btn--primary { background: var(--ember); border-color: var(--ember); color: var(--paper); }
+.btn--primary:hover { background: var(--ink); border-color: var(--ink); }
+.btn[aria-disabled="true"] { background: var(--ink); border-color: var(--ink); color: var(--paper); cursor: progress; }
+.btn--small { min-block-size: var(--target); padding-inline: var(--s3); font-size: 1rem; }
+
+/* ---------- header ---------- */
+.header .wrap { display: flex; align-items: center; justify-content: space-between; gap: var(--s3); padding-block: var(--s4); }
+.header__logo { display: block; flex: none; }
+.header__logo img { block-size: 48px; inline-size: auto; }
+.nav { display: none; }
+.nav a { display: inline-flex; align-items: center; min-block-size: var(--target); padding-inline: var(--s3); text-decoration: none; font-size: 1.125rem; font-weight: 500; }
+.nav a:hover { text-decoration: underline; }
+@media (min-width: 1040px) {
+  .header .wrap { padding-block: var(--s5); }
+  .header__logo img { block-size: 56px; }
+  .nav { display: flex; gap: var(--s2); margin-inline-start: auto; margin-inline-end: var(--s4); }
+}
+
+/* ---------- hero ---------- */
+.hero { padding-block: var(--s5) var(--s6); border-block-start: var(--hairline) solid var(--ink); }
+.hero__grid { display: grid; gap: var(--s5); }
+.hero h1 { font-size: var(--fs-display); line-height: var(--lh-display); font-weight: 700; margin-block: var(--s3) var(--s4); }
+.hero h1 span { display: block; white-space: nowrap; }
+.hero__lead { max-inline-size: 30em; }
+.hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s3) var(--s4); margin-block: var(--s5) var(--s4); }
+.hero__actions .text-link { display: inline-flex; align-items: center; min-block-size: var(--target); font-weight: 500; }
+@media (min-width: 1040px) {
+  .hero { padding-block: var(--s6) var(--s7); }
+  .hero__grid { grid-template-columns: repeat(7, 1fr); column-gap: var(--gap7); row-gap: 0; align-items: end; }
+  .hero__text { grid-column: 1 / span 4; }        /* four columns from the start edge (right in Arabic) */
+  .hero__art { grid-column: 5 / span 3; }
+}
+
+/* ---------- how the weekly roast works ---------- */
+.how__head { display: grid; gap: var(--s3); margin-block-end: var(--s5); }
+.how .bars { margin-block-end: var(--s5); }
+.steps { display: grid; gap: var(--s5); }
+.step { border-block-start: var(--hairline) solid var(--ink); padding-block-start: var(--s3); }
+/* Large Latin figure: IBM Plex Sans Light 300, static file, regular width (tokens v02). */
+.step__num { display: block; font-family: "IBM Plex Sans", sans-serif; font-size: 4rem; line-height: 1.1; font-weight: 300; font-stretch: normal; margin-block-end: var(--s2); }
+.step p { margin-block-start: var(--s2); }
+@media (min-width: 1040px) {
+  .how__head { grid-template-columns: repeat(7, 1fr); column-gap: var(--gap7); align-items: end; margin-block-end: var(--s6); }
+  .how__head h2 { grid-column: 1 / span 4; }
+  .how__head p { grid-column: 5 / span 3; }
+  .how .bars { margin-block-end: var(--s6); }
+  .steps { grid-template-columns: repeat(3, 1fr); column-gap: var(--s5); }
+  .step__num { font-size: 5.5rem; }
+}
+
+/* ---------- what we offer ---------- */
+.offer h2 { margin-block-end: var(--s5); }
+.offer__list { border-block-end: var(--hairline) solid var(--ink); }
+.offer__row { display: grid; gap: var(--s1); padding-block: var(--s4); border-block-start: var(--hairline) solid var(--ink); }
+@media (min-width: 720px) {
+  .offer__row { grid-template-columns: repeat(7, 1fr); column-gap: var(--gap7); align-items: baseline; }
+  .offer__row dt { grid-column: 1 / span 3; }
+  .offer__row dd { grid-column: 4 / span 4; }
+}
+
+/* ---------- contact form ---------- */
+.contact__grid { display: grid; gap: var(--s5); }
+.contact__head { display: grid; gap: var(--s3); margin-block-end: var(--s5); }
+@media (min-width: 1040px) {
+  .contact__grid { grid-template-columns: repeat(7, 1fr); column-gap: var(--gap7); }
+  .contact__main { grid-column: 1 / span 4; }
+  .contact__aside { grid-column: 6 / span 2; }
+}
+.contact__aside { border-block-start: var(--hairline) solid var(--ink); padding-block-start: var(--s3); align-self: start; }
+.contact__aside a { display: inline-flex; align-items: center; min-block-size: var(--target); font-weight: 600; }
+
+.form { display: grid; gap: var(--s4); }
+.form__row { display: grid; gap: var(--s4); }
+@media (min-width: 720px) { .form__row { grid-template-columns: 1fr 1fr; } }
+.field { display: grid; gap: var(--s2); align-content: start; }
+.field label { font-weight: 600; font-size: 1.125rem; line-height: 1.5; }
+.field .optional { font-weight: 400; }
+.field input, .field textarea {
+  inline-size: 100%; min-block-size: 52px; padding-block: var(--s2); padding-inline: var(--s3);
+  border: var(--hairline) solid var(--ink); border-radius: 0; background: var(--paper); color: var(--ink);
+  font: inherit; font-size: 1.125rem; line-height: 1.6;
+}
+.field textarea { min-block-size: 136px; resize: vertical; }
+.field input[dir="ltr"] { text-align: end; }      /* Latin content, still aligned to the Arabic start edge */
+.field__hint { font-size: var(--fs-caption); line-height: var(--lh-caption); color: var(--ash); }
+/* Errors are Ink, not Ember: a thick start edge, a bold message and the word «خطأ». No reliance on colour. */
+.field__error { display: none; font-size: 1rem; line-height: 1.6; font-weight: 600; color: var(--ink); }
+.field.is-invalid .field__error { display: block; }
+.field.is-invalid input, .field.is-invalid textarea { border-inline-start-width: 8px; }
+/* dir="ltr" inputs: keep the error edge on the page's start edge (right in Arabic) */
+.field.is-invalid input[dir="ltr"] { border-inline-start-width: var(--hairline); border-inline-end-width: 8px; }
+
+.form__summary { display: none; border: var(--hairline) solid var(--ink); border-inline-start-width: 8px; padding: var(--s3) var(--s4); }
+.form__summary.is-visible { display: block; }
+.form__summary ul { margin-block-start: var(--s2); }
+.form__summary a { display: inline-flex; align-items: center; min-block-size: var(--target); }
+.form__actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s3) var(--s4); }
+.form__actions .btn { min-inline-size: 12em; }
+
+.success { display: none; background: var(--ink); color: var(--paper); padding: var(--s5) var(--s4); }
+.success.is-visible { display: block; }
+.success .bars { max-inline-size: 240px; margin-block-end: var(--s4); }
+.success h3 { font-size: var(--fs-sub); line-height: var(--lh-sub); font-weight: 500; }
+.success p { margin-block: var(--s2) var(--s4); }
+.success .btn { border-color: var(--paper); color: var(--paper); }
+.success .btn:hover { background: var(--paper); color: var(--ink); }
+.success__note { font-size: var(--fs-caption); line-height: var(--lh-caption); margin-block: var(--s4) 0 !important; }
+.is-hidden { display: none !important; }
+
+/* ---------- footer ---------- */
+.footer { background: var(--ink); color: var(--paper); padding-block: var(--s6); }
+.footer .wrap { display: grid; gap: var(--s5); }
+.footer img { block-size: 64px; inline-size: auto; }
+.footer__lines { display: grid; gap: var(--s1); }
+.footer a { display: inline-flex; align-items: center; min-block-size: var(--target); }
+@media (min-width: 1040px) {
+  .footer .wrap { grid-template-columns: repeat(7, 1fr); column-gap: var(--gap7); align-items: start; }
+  .footer__brand { grid-column: 1 / span 4; }
+  .footer__lines { grid-column: 5 / span 3; }
+}
