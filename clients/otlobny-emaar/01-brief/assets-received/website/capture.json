@@ -1,0 +1,29 @@
+[
+  {
+    "name": "otlobny-net",
+    "url": "https://otlobny.net/",
+    "title": "أطلبني | للصيانة والنظافة والتشغيل",
+    "lang": "ar / dir=rtl",
+    "fonts": [
+      "IBM Plex Sans Arabic",
+      "Arial"
+    ],
+    "textColours": [
+      "rgb(87, 218, 251)",
+      "rgb(236, 245, 248)",
+      "rgb(158, 178, 187)",
+      "rgb(207, 225, 231)",
+      "rgb(6, 32, 44)"
+    ],
+    "backgroundColoursByArea": [
+      "rgb(16, 42, 56)",
+      "rgb(14, 32, 44)",
+      "rgb(19, 43, 57)",
+      "rgb(11, 25, 34)",
+      "rgb(13, 32, 44)",
+      "color(srgb 0.0313726 0.0745098 0.109804 / 0.88)"
+    ],
+    "screenshot": "/home/user/arwa/clients/otlobny-emaar/01-brief/assets-received/website/otlobny-net.png",
+    "ok": true
+  }
+]

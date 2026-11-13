@@ -12,7 +12,7 @@
 | Brand name (EN / AR) | OTLOBNY Emaar / اطلبني إعمار (client request 2026-11-13; exact spelling to confirm) |
 | Sector | Contracting, facility maintenance, cleaning, landscaping, manpower supply; logistics services being added |
 | Markets / countries | Saudi Arabia; based in Al Madinah Al Munawwarah |
-| Website and social | otlobny.co (cover of old profile) / otlobny.com (its back cover) — TBC; email info@otlobny.co; tel 054 955 5514 |
+| Website and social | **otlobny.net** (client, verified live 2026-11-13); email info@otlobny.co (old profile); tel / WhatsApp 054 955 5514 (+966 54 955 5514) |
 | Client contact and approver | The user (owner of this workspace) |
 
 ## 2. Project
@@ -65,6 +65,7 @@
 | 2026-11-13 | Client instruction: partner logos are shown with TRANSPARENT backgrounds (surrounding background removed only; marks not redrawn). Keeta and ZERO each have two variants; the transparent ones are used in the draft | Client |
 | 2026-11-13 | Art direction received (`06-profiles/art-direction.md`, concept "Two languages, one centre"). Creative Director rulings for draft v01: (1) partners take pages 18–19 and contact merges into the back cover, page 20; (2) the partners title is «شركاء النجاح» / "Partners in Success"; (3) PARTNER GRID OVERRIDE, following the client's instruction: logos are transparent and sit directly on a white ground in an even grid, with no boxed tiles (a hairline grid at most); Keeta uses the black-on-transparent variant and ZERO the charcoal-on-transparent variant; (4) no logo on inside pages (cover, page 7 and page 20 only), as the art-director recommends; (5) the client's four mockup images are NOT used in full in draft v01 because they carry garbled text, misspelt names and the OLD activity names, which contradict the rename; only the art-director's safe crop may be used, captioned as illustrative; the client is asked whether to regenerate them with the new name; (6) functional strings: «صورة توضيحية» / "Illustrative image"; page 13 draft pill «مسودة — بانتظار تأكيد التفاصيل» / "Draft — details to be confirmed"; «جميع الشعارات ملك لأصحابها.» / "All logos are the property of their respective owners." | Creative Director |
 | 2026-11-13 | Client feedback on draft v01: "why did you not use the images I sent; I want the profile to be a visual pleasure". RULING REVERSED: the client's four mockup images ARE used, large, in v02. Only the small wrong descriptor line under the logo in each image (old activity name, misspelt Latin, garbled text) is covered with the surrounding surface colour; the wordmark and the rest of each image stay as supplied. The profile becomes image-led: full-bleed photographs on the cover, section openers and service pages; logistics gets a pictorial page; partner logos are enlarged. The art-director review and quality review of v01 did not complete (model usage limit) | Client / Creative Director |
+| 2026-11-13 | Client answers: logistics services confirmed (delivery, goods transport, storage, vehicle rental); website is otlobny.net (verified live); mockups to be redone by the agency with the new name (descriptor replaced by compositing the real lockup); founded 2021 confirmed. The "chosen company for 2021" sentence stays out (not confirmed as a claim) | Client / Creative Director |
 
 ## 7. Deliveries
 
