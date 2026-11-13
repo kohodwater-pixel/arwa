@@ -1,1 +1,2 @@
 - 2026-11-13: `..._primary_ar_v02.mp4` and `.html` are an UNAPPROVED candidate (Ember fill shortened to 0.20 s). The art-director approved v01 and asked that the timing not be changed without someone watching the film; v01 stands. Kept here for comparison once a person has played both.
+- 2026-11-13: `motion-brief.md` and `storyboard.md` (v01) superseded by the `_v02` documents after the art-director's review.

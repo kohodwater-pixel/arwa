@@ -32,7 +32,7 @@
 - **Purpose / vision / mission:** Purpose: so that an independent café never has to wonder what is in the bag or when it will arrive. Vision: to be the roaster Riyadh's independent cafés name first. Mission: roast every order in the weekly roast, for Riyadh's independent cafés and home brewers, and help café teams brew it well.
 - **Values:** On schedule (على الموعد); Plain facts (كلام واضح); On the café's side (في صفّ المقهى); Hospitality (ضيافة).
 - **Target audience:** Primary: independent café owners in Riyadh. Secondary: home brewers aged 22 to 40 buying online, Arabic first. Motives are assumptions pending validation.
-- **Competitors:** Camel Step, Elixir Bunn, Brew92 (home pages viewed 2026-11-13; see `04-identity/01-direction/distinctiveness-check.md` and `02-research/competitor-audit_v02.md`).
+- **Competitors:** Camel Step, Elixir Bunn, Brew92 (home pages viewed 2026-11-13; see `04-identity/01-direction/distinctiveness-check_v02.md` and `02-research/competitor-audit_v02.md`).
 - **Positioning statement:** For independent café owners in Riyadh, and for home brewers who want the same standard, Sidra Coffee is the Riyadh roastery built around a weekly roast-to-order rhythm rather than around its own café counters: a supplier that roasts what you ordered in that week's roast. (Clause "and runs no cafés of its own": TBC, client to confirm.)
 - **Personality (is / is not):** Dependable, not rigid or corporate. Rooted and Arabic-led, not folkloric. Plain-spoken, not technical for show or boastful. Hospitable, not chatty or salesy.
 - **Brand promise and proof points:** Promise: "Your order, roasted this week." / «طلبك يُحمَّص هذا الأسبوع.» Proof (verified): roasts to order weekly; based in Riyadh; weekly roasted-to-order wholesale; 250 g and 1 kg; barista courses; monthly subscription; founded 2023. TBC: roast date on bag, published roast and delivery days, no own cafés, roast-to-order for single online orders.
@@ -66,6 +66,8 @@
 
 - **Additions after amendments 01 and 02 (2026-11-13):** the "one lit bar, always seven" rule counts per row, so the stacked pattern and icon v02 (three rows of seven, centre column lit) are exempt. On web pages Ember may be used for the one primary action button per screenful in place of an Ember field or headline; a persistent header button is Ink. Ink on Ember is 3.19:1 (large text and shapes only). Motion: bars build in reading order within 1.0 s, any hold shows seven bars or none, the wordmark appears whole. Current files: guidelines v03, tokens and system v03, logo set in `04-identity/02-logo/` (SVG, `png/`, `pdf/`).
 
+- **Name rule (mitigation for the recorded name risk):** always the full name — «سدرة للقهوة» in Arabic and "Sidra Coffee" (with "roastery" in running copy) in English. Never «سدرة» or "Sidra" alone in text, and never beside an origin or variety word. The wordmark «سدرة» inside the logo is the only exception.
+
 ## 6. Decision log
 
 | Date | Decision | Approved by |
@@ -82,6 +84,7 @@
 | 2026-11-13 | Preliminary name and mark check run (`04-identity/mark-check.md`). KNOWN RISK, high: an Alshaya "Sidra" dining complex operates in Riyadh (same word, same city, food and beverage). Medium: "Sidra" is a coffee variety already sold by Riyadh roasters. The seven-bar device could not be checked by text search. For a real client this needs a trademark attorney's opinion before identity sign-off; for the system test the check is recorded and work continues | Creative Director |
 | 2026-11-13 | Art-director rulings (amendment 02): logo animation v01 APPROVED (poster frame required); icon v02 confirmed, with the stacked pattern and icon exempt from the "one lit bar, always seven" misuse rule (the rule counts per row); 132 px headline approved as the maximum for 1080-wide social formats; distinctiveness verdicts countersigned by the art-director (`distinctiveness-check_v02.md`). Confirmed: within one screenful the Ember button replaces the Ember field or headline; a persistent header button is Ink. Captions on screen-only pieces have a 9 px floor | art-director / Creative Director |
 | 2026-11-13 | Logo animation: v01 MP4 stands as the approved film; the v02 candidate (0.20 s fill) is held in `05-designs/logo-animation/_archive/` until a person has played both. Poster frame file name `..._logo-animation_poster_ar_v01.png` accepted | Creative Director |
+| 2026-11-13 | Quality review round 3: identity v03, logo animation v01 and landing page v02 PASS WITH MINOR FIXES. All six deliverables now pass with no critical or major issue open. Report: `08-final-delivery/_reviews/review_identity-animation-landing_2026-11-13_r3.md`. Rulings: (n) replies to enquiries are by email (test confirmation); (o) on the landing page the bar row moves to the foot of the "how it works" section so no bar sits over a step; (p) the in-place re-export of the logo PNGs at whole-pixel sizes is accepted and logged; (q) full-name rule recorded in section 5. STANDING HOLDS on client delivery: native Arabic proofread by a person; someone must watch the animation played back | Creative Director |
 
 ## 7. Deliveries
 
