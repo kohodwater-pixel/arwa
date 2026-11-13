@@ -46,6 +46,7 @@ Deliver what the project needs from: **PDF, PPTX, DOCX, SVG, PNG, JPG, HTML** (a
 
 ```
 08-final-delivery/
+├── 00-brand-strategy/      # when strategy is a deliverable: PDF plus its text
 ├── 01-logo/
 ├── 02-brand-guidelines/
 ├── 03-stationery-print/
@@ -57,6 +58,9 @@ Deliver what the project needs from: **PDF, PPTX, DOCX, SVG, PNG, JPG, HTML** (a
 └── README.md   # what is inside, how to use it, font and image licences
 ```
 
-- No working files, no drafts, no rejected options.
-- Source files are included with linked assets collected.
-- The README is written for a non-designer.
+- The package contains **every deliverable listed in the brief**, strategy and documents included. A deliverable that is deliberately left out is named in the README with the reason.
+- No working files, no drafts, no rejected options, no `_work/`, `_archive/` or `.gitkeep`.
+- Source files are included with linked assets collected: run `python3 scripts/collect_html.py <source.html> 08-final-delivery/08-source-files/<name>` for each HTML source, then open the copy from a different location to confirm fonts and images load.
+- Files are renamed `final` only after the client has approved them. A package assembled before approval keeps its version numbers, is marked **HELD** at the top of its README, and lists every condition that must be met before release.
+- The README is written for a non-designer, in the client's primary language first, and explains any term it uses (lockup, tokens, master).
+- Documents inside the package (font notes, guidelines' file lists) refer to the package's own folders, never to the agency's working folders or scripts.

@@ -27,6 +27,10 @@ An identity is not complete until it has:
 - Imagery direction, graphic elements, and at least five real applications
 - Misuse examples
 
+## Rules made late apply everywhere
+
+When a rule is added or changed after work has started (a name rule, a colour correction, a withdrawn claim), every existing deliverable is checked against it and re-issued if it breaks it, and `brand-context.md` is updated the same day. A rule that lives in one document only is not in force.
+
 ## Originality and rights
 
 - No marks, typefaces, photos or illustrations are used without a licence the client can rely on. Record the licence in `04-identity/licences.md`.

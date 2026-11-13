@@ -13,8 +13,9 @@ Covers stages 2 and 3: `02-research/` and `03-strategy/`.
 2. **Research** (market-researcher agent). Produce the market overview, competitor audit, audience insights and sources in `02-research/`. Specialist skills: `competitor-branding`, `target-audience`, `brand-audit` (for existing brands).
 3. **Strategy** (brand-strategist agent). Produce `03-strategy/brand-strategy.md` and `messaging.md`. Specialist skills: `brand-positioning`, `brand-messaging`, `brand-voice`, `brand-story`, `brand-architecture`, `rebranding`.
 4. **Naming, only if needed** (naming-specialist agent). Produce `03-strategy/naming.md` using `brand-naming`.
-5. **Present.** Summarise the strategy on one page: audience, positioning statement, personality, promise, tagline options, and the recommendation.
-6. **Record approval.** Once approved, update `brand-context.md` and note the approval date. Archive rejected directions under `03-strategy/_archive/`.
+5. **Client-facing summary.** When strategy is a deliverable, write `03-strategy/<client>_brand-strategy_summary_<lang>_vNN.md` (the document the client receives) and keep it current: it is re-issued whenever a later decision changes the strategy. It goes through quality review and is exported to PDF like any other deliverable.
+6. **Present.** Summarise the strategy on one page: audience, positioning statement, personality, promise, tagline options, and the recommendation.
+7. **Record approval.** Once approved, update `brand-context.md` and note the approval date. Archive rejected directions under `03-strategy/_archive/`.
 
 ## Done when
 

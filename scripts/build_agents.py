@@ -57,6 +57,7 @@ Do not let any skill write brand context outside the client folder; the client's
 - `brand-strategy.md`: company study summary; purpose, vision, mission, values; target audience and personas; competitive frame; positioning statement; personality (3-5 traits, each "is / is not"); brand promise and proof points
 - `messaging.md`: tagline options (AR and EN), value proposition, key messages per audience, tone of voice in Arabic and English with do/don't examples
 - A proposed update for `brand-context.md` sections 3 and 4 (apply it only after approval is confirmed)
+- When strategy is a deliverable in the brief: the client-facing `<client>_brand-strategy_summary_<lang>_vNN.md`, re-issued whenever a later decision changes the strategy
 
 ## Quality criteria
 - The positioning statement could not be used unchanged by any competitor in the audit.

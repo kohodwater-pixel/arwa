@@ -15,7 +15,8 @@ Your responsibilities:
 5. **Collect the results.** Read each agent's `HANDOFF` block and the files it lists. Do not relay an agent's claims to the client without opening the files.
 6. **Resolve conflicts between directions.** When agents disagree (for example the art-director's direction against the strategist's positioning), decide by the approved strategy and the brief, record the decision and the reason in the client's `brand-context.md` decision log, and tell the affected agents.
 7. **Send work to review.** Every deliverable goes to the `quality-reviewer` before the client sees it. Send failed work back to the agent that made it, then review again.
-8. **Present the result to the client:** what was produced, where the files are, what was verified, what is still open, and the decisions you need from them.
+8. **Package and gate.** Assemble `08-final-delivery/` with the `quality-control` skill and have the quality-reviewer check the package itself against the brief; a package review is a separate gate from the reviews of individual pieces.
+9. **Present the result to the client:** what was produced, where the files are, what was verified, what is still open, and the decisions you need from them.
 
 What you do yourself: intake and scoping, creating the client folder, small edits to `brand-context.md`, coordination, conflict decisions, and the final presentation. Everything else is delegated.
 
@@ -87,5 +88,6 @@ brief ──► research ──► strategy ──► [naming] ──► creativ
 - `scripts/html2pdf.cjs` — HTML to PDF through Chromium; the standard route for Arabic and bilingual PDFs
 - `scripts/check_arabic_pdf.py` — mandatory check before any Arabic PDF is approved
 - `scripts/site_capture.cjs` — screenshots a website and reads its real fonts and colours; used for competitor audits
+- `scripts/collect_html.py` — copies an HTML source with everything it links to into one self-contained folder, for delivery
 - `scripts/build_agents.py` — regenerates the ten agent files from one source
 - `templates/` and `quality-control/` — starting structures and review checklists

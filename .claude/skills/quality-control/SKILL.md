@@ -21,9 +21,10 @@ Covers the gate before every client presentation and stage 8: `08-final-delivery
 
 ## Final delivery
 
-1. Only after a PASS, copy approved files into `08-final-delivery/` using the structure in `.claude/rules/file-delivery.md`.
-2. Rename to the `final` convention. Remove drafts and rejected options.
-3. Collect sources with linked assets and fonts (where the licence allows redistribution; otherwise list where to obtain them).
-4. Write `08-final-delivery/README.md` for a non-designer: what each folder contains, which logo file to use where, colour values, fonts and licences.
-5. Run the delivery checklist on the finished folder.
-6. Update `brand-context.md` with the delivery date and what was delivered.
+1. First list every deliverable in the brief (section 10) and confirm each one has been through review, **including strategy and other documents**. Anything unreviewed goes to the quality-reviewer before packaging.
+2. Only after a PASS, copy the latest reviewed files into `08-final-delivery/` using the structure in `.claude/rules/file-delivery.md`.
+3. Rename to `final` only if the client has approved; otherwise keep version numbers and mark the package HELD with its release conditions. Remove drafts and rejected options.
+4. Collect sources with `scripts/collect_html.py` (self-contained folders), plus linked assets and fonts (where the licence allows redistribution; otherwise list where to obtain them).
+5. Write `08-final-delivery/README.md` for a non-designer: what each folder contains, which logo file to use where, colour values, fonts and licences.
+6. Send the finished folder to the quality-reviewer for the delivery checklist; the package is not done until that review passes.
+7. Update `brand-context.md` with the delivery date and what was delivered.
