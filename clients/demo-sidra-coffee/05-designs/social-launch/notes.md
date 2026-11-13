@@ -81,3 +81,37 @@ Judged from the text content and a 387 × 516 px thumbnail, so fine details (exa
 | People, offers, numbers | None | None | Pass |
 
 **Conclusion:** the Canva design is off-brand and should not be used or resized for publication. Bringing it on brand would mean replacing almost every element, so rebuilding from the HTML source, or uploading the approved PNG and logo to Canva, is the more sensible route. With no Brand Kit on the account, any Canva output has to be checked by hand against `brand-context.md`.
+
+---
+
+## 7. Version v02 (2026-11-13, round 2)
+
+Made after quality review r1 (issues 2 and 25) and the round-2 rulings in the last row of the decision log in `brand-context.md`. The v01 PNG and HTML are unchanged and stay in this folder; sections 1 to 6 above describe v01.
+
+| File | What it is |
+|---|---|
+| `demo-sidra-coffee_instagram-post_wholesale_ar_v02.png` | Instagram feed post, 1080 × 1350 px, RGB with an embedded sRGB ICC profile, Arabic |
+| `demo-sidra-coffee_instagram-post_wholesale_ar_v02.html` | Editable source |
+
+**What changed from v01**
+
+1. **Call to action replaced.** v01 «لطلبات المقاهي بالجملة، راسلنا على الخاص.» assumed a direct-message channel that does not exist. v02 reads «لطلبات المقاهي بالجملة:» with `hello@sidra-coffee.example` on its own line beneath it. The email is the only enquiry channel (ruling c). Wording follows the example given in the round-2 brief.
+2. **Email typesetting.** IBM Plex Sans Regular (static file from `assets/fonts/ibmplexsans-static/`), 23.5 px, left to right, no tracking, right-aligned under the Arabic line. The Arabic line stays 27 px, so Arabic is 1.15 × the Latin size.
+3. **sRGB ICC profile embedded** in the PNG with Pillow (`ImageCms.createProfile('sRGB')`, 588 bytes, description "sRGB built-in"). Pixel values are unchanged.
+4. Nothing else moved: headline, sub-head, logo, hairline, Crema panel and bars are as in v01. The call-to-action block starts 6 px higher to balance the two different line heights.
+
+**Closed by ruling (h):** the full-width headline and the bars bleeding off the bottom edge are approved, so deviations 1 and 4 in section 5 are no longer open. Assumption 3 in section 5 (direct message) no longer applies.
+
+**Checks on v02**
+
+- PNG opened and viewed: 1080 × 1350; Arabic connected and in order; diacritics intact; the email reads left to right, complete and on one line; the Arabic colon sits at the left end of the Arabic line as it should.
+- Fonts loaded per the browser: IBM Plex Sans Arabic 400, 500, 700 and the static IBM Plex Sans 400; none failed.
+- ICC profile read back from the saved file.
+
+**Still open on v02**
+
+- Arabic copy not proofread by a native reader.
+- `hello@sidra-coffee.example` is a test address on a reserved example domain; the piece cannot be published until a real address replaces it.
+- The post now mixes Arabic and one Latin string. Numerals: none appear.
+- The 3:4 profile-grid crop is still checked by calculation only.
+- I have not read the review report itself, only the two issues as described in the round-2 brief.

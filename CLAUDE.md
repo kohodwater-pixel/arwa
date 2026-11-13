@@ -86,5 +86,6 @@ brief ──► research ──► strategy ──► [naming] ──► creativ
 - `scripts/setup.sh` — installs those fonts and the Python libraries. The `creative-agency-os` cloud environment runs it automatically when a session's container is built; on any other machine run `bash scripts/setup.sh` once at the start of a session
 - `scripts/html2pdf.cjs` — HTML to PDF through Chromium; the standard route for Arabic and bilingual PDFs
 - `scripts/check_arabic_pdf.py` — mandatory check before any Arabic PDF is approved
+- `scripts/site_capture.cjs` — screenshots a website and reads its real fonts and colours; used for competitor audits
 - `scripts/build_agents.py` — regenerates the ten agent files from one source
 - `templates/` and `quality-control/` — starting structures and review checklists

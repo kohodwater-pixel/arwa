@@ -1,0 +1,56 @@
+{
+ "method": "dark runs on one pixel row through the bars, Paper ground; a gap counts when it recovers 25% of the bar-to-ground range",
+ "icon_v01_single_row_1to2": {
+  "16px": 1,
+  "24px": 7,
+  "32px": 5,
+  "41px": 5,
+  "48px": 7,
+  "64px": 7,
+  "96px": 7
+ },
+ "icon_v02_three_rows_1to2.6": {
+  "16px": {
+   "row1": 6,
+   "row2": 6,
+   "row3": 6,
+   "gap_px": 0.39
+  },
+  "24px": {
+   "row1": 6,
+   "row2": 6,
+   "row3": 6,
+   "gap_px": 0.59
+  },
+  "32px": {
+   "row1": 6,
+   "row2": 6,
+   "row3": 6,
+   "gap_px": 0.78
+  },
+  "41px": {
+   "row1": 7,
+   "row2": 7,
+   "row3": 7,
+   "gap_px": 1.0
+  },
+  "48px": {
+   "row1": 7,
+   "row2": 7,
+   "row3": 7,
+   "gap_px": 1.17
+  },
+  "64px": {
+   "row1": 7,
+   "row2": 7,
+   "row3": 7,
+   "gap_px": 1.56
+  },
+  "96px": {
+   "row1": 7,
+   "row2": 7,
+   "row3": 7,
+   "gap_px": 2.34
+  }
+ }
+}

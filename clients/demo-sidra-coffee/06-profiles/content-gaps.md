@@ -2,9 +2,9 @@
 
 > **SYSTEM TEST — FICTIONAL CLIENT.** Invented data for testing Creative Agency OS.
 
-**Version:** v01  **Date:** 2026-11-13  **Prepared by:** Corporate Designer
+**Version:** v02 (v01 text kept in `_archive/content-gaps_v01.md`)  **Date:** 2026-11-13  **Prepared by:** Corporate Designer
 
-Nothing in this list was invented or filled in. Each item is either left out of the profile or shown as a marked placeholder, as stated.
+Nothing in this list was invented or filled in. Each item is left out of the profile. v02 contains no placeholders.
 
 ## A. Missing content: section omitted
 
@@ -17,11 +17,11 @@ Nothing in this list was invented or filled in. Each item is either left out of 
 | A5 | Facts and figures | Sales figures, volumes, number of accounts | Brief: "not available" | Section omitted; only 2023, Riyadh and the weekly roast are shown |
 | A6 | Photography | No licensed photographs of beans, bags or equipment exist | `system.md` section 5 | Typographic layout with the bar system only |
 
-## B. Missing facts: placeholder or left out
+## B. Missing facts: left out
 
 | # | Fact | Status | In the layout |
 |---|---|---|---|
-| B1 | Phone number | Brief gives a dummy (+966 5X XXX XXXX) | **Marked placeholder on page 4** (dashed box, "to be supplied"). Blocks client-ready status |
+| B1 | Phone number | Brief gives a dummy (+966 5X XXX XXXX) | Removed in v02 (ruling 2026-11-13). Add the row back when the number arrives |
 | B2 | Website and social accounts | TBC in `brand-context.md` | Left out |
 | B3 | Street address, map, opening or visiting hours | Not supplied | City and country only |
 | B4 | Commercial registration / VAT number / legal line | Not supplied | Left out |
@@ -35,7 +35,7 @@ Nothing in this list was invented or filled in. Each item is either left out of 
 
 | # | Item | Why | In the layout |
 |---|---|---|---|
-| C1 | Tagline «تُحمَّص لطلبك، كل أسبوع.» / "Roasted for your order. Every week." | Recommended option; allowed for wholesale material by the decision log, not yet chosen by the client | Used on pages 1 and 4 |
+| C1 | Tagline «تُحمَّص لطلبك، كل أسبوع.» / "Roasted for your order. Every week." | Confirmed in the round-2 rulings, 2026-11-13 (Creative Director acting as client for the test) | Used on pages 1 and 4 |
 | C2 | "Runs no cafés of its own" / "we do not compete with cafés" | Not confirmed (decision log 2026-11-13) | Left out. The value name "On the café's side" is shown as approved in the strategy, without that claim |
 | C3 | Roast-to-order for single online orders | Assumption in `messaging.md` | The home-brewer "roasted for your order" line is not used; subscription copy says only "every month" |
 | C4 | Roast date on the bag; published roast and delivery days | TBC in `brand-context.md` | Left out |
@@ -51,4 +51,4 @@ Nothing in this list was invented or filled in. Each item is either left out of 
 |---|---|---|
 | D1 | Identity v01 is accepted for the system test only, not client-ready | Profile inherits this status |
 | D2 | Latin logo line "SIDRA COFFEE" pending review against "SIDRA ROASTERY" | Logo files used as they are |
-| D3 | Latin static fonts are instances cut from the variable font in `04-identity/_work/fonts/` | Used for the Latin text; see `04-identity/licences.md` |
+| D3 | Latin fonts | v02 loads the official static IBM Plex Sans files from `assets/fonts/ibmplexsans-static/` (SIL OFL) |

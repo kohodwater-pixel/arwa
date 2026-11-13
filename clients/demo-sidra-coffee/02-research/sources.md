@@ -23,6 +23,22 @@
 | S11 | Psychology Research and Behavior Management, vol. 16 (2023), coffee consumption in young adults, King Faisal University, n=923, Al-Ahsa | https://pmc.ncbi.nlm.nih.gov/articles/PMC10519208 | Young adult consumption; dripper coffee most common style |
 | S12 | GCC Business News, "Arabica Ambitions: Saudi coffee's journey from culture to commerce" | https://beta.gccbusinessnews.com/arabica-saudi-coffee-culture-commerce | Year of Saudi Coffee 2022; Saudi Coffee Company tenfold production aim; unnamed 2025 survey (not to be quoted) |
 
+## Round 2 additions — accessed 2026-11-13
+
+**Direct fetch attempts on 2026-11-13, all failed** (`getaddrinfo ENOTFOUND`, host not reachable from this session): https://camelstep.com/en · https://elixirbunn.com/en · https://brew92.com/en · https://www.brew92.com/aboutus. No page, stylesheet, logo file, packaging image or social profile was viewed. The statement above that visual identity is unverified still stands, and applies to `competitor-audit_v02.md` as well.
+
+The rows below are the competitors' own pages as returned by a web search restricted to each domain. They were read as **search-result summaries only**; the pages were not opened.
+
+| # | Source | URL | Used for |
+|---|---|---|---|
+| S13 | Camel Step, own site: About page, blog, FAQ, product pages | https://camelstep.com/en-ly/pages/%D8%B9%D9%86%20%D8%AE%D8%B7%D9%88%D8%A9%20%D8%AC%D9%85%D9%84 · https://camelstep.com/en-us/blogs · https://camelstep.com/en-us/blogs/post-e2470d · https://camelstep.com/en-us/faqs | Operating since 2013; product range; cafés; training; blog title; product-page style |
+| S14 | Elixir Bunn, own site: home, wholesale, roasting, Kivu, coffee shops and product pages | https://elixirbunn.com/en/ · https://elixirbunn.com/en-us/pages/wholesale · https://elixirbunn.com/en-us/pages/coffee-roasting-art · https://elixirbunn.com/en-us/pages/Kivu-specialty-coffee · https://elixirbunn.com/ar-us/pages/coffeeshops · https://elixirbunn.com/en-us/products/%D9%82%D9%87%D9%88%D8%A9-%D9%85%D8%B2%D9%8A%D8%AC-%D8%AB%D9%84%D8%A7%D8%AB%D8%A9-%D9%81%D9%8A-33 | About text; 31 March 2018 launch date (conflicts with S2); Riyadh address; wholesale, consulting, training; roasting-as-art page; Kivu story; 3x33 blend; "Here" space; mostly Arabic content |
+| S15 | Brew92, own site: About, home, locations, product pages | https://www.brew92.com/aboutus · https://www.brew92.com/ · https://www.brew92.com/locations | Founded 2016; café and roastery; SCA, Q-grader, Cup of Excellence claims; branch cities; business partners, consultancy, training; bilingual page titles |
+
+**Resolved since round 1:** Brew92 founding year (2016, own site). **New conflict:** Elixir Bunn founding date, 2014 (S2) against 2018 (S14).
+
+**Still not observed for any competitor:** logo, colours, typefaces, layout language lead, imagery, packaging, Instagram or other social profiles, taglines.
+
 ## Internal inputs
 
 - `clients/demo-sidra-coffee/01-brief/brief.md` (fictional, test-approved 2026-11-12)
