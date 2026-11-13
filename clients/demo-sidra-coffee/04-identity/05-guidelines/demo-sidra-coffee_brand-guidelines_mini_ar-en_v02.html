@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="utf-8">
+<title>Sidra Coffee — Mini brand guidelines v02 (AR-EN)</title>
+<link rel="stylesheet" href="../03-system/brand-v02.css">
+<style>
+  /* SYSTEM TEST, fictional client. Built from templates/brand-guidelines/outline.md at a reduced "mini" level. */
+  @page { size: A4; margin: 0; }
+  body { background: #fff; }
+  .page { width: 210mm; height: 297mm; position: relative; overflow: hidden; page-break-after: always;
+          background: var(--paper); padding: 14mm 15mm 16mm; display: flex; flex-direction: column; }
+  .page.crema { background: var(--crema); }
+  .hd { display: flex; justify-content: space-between; align-items: baseline; direction: ltr;
+        border-bottom: 2px solid var(--ink); padding-bottom: 2.5mm; margin-bottom: 6mm; }
+  .hd .en { font: 500 14.4pt/1.3 var(--en); }
+  .hd .ar { font: 500 16.5pt/1.5 var(--ar); }
+  .ft { margin-top: auto; display: flex; justify-content: space-between; direction: ltr; padding-top: 3mm;
+        border-top: 2px solid var(--ink); font: 600 5.85pt/1.4 var(--en); letter-spacing: 0.12em; text-transform: uppercase; color: var(--ash); }
+  .page.crema .ft { color: var(--ink); }
+  /* bilingual block: Latin left on 3 columns, Arabic right on 4 */
+  .bi { display: grid; grid-template-columns: 3fr 4fr; column-gap: 8mm; direction: ltr; margin-bottom: 5mm; }
+  .bi .en { font: 400 9pt/1.45 var(--en); }
+  .bi .ar { font: 400 10.5pt/1.75 var(--ar); }
+  .bi h3 { font-weight: 500; font-size: inherit; margin-bottom: 0.8mm; }
+  .bi .en h3 { font: 600 5.85pt/1.4 var(--en); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.2mm; }
+  .bi .ar h3 { font: 600 10.5pt/1.75 var(--ar); }
+  .bi p + p { margin-top: 1.5mm; }
+  .bi ul { list-style: none; }
+  .bi .en li { padding-left: 3mm; position: relative; }
+  .bi .en li::before { content: "–"; position: absolute; left: 0; }
+  .bi .ar li { padding-right: 3.5mm; position: relative; }
+  .bi .ar li::before { content: "–"; position: absolute; right: 0; }
+  .cap { font: 600 5.85pt/1.4 var(--en); letter-spacing: 0.12em; text-transform: uppercase; color: var(--ash); direction: ltr; text-align: left; }
+  .page.crema .cap { color: var(--ink); }
+  .cap-ar { font: 400 6.9pt/1.6 var(--ar); color: var(--ash); direction: rtl; text-align: right; }
+  .page.crema .cap-ar { color: var(--ink); }
+  .row { display: flex; gap: 4mm; direction: ltr; margin-bottom: 5mm; }
+  .tile { flex: 1; display: flex; flex-direction: column; }
+  .tile .box { height: 34mm; display: flex; align-items: center; justify-content: center; background: var(--paper); border: 2px solid var(--ink); }
+  .tile .box.c { background: var(--crema); } .tile .box.i { background: var(--ink); } .tile .box.e { background: var(--ember); }
+  .tile .box.w { background: #fff; } .tile .box.k { background: #000; }
+  .tile .box img { max-height: 20mm; max-width: 78%; }
+  .tile .cap { margin-top: 1.2mm; }
+  table { border-collapse: collapse; width: 100%; direction: ltr; margin-bottom: 5mm; }
+  th, td { text-align: left; padding: 1.3mm 1.5mm 1.3mm 0; border-bottom: 1px solid var(--ink); font: 400 8pt/1.4 var(--en); vertical-align: top; }
+  th { font: 600 5.85pt/1.4 var(--en); letter-spacing: 0.12em; text-transform: uppercase; border-bottom: 2px solid var(--ink); }
+  td.a, th.a { font: 400 9.2pt/1.6 var(--ar); direction: rtl; text-align: right; padding-right: 0; padding-left: 1.5mm; letter-spacing: 0; }
+  th.a { font-weight: 600; }
+  /* cover */
+  .cover-top { display: flex; justify-content: space-between; align-items: flex-start; direction: ltr; margin-bottom: 8mm; }
+  .cover-top img { width: 62mm; }
+  .cover-top .t-en { font: 700 30pt/1.05 var(--en); letter-spacing: -0.015em; max-width: 80mm; }
+  .cover-top .t-en small { display: block; font: 600 5.85pt/1.4 var(--en); letter-spacing: 0.12em; text-transform: uppercase; color: var(--ash); margin-top: 3mm; }
+  .title-ar { font: 700 34pt/1.3 var(--ar); direction: rtl; text-align: right; margin-bottom: 6mm; }
+  /* cover pattern: three band rows. Block 82 mm wide: bar 10 mm, gap 2 mm, bar height 20 mm (1:2). */
+  .field { margin: 0 -15mm 7mm; background: var(--crema); padding: 6mm 15mm; display: flex; justify-content: space-between; align-items: flex-end; direction: ltr; }
+  .pattern { width: 82mm; display: grid; row-gap: 2mm; }
+  .pattern .bars { height: 20mm; }
+  .field .title-ar { margin-bottom: 0; max-width: 85mm; }
+  /* misuse */
+  .mis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4mm; direction: ltr; margin-bottom: 5mm; }
+  .mis .m .box { height: 30mm; border: 2px solid var(--ink); display: flex; align-items: center; justify-content: center; overflow: hidden; background: var(--paper); }
+  .lk { width: 24mm; }
+  .lk img { width: 100%; display: block; margin-bottom: 1.5mm; }
+  .lk .bars { aspect-ratio: 16.4; }
+  .mis .m .en { font: 400 7.6pt/1.4 var(--en); margin-top: 1.2mm; }
+  .mis .m .ar { font: 400 8.8pt/1.6 var(--ar); }
+  .mis .m .x { font: 700 7.6pt/1.4 var(--en); }
+  /* colour */
+  .sw { display: grid; grid-template-columns: repeat(5, 1fr); gap: 3mm; direction: ltr; margin-bottom: 5mm; }
+  .sw .chip { height: 30mm; border: 2px solid var(--ink); padding: 2mm; display: flex; flex-direction: column; justify-content: flex-end; }
+  .sw .chip .n-ar { font: 700 13pt/1.3 var(--ar); direction: rtl; text-align: right; }
+  .sw .chip .n-en { font: 600 9pt/1.3 var(--en); }
+  .sw .v { font: 400 7.4pt/1.5 var(--en); margin-top: 1.5mm; }
+  .sw .v b { font-weight: 600; }
+  .prop { display: flex; height: 9mm; border: 2px solid var(--ink); direction: ltr; margin-bottom: 1.2mm; }
+  .pairs { display: grid; grid-template-columns: repeat(6, 1fr); gap: 3mm; direction: ltr; margin-bottom: 5mm; }
+  .pairs .p { height: 19mm; padding: 2mm; border: 2px solid var(--ink); display: flex; flex-direction: column; justify-content: space-between; }
+  .pairs .p .s-ar { font: 500 10.5pt/1.4 var(--ar); direction: rtl; text-align: right; }
+  .pairs .p .s-en { font: 600 7pt/1.3 var(--en); }
+  /* type */
+  .spec { display: grid; grid-template-columns: 26mm 1fr 1fr; column-gap: 5mm; direction: ltr; align-items: baseline; border-bottom: 1px solid var(--ink); padding: 1.5mm 0; }
+  .spec .k { font: 600 5.85pt/1.4 var(--en); letter-spacing: 0.12em; text-transform: uppercase; }
+  .grid7 { display: grid; grid-template-columns: repeat(7, 5fr); column-gap: calc(100% / 41); direction: ltr; height: 26mm; margin-bottom: 1.2mm; }
+  .grid7 i { border: 1px solid var(--ink); display: block; }
+  .grid7 i.t { background: var(--ink); } .grid7 i.s { background: var(--paper); }
+  .apps { display: flex; gap: 6mm; direction: ltr; align-items: flex-start; margin-bottom: 5mm; }
+  .apps img { display: block; border: 0; }
+</style>
+</head>
+<body>
+
+<!-- 1 COVER, INTRODUCTION, FOUNDATION -->
+<section class="page">
+  <div class="cover-top">
+    <div class="t-en">Mini brand guidelines<small>Version 02 · 2026-11-13 · Arabic and English</small></div>
+    <img src="../02-logo/demo-sidra-coffee_logo_bilingual-colour_ar-en_v01.svg" alt="سدرة — Sidra Coffee">
+  </div>
+  <div class="field">
+  <div class="pattern">
+    <div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  </div>
+  <div class="title-ar">دليل الهوية المختصر</div>
+  </div>
+  <div class="bi">
+    <div class="en"><h3>01 — About this document</h3>
+      <p>This is the short guide to the Sidra Coffee identity: the logo, colours, typefaces, the seven-bar system and two applications. Use it whenever you make something that carries the name. The logo files and <b style="font-weight:600">tokens.json</b> hold the exact values; this document explains how to use them.</p></div>
+    <div class="ar"><h3>01 — عن هذا الدليل</h3>
+      <p>هذا دليل مختصر لهوية سدرة للقهوة: الشعار، والألوان، والخطوط، ونظام الأعمدة السبعة، وتطبيقان. ارجع إليه كلما صمّمت شيئًا يحمل الاسم. القيم الدقيقة موجودة في ملفات الشعار وفي ملف tokens.json، وهذا الدليل يشرح طريقة استعمالها.</p></div>
+  </div>
+  <div class="bi">
+    <div class="en"><h3>02 — Brand foundation</h3>
+      <p><b style="font-weight:600">Promise.</b> Your order, roasted this week.</p>
+      <p><b style="font-weight:600">Who it is for.</b> Independent café owners in Riyadh, and home brewers who want the same standard.</p>
+      <p><b style="font-weight:600">Values.</b> On schedule. Plain facts. On the café's side. Hospitality.</p>
+      <p><b style="font-weight:600">Personality.</b> Dependable, not rigid. Rooted and Arabic-led, not folkloric. Plain-spoken, not boastful. Hospitable, not salesy.</p></div>
+    <div class="ar"><h3>02 — أساس العلامة</h3>
+      <p><b style="font-weight:600">الوعد:</b> طلبك يُحمَّص هذا الأسبوع.</p>
+      <p><b style="font-weight:600">لمن:</b> أصحاب المقاهي المستقلة في الرياض، ومحبّو تحضير القهوة في المنزل الذين يريدون المستوى نفسه.</p>
+      <p><b style="font-weight:600">القيم:</b> على الموعد. كلام واضح. في صفّ المقهى. ضيافة.</p>
+      <p><b style="font-weight:600">الشخصية:</b> يُعتمد عليها بلا تصلّب. أصيلة وعربية أولًا بلا فولكلور. واضحة بلا تباهٍ. مضيافة بلا إلحاح.</p></div>
+  </div>
+  <div class="bi">
+    <div class="en"><h3>The idea — Weekly Beat</h3>
+      <p>The week has seven beats and one of them is your roast. Seven equal bars, the centre one lit. The lit bar is fixed and illustrative: it does not stand for a particular day.</p></div>
+    <div class="ar"><h3>الفكرة — إيقاع الأسبوع</h3>
+      <p>للأسبوع سبع نبضات، وواحدة منها تحميص طلبك. سبعة أعمدة متساوية، والأوسط منها مضاء. العمود المضاء ثابت ورمزي، ولا يدل على يوم بعينه.</p></div>
+  </div>
+  <div class="ft"><span>Sidra Coffee · Mini brand guidelines v02 · System test, fictional client</span><span>1 / 6</span></div>
+</section>
+
+<!-- 2 LOGO AND USAGE -->
+<section class="page">
+  <div class="hd"><div class="en">03 — Logo and usage</div><div class="ar">الشعار واستعماله</div></div>
+  <div class="row">
+    <div class="tile"><div class="box"><img src="../02-logo/demo-sidra-coffee_logo_primary-colour_ar_v01.svg" alt=""></div><div class="cap">Primary · Arabic</div></div>
+    <div class="tile"><div class="box c"><img src="../02-logo/demo-sidra-coffee_logo_bilingual-colour_ar-en_v01.svg" alt=""></div><div class="cap">Bilingual</div></div>
+    <div class="tile"><div class="box"><img src="../02-logo/demo-sidra-coffee_logo_latin-colour_en_v01.svg" alt=""></div><div class="cap">Latin-led · English only</div></div>
+    <div class="tile"><div class="box c"><img src="../02-logo/demo-sidra-coffee_logo_icon-colour_ar-en_v02.svg" alt=""></div><div class="cap">Icon</div></div>
+  </div>
+  <div class="bi">
+    <div class="en"><p>The Arabic wordmark leads. Under it sits the bar row, exactly as wide as the word; in the bilingual lockup SIDRA COFFEE is spaced to the same width. Use the primary lockup wherever Arabic is read, the bilingual lockup on packaging and shared material, and the Latin-led lockup only where there is no Arabic at all.</p></div>
+    <div class="ar"><p>الكلمة العربية أولًا. تحتها صف الأعمدة بعرض الكلمة تمامًا، وفي الشعار الثنائي تُضبط عبارة SIDRA COFFEE على العرض نفسه. استعمل الشعار الأساسي حيثما يُقرأ بالعربية، والثنائي على العبوات والمواد المشتركة، واللاتيني حين لا يوجد نص عربي إطلاقًا.</p></div>
+  </div>
+  <div class="row" style="align-items:stretch">
+    <div class="tile" style="flex:0 0 62mm">
+      <div class="box" style="height:48mm"><div style="outline:1px dashed var(--ink); padding:8.07mm; background:var(--crema)"><img src="../02-logo/demo-sidra-coffee_logo_primary-colour_ar_v01.svg" alt="" style="width:30mm; max-width:none; max-height:none; display:block; background:var(--paper)"></div></div>
+      <div class="cap">Clear space = height of the letter د (0.27 × logo width) on every side</div>
+      <div class="cap-ar">المساحة الآمنة = ارتفاع حرف الدال من كل جهة</div>
+    </div>
+    <div class="tile">
+      <table>
+        <tr><th>Version</th><th>Screen, minimum</th><th>Print, minimum</th><th class="a">النسخة</th></tr>
+        <tr><td>Primary with seven bars</td><td>32 px high</td><td>10 mm wide</td><td class="a">الأساسي بسبعة أعمدة</td></tr>
+        <tr><td>Bilingual with seven bars</td><td>48 px high</td><td>18 mm wide</td><td class="a">الثنائي بسبعة أعمدة</td></tr>
+        <tr><td>Small version: one solid rule, centre seventh lit</td><td>16 to 31 px high</td><td>6 to 10 mm wide</td><td class="a">النسخة الصغيرة: خط واحد وسُبعه الأوسط مضاء</td></tr>
+        <tr><td>Icon with seven bars / small icon</td><td>48 px / 16 px</td><td>10 mm / 5 mm</td><td class="a">الأيقونة / الأيقونة الصغيرة</td></tr>
+        <tr><td>Wordmark alone</td><td>below 16 px</td><td>below 6 mm</td><td class="a">الكلمة وحدها</td></tr>
+      </table>
+      <div class="cap">Screen sizes come from pixel tests. Print sizes are simulated at 600 dpi and must be confirmed on a press proof.</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="tile"><div class="box" style="height:auto; padding:3mm; border:0; background:none; justify-content:flex-start"><img src="../02-logo/_work/test_logo_16px-high_x10_v02.png" alt="" style="max-width:100%; max-height:none; width:100%"></div>
+      <div class="cap">Test at 16 px high, enlarged 10 times. Left to right in pairs: primary, bilingual, Latin-led, icon; each with seven bars, then the small version. At 16 px the seven bars merge in the primary, bilingual and icon, so the small version is used.</div>
+      <div class="cap-ar">اختبار بارتفاع 16 بكسل، مكبّرًا 10 مرات. عند هذا الحجم تلتحم الأعمدة السبعة في الشعار الأساسي والثنائي والأيقونة، فتُستعمل النسخة الصغيرة.</div></div>
+  </div>
+  <div class="row">
+    <div class="tile"><div class="box i" style="height:22mm"><img src="../02-logo/demo-sidra-coffee_logo_primary-colour-reversed_ar_v01.svg" alt="" style="max-height:15mm"></div><div class="cap">On Ink</div></div>
+    <div class="tile"><div class="box e" style="height:22mm"><img src="../02-logo/demo-sidra-coffee_logo_primary-colour-on-ember_ar_v01.svg" alt="" style="max-height:15mm"></div><div class="cap">On Ember</div></div>
+    <div class="tile"><div class="box w" style="height:22mm"><img src="../02-logo/demo-sidra-coffee_logo_primary-black_ar_v01.svg" alt="" style="max-height:15mm"></div><div class="cap">Black, one colour</div></div>
+    <div class="tile"><div class="box k" style="height:22mm"><img src="../02-logo/demo-sidra-coffee_logo_primary-white_ar_v01.svg" alt="" style="max-height:15mm"></div><div class="cap">White, one colour</div></div>
+  </div>
+  <div class="ft"><span>Sidra Coffee · Mini brand guidelines v02 · System test, fictional client</span><span>2 / 6</span></div>
+</section>
+
+<!-- 3 MISUSE -->
+<section class="page crema">
+  <div class="hd"><div class="en">04 — Logo misuse</div><div class="ar">ما لا يُفعل بالشعار</div></div>
+  <div class="bi">
+    <div class="en"><p>Always use the supplied files. The eight examples below are wrong. Each one breaks a rule that keeps the seven bars readable as one fixed sign.</p></div>
+    <div class="ar"><p>استعمل الملفات المسلَّمة دائمًا. الأمثلة الثمانية أدناه خاطئة، وكل واحد منها يخالف قاعدة تحفظ الأعمدة السبعة علامةً ثابتة مقروءة.</p></div>
+  </div>
+  <div class="mis">
+    <div class="m"><div class="box"><div class="lk"><img src="../02-logo/demo-sidra-coffee_logo_wordmark-colour_ar_v01.svg" alt=""><div class="bars" style="--x:1"><i></i><i style="background:var(--ember)"></i><i></i><i style="background:var(--ink)"></i><i></i><i></i><i></i></div></div></div>
+      <div class="en"><span class="x">× </span>Do not move the lit bar.</div><div class="ar">لا تنقل العمود المضاء.</div></div>
+    <div class="m"><div class="box"><div class="lk"><img src="../02-logo/demo-sidra-coffee_logo_wordmark-colour_ar_v01.svg" alt=""><div class="bars"><i></i><i style="background:var(--ember)"></i><i></i><i style="background:var(--ink)"></i><i></i><i style="background:var(--ember)"></i><i></i></div></div></div>
+      <div class="en"><span class="x">× </span>Do not light more than one bar.</div><div class="ar">لا تُضئ أكثر من عمود.</div></div>
+    <div class="m"><div class="box"><div class="lk"><img src="../02-logo/demo-sidra-coffee_logo_wordmark-colour_ar_v01.svg" alt=""><div class="bars" style="grid-template-columns:repeat(5,5fr); aspect-ratio:11.6"><i></i><i></i><i style="background:var(--ember)"></i><i style="background:var(--ink)"></i><i></i></div></div></div>
+      <div class="en"><span class="x">× </span>Do not change the count. Always seven.</div><div class="ar">لا تغيّر العدد. سبعة دائمًا.</div></div>
+    <div class="m"><div class="box"><div class="lk"><img src="../02-logo/demo-sidra-coffee_logo_wordmark-colour_ar_v01.svg" alt=""><div class="bars"><i style="background:none; border:1px solid var(--ink)"></i><i style="background:none; border:1px solid var(--ink)"></i><i style="background:none; border:1px solid var(--ink)"></i><i style="background:none; border:1px solid var(--ember)"></i><i style="background:none; border:1px solid var(--ink)"></i><i style="background:none; border:1px solid var(--ink)"></i><i style="background:none; border:1px solid var(--ink)"></i></div></div></div>
+      <div class="en"><span class="x">× </span>Do not outline the bars.</div><div class="ar">لا ترسم الأعمدة مفرّغة.</div></div>
+    <div class="m"><div class="box"><div class="lk" style="transform:rotate(-14deg)"><img src="../02-logo/demo-sidra-coffee_logo_wordmark-colour_ar_v01.svg" alt=""><div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
+      <div class="en"><span class="x">× </span>Do not rotate or curve.</div><div class="ar">لا تُدِر الشعار ولا تقوّسه.</div></div>
+    <div class="m"><div class="box"><div class="lk" style="transform:scaleX(1.45)"><img src="../02-logo/demo-sidra-coffee_logo_wordmark-colour_ar_v01.svg" alt=""><div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
+      <div class="en"><span class="x">× </span>Do not stretch or squeeze.</div><div class="ar">لا تمطّ الشعار ولا تضغطه.</div></div>
+    <div class="m"><div class="box" style="background:#2E6B4F"><div class="lk"><img src="../02-logo/demo-sidra-coffee_logo_wordmark-white_ar_v01.svg" alt=""><div class="bars"><i style="background:#fff"></i><i style="background:#fff"></i><i style="background:#fff"></i><i></i><i style="background:#fff"></i><i style="background:#fff"></i><i style="background:#fff"></i></div></div></div>
+      <div class="en"><span class="x">× </span>Do not use other colours. No green.</div><div class="ar">لا تستعمل ألوانًا أخرى. لا أخضر.</div></div>
+    <div class="m"><div class="box"><div class="lk" style="filter:drop-shadow(1.2mm 1.2mm 0.8mm rgba(0,0,0,.45))"><img src="../02-logo/demo-sidra-coffee_logo_wordmark-colour_ar_v01.svg" alt=""><div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
+      <div class="en"><span class="x">× </span>No shadows, gradients or effects.</div><div class="ar">لا ظلال ولا تدرّجات ولا مؤثرات.</div></div>
+  </div>
+  <div class="bi">
+    <div class="en"><h3>Also</h3><ul>
+      <li>Do not type the name in a font in place of the wordmark.</li>
+      <li>Do not label the bars with day names.</li>
+      <li>Do not colour the two dots of the ة or turn them into a symbol.</li>
+      <li>Do not place the bar row beside a real barcode: keep them on different faces, or one bar-row width apart.</li>
+      <li>Do not set "Sidra" or «سدرة» beside an origin or variety word.</li></ul></div>
+    <div class="ar"><h3>كذلك</h3><ul>
+      <li>لا تكتب الاسم بخط طباعي بدل الكلمة المرسومة.</li>
+      <li>لا تضع أسماء الأيام على الأعمدة.</li>
+      <li>لا تلوّن نقطتَي التاء المربوطة ولا تحوّلهما إلى رمز.</li>
+      <li>لا تضع صف الأعمدة بجوار باركود حقيقي: اجعلهما على وجهين مختلفين، أو اترك بينهما عرض صف كامل.</li>
+      <li>لا تضع «سدرة» أو "Sidra" بجوار اسم منشأ أو سلالة قهوة.</li></ul></div>
+  </div>
+  <div class="bi">
+    <div class="en"><h3>One-colour versions</h3><p>In black or white the lit bar cannot be shown by colour, so all seven bars are solid. Use one-colour versions only where full colour is impossible: stamps, embossing, single-colour print.</p></div>
+    <div class="ar"><h3>النسخ بلون واحد</h3><p>في الأسود أو الأبيض لا يمكن تمييز العمود المضاء باللون، فتكون الأعمدة السبعة كلها مصمتة. استعمل هذه النسخ فقط حين يتعذّر اللون الكامل: الأختام، والبصم البارز، والطباعة بلون واحد.</p></div>
+  </div>
+  <div class="ft"><span>Sidra Coffee · Mini brand guidelines v02 · System test, fictional client</span><span>3 / 6</span></div>
+</section>
+
+<!-- 4 COLOUR -->
+<section class="page">
+  <div class="hd"><div class="en">05 — Colour</div><div class="ar">الألوان</div></div>
+  <div class="sw">
+    <div><div class="chip" style="background:#F3ECE0"><div class="n-ar">ورق</div><div class="n-en">Paper</div></div>
+      <div class="v"><b>HEX</b> #F3ECE0<br><b>RGB</b> 243 236 224<br><b>CMYK</b> 4 6 12 0 *<br><b>Pantone</b> waived for system test; required before print<br>Default background</div></div>
+    <div><div class="chip" style="background:#E3C9A0"><div class="n-ar">كريما</div><div class="n-en">Crema</div></div>
+      <div class="v"><b>HEX</b> #E3C9A0<br><b>RGB</b> 227 201 160<br><b>CMYK</b> 10 20 40 0 *<br><b>Pantone</b> waived for system test; required before print<br>Warm second ground</div></div>
+    <div><div class="chip" style="background:#1F1B18; color:#F3ECE0"><div class="n-ar">حبر</div><div class="n-en">Ink</div></div>
+      <div class="v"><b>HEX</b> #1F1B18<br><b>RGB</b> 31 27 24<br><b>CMYK</b> 60 60 60 85 *<br>Body text prints 0 0 0 100<br><b>Pantone</b> waived for system test; required before print<br>Text, unlit bars, rules</div></div>
+    <div><div class="chip" style="background:#C23A20; color:#F3ECE0"><div class="n-ar">جمر</div><div class="n-en">Ember</div></div>
+      <div class="v"><b>HEX</b> #C23A20<br><b>RGB</b> 194 58 32<br><b>CMYK</b> 15 90 100 5 *<br><b>Pantone</b> waived for system test; required before print<br>The lit bar; one field or headline</div></div>
+    <div><div class="chip" style="background:#6F6861; color:#F3ECE0"><div class="n-ar">رماد</div><div class="n-en">Ash</div></div>
+      <div class="v"><b>HEX</b> #6F6861<br><b>RGB</b> 111 104 97<br><b>CMYK</b> 50 47 50 20 *<br><b>Pantone</b> waived for system test; required before print<br>Captions, on Paper only</div></div>
+  </div>
+  <div class="cap" style="margin-bottom:5mm">* CMYK values are approximate and uncalibrated. Pantone references and ICC-calibrated CMYK are waived for this system test and are required before print.</div>
+  <div class="prop"><div style="flex:45;background:#F3ECE0"></div><div style="flex:25;background:#E3C9A0"></div><div style="flex:15;background:#1F1B18"></div><div style="flex:10;background:#C23A20"></div><div style="flex:5;background:#6F6861"></div></div>
+  <div class="cap" style="margin-bottom:5mm">Share of a typical layout: Paper 45 · Crema 25 · Ink 15 · Ember 10 · Ash 5</div>
+  <div class="bi">
+    <div class="en"><ul>
+      <li>Warmth comes from Crema. Any piece with more than one surface uses Crema on at least one.</li>
+      <li>Ember appears once per layout as a field or a headline, plus the lit bar. Never body text.</li>
+      <li>No green, no gradients, no tints.</li></ul></div>
+    <div class="ar"><ul>
+      <li>الدفء يأتي من الكريما. كل قطعة لها أكثر من سطح تستعمل الكريما في سطح واحد على الأقل.</li>
+      <li>الجمر يظهر مرة واحدة في التصميم، مساحةً أو عنوانًا، إضافة إلى العمود المضاء. ولا يُستعمل لنص المتن.</li>
+      <li>لا أخضر، ولا تدرّجات، ولا درجات مخففة.</li></ul></div>
+  </div>
+  <div class="cap" style="margin-bottom:1.5mm">Text pairs that pass WCAG AA (contrast ratio, calculated)</div>
+  <div class="pairs">
+    <div class="p" style="background:#F3ECE0;color:#1F1B18"><div class="s-ar">حبر على ورق</div><div class="s-en">Ink on Paper 14.6:1</div></div>
+    <div class="p" style="background:#E3C9A0;color:#1F1B18"><div class="s-ar">حبر على كريما</div><div class="s-en">Ink on Crema 10.7:1</div></div>
+    <div class="p" style="background:#1F1B18;color:#F3ECE0"><div class="s-ar">ورق على حبر</div><div class="s-en">Paper on Ink 14.6:1</div></div>
+    <div class="p" style="background:#C23A20;color:#F3ECE0"><div class="s-ar">ورق على جمر</div><div class="s-en">Paper on Ember 4.6:1</div></div>
+    <div class="p" style="background:#F3ECE0;color:#6F6861"><div class="s-ar">رماد على ورق</div><div class="s-en">Ash on Paper 4.7:1</div></div>
+    <div class="p" style="background:#F3ECE0;color:#C23A20"><div class="s-ar" style="font-size:15pt;font-weight:700">جمر</div><div class="s-en">Ember on Paper 4.6:1, from 24 px</div></div>
+  </div>
+  <div class="bi">
+    <div class="en"><h3>Not for text</h3><p>Ink on Ember 3.2:1 (bars, rules and type of 24 px or more only). Ash on Crema 3.4:1. Ember on Crema 3.4:1. Crema on Paper 1.4:1.</p>
+      <h3 style="margin-top:3mm">Colour blindness</h3><p>The lit bar against the Ink bars measures 3.2:1. In a red-blind (protan) simulation this falls to about 2.4:1, so colour alone is not enough: the lit bar is always the centre bar, and its position identifies it. Against Paper it stays above 3.9:1 in every simulation.</p></div>
+    <div class="ar"><h3>لا تُستعمل للنص</h3><p>حبر على جمر 3.2:1 (للأعمدة والخطوط والعناوين الكبيرة فقط). رماد على كريما 3.4:1. جمر على كريما 3.4:1. كريما على ورق 1.4:1.</p>
+      <h3 style="margin-top:3mm">عمى الألوان</h3><p>تباين العمود المضاء مع أعمدة الحبر 3.2:1، وينخفض في محاكاة عمى اللون الأحمر إلى نحو 2.4:1. لذلك لا يكفي اللون وحده: العمود المضاء هو الأوسط دائمًا، وموضعه يعرّف به. وعلى الورق يبقى تباينه أعلى من 3.9:1 في كل المحاكيات.</p></div>
+  </div>
+  <div class="ft"><span>Sidra Coffee · Mini brand guidelines v02 · System test, fictional client</span><span>4 / 6</span></div>
+</section>
+
+<!-- 5 TYPE, BARS, GRID -->
+<section class="page crema">
+  <div class="hd"><div class="en">06 — Typography, bars and grid</div><div class="ar">الخطوط والأعمدة والشبكة</div></div>
+  <div class="spec"><div class="k">Display · 700<br>5 × body</div><div class="en" style="font:700 34pt/1.05 var(--en); letter-spacing:-0.015em">Every week.</div><div class="ar" style="font:700 39pt/1.3 var(--ar)">كل أسبوع.</div></div>
+  <div class="spec"><div class="k">Sub-head · 500<br>1.6 × body</div><div class="en" style="font:500 14.4pt/1.3 var(--en)">Roasted to order</div><div class="ar" style="font:500 16.5pt/1.5 var(--ar)">يُحمَّص لطلبك</div></div>
+  <div class="spec"><div class="k">Body · 400<br>1</div><div class="en" style="font:400 9pt/1.45 var(--en)">Sidra Coffee roastery roasts each order in that week's roast, in 250 g and 1 kg bags.</div><div class="ar" style="font:400 10.5pt/1.75 var(--ar)">تحمّص محمصة سدرة للقهوة كل طلب ضمن تحميص أسبوعه، في أكياس 250 غ و1 كغ.</div></div>
+  <div class="spec"><div class="k">Product label · 600</div><div class="en" style="font:600 9pt/1.3 var(--en)">Net weight 1 kg</div><div class="ar" style="font:600 10.5pt/1.5 var(--ar)">الوزن الصافي 1 كغ</div></div>
+  <div class="spec"><div class="k">Caption · 0.65<br>EN 600 caps +12%</div><div class="en" style="font:600 5.85pt/1.4 var(--en); letter-spacing:.12em; text-transform:uppercase">Riyadh, Saudi Arabia</div><div class="ar" style="font:400 6.9pt/1.6 var(--ar)">الرياض، المملكة العربية السعودية</div></div>
+  <div class="spec" style="margin-bottom:5mm"><div class="k">Figures<br>AR 700 · EN Light 300</div><div class="en" style="font:300 30pt/1 var(--fig)">250 g</div><div class="ar" style="font:700 30pt/1.3 var(--ar)">250 غ</div></div>
+  <div class="bi">
+    <div class="en"><p><b style="font-weight:600">IBM Plex Sans Arabic</b> and <b style="font-weight:600">IBM Plex Sans</b>, both under the SIL Open Font License. Fallbacks: Noto Sans Arabic, then Tahoma; Helvetica Neue, then Arial.</p><ul>
+      <li>Set Arabic 15 to 20% larger than the Latin beside it.</li>
+      <li>Arabic is never tracked, slanted or faux-bolded. Tracking is for Latin captions only.</li>
+      <li>Western numerals (0123) in both languages.</li>
+      <li>Arabic sits right and Latin left, each in its own block. Never line by line.</li></ul></div>
+    <div class="ar"><p><b style="font-weight:600">IBM Plex Sans Arabic</b> و<b style="font-weight:600">IBM Plex Sans</b>، وكلاهما برخصة SIL للخطوط المفتوحة. البدائل: Noto Sans Arabic ثم Tahoma، و Helvetica Neue ثم Arial.</p><ul>
+      <li>يُضبط العربي أكبر من اللاتيني المجاور له بنسبة 15 إلى 20%.</li>
+      <li>لا تباعد بين حروف العربي، ولا إمالة، ولا تسميك مصطنع. التباعد للتعليقات اللاتينية فقط.</li>
+      <li>الأرقام غربية (0123) في اللغتين.</li>
+      <li>العربي يمينًا واللاتيني يسارًا، كلٌّ في كتلته. لا سطرًا بسطر.</li></ul></div>
+  </div>
+  <div class="row" style="margin-bottom:2mm">
+    <div class="tile"><div class="bars" style="height:26mm"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="cap" style="margin-top:1.2mm">Band: each bar taller than wide (1:2 to 1:4). Packaging and large fields.</div></div>
+    <div class="tile"><div style="height:26mm; display:flex; align-items:center"><div class="bars" style="width:100%; aspect-ratio:16.4"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="cap" style="margin-top:1.2mm">Rule: each bar 2 wide to 1 high. Logo and dividers.</div></div>
+    <div class="tile"><div class="grid7"><i class="s"></i><i class="s"></i><i class="s"></i><i class="t"></i><i class="t"></i><i class="t"></i><i class="t"></i></div><div class="cap">Grid: seven columns. Arabic text on four from the right, secondary content on three.</div></div>
+  </div>
+  <div class="bi">
+    <div class="en"><ul>
+      <li>Always seven equal bars in one row, the fourth lit. Gap = one fifth of a bar's width.</li>
+      <li>Lit bar: Ember on Paper, Crema and Ink. On Ember the bars are Ink and the lit bar is Paper.</li>
+      <li>Pattern: band rows stacked with the same gap, three rows or more, lit bars in one column.</li>
+      <li>Section breaks are a 2 px Ink hairline. Square corners. No shadows.</li>
+      <li>No icons or illustration. Photography shows beans, bags and equipment only, flat and frontal on Paper or Crema. No people, no hands.</li></ul></div>
+    <div class="ar"><ul>
+      <li>سبعة أعمدة متساوية في صف واحد دائمًا، والرابع مضاء. الفراغ = خُمس عرض العمود.</li>
+      <li>العمود المضاء: جمر على الورق والكريما والحبر. وعلى الجمر تكون الأعمدة بلون الحبر والمضاء بلون الورق.</li>
+      <li>النمط: صفوف عريضة متراصّة بالفراغ نفسه، ثلاثة صفوف فأكثر، والأعمدة المضاءة في عمود واحد.</li>
+      <li>الفواصل خط حبر بسماكة 2 بكسل. الزوايا قائمة. بلا ظلال.</li>
+      <li>لا أيقونات ولا رسوم. الصور للحبوب والأكياس والمعدّات فقط، بلقطة أمامية مسطّحة على ورق أو كريما. بلا أشخاص ولا أيدٍ.</li></ul></div>
+  </div>
+  <div class="ft"><span>Sidra Coffee · Mini brand guidelines v02 · System test, fictional client</span><span>5 / 6</span></div>
+</section>
+
+<!-- 6 VOICE, APPLICATIONS, FILES -->
+<section class="page">
+  <div class="hd"><div class="en">07 — Voice, applications and files</div><div class="ar">الصوت والتطبيقات والملفات</div></div>
+  <div class="bi">
+    <div class="en"><h3>Voice</h3><p>Plain, specific, short sentences. Numbers before adjectives. In running copy write "Sidra Coffee roastery", not "Sidra" alone.</p>
+      <p><b style="font-weight:600">Say:</b> roastery, roasted to order, every week, on schedule, fresh.<br><b style="font-weight:600">Avoid:</b> best, finest, premium, award-winning, passion, journey.</p>
+      <p><b style="font-weight:600">Tagline, wholesale material only:</b> Roasted for your order. Every week.</p></div>
+    <div class="ar"><h3>الصوت</h3><p>عربية فصيحة مبسّطة، مباشرة ومحدّدة، تُكتب أصلًا بالعربية ولا تُترجم. الأرقام قبل الصفات.</p>
+      <p><b style="font-weight:600">نقول:</b> محمصة، يُحمَّص لطلبك، كل أسبوع، على الموعد، طازجة.<br><b style="font-weight:600">نتجنّب:</b> الأفضل، الأجود، رقم 1، فاخر، حصري، شغف، رحلة.</p>
+      <p><b style="font-weight:600">الشعار اللفظي، لمواد الجملة فقط:</b> «تُحمَّص لطلبك، كل أسبوع.»</p></div>
+  </div>
+  <div class="apps">
+    <div style="flex:0 0 70mm"><img src="../04-applications/_work/preview_business-card_ar-en_v02.png" alt="" style="width:70mm"><div class="cap" style="margin-top:1.2mm">Business card, 90 × 50 mm. Arabic side on Paper, English side on Crema. Email is the only contact channel.</div><div class="cap-ar">بطاقة العمل، 90 × 50 مم. البريد الإلكتروني هو قناة التواصل الوحيدة.</div></div>
+    <div style="flex:0 0 58mm"><img src="../04-applications/_work/preview_bag-label_1kg_ar-en_v02.png" alt="" style="width:58mm"><div class="cap" style="margin-top:1.2mm">1 kg wholesale bag label, 100 × 170 mm. Ember ground, Ink band, Paper lit bar. The Crema panel is where the coffee is written, kept apart from the name.</div><div class="cap-ar">ملصق كيس الجملة 1 كغ. اللوحة الكريمية لكتابة نوع القهوة، بعيدًا عن الاسم.</div></div>
+    <div style="flex:1">
+      <div class="cap" style="margin-bottom:1.5mm">Files in 04-identity</div>
+      <table>
+        <tr><td>02-logo</td><td>SVG, PDF, PNG at 1x, 2x, 4x; outlined. primary, bilingual, latin, icon, wordmark; colour, colour-reversed, colour-on-ember, black, white; "small" versions</td></tr>
+        <tr><td>03-system</td><td>tokens.json, brand-v02.css, system.md</td></tr>
+        <tr><td>04-applications</td><td>Card and label as HTML</td></tr>
+        <tr><td>licences.md</td><td>Font licences</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="bi">
+    <div class="en"><h3>Still open</h3><ul>
+      <li>The logo and name have had a first check only. This is not a legal trademark clearance; a formal search is needed before registration.</li>
+      <li>Pantone and calibrated CMYK values were waived for this test and are required before any print job. Minimum print sizes need a press proof.</li>
+      <li>The wordmark is outlined IBM Plex Sans Arabic Bold, accepted for this test. A redraw is required before real use.</li>
+      <li>The Arabic text needs a native proofread before release.</li>
+      <li>Questions about this guide go to the agency's Creative Director.</li></ul></div>
+    <div class="ar"><h3>نقاط مفتوحة</h3><ul>
+      <li>فُحص الشعار والاسم فحصًا أوليًا فقط. هذا ليس فحصًا قانونيًا للعلامة التجارية، ويلزم بحث رسمي قبل التسجيل.</li>
+      <li>أُجّلت مراجع بانتون وقيم CMYK المعايَرة في هذا الاختبار، وهي لازمة قبل أي طباعة. والأحجام الدنيا المطبوعة تحتاج إلى تجربة طباعية.</li>
+      <li>الكلمة المرسومة مأخوذة من خط IBM Plex Sans Arabic Bold وقُبلت لهذا الاختبار، ويلزم إعادة رسمها قبل الاستعمال الفعلي.</li>
+      <li>النص العربي يحتاج إلى مراجعة لغوية من قارئ عربي قبل النشر.</li>
+      <li>الأسئلة عن هذا الدليل تُوجَّه إلى المدير الإبداعي في الوكالة.</li></ul></div>
+  </div>
+  <div class="ft"><span>Sidra Coffee · Mini brand guidelines v02 · System test, fictional client</span><span>6 / 6</span></div>
+</section>
+</body>
+</html>
