@@ -46,7 +46,7 @@
 - **Words we use / avoid:** Use: محمصة، يُحمَّص لطلبك، كل أسبوع، على الموعد، طازجة / roastery, roasted to order, every week, on schedule, fresh. Avoid: الأفضل، الأجود، رقم 1، فاخر، حصري، شغف، رحلة / best, finest, premium, award-winning, passion, journey; any claim about awards, customers, certifications or Saudi-grown beans.
 - **Numerals:** Western (0123)
 
-## 5. Visual identity (v02 accepted for system test only, 2026-11-13 — not client-approved)
+## 5. Visual identity (v03 accepted for system test only, 2026-11-13 — not client-approved)
 
 - **Creative direction (one sentence):** Weekly Beat — a seven-part system with the centre part lit in Ember; see `04-identity/01-direction/creative-direction.md`
 - **Logo files and usage:** `04-identity/02-logo/` (outlined SVG). Primary = Arabic wordmark سدرة over the seven-bar rule row; bilingual adds SIDRA COFFEE; Latin-led for English-only; icon = three stacked rows of seven bars in a square, centre column lit (v02). Clear space = height of the letter د (0.27 × logo width). Seven bars from 32 px high / 10 mm wide (bilingual 48 px / 18 mm); below that the `-small` version (solid rule, centre seventh lit) down to 16 px / 6 mm; below that the wordmark alone. Print minimums to be confirmed on a proof.
@@ -63,6 +63,8 @@
 - **Typefaces:** Arabic — IBM Plex Sans Arabic; Latin — IBM Plex Sans (both SIL OFL 1.1); Arabic set 15–20% larger than adjacent Latin; scale 0.65 / 1 / 1.6 / 5; licences in `04-identity/licences.md`
 - **Imagery and graphic style:** flat colour, 2 px Ink hairlines, the seven-bar row (rule 2:1, band 1:2 to 1:4, gap 1/5 bar, fourth bar lit), seven-column grid. No icons or illustration. Photography of beans, bags and equipment only, flat and frontal on Paper or Crema.
 - **Do not:** move the lit bar, light two, change the count or label bars with days; use green, gradients, tints, shadows or rounded corners; set body text in Ember; put Ash or Ember text on Crema; track Arabic; show people or hands; place "Sidra" / «سدرة» beside an origin or variety word; place the bar row beside a barcode.
+
+- **Additions after amendments 01 and 02 (2026-11-13):** the "one lit bar, always seven" rule counts per row, so the stacked pattern and icon v02 (three rows of seven, centre column lit) are exempt. On web pages Ember may be used for the one primary action button per screenful in place of an Ember field or headline; a persistent header button is Ink. Ink on Ember is 3.19:1 (large text and shapes only). Motion: bars build in reading order within 1.0 s, any hold shows seven bars or none, the wordmark appears whole. Current files: guidelines v03, tokens and system v03, logo set in `04-identity/02-logo/` (SVG, `png/`, `pdf/`).
 
 ## 6. Decision log
 
