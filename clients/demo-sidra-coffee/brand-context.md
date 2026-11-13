@@ -68,6 +68,8 @@
 
 - **Name rule (mitigation for the recorded name risk):** always the full name — «سدرة للقهوة» in Arabic and "Sidra Coffee" (with "roastery" in running copy) in English. Never «سدرة» or "Sidra" alone in text, and never beside an origin or variety word. The wordmark «سدرة» inside the logo is the only exception.
 
+- **Never** pun on or refer to «سدرة المنتهى» in any copy (from `03-strategy/naming.md`).
+
 ## 6. Decision log
 
 | Date | Decision | Approved by |
@@ -86,9 +88,10 @@
 | 2026-11-13 | Logo animation: v01 MP4 stands as the approved film; the v02 candidate (0.20 s fill) is held in `05-designs/logo-animation/_archive/` until a person has played both. Poster frame file name `..._logo-animation_poster_ar_v01.png` accepted | Creative Director |
 | 2026-11-13 | Quality review round 3: identity v03, logo animation v01 and landing page v02 PASS WITH MINOR FIXES. All six deliverables now pass with no critical or major issue open. Report: `08-final-delivery/_reviews/review_identity-animation-landing_2026-11-13_r3.md`. Rulings: (n) replies to enquiries are by email (test confirmation); (o) on the landing page the bar row moves to the foot of the "how it works" section so no bar sits over a step; (p) the in-place re-export of the logo PNGs at whole-pixel sizes is accepted and logged; (q) full-name rule recorded in section 5. STANDING HOLDS on client delivery: native Arabic proofread by a person; someone must watch the animation played back | Creative Director |
 | 2026-11-13 | Package review round 4 FAILED the delivery package (strategy missing, sources not collected). Actions: strategy summary v02 written and exported (PDF); profile v03 and presentation v03 apply the full-name rule; landing page v03 and guidelines v04 confirmed fixed; sources collected as self-contained folders; package rebuilt. Rulings: (r) file names keep version numbers and are NOT renamed `final`, because no client has approved anything; (s) the two identity applications are accepted as previews inside the guidelines for the test, and reviewed files are required for a real client; (t) the positioning statement keeps "rather than around its own café counters" as an internal description, never as published copy; (u) the tagline is used on wholesale-facing material only until roast-to-order for single online orders is confirmed. Report: `08-final-delivery/_reviews/review_delivery-package_2026-11-13_r4.md` | Creative Director |
+| 2026-11-13 | Package review round 5: strategy summary v02 FAILED its first review (corrupted duplicate title and wrong Arabic direction in mixed lines, both introduced by the Creative Director's own PDF export; value proposition over-claiming); package FAILED narrowly. Rulings: (v) "On schedule / على الموعد" remains a value in the strategy as an internal commitment but is NOT printed in public pieces until roast and delivery days can be published; the profile drops it. (w) Value proposition and mission are scoped: Sidra Coffee roasts to order every week for independent cafés, and sells its coffee to home brewers; no piece says home orders are roasted to order. (x) The «سدرة المنتهى» rule is recorded in section 5. (y) The lower band on the presentation's closing slide is intentional (its own layout on Ink). (z) Document layout and PDF export are done by the corporate-designer, not by the Creative Director. Report: `08-final-delivery/_reviews/review_delivery-package_2026-11-13_r5.md` | Creative Director |
 
 ## 7. Deliveries
 
 | Date | What was delivered | Where |
 |---|---|---|
-| 2026-11-13 | Internal delivery package assembled after review round 3 — HELD, not released to a client (see its README for the eight conditions) | `08-final-delivery/` |
+| 2026-11-13 | Internal delivery package assembled after review round 3 and rebuilt after rounds 4 and 5 — HELD, not released to a client (see its README for the eight conditions) | `08-final-delivery/` |
