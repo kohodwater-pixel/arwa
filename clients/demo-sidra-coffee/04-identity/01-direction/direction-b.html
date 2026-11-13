@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Sidra Coffee — Direction B: Nabq / نبق (stylescape)</title>
+<style>
+@font-face{font-family:"Tajawal";font-weight:300;src:url("../../../../assets/fonts/tajawal/Tajawal-Light.ttf") format("truetype")}
+@font-face{font-family:"Tajawal";font-weight:400;src:url("../../../../assets/fonts/tajawal/Tajawal-Regular.ttf") format("truetype")}
+@font-face{font-family:"Tajawal";font-weight:500;src:url("../../../../assets/fonts/tajawal/Tajawal-Medium.ttf") format("truetype")}
+@font-face{font-family:"Tajawal";font-weight:700;src:url("../../../../assets/fonts/tajawal/Tajawal-Bold.ttf") format("truetype")}
+@font-face{font-family:"Tajawal";font-weight:800;src:url("../../../../assets/fonts/tajawal/Tajawal-ExtraBold.ttf") format("truetype")}
+@font-face{font-family:"Inter";font-weight:100 900;src:url("../../../../assets/fonts/inter/Inter%5Bopsz,wght%5D.ttf") format("truetype")}
+
+:root{--shade:#3B2A3F;--nabq:#E2A12E;--clay:#A64E2C;--sand:#F2E6D2;--bark:#5A3A28}
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1600px;background:var(--sand);color:var(--shade);font-family:"Tajawal",sans-serif;line-height:1.75}
+.en{font-family:"Inter",sans-serif;direction:ltr;text-align:left;line-height:1.5}
+.cap{font-family:"Inter",sans-serif;direction:ltr;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--bark)}
+.dot{border-radius:50%;display:block;flex:none}
+
+/* hero */
+.hero{background:var(--shade);color:var(--sand);padding:90px 100px 110px;position:relative;overflow:hidden;border-radius:0 0 0 220px}
+.hero .cap{color:var(--nabq)}
+.top{display:flex;justify-content:space-between;margin-bottom:70px}
+.hero .d1{position:absolute;width:520px;height:520px;background:var(--nabq);left:90px;top:150px}
+.hero .d2{position:absolute;width:300px;height:300px;background:var(--clay);left:440px;top:400px}
+.hero-txt{position:relative;width:840px}
+h1{font-size:230px;font-weight:800;line-height:1.3}
+.h1en{font-size:64px;font-weight:700;letter-spacing:-.02em;line-height:1.1;color:var(--nabq)}
+.idea{margin-top:44px}
+.idea .ar{font-size:31px;font-weight:500;line-height:1.75}
+.idea .en{font-size:21px;margin-top:16px;opacity:.92}
+
+.wrap{padding:0 100px 90px}
+section{padding-top:80px}
+.sec-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:36px}
+.sec-h .ar{font-size:24px;font-weight:700;display:flex;align-items:center;gap:12px}
+.sec-h .ar:before{content:"";width:16px;height:16px;border-radius:50%;background:var(--clay)}
+
+/* palette as fruit ripening */
+.pal{display:flex;align-items:flex-end;gap:36px}
+.pc{text-align:center}
+.pc b{display:block;font-size:22px;font-weight:700;margin-top:14px}
+.pc span{font-family:"Inter",sans-serif;direction:ltr;display:block;font-size:15px}
+
+/* type */
+.type{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+.type .ar-big{font-size:112px;font-weight:800;line-height:1.3}
+.type .ar-mid{font-size:36px;font-weight:500;margin-top:10px;color:var(--clay)}
+.type .ar-body{font-size:22px;line-height:1.85;margin-top:18px}
+.type .en-big{font-size:80px;font-weight:800;letter-spacing:-.03em;line-height:1.05;margin-top:14px}
+.type .en-mid{font-size:28px;font-weight:500;margin-top:24px;color:var(--clay)}
+.type .en-body{font-size:18px;margin-top:20px}
+.meta{margin-top:22px}
+
+/* graphic language */
+.gl{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.tile{height:360px;border-radius:36px;padding:30px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
+.tile p{font-size:18px;position:relative}
+.tile .dot{position:absolute}
+.t1{background:var(--nabq)}
+.t2{background:var(--shade);color:var(--sand)}
+.t3{background:#fff8ea;border:2px solid var(--shade)}
+.pair{display:flex;gap:10px;position:absolute;top:44px;right:40px}
+.cluster{position:absolute;inset:0}
+
+/* logo + application */
+.last{display:grid;grid-template-columns:3fr 4fr;gap:60px}
+.logo{background:#fff8ea;border-radius:36px;height:520px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.logo .mark{display:flex;gap:16px;margin-bottom:6px;margin-inline-end:150px}
+.logo .wm{font-size:190px;font-weight:800;line-height:1.15}
+.logo .lat{font-family:"Inter",sans-serif;direction:ltr;font-size:26px;font-weight:600;letter-spacing:.04em;margin-top:8px}
+.note{font-size:16px;color:var(--bark);margin-top:14px}
+.stage{background:var(--shade);border-radius:36px;height:640px;display:flex;justify-content:center;align-items:flex-end;gap:56px;padding-bottom:44px}
+.bag{width:310px;height:520px;background:var(--nabq);color:var(--shade);position:relative;overflow:hidden;border-radius:8px 8px 14px 14px;padding:86px 30px 28px;display:flex;flex-direction:column;box-shadow:0 18px 30px rgba(0,0,0,.3)}
+.bag:before{content:"";position:absolute;top:0;left:0;right:0;height:54px;background:rgba(59,42,63,.12);border-bottom:2px solid rgba(59,42,63,.2);z-index:2}
+.bag .b1{position:absolute;width:300px;height:300px;background:var(--clay);left:-90px;top:150px}
+.bag .b2{position:absolute;width:150px;height:150px;background:var(--shade);left:130px;top:300px}
+.bag>div{position:relative}
+.bag .wm{font-size:78px;font-weight:800;line-height:1.2}
+.bag .lat{font-family:"Inter",sans-serif;direction:ltr;text-align:right;font-size:14px;font-weight:600;letter-spacing:.04em}
+.bag .foot{margin-top:auto;background:var(--sand);border-radius:22px;padding:14px 20px}
+.bag .line{font-size:22px;font-weight:700;line-height:1.5}
+.bag .k{font-size:17px;display:flex;justify-content:space-between;margin-top:4px}
+.bag .k b{font-weight:800}
+.bag.two{background:var(--sand);width:230px;height:390px;padding-top:70px}
+.bag.two:before{height:42px}
+.bag.two .b1{width:210px;height:210px;background:var(--nabq);top:120px;left:-60px}
+.bag.two .b2{width:100px;height:100px;background:var(--clay);left:100px;top:230px}
+.bag.two .wm{font-size:56px}.bag.two .lat{font-size:11px}
+.bag.two .foot{background:var(--shade);color:var(--sand);border-radius:18px;padding:10px 14px}
+.bag.two .line{font-size:16px}.bag.two .k{font-size:13px}
+footer{margin-top:70px;border-top:2px solid var(--shade);padding-top:20px;display:flex;justify-content:space-between}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="top">
+    <div class="cap">Sidra Coffee — Creative direction B of 2 — Stylescape v01 — System test, fictional client</div>
+    <div class="cap">04-identity / 01-direction</div>
+  </div>
+  <i class="dot d1"></i><i class="dot d2"></i>
+  <div class="hero-txt">
+    <h1>نَبْق</h1>
+    <div class="en h1en">Nabq</div>
+    <div class="idea">
+      <p class="ar">ثمرة السدرة مستديرة ودافئة كحبّة البن: نقطة واحدة تصير علامة الضيافة في كل ما تقدّمه سدرة.</p>
+      <p class="en">The sidr tree's fruit is round and warm like a coffee cherry: one dot becomes the mark of hospitality on everything Sidra hands over.</p>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<section>
+  <div class="sec-h"><span class="ar">الألوان</span><span class="cap">Colour direction — the fruit ripening, in the tree's shade</span></div>
+  <div class="pal">
+    <div class="pc"><i class="dot" style="width:330px;height:330px;background:var(--shade)"></i><b>ظلّ</b><span>Shade #3B2A3F</span></div>
+    <div class="pc"><i class="dot" style="width:290px;height:290px;background:var(--nabq)"></i><b>نبق</b><span>Nabq #E2A12E</span></div>
+    <div class="pc"><i class="dot" style="width:230px;height:230px;background:var(--clay)"></i><b>طين</b><span>Clay #A64E2C</span></div>
+    <div class="pc"><i class="dot" style="width:170px;height:170px;background:var(--bark)"></i><b>لحاء</b><span>Bark #5A3A28</span></div>
+    <div class="pc"><i class="dot" style="width:170px;height:170px;background:var(--sand);border:2px solid var(--shade)"></i><b>رمل</b><span>Sand #F2E6D2</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-h"><span class="ar">الخط</span><span class="cap">Typography — Tajawal + Inter</span></div>
+  <div class="type">
+    <div>
+      <div class="ar-big">قهوتك تُحمَّص لطلبك.</div>
+      <div class="ar-mid">عندك V60؟ ابدأ بهذه.</div>
+      <p class="ar-body">سدرة محمصة قهوة مختصة من الرياض، تحمّص طلبك في تحميصة الأسبوع، للمقاهي المستقلة ولمن يحضّر قهوته في بيته. نقول لك ما في الكيس وكيف تحضّره، بلا تعقيد.</p>
+      <div class="cap meta">Tajawal — ExtraBold 800 / Medium 500 / Regular 400</div>
+    </div>
+    <div class="en">
+      <div class="en-big">Roasted for your order.</div>
+      <div class="en-mid">Brewing with a V60? Start with this one.</div>
+      <p class="en-body">Sidra is a specialty coffee roastery in Riyadh that roasts your order in the weekly roast, for independent cafés and for people who brew at home. Single origins and house blends, 250 g or 1 kg.</p>
+      <div class="cap meta">Inter — ExtraBold 800 / Medium 500 / Regular 400</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-h"><span class="ar">اللغة البصرية</span><span class="cap">Graphic language — no photography of people; flat shape, no ornament</span></div>
+  <div class="gl">
+    <div class="tile t1">
+      <div class="pair"><i class="dot" style="position:static;width:120px;height:120px;background:var(--shade)"></i><i class="dot" style="position:static;width:120px;height:120px;background:var(--clay)"></i></div>
+      <p>العلامة: نقطتا التاء المربوطة ثمرتان.</p><p class="en" style="font-size:15px">The device: the two dots of the letter ة, drawn as two fruits.</p>
+    </div>
+    <div class="tile t2">
+      <i class="dot" style="width:420px;height:420px;background:var(--bark);top:-160px;left:-120px"></i>
+      <i class="dot" style="width:150px;height:150px;background:var(--nabq);top:70px;right:60px"></i>
+      <p>الظل: دائرة كبيرة هادئة، وتحتها نقطة مضيئة.</p><p class="en" style="font-size:15px">Shade: one large quiet circle, one bright dot beneath it.</p>
+    </div>
+    <div class="tile t3">
+      <i class="dot" style="width:74px;height:74px;background:var(--nabq);top:40px;right:40px"></i>
+      <i class="dot" style="width:74px;height:74px;background:var(--nabq);top:40px;right:132px"></i>
+      <i class="dot" style="width:74px;height:74px;background:var(--clay);top:40px;right:224px"></i>
+      <i class="dot" style="width:74px;height:74px;background:var(--nabq);top:40px;right:316px"></i>
+      <i class="dot" style="width:74px;height:74px;background:var(--nabq);top:132px;right:40px"></i>
+      <i class="dot" style="width:74px;height:74px;background:var(--clay);top:132px;right:132px"></i>
+      <i class="dot" style="width:74px;height:74px;background:var(--nabq);top:132px;right:224px"></i>
+      <i class="dot" style="width:74px;height:74px;background:var(--nabq);top:132px;right:316px"></i>
+      <p>النقش: صفوف ثمار، وواحدة ناضجة في كل صف.</p><p class="en" style="font-size:15px">Pattern: rows of fruit, one ripe in each row.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-h"><span class="ar">فكرة الشعار والتطبيق</span><span class="cap">Rough logo idea + sample application (1 kg and 250 g bags)</span></div>
+  <div class="last">
+    <div>
+      <div class="logo">
+        <div class="mark"><i class="dot" style="width:54px;height:54px;background:var(--nabq)"></i><i class="dot" style="width:54px;height:54px;background:var(--clay)"></i></div>
+        <div class="wm">سدرة</div>
+        <div class="lat">Sidra Coffee</div>
+      </div>
+      <p class="note">تخطيط مبدئي: في الشعار المرسوم تحلّ الثمرتان محل نقطتي التاء المربوطة.</p>
+      <p class="note en">Type-set sketch, not a drawn logo. In the drawn wordmark the two fruits replace the two dots of the ة; here they sit above the word to show the idea.</p>
+    </div>
+    <div>
+      <div class="stage">
+        <div class="bag">
+          <i class="dot b1"></i><i class="dot b2"></i>
+          <div class="wm">سدرة</div>
+          <div class="lat">Sidra Coffee</div>
+          <div class="foot"><div class="line">تُحمَّص لطلبك، كل أسبوع.</div><div class="k"><span>خلطة البيت</span><b>1 كغ</b></div></div>
+        </div>
+        <div class="bag two">
+          <i class="dot b1"></i><i class="dot b2"></i>
+          <div class="wm">سدرة</div>
+          <div class="lat">Sidra Coffee</div>
+          <div class="foot"><div class="line">تُحمَّص لطلبك، كل أسبوع.</div><div class="k"><span>خلطة البيت</span><b>250 غ</b></div></div>
+        </div>
+      </div>
+      <p class="note">صلة الاسم بشجرة السدر وثمرتها تحتاج تأكيد العميل قبل اعتماد هذا الاتجاه.</p>
+      <p class="note en">The link between the name and the sidr tree and its fruit needs client confirmation before this direction is approved. Tagline is the recommended option, not yet approved.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="cap">Fonts: Tajawal, Inter (SIL OFL) — Numerals: Western</div>
+  <div class="cap">Direction board, not final artwork</div>
+</footer>
+</div>
+</body>
+</html>
