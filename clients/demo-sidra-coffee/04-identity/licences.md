@@ -65,3 +65,7 @@ Required before registration or launch: a formal search and opinion by trademark
 ## Tools (no licence passes to the client)
 
 - uharfbuzz 0.57 (shaping), fontTools (outlines, instancing), CairoSVG and Pillow (PNG previews), Chromium via Playwright (HTML to PDF and PNG). Open-source build tools; they leave no licensed content in the deliverables.
+
+## Competitor comparison (added by the Creative Director, 2026-11-13)
+
+The mark was compared visually with the home pages of Camel Step, Elixir Bunn and Brew92; all three were judged distinct. Details and evidence: `01-direction/distinctiveness-check.md` (main check and addendum). Not checked: packaging, social accounts, other roasters, and any trademark register. This is not a legal clearance.

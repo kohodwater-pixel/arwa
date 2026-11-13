@@ -103,3 +103,22 @@ Colour values below are the computed values reported by `scripts/site_capture.cj
 1. Someone on an unrestricted connection opens camelstep.com and elixirbunn.com, saves the two logos and three or four bag photographs each into `02-research/_work/captures/`, and notes where `#D92C20` is used on Elixir Bunn's site.
 2. I then complete sections 2 and 3 and give final verdicts. Estimated effort: one short pass.
 3. Until then, the identity should not be described as "checked distinct from all three competitors".
+
+---
+
+## Addendum 2026-11-13 (round 3) — Camel Step and Elixir Bunn now seen
+
+Added by the Creative Director after the Zid image and style hosts were allowed. Evidence: `02-research/_work/captures-r3/camelstep.png` and `elixirbunn.png` (home pages, 1280 × 900, captured with `scripts/site_capture.cjs` and viewed).
+
+| Competitor | What was seen on the home page | Compared with Sidra's Weekly Beat | Verdict |
+|---|---|---|---|
+| Camel Step | Symbol-only header logo: a line-drawn camel mark in dark teal-blue on white; teal-blue top bar and icons; light, rounded Arabic headline type; product photography of machines | Sidra has no animal or pictorial symbol, uses a heavy Arabic wordmark over a row of seven bars, and its colours are Ember red, Ink and Paper. No bars, no red, no cream ground at Camel Step | **Distinct** |
+| Elixir Bunn | Stacked bilingual wordmark: thin calligraphic Arabic «إكسير البن» over a high-contrast serif "ELIXIR BUNN / COFFEE ROASTERS", in black on white; dark green campaign imagery; white bags with gold ornament; a yellow button | Sidra's wordmark is heavy and geometric, not calligraphic or serif; it has the bar device; no green, gold or serif. The red `#D92C20` noted earlier is the pink-and-red «مخفض» sale label on product cards, not a brand colour | **Distinct** |
+| Brew92 | (unchanged from the main check) thin Latin wordmark, electric blue on cool grey | — | **Distinct** |
+
+**Conclusion.** On the evidence of the three home pages, Sidra's mark, palette and device do not resemble any of the three. The Ember colour does not need to move.
+
+**Still open, stated plainly**
+- Camel Step's site sets its text in IBM Plex Sans Arabic. Sidra's wordmark is currently outlined IBM Plex Sans Arabic Bold, so the planned custom redraw of the wordmark remains necessary for distinctiveness, not only for craft.
+- Only home pages were viewed. Packaging beyond what appears in Elixir Bunn's banner, Instagram accounts, and other Saudi roasters were not checked.
+- No trademark register search has been made. This is a visual comparison, not a legal clearance.
