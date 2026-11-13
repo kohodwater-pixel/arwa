@@ -22,8 +22,8 @@ body{width:1600px;background:var(--sand);color:var(--shade);font-family:"Tajawal
 .hero{background:var(--shade);color:var(--sand);padding:90px 100px 110px;position:relative;overflow:hidden;border-radius:0 0 0 220px}
 .hero .cap{color:var(--nabq)}
 .top{display:flex;justify-content:space-between;margin-bottom:70px}
-.hero .d1{position:absolute;width:520px;height:520px;background:var(--nabq);left:90px;top:150px}
-.hero .d2{position:absolute;width:300px;height:300px;background:var(--clay);left:440px;top:400px}
+.hero .d1{position:absolute;width:500px;height:500px;background:var(--nabq);left:-70px;top:170px}
+.hero .d2{position:absolute;width:260px;height:260px;background:var(--clay);left:300px;top:450px}
 .hero-txt{position:relative;width:840px}
 h1{font-size:230px;font-weight:800;line-height:1.3}
 .h1en{font-size:64px;font-weight:700;letter-spacing:-.02em;line-height:1.1;color:var(--nabq)}
@@ -44,11 +44,11 @@ section{padding-top:80px}
 .pc span{font-family:"Inter",sans-serif;direction:ltr;display:block;font-size:15px}
 
 /* type */
-.type{display:grid;grid-template-columns:1fr 1fr;gap:70px}
-.type .ar-big{font-size:112px;font-weight:800;line-height:1.3}
+.type{display:grid;grid-template-columns:4fr 3fr;gap:70px}
+.type .ar-big{font-size:92px;font-weight:800;line-height:1.4}
 .type .ar-mid{font-size:36px;font-weight:500;margin-top:10px;color:var(--clay)}
 .type .ar-body{font-size:22px;line-height:1.85;margin-top:18px}
-.type .en-big{font-size:80px;font-weight:800;letter-spacing:-.03em;line-height:1.05;margin-top:14px}
+.type .en-big{font-size:72px;font-weight:800;letter-spacing:-.03em;line-height:1.05;margin-top:14px}
 .type .en-mid{font-size:28px;font-weight:500;margin-top:24px;color:var(--clay)}
 .type .en-body{font-size:18px;margin-top:20px}
 .meta{margin-top:22px}
@@ -67,7 +67,8 @@ section{padding-top:80px}
 /* logo + application */
 .last{display:grid;grid-template-columns:3fr 4fr;gap:60px}
 .logo{background:#fff8ea;border-radius:36px;height:520px;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.logo .mark{display:flex;gap:16px;margin-bottom:6px;margin-inline-end:150px}
+.logo .wm{position:relative}
+.logo .wm .dot{position:absolute;width:37px;height:37px;top:-7px}
 .logo .wm{font-size:190px;font-weight:800;line-height:1.15}
 .logo .lat{font-family:"Inter",sans-serif;direction:ltr;font-size:26px;font-weight:600;letter-spacing:.04em;margin-top:8px}
 .note{font-size:16px;color:var(--bark);margin-top:14px}
@@ -173,12 +174,11 @@ footer{margin-top:70px;border-top:2px solid var(--shade);padding-top:20px;displa
   <div class="last">
     <div>
       <div class="logo">
-        <div class="mark"><i class="dot" style="width:54px;height:54px;background:var(--nabq)"></i><i class="dot" style="width:54px;height:54px;background:var(--clay)"></i></div>
-        <div class="wm">سدرة</div>
+        <div class="wm">سدرة<i class="dot" style="left:19px;background:var(--nabq)"></i><i class="dot" style="left:52px;background:var(--clay)"></i></div>
         <div class="lat">Sidra Coffee</div>
       </div>
       <p class="note">تخطيط مبدئي: في الشعار المرسوم تحلّ الثمرتان محل نقطتي التاء المربوطة.</p>
-      <p class="note en">Type-set sketch, not a drawn logo. In the drawn wordmark the two fruits replace the two dots of the ة; here they sit above the word to show the idea.</p>
+      <p class="note en">Type-set sketch, not a drawn logo. In the drawn wordmark the two fruits replace the two dots of the ة; here coloured circles are overlaid on the typeface's own dots to show the idea.</p>
     </div>
     <div>
       <div class="stage">
@@ -186,13 +186,13 @@ footer{margin-top:70px;border-top:2px solid var(--shade);padding-top:20px;displa
           <i class="dot b1"></i><i class="dot b2"></i>
           <div class="wm">سدرة</div>
           <div class="lat">Sidra Coffee</div>
-          <div class="foot"><div class="line">تُحمَّص لطلبك، كل أسبوع.</div><div class="k"><span>خلطة البيت</span><b>1 كغ</b></div></div>
+          <div class="foot"><div class="line">تُحمَّص لطلبك،<br>كل أسبوع.</div><div class="k"><span>خلطة البيت</span><b>1 كغ</b></div></div>
         </div>
         <div class="bag two">
           <i class="dot b1"></i><i class="dot b2"></i>
           <div class="wm">سدرة</div>
           <div class="lat">Sidra Coffee</div>
-          <div class="foot"><div class="line">تُحمَّص لطلبك، كل أسبوع.</div><div class="k"><span>خلطة البيت</span><b>250 غ</b></div></div>
+          <div class="foot"><div class="line">تُحمَّص لطلبك،<br>كل أسبوع.</div><div class="k"><span>خلطة البيت</span><b>250 غ</b></div></div>
         </div>
       </div>
       <p class="note">صلة الاسم بشجرة السدر وثمرتها تحتاج تأكيد العميل قبل اعتماد هذا الاتجاه.</p>
