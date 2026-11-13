@@ -82,8 +82,8 @@ brief ──► research ──► strategy ──► [naming] ──► creativ
 
 ## Production toolkit
 
-- `assets/fonts/` — open-licence (SIL OFL) Arabic and Latin fonts: IBM Plex Sans Arabic, Tajawal, Cairo, Noto Sans Arabic, Noto Kufi Arabic, Amiri, IBM Plex Sans, Inter
-- `scripts/setup.sh` — installs those fonts and the Python libraries; run it once at the start of a session on a new machine
+- `assets/fonts/` — open-licence (SIL OFL) Arabic and Latin fonts: IBM Plex Sans Arabic, Tajawal, Cairo, Noto Sans Arabic, Noto Kufi Arabic, Amiri, IBM Plex Sans (variable, plus static files in `ibmplexsans-static/` for print, PPTX and named embedding), Inter
+- `scripts/setup.sh` — installs those fonts and the Python libraries. The `creative-agency-os` cloud environment runs it automatically when a session's container is built; on any other machine run `bash scripts/setup.sh` once at the start of a session
 - `scripts/html2pdf.cjs` — HTML to PDF through Chromium; the standard route for Arabic and bilingual PDFs
 - `scripts/check_arabic_pdf.py` — mandatory check before any Arabic PDF is approved
 - `scripts/build_agents.py` — regenerates the ten agent files from one source

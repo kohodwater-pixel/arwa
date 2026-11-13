@@ -18,6 +18,10 @@ FONTS = {
     "ibmplexsans": ["OFL.txt", "IBMPlexSans[wdth,wght].ttf"],
     "inter": ["OFL.txt", "Inter[opsz,wght].ttf"],
 }
+# Official static IBM Plex Sans (needed for print and for PPTX/PDF embedding by name)
+STATIC_BASE = "https://raw.githubusercontent.com/IBM/plex/master/packages/plex-sans/fonts/complete/ttf"
+STATIC = {"ibmplexsans-static": [f"IBMPlexSans-{w}.ttf" for w in ("Light", "Regular", "Medium", "SemiBold", "Bold")]}
+
 root = pathlib.Path(__file__).resolve().parent.parent / "assets" / "fonts"
 failed = 0
 for family, files in FONTS.items():
@@ -34,4 +38,15 @@ for family, files in FONTS.items():
         else:
             failed += 1
             print(f"FAIL {family}/{name}")
+for family, files in STATIC.items():
+    (root / family).mkdir(parents=True, exist_ok=True)
+    for name in files:
+        dest = root / family / name
+        if dest.exists() and dest.stat().st_size > 1000:
+            continue
+        r = subprocess.run(["curl", "-sfL", "--max-time", "90", f"{STATIC_BASE}/{name}"], capture_output=True)
+        if r.returncode == 0 and len(r.stdout) > 1000:
+            dest.write_bytes(r.stdout); print(f"ok   {family}/{name}")
+        else:
+            failed += 1; print(f"FAIL {family}/{name}")
 sys.exit(1 if failed else 0)

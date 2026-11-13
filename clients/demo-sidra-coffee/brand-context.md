@@ -48,9 +48,6 @@
 
 ## 5. Visual identity (v01 accepted for system test only, 2026-11-13 — not client-approved)
 
-```markdown
-## 5. Visual identity (approved: <date on approval>)
-
 - **Creative direction (one sentence):** Weekly Beat — a seven-part system with the centre part lit in Ember; see `04-identity/01-direction/creative-direction.md`
 - **Logo files and usage:** `04-identity/02-logo/` (outlined SVG). Primary = Arabic wordmark سدرة over the seven-bar rule row; bilingual adds SIDRA COFFEE; Latin-led for English-only; icon = seven bars in a square. Clear space = height of the letter د (0.27 × logo width). Seven bars from 32 px high / 10 mm wide (bilingual 48 px / 18 mm); below that the `-small` version (solid rule, centre seventh lit) down to 16 px / 6 mm; below that the wordmark alone. Print minimums to be confirmed on a proof.
 - **Colours:**
@@ -66,7 +63,6 @@
 - **Typefaces:** Arabic — IBM Plex Sans Arabic; Latin — IBM Plex Sans (both SIL OFL 1.1); Arabic set 15–20% larger than adjacent Latin; scale 0.65 / 1 / 1.6 / 5; licences in `04-identity/licences.md`
 - **Imagery and graphic style:** flat colour, 2 px Ink hairlines, the seven-bar row (rule 2:1, band 1:2 to 1:4, gap 1/5 bar, fourth bar lit), seven-column grid. No icons or illustration. Photography of beans, bags and equipment only, flat and frontal on Paper or Crema.
 - **Do not:** move the lit bar, light two, change the count or label bars with days; use green, gradients, tints, shadows or rounded corners; set body text in Ember; put Ash or Ember text on Crema; track Arabic; show people or hands; place "Sidra" / «سدرة» beside an origin or variety word; place the bar row beside a barcode.
-```
 
 ## 6. Decision log
 
