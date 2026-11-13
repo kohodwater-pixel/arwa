@@ -55,3 +55,28 @@ All nine are screen captures: fine in a screen PDF at partner-grid size; officia
 - Keeta (yellow), ZERO (charcoal) and Taibah Cooperative (faint grey-green) carry their own ground; all others are on white, so the partner tiles should be white.
 - The resolution gap between the sets is large. Do not scale the low-resolution existing logos above their native pixels at the output resolution.
 - Permission to show each logo is the client's responsibility (brief, addendum 2).
+
+## Transparent set — `../partners-transparent/` (added 2026-11-13, client instruction)
+
+Same 27 file names and pixel sizes as this folder, PNG RGBA, plus two variants: `new-03_keeta_on-yellow.png` and `new-09_zero_on-dark.png` (unchanged copies with their own ground). The files in this folder (`partners/`) are untouched. Made with `06-profiles/_work/make_transparent_logos.py`. Check sheets: `06-profiles/_work/partners-transparent_on-white.png` and `partners-transparent_on-navy.png` (navy #1F3162).
+
+Method: each file's own background colour is measured from its border; the background is removed by flood-fill from the border through near-background pixels (no global white key); edge pixels get a soft alpha and their colour is un-multiplied against the background, so placed on its original ground each logo looks the same as before (measured: no pixel differs by more than 42/255, almost all by 0). For the low-resolution JPEG logos the faint ringing around the mark is given low alpha instead of being left as opaque specks. Nothing is redrawn, sharpened or upscaled.
+
+Enclosed areas, decided per logo by looking:
+- **Made transparent (background showing through):** letter counters in all wordmarks (Novotel, Rotana, Chop & Co, Keeta, ZERO, Tiny House, Imagine More, Madinah Chamber text, Platinum's text lines, HIPPO lettering, the Jahez "e/h/z" counters, the text lines of Manazil, Dallah Taibah, Harmony, Al Maqar, Dar Al Taqwa, the Authority, the caption lines of the Dates Festival); the insides of the outline shapes in WE AR SPA, Mawaddah's diamonds and Taibah Cooperative's loops.
+- **Kept opaque white (part of the mark):** the white rings round the dots in Jahez; the white details of the Platinum emblem; the inside of the Hippo; the dome, minaret and palm details of the Madinah Award mark; the white lettering in Mawaddah's band; the white ornament inside Dallah Taibah's arch and the "H" in Harmony's emblem; the column flutes of Manarat Taba; the white stripes in the Chamber emblem; the white building bars of Manazil Al-Mukhtara; all white inside the Dates Festival mark; the whole HungerStation badge; the whole Taza badge; everything inside the HSH disc.
+- **Tiny House:** it is black lettering only, so the counters of "o" and "e" were made transparent; there is no white that belongs to the mark.
+
+Special cases:
+- **Keeta:** `new-03_keeta.png` = black wordmark on transparent (yellow removed); `new-03_keeta_on-yellow.png` = as supplied.
+- **ZERO:** `new-09_zero.png` = the mark in the charcoal of its own ground (RGB 34, 37, 42) on transparent; shapes are the white mark's own coverage, not redrawn. `new-09_zero_on-dark.png` = as supplied, white on charcoal. The charcoal version is for light grounds only.
+- **Taibah Cooperative:** its faint grey-green tile (RGB 249) is removed in the transparent version.
+- **Manarat Taba:** its soft drop shadow is kept as a semi-transparent dark shadow.
+
+Result on a dark ground, as seen on the navy sheet:
+- **Clean:** WE AR SPA, Imagine More, Tiny House, Platinum, Madinah Chamber, Hippo (vector or high resolution); Novotel, Keeta, Jahez, HungerStation, Chop & Co, ZERO, Manazil Al-Mukhtara, Dates Festival.
+- **Slight light edge:** Rotana (the capture is blurred, with a wide soft edge; a thin lighter outline remains round the letters), Taza (thin light fringe on parts of the outline, from the source's own hard mask), Al Madinah Region Development Authority (soft, blurred text as in the source).
+- **Rough or speckled edges because of low resolution (64–290 px):** Madinah Award, Al Maqar (faint dotted JPEG residue round the text blocks), Mawaddah, HSH, Taibah Cooperative, Dar Al Taqwa, Dallah Taibah, Al Madinah Harmony, Manarat Taba, the calligraphic mark. They are acceptable at small size on white or a very light tint; on a dark or strongly coloured ground the roughness shows.
+- **Colour clash, not a defect of the cut-out:** marks that are themselves navy, charcoal or black nearly disappear on navy — Imagine More's lettering, Madinah Chamber's calligraphy, Novotel, Al Maqar's wordmark, HSH's rolling pin, the calligraphic mark, Tiny House, Platinum's Latin line, Keeta, ZERO (charcoal version), Manazil's text.
+
+Recommendation for the layout: place the transparent logos on white or a very light ground. A dark partner page would need white/negative versions from the logo owners, which do not exist here and must not be made by us.
