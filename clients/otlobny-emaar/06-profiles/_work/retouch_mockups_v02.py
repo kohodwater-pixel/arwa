@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Retouched working copies of the client's four mockup images (draft v02).
 
-Covers ONLY the small descriptor line under each «اطلبني» logo (old activity name, misspelt
+Removes ONLY the small descriptor line under each «اطلبني» logo (old activity name, misspelt
 "OTLOBY"/"OTLOBIY"/"OTLOBHY", garbled Arabic). The wordmark and everything else stay as supplied.
 Method: each patch is a polygon; every pixel column inside it is re-filled by interpolating between
 the surface just above and just below the patch (mode 'v'), or from the surface below only ('b'),
@@ -42,10 +42,10 @@ PATCHES = {
   (R(661, 297, 710, 320), 'v', 'delivery bag: garbled Arabic line and misspelt "OTLOBY ... Co." line'),
  ],
  'mockup_car-scooter-facade.png': [
-  ([(160, 185), (352, 200), (354, 246), (160, 230)], 'v', 'facade sign: «شركة لطليني اللصابة والنظافة» and "OTLOBIY Maintenance & Cleaning Co." (misspelt, old activity)'),
-  (R(316, 234, 358, 252), 'i', 'facade sign: tail of the old Latin line ("...ing Co.") under the perspective'),
+  ([(160, 185), (352, 200), (354, 248), (160, 232)], 'f', 'facade sign: «شركة لطليني اللصابة والنظافة» and "OTLOBIY Maintenance & Cleaning Co." (misspelt, old activity)'),
+  (R(316, 234, 358, 252), 'f', 'facade sign: tail of the old Latin line ("...ing Co.") under the perspective'),
   (R(1253, 144, 1325, 159), 'v', 'street banner: descriptor line under the logo (garbled); the slogan «خدمتك بجودة تهمنا» is correct Arabic and kept'),
-  (R(528, 655, 682, 696), 'i', 'car door: «شركة اطلبني اللصيانة والنظافة» and "OTLOBHY Maintenance & Cleaning Co." (misspelt, old activity)'),
+  ([(528, 655), (682, 655), (682, 683), (645, 691), (528, 692)], 'v', 'car door: «شركة اطلبني اللصيانة والنظافة» and "OTLOBHY Maintenance & Cleaning Co." (misspelt, old activity)'),
   (R(1361, 514, 1459, 537), 'v', 'scooter top box: garbled Arabic line and "OTLOBHY Maintenance & Cleaning Co."'),
   ([(1222, 683), (1286, 663), (1288, 675), (1224, 696)], 'v', 'scooter side panel: slanted garbled descriptor lines'),
  ],
@@ -88,10 +88,16 @@ def patch(a, poly, mode, rng, logo_kind='blue'):
     logo = np.array(Image.fromarray((logo * 255).astype(np.uint8)).filter(ImageFilter.MaxFilter(3))) > 0
     if logo_kind == 'bright':   # the wrong line is white too: inside the patch nothing is protected
         logo &= ~rect[T:B, L:Rr]
-    hole = rect[T:B, L:Rr] & ~logo
-    hole = (np.array(Image.fromarray((hole * 255).astype(np.uint8)).filter(ImageFilter.MaxFilter(3))) > 0) & ~logo
+    # only the old text strokes (plus 2 px) are replaced, not the whole rectangle: pixels that differ from the
+    # local surface (median of 13 px) by more than 16 levels of luminance, inside the measured patch area
+    lum = Image.fromarray(sub.astype(np.uint8)).convert('L')
+    med = np.array(lum.filter(ImageFilter.MedianFilter(13))).astype(float)
+    thr, grow = (9, 7) if mode == 'f' else (16, 5)   # 'f': raised sign letters with soft shadows, wider mask, isotropic fill
+    strokes = (np.abs(np.array(lum).astype(float) - med) > thr) & rect[T:B, L:Rr] & ~logo
+    hole = (np.array(Image.fromarray((strokes * 255).astype(np.uint8)).filter(ImageFilter.MaxFilter(grow))) > 0) & ~logo
+    hole &= np.array(Image.fromarray((rect[T:B, L:Rr] * 255).astype(np.uint8)).filter(ImageFilter.MaxFilter(5))) > 0
     usable = ~hole & ~logo
-    wv, wh = (1.0, 0.12) if mode == 'v' else (1.0, 1.0)
+    wv, wh = (1.0, 0.2) if mode == 'v' else (1.0, 1.0)
     f = sub.copy()
     # start from the surface just below each column, then relax (masked anisotropic diffusion)
     for x in range(f.shape[1]):
@@ -107,7 +113,8 @@ def patch(a, poly, mode, rng, logo_kind='blue'):
             acc += np.roll(np.roll(f, dy, 0), dx, 1) * nb_ok[:, :, None]; wt += nb_ok
         upd = acc / np.maximum(wt, 1e-6)[:, :, None]
         f[hole] = upd[hole]
-    ring = sub[usable].reshape(-1, 3)
+    sm = np.array(Image.fromarray(np.clip(f, 0, 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(1.6))).astype(float)
+    f[hole] = sm[hole]   # no streaks: the filled surface is smooth, grain is added next
     loc = np.array(Image.fromarray(sub.astype(np.uint8)).filter(ImageFilter.GaussianBlur(2))).astype(float)
     sd = float(np.clip((sub - loc)[usable].std(), 0, 5))
     f[hole] += rng.normal(0, sd * .35, (hole.sum(), 1))
@@ -117,13 +124,14 @@ def patch(a, poly, mode, rng, logo_kind='blue'):
     a[T:B, L:Rr] = sub * (1 - alpha[:, :, None]) + f * alpha[:, :, None]
     return a
 
-# Correct descriptor composited where the old line sat on a flat surface (Creative Director, client answer 3).
+# WITHDRAWN (kept for the record): correct descriptor composited on flat surfaces. The client then decided the wordmark stands alone.
 # Taken from the proposed lockup (04-identity/02-logo, white version): «شركة اطلبني إعمار» over "OTLOBNY Emaar Co.",
 # shaped Arabic as vector paths, rendered with cairosvg. Box = (left, top, right, bottom) the new descriptor is fitted into,
 # right-aligned and top-aligned as the old line was; colour matched to the scene.
+COMPOSITES = {}   # client decision 2026-11-13: the wordmark appears alone in the mockups; composites withdrawn
 LOCKUP = CLIENT / '04-identity/02-logo/otlobny-emaar_logo_lockup-proposal-white_ar-en_v01.svg'
 WHITE, NAVYGREY = (226, 230, 238), (52, 60, 82)
-COMPOSITES = {
+COMPOSITES_WITHDRAWN = {
  'mockup_cleaning-team.png': [((1388, 657, 1463, 671), WHITE, 'cleaning cart panel')],
  'mockup_delivery-rider.png': [((664, 299, 709, 320), WHITE, 'delivery bag side panel')],
  'mockup_car-scooter-facade.png': [((166, 188, 338, 226), WHITE, 'facade sign', 0.085), ((536, 663, 676, 694), NAVYGREY, 'car door'),
@@ -174,7 +182,7 @@ def zoom_sheet(before, after, polys, name):
 
 def main():
     global ALPHA
-    ALPHA = descriptor_alpha()
+    ALPHA = None
     rng = np.random.default_rng(7)
     done = {}
     for fname, patches in PATCHES.items():
@@ -191,6 +199,13 @@ def main():
         stem = fname.rsplit('.', 1)[0]
         res.save(OUT / f'{stem}_retouched_v02.png', optimize=True)
         zoom_sheet(im, res, [p for p, _, _ in patches], stem)
+        allow = Image.new('L', im.size, 0); dr = ImageDraw.Draw(allow)
+        for poly, _, _ in patches:
+            dr.polygon(poly, fill=255)
+        allow = np.array(allow.filter(ImageFilter.MaxFilter(2 * 6 + 1))) > 0
+        diff = np.abs(np.array(res).astype(int) - np.array(im).astype(int)).max(2)
+        print('  changed px outside patch areas (+6 px feather):', int(((diff > 0) & ~allow).sum()),
+              '| inside:', int(((diff > 2) & allow).sum()))
         done[stem] = res
         print('retouched', fname, len(patches), 'patches')
     # truck collage: separate views; view 1 is cropped at x 700 so the Riyadh tower (x >= 703) is excluded

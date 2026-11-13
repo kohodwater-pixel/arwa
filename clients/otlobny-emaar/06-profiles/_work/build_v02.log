@@ -1,0 +1,45 @@
+wrote otlobny-emaar_company-profile_screen_ar-en_v02.html 20 pages
+  img p7   v02_svc_electrical-panel.jpg       assets/photos/electrical-panel.png               crop (0, 158, 1240, 575) px (1240, 417) -> 297 mm wide, 106 ppi, full colour
+  img p8   v02_svc_nursery-worker.jpg         assets/photos/nursery-worker.png                 crop (0, 248, 961, 732) px (961, 484) -> 222 mm wide, 110 ppi, full colour
+  img p9   v02_svc_glass-facade.jpg           assets/photos/glass-facade-cleaners.png          crop (0, 128, 1237, 661) px (1237, 533) -> 297 mm wide, 106 ppi, full colour
+  img p10  v02_svc_cleaning-team.jpg          assets/derived/mockup_cleaning-team_retouched_v02.png crop (0, 135, 1536, 787) px (1536, 652) -> 297 mm wide, 131 ppi, full colour
+  img p11  v02_svc_waiter.jpg                 assets/photos/waiter.png                         crop (0, 146, 980, 588) px (980, 442) -> 222 mm wide, 112 ppi, full colour
+  img p12  v02_svc_truck-front34.jpg          assets/derived/mockup_truck-front34_retouched_v02.png crop (14, 0, 686, 582) px (672, 582) -> 148 mm wide, 115 ppi, full colour
+  img p12  v02_svc_truck-rear34.jpg           assets/derived/mockup_truck-rear34_retouched_v02.png crop (13, 0, 685, 582) px (672, 582) -> 148 mm wide, 115 ppi, full colour
+  img p1   v02_cover_car-scooter-facade.jpg   assets/derived/mockup_car-scooter-facade_retouched_v02.png crop (29, 0, 1477, 1024) px (1448, 1024) -> 297 mm wide, 124 ppi, full colour
+  img p2   v02_contents_glass-facade.jpg      assets/photos/glass-facade-cleaners.png          crop (296, 0, 743, 876) px (447, 876) -> 107 mm wide, 106 ppi, full colour
+  img p4   v02_vismis_office-cleaner.jpg      assets/photos/office-cleaner.png                 crop (1150, 0, 1495, 873) px (345, 873) -> 83 mm wide, 106 ppi, full colour
+  img p13  v02_gal_truck-front.jpg            assets/derived/mockup_truck-front_retouched_v02.png crop (0, 1, 432, 433) px (432, 432) -> 83.1 mm wide, 132 ppi, full colour
+  img p13  v02_gal_truck-side.jpg             assets/derived/mockup_truck-side_retouched_v02.png crop (0, 1, 668, 433) px (668, 432) -> 128.5 mm wide, 132 ppi, full colour
+  img p13  v02_gal_truck-rear.jpg             assets/derived/mockup_truck-rear_retouched_v02.png crop (0, 1, 428, 433) px (428, 432) -> 82.4 mm wide, 132 ppi, full colour
+  img p13  v02_gal_rider.jpg                  assets/derived/mockup_delivery-rider_retouched_v02.png crop (300, 10, 770, 1010) px (470, 1000) -> 52.6 mm wide, 227 ppi, full colour
+  img p15  v02_work_15.jpg                    assets/photos/bus-shelter.png                    crop (390, 16, 940, 471) px (550, 455) -> 127 mm wide, 110 ppi, full colour
+  img p16  v02_work_16.jpg                    assets/photos/chamber-building.png               crop (88, 0, 637, 454) px (549, 454) -> 127 mm wide, 110 ppi, full colour
+  img p17  v02_work_17.jpg                    assets/photos/shahd-hotel.png                    crop (211, 64, 1033, 743) px (822, 679) -> 127 mm wide, 164 ppi, full colour
+  logo existing-01_madinah-award-foundation                     14.7 x 23.0 mm, 111 ppi
+  logo existing-02_al-madinah-region-development-authority      30.0 x 19.0 mm, 103 ppi
+  logo existing-03_al-maqar                                     29.5 x 19.1 mm, 110 ppi
+  logo existing-04_we-ar-spa                                    28.0 x 22.8 mm, 777 ppi
+  logo existing-05_mawaddah                                     33.0 x 19.7 mm, 122 ppi
+  logo existing-06_imagine-more                                 36.0 x 17.4 mm, 718 ppi
+  logo existing-07_hsh                                          32.0 x 16.6 mm, 83 ppi
+  logo existing-08_taibah-cooperative                           20.3 x 18.3 mm, 100 ppi
+  logo existing-09_dar-al-taqwa-hotel                           42.0 x  6.5 mm, 177 ppi
+  logo existing-10_dallah-taibah-hotel                          24.2 x 24.4 mm, 103 ppi
+  logo existing-11_al-madinah-harmony                           38.0 x 17.8 mm, 124 ppi
+  logo existing-12_tiny-house                                   34.0 x 14.9 mm, 545 ppi
+  logo existing-13_platinum                                     31.0 x 17.9 mm, 788 ppi
+  logo existing-14_madinah-chamber                              38.0 x 15.3 mm, 1271 ppi
+  logo existing-15_manarat-taba-hotel                           19.9 x 23.1 mm, 112 ppi
+  logo existing-16_hippo                                        16.6 x 24.0 mm, 780 ppi
+  logo existing-17_taza                                         28.0 x 19.7 mm, 130 ppi
+  logo existing-18_arabic-calligraphic-mark                     30.0 x 17.0 mm, 94 ppi
+  logo new-01_manazil-al-mukhtara                               30.1 x 23.9 mm, 878 ppi
+  logo new-02_novotel                                           38.0 x 14.8 mm, 837 ppi
+  logo new-03_keeta                                             31.0 x 16.5 mm, 610 ppi
+  logo new-04_jahez                                             28.0 x 19.5 mm, 725 ppi
+  logo new-05_medina-dates-festival                             17.4 x 24.0 mm, 1108 ppi
+  logo new-06_hungerstation                                     32.0 x 16.4 mm, 928 ppi
+  logo new-07_rotana                                            38.0 x 13.1 mm, 765 ppi
+  logo new-08_chop-and-co                                       28.0 x 18.1 mm, 1053 ppi
+  logo new-09_zero                                              38.0 x 13.3 mm, 676 ppi
