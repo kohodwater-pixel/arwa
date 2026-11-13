@@ -1,0 +1,254 @@
+{
+  "$version": "v02 (2026-11-13). v01 is kept in _archive/tokens_v01.json",
+  "$description": "Sidra Coffee design tokens. SYSTEM TEST, fictional client. Source: 04-identity/01-direction/creative-direction.md (approved 2026-11-13). CMYK values are uncalibrated approximations. Pantone references and ICC-calibrated CMYK are waived for system test; required before print (decision log 2026-11-13, ruling e).",
+  "color": {
+    "paper": {
+      "value": "#F3ECE0",
+      "rgb": [
+        243,
+        236,
+        224
+      ],
+      "cmyk_approx": [
+        4,
+        6,
+        12,
+        0
+      ],
+      "cmyk_status": "approximate; ICC-calibrated CMYK waived for system test; required before print",
+      "pantone": "waived for system test; required before print",
+      "name_ar": "ورق",
+      "role": "Default background",
+      "share": 0.45
+    },
+    "crema": {
+      "value": "#E3C9A0",
+      "rgb": [
+        227,
+        201,
+        160
+      ],
+      "cmyk_approx": [
+        10,
+        20,
+        40,
+        0
+      ],
+      "cmyk_status": "approximate; ICC-calibrated CMYK waived for system test; required before print",
+      "pantone": "waived for system test; required before print",
+      "name_ar": "كريما",
+      "role": "Warm second ground: panels, alternate pages, 250 g bag",
+      "share": 0.25
+    },
+    "ink": {
+      "value": "#1F1B18",
+      "rgb": [
+        31,
+        27,
+        24
+      ],
+      "cmyk_approx": [
+        60,
+        60,
+        60,
+        85
+      ],
+      "cmyk_text": [
+        0,
+        0,
+        0,
+        100
+      ],
+      "cmyk_status": "approximate; ICC-calibrated CMYK waived for system test; required before print; body text prints 100K",
+      "pantone": "waived for system test; required before print",
+      "name_ar": "حبر",
+      "role": "All text, the six unlit bars, rules",
+      "share": 0.15
+    },
+    "ember": {
+      "value": "#C23A20",
+      "rgb": [
+        194,
+        58,
+        32
+      ],
+      "cmyk_approx": [
+        15,
+        90,
+        100,
+        5
+      ],
+      "cmyk_status": "approximate; ICC-calibrated CMYK waived for system test; required before print",
+      "pantone": "waived for system test; required before print",
+      "name_ar": "جمر",
+      "role": "The lit bar; one headline or one field per layout; the 1 kg bag",
+      "share": 0.1
+    },
+    "ash": {
+      "value": "#6F6861",
+      "rgb": [
+        111,
+        104,
+        97
+      ],
+      "cmyk_approx": [
+        50,
+        47,
+        50,
+        20
+      ],
+      "cmyk_status": "approximate; ICC-calibrated CMYK waived for system test; required before print",
+      "pantone": "waived for system test; required before print",
+      "name_ar": "رماد",
+      "role": "Captions and small technical text, on Paper only",
+      "share": 0.05
+    }
+  },
+  "contrast": {
+    "$description": "WCAG 2.x contrast ratios, computed 2026-11-13 from the HEX values (foreground-on-background).",
+    "allowed_text": {
+      "ink-on-paper": 14.56,
+      "ink-on-crema": 10.69,
+      "paper-on-ink": 14.56,
+      "crema-on-ink": 10.69,
+      "paper-on-ember": 4.56,
+      "ash-on-paper": 4.67,
+      "ember-on-paper": {
+        "ratio": 4.56,
+        "rule": "24 px and above only"
+      }
+    },
+    "not_for_text": {
+      "ink-on-ember": {
+        "ratio": 3.19,
+        "rule": "graphics (bars, rules) and type of 24 px and above only"
+      },
+      "ash-on-crema": 3.43,
+      "ember-on-crema": 3.35,
+      "crema-on-paper": 1.36
+    },
+    "lit_bar": {
+      "ember-vs-ink": 3.19,
+      "ember-vs-paper": 4.56,
+      "ember-vs-crema": 3.35,
+      "paper-vs-ink-on-ember": 14.56
+    }
+  },
+  "font": {
+    "family": {
+      "arabic": "IBM Plex Sans Arabic",
+      "latin": "IBM Plex Sans",
+      "fallback_arabic": "'Noto Sans Arabic', 'Geeza Pro', 'Segoe UI', Tahoma, sans-serif",
+      "fallback_latin": "'Helvetica Neue', Arial, sans-serif"
+    },
+    "weight": {
+      "light": 300,
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700
+    },
+    "scale": {
+      "caption": 0.65,
+      "body": 1,
+      "subhead": 1.6,
+      "display": 5
+    },
+    "arabic_optical_scale": 1.15,
+    "size_px_screen": {
+      "caption": 13,
+      "body": 20,
+      "subhead": 32,
+      "display": 100
+    },
+    "size_pt_print": {
+      "caption": 6.5,
+      "body": 10,
+      "subhead": 16,
+      "display": 50
+    },
+    "line_height": {
+      "arabic": {
+        "display": 1.3,
+        "subhead": 1.5,
+        "body": 1.75,
+        "label": 1.5,
+        "caption": 1.6
+      },
+      "latin": {
+        "display": 1.05,
+        "subhead": 1.3,
+        "body": 1.45,
+        "label": 1.3,
+        "caption": 1.4
+      }
+    },
+    "letter_spacing": {
+      "arabic": {
+        "all": "0 (never tracked)"
+      },
+      "latin": {
+        "display": "-0.015em",
+        "caption": "0.12em",
+        "logo_line": "0.16em (outlined in the logo files)"
+      }
+    },
+    "numerals": "Western (0123) in both languages",
+    "figures": {
+      "arabic": "IBM Plex Sans Arabic Bold 700, unit in Arabic",
+      "latin": "IBM Plex Sans Light 300, regular width (v02: the 85% width was dropped because it needs the variable font)"
+    },
+    "files": {
+      "arabic": "assets/fonts/ibmplexsansarabic/ (static)",
+      "latin": "assets/fonts/ibmplexsans-static/ (official static files)"
+    }
+  },
+  "space": {
+    "$description": "4 px base. Use only these steps.",
+    "1": 4,
+    "2": 8,
+    "3": 16,
+    "4": 24,
+    "5": 40,
+    "6": 64,
+    "7": 104
+  },
+  "grid": {
+    "columns": 7,
+    "gutter": "1/5 column for text layouts; 0 for full-bleed bands",
+    "arabic_text_span": "4 columns from the right; secondary content 3 from the left",
+    "english_text_span": "4 columns from the left; secondary content 3 from the right",
+    "hairline_px": 2,
+    "corner_radius": 0,
+    "shadow": "none"
+  },
+  "bar_row": {
+    "count": 7,
+    "lit_index": 4,
+    "gap": "1/5 of bar width",
+    "rule_proportion": "2:1 (width:height)",
+    "band_proportion": "1:2 to 1:4 (width:height)",
+    "pattern_min_rows": 3
+  },
+  "logo": {
+    "clear_space": "height of the letter dal in the wordmark = 0.269 x wordmark width, on all sides",
+    "min_screen_px_high": {
+      "primary_with_bars": 32,
+      "primary_small_rule": 16,
+      "bilingual_with_bars": 48,
+      "latin_with_bars": 16,
+      "icon_with_bars": 48,
+      "icon_small_rule": 16,
+      "wordmark_only": 12
+    },
+    "min_print_mm_wide": {
+      "primary_with_bars": 10,
+      "bilingual_with_bars": 18,
+      "primary_small_rule": 6,
+      "wordmark_only": 5
+    },
+    "status": "ladder accepted for the test (decision log 2026-11-13, ruling g). Screen sizes from pixel tests in 02-logo/_work; print sizes simulated at 600 dpi, not press-tested",
+    "icon": "v02: three stacked band rows (bar 1:2.6) filling the square, lit bars in the centre column. Seven bars count reliably from 41 px; switch size stays 48 px.",
+    "formats": "SVG (source), vector PDF in 02-logo/pdf/, transparent PNG at 1x, 2x, 4x in 02-logo/png/"
+  }
+}
