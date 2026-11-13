@@ -1,0 +1,245 @@
+[
+ {
+  "file": "existing-01_madinah-award-foundation.png",
+  "size": [
+   80,
+   116
+  ],
+  "source": "embedded image xref 537, native 119x108 px (CMYK/indexed -> sRGB)",
+  "note": "content 64x100px; content reaches source edge B; corners min-channel [np.int64(255), np.int64(255), np.int64(255), np.int64(255)]"
+ },
+ {
+  "file": "existing-02_al-madinah-region-development-authority.png",
+  "size": [
+   528,
+   361
+  ],
+  "source": "page 19 render at 400 dpi (image with a soft mask of different resolution)",
+  "note": "content 456x289px; content reaches source edge LTRB"
+ },
+ {
+  "file": "existing-03_al-maqar.png",
+  "size": [
+   148,
+   103
+  ],
+  "source": "embedded image xref 539, native 129x112 px (CMYK/indexed -> sRGB)",
+  "note": "content 128x83px; content reaches source edge L; corners min-channel [np.int64(255), np.int64(255), np.int64(255), np.int64(255)]"
+ },
+ {
+  "file": "existing-04_we-ar-spa.png",
+  "size": [
+   992,
+   835
+  ],
+  "source": "page 19 vector artwork rasterised at 800 dpi",
+  "note": "content 856x699px"
+ },
+ {
+  "file": "existing-05_mawaddah.png",
+  "size": [
+   184,
+   120
+  ],
+  "source": "embedded image xref 540, native 159x95 px (CMYK/indexed -> sRGB)",
+  "note": "content 158x94px; content reaches source edge LT; corners min-channel [np.int64(255), np.int64(255), np.int64(255), np.int64(255)]"
+ },
+ {
+  "file": "existing-06_imagine-more.png",
+  "size": [
+   1179,
+   655
+  ],
+  "source": "page 19 vector artwork rasterised at 800 dpi",
+  "note": "content 1017x493px"
+ },
+ {
+  "file": "existing-07_hsh.png",
+  "size": [
+   118,
+   69
+  ],
+  "source": "embedded image xref 548, native 118x118 px (CMYK/indexed -> sRGB)",
+  "note": "content 102x53px; corners min-channel [np.int64(255), np.int64(255), np.int64(255), np.int64(255)]"
+ },
+ {
+  "file": "existing-08_taibah-cooperative.png",
+  "size": [
+   149,
+   105
+  ],
+  "source": "embedded image xref 541, native 149x105 px (CMYK/indexed -> sRGB)",
+  "note": "full embedded image kept (own tinted tile); corners min-channel [np.int64(249), np.int64(249), np.int64(249), np.int64(249)]"
+ },
+ {
+  "file": "existing-09_dar-al-taqwa-hotel.png",
+  "size": [
+   332,
+   91
+  ],
+  "source": "embedded image xref 531, native 298x53 px (CMYK/indexed -> sRGB)",
+  "note": "content 286x45px; corners min-channel [np.int64(255), np.int64(255), np.int64(255), np.int64(255)]"
+ },
+ {
+  "file": "existing-10_dallah-taibah-hotel.png",
+  "size": [
+   113,
+   113
+  ],
+  "source": "embedded image xref 532, native 127x127 px (CMYK/indexed -> sRGB)",
+  "note": "content 97x97px; corners min-channel [np.int64(255), np.int64(255), np.int64(255), np.int64(255)]"
+ },
+ {
+  "file": "existing-11_al-madinah-harmony.png",
+  "size": [
+   213,
+   116
+  ],
+  "source": "embedded image xref 535, native 186x87 px (CMYK/indexed -> sRGB)",
+  "note": "content 183x86px; content reaches source edge B; corners min-channel [np.int64(255), np.int64(255), np.int64(255), np.int64(255)]"
+ },
+ {
+  "file": "existing-12_tiny-house.png",
+  "size": [
+   845,
+   436
+  ],
+  "source": "embedded image xref 542, native 782x582 px (CMYK/indexed -> sRGB)",
+  "note": "content 729x320px; corners min-channel [np.int64(255), np.int64(255), np.int64(255), np.int64(255)]"
+ },
+ {
+  "file": "existing-13_platinum.png",
+  "size": [
+   1116,
+   709
+  ],
+  "source": "page 19 vector artwork rasterised at 800 dpi",
+  "note": "content 962x555px"
+ },
+ {
+  "file": "existing-14_madinah-chamber.png",
+  "size": [
+   2205,
+   1070
+  ],
+  "source": "page 19 vector artwork rasterised at 800 dpi",
+  "note": "content 1901x766px"
+ },
+ {
+  "file": "existing-15_manarat-taba-hotel.png",
+  "size": [
+   102,
+   118
+  ],
+  "source": "embedded image xref 534, native 100x102 px (CMYK/indexed -> sRGB)",
+  "note": "content 86x102px; content reaches source edge TB; corners min-channel [np.int64(255), np.int64(255), np.int64(255), np.int64(255)]"
+ },
+ {
+  "file": "existing-16_hippo.png",
+  "size": [
+   628,
+   856
+  ],
+  "source": "page 19 vector artwork rasterised at 800 dpi",
+  "note": "content 510x738px"
+ },
+ {
+  "file": "existing-17_taza.png",
+  "size": [
+   568,
+   424
+  ],
+  "source": "page 19 render at 400 dpi (image with a soft mask of different resolution)",
+  "note": "content 490x346px; content reaches source edge B"
+ },
+ {
+  "file": "existing-18_arabic-calligraphic-mark.png",
+  "size": [
+   129,
+   81
+  ],
+  "source": "embedded image xref 547, native 117x97 px (CMYK/indexed -> sRGB)",
+  "note": "content 111x63px; corners min-channel [np.int64(255), np.int64(255), np.int64(255), np.int64(255)]"
+ },
+ {
+  "file": "new-01_manazil-al-mukhtara.png",
+  "size": [
+   1201,
+   990
+  ],
+  "source": "_originals/partner-logos-client_2026-11-13/01_manazil-al-mukhtara.jpg (1290x862 px JPEG)",
+  "note": "content 1035x824px; bars removed top 0px bottom 9px; bg (255, 255, 255); canvas padded with bg on TB; content reaches source edge none"
+ },
+ {
+  "file": "new-02_novotel.png",
+  "size": [
+   1450,
+   688
+  ],
+  "source": "_originals/partner-logos-client_2026-11-13/02_novotel.jpg (1290x1285 px JPEG)",
+  "note": "content 1250x488px; bars removed top 0px bottom 0px; bg (255, 255, 255); canvas padded with bg on LR; content reaches source edge none"
+ },
+ {
+  "file": "new-03_keeta.png",
+  "size": [
+   859,
+   512
+  ],
+  "source": "_originals/partner-logos-client_2026-11-13/03_keeta.jpg (1290x1285 px JPEG)",
+  "note": "content 741x394px; bars removed top 0px bottom 3px; bg (247, 230, 80); canvas padded with bg on none; content reaches source edge none"
+ },
+ {
+  "file": "new-04_jahez.png",
+  "size": [
+   918,
+   677
+  ],
+  "source": "_originals/partner-logos-client_2026-11-13/04_jahez.jpg (1290x1281 px JPEG)",
+  "note": "content 792x551px; bars removed top 0px bottom 0px; bg (255, 255, 255); canvas padded with bg on none; content reaches source edge none"
+ },
+ {
+  "file": "new-05_medina-dates-festival.png",
+  "size": [
+   916,
+   1203
+  ],
+  "source": "_originals/partner-logos-client_2026-11-13/05_medina-dates-festival.jpg (1290x1285 px JPEG)",
+  "note": "content 750x1037px; bars removed top 3px bottom 0px; bg (255, 255, 255); canvas padded with bg on T; content reaches source edge none"
+ },
+ {
+  "file": "new-06_hungerstation.png",
+  "size": [
+   1348,
+   778
+  ],
+  "source": "_originals/partner-logos-client_2026-11-13/06_hungerstation.jpg (1290x1274 px JPEG)",
+  "note": "content 1162x592px; bars removed top 0px bottom 0px; bg (255, 255, 255); canvas padded with bg on LR; content reaches source edge none"
+ },
+ {
+  "file": "new-07_rotana.png",
+  "size": [
+   1315,
+   567
+  ],
+  "source": "_originals/partner-logos-client_2026-11-13/07_rotana.jpg (1290x1283 px JPEG)",
+  "note": "content 1133x385px; bars removed top 0px bottom 0px; bg (254, 254, 254); canvas padded with bg on LR; content reaches source edge none"
+ },
+ {
+  "file": "new-08_chop-and-co.png",
+  "size": [
+   1338,
+   930
+  ],
+  "source": "_originals/partner-logos-client_2026-11-13/08_chop-and-co.jpg (1290x1316 px JPEG)",
+  "note": "content 1154x746px; bars removed top 6px bottom 24px; bg (255, 255, 255); canvas padded with bg on LR; content reaches source edge none"
+ },
+ {
+  "file": "new-09_zero.png",
+  "size": [
+   1172,
+   514
+  ],
+  "source": "_originals/partner-logos-client_2026-11-13/09_zero.jpg (1290x1011 px JPEG)",
+  "note": "content 1010x352px; bars removed top 0px bottom 0px; bg (34, 37, 42); canvas padded with bg on none; content reaches source edge none"
+ }
+]
