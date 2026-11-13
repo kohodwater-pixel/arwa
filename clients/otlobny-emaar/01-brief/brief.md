@@ -75,3 +75,9 @@ Number of employees, fleet size, number of projects, certificates (ISO etc.), li
 5. May the mockup images be used as they are, given their garbled small text and old descriptor lines?
 6. Confirm bilingual Arabic + English, or Arabic only.
 7. Any certificates, licences, figures or new projects to add?
+
+## Addendum 2026-11-13 — partners («شركاء النجاح»)
+The client asked to add nine parties to the partners page: Manazil Al-Mukhtara (مجموعة فنادق المختارة / منازل المختارة), Novotel, Keeta, HungerStation (هنقرستيشن), Jahez (جاهز), Medinah Dates Season (موسم تمور المدينة المنورة), Chop&Co, Rotana, ZERO (شركة زيرو).
+- The logo files supplied with this request are approximate recreations and the client confirmed they are wrong: **they must not be used anywhere**.
+- Until official logo files arrive, these nine appear on the partners page as names in text. The page title is «شركاء النجاح».
+- Open: confirm the final list and the exact Arabic and English form of each name; supply official logos.

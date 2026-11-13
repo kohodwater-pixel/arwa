@@ -59,6 +59,7 @@
 | Date | Decision | Approved by |
 |---|---|---|
 | 2026-11-13 | Client request received: rebuild the profile, add logistics services, rename to «اطلبني إعمار», international standard. Work proceeds to a first draft on stated assumptions (name spelling, bilingual, logistics wording limited to what the supplied images show); nothing is final until the client answers the open questions in the brief | Creative Director |
+| 2026-11-13 | Client asked to add nine partners to «شركاء النجاح» (Manazil Al-Mukhtara, Novotel, Keeta, HungerStation, Jahez, Medinah Dates Season, Chop&Co, Rotana, ZERO). The supplied logo files are approximate recreations; the client confirmed they are wrong. They are not used; the nine appear as text names until official logos arrive | Client / Creative Director |
 
 ## 7. Deliveries
 
