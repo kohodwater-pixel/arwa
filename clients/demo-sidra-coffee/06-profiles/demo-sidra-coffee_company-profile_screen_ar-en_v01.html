@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>سدرة للقهوة — الملف التعريفي | Sidra Coffee — Company profile (draft v01)</title>
+<!--
+  Sidra Coffee company profile, screen PDF, A4, 4 pages, Arabic + English. DRAFT v01.
+  SYSTEM TEST, fictional client. Values mirror 04-identity/03-system/tokens.json.
+  Export: node scripts/html2pdf.cjs <this file> <same name>.pdf --size A4
+  Bilingual structure on every page: seven columns, Arabic on 4 from the right (.a), English on 3 from the left (.e).
+-->
+<style>
+@font-face { font-family: "IBM Plex Sans Arabic"; font-weight: 400; src: url("../../../assets/fonts/ibmplexsansarabic/IBMPlexSansArabic-Regular.ttf"); }
+@font-face { font-family: "IBM Plex Sans Arabic"; font-weight: 500; src: url("../../../assets/fonts/ibmplexsansarabic/IBMPlexSansArabic-Medium.ttf"); }
+@font-face { font-family: "IBM Plex Sans Arabic"; font-weight: 600; src: url("../../../assets/fonts/ibmplexsansarabic/IBMPlexSansArabic-SemiBold.ttf"); }
+@font-face { font-family: "IBM Plex Sans Arabic"; font-weight: 700; src: url("../../../assets/fonts/ibmplexsansarabic/IBMPlexSansArabic-Bold.ttf"); }
+/* Latin: static instances kept with the identity work files (see 04-identity/licences.md) */
+@font-face { font-family: "IBM Plex Sans"; font-weight: 400; src: url("../04-identity/_work/fonts/IBMPlexSans-Regular.ttf"); }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 500; src: url("../04-identity/_work/fonts/IBMPlexSans-Medium.ttf"); }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 600; src: url("../04-identity/_work/fonts/IBMPlexSans-SemiBold.ttf"); }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 700; src: url("../04-identity/_work/fonts/IBMPlexSans-Bold.ttf"); }
+
+@page { size: A4; margin: 0; }
+:root {
+  --paper: #F3ECE0; --crema: #E3C9A0; --ink: #1F1B18; --ember: #C23A20; --ash: #6F6861;
+  --ar: "IBM Plex Sans Arabic", "Noto Sans Arabic", "Geeza Pro", Tahoma, sans-serif;
+  --en: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --m: 64px;            /* side margin */
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { color: var(--ink); background: var(--paper); font-family: var(--ar); }
+a { color: inherit; text-decoration: none; }
+
+/* ---------- master page ---------- */
+.page { width: 210mm; height: 297mm; padding: 40px var(--m) 32px; background: var(--paper); overflow: hidden;
+        display: flex; flex-direction: column; direction: rtl; page-break-after: always; break-after: page; }
+.page:last-child { page-break-after: auto; break-after: auto; }
+/* seven columns, gutter = 1/5 column; in RTL column 1 is on the right */
+.g7 { display: grid; grid-template-columns: repeat(7, 1fr); column-gap: calc(100% / 41); direction: rtl; }
+.a { grid-column: 1 / span 4; font-family: var(--ar); direction: rtl; text-align: right; letter-spacing: 0; }
+.e { grid-column: 5 / span 3; font-family: var(--en); direction: ltr; text-align: left; }
+.bleed { margin-left: calc(-1 * var(--m)); margin-right: calc(-1 * var(--m)); padding-left: var(--m); padding-right: var(--m); }
+.rule { border-top: 2px solid var(--ink); }
+
+.head { align-items: end; padding-bottom: 16px; border-bottom: 2px solid var(--ink); }
+.head img { height: 40px; display: block; }
+.head .a { display: flex; align-items: flex-end; gap: 16px; }
+.foot { margin-top: auto; padding-top: 16px; display: grid; grid-template-columns: repeat(7, 1fr); column-gap: calc(100% / 41); align-items: baseline; }
+.foot .a { grid-column: 1 / span 3; }
+.foot .n { grid-column: 4; text-align: center; font-family: var(--en); font-weight: 600; font-size: 10pt; direction: ltr; }
+.foot .e { grid-column: 5 / span 3; }
+.main { flex: 1; display: flex; flex-direction: column; }
+
+/* ---------- type scale (Latin pt / Arabic = Latin x 1.15) ---------- */
+.a .cap, .cap.a { font-size: 7.5pt; line-height: 1.6; font-weight: 400; color: var(--ash); }
+.e .cap, .cap.e { font-size: 6.5pt; line-height: 1.4; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ash); }
+.a p, p.a { font-size: 11.5pt; line-height: 1.75; font-weight: 400; }
+.e p, p.e { font-size: 10pt; line-height: 1.45; font-weight: 400; }
+.a .sub, .sub.a { font-size: 18.5pt; line-height: 1.5; font-weight: 500; }
+.e .sub, .sub.e { font-size: 16pt; line-height: 1.3; font-weight: 500; }
+.a .lab, .lab.a { font-size: 11.5pt; line-height: 1.5; font-weight: 600; }
+.e .lab, .lab.e { font-size: 10pt; line-height: 1.3; font-weight: 600; }
+h2.a { font-size: 32pt; line-height: 1.3; font-weight: 700; }
+h2.e { font-size: 28pt; line-height: 1.1; font-weight: 700; letter-spacing: -0.015em; padding-top: 6px; }
+h1.a { font-size: 46pt; line-height: 1.3; font-weight: 700; }
+h1.e { font-size: 40pt; line-height: 1.05; font-weight: 700; letter-spacing: -0.015em; padding-top: 12px; }
+.ltr { direction: ltr; unicode-bidi: isolate; display: inline-block; }
+
+/* ---------- bar row: 7 bars, gap 1/5 bar, never mirrored ---------- */
+.bars { display: grid; grid-template-columns: repeat(7, 1fr); column-gap: calc(100% / 41); direction: ltr; }
+.bars i { background: var(--ink); display: block; }
+.bars i:nth-child(4) { background: var(--ember); }
+
+/* ---------- page 1: cover ---------- */
+.cover .logo { grid-column: 1 / span 3; width: 100%; display: block; }
+.cover .bars { height: 248px; margin-top: 64px; }
+.cover .titles { margin-top: 40px; row-gap: 16px; }
+
+/* ---------- page 2 ---------- */
+.title { padding-top: 40px; padding-bottom: 16px; align-items: start; }
+.facts { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 16px; margin-top: 24px; padding-top: 16px; border-top: 2px solid var(--ink); }
+.facts .v { display: block; }
+.a .facts .v { font-size: 18.5pt; line-height: 1.5; font-weight: 700; }
+.e .facts .v { font-size: 16pt; line-height: 1.3; font-weight: 700; padding-top: 5px; }
+.a .facts .k { display: block; font-size: 7.5pt; line-height: 1.6; color: var(--ash); }
+.e .facts .k { display: block; font-size: 6.5pt; line-height: 1.4; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ash); padding-top: 4px; }
+.panel { margin-top: auto; padding-top: 40px; padding-bottom: 40px; }
+.panel.crema { background: var(--crema); }
+.panel.ink { background: var(--ink); color: var(--paper); }
+.panel .g7 + .g7 { margin-top: 24px; padding-top: 24px; border-top: 2px solid currentColor; }
+.panel .lab { margin-bottom: 8px; }
+.panel .e .lab { text-transform: uppercase; letter-spacing: 0.12em; font-size: 6.5pt; line-height: 1.4; padding-top: 6px; margin-bottom: 12px; }
+.panel .a .lab { font-size: 7.5pt; line-height: 1.6; font-weight: 600; }
+
+/* ---------- page 3 ---------- */
+.item { padding: 16px 0; border-top: 2px solid var(--ink); align-items: start; }
+.item .no { font-family: var(--en); font-weight: 600; font-size: 10pt; line-height: 1.3; direction: ltr; display: block; margin-bottom: 4px; }
+.item .a .no { text-align: right; }
+.panel.ink h2 { padding-bottom: 16px; }
+.adv { padding: 16px 0; border-top: 2px solid var(--paper); align-items: start; }
+.adv .e .sub { padding-top: 4px; }
+
+/* ---------- page 4 ---------- */
+.contact { padding: 16px 0; border-top: 2px solid var(--ink); align-items: start; }
+.contact .cap { display: block; margin-bottom: 4px; }
+.gap { display: inline-block; border: 2px dashed var(--ink); padding: 4px 16px; }
+.ember { margin-top: auto; background: var(--ember); color: var(--paper); padding-top: 64px; padding-bottom: 64px; }
+.ember .logo { grid-column: 1 / span 3; width: 100%; display: block; }
+.ember .tag { margin-top: 40px; align-items: start; }
+</style>
+</head>
+<body>
+
+<!-- ============ PAGE 1 — COVER ============ -->
+<section class="page cover">
+  <div class="g7">
+    <p class="a cap">الملف التعريفي 2026</p>
+    <p class="e cap" lang="en">Company profile 2026</p>
+  </div>
+  <div class="main">
+    <div class="g7" style="margin-top:64px">
+      <img class="logo" src="../04-identity/02-logo/demo-sidra-coffee_logo_bilingual-colour_ar-en_v01.svg" alt="سدرة — Sidra Coffee">
+    </div>
+    <div class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="g7 titles">
+      <h1 class="a">الملف<br>التعريفي</h1>
+      <h1 class="e" lang="en">Company<br>profile</h1>
+      <p class="a sub">محمصة قهوة مختصة من الرياض</p>
+      <p class="e sub" lang="en">A specialty coffee roastery in Riyadh</p>
+      <p class="a">«تُحمَّص لطلبك، كل أسبوع.»</p>
+      <p class="e" lang="en">Roasted for your order. Every week.</p>
+    </div>
+  </div>
+  <div class="foot">
+    <p class="a cap">سدرة للقهوة · مسودة v01</p>
+    <span class="n"></span>
+    <p class="e cap" lang="en">Sidra Coffee · Draft v01</p>
+  </div>
+</section>
+
+<!-- ============ PAGE 2 — ABOUT + VISION & MISSION ============ -->
+<section class="page">
+  <div class="g7 head">
+    <div class="a"><img src="../04-identity/02-logo/demo-sidra-coffee_logo_primary-colour_ar_v01.svg" alt="سدرة"><span class="cap">الملف التعريفي 2026</span></div>
+    <p class="e cap" lang="en">Company profile 2026</p>
+  </div>
+  <div class="main">
+    <div class="g7 title">
+      <h2 class="a">من نحن</h2>
+      <h2 class="e" lang="en">About us</h2>
+    </div>
+    <div class="g7">
+      <div class="a">
+        <p>سدرة محمصة قهوة مختصة من الرياض، تأسست عام 2023. نحمّص حبوب القهوة المختصة ونبيعها للمقاهي، ولمن يحضّر قهوته في بيته عبر الإنترنت.</p>
+        <p style="margin-top:8px">نحمّص كل أسبوع، وعلى طلبك أنت.</p>
+        <div class="facts">
+          <div><span class="v">2023</span><span class="k">سنة التأسيس</span></div>
+          <div><span class="v">الرياض</span><span class="k">مقرّنا</span></div>
+          <div><span class="v">كل أسبوع</span><span class="k">تحميص على الطلب</span></div>
+        </div>
+      </div>
+      <div class="e" lang="en">
+        <p>Sidra is a specialty coffee roastery in Riyadh, founded in 2023. We roast specialty coffee beans and sell them to cafés, and online to people who brew at home.</p>
+        <p style="margin-top:8px">We roast every week, to your order.</p>
+        <div class="facts">
+          <div><span class="v">2023</span><span class="k">Founded</span></div>
+          <div><span class="v">Riyadh</span><span class="k">Our base</span></div>
+          <div><span class="v">Weekly</span><span class="k">Roasted to order</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel crema bleed">
+      <div class="g7" style="padding-bottom:16px">
+        <h2 class="a">الرؤية والرسالة</h2>
+        <h2 class="e" lang="en">Vision &amp; mission</h2>
+      </div>
+      <div class="g7">
+        <div class="a"><p class="lab">الرؤية</p><p class="sub">أن نكون المحمصة التي تذكرها مقاهي الرياض المستقلة أولًا.</p></div>
+        <div class="e" lang="en"><p class="lab">Vision</p><p class="sub">To be the roaster Riyadh’s independent cafés name first.</p></div>
+      </div>
+      <div class="g7">
+        <div class="a"><p class="lab">الرسالة</p><p>أن نحمّص كل طلب في تحميصة الأسبوع، لمقاهي الرياض المستقلة ولمن يحضّر قهوته في بيته، وأن نساعد فرق المقاهي على تحضيرها كما يجب.</p></div>
+        <div class="e" lang="en"><p class="lab">Mission</p><p>To roast every order in the weekly roast, for Riyadh’s independent cafés and for people who brew at home, and to help café teams brew it well.</p></div>
+      </div>
+      <div class="g7">
+        <div class="a"><p class="lab">القيم</p><p>على الموعد · كلام واضح · في صفّ المقهى · ضيافة</p></div>
+        <div class="e" lang="en"><p class="lab">Values</p><p>On schedule · Plain facts · On the café’s side · Hospitality</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <p class="a cap">سدرة للقهوة · مسودة v01</p>
+    <span class="n">02</span>
+    <p class="e cap" lang="en">Sidra Coffee · Draft v01</p>
+  </div>
+</section>
+
+<!-- ============ PAGE 3 — SERVICES & PRODUCTS + OUR ADVANTAGES ============ -->
+<section class="page">
+  <div class="g7 head">
+    <div class="a"><img src="../04-identity/02-logo/demo-sidra-coffee_logo_primary-colour_ar_v01.svg" alt="سدرة"><span class="cap">الملف التعريفي 2026</span></div>
+    <p class="e cap" lang="en">Company profile 2026</p>
+  </div>
+  <div class="main">
+    <div class="g7 title">
+      <h2 class="a">خدماتنا ومنتجاتنا</h2>
+      <h2 class="e" lang="en">Services &amp; products</h2>
+    </div>
+
+    <div class="g7 item">
+      <div class="a"><span class="no">01</span><p class="sub">قهوة مختصة محمّصة</p><p>محاصيل مفردة وخلطات البيت، 250 غ أو 1 كغ.</p></div>
+      <div class="e" lang="en"><span class="no">01</span><p class="sub">Roasted specialty coffee</p><p>Single origins and house blends, 250 g or 1 kg.</p></div>
+    </div>
+    <div class="g7 item">
+      <div class="a"><span class="no">02</span><p class="sub">توريد المقاهي بالجملة</p><p>توريد أسبوعي يُحمَّص على طلب مقهاك.</p></div>
+      <div class="e" lang="en"><span class="no">02</span><p class="sub">Wholesale supply for cafés</p><p>A weekly supply, roasted to your café’s order.</p></div>
+    </div>
+    <div class="g7 item">
+      <div class="a"><span class="no">03</span><p class="sub">اشتراك القهوة</p><p>اشترك، وتصلك قهوتك في بيتك كل شهر.</p></div>
+      <div class="e" lang="en"><span class="no">03</span><p class="sub">Coffee subscription</p><p>Subscribe and your coffee arrives at home every month.</p></div>
+    </div>
+    <div class="g7 item">
+      <div class="a"><span class="no">04</span><p class="sub">تدريب الباريستا</p><p>دورات قصيرة لفريق مقهاك.</p></div>
+      <div class="e" lang="en"><span class="no">04</span><p class="sub">Barista training</p><p>Short courses for your café’s staff.</p></div>
+    </div>
+
+    <div class="panel ink bleed">
+      <div class="g7">
+        <h2 class="a">ما يميّزنا</h2>
+        <h2 class="e" lang="en">Our advantages</h2>
+      </div>
+      <div class="g7 adv">
+        <p class="a lab">نحمّص كل أسبوع، وعلى طلبك أنت.</p>
+        <p class="e lab" lang="en">We roast every week, to your order.</p>
+      </div>
+      <div class="g7 adv">
+        <p class="a lab">محمصة من الرياض، لمقاهي الرياض.</p>
+        <p class="e lab" lang="en">A Riyadh roastery for Riyadh cafés.</p>
+      </div>
+      <div class="g7 adv" style="padding-bottom:0">
+        <p class="a lab">دورات قصيرة لفريق مقهاك، ليخرج الكوب كما يجب.</p>
+        <p class="e lab" lang="en">Short courses for your baristas, so the cup comes out right.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <p class="a cap">سدرة للقهوة · مسودة v01</p>
+    <span class="n">03</span>
+    <p class="e cap" lang="en">Sidra Coffee · Draft v01</p>
+  </div>
+</section>
+
+<!-- ============ PAGE 4 — CONTACT ============ -->
+<section class="page">
+  <div class="g7 head">
+    <div class="a"><img src="../04-identity/02-logo/demo-sidra-coffee_logo_primary-colour_ar_v01.svg" alt="سدرة"><span class="cap">الملف التعريفي 2026</span></div>
+    <p class="e cap" lang="en">Company profile 2026</p>
+  </div>
+  <div class="main">
+    <div class="g7 title">
+      <h2 class="a">تواصل معنا</h2>
+      <h2 class="e" lang="en">Contact</h2>
+    </div>
+    <div class="g7" style="padding-bottom:24px">
+      <p class="a sub">للتوريد بالجملة والاشتراك والدورات، راسلنا.</p>
+      <p class="e sub" lang="en">For wholesale supply, subscriptions and courses, write to us.</p>
+    </div>
+
+    <div class="g7 contact">
+      <div class="a"><span class="cap">البريد الإلكتروني</span><p class="lab"><a class="ltr" href="mailto:hello@sidra-coffee.example">hello@sidra-coffee.example</a></p></div>
+      <div class="e" lang="en"><span class="cap">Email</span><p class="lab"><a href="mailto:hello@sidra-coffee.example">hello@sidra-coffee.example</a></p></div>
+    </div>
+    <div class="g7 contact">
+      <div class="a"><span class="cap">المقر</span><p class="lab">الرياض، المملكة العربية السعودية</p></div>
+      <div class="e" lang="en"><span class="cap">Location</span><p class="lab">Riyadh, Saudi Arabia</p></div>
+    </div>
+    <div class="g7 contact">
+      <div class="a"><span class="cap">الهاتف</span><p class="lab"><span class="gap">[بيان ناقص: رقم الهاتف يُضاف لاحقًا]</span></p></div>
+      <div class="e" lang="en"><span class="cap">Phone</span><p class="lab"><span class="gap">[Placeholder: number to be supplied]</span></p></div>
+    </div>
+
+    <div class="ember bleed">
+      <div class="g7">
+        <img class="logo" src="../04-identity/02-logo/demo-sidra-coffee_logo_bilingual-colour-on-ember_ar-en_v01.svg" alt="سدرة — Sidra Coffee">
+      </div>
+      <div class="g7 tag">
+        <p class="a sub">«تُحمَّص لطلبك، كل أسبوع.»</p>
+        <p class="e sub" lang="en">Roasted for your order. Every week.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <p class="a cap">سدرة للقهوة · مسودة v01</p>
+    <span class="n">04</span>
+    <p class="e cap" lang="en">Sidra Coffee · Draft v01</p>
+  </div>
+</section>
+
+</body>
+</html>

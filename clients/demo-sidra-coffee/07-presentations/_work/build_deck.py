@@ -59,7 +59,9 @@ def rect(slide, x, y, w, h, colour):
     s.fill.solid()
     s.fill.fore_color.rgb = colour
     s.line.fill.background()
-    s.shadow.inherit = False
+    st = s._element.find(qn('p:style'))      # drop the theme style: identity allows no shadows
+    if st is not None:
+        s._element.remove(st)
     return s
 
 
@@ -105,7 +107,7 @@ def header(slide, logo, label, label_colour=ASH):
     slide.shapes[-1].text_frame.paragraphs[0].alignment = PP_ALIGN.LEFT
 
 
-def title(slide, t, colour=INK, y=1.95, cols=6, size=36):
+def title(slide, t, colour=INK, y=1.95, cols=7, size=32):
     w = span_w(cols)
     text(slide, SW - M - w, y, w, 1.6, [{"t": t, "size": size, "bold": True, "colour": colour, "ls": 1.3}])
 
@@ -145,7 +147,7 @@ for k, q in enumerate(["«متى حُمّصت هذه القهوة؟»", "«وم�
     rect(s, x, cy, half, ch, CREMA)
     text(s, x + 0.4, cy, half - 0.8, ch,
          [{"t": q, "size": 30, "bold": True, "ls": 1.3}], anchor=MSO_ANCHOR.MIDDLE)
-text(s, SW - M - span_w(6), 5.95, span_w(6), 0.9,
+text(s, M, 5.95, CW, 0.9,
      [{"t": "سؤالان يشغلان صاحب المقهى عن مقهاه. سدرة موجودة لتجيب عنهما بإيقاع ثابت: تحميصة كل أسبوع، وعلى طلبك.",
        "size": 18, "ls": 1.6}])
 
