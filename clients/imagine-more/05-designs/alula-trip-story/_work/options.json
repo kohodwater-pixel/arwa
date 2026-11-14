@@ -1,3 +1,32 @@
-[{"letter":"a","subject":"Elephant Rock (Jabal AlFil), AlUla","photo":"imagine-more_alula-trip-story_bg-a.jpg","top":0.5,"bot":1,"glass":0.19},
- {"letter":"b","subject":"Hegra (Mada'in Salih), Qasr al-Bint necropolis, Tomb 21","photo":"imagine-more_alula-trip-story_bg-b.jpg","top":0.3,"bot":1.15,"glass":0.2},
- {"letter":"c","subject":"AlUla Old Town, mud-brick houses under the sandstone cliffs","photo":"imagine-more_alula-trip-story_bg-c.jpg","top":0.5,"bot":1.2,"glass":0.2}]
+[
+ {
+  "letter": "a",
+  "subject": "Elephant Rock (Jabal AlFil), AlUla",
+  "photo": "imagine-more_alula-trip-story_bg-a.jpg",
+  "top": 0.5,
+  "bot": 1,
+  "glass": 0.1,
+  "under": 0.62,
+  "chip": 0.22
+ },
+ {
+  "letter": "b",
+  "subject": "Hegra (Mada'in Salih), Qasr al-Bint necropolis, Tomb 21",
+  "photo": "imagine-more_alula-trip-story_bg-b.jpg",
+  "top": 0.3,
+  "bot": 1.45,
+  "glass": 0.1,
+  "under": 0.48,
+  "chip": 0.12
+ },
+ {
+  "letter": "c",
+  "subject": "AlUla Old Town, mud-brick houses under the sandstone cliffs",
+  "photo": "imagine-more_alula-trip-story_bg-c.jpg",
+  "top": 0.68,
+  "bot": 1.2,
+  "glass": 0.1,
+  "under": 0.42,
+  "chip": 0.36
+ }
+]

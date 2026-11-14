@@ -1,0 +1,4 @@
+# Archive — AlUla trip story
+
+- `imagine-more_alula-trip-story_option-a/b/c_ar_v01.png` and `.html` — superseded by v02 on 2026-11-14: quality review r1 failed v01 on price-panel text contrast (white text about 2.4–3.0:1 on the frosted panel). Kept for the record.
+- `story_v01.css` — copy of the shared stylesheet as it was for v01, so the archived HTML still opens. The archived HTML and this CSS had only their relative paths adjusted for the move into `_archive/` (they point to `../assets/`); nothing else was changed. The v01 backgrounds for A and C are still `assets/photos/..._bg-a.jpg` and `..._bg-c.jpg`; option B's v01 background was replaced by a new crop for v02, so the archived B HTML shows the v02 crop — the archived v01 PNG is the true record.

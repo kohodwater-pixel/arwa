@@ -19,7 +19,7 @@ All three photos come from Wikimedia Commons. Licence and author were read from 
 ## Changes made to the photos (CC licences ask that changes be indicated)
 
 - Scaled down and cropped to 9:16.
-- The sky was continued upward beyond the top edge of each photo (A: 500 px, B: 262 px, C: 280 px of the 1920 px canvas) using the photo's own top-edge colours, to make room for the headline. In A the ground below the photo fades into the footer colour.
+- The sky was continued upward beyond the top edge of each photo (A: 500 px, B: 185 px, C: 280 px of the 1920 px canvas) using the photo's own top-edge colours, to make room for the headline. In A the ground below the photo fades into the footer colour.
 - Overlays in the layout: a blue gradient at the top and a dark brown gradient at the bottom, as in the reference.
 
 ## Notes and risks
