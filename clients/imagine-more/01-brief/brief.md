@@ -25,3 +25,9 @@
 - No vector logos, no font names and no brand guidelines supplied. Logos can only be lifted from the 720 px reference; fonts are matched to the closest open-licence family. Both are flagged to the client.
 - Numerals: Western (0123), as in the reference.
 - Format: 9:16 story, 1080×1920 px, sRGB.
+
+## Client feedback on options v02 — 2026-11-14
+- The three photos (Elephant Rock, Hegra tomb, Old Town) were rejected: "the photos are not nice".
+- Wanted: photos **with depth**, like `_originals/imagine-more_hegra-balloons-story_mood-reference_ar.png` (canyon walls leading into the distance, low warm light, a clear focal point).
+- One of the three should show **Maraya (the mirrored concert hall) with the mountains**.
+- Layout, copy, logos, dates and prices stay as in v02.
