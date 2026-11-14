@@ -108,3 +108,8 @@ The client sent `TastySA-Logos.zip` (saved in `_originals/partner-logos-tastysa_
 - Partners: add Le Méridien and Al Esra Cabin (كبائن الإسراء). Total 32.
 - Works: Dar Al Taqwa Hotel replaces Shahd Al Madinah Hotel. Service scope assumed maintenance and cleaning (to confirm).
 - v03 rejected by the client; v04 is a new design: cover as in the original profile (one large image with several small images), carefully chosen open-licence photographs.
+
+## Addendum 7 — 2026-11-14 (feedback on v06)
+
+- Dar Al Taqwa Hotel: its own page, with both client photos (entrance and room).
+- Logistics picture page (p13): condense into one image that shows the scooter, the car and the truck together.
