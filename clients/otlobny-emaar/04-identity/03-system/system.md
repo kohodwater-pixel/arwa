@@ -47,6 +47,38 @@ Do not:
 - Do not use the all-green wordmark on white. The inner pages of the original do this; green on white is 2.15:1. Use the colour version.
 - Do not use the old descriptor, retype the name next to the wordmark in another typeface, redraw, stretch, outline or recolour the mark, or copy the logo from the mockup images (their letterforms and spellings are wrong).
 
+## 1a. Lockup v02 (added 2026-11-14; supersedes the v01 lockup proposal)
+
+Status: **name strings are an agency decision pending client confirmation** (`03-strategy/name-decision_2026-11-14.md`). Layout follows the client's reference image `_originals/client-uploads_2026-11-14/logo-lockup_client-proposal.png` (arrangement only; nothing traced). The v01 lockup files («… / OTLOBNY Emaar Co.») are superseded and must not be used.
+
+Files in `04-identity/02-logo/` (SVG, paths only, no live text, viewBox 307.711 × 138.25): `otlobny-emaar_logo_lockup-{colour,reversed,white,navy}_ar-en_v02.svg`. Previews: `02-logo/_work/*_v02_transparent.png` (2000 px) and `02-logo/_work/sheet_lockup_v02_all-versions_small-size-test.png`.
+
+Strings (agency decision pending client confirmation):
+- Arabic: «شركة اطلبني إعمار المحدودة» (إ is U+0625; no full stop)
+- English: "OTLOBNY EMAR COMPANY LTD."
+
+Construction (units of the wordmark viewBox; wordmark height H = 124.6, width 307.7):
+- Wordmark: the v01 paths, unchanged and in the same position.
+- Descriptor block: under the wordmark, ink right edge on the wordmark's right edge (x = 307.711), ink left edge at x = 85.71, so 18.3 units (0.15 H) clear of the pill dot of the ya. Block width 222.0 (72% of the wordmark width) for both lines.
+- Arabic line: Tajawal Bold, 18.05 units (0.145 H), no letter-spacing, shaped with HarfBuzz. Top of the ink aligned to the top of the pill (y = 103.26); ink height 21.8, so the line sits level with the pill. Closest approach to the wordmark (dot and squeegee above): 10.3 units.
+- English line: IBM Plex Sans SemiBold, capitals, 12.61 units (cap height 8.8 = 0.071 H), tracking +0.127 em, set so its ink width equals the Arabic line. Gap from the lowest Arabic ink (hamza of إ, tail of ر) to the cap line: 4.2; baseline y = 138.10.
+- Both lines converted to outlines.
+
+Colour by version (all pairs pass WCAG AA as text):
+
+| File | Ground | Wordmark | Descriptor |
+|---|---|---|---|
+| `lockup-colour` | White, light tint | Blue + green | Descriptor grey `#525456` (7.61:1 on white, 7.17 on tint) |
+| `lockup-navy` | White, light tint; one-colour print | Navy | Navy `#1F3162` (12.55:1) |
+| `lockup-reversed` | Navy, dark half of the gradient | Green + white | White (12.55:1 on navy). Changed from v01, which used green: the descriptor is neutral on every ground |
+| `lockup-white` | Royal blue, gradient, photographs under a navy overlay | White | White (6.59:1 on blue) |
+
+Clear space: X = the width of the alef (21.34 units, 6.9% of the logo width) on all sides of the whole lockup, measured from the star badge at the top and the English line at the bottom.
+
+Minimum size of the lockup: **45 mm wide in print** (Arabic about 7.5 pt, English about 5.2 pt with 1.3 mm caps) and **320 px wide on screen** (Arabic 18.8 px, English caps 9.2 px). Tested at 45 mm, 30 mm and 20 mm (300 dpi) and at 320, 240 and 160 px: at 30 mm the English line is 3.5 pt and at 20 mm 2.3 pt, too small to rely on; at 240 px the caps are 7 px high (borderline). **Below 45 mm / 320 px use the wordmark alone** (its own minimum is 16 px / 10 mm high).
+
+Do not: re-set the descriptor in live text or another typeface; track the Arabic; change the descriptor's position, size or width; use green for the descriptor; use the v01 lockup.
+
 ## 2. Colour
 
 Sampled from the original: vector fills on page 20, pixels of pages 1, 6, 10 and 16. sRGB. The source holds no CMYK or Pantone values: **to be matched by the printer** if the profile is printed.
