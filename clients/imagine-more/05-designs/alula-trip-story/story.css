@@ -42,14 +42,15 @@ body{font-family:"Alexandria",sans-serif;color:#fff;-webkit-font-smoothing:antia
 
 /* price panel */
 .price{left:150px;top:1119px;width:780px;height:176px}
-.price .label{right:50px;top:28px;width:180px;text-align:right;font-weight:400;font-size:35px;line-height:1.63;white-space:nowrap}
-.price .now{left:309px;top:14px;font-weight:700;font-size:124px;line-height:1.2;letter-spacing:-1px}
-.price .sar{left:238px;top:82px;width:50px;height:56px}
-.price .was{left:226px;top:27px;height:40px;display:flex;align-items:center;gap:5px;direction:ltr;font-weight:400;font-size:27px;line-height:1;color:rgba(255,255,255,.85)}
-.price .was svg{width:16px;height:18px;opacity:.82}
-.price .was::after{content:"";position:absolute;left:-3px;right:-3px;top:50%;height:2.5px;margin-top:-1px;background:#fff;border-radius:2px;transform:rotate(-9deg)}
-.price .rule{left:209px;top:30px;width:2px;height:118px;background:rgba(255,255,255,.5)}
-.price .group{left:40px;top:26px;width:160px;text-align:center;font-weight:400;font-size:25.5px;line-height:1.42;white-space:nowrap}
+.price .label{right:38px;top:28px;width:180px;text-align:right;font-weight:400;font-size:35px;line-height:1.63;white-space:nowrap}
+.price .now{left:341px;top:19px;font-weight:700;font-size:118px;line-height:1.2;letter-spacing:-1px}
+.price .sar{left:240px;top:88px;width:48px;height:54px}
+.price .was{left:208px;top:24px;height:50px;display:flex;align-items:center;gap:10px;direction:ltr;font-weight:500;font-size:45px;line-height:1;color:rgba(255,255,255,.8)}
+.price .was svg{width:21px;height:23.5px;flex:none;margin-top:3px}
+.price .was span{position:relative;display:block}
+.price .was span::after{content:"";position:absolute;left:-4px;right:-4px;top:50%;height:3px;margin-top:0;background:#fff;border-radius:2px;transform:rotate(-8deg)}
+.price .rule{left:193px;top:30px;width:2px;height:118px;background:rgba(255,255,255,.5)}
+.price .group{left:22px;top:26px;width:160px;text-align:center;font-weight:400;font-size:25.5px;line-height:1.42;white-space:nowrap}
 .price .group svg{display:block;margin:0 auto 9px;width:50px;height:30px}
 
 /* includes */

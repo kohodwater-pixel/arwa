@@ -13,7 +13,7 @@ Shared source: `story.css`, `assets/` (fonts, lifted logos and footer icons, pho
 **Changes from the reference (only these):**
 1. Background photo.
 2. Date chip now reads `كل يوم جمعة` / `من 20 نوفمبر حتى 5 فبراير` on two lines; the chip row is 104 px tall instead of 82 px and 24 px wider.
-3. Old price `320` with the riyal sign, struck through, above the riyal sign beside `299`. The `299` and the price label moved about 10 px to the right to make room.
+3. Old price `320` (45 px, medium, white at 80%) with a small riyal sign to its left, one 3 px strike line across the digits only, placed above the main riyal sign beside `299`. To make room, `299` is 118 px instead of 124 px (about 5% smaller) and sits 32 px further right, the price label moved 20 px right, and the divider and group note moved 16–18 px left.
 
 **Copy used:** exactly as in `01-brief/brief.md`. One point differs from the reference pixels: the reference spells `للحجـز والأستفسار` (with a hamza); the brief gives the correct `والاستفسار`, which is what is set here.
 
