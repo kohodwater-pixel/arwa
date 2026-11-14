@@ -3,6 +3,8 @@
 **Client slug:** otlobny-emaar  **Stage:** 06-profiles, content only (no layout)  **Version:** v01 draft, 2026-11-13; updated 2026-11-14 to match layout draft v03 (earlier text: `_archive/content-outline_before-v03_2026-11-14.md`)
 **Status:** DRAFT for the Creative Director and the client. Nothing here is approved. Open items are in `content-gaps.md`.
 
+> **Update 2026-11-14 (v08) — Dar Al Taqwa scope CONFIRMED by the client:** the text is the same as was written for the earlier hotel. Works 03: «قدمت «اطلبني إعمار» خدمات الصيانة والنظافة لفندق دار التقوى.» / "OTLOBNY Emaar provided maintenance and cleaning services for Dar Al Taqwa Hotel." Scope chips: صيانة، نظافة / Maintenance, Cleaning. The assumption recorded in v04 is closed. Page map from v07: works on pp14 (bus shelters), 15 (Madinah Chamber), 16 (Dar Al Taqwa); logistics is one page (p12). Previous text: `_archive/content-outline_before-v08_2026-11-14.md`.
+
 > **Update 2026-11-14 (v04, new design) — supersedes the v03 block below where they differ.** Earlier text: `_archive/content-outline_before-v04_2026-11-14.md`.
 > - **Page map (20):** 1 cover · 2 contents · 3 about · 4 vision + mission · 5 goals · 6 services overview · 7–12 the six services · 13 logistics in pictures · 14 why · 15–17 works · 18–19 partners (16 + 16) · 20 contact, photo credits.
 > - **Works, page 17: Dar Al Taqwa Hotel «فندق دار التقوى» REPLACES the earlier hotel (client, 2026-11-14).** Copy: «قدمت «اطلبني إعمار» خدمات الصيانة والنظافة لفندق دار التقوى.» / "OTLOBNY Emaar provided maintenance and cleaning services for Dar Al Taqwa Hotel." Scope (maintenance and cleaning) is an ASSUMPTION pending the client. The earlier hotel's text and photograph are removed everywhere.
