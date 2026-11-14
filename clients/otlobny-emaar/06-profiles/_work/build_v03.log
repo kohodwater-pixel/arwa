@@ -1,0 +1,48 @@
+wrote otlobny-emaar_company-profile_screen_ar-en_v03.html 20 pages
+  img p7   v03_svc_electrical-panel.jpg       assets/photos/electrical-panel.png               crop (0, 125, 1240, 609) px (1240, 484) -> 297 mm wide, 106 ppi, full colour
+  img p8   v03_svc_nursery-worker.jpg         assets/photos/nursery-worker.png                 crop (0, 248, 961, 732) px (961, 484) -> 222 mm wide, 110 ppi, full colour
+  img p9   v03_svc_glass-facade.jpg           assets/photos/glass-facade-cleaners.png          crop (0, 128, 1237, 661) px (1237, 533) -> 297 mm wide, 106 ppi, full colour
+  img p10  v03_svc_cleaning-team.jpg          assets/derived/mockup_cleaning-team_retouched_v03.png crop (0, 135, 1536, 787) px (1536, 652) -> 297 mm wide, 131 ppi, full colour
+  img p11  v03_svc_waiter.jpg                 assets/photos/waiter.png                         crop (0, 111, 980, 623) px (980, 512) -> 222 mm wide, 112 ppi, full colour
+  img p12  v03_svc_truck-front34.jpg          assets/derived/mockup_truck-front34_retouched_v03.png crop (14, 0, 686, 582) px (672, 582) -> 148 mm wide, 115 ppi, full colour
+  img p12  v03_svc_truck-rear34.jpg           assets/derived/mockup_truck-rear34_retouched_v03.png crop (13, 0, 685, 582) px (672, 582) -> 148 mm wide, 115 ppi, full colour
+  img p1   v03_cover_car-scooter-facade.jpg   assets/derived/mockup_car-scooter-facade_retouched_v03.png crop (29, 0, 1477, 1024) px (1448, 1024) -> 297 mm wide, 124 ppi, full colour
+  img p2   v03_contents_glass-facade.jpg      assets/photos/glass-facade-cleaners.png          crop (296, 0, 743, 876) px (447, 876) -> 107 mm wide, 106 ppi, full colour
+  img p4   v03_vismis_office-cleaner.jpg      assets/photos/office-cleaner.png                 crop (1150, 0, 1495, 873) px (345, 873) -> 83 mm wide, 106 ppi, full colour
+  img p13  v03_gal_truck-front.jpg            assets/derived/mockup_truck-front_retouched_v03.png crop (0, 1, 432, 433) px (432, 432) -> 83.1 mm wide, 132 ppi, full colour
+  img p13  v03_gal_truck-side.jpg             assets/derived/mockup_truck-side_retouched_v03.png crop (0, 1, 668, 433) px (668, 432) -> 128.5 mm wide, 132 ppi, full colour
+  img p13  v03_gal_truck-rear.jpg             assets/derived/mockup_truck-rear_retouched_v03.png crop (0, 1, 428, 433) px (428, 432) -> 82.4 mm wide, 132 ppi, full colour
+  img p13  v03_gal_rider.jpg                  assets/derived/mockup_delivery-rider_retouched_v03.png crop (300, 10, 770, 1010) px (470, 1000) -> 52.6 mm wide, 227 ppi, full colour
+  img p15  v03_work_15.jpg                    assets/photos/bus-shelter.png                    crop (390, 16, 940, 471) px (550, 455) -> 127 mm wide, 110 ppi, full colour
+  img p16  v03_work_16.jpg                    assets/photos/chamber-building.png               crop (88, 0, 637, 454) px (549, 454) -> 127 mm wide, 110 ppi, full colour
+  img p17  v03_work_17.jpg                    assets/photos/shahd-hotel.png                    crop (211, 64, 1033, 743) px (822, 679) -> 127 mm wide, 164 ppi, full colour
+  logo existing-01_madinah-award-foundation        16.0 x 25.0 mm   400 mm2   102 ppi  optical shift -1.1/+1.8 mm
+  logo existing-02_al-madinah-region-development-authority  30.9 x 19.6 mm   604 mm2   100 ppi  optical shift -0.1/+0.8 mm
+  logo existing-03_al-maqar                        29.5 x 19.1 mm   564 mm2   110 ppi  optical shift +0.1/-0.2 mm
+  logo existing-04_we-ar-spa                       28.0 x 22.8 mm   639 mm2   777 ppi  optical shift -0.1/-0.9 mm
+  logo existing-05_mawaddah                        33.0 x 19.7 mm   651 mm2   122 ppi  optical shift -0.1/+0.3 mm
+  logo existing-06_imagine-more                    36.0 x 17.4 mm   628 mm2   718 ppi  optical shift +0.7/+0.3 mm
+  logo existing-07_hsh                             32.0 x 16.6 mm   532 mm2    83 ppi  optical shift -0.1/+0.0 mm
+  logo existing-08_taibah-cooperative              20.3 x 18.3 mm   371 mm2   100 ppi  optical shift -0.0/-0.1 mm
+  logo existing-09_dar-al-taqwa-hotel              46.0 x  7.1 mm   326 mm2   161 ppi  optical shift +0.2/-0.1 mm
+  logo existing-10_dallah-taibah-hotel             24.7 x 25.0 mm   619 mm2   101 ppi  optical shift +0.0/-0.3 mm
+  logo existing-11_al-madinah-harmony              44.0 x 20.6 mm   906 mm2   107 ppi  optical shift +0.8/-0.5 mm
+  logo existing-12_tiny-house                      34.0 x 14.9 mm   507 mm2   545 ppi  optical shift -2.0/+0.7 mm
+  logo existing-13_platinum                        31.0 x 17.9 mm   554 mm2   788 ppi  optical shift -0.1/-0.8 mm
+  logo existing-14_madinah-chamber                 38.0 x 15.3 mm   582 mm2  1271 ppi  optical shift +2.2/+0.2 mm
+  logo existing-15_manarat-taba-hotel              21.6 x 25.0 mm   539 mm2   104 ppi  optical shift -0.1/-0.5 mm
+  logo existing-16_hippo                           16.6 x 24.0 mm   398 mm2   781 ppi  optical shift -0.0/+0.3 mm
+  logo existing-17_taza                            28.0 x 19.7 mm   553 mm2   130 ppi  optical shift -0.0/+0.6 mm
+  logo existing-18_arabic-calligraphic-mark        30.0 x 17.0 mm   511 mm2    94 ppi  optical shift +0.1/+1.2 mm
+  logo new-01_manazil-al-mukhtara                  30.1 x 23.9 mm   720 mm2   878 ppi  optical shift +0.5/-1.0 mm
+  logo new-02_novotel                              38.0 x 14.8 mm   564 mm2   837 ppi  optical shift -0.4/+0.5 mm
+  logo new-03_keeta                                31.0 x 16.5 mm   512 mm2   610 ppi  optical shift -0.4/-0.1 mm
+  logo new-04_jahez                                28.0 x 19.5 mm   546 mm2   725 ppi  optical shift -0.2/+0.1 mm
+  logo new-05_medina-dates-festival                17.4 x 24.0 mm   417 mm2  1108 ppi  optical shift -0.6/-0.4 mm
+  logo new-06_hungerstation                        32.0 x 16.4 mm   525 mm2   928 ppi  optical shift -0.0/-0.0 mm
+  logo new-07_rotana                               38.0 x 13.1 mm   496 mm2   765 ppi  optical shift +0.1/+0.9 mm
+  logo new-08_chop-and-co                          28.0 x 18.1 mm   508 mm2  1053 ppi  optical shift +1.1/-0.3 mm
+  logo new-09_zero                                 38.0 x 13.3 mm   504 mm2   676 ppi  optical shift -0.3/-0.3 mm
+  logo new-10_shawarma-laila                       34.6 x 18.6 mm   645 mm2  1046 ppi  optical shift -0.1/+0.4 mm
+  logo new-11_loomi                                31.5 x 14.3 mm   449 mm2   748 ppi  optical shift -0.3/-0.5 mm
+  logo new-12_the-end                              31.0 x 21.7 mm   674 mm2  1147 ppi  optical shift +1.1/+0.5 mm

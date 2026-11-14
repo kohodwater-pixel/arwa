@@ -1,7 +1,15 @@
 # Content outline — «اطلبني إعمار» / OTLOBNY Emaar company profile
 
-**Client slug:** otlobny-emaar  **Stage:** 06-profiles, content only (no layout)  **Version:** v01 draft, 2026-11-13
+**Client slug:** otlobny-emaar  **Stage:** 06-profiles, content only (no layout)  **Version:** v01 draft, 2026-11-13; updated 2026-11-14 to match layout draft v03 (earlier text: `_archive/content-outline_before-v03_2026-11-14.md`)
 **Status:** DRAFT for the Creative Director and the client. Nothing here is approved. Open items are in `content-gaps.md`.
+
+> **Update 2026-11-14 — what layout draft v03 actually carries (supersedes the page notes below where they differ)**
+> - **Page map (20):** 1 cover · 2 contents · 3 about · 4 vision + mission · 5 goals · 6 services overview · 7–12 the six services · 13 logistics in pictures · 14 why · 15–17 works · 18–19 partners · 20 contact / back cover.
+> - **Logistics — CONFIRMED by the client (brief addendum 4), no longer [D]:** four services only — «التوصيل» Delivery · «نقل البضائع» Goods transport · «التخزين» Storage · «تأجير المركبات» Vehicle rental. Intro: «تقدّم «اطلبني إعمار» خدمات لوجستية تشمل التوصيل ونقل البضائع والتخزين وتأجير المركبات.» / "OTLOBNY Emaar provides logistics services covering delivery, goods transport, storage and vehicle rental." No figures, fleet or coverage stated.
+> - **Website — CONFIRMED:** `otlobny.net` on the contact page (replaces the otlobny.co / otlobny.com TBC rows). Nothing else is taken from the website; no WhatsApp row.
+> - **Partners (pp18–19):** title «شركاء النجاح» / "Partners in Success"; **30 logos** — the old profile's 18, the nine added on 2026-11-13, then Shawarma Laila, Loomi and The End (2026-11-14); 15 per page; line «جميع الشعارات ملك لأصحابها.» / "All logos are the property of their respective owners."
+> - **Founded 2021 — confirmed.** The "chosen company for 2021" sentence stays out.
+
 
 ## How to read this file
 
@@ -407,7 +415,7 @@ All 18 are [V] p19 as logos the client itself published. None is cleared for reu
 | [V] pp1, 20 | الهاتف: 054 955 5514 | Tel: 054 955 5514 | Same on both covers. Still current? To confirm. The international form +966 54 955 5514 is offered for the English side if the client agrees. |
 | [V] pp1, 20 | البريد الإلكتروني: info@otlobny.co | Email: info@otlobny.co | Same on both covers. |
 | [E] pp1, 20 | العنوان: طريق الأمير عبدالمجيد بن عبدالعزيز، المدينة المنورة، المملكة العربية السعودية | Address: Prince Abdulmajeed bin Abdulaziz Road, Al Madinah Al Munawwarah, Saudi Arabia | Original, English only: "Madinah, Saudi Arabia \| Prince Abdulmajyed Bin Abdulaziz". Changes: Arabic rendering added; "Road / طريق" added (not in the original; taken from the brief); spelling "Abdulmajeed". |
-| **TBC** pp1, 20 | الموقع الإلكتروني: **[otlobny.co أو otlobny.com — يحدده العميل]** | Website: **[otlobny.co or otlobny.com — client to confirm]** | p1 prints otlobny.co, p20 prints otlobny.com. The email domain is otlobny.co. Neither has been checked online. Draft placeholder only; not to appear in a final file. |
+| [V] client 2026-11-13 | الموقع الإلكتروني: otlobny.net | Website: otlobny.net | p1 prints otlobny.co, p20 prints otlobny.com. The email domain is otlobny.co. Neither has been checked online. Draft placeholder only; not to appear in a final file. |
 | [V] p5 | السجل التجاري: 4650245200 | Commercial Registration: 4650245200 | Repeated here for tender use. |
 
 **Image / graphic:** location map and a QR code to the website once the address and domain are confirmed; neither is drawn before then. Social media accounts: none in the client's material, none shown.
@@ -423,6 +431,6 @@ All 18 are [V] p19 as logos the client itself published. None is cleared for reu
 | [D] | اطلبني إعمار | OTLOBNY Emaar | New lockup replaces «شركة اطلبني للصيانة والنظافة — OTLOBNY Mantinance & Cleaning Co.» (p20). |
 | [V] p20 | 054 955 5514 · info@otlobny.co | 054 955 5514 · info@otlobny.co | |
 | [E] p20 | المدينة المنورة، المملكة العربية السعودية | Al Madinah Al Munawwarah, Saudi Arabia | Shortened from the p20 address line. |
-| **TBC** | **[الموقع الإلكتروني — يحدده العميل]** | **[website — client to confirm]** | As page 19. |
+| [V] client 2026-11-13 | otlobny.net | otlobny.net | As page 19. |
 
 **Image / graphic:** the lockup on a brand-colour ground. No photograph.

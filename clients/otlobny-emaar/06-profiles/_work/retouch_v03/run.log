@@ -1,0 +1,19 @@
+  mockup_cleaning-team.png: 5 isolated speck(s) near patch at (532, 314) filled from local median: [(581, 307, 588, 313), (580, 309, 585, 314), (583, 314, 588, 319), (580, 316, 587, 322), (568, 328, 573, 334)]
+  mockup_cleaning-team.png: 1 isolated speck(s) near patch at (752, 313) filled from local median: [(806, 316, 811, 322)]
+mockup_cleaning-team.png: 6 patches | px changed outside patch masks (+6 px): 0 | wordmark px changed: 0 outside masks, 0 inside masks (>2 levels)
+  mockup_delivery-rider.png: 1 isolated speck(s) near patch at (453, 57) filled from local median: [(454, 69, 460, 74)]
+  mockup_delivery-rider.png: 1 isolated speck(s) near patch at (499, 251) filled from local median: [(544, 244, 549, 250)]
+mockup_delivery-rider.png: 3 patches | px changed outside patch masks (+6 px): 0 | wordmark px changed: 0 outside masks, 0 inside masks (>2 levels)
+  mockup_car-scooter-facade.png: 2 isolated speck(s) near patch at (160, 185) filled from local median: [(227, 184, 232, 189), (310, 199, 316, 204)]
+  mockup_car-scooter-facade.png: 3 isolated speck(s) near patch at (528, 655) filled from local median: [(624, 650, 629, 656), (684, 687, 691, 692), (614, 695, 621, 700)]
+  mockup_car-scooter-facade.png: 13 isolated speck(s) near patch at (1222, 683) filled from local median: [(1291, 664, 1296, 669), (1289, 665, 1295, 670), (1288, 666, 1293, 671), (1292, 673, 1297, 678), (1278, 680, 1284, 685), (1277, 681, 1282, 686), (1255, 688, 1260, 693), (1254, 689, 1259, 694), (1252, 690, 1257, 695), (1243, 694, 1250, 699), (1238, 695, 1247, 700), (1235, 696, 1242, 702), (1234, 698, 1239, 703)]
+mockup_car-scooter-facade.png: 7 patches | px changed outside patch masks (+6 px): 0 | wordmark px changed: 0 outside masks, 0 inside masks (>2 levels)
+  mockup_logistics-trucks.png: 3 isolated speck(s) near patch at (143, 355) filled from local median: [(135, 370, 143, 379), (224, 372, 232, 381), (225, 377, 230, 382)]
+  mockup_logistics-trucks.png: 1 isolated speck(s) near patch at (357, 352) filled from local median: [(349, 357, 359, 363)]
+  mockup_logistics-trucks.png: 1 isolated speck(s) near patch at (580, 292) filled from local median: [(608, 307, 614, 313)]
+  mockup_logistics-trucks.png: 2 isolated speck(s) near patch at (986, 315) filled from local median: [(1049, 350, 1055, 356), (1052, 350, 1058, 356)]
+  mockup_logistics-trucks.png: 4 isolated speck(s) near patch at (1228, 293) filled from local median: [(1296, 285, 1301, 293), (1311, 285, 1316, 291), (1284, 286, 1289, 292), (1329, 306, 1335, 313)]
+  mockup_logistics-trucks.png: 2 isolated speck(s) near patch at (64, 840) filled from local median: [(56, 850, 64, 859), (112, 850, 120, 856)]
+  mockup_logistics-trucks.png: 2 isolated speck(s) near patch at (850, 826) filled from local median: [(934, 829, 941, 839), (934, 842, 939, 847)]
+  mockup_logistics-trucks.png: 9 isolated speck(s) near patch at (1234, 760) filled from local median: [(1286, 753, 1291, 760), (1296, 753, 1301, 759), (1298, 772, 1303, 780), (1298, 778, 1303, 786), (1298, 783, 1303, 791), (1298, 788, 1303, 798), (1298, 795, 1303, 803), (1298, 800, 1303, 807), (1296, 801, 1301, 807)]
+mockup_logistics-trucks.png: 10 patches | px changed outside patch masks (+6 px): 0 | wordmark px changed: 0 outside masks, 25 inside masks (>2 levels)

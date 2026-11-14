@@ -1,0 +1,8 @@
+new-10_shawarma-laila.png <- layla-shawarma-logo-transparent.png: artwork bbox (np.int64(0), np.int64(0), np.int64(1425), np.int64(768)), margin 114 px, final (1653, 996)
+loomi defringe pass 1: 6996 edge pixels made transparent
+loomi defringe pass 2: 2366 edge pixels made transparent
+loomi defringe pass 3: 18 edge pixels made transparent
+loomi: 9380 fringe pixels removed in total; 6808 remaining off-colour boundary pixels set to 50% alpha; interior (blue counters, letter edges against the counters) untouched; yellow ref [248.0, 185.0, 32.0]
+new-11_loomi.png <- loomi-logo-transparent.png: artwork bbox (np.int64(0), np.int64(2), np.int64(928), np.int64(422)), margin 74 px, final (1076, 568)
+the-end: artwork bbox (np.int64(0), np.int64(0), np.int64(3000), np.int64(2128)) in source, downsampled x0.479 to (1400, 982)
+new-12_the-end.png <- the-end-logo-transparent.png: artwork bbox (np.int64(0), np.int64(0), np.int64(1400), np.int64(982)), margin 112 px, final (1624, 1206)

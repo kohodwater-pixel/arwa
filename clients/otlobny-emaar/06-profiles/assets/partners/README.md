@@ -84,3 +84,13 @@ Recommendation for the layout: place the transparent logos on white or a very li
 ## Note on the transparent set — 2026-11-13 (Creative Director)
 
 Two agents produced a transparent set because of a dispatch mistake by the Creative Director. The files now in `assets/partners-transparent/` are the SECOND agent's output (script `_work/make_partners_transparent.py`, final run 17:07), which overwrote the first. The "Transparent set" section above describes the first agent's method and is kept only as a record; where the two differ, the per-logo table in the second agent's handoff applies. Both sets were checked on a white ground and read the same as their sources. The set is for white or very light grounds only: on dark grounds six low-resolution logos look rough (existing-01, 03, 08, 15, new-05, new-07) and dark marks lose contrast.
+
+## Three more partners — added 2026-11-14 (brief addendum 5), total 30
+
+Source: `_originals/partner-logos-tastysa_2026-11-14/` (client's `TastySA-Logos.zip`, never modified). Prepared with `06-profiles/_work/prepare_partners_v03.py`; log and check sheets in `06-profiles/_work/partners_v03/`. Only in `../partners-transparent/` (the page uses the transparent set).
+
+| # | File | Name as the logo reads | Source file used | Pixel size | Processing / quality note |
+|---|---|---|---|---|---|
+| 10 | new-10_shawarma-laila.png | «ليلى» in a dark green oval outline (Shawarma Laila) | layla-shawarma-logo-transparent.png (1425×768) | 1653×996 | Cropped to the artwork (the oval touches the source edges), even transparent margin of 114 px added. Hard-edged alpha as supplied. Good for screen |
+| 11 | new-11_loomi.png | LOOMI (yellow wordmark, blue counters) | loomi-logo-transparent.png (928×422) | 1076×568 | The supplied file has a 1–2 px opaque blue-grey fringe (left from removing a blue background) around the outer edge, visible at 4× on white. Only that outer fringe was removed: 9,380 edge pixels that touch transparency and are blue-grey rather than the logo yellow were made transparent; the 6,808 remaining off-colour boundary pixels were set to 50% alpha (colour unchanged). Letterforms, blue counters and interior edges untouched. Even margin of 74 px |
+| 12 | new-12_the-end.png | THE END — BURGERS / FRIES, flag mark, red check band | the-end-logo-transparent.png (3000×2128) | 1624×1206 | Downsampled to 1400 px artwork width (premultiplied Lanczos), no sharpening; even margin 112 px. NOTE: the supplied file is cut at its right edge (the right side of the «D» and the check band touch the canvas edge) and at the bottom edge; this is in the client's file and was not redrawn. A complete file is requested |
