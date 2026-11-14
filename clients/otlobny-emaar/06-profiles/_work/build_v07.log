@@ -1,0 +1,60 @@
+wrote otlobny-emaar_company-profile_screen_ar-en_v07.html 20 pages
+  img p1   v07_p01_hero_steel-erector.jpg               assets/stock/contracting_steel-erector-on-beams_flickr-132069821.jpg                         crop (502, 0, 2038, 1536) -> 193.5 x 193.5 mm, 202 ppi, graded
+  img p1   v07_p01_t_aisle.jpg                          assets/stock/logistics_warehouse-racking-aisle_flickr-4324416999.jpg                         crop (172, 0, 852, 681) -> 61.1 x 61.1 mm, 283 ppi, graded
+  img p1   v07_p01_t_rope-access.jpg                    assets/stock/cleaning_rope-access-blue-glass-tower_flickr-16633802875.jpg                    crop (222, 0, 905, 683) -> 61.1 x 61.1 mm, 284 ppi, graded
+  img p1   v07_p01_t_palm-park.jpg                      assets/stock/landscaping_palm-park-riyadh-museum_flickr-51949716085.jpg                      crop (77, 0, 845, 768) -> 61.1 x 61.1 mm, 319 ppi, graded
+  img p1   v07_p01_t_workforce.jpg                      assets/stock/manpower_gulf-site-workforce_flickr-9836421046.jpg                              crop (148, 0, 916, 768) -> 61.1 x 61.1 mm, 319 ppi, graded
+  img p3   v07_p03_madinah-plaza.jpg                    assets/stock/opener_madinah-haram-plaza-umbrellas_wikimedia-masjid-al-nabawi-2024-3.jpg      crop (557, 0, 2467, 2700) -> 148.5 x 210.0 mm, 327 ppi, graded
+  img p6   v07_p06_madinah-panorama.jpg                 assets/stock/opener_madinah-haram-panorama_wikimedia-mezquita-del-profeta-dd01.jpg           crop (0, 593, 2660, 1203) -> 297.0 x 68.0 mm, 227 ppi, graded
+  img p7   v07_p07_contracting_hero.jpg                 assets/stock/cover-hero_blue-glass-facade_wikimedia-glass-building-corner.jpg                crop (780, 0, 3180, 2400) -> 146.5 x 146.5 mm, 416 ppi, graded
+  img p7   v07_p07_contracting_12.jpg                   assets/stock/contracting_concrete-screeding-crew_flickr-4184357497.jpg                       crop (294, 0, 975, 681) -> 70.7 x 70.7 mm, 245 ppi, graded
+  img p7   v07_p07_contracting_21.jpg                   assets/stock/contracting_surveyor-theodolite_flickr-8756741875.jpg                           crop (170, 0, 854, 683) -> 70.7 x 70.7 mm, 246 ppi, graded
+  img p8   v07_p08_landscaping_00.jpg                   assets/stock/landscaping_date-palm-walkway-doha_flickr-7631829614.jpg                        crop (0, 77, 768, 845) -> 70.7 x 70.7 mm, 276 ppi, graded
+  img p8   v07_p08_landscaping_11.jpg                   assets/stock/landscaping_palms-dry-planting_flickr-4968666077.jpg                            crop (77, 0, 845, 768) -> 70.7 x 70.7 mm, 276 ppi, graded
+  img p9   v07_p09_maintenance_hero.jpg                 assets/stock/maintenance_hvac-gauges_wikimedia-379th-eces-8502255.jpg                        crop (1020, 240, 2940, 2160) -> 146.5 x 146.5 mm, 333 ppi, graded
+  img p9   v07_p09_maintenance_12.jpg                   assets/stock/maintenance_rooftop-ac-units-technician_flickr-54752357237.jpg                  crop (0, 0, 683, 683) -> 70.7 x 70.7 mm, 245 ppi, graded
+  img p9   v07_p09_maintenance_21.jpg                   assets/stock/contracting-electrical_distribution-board_wikimedia-small-house-distribution-panel-2.jpg crop (320, 800, 1600, 2080) -> 70.7 x 70.7 mm, 460 ppi, graded
+  img p10  v07_p10_cleaning_00.jpg                      assets/stock/cleaning_rope-access-window-cleaner_flickr-4797579546.jpg                       crop (344, 0, 1024, 680) -> 70.7 x 70.7 mm, 244 ppi, graded
+  img p10  v07_p10_cleaning_11.jpg                      assets/stock/cleaning_mop-and-trolley-floor_flickr-24978817211.jpg                           crop (221, 0, 904, 683) -> 70.7 x 70.7 mm, 245 ppi, graded
+  img p11  v07_p11_manpower_10.jpg                      assets/stock/manpower_waiter-pouring-tea_flickr-38075436525.jpg                              crop (90, 0, 771, 681) -> 70.7 x 70.7 mm, 245 ppi, graded
+  img p11  v07_p11_manpower_01.jpg                      assets/stock/manpower_catering-table-setup-overhead_flickr-6160161346.jpg                    crop (308, 0, 990, 682) -> 70.7 x 70.7 mm, 245 ppi, graded
+  img p11  v07_p11_manpower_11.jpg                      assets/derived/mockup_cleaning-team_retouched_v03.png                                        crop (256, 0, 1280, 1024) -> 70.7 x 70.7 mm, 368 ppi, not graded
+  img p12  v07_logistics_fleet-composite.png            composite of client mockups (car+scooter scene, truck front 3/4)                             crop (0, 0, 1720, 640) -> 297.0 x 110.5 mm, 147 ppi, cut-outs, shared ground
+  img p14  v07_p14_bus-shelter.jpg                      assets/photos/bus-shelter.png                                                                crop (400, 0, 950, 471) -> 105.0 x 89.9 mm, 133 ppi, graded
+  img p15  v07_p15_chamber.jpg                          assets/photos/chamber-building.png                                                           crop (0, 0, 644, 454) -> 110.0 x 77.5 mm, 149 ppi, graded
+  img p16  v07_p16_dar-al-taqwa_entrance.jpg            assets/photos/dar-al-taqwa-hotel-entrance.jpg                                                crop (0, 0, 335, 597) -> 43.8 x 78.0 mm, 194 ppi, graded
+  img p16  v07_p16_dar-al-taqwa_room.jpg                assets/photos/dar-al-taqwa-hotel-room.png                                                    crop (0, 0, 768, 512) -> 117.0 x 78.0 mm, 167 ppi, graded
+sources on more than one page: none
+  logo existing-01_madinah-award-foundation              15.4 x 24.0 mm   106 ppi
+  logo existing-02_al-madinah-region-development-authority  30.8 x 19.5 mm   100 ppi
+  logo existing-03_al-maqar                              25.4 x 16.5 mm   128 ppi
+  logo existing-04_we-ar-spa                             23.9 x 19.5 mm   910 ppi
+  logo existing-05_mawaddah                              28.4 x 17.0 mm   142 ppi
+  logo existing-06_imagine-more                          31.0 x 15.0 mm   835 ppi
+  logo existing-07_hsh                                   27.5 x 14.3 mm    96 ppi
+  logo existing-08_taibah-cooperative                    20.3 x 18.3 mm   100 ppi
+  logo existing-09_dar-al-taqwa-hotel                    56.8 x  8.7 mm   131 ppi
+  logo existing-10_dallah-taibah-hotel                   19.3 x 19.5 mm   129 ppi
+  logo existing-11_al-madinah-harmony                    47.0 x 22.0 mm   100 ppi
+  logo existing-12_tiny-house                            25.4 x 11.2 mm   728 ppi
+  logo existing-13_platinum                              26.7 x 15.4 mm   917 ppi
+  logo existing-14_madinah-chamber                       32.7 x 13.2 mm  1478 ppi
+  logo existing-15_manarat-taba-hotel                    16.8 x 19.5 mm   133 ppi
+  logo existing-16_hippo                                 13.5 x 19.5 mm   961 ppi
+  logo existing-17_taza                                  24.1 x 17.0 mm   151 ppi
+  logo existing-18_arabic-calligraphic-mark              25.8 x 14.6 mm   109 ppi
+  logo new-01_manazil-al-mukhtara                        24.5 x 19.5 mm  1077 ppi
+  logo new-02_novotel                                    32.7 x 12.8 mm   973 ppi
+  logo new-03_keeta                                      23.2 x 12.4 mm   816 ppi
+  logo new-04_jahez                                      24.1 x 16.8 mm   843 ppi
+  logo new-05_medina-dates-festival                      14.2 x 19.5 mm  1361 ppi
+  logo new-06_hungerstation                              23.9 x 12.3 mm  1240 ppi
+  logo new-07_rotana                                     32.7 x 11.2 mm   889 ppi
+  logo new-08_chop-and-co                                24.1 x 15.6 mm  1225 ppi
+  logo new-09_zero                                       29.4 x 10.3 mm   874 ppi
+  logo new-10_shawarma-laila                             29.8 x 16.0 mm  1216 ppi
+  logo new-11_loomi                                      23.6 x 10.7 mm  1000 ppi
+  logo new-12_the-end                                    23.2 x 16.3 mm  1533 ppi
+  logo new-13_le-meridien                                37.8 x  5.3 mm  1443 ppi
+  logo new-14_al-esra-cabin                              19.1 x 19.5 mm   931 ppi
+credits used: 19

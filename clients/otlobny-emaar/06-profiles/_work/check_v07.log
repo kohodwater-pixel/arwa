@@ -1,0 +1,6 @@
+file: otlobny-emaar_company-profile_screen_ar-en_v07.pdf
+pages: 20   page size (mm): 297 x 210
+fonts: IBMPlexSans, IBMPlexSans-Bold, IBMPlexSans-Medm, IBMPlexSans-SmBld, Tajawal-Bold, Tajawal-ExtraBold, Tajawal-Medium, Tajawal-Regular
+arabic characters extracted: 4467 (presentation forms: 0)
+previews: _work/preview_v07  <- open these and confirm letters are connected and read right to left
+RESULT: PASS (automated checks). Visual check of the previews is still required.
