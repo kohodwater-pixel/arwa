@@ -1,7 +1,110 @@
 # otlobny-emaar: open-licence stock library for company profile v04
 
-Status: **22 images (round 1: 8 from Wikimedia Commons; round 2: 14 from Flickr via the Openverse API).** Compiled by the art-director, date accessed 2026-11-14.
-Contact sheet: `06-profiles/_work/stock_contact_v04.png`
+Status: **29 files.**
+- Round 1: 8 from Wikimedia Commons.
+- Round 2: 14 from Flickr via the Openverse API.
+- Round 3: 7 Gulf-credible images from Flickr via Openverse.
+
+**8 files are DEMOTED** (see below). Compiled by the art-director, date accessed 2026-11-14.
+
+Contact sheets:
+- `06-profiles/_work/stock_contact_v05.png`: current, all 29 files.
+- `06-profiles/_work/stock_contact_v04.png`: kept for the record.
+
+**Round 3 is the current guidance. Its sections below (page plan, grade, demotions) override the round-2 "Recommended cover set".**
+
+## Round 3: answer to review_v04_r1 M4 / M5
+
+### v05 page plan (no image used twice anywhere in the book)
+
+| Page | Hero (large) | Tiles |
+|---|---|---|
+| Cover | cover-hero_blue-glass-facade_wikimedia-glass-building-corner.jpg | 1. contracting_tower-construction-with-palms_flickr-3384156664.jpg<br>2. cleaning_rope-access-blue-glass-tower_flickr-16633802875.jpg<br>3. landscaping_palm-park-riyadh-museum_flickr-51949716085.jpg<br>4. maintenance_technician-headlamp-tools_flickr-51315198261.jpg |
+| p2 Contents | none: type only (the old p2 image was the cover facade cleaners) | — |
+| p4 About / Madinah | opener_madinah-haram-plaza-umbrellas_wikimedia-masjid-al-nabawi-2024-3.jpg. **Crop or retouch any legible hotel signage ("TAIBA FRONT HOTEL", review M5).** Keep the crop to umbrellas, minarets and the marble. | — |
+| p6 Services overview | opener_madinah-haram-panorama_wikimedia-mezquita-del-profeta-dd01.jpg (band). Check for and crop any legible Latin signage. | — |
+| p7 General contracting | contracting_steel-erector-on-beams_flickr-132069821.jpg (2048 px: half-page at most) | 1. contracting_concrete-screeding-crew_flickr-4184357497.jpg<br>2. contracting_surveyor-theodolite_flickr-8756741875.jpg |
+| p8 Landscaping | **UNFILLED.** Interim: landscaping_date-palm-walkway-doha_flickr-7631829614.jpg as a portrait panel, max about 90 mm tall | 1. landscaping_palms-dry-planting_flickr-4968666077.jpg |
+| p9 Maintenance | maintenance_hvac-gauges_wikimedia-379th-eces-8502255.jpg (**this page only**) | 1. maintenance_rooftop-ac-units-technician_flickr-54752357237.jpg<br>2. contracting-electrical_distribution-board_wikimedia-small-house-distribution-panel-2.jpg (electrical maintenance) |
+| p10 Cleaning | **UNFILLED.** Interim: cleaning_mop-and-trolley-floor_flickr-24978817211.jpg at tile size, as the lead image | 1. cleaning_rope-access-window-cleaner_flickr-4797579546.jpg |
+| p11 Manpower supply | **UNFILLED.** Interim: manpower_gulf-site-workforce_flickr-9836421046.jpg at tile size | 1. manpower_waiter-pouring-tea_flickr-38075436525.jpg<br>2. manpower_catering-table-setup-overhead_flickr-6160161346.jpg |
+| p12 Logistics | **UNFILLED.** Interim: logistics_warehouse-racking-aisle_flickr-4324416999.jpg at tile size, as the only image | — |
+
+Other pages (vision, why us, our work, partners, contact) use **no stock photo**. If a layout needs one, ask the art-director rather than repeat an image.
+
+**Not used anywhere in v05:** all DEMOTED files, plus the Madinah images beyond the two assigned above.
+
+**UNFILLED means** no image of 2000 px or more that is credible for the Gulf could be sourced. On those pages, size the interim image within its tile limit and let type, colour and the diamond pattern carry the rest. Do not enlarge 1024 px files.
+
+### Colour grade recipe (apply to every photo, identically)
+
+1. **Saturation:** −20 (Photoshop Hue/Saturation, master). This tames the green lawns and the red and orange vests.
+2. **Contrast:** Curves with two points:
+   - 64 → 56
+   - 192 → 200
+
+   This is about +8 contrast. Black output is raised to 10 (of 255), so the darkest tone is #0A0A0A and no shadow goes to pure black.
+3. **Brand tint:** solid colour layer #1F3162 (navy), blend mode Soft Light, opacity 15%.
+4. **White balance:** none per image, except warm interiors (waiter pouring tea, catering): −5 on the Temperature slider (Camera Raw) before step 1, so they sit with the daylight images.
+
+CSS equivalent for screen proofs:
+```css
+filter: saturate(0.8) contrast(1.08);
+/* overlay: */
+background: #1F3162;
+mix-blend-mode: soft-light;
+opacity: 0.15;
+```
+
+Duotone frames (cover tiles) may use #1F3162 → #3758B0 at 100% instead. If they do, use that treatment for **all** cover tiles, never a mix.
+
+### DEMOTED (do not use in v05; files kept, not deleted)
+
+| File | Why |
+|---|---|
+| contracting_rebar-worker_wikimedia-rebar-worker-j2.jpg | Winter: beanie, camouflage trousers (M5) |
+| landscaping_palm-promenade-lawn_flickr-19570930662.jpg | Lush English lawn, Torquay (M5) |
+| landscaping_gardener-trimmer_flickr-54576923958.jpg | European woodland gardener (M5) |
+| landscaping_date-palm_wikimedia-date-palm-tree-landscape.jpg | Flat white sky, weak light |
+| cleaning_floor-scrubbers-lobby_wikimedia-floor-scrubbers.jpg | Hazy, low contrast, maker mark |
+| logistics_white-box-truck_flickr-51928284838.jpg | Danish plates, Thermo King, Mercedes star, door lettering (M5) |
+| logistics_forklift-in-motion_flickr-4325154436.jpg | Motion blur; maker badge |
+| contracting_site-at-blue-hour_flickr-2146788503.jpg | Not maintenance (M4); European night scene, not needed elsewhere |
+
+### Round 3 additions (all Flickr via Openverse; **TILE ONLY**, 1024 px)
+
+| File | Need | Pixels | Source page | Author | Licence | Attribution | Why chosen | Crop / notes |
+|---|---|---|---|---|---|---|---|---|
+| landscaping_date-palm-walkway-doha_flickr-7631829614.jpg | Landscaping | 768×1024 | https://www.flickr.com/photos/86665756@N00/7631829614 | Studio Sarah Lou | CC BY 2.0, https://creativecommons.org/licenses/by/2.0/ | **Yes** | Date palms along a sand-coloured path in arid haze: unmistakably Gulf, no landmark. | Portrait. Keep the palm rhythm and the vanishing path. A tower in the far haze is small and unidentifiable. |
+| landscaping_palm-park-riyadh-museum_flickr-51949716085.jpg | Cover tile / landscaping | 1024×768 | https://www.flickr.com/photos/49399018@N00/51949716085 | amanderson2 | CC BY 2.0 | **Yes** | A real Saudi park: palm trunks frame a landscaped bed with stonework, in strong sun. | Diamond crop centred on the stone feature between the palms. A small seated figure (bottom right) can be cropped out. |
+| maintenance_rooftop-ac-units-technician_flickr-54752357237.jpg | Maintenance | 1024×683 | https://www.flickr.com/photos/25802865@N08/54752357237 | chooyutshing | Public Domain Mark 1.0, https://creativecommons.org/publicdomain/mark/1.0/ | No | A bank of rooftop condenser units with a technician (hard hat) at work: central A/C maintenance, literally. | Crop to the unit rows and the worker. Trim the green wall on the right if it fights the grade. A red mark on the parapet edge is small; check it at final size. |
+| maintenance_technician-headlamp-tools_flickr-51315198261.jpg | Cover tile / maintenance | 1023×683 | https://www.flickr.com/photos/85045231@N04/51315198261 | S.C. Air National Guard (US Gov) | Public Domain Mark 1.0 | No | Sharp, focused technician with headlamp and pliers, in plain T-shirt and safety glasses. | Crop to the face and hands; drop the aircraft parts at the top. Must not imply military endorsement. |
+| cleaning_rope-access-blue-glass-tower_flickr-16633802875.jpg | Cover tile / cleaning | 1024×683 | https://www.flickr.com/photos/78341140@N00/16633802875 | waitscm | CC BY 2.0 | **Yes** | A rope-access team cleaning a blue glass tower. On-brand blue, high contrast, Gulf high-rise context. The tower is not identifiable. | Crop to the four or five cleaners on the glass; avoid the tower edge on the left. |
+| contracting_tower-construction-with-palms_flickr-3384156664.jpg | Cover tile / contracting | 1024×677 | https://www.flickr.com/photos/86838704@N00/3384156664 | ianmunroe | CC BY 2.0 | **Yes** | A tower under construction with a crane, date palms in the foreground and a clear sky: reads as a Gulf city site. | Crop to the right-hand tower, crane and palms; lose the generic towers on the left. |
+| manpower_gulf-site-workforce_flickr-9836421046.jpg | Manpower | 1024×768 | https://www.flickr.com/photos/89165847@N00/9836421046 | mikecogh | CC BY-SA 2.0, https://creativecommons.org/licenses/by-sa/2.0/ | **Yes** | A real Gulf workforce in hard hats and hi-vis on site: shows the manpower-supply offer honestly. | Busy frame: crop tight to the central group. Faces are small and candid, not posed. |
+
+### Round 3 rejects
+
+- Muscat Al Alam palace garden: identifiable royal landmark.
+- "Palms in Medina": hazy, shot through a car window.
+- Ageing split-AC condenser: odd subject.
+- Chiller-plant shots (MTA): dark, cluttered, US subway project.
+- Second headlamp technician: duplicate.
+- "Cleaning the road" (2048 px): the worker is not cleaning; empty composition.
+- Generic crane.
+- Dubai and Abu Dhabi skylines; Sheikh Zayed Mosque: landmarks.
+- Qatar Airways aircraft and the Panasonic AC unit: brand logos.
+- Dakar, military and rally vehicles: wrong subject.
+
+### Round 3 access log
+
+- **Openverse searches:** 74 queries (37 Wikimedia + 37 Flickr), about one every 2.6 s. Many 504s: each retried once, then skipped. No 429 from Openverse. 529 results.
+- **Wikimedia previews:**
+  - Openverse's thumbnail endpoint returned HTTP 424 for every Wikimedia result.
+  - upload.wikimedia.org returned **429 on the first thumbnail request**, so all Wikimedia access stopped there, as instructed.
+  - As a result, **no Wikimedia image could be viewed or downloaded this round.** That source holds the large (≥2000 px) Gulf files, including titles such as "Ajwa Date palm tree (Dabinu)" CC0 3456×4608, "Saudi Arabia garden irrigation" 3264×1952, "Gardens in Saudi Arabia" 2976×3968, "Riyadh Construction Site" 3947×2204, "Foreign workers at a construction site of The Pearl" 3750×2640, "Single white truck in a Desert" CC0 4032×3024, "A dallah of Arabic coffee" 5472×3648 and "Arabic copper coffee Dallah" CC0 8160×6120.
+  - These are **unseen candidates**, not approved images: they need a person to view and download them from a browser.
+- **Flickr:** downloads from live.staticflickr.com; `_k`/`_h` tried once each. Only the hazy Medina palms (1500 px) and "cleaning the road" (2048 px) offered larger sizes, and both were rejected on quality.
 
 **Size warning.** Every round-2 Flickr image except the steel erector (2048 px) is 1024 px or smaller, because Flickr's `_k` (2048) and `_h` (1600) sizes did not respond for them. These are **TILE ONLY**: use them in small collage frames or diamond frames at roughly 85 mm wide or less at 300 ppi (about 120 mm at 220 ppi), or as small screen images. Never use them full-bleed.
 
