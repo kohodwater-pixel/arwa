@@ -75,3 +75,5 @@
 | Date | What was delivered | Where |
 |---|---|---|
 | | | |
+
+- 2026-11-14 — Canva: editable copy of profile v03 created for the client to rearrange by hand (import of the v03 PDF, 20 pages). Design `DAHa5Vvya0Q` — edit: https://www.canva.com/d/cPABBj3ToQirher — view: https://www.canva.com/d/WUqJITlxDYRlD2s. Arabic rendering inside Canva not yet checked visually by the agency.
