@@ -77,3 +77,6 @@
 | | | |
 
 - 2026-11-14 — Canva: editable copy of profile v03 created for the client to rearrange by hand (import of the v03 PDF, 20 pages). Design `DAHa5Vvya0Q` — edit: https://www.canva.com/d/cPABBj3ToQirher — view: https://www.canva.com/d/WUqJITlxDYRlD2s. Arabic rendering inside Canva not yet checked visually by the agency.
+
+- 2026-11-14 — Client instruction: add two more partners to «شركاء النجاح»: **Le Méridien** and **Al Esra Cabin «كبائن الإسراء»** (logos received, filed in `_originals/client-uploads_2026-11-14/`; prepared as `partners-transparent/new-13`, `new-14`). Partner total is now 32: the original 18 unchanged, then 9, then 3, then these 2.
+- 2026-11-14 — Client instruction: in «أعمالنا», **Dar Al Taqwa Hotel «فندق دار التقوى» replaces Shahd Al Madinah Hotel «فندق شهد المدينة»**. Shahd Al Madinah no longer appears as a work in v04 onwards. Scope of services at Dar Al Taqwa is ASSUMED to be the same as was stated for Shahd (maintenance and cleaning) — to confirm with the client. Two photos received (entrance 335×597 px, room 768×512 px): both low resolution; rights for the room photo (from a booking site) unconfirmed.

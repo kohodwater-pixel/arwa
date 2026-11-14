@@ -102,3 +102,9 @@ The client asked to add to «شركاء النجاح»: مطعم لومي (Loomi
 
 ## Addendum 5 — 2026-11-14 — logos for the three extra partners received
 The client sent `TastySA-Logos.zip` (saved in `_originals/partner-logos-tastysa_2026-11-14/`) with logos for Shawarma Laila (ليلى), Loomi and The End. They are added to «شركاء النجاح» after the nine: the page now carries **30 logos** (18 existing + 9 + 3). Versions to use on the white page: `layla-shawarma-logo-transparent.png`, `loomi-logo-transparent.png`, `the-end-logo-transparent.png`. Used as supplied: cropped to the artwork only, not redrawn or recoloured.
+
+## Addendum 6 — 2026-11-14
+
+- Partners: add Le Méridien and Al Esra Cabin (كبائن الإسراء). Total 32.
+- Works: Dar Al Taqwa Hotel replaces Shahd Al Madinah Hotel. Service scope assumed maintenance and cleaning (to confirm).
+- v03 rejected by the client; v04 is a new design: cover as in the original profile (one large image with several small images), carefully chosen open-licence photographs.
