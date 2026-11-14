@@ -3,6 +3,13 @@
 **Client slug:** otlobny-emaar  **Stage:** 06-profiles, content only (no layout)  **Version:** v01 draft, 2026-11-13; updated 2026-11-14 to match layout draft v03 (earlier text: `_archive/content-outline_before-v03_2026-11-14.md`)
 **Status:** DRAFT for the Creative Director and the client. Nothing here is approved. Open items are in `content-gaps.md`.
 
+> **Update 2026-11-14 (v04, new design) — supersedes the v03 block below where they differ.** Earlier text: `_archive/content-outline_before-v04_2026-11-14.md`.
+> - **Page map (20):** 1 cover · 2 contents · 3 about · 4 vision + mission · 5 goals · 6 services overview · 7–12 the six services · 13 logistics in pictures · 14 why · 15–17 works · 18–19 partners (16 + 16) · 20 contact, photo credits.
+> - **Works, page 17: Dar Al Taqwa Hotel «فندق دار التقوى» REPLACES the earlier hotel (client, 2026-11-14).** Copy: «قدمت «اطلبني إعمار» خدمات الصيانة والنظافة لفندق دار التقوى.» / "OTLOBNY Emaar provided maintenance and cleaning services for Dar Al Taqwa Hotel." Scope (maintenance and cleaning) is an ASSUMPTION pending the client. The earlier hotel's text and photograph are removed everywhere.
+> - **Partners: 32 logos** — existing-01…18, new-01…12, new-13 Le Méridien, new-14 Al Esra Cabin «كبائن الإسراء».
+> - **Services overview heading:** «جهة واحدة لستة مجالات» / "One company, six fields" (the first "why" point, reused). Logistics gallery lists the four confirmed services only.
+> - **Credits:** a photo-credits block on page 20 (CC BY / BY-SA attributions, "modified"), plus «صور الخدمات توضيحية» / "Service photographs are illustrative."
+
 > **Update 2026-11-14 — what layout draft v03 actually carries (supersedes the page notes below where they differ)**
 > - **Page map (20):** 1 cover · 2 contents · 3 about · 4 vision + mission · 5 goals · 6 services overview · 7–12 the six services · 13 logistics in pictures · 14 why · 15–17 works · 18–19 partners · 20 contact / back cover.
 > - **Logistics — CONFIRMED by the client (brief addendum 4), no longer [D]:** four services only — «التوصيل» Delivery · «نقل البضائع» Goods transport · «التخزين» Storage · «تأجير المركبات» Vehicle rental. Intro: «تقدّم «اطلبني إعمار» خدمات لوجستية تشمل التوصيل ونقل البضائع والتخزين وتأجير المركبات.» / "OTLOBNY Emaar provides logistics services covering delivery, goods transport, storage and vehicle rental." No figures, fleet or coverage stated.

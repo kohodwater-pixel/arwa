@@ -32,3 +32,6 @@ Page numbers are the pages where the image is actually drawn inside the page are
 
 ## Resolution guide
 A4 landscape full bleed at 150 ppi needs about 1790×1280 px. None of these reaches that; the six images around 1240×875 px give about 106 ppi full page (as in the original) and are sharp at half a page or less. The cover images (300–860 px) should stay small.
+
+## Added 2026-11-14 (v04)
+- `dar-al-taqwa-hotel-entrance.jpg` — 335×597 px, byte-identical copy of `_originals/client-uploads_2026-11-14/photo_dar-al-taqwa-hotel-entrance.jpg` (client upload). Hotel entrance with bilingual sign. Small: used at 40 mm wide (213 ppi) on page 17 of v04. The room photo from the same upload (`photo_joodbooking.avif`, from a booking site) is not copied or used: rights unconfirmed.
