@@ -26,7 +26,7 @@
   "spb": 22
  },
  "notes": 34,
- "total": 36,
+ "total": 35,
  "plan": [
   {
    "kind": "cover",
@@ -360,7 +360,9 @@
     "nt:A05",
     "nt:A06",
     "nt:A07",
-    "nt:A08"
+    "nt:A08",
+    "nt:A09",
+    "nt:A10"
    ],
    "notes": true,
    "pn": 34
@@ -368,8 +370,6 @@
   {
    "kind": "flow",
    "blocks": [
-    "nt:A09",
-    "nt:A10",
     "nt:A11",
     "nt:A12",
     "nt:A13",
@@ -378,19 +378,10 @@
     "nt:A16",
     "nt:A17",
     "nt:A18",
-    "nt:A19"
+    "gt"
    ],
    "notes": true,
    "pn": 35
-  },
-  {
-   "kind": "flow",
-   "blocks": [
-    "gt",
-    "cr"
-   ],
-   "notes": true,
-   "pn": 36
   }
  ]
 }

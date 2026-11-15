@@ -17,13 +17,11 @@ M = D["meta"]
 CONTENT_H = 249.0   # mm available inside .content
 GAP = 6.5           # mm between blocks
 
-PHOTOS = {
-    "national": {"src": "assets/photos/national_junior-suite_travelingotter_cc-by-sa-2.jpg",
-                 "credit": "Junior Suite, Hotel National Moscow — Photo: TravelingOtter, CC BY-SA 2.0"},
-}
+# Client rule (2026-11-15): no credits or captions printed; only CC0 / public-domain images.
+PHOTOS = {}   # no CC0/PD photo of any specific hotel could be obtained -> typographic name cards
 CITY_PHOTOS = {
-    "moscow": {"src": "assets/photos/moscow_kremlin-embankment_bernt-rostad_cc-by-2.jpg", "credit": "Moscow, the Kremlin from the embankment — Photo: Bernt Rostad, CC BY 2.0"},
-    "spb": {"src": "assets/photos/spb_neva-winter_ninara_cc-by-2.jpg", "credit": "Saint Petersburg, the Neva in winter — Photo: Ninara, CC BY 2.0"},
+    "moscow": {"src": "assets/photos/moscow_kremlin-domes_chuanann_cc0.jpg"},
+    "spb": {"src": "assets/photos/spb_st-isaacs-dome_aljuarez_cc0.jpg"},
 }
 
 e = H.escape
@@ -67,19 +65,29 @@ CSS = """
 @font-face{font-family:'Playfair Display';src:url('assets/fonts/playfair-display/playfair-display-latin-500-normal.ttf');font-weight:500}
 @font-face{font-family:'Playfair Display';src:url('assets/fonts/playfair-display/playfair-display-latin-600-normal.ttf');font-weight:600}
 @font-face{font-family:'Playfair Display';src:url('assets/fonts/playfair-display/playfair-display-latin-700-normal.ttf');font-weight:700}
+@font-face{font-family:'HM';src:url('assets/fonts/ibmplexsansarabic/IBMPlexSansArabic-Regular.ttf');font-weight:400}
+@font-face{font-family:'HM';src:url('assets/fonts/ibmplexsansarabic/IBMPlexSansArabic-Medium.ttf');font-weight:500}
+@font-face{font-family:'HM';src:url('assets/fonts/ibmplexsansarabic/IBMPlexSansArabic-SemiBold.ttf');font-weight:600}
+@font-face{font-family:'HM';src:url('assets/fonts/ibmplexsansarabic/IBMPlexSansArabic-Bold.ttf');font-weight:700}
+@font-face{font-family:'HM';src:url('assets/fonts/ibmplexsansarabic/IBMPlexSansArabic-Light.ttf');font-weight:300}
+@font-face{font-family:'HM';src:url('assets/fonts/montserrat/montserrat-latin-300-normal.ttf');font-weight:300;unicode-range:U+0021-007E,U+00A1-00FF,U+2010-2027,U+2030-205E,U+20AC,U+2122}
+@font-face{font-family:'HM';src:url('assets/fonts/montserrat/montserrat-latin-400-normal.ttf');font-weight:400;unicode-range:U+0021-007E,U+00A1-00FF,U+2010-2027,U+2030-205E,U+20AC,U+2122}
+@font-face{font-family:'HM';src:url('assets/fonts/montserrat/montserrat-latin-500-normal.ttf');font-weight:500;unicode-range:U+0021-007E,U+00A1-00FF,U+2010-2027,U+2030-205E,U+20AC,U+2122}
+@font-face{font-family:'HM';src:url('assets/fonts/montserrat/montserrat-latin-600-normal.ttf');font-weight:600;unicode-range:U+0021-007E,U+00A1-00FF,U+2010-2027,U+2030-205E,U+20AC,U+2122}
+@font-face{font-family:'HM';src:url('assets/fonts/montserrat/montserrat-latin-700-normal.ttf');font-weight:700;unicode-range:U+0021-007E,U+00A1-00FF,U+2010-2027,U+2030-205E,U+20AC,U+2122}
 :root{--navy:#14243A;--gold:#C6A66B;--ivory:#F7F4ED;--char:#292D32;--line:#E4DCCB;--muted:#5E6470;--goldtext:#8A6D32}
 @page{size:210mm 297mm;margin:0}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:#fff}
-body{font-family:'Montserrat','IBM Plex Sans Arabic';color:var(--char);font-size:10pt;line-height:1.65;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-.ar{font-family:'IBM Plex Sans Arabic','Montserrat'}
+body{font-family:'HM';color:var(--char);font-size:10pt;line-height:1.65;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.ar{font-family:'HM'}
 bdi{unicode-bidi:isolate}
 .page{width:210mm;height:297mm;position:relative;overflow:hidden;page-break-after:always;break-after:page;background:#fff}
 .page:last-child{page-break-after:auto}
 .content{position:absolute;top:24mm;bottom:22mm;right:18mm;left:18mm;overflow:hidden}
 .rhead{position:absolute;top:11mm;right:18mm;left:18mm;height:7mm;border-bottom:0.3mm solid var(--gold);display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:1.6mm}
 .rhead .sec{font-size:9pt;color:var(--navy);font-weight:500}
-.rhead .sec bdi{font-family:'Playfair Display';color:var(--goldtext);font-size:8.5pt;margin-inline-start:2mm}
+.rhead .sec bdi{font-family:'Playfair Display';color:var(--goldtext);font-size:8.5pt;margin-right:2.5mm}
 .rhead .brand{font-family:'Montserrat';font-size:7pt;letter-spacing:.24em;color:var(--muted);font-weight:500}
 .rfoot{position:absolute;bottom:9mm;right:18mm;left:18mm;display:flex;justify-content:space-between;align-items:center;font-size:8.5pt;color:var(--muted)}
 .rfoot .pn{font-family:'Playfair Display';font-size:11pt;color:var(--navy);border-top:0.3mm solid var(--gold);padding-top:1mm;min-width:10mm;text-align:center}
@@ -134,7 +142,7 @@ td.c-sar{background:var(--ivory);border-inline-end:0.6mm solid var(--gold)}
 .cur{font-size:7pt;letter-spacing:.06em;font-weight:500;color:var(--muted)}
 .sar .cur{color:var(--goldtext);font-weight:600}
 .ns{color:var(--muted)}
-.val{font-size:10pt;color:var(--navy);font-weight:500}
+.val{font-size:10pt;color:var(--navy);font-weight:600;background:var(--ivory);border-inline-end:0.6mm solid var(--gold)}
 .sect{font-size:12pt;line-height:1.4;font-weight:600;color:var(--navy);margin-bottom:2mm;display:flex;gap:3mm;align-items:baseline}
 .sect bdi{font-family:'Playfair Display';color:var(--goldtext);font-size:10.5pt;font-weight:400}
 ul.notes{list-style:none}
@@ -160,40 +168,40 @@ ul.notes li:before{content:'';position:absolute;right:0;top:2.6mm;width:1.4mm;he
 .cover .ed{position:absolute;top:24mm;left:0;right:0;text-align:center;font-size:9.5pt;color:#CFC6B4}
 /* intro page */
 .intro h1{font-size:19pt;font-weight:600;color:var(--navy);line-height:1.3}
-.intro h1 bdi{display:block;font-family:'Playfair Display';font-size:13pt;color:var(--goldtext);font-weight:400}
+.intro h1 bdi{display:block;text-align:right;font-family:'Playfair Display';font-size:13pt;color:var(--goldtext);font-weight:400}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:8mm}
-.xbox{background:var(--navy);color:var(--ivory);padding:5mm 6mm}
+.xbox{background:var(--navy);color:var(--ivory);padding:3.5mm 5mm}
 .xbox .big{font-family:'Montserrat';font-size:21pt;font-weight:600;color:var(--gold);display:block;text-align:center;margin:1mm 0 2mm}
-.xbox .f{font-size:10pt;line-height:1.7}
+.xbox .f{font-size:10pt;line-height:1.6}
 .xbox .f b{color:var(--gold);font-weight:600}
 .h3{font-size:11.5pt;font-weight:600;color:var(--navy);border-bottom:0.3mm solid var(--gold);padding-bottom:1.2mm;margin-bottom:2mm;display:flex;justify-content:space-between;align-items:baseline}
 .h3 bdi{font-family:'Playfair Display';font-weight:400;color:var(--goldtext);font-size:9.5pt}
-table.legend td{font-size:9.5pt;padding:1mm 1.8mm;line-height:1.35}
+table.legend td{font-size:9.5pt;padding:.7mm 1.6mm;line-height:1.3}
 table.legend td.en{font-family:'Montserrat';font-size:8.5pt;color:var(--muted);text-align:left}
 .idx{width:100%}
-.idx .row{display:flex;align-items:baseline;gap:2mm;padding:1.1mm 0;border-bottom:0.2mm dotted #CDBF9F;font-size:10pt}
+.idx .row{display:flex;align-items:baseline;gap:2mm;padding:.55mm 0;line-height:1.45;border-bottom:0.2mm dotted #CDBF9F;font-size:10pt}
 .idx .row .n{font-family:'Playfair Display';color:var(--goldtext);width:6mm}
 .idx .row .nm{flex:1}
-.idx .row .nm bdi{font-family:'Montserrat';font-size:8.5pt;color:var(--muted);margin-inline-start:2mm}
+.idx .row .nm bdi{font-family:'Montserrat';font-size:8pt;color:var(--muted);display:block;line-height:1.3}
 .idx .row .pg{font-family:'Playfair Display';font-size:11pt;color:var(--navy)}
-.idx .city{font-size:10.5pt;font-weight:600;color:var(--navy);margin:2.5mm 0 .5mm}
-.idx .city bdi{font-family:'Playfair Display';font-weight:400;color:var(--goldtext);font-size:9.5pt;margin-inline-start:2mm}
+.idx .city{font-size:10.5pt;font-weight:600;color:var(--navy);margin:2mm 0 0;line-height:1.5}
+.idx .city bdi{font-family:'Playfair Display';font-weight:400;color:var(--goldtext);font-size:9.5pt;margin-right:2.5mm}
 /* section opener */
 .opener .content{top:18mm}
-.opener .ph{width:100%;height:112mm;overflow:hidden;position:relative}
+.opener .ph{width:100%;height:84mm;overflow:hidden;position:relative}
 .opener .ph img{width:100%;height:100%;object-fit:cover;display:block}
 .opener .cap{font-size:8pt;color:var(--muted);margin-top:1.5mm;text-align:left;font-family:'Montserrat'}
-.opener .num{font-family:'Playfair Display';color:var(--goldtext);letter-spacing:.3em;font-size:10pt;margin-top:12mm}
-.opener .cn{font-size:44pt;font-weight:600;color:var(--navy);line-height:1.25;margin-top:2mm}
+.opener .num{font-family:'Playfair Display';color:var(--goldtext);letter-spacing:.3em;font-size:10pt;margin-top:9mm}
+.opener .cn{font-size:40pt;font-weight:600;color:var(--navy);line-height:1.2;margin-top:1mm}
 .opener .ce{font-family:'Playfair Display';font-size:22pt;color:var(--goldtext);letter-spacing:.18em;text-transform:uppercase}
-.opener .rule{width:30mm;height:0.35mm;background:var(--gold);margin:7mm 0}
-.opener .lst .row{display:flex;gap:3mm;align-items:baseline;padding:1.6mm 0;border-bottom:0.2mm solid var(--line);font-size:11pt}
+.opener .rule{width:30mm;height:0.35mm;background:var(--gold);margin:5mm 0}
+.opener .lst .row{display:flex;gap:3mm;align-items:baseline;padding:1.1mm 0;line-height:1.5;border-bottom:0.2mm solid var(--line);font-size:11pt}
 .opener .lst .row bdi{font-family:'Playfair Display';color:var(--goldtext);font-size:10.5pt}
 .opener .lst .row .pg{margin-inline-start:auto;font-family:'Playfair Display';color:var(--navy)}
 /* analysis */
 .ah .k{font-family:'Playfair Display';color:var(--goldtext);letter-spacing:.25em;font-size:9pt}
 .ah h2{font-size:17pt;font-weight:600;color:var(--navy);line-height:1.35}
-.ah h2 bdi{font-family:'Playfair Display';font-weight:400;font-size:12.5pt;color:var(--goldtext);margin-inline-start:3mm}
+.ah h2 bdi{font-family:'Playfair Display';font-weight:400;font-size:12.5pt;color:var(--goldtext);margin-right:3.5mm}
 .basis{margin-top:3mm;background:var(--ivory);border-inline-start:0.6mm solid var(--gold);padding:3mm 4.5mm}
 .basis .lbl{font-size:9.5pt;font-weight:600;color:var(--navy);margin-bottom:.8mm}
 .basis li{font-size:9.5pt;line-height:1.6;margin-inline-start:4mm}
@@ -202,6 +210,7 @@ table.legend td.en{font-family:'Montserrat';font-size:8.5pt;color:var(--muted);t
 .hn{font-size:10pt;font-weight:500;display:block;line-height:1.35}
 .he{font-family:'Montserrat';font-size:8pt;color:var(--muted);display:block;line-height:1.3}
 td.small{font-size:9.5pt}
+.pp{display:block;font-weight:600;color:var(--navy);font-size:9.5pt}
 /* notes page */
 .nitem{display:flex;gap:3.5mm;font-size:10pt;line-height:1.7;padding:2mm 0;border-bottom:0.2mm solid var(--line)}
 .nitem .id{font-family:'Playfair Display';color:var(--goldtext);min-width:9mm;font-size:10pt}
@@ -241,8 +250,7 @@ def hotel_header(h, idx):
         else:
             vals.append(f'{e(p["label_ar"])}: {e(p["dates_ar"])}')
     validity = f'<div class="validity"><b>الصلاحية:</b> {" · ".join(vals)}</div>'
-    credit = f'<div class="credit">{ltr(photo["credit"])}</div>' if photo else ""
-    return head + credit + facts_html + validity
+    return head + facts_html + validity
 
 
 def hotel_cont(h):
@@ -307,9 +315,9 @@ def hotel_cell(r):
 
 def analysis_table(a, t):
     cols = t["cols"]
-    widths = {"hotel": 24, "period": 15, "room": 21, "basis": 20, "breakfast": 22, "rub": 14, "sar": 16, "note": 14, "condition": 40}
+    widths = {"hotel": 24, "room": 21, "basis": 20, "pbasis": 23, "breakfast": 22, "rub": 17, "sar": 20, "note": 14, "condition": 40}
     if t.get("kind") == "extras":
-        widths = {"hotel": 30, "condition": 40, "rub": 14, "sar": 16}
+        widths = {"hotel": 30, "condition": 40, "rub": 17, "sar": 20}
     tot = sum(widths[c] for c in cols)
     colg = "".join(f'<col style="width:{widths[c]*100/tot:.1f}%">' for c in cols)
     hdr = "".join(th2(*L.COLS[c], cls=("c-num c-sar" if c == "sar" else "c-num" if c == "rub" else "")) for c in cols)
@@ -326,6 +334,8 @@ def analysis_table(a, t):
                 tds += f'<td><span class="rn">{ltr(rs[0])}</span>' + (f'<span class="rs">{e(rs[1])}</span>' if len(rs) > 1 else "") + "</td>"
             elif c == "basis":
                 tds += f'<td class="small">{e(r["occupancy_ar"])}<br>{e(r["breakfast_ar"])}</td>'
+            elif c == "pbasis":
+                tds += f'<td class="small"><span class="pp">{e(r["period_short_ar"])}</span>{e(r["occupancy_ar"])} · {e(r["breakfast_ar"])}</td>'
             elif c == "breakfast":
                 tds += f'<td>{e(r["breakfast_ar"])}</td>'
             elif c == "note":
@@ -349,7 +359,7 @@ def note_item(a):
 
 def notes_head():
     return ('<div class="ah"><div class="k">NOTES FOR CONFIRMATION</div><h2>ملاحظات للتأكيد<bdi dir="ltr">Notes for confirmation</bdi></h2>'
-            '<div class="basis"><ul><li>نقاط في بيانات المصدر عُرضت كما وردت دون تصحيح، وتحتاج إلى تأكيد من الفنادق أو من العميل قبل اعتماد الأسعار للبيع.</li></ul></div></div>')
+            '<p style="margin-top:2mm;font-size:10pt;color:var(--muted)">نقاط في بيانات المصدر عُرضت كما وردت وتحتاج إلى تأكيد.</p></div>')
 
 
 def terms_block():
@@ -382,10 +392,10 @@ for a in ANA:
     for j, t in enumerate(a["tables"]):
         blocks[f"at:{a['key']}:{j}"] = analysis_table(a, t)
 blocks["nh"] = notes_head()
-for a in D["anomalies"]:
+PRINTED_NOTES = [a for a in D["anomalies"] if a.get("print", True)]
+for a in PRINTED_NOTES:
     blocks[f"nt:{a['id']}"] = note_item(a)
 blocks["gt"] = terms_block()
-blocks["cr"] = credits_block()
 
 
 def measure():
@@ -438,7 +448,7 @@ for a in ANA:
     seq = [(f"ah:{a['key']}", True)] + [(f"at:{a['key']}:{j}", False) for j in range(len(a["tables"]))]
     for pg in pack(seq):
         plan.append({"kind": "flow", "blocks": pg, "analysis": a["key"]})
-seq = [("nh", True)] + [(f"nt:{a['id']}", False) for a in D["anomalies"]] + [("gt", False), ("cr", False)]
+seq = [("nh", True)] + [(f"nt:{a['id']}", False) for a in PRINTED_NOTES] + [("gt", False)]
 for pg in pack(seq):
     plan.append({"kind": "flow", "blocks": pg, "notes": True})
 
@@ -476,8 +486,8 @@ def intro():
           ("غير مذكور", "Not stated", "لم يذكر المصدر ذلك")]
     oc = [("شخص واحد / مفردة", "1 person / Single"), ("شخصان / مزدوجة", "2 persons / Double"), ("ثلاثة أشخاص", "3 persons"),
           ("غير مذكور", "Not stated in the source")]
-    lg1 = "".join(f'<tr><td><b style="font-weight:600;color:var(--navy)">{e(a)}</b></td><td>{e(c)}</td><td class="en">{e(b)}</td></tr>' for a, b, c in bf)
-    lg2 = "".join(f'<tr><td><b style="font-weight:600;color:var(--navy)">{e(a)}</b></td><td class="en">{e(b)}</td></tr>' for a, b in oc)
+    lg1 = "".join(f'<tr><td><b style="font-weight:600;color:var(--navy)">{e(a)}</b></td><td>{e(c)}</td><td class="en">{ltr(b)}</td></tr>' for a, b, c in bf)
+    lg2 = "".join(f'<tr><td><b style="font-weight:600;color:var(--navy)">{e(a)}</b></td><td class="en">{ltr(b)}</td></tr>' for a, b in oc)
     idx = ""
     k = 0
     for city in L.CITY_ORDER:
@@ -494,18 +504,18 @@ def intro():
              f'<div class="xbox"><span class="big"><bdi dir="ltr">1 SAR = 21.4 RUB</bdi></span>'
              '<div class="f">السعر بالريال = السعر بالروبل ÷ <b>21.4</b><br>تُقرَّب النتيجة إلى منزلتين عشريتين.<br>'
              'سعر الصرف ثابت كما حدده العميل.<br>لا عمولة ولا هامش ربح ولا أي زيادة.<br>السعر الأصلي بالروبل معروض للمراجعة.</div></div>'
-             '<div style="height:5mm"></div>'
+             '<div style="height:3.5mm"></div>'
              f'<div class="h3">حالة الإفطار<bdi dir="ltr">Breakfast</bdi></div><table class="legend">{lg1}</table>'
-             '<div style="height:4mm"></div>'
+             '<div style="height:3mm"></div>'
              f'<div class="h3">الإشغال<bdi dir="ltr">Occupancy</bdi></div><table class="legend">{lg2}</table>'
-             '<div style="height:4mm"></div>'
+             '<div style="height:3mm"></div>'
              f'<div class="h3">الرموز<bdi dir="ltr">Symbols</bdi></div><table class="legend">'
              f'<tr><td>{stars(5)}</td><td>تصنيف النجوم كما ورد في المصدر فقط</td></tr>'
              '<tr><td><span class="tag">فترة منتهية</span></td><td>فترة انتهت قبل 15 نوفمبر 2026، معروضة كما وردت</td></tr>'
              '<tr><td><span class="ns">غير مذكور</span></td><td>معلومة لم يذكرها المصدر</td></tr></table>')
     left = f'<div class="h3">فهرس الفنادق<bdi dir="ltr">Index</bdi></div><div class="idx">{idx}</div>'
     inner = (f'<div class="intro"><h1>قبل أن تبدأ<bdi dir="ltr">About this catalogue</bdi></h1>'
-             '<p style="margin:2.5mm 0 6mm;font-size:10pt">جميع الأسعار مأخوذة كما وردت من العميل بالروبل الروسي، ولليلة الواحدة ما لم يُذكر خلاف ذلك، ومحوّلة إلى الريال السعودي آلياً. السعر بالريال هو الرقم الأبرز في كل صف، والسعر بالروبل بجانبه للمراجعة.</p>'
+             '<p style="margin:2mm 0 4.5mm;font-size:10pt;line-height:1.6">جميع الأسعار مأخوذة كما وردت من العميل بالروبل الروسي، ولليلة الواحدة ما لم يُذكر خلاف ذلك، ومحوّلة إلى الريال السعودي آلياً. السعر بالريال هو الرقم الأبرز في كل صف، والسعر بالروبل بجانبه للمراجعة.</p>'
              f'<div class="grid2"><div>{right}</div><div>{left}</div></div></div>')
     return page(inner, "دليل الكتالوج", "About", 2)
 
@@ -515,11 +525,11 @@ def opener(city):
     ph = CITY_PHOTOS.get(city)
     lst = "".join(f'<div class="row"><span>{e(h["name_ar"])}</span>{ltr(h["name_en"])}<span class="pg">{pagemap["hotels"][h["id"]]}</span></div>' for h in L.hotels(city))
     n = {"moscow": "01", "spb": "02"}[city]
-    img = f'<div class="ph"><img src="{ph["src"]}" alt=""></div><div class="cap">{e(ph["credit"])}</div>' if ph else ""
+    img = f'<div class="ph"><img src="{ph["src"]}" alt=""></div>' if ph else ""
     cnt = len(L.hotels(city))
     inner = (f'{img}<div class="num">SECTION {n}</div><div class="cn">{e(c["ar"])}</div><div class="ce">{e(c["en"])}</div>'
              f'<div class="rule"></div><div class="lst">{lst}</div>'
-             f'<p style="margin-top:5mm;font-size:9.5pt;color:var(--muted)">{cnt} فنادق في هذا القسم، بترتيب ورودها في المصدر.</p>')
+             f'<p style="margin-top:5mm;font-size:9.5pt;color:var(--muted)">{L.ar_count(cnt, "فنادق", "فندقاً", "فندقان")} في هذا القسم، بترتيب ورودها في المصدر.</p>')
     return page(inner, None, None, None, cls="opener").replace('<section class="page opener">', '<section class="page opener">') \
         .replace('</div></section>', f'</div><div class="rfoot"><span>{e(M["agency_ar"])}</span><span class="pn">{pagemap["openers"][city]}</span><span></span></div></section>')
 

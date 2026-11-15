@@ -56,8 +56,15 @@ def room_sub_ar(r):
     if r.get("qualifier_ar"):
         parts.append(r["qualifier_ar"])
     if r.get("size_m2"):
-        parts.append(f"{r['size_m2']} م²")
+        parts.append(f"المساحة {r['size_m2']} متراً مربعاً")
     return "، ".join(parts)
+
+
+def ar_count(n, few, many, two=None):
+    """Arabic noun agreement for counts (Western numerals)."""
+    if n == 2 and two:
+        return two
+    return f"{n} {few if 3 <= n <= 10 else many}"
 
 
 def room_full_en(r):
@@ -119,8 +126,20 @@ def basis_text_en(x):
     return f"{x['occupancy_en']} · {x['breakfast_en']}"
 
 
+def period_short_ar(h, p):
+    if not p.get("date_line_nos"):
+        return "بلا تواريخ في المصدر"
+    return p["label_ar"] if len(h["periods"]) > 1 else p["dates_ar"]
+
+
+def period_short_en(h, p):
+    if not p.get("date_line_nos"):
+        return "No dates in source"
+    return p["label_en"] if len(h["periods"]) > 1 else p["dates_en"]
+
+
 def _row(h, p, r, x, extra_ar=None, extra_en=None):
-    return {
+    return {"period_short_ar": period_short_ar(h, p), "period_short_en": period_short_en(h, p),
         "hotel_ar": h["name_ar"], "hotel_en": h["name_en"], "hotel_id": h["id"],
         "city_ar": DATA["meta"]["cities"][h["city"]]["ar"], "city_en": DATA["meta"]["cities"][h["city"]]["en"],
         "period_ar": p["label_ar"], "period_en": p["label_en"], "dates_ar": p["dates_ar"], "dates_en": p["dates_en"],
@@ -233,7 +252,7 @@ def analyses():
                      "Bases differ between hotels (season, occupancy, breakfast), so this table must not be used to rank hotels or to call any hotel the cheapest.",
                      "Where several rooms share the lowest rate, all are shown."],
         "tables": [{"caption_ar": "حسب ترتيب الفنادق في الكتالوج", "caption_en": "In catalogue order",
-                    "cols": ["hotel", "period", "room", "basis", "rub", "sar"], "rows": rows}],
+                    "cols": ["hotel", "room", "pbasis", "rub", "sar"], "rows": rows}],
     })
 
     # 4. Double / two persons with breakfast, grouped by reference date ------
@@ -246,7 +265,7 @@ def analyses():
                 rows.append(_row(*t))
         rows.sort(key=lambda r: Decimal(r["sar"]))
         tables.append({"caption_ar": f"أسعار صالحة في {ar_date(d)}", "caption_en": f"Rates valid on {en_date(d)}",
-                       "cols": ["hotel", "period", "room", "basis", "rub", "sar"], "rows": rows})
+                       "cols": ["hotel", "room", "pbasis", "rub", "sar"], "rows": rows})
     rows = []
     for h in hotels():
         nd = [p for p in h["periods"] if not p.get("end_iso_derived")]
@@ -283,10 +302,10 @@ def analyses():
             lows = lowest(cand)
             lo = lows[0]
             np_ = len({p["key"] for (_, p, _, _) in cand})
-            na = f"{len(cand)} أسعار في {np_} فترات" if np_ > 1 else f"{len(cand)} أسعار"
+            na = ar_count(len(cand), "أسعار", "سعراً") + (f" في {ar_count(np_, 'فترات', 'فترة', 'فترتين')}" if np_ > 1 else "")
             ne = f"{len(cand)} rates in {np_} periods" if np_ > 1 else f"{len(cand)} rates"
             if len(lows) > 1:
-                na += f"؛ السعر نفسه في {len(lows)} صفوف"
+                na += "؛ السعر نفسه في " + ar_count(len(lows), "صفوف", "صفاً", "صفّين")
                 ne += f"; same rate in {len(lows)} rows"
             rows.append(_row(*lo, extra_ar=na, extra_en=ne))
     out.append({
@@ -297,7 +316,7 @@ def analyses():
         "basis_en": ["Rooms whose name in the source contains 'Suite'. For each suite: the lowest rate entered with its basis, and how many rates it has in the catalogue.",
                      "This is an inventory, not a comparison; the bases differ."],
         "tables": [{"caption_ar": "حسب ترتيب الفنادق", "caption_en": "In catalogue order",
-                    "cols": ["hotel", "room", "period", "basis", "rub", "sar", "note"], "rows": rows}],
+                    "cols": ["hotel", "room", "pbasis", "rub", "sar", "note"], "rows": rows}],
     })
 
     # 6. Extra bed ----------------------------------------------------------
@@ -351,7 +370,7 @@ def analyses():
 
 COLS = {
     "hotel": ("الفندق", "Hotel"), "period": ("الفترة", "Period"), "room": ("نوع الغرفة", "Room type"),
-    "basis": ("الإشغال · الإفطار", "Occupancy · breakfast"), "breakfast": ("الإفطار", "Breakfast"),
+    "basis": ("الإشغال · الإفطار", "Occupancy · breakfast"), "pbasis": ("الفترة · الإشغال · الإفطار", "Period · occupancy · breakfast"), "breakfast": ("الإفطار", "Breakfast"),
     "rub": ("السعر بالروبل", "RUB"), "sar": ("السعر بالريال", "SAR"), "note": ("ملاحظة", "Note"),
     "condition": ("الشرط", "Condition"),
 }
