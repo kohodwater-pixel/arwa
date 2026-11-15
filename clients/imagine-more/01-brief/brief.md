@@ -14,7 +14,7 @@
 - Headline: من المدينة إلى العُلا — Sub: يوم كامل في سحر العُلا
 - Chip: رحلات .. تجارب استثنائية
 - Price label: سعر الرحلة للشخص — group note: خصم خاص للمجموعات
-- تشمل الرحلة: ضيافة على الرحلة · وجبة إفطار من هيبو · وجبة عشاء لذيذة · تنقلات مريحة · رسوم الدخول للمواقع
+- تشمل الرحلة: ضيافة على الرحلة · وجبة إفطار من هيبو · وجبة غداء لذيذة · تنقلات مريحة · رسوم الدخول للمواقع
 - CTA: احجز الآن — للحجز والاستفسار ‎+966 50 814 7381
 - Footer: @imaginemore_sa · WhatsApp 014 834 6811 · LN 73103653 · logos HIPPO (top) and Imagine More (bottom)
 
@@ -31,3 +31,7 @@
 - Wanted: photos **with depth**, like `_originals/imagine-more_hegra-balloons-story_mood-reference_ar.png` (canyon walls leading into the distance, low warm light, a clear focal point).
 - One of the three should show **Maraya (the mirrored concert hall) with the mountains**.
 - Layout, copy, logos, dates and prices stay as in v02.
+
+## Client changes — 2026-11-15
+- Asked for three more background examples (options D, E, F) alongside A/B/C v03.
+- Copy change: **وجبة غداء لذيذة** replaces وجبة عشاء لذيذة (lunch instead of dinner) on every option. The fixed-content list above has been updated.
