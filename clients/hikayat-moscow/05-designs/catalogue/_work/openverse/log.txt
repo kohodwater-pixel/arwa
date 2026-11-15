@@ -1,0 +1,16 @@
+st-regis St. Regis Moscow Nikolskaya 3 3
+st-regis St Regis Nikolskaya 3 3
+garden-plaza Garden Plaza hotel Moscow 0 0
+ararat Ararat Park Hyatt Moscow 13 13
+ararat Ararat Park Hotel Moscow 1 1
+cosmos-arbat Cosmos Arbat hotel Moscow 0 0
+intercontinental InterContinental Moscow Tverskaya 0 0
+marriott Marriott Royal Aurora Moscow 0 0
+safmar Safmar Grand Moscow 0 0
+national Hotel National Moscow 67 20
+brosko Brosko hotel Moscow Arbat 0 0
+cosmos-nevsky Cosmos Royal Nevsky Saint Petersburg 0 0
+corinthia Corinthia Hotel Saint Petersburg 0 0
+corinthia Corinthia Nevsky Palace 0 0
+city-moscow Moscow Kremlin skyline 240 20
+city-spb Saint Petersburg Neva embankment 114 20

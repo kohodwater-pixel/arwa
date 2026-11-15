@@ -1,0 +1,38 @@
+{
+ "result_count": 1,
+ "page_count": 1,
+ "page_size": 20,
+ "page": 1,
+ "results": [
+  {
+   "id": "aa39616f-b852-4a03-9f85-f91597659296",
+   "title": "2015 April Armenian Genocide Moscow Conference",
+   "indexed_on": "2020-04-25T00:31:25.253197Z",
+   "foreign_landing_url": "https://commons.wikimedia.org/w/index.php?curid=39648653",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/59/2015_April_Armenian_Genocide_Moscow_Conference.jpg",
+   "creator": "Pandukht",
+   "creator_url": "https://commons.wikimedia.org/wiki/User:Pandukht",
+   "license": "by-sa",
+   "license_version": "4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "provider": "wikimedia",
+   "source": "wikimedia",
+   "category": null,
+   "filesize": 1244760,
+   "filetype": "jpg",
+   "tags": [],
+   "attribution": "\"2015 April Armenian Genocide Moscow Conference\" by Pandukht is licensed under CC BY-SA 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/4.0/.",
+   "fields_matched": [
+    "description",
+    "title"
+   ],
+   "mature": false,
+   "height": 2448,
+   "width": 3264,
+   "thumbnail": "https://api.openverse.org/v1/images/aa39616f-b852-4a03-9f85-f91597659296/thumb/",
+   "detail_url": "https://api.openverse.org/v1/images/aa39616f-b852-4a03-9f85-f91597659296/",
+   "related_url": "https://api.openverse.org/v1/images/aa39616f-b852-4a03-9f85-f91597659296/related/",
+   "unstable__sensitivity": []
+  }
+ ]
+}
