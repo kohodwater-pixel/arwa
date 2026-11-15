@@ -48,7 +48,7 @@ All three from Wikimedia Commons; licence and author read from each file page on
 
 - D: Photo: Saudi Press Agency (SPA) / Wikimedia Commons, CC BY-SA 4.0 (cropped, colour-graded)
 - E: Photo: Ahmad AlHasanat / Wikimedia Commons, CC BY-SA 4.0 (cropped, sky extended, colour-graded)
-- F: Photo: Saudi Press Agency (SPA) / Wikimedia Commons, CC BY-SA 4.0 (cropped, colour-graded)
+- F: Photo: Anil Thamburu (Thamburu Photography) / Saudi Press Agency (SPA), via Wikimedia Commons, CC BY-SA 4.0 (cropped, colour-graded)
 
 ### Changes made (D, E, F)
 
@@ -59,9 +59,10 @@ All three from Wikimedia Commons; licence and author read from each file page on
 
 ### Notes and risks (D, E, F)
 
-- **D — source processing unknown.** The SPA photo's very smooth reflection and colour suggest heavy processing at source. We cannot tell from the file page how it was made; it is published by SPA as a photograph of Elephant Rock and we used it as supplied.
+- **D — source processing unknown.** The SPA photo's very smooth reflection and colour suggest heavy processing at source. We cannot tell from the file page how it was made; it is published by SPA as a photograph of Elephant Rock and we used it as supplied. The reflection looks like a processing effect at source and not standing water; viewers may expect to find water at Elephant Rock, which the site does not normally have.
 - **D — people.** Two camel riders in mid-distance, small, faces not distinguishable.
 - **E** shows Qasr al-Farid, the same tomb as the client's original poster, in a different, wider golden-hour frame.
+- **F — author discrepancy (risk).** The file's embedded metadata names the author "ANIL THAMBURU" and the copyright holder "Thamburu Photography" (with a phone number), while the Commons page credits Saudi Press Agency (SPA) and applies SPA's platform licence, CC BY-SA 4.0. We cannot tell whether SPA holds or licensed the rights from the photographer. If it did not, the CC BY-SA licence on Commons may not be valid for this photo. The suggested credit names both; for commercial use the client should treat F as the least certain licence of the six, or ask SPA to confirm. Not legal advice.
 - **F**: Sharaan is a nature reserve in AlUla; whether the trip visits it is not known to us. Confirm the post should show a place the itinerary may not include.
 - Share-alike on all three: same open question as for B and C. Not legal advice.
 - Maraya: no whole-building frame clearly better than option A exists on Commons (all ten are from one clear morning), so no second Maraya option was made.

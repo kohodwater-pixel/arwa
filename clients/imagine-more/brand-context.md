@@ -68,3 +68,4 @@
 |---|---|---|
 | 2026-11-14 | AlUla trip story, options A/B/C v02 (1080×1920 PNG) shown to the client to choose one; quality review r2 PASS WITH NOTES. Not final — awaiting choice, photo-credit decision, vector logos and font confirmation | `05-designs/alula-trip-story/` |
 | 2026-11-15 | Client rejected the v02 photos (wants depth; one option with Maraya). Options A/B/C v03 shown: A Maraya, B balloon over rock field, C cave sunset; quality review r3 PASS WITH NOTES. Not final | `05-designs/alula-trip-story/` |
+| 2026-11-15 | Client asked for three more examples and for lunch instead of dinner (وجبة غداء لذيذة). Shown: D/E/F v01 (Elephant Rock dusk, Qasr al-Farid, Sharaan) and A/B/C v04 with the copy change; quality review r4 PASS WITH NOTES. Not final — awaiting choice | `05-designs/alula-trip-story/` |
