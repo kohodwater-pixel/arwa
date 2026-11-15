@@ -1,0 +1,4392 @@
+{
+ "meta": {
+  "title_en": "RUSSIA HOTEL COLLECTION 2026",
+  "title_ar": "دليل فنادق موسكو وسانت بطرسبرغ 2026",
+  "subtitle_en": "Moscow & Saint Petersburg",
+  "subtitle_ar": "دليل أسعار الفنادق والإقامة السياحية",
+  "agency_ar": "حكايات موسكو للسفر والسياحة",
+  "agency_ar_as_typed": "حكايات موسكو للسفر والسياحية",
+  "agency_en_assumed": "Hikayat Moscow Travel & Tourism",
+  "source_file": "_originals/client-brief-and-rates_2026-11-15.txt",
+  "prepared": "2026-11-15",
+  "rate_sar_to_rub": "21.4",
+  "rate_line": "1 SAR = 21.4 RUB",
+  "formula": "SAR = RUB / 21.4, ROUND_HALF_UP to 2 decimals",
+  "currency_note": "جميع الأسعار التالية بالروبل الروسي RUB، والأسعار لليلة الواحدة ما لم يذكر خلاف ذلك.",
+  "cities": {
+   "moscow": {
+    "ar": "موسكو",
+    "en": "Moscow",
+    "line": 128
+   },
+   "spb": {
+    "ar": "سانت بطرسبرغ",
+    "en": "Saint Petersburg",
+    "line": 621
+   }
+  }
+ },
+ "hotels": [
+  {
+   "id": "st-regis",
+   "city": "moscow",
+   "order": 1,
+   "name_en": "The St. Regis Moscow Nikolskaya",
+   "name_ar": "فندق سانت ريجيس موسكو",
+   "name_lines": [
+    130,
+    132
+   ],
+   "stars": 5,
+   "stars_line": 132,
+   "economy": false,
+   "facts_ar": [
+    "خمس نجوم (وفق المصدر)"
+   ],
+   "facts_en": [
+    "Five-star (as stated in the source)"
+   ],
+   "booking_notes_ar": [
+    "لم يُذكر عدد النزلاء لكل سعر.",
+    "السرير الإضافي ورد ضمن بيانات غرفة Deluxe."
+   ],
+   "booking_notes_en": [
+    "Occupancy is not stated for these rates.",
+    "The extra bed is listed under the Deluxe room."
+   ],
+   "periods": [
+    {
+     "key": "p1",
+     "label_ar": "الأسعار",
+     "label_en": "Rates",
+     "dates_ar": "لم تُحدَّد فترة الصلاحية في المصدر",
+     "dates_en": "No validity dates given in the source",
+     "dates_as_written": null,
+     "date_line_nos": null,
+     "start_iso_derived": null,
+     "end_iso_derived": null,
+     "rooms": [
+      {
+       "name": "Superior",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": 35,
+       "heading_line_no": 134,
+       "heading_line": "الغرفة Superior:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 23000,
+         "sar": "1074.77",
+         "source_line_no": 137,
+         "source_line": "* بدون إفطار: 23,000 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 24000,
+         "sar": "1121.50",
+         "source_line_no": 138,
+         "source_line": "* مع الإفطار: 24,000 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Deluxe",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": 40,
+       "heading_line_no": 140,
+       "heading_line": "الغرفة Deluxe:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 27000,
+         "sar": "1261.68",
+         "source_line_no": 143,
+         "source_line": "* بدون إفطار: 27,000 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 28000,
+         "sar": "1308.41",
+         "source_line_no": 144,
+         "source_line": "* مع الإفطار: 28,000 روبل."
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "extras": [
+    {
+     "kind": "extra_bed",
+     "item_ar": "سرير إضافي",
+     "item_en": "Extra bed",
+     "condition_ar": "ورد ضمن بيانات غرفة Deluxe",
+     "condition_en": "Listed under the Deluxe room",
+     "rub": 5000,
+     "sar": "233.64",
+     "value_ar": null,
+     "value_en": null,
+     "source_line_nos": [
+      145
+     ],
+     "source_lines": [
+      "* السرير الإضافي: 5,000 روبل."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "garden-plaza",
+   "city": "moscow",
+   "order": 2,
+   "name_en": "Garden Plaza",
+   "name_ar": "فندق جاردن بلازا",
+   "name_lines": [
+    147,
+    149
+   ],
+   "stars": null,
+   "economy": false,
+   "facts_ar": [
+    "لم يُذكر تصنيف النجوم في المصدر",
+    "الأسعار مع الإفطار تشمل بوفيه الإفطار"
+   ],
+   "facts_en": [
+    "Star rating not stated in the source",
+    "Rates with breakfast include buffet breakfast"
+   ],
+   "booking_notes_ar": [
+    "لا تتوفر بيانات أسعار بدون إفطار لبقية أنواع الغرف (Club Premium وClub Junior Suite).",
+    "سعر Standard بدون إفطار لم يُذكر له نوع الإشغال."
+   ],
+   "booking_notes_en": [
+    "No room-only rates are given for the other room types (Club Premium, Club Junior Suite).",
+    "Occupancy is not stated for the Standard room-only rate."
+   ],
+   "periods": [
+    {
+     "key": "p1",
+     "label_ar": "الأسعار",
+     "label_en": "Rates",
+     "dates_ar": "لم تُحدَّد فترة الصلاحية في المصدر",
+     "dates_en": "No validity dates given in the source",
+     "dates_as_written": null,
+     "date_line_nos": null,
+     "start_iso_derived": null,
+     "end_iso_derived": null,
+     "rooms": [
+      {
+       "name": "Standard",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 153,
+       "heading_line": "Standard:",
+       "rows": [
+        {
+         "occupancy": "double",
+         "occupancy_ar": "مزدوجة",
+         "occupancy_en": "Double",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 12300,
+         "sar": "574.77",
+         "source_line_no": 155,
+         "source_line": "* غرفة مزدوجة: 12,300 روبل.",
+         "context_line_no": 151,
+         "context_line": "الأسعار شاملة بوفيه الإفطار:"
+        },
+        {
+         "occupancy": "single",
+         "occupancy_ar": "مفردة",
+         "occupancy_en": "Single",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 11000,
+         "sar": "514.02",
+         "source_line_no": 156,
+         "source_line": "* غرفة مفردة: 11,000 روبل.",
+         "context_line_no": 151,
+         "context_line": "الأسعار شاملة بوفيه الإفطار:"
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 10000,
+         "sar": "467.29",
+         "source_line_no": 176,
+         "source_line": "* Standard: 10,000 روبل.",
+         "context_line_no": 174,
+         "context_line": "الأسعار بدون الإفطار:"
+        }
+       ]
+      },
+      {
+       "name": "Suite",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 159,
+       "heading_line": "Suite:",
+       "rows": [
+        {
+         "occupancy": "single",
+         "occupancy_ar": "مفردة",
+         "occupancy_en": "Single",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 20000,
+         "sar": "934.58",
+         "source_line_no": 161,
+         "source_line": "* مفردة: 20,000 روبل.",
+         "context_line_no": 151,
+         "context_line": "الأسعار شاملة بوفيه الإفطار:"
+        },
+        {
+         "occupancy": "double",
+         "occupancy_ar": "مزدوجة",
+         "occupancy_en": "Double",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 21300,
+         "sar": "995.33",
+         "source_line_no": 162,
+         "source_line": "* مزدوجة: 21,300 روبل.",
+         "context_line_no": 151,
+         "context_line": "الأسعار شاملة بوفيه الإفطار:"
+        },
+        {
+         "occupancy": "single",
+         "occupancy_ar": "مفردة",
+         "occupancy_en": "Single",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 20000,
+         "sar": "934.58",
+         "source_line_no": 177,
+         "source_line": "* Suite مفردة: 20,000 روبل.",
+         "context_line_no": 174,
+         "context_line": "الأسعار بدون الإفطار:"
+        },
+        {
+         "occupancy": "double",
+         "occupancy_ar": "مزدوجة",
+         "occupancy_en": "Double",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 21300,
+         "sar": "995.33",
+         "source_line_no": 178,
+         "source_line": "* Suite مزدوجة: 21,300 روبل.",
+         "context_line_no": 174,
+         "context_line": "الأسعار بدون الإفطار:"
+        }
+       ]
+      },
+      {
+       "name": "Club Premium",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 164,
+       "heading_line": "Club Premium:",
+       "rows": [
+        {
+         "occupancy": "double",
+         "occupancy_ar": "مزدوجة",
+         "occupancy_en": "Double",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 16800,
+         "sar": "785.05",
+         "source_line_no": 166,
+         "source_line": "* مزدوجة: 16,800 روبل.",
+         "context_line_no": 151,
+         "context_line": "الأسعار شاملة بوفيه الإفطار:"
+        },
+        {
+         "occupancy": "single",
+         "occupancy_ar": "مفردة",
+         "occupancy_en": "Single",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 15500,
+         "sar": "724.30",
+         "source_line_no": 167,
+         "source_line": "* مفردة: 15,500 روبل.",
+         "context_line_no": 151,
+         "context_line": "الأسعار شاملة بوفيه الإفطار:"
+        }
+       ]
+      },
+      {
+       "name": "Club Junior Suite",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 169,
+       "heading_line": "Club Junior Suite:",
+       "rows": [
+        {
+         "occupancy": "single",
+         "occupancy_ar": "مفردة",
+         "occupancy_en": "Single",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 20000,
+         "sar": "934.58",
+         "source_line_no": 171,
+         "source_line": "* مفردة: 20,000 روبل.",
+         "context_line_no": 151,
+         "context_line": "الأسعار شاملة بوفيه الإفطار:"
+        },
+        {
+         "occupancy": "double",
+         "occupancy_ar": "مزدوجة",
+         "occupancy_en": "Double",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 21300,
+         "sar": "995.33",
+         "source_line_no": 172,
+         "source_line": "* مزدوجة: 21,300 روبل.",
+         "context_line_no": 151,
+         "context_line": "الأسعار شاملة بوفيه الإفطار:"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "extras": [
+    {
+     "kind": "extra_bed",
+     "item_ar": "سرير إضافي",
+     "item_en": "Extra bed",
+     "condition_ar": "لليلة — ورد ضمن بيانات غرفة Standard",
+     "condition_en": "Per night — listed under the Standard room",
+     "rub": 1500,
+     "sar": "70.09",
+     "value_ar": null,
+     "value_en": null,
+     "source_line_nos": [
+      157
+     ],
+     "source_lines": [
+      "* سرير إضافي: 1,500 روبل لليلة."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ararat-park",
+   "city": "moscow",
+   "order": 3,
+   "name_en": "Ararat Park Hotel",
+   "name_ar": "فندق أرارات بارك",
+   "name_lines": [
+    182,
+    184
+   ],
+   "stars": null,
+   "economy": false,
+   "facts_ar": [
+    "موسكو",
+    "لم يُذكر تصنيف النجوم في المصدر"
+   ],
+   "facts_en": [
+    "Moscow",
+    "Star rating not stated in the source"
+   ],
+   "booking_notes_ar": [
+    "عرض الخريف يسري على فترتين منفصلتين.",
+    "تاريخ 25 نوفمبر يرد في عرض الخريف والعرض الموسمي، وتاريخ 21 ديسمبر يرد في العرض الموسمي وعرض الشتاء — للتأكيد."
+   ],
+   "booking_notes_en": [
+    "The autumn offer covers two separate date ranges.",
+    "25 November appears in both the autumn and seasonal offers, and 21 December in both the seasonal and winter offers — to be confirmed."
+   ],
+   "periods": [
+    {
+     "key": "autumn",
+     "label_ar": "عرض الخريف",
+     "label_en": "Autumn offer",
+     "dates_ar": "7 سبتمبر – 23 أكتوبر 2026، و 30 أكتوبر – 25 نوفمبر 2026",
+     "dates_en": "7 Sep – 23 Oct 2026 and 30 Oct – 25 Nov 2026",
+     "dates_as_written": [
+      "* 7 سبتمبر – 23 أكتوبر 2026.",
+      "* 30 أكتوبر – 25 نوفمبر 2026."
+     ],
+     "date_line_nos": [
+      190,
+      191
+     ],
+     "start_iso_derived": "2026-09-07",
+     "end_iso_derived": "2026-11-25",
+     "rooms": [
+      {
+       "name": "Park King / Twin",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 193,
+       "heading_line": "Park King / Twin:",
+       "rows": [
+        {
+         "occupancy": "1 person",
+         "occupancy_ar": "شخص واحد",
+         "occupancy_en": "1 person",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 22000,
+         "sar": "1028.04",
+         "source_line_no": 195,
+         "source_line": "* شخص واحد بدون إفطار: 22,000 روبل."
+        },
+        {
+         "occupancy": "1 person",
+         "occupancy_ar": "شخص واحد",
+         "occupancy_en": "1 person",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 24000,
+         "sar": "1121.50",
+         "source_line_no": 196,
+         "source_line": "* شخص واحد مع الإفطار: 24,000 روبل."
+        },
+        {
+         "occupancy": "2 persons",
+         "occupancy_ar": "شخصان",
+         "occupancy_en": "2 persons",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 25500,
+         "sar": "1191.59",
+         "source_line_no": 197,
+         "source_line": "* شخصان بدون إفطار: 25,500 روبل."
+        },
+        {
+         "occupancy": "2 persons",
+         "occupancy_ar": "شخصان",
+         "occupancy_en": "2 persons",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 28500,
+         "sar": "1331.78",
+         "source_line_no": 198,
+         "source_line": "* شخصان مع الإفطار: 28,500 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Park City View",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 200,
+       "heading_line": "Park City View:",
+       "rows": [
+        {
+         "occupancy": "1 person",
+         "occupancy_ar": "شخص واحد",
+         "occupancy_en": "1 person",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 26000,
+         "sar": "1214.95",
+         "source_line_no": 202,
+         "source_line": "* شخص واحد بدون إفطار: 26,000 روبل."
+        },
+        {
+         "occupancy": "1 person",
+         "occupancy_ar": "شخص واحد",
+         "occupancy_en": "1 person",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 30000,
+         "sar": "1401.87",
+         "source_line_no": 203,
+         "source_line": "* شخص واحد مع الإفطار: 30,000 روبل."
+        },
+        {
+         "occupancy": "2 persons",
+         "occupancy_ar": "شخصان",
+         "occupancy_en": "2 persons",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 28500,
+         "sar": "1331.78",
+         "source_line_no": 204,
+         "source_line": "* شخصان بدون إفطار: 28,500 روبل."
+        },
+        {
+         "occupancy": "2 persons",
+         "occupancy_ar": "شخصان",
+         "occupancy_en": "2 persons",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 32000,
+         "sar": "1495.33",
+         "source_line_no": 205,
+         "source_line": "* شخصان مع الإفطار: 32,000 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Park Deluxe",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 207,
+       "heading_line": "Park Deluxe:",
+       "rows": [
+        {
+         "occupancy": "1 person",
+         "occupancy_ar": "شخص واحد",
+         "occupancy_en": "1 person",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 28000,
+         "sar": "1308.41",
+         "source_line_no": 209,
+         "source_line": "* شخص واحد بدون إفطار: 28,000 روبل."
+        },
+        {
+         "occupancy": "1 person",
+         "occupancy_ar": "شخص واحد",
+         "occupancy_en": "1 person",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 30000,
+         "sar": "1401.87",
+         "source_line_no": 210,
+         "source_line": "* شخص واحد مع الإفطار: 30,000 روبل."
+        },
+        {
+         "occupancy": "2 persons",
+         "occupancy_ar": "شخصان",
+         "occupancy_en": "2 persons",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 29500,
+         "sar": "1378.50",
+         "source_line_no": 211,
+         "source_line": "* شخصان بدون إفطار: 29,500 روبل."
+        },
+        {
+         "occupancy": "2 persons",
+         "occupancy_ar": "شخصان",
+         "occupancy_en": "2 persons",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 34000,
+         "sar": "1588.79",
+         "source_line_no": 212,
+         "source_line": "* شخصان مع الإفطار: 34,000 روبل."
+        },
+        {
+         "occupancy": "3 persons",
+         "occupancy_ar": "ثلاثة أشخاص",
+         "occupancy_en": "3 persons",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 33500,
+         "sar": "1565.42",
+         "source_line_no": 213,
+         "source_line": "* ثلاثة أشخاص بدون إفطار: 33,500 روبل."
+        },
+        {
+         "occupancy": "3 persons",
+         "occupancy_ar": "ثلاثة أشخاص",
+         "occupancy_en": "3 persons",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 40500,
+         "sar": "1892.52",
+         "source_line_no": 214,
+         "source_line": "* ثلاثة أشخاص مع الإفطار: 40,500 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Park Suite",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 216,
+       "heading_line": "Park Suite:",
+       "rows": [
+        {
+         "occupancy": "1 person",
+         "occupancy_ar": "شخص واحد",
+         "occupancy_en": "1 person",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 47000,
+         "sar": "2196.26",
+         "source_line_no": 218,
+         "source_line": "* شخص واحد بدون إفطار: 47,000 روبل."
+        },
+        {
+         "occupancy": "1 person",
+         "occupancy_ar": "شخص واحد",
+         "occupancy_en": "1 person",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 49000,
+         "sar": "2289.72",
+         "source_line_no": 219,
+         "source_line": "* شخص واحد مع الإفطار: 49,000 روبل."
+        },
+        {
+         "occupancy": "2 persons",
+         "occupancy_ar": "شخصان",
+         "occupancy_en": "2 persons",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 48500,
+         "sar": "2266.36",
+         "source_line_no": 220,
+         "source_line": "* شخصان بدون إفطار: 48,500 روبل."
+        },
+        {
+         "occupancy": "2 persons",
+         "occupancy_ar": "شخصان",
+         "occupancy_en": "2 persons",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 53000,
+         "sar": "2476.64",
+         "source_line_no": 221,
+         "source_line": "* شخصان مع الإفطار: 53,000 روبل."
+        },
+        {
+         "occupancy": "3 persons",
+         "occupancy_ar": "ثلاثة أشخاص",
+         "occupancy_en": "3 persons",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 52500,
+         "sar": "2453.27",
+         "source_line_no": 222,
+         "source_line": "* ثلاثة أشخاص بدون إفطار: 52,500 روبل."
+        },
+        {
+         "occupancy": "3 persons",
+         "occupancy_ar": "ثلاثة أشخاص",
+         "occupancy_en": "3 persons",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 59500,
+         "sar": "2780.37",
+         "source_line_no": 223,
+         "source_line": "* ثلاثة أشخاص مع الإفطار: 59,500 روبل."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "key": "seasonal",
+     "label_ar": "العرض الموسمي",
+     "label_en": "Seasonal offer",
+     "dates_ar": "25 نوفمبر – 21 ديسمبر 2026",
+     "dates_en": "25 Nov – 21 Dec 2026",
+     "dates_as_written": [
+      "25 نوفمبر – 21 ديسمبر 2026."
+     ],
+     "date_line_nos": [
+      227
+     ],
+     "start_iso_derived": "2026-11-25",
+     "end_iso_derived": "2026-12-21",
+     "rooms": [
+      {
+       "name": "Park King / Twin",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 229,
+       "heading_line": "Park King / Twin:",
+       "rows": [
+        {
+         "occupancy": "1 person",
+         "occupancy_ar": "شخص واحد",
+         "occupancy_en": "1 person",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 26000,
+         "sar": "1214.95",
+         "source_line_no": 231,
+         "source_line": "* شخص واحد بدون إفطار: 26,000 روبل."
+        },
+        {
+         "occupancy": "1 person",
+         "occupancy_ar": "شخص واحد",
+         "occupancy_en": "1 person",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 28000,
+         "sar": "1308.41",
+         "source_line_no": 232,
+         "source_line": "* شخص واحد مع الإفطار: 28,000 روبل."
+        },
+        {
+         "occupancy": "2 persons",
+         "occupancy_ar": "شخصان",
+         "occupancy_en": "2 persons",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 27500,
+         "sar": "1285.05",
+         "source_line_no": 233,
+         "source_line": "* شخصان بدون إفطار: 27,500 روبل."
+        },
+        {
+         "occupancy": "2 persons",
+         "occupancy_ar": "شخصان",
+         "occupancy_en": "2 persons",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 32000,
+         "sar": "1495.33",
+         "source_line_no": 234,
+         "source_line": "* شخصان مع الإفطار: 32,000 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Park City View",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 236,
+       "heading_line": "Park City View:",
+       "rows": [
+        {
+         "occupancy": "1 person",
+         "occupancy_ar": "شخص واحد",
+         "occupancy_en": "1 person",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 30000,
+         "sar": "1401.87",
+         "source_line_no": 238,
+         "source_line": "* شخص واحد بدون إفطار: 30,000 روبل."
+        },
+        {
+         "occupancy": "1 person",
+         "occupancy_ar": "شخص واحد",
+         "occupancy_en": "1 person",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 32000,
+         "sar": "1495.33",
+         "source_line_no": 239,
+         "source_line": "* شخص واحد مع الإفطار: 32,000 روبل."
+        },
+        {
+         "occupancy": "2 persons",
+         "occupancy_ar": "شخصان",
+         "occupancy_en": "2 persons",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 31500,
+         "sar": "1471.96",
+         "source_line_no": 240,
+         "source_line": "* شخصان بدون إفطار: 31,500 روبل."
+        },
+        {
+         "occupancy": "2 persons",
+         "occupancy_ar": "شخصان",
+         "occupancy_en": "2 persons",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 36000,
+         "sar": "1682.24",
+         "source_line_no": 241,
+         "source_line": "* شخصان مع الإفطار: 36,000 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Park Deluxe",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 243,
+       "heading_line": "Park Deluxe:",
+       "rows": [
+        {
+         "occupancy": "1 person",
+         "occupancy_ar": "شخص واحد",
+         "occupancy_en": "1 person",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 32000,
+         "sar": "1495.33",
+         "source_line_no": 245,
+         "source_line": "* شخص واحد بدون إفطار: 32,000 روبل."
+        },
+        {
+         "occupancy": "1 person",
+         "occupancy_ar": "شخص واحد",
+         "occupancy_en": "1 person",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 34000,
+         "sar": "1588.79",
+         "source_line_no": 246,
+         "source_line": "* شخص واحد مع الإفطار: 34,000 روبل."
+        },
+        {
+         "occupancy": "2 persons",
+         "occupancy_ar": "شخصان",
+         "occupancy_en": "2 persons",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 33500,
+         "sar": "1565.42",
+         "source_line_no": 247,
+         "source_line": "* شخصان بدون إفطار: 33,500 روبل."
+        },
+        {
+         "occupancy": "2 persons",
+         "occupancy_ar": "شخصان",
+         "occupancy_en": "2 persons",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 38000,
+         "sar": "1775.70",
+         "source_line_no": 248,
+         "source_line": "* شخصان مع الإفطار: 38,000 روبل."
+        },
+        {
+         "occupancy": "3 persons",
+         "occupancy_ar": "ثلاثة أشخاص",
+         "occupancy_en": "3 persons",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 37500,
+         "sar": "1752.34",
+         "source_line_no": 249,
+         "source_line": "* ثلاثة أشخاص بدون إفطار: 37,500 روبل."
+        },
+        {
+         "occupancy": "3 persons",
+         "occupancy_ar": "ثلاثة أشخاص",
+         "occupancy_en": "3 persons",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 44500,
+         "sar": "2079.44",
+         "source_line_no": 250,
+         "source_line": "* ثلاثة أشخاص مع الإفطار: 44,500 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Park Suite",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 252,
+       "heading_line": "Park Suite:",
+       "rows": [
+        {
+         "occupancy": "1 person",
+         "occupancy_ar": "شخص واحد",
+         "occupancy_en": "1 person",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 51000,
+         "sar": "2383.18",
+         "source_line_no": 254,
+         "source_line": "* شخص واحد بدون إفطار: 51,000 روبل."
+        },
+        {
+         "occupancy": "1 person",
+         "occupancy_ar": "شخص واحد",
+         "occupancy_en": "1 person",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 53000,
+         "sar": "2476.64",
+         "source_line_no": 255,
+         "source_line": "* شخص واحد مع الإفطار: 53,000 روبل."
+        },
+        {
+         "occupancy": "2 persons",
+         "occupancy_ar": "شخصان",
+         "occupancy_en": "2 persons",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 52500,
+         "sar": "2453.27",
+         "source_line_no": 256,
+         "source_line": "* شخصان بدون إفطار: 52,500 روبل."
+        },
+        {
+         "occupancy": "2 persons",
+         "occupancy_ar": "شخصان",
+         "occupancy_en": "2 persons",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 57000,
+         "sar": "2663.55",
+         "source_line_no": 257,
+         "source_line": "* شخصان مع الإفطار: 57,000 روبل."
+        },
+        {
+         "occupancy": "3 persons",
+         "occupancy_ar": "ثلاثة أشخاص",
+         "occupancy_en": "3 persons",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 56500,
+         "sar": "2640.19",
+         "source_line_no": 258,
+         "source_line": "* ثلاثة أشخاص بدون إفطار: 56,500 روبل."
+        },
+        {
+         "occupancy": "3 persons",
+         "occupancy_ar": "ثلاثة أشخاص",
+         "occupancy_en": "3 persons",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 63500,
+         "sar": "2967.29",
+         "source_line_no": 259,
+         "source_line": "* ثلاثة أشخاص مع الإفطار: 63,500 روبل."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "key": "winter",
+     "label_ar": "عرض الشتاء",
+     "label_en": "Winter offer",
+     "dates_ar": "21 – 30 ديسمبر 2026",
+     "dates_en": "21 – 30 Dec 2026",
+     "dates_as_written": [
+      "21 – 30 ديسمبر 2026."
+     ],
+     "date_line_nos": [
+      263
+     ],
+     "start_iso_derived": "2026-12-21",
+     "end_iso_derived": "2026-12-30",
+     "rooms": [
+      {
+       "name": "Park King / Twin",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 265,
+       "heading_line": "Park King / Twin:",
+       "rows": [
+        {
+         "occupancy": "1 person",
+         "occupancy_ar": "شخص واحد",
+         "occupancy_en": "1 person",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 30000,
+         "sar": "1401.87",
+         "source_line_no": 267,
+         "source_line": "* شخص واحد بدون إفطار: 30,000 روبل."
+        },
+        {
+         "occupancy": "1 person",
+         "occupancy_ar": "شخص واحد",
+         "occupancy_en": "1 person",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 32000,
+         "sar": "1495.33",
+         "source_line_no": 268,
+         "source_line": "* شخص واحد مع الإفطار: 32,000 روبل."
+        },
+        {
+         "occupancy": "2 persons",
+         "occupancy_ar": "شخصان",
+         "occupancy_en": "2 persons",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 31500,
+         "sar": "1471.96",
+         "source_line_no": 269,
+         "source_line": "* شخصان بدون إفطار: 31,500 روبل."
+        },
+        {
+         "occupancy": "2 persons",
+         "occupancy_ar": "شخصان",
+         "occupancy_en": "2 persons",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 36000,
+         "sar": "1682.24",
+         "source_line_no": 270,
+         "source_line": "* شخصان مع الإفطار: 36,000 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Park City View",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 272,
+       "heading_line": "Park City View:",
+       "rows": [
+        {
+         "occupancy": "1 person",
+         "occupancy_ar": "شخص واحد",
+         "occupancy_en": "1 person",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 34000,
+         "sar": "1588.79",
+         "source_line_no": 274,
+         "source_line": "* شخص واحد بدون إفطار: 34,000 روبل."
+        },
+        {
+         "occupancy": "1 person",
+         "occupancy_ar": "شخص واحد",
+         "occupancy_en": "1 person",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 36000,
+         "sar": "1682.24",
+         "source_line_no": 275,
+         "source_line": "* شخص واحد مع الإفطار: 36,000 روبل."
+        },
+        {
+         "occupancy": "2 persons",
+         "occupancy_ar": "شخصان",
+         "occupancy_en": "2 persons",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 35500,
+         "sar": "1658.88",
+         "source_line_no": 276,
+         "source_line": "* شخصان بدون إفطار: 35,500 روبل."
+        },
+        {
+         "occupancy": "2 persons",
+         "occupancy_ar": "شخصان",
+         "occupancy_en": "2 persons",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 40000,
+         "sar": "1869.16",
+         "source_line_no": 277,
+         "source_line": "* شخصان مع الإفطار: 40,000 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Park Deluxe",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 279,
+       "heading_line": "Park Deluxe:",
+       "rows": [
+        {
+         "occupancy": "1 person",
+         "occupancy_ar": "شخص واحد",
+         "occupancy_en": "1 person",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 36000,
+         "sar": "1682.24",
+         "source_line_no": 281,
+         "source_line": "* شخص واحد بدون إفطار: 36,000 روبل."
+        },
+        {
+         "occupancy": "1 person",
+         "occupancy_ar": "شخص واحد",
+         "occupancy_en": "1 person",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 38000,
+         "sar": "1775.70",
+         "source_line_no": 282,
+         "source_line": "* شخص واحد مع الإفطار: 38,000 روبل."
+        },
+        {
+         "occupancy": "2 persons",
+         "occupancy_ar": "شخصان",
+         "occupancy_en": "2 persons",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 37500,
+         "sar": "1752.34",
+         "source_line_no": 283,
+         "source_line": "* شخصان بدون إفطار: 37,500 روبل."
+        },
+        {
+         "occupancy": "2 persons",
+         "occupancy_ar": "شخصان",
+         "occupancy_en": "2 persons",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 42000,
+         "sar": "1962.62",
+         "source_line_no": 284,
+         "source_line": "* شخصان مع الإفطار: 42,000 روبل."
+        },
+        {
+         "occupancy": "3 persons",
+         "occupancy_ar": "ثلاثة أشخاص",
+         "occupancy_en": "3 persons",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 41500,
+         "sar": "1939.25",
+         "source_line_no": 285,
+         "source_line": "* ثلاثة أشخاص بدون إفطار: 41,500 روبل."
+        },
+        {
+         "occupancy": "3 persons",
+         "occupancy_ar": "ثلاثة أشخاص",
+         "occupancy_en": "3 persons",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 48500,
+         "sar": "2266.36",
+         "source_line_no": 286,
+         "source_line": "* ثلاثة أشخاص مع الإفطار: 48,500 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Park Suite",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 288,
+       "heading_line": "Park Suite:",
+       "rows": [
+        {
+         "occupancy": "1 person",
+         "occupancy_ar": "شخص واحد",
+         "occupancy_en": "1 person",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 55000,
+         "sar": "2570.09",
+         "source_line_no": 290,
+         "source_line": "* شخص واحد بدون إفطار: 55,000 روبل."
+        },
+        {
+         "occupancy": "1 person",
+         "occupancy_ar": "شخص واحد",
+         "occupancy_en": "1 person",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 57000,
+         "sar": "2663.55",
+         "source_line_no": 291,
+         "source_line": "* شخص واحد مع الإفطار: 57,000 روبل."
+        },
+        {
+         "occupancy": "2 persons",
+         "occupancy_ar": "شخصان",
+         "occupancy_en": "2 persons",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 56500,
+         "sar": "2640.19",
+         "source_line_no": 292,
+         "source_line": "* شخصان بدون إفطار: 56,500 روبل."
+        },
+        {
+         "occupancy": "2 persons",
+         "occupancy_ar": "شخصان",
+         "occupancy_en": "2 persons",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 61000,
+         "sar": "2850.47",
+         "source_line_no": 293,
+         "source_line": "* شخصان مع الإفطار: 61,000 روبل."
+        },
+        {
+         "occupancy": "3 persons",
+         "occupancy_ar": "ثلاثة أشخاص",
+         "occupancy_en": "3 persons",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 60500,
+         "sar": "2827.10",
+         "source_line_no": 294,
+         "source_line": "* ثلاثة أشخاص بدون إفطار: 60,500 روبل."
+        },
+        {
+         "occupancy": "3 persons",
+         "occupancy_ar": "ثلاثة أشخاص",
+         "occupancy_en": "3 persons",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 67500,
+         "sar": "3154.21",
+         "source_line_no": 295,
+         "source_line": "* ثلاثة أشخاص مع الإفطار: 67,500 روبل."
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "extras": [
+    {
+     "kind": "child",
+     "item_ar": "إقامة طفل 0–5 سنوات",
+     "item_en": "Child 0–5 years",
+     "condition_ar": "دون سرير إضافي",
+     "condition_en": "Without extra bed",
+     "rub": null,
+     "sar": null,
+     "value_ar": "مجاناً",
+     "value_en": "Free",
+     "source_line_nos": [
+      299
+     ],
+     "source_lines": [
+      "* 0–5 سنوات: مجاناً دون سرير إضافي."
+     ]
+    },
+    {
+     "kind": "child",
+     "item_ar": "إقامة طفل 6–11 سنة",
+     "item_en": "Child 6–11 years",
+     "condition_ar": "بدون إفطار",
+     "condition_en": "Without breakfast",
+     "rub": 1000,
+     "sar": "46.73",
+     "value_ar": null,
+     "value_en": null,
+     "source_line_nos": [
+      300
+     ],
+     "source_lines": [
+      "* 6–11 سنة: 1,000 روبل بدون إفطار."
+     ]
+    },
+    {
+     "kind": "child",
+     "item_ar": "إقامة طفل 6–11 سنة",
+     "item_en": "Child 6–11 years",
+     "condition_ar": "مع الإفطار",
+     "condition_en": "With breakfast",
+     "rub": 2000,
+     "sar": "93.46",
+     "value_ar": null,
+     "value_en": null,
+     "source_line_nos": [
+      301
+     ],
+     "source_lines": [
+      "* 6–11 سنة: 2,000 روبل مع الإفطار."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cosmos-arbat",
+   "city": "moscow",
+   "order": 4,
+   "name_en": "Cosmos Arbat Hotel",
+   "name_ar": "فندق كوسموس أربات",
+   "name_lines": [
+    303,
+    305
+   ],
+   "stars": null,
+   "economy": false,
+   "facts_ar": [
+    "موسكو",
+    "لم يُذكر تصنيف النجوم في المصدر"
+   ],
+   "facts_en": [
+    "Moscow",
+    "Star rating not stated in the source"
+   ],
+   "booking_notes_ar": [
+    "لم يحدد المصدر ما إذا كانت أسعار Superior شاملة الإفطار.",
+    "لم يُذكر الإفطار لسعر Deluxe في ديسمبر.",
+    "لم يُذكر عدد النزلاء لكل سعر."
+   ],
+   "booking_notes_en": [
+    "The source does not state whether the Superior rates include breakfast.",
+    "Breakfast is not stated for the December Deluxe rate.",
+    "Occupancy is not stated for these rates."
+   ],
+   "periods": [
+    {
+     "key": "nov",
+     "label_ar": "حتى نهاية نوفمبر",
+     "label_en": "Until the end of November",
+     "dates_ar": "حتى نهاية نوفمبر (تاريخ البداية غير مذكور)",
+     "dates_en": "Until the end of November (start date not stated)",
+     "dates_as_written": [
+      "حتى نهاية نوفمبر:"
+     ],
+     "date_line_nos": [
+      307
+     ],
+     "start_iso_derived": null,
+     "end_iso_derived": "2026-11-30",
+     "rooms": [
+      {
+       "name": "Deluxe",
+       "qualifier_ar": "إطلالة داخلية",
+       "qualifier_en": "Inner view",
+       "size_m2": null,
+       "heading_line_no": 309,
+       "heading_line": "* Deluxe، إطلالة داخلية، بدون إفطار: 10,600 روبل.",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 10600,
+         "sar": "495.33",
+         "source_line_no": 309,
+         "source_line": "* Deluxe، إطلالة داخلية، بدون إفطار: 10,600 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Superior",
+       "qualifier_ar": "إطلالة على شارع أربات",
+       "qualifier_en": "Arbat Street view",
+       "size_m2": null,
+       "heading_line_no": 311,
+       "heading_line": "* Superior، إطلالة على شارع أربات: 12,300 روبل.",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "not stated",
+         "breakfast_ar": "غير مذكور",
+         "breakfast_en": "Not stated",
+         "rub": 12300,
+         "sar": "574.77",
+         "source_line_no": 311,
+         "source_line": "* Superior، إطلالة على شارع أربات: 12,300 روبل."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "key": "dec",
+     "label_ar": "أسعار ديسمبر",
+     "label_en": "December rates",
+     "dates_ar": "ديسمبر حتى 30 ديسمبر",
+     "dates_en": "December, until 30 December",
+     "dates_as_written": [
+      "أسعار ديسمبر حتى 30 ديسمبر:"
+     ],
+     "date_line_nos": [
+      313
+     ],
+     "start_iso_derived": "2026-12-01",
+     "end_iso_derived": "2026-12-30",
+     "rooms": [
+      {
+       "name": "Deluxe",
+       "qualifier_ar": "إطلالة داخلية",
+       "qualifier_en": "Inner view",
+       "size_m2": null,
+       "heading_line_no": 315,
+       "heading_line": "* Deluxe، إطلالة داخلية: 12,800 روبل.",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "not stated",
+         "breakfast_ar": "غير مذكور",
+         "breakfast_en": "Not stated",
+         "rub": 12800,
+         "sar": "598.13",
+         "source_line_no": 315,
+         "source_line": "* Deluxe، إطلالة داخلية: 12,800 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Superior",
+       "qualifier_ar": "إطلالة على شارع أربات",
+       "qualifier_en": "Arbat Street view",
+       "size_m2": null,
+       "heading_line_no": 316,
+       "heading_line": "* Superior، إطلالة على شارع أربات: 15,800 روبل.",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "not stated",
+         "breakfast_ar": "غير مذكور",
+         "breakfast_en": "Not stated",
+         "rub": 15800,
+         "sar": "738.32",
+         "source_line_no": 316,
+         "source_line": "* Superior، إطلالة على شارع أربات: 15,800 روبل."
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "extras": [
+    {
+     "kind": "breakfast",
+     "item_ar": "إضافة الإفطار",
+     "item_en": "Breakfast supplement",
+     "condition_ar": "وردت ضمن أسعار «حتى نهاية نوفمبر»؛ لم يُذكر إن كانت للشخص",
+     "condition_en": "Listed under 'until the end of November'; per person not stated",
+     "rub": 1800,
+     "sar": "84.11",
+     "value_ar": null,
+     "value_en": null,
+     "source_line_nos": [
+      310
+     ],
+     "source_lines": [
+      "* إضافة الإفطار: 1,800 روبل."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "intercontinental",
+   "city": "moscow",
+   "order": 5,
+   "name_en": "InterContinental Moscow",
+   "name_ar": "فندق إنتركونتيننتال موسكو",
+   "name_lines": [
+    320,
+    322
+   ],
+   "stars": 5,
+   "stars_line": 322,
+   "economy": false,
+   "facts_ar": [
+    "خمس نجوم (وفق المصدر)"
+   ],
+   "facts_en": [
+    "Five-star (as stated in the source)"
+   ],
+   "booking_notes_ar": [
+    "لم يُذكر ما إذا كان السعر الأساسي شاملاً الإفطار، ولا عدد النزلاء.",
+    "«نهاية نوفمبر» حدّ غير محدد بتاريخ دقيق."
+   ],
+   "booking_notes_en": [
+    "The source does not state whether the base rate includes breakfast, nor the occupancy.",
+    "'End of November' is not an exact date."
+   ],
+   "periods": [
+    {
+     "key": "nov",
+     "label_ar": "حتى نهاية نوفمبر",
+     "label_en": "Until the end of November",
+     "dates_ar": "حتى نهاية نوفمبر (تاريخ البداية غير مذكور)",
+     "dates_en": "Until the end of November (start date not stated)",
+     "dates_as_written": [
+      "حتى نهاية نوفمبر:"
+     ],
+     "date_line_nos": [
+      324
+     ],
+     "start_iso_derived": null,
+     "end_iso_derived": "2026-11-30",
+     "rooms": [
+      {
+       "name": "Deluxe King / Twin",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 326,
+       "heading_line": "* Deluxe King / Twin: 11,800 روبل.",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "not stated",
+         "breakfast_ar": "غير مذكور",
+         "breakfast_en": "Not stated",
+         "rub": 11800,
+         "sar": "551.40",
+         "source_line_no": 326,
+         "source_line": "* Deluxe King / Twin: 11,800 روبل."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "key": "dec",
+     "label_ar": "من نهاية نوفمبر حتى 18 ديسمبر",
+     "label_en": "End of November to 18 December",
+     "dates_ar": "من نهاية نوفمبر حتى 18 ديسمبر",
+     "dates_en": "From the end of November to 18 December",
+     "dates_as_written": [
+      "من نهاية نوفمبر حتى 18 ديسمبر:"
+     ],
+     "date_line_nos": [
+      328
+     ],
+     "start_iso_derived": null,
+     "end_iso_derived": "2026-12-18",
+     "rooms": [
+      {
+       "name": "Deluxe King / Twin",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 330,
+       "heading_line": "* Deluxe King / Twin: 12,800 روبل.",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "not stated",
+         "breakfast_ar": "غير مذكور",
+         "breakfast_en": "Not stated",
+         "rub": 12800,
+         "sar": "598.13",
+         "source_line_no": 330,
+         "source_line": "* Deluxe King / Twin: 12,800 روبل."
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "extras": [
+    {
+     "kind": "extra_bed",
+     "item_ar": "سرير إضافي",
+     "item_en": "Extra bed",
+     "condition_ar": "لليلة",
+     "condition_en": "Per night",
+     "rub": 3000,
+     "sar": "140.19",
+     "value_ar": null,
+     "value_en": null,
+     "source_line_nos": [
+      334
+     ],
+     "source_lines": [
+      "* السرير الإضافي: 3,000 روبل لليلة."
+     ]
+    },
+    {
+     "kind": "breakfast",
+     "item_ar": "الإفطار",
+     "item_en": "Breakfast",
+     "condition_ar": "للشخص",
+     "condition_en": "Per person",
+     "rub": 1500,
+     "sar": "70.09",
+     "value_ar": null,
+     "value_en": null,
+     "source_line_nos": [
+      335
+     ],
+     "source_lines": [
+      "* الإفطار: 1,500 روبل للشخص."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "marriott-royal-aurora",
+   "city": "moscow",
+   "order": 6,
+   "name_en": "Marriott Royal Aurora Moscow",
+   "name_ar": "فندق ماريوت رويال أورورا",
+   "name_lines": [
+    337,
+    339
+   ],
+   "stars": 5,
+   "stars_line": 339,
+   "economy": false,
+   "facts_ar": [
+    "خمس نجوم (وفق المصدر)"
+   ],
+   "facts_en": [
+    "Five-star (as stated in the source)"
+   ],
+   "booking_notes_ar": [
+    "يذكر المصدر «مع إفطار لشخص / لشخصين» دون ذكر عدد النزلاء صراحة.",
+    "لا توجد أسعار بدون إفطار لـ Junior Suite وCorner Suite.",
+    "من 30 ديسمبر إلى 8 يناير: الأسعار عند الطلب."
+   ],
+   "booking_notes_en": [
+    "The source gives 'with breakfast for 1 / for 2' without stating occupancy explicitly.",
+    "No room-only rates for Junior Suite and Corner Suite.",
+    "30 December to 8 January: rates on request."
+   ],
+   "periods": [
+    {
+     "key": "p1",
+     "label_ar": "الفترة الأولى",
+     "label_en": "Period 1",
+     "dates_ar": "25 أغسطس – 19 سبتمبر 2026",
+     "dates_en": "25 Aug – 19 Sep 2026",
+     "dates_as_written": [
+      "25 أغسطس – 19 سبتمبر 2026."
+     ],
+     "date_line_nos": [
+      343
+     ],
+     "start_iso_derived": "2026-08-25",
+     "end_iso_derived": "2026-09-19",
+     "rooms": [
+      {
+       "name": "Deluxe King / Twin",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 345,
+       "heading_line": "Deluxe King / Twin:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 11500,
+         "sar": "537.38",
+         "source_line_no": 347,
+         "source_line": "* بدون إفطار: 11,500 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 13000,
+         "sar": "607.48",
+         "source_line_no": 348,
+         "source_line": "* مع إفطار لشخص: 13,000 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 14500,
+         "sar": "677.57",
+         "source_line_no": 349,
+         "source_line": "* مع إفطار لشخصين: 14,500 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Superior",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 351,
+       "heading_line": "Superior:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 13500,
+         "sar": "630.84",
+         "source_line_no": 353,
+         "source_line": "* بدون إفطار: 13,500 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 15000,
+         "sar": "700.93",
+         "source_line_no": 354,
+         "source_line": "* مع إفطار لشخص: 15,000 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 16500,
+         "sar": "771.03",
+         "source_line_no": 355,
+         "source_line": "* مع إفطار لشخصين: 16,500 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Junior Suite",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 357,
+       "heading_line": "Junior Suite:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 25000,
+         "sar": "1168.22",
+         "source_line_no": 359,
+         "source_line": "* مع إفطار لشخص: 25,000 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 26500,
+         "sar": "1238.32",
+         "source_line_no": 360,
+         "source_line": "* مع إفطار لشخصين: 26,500 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Corner Suite",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": 65,
+       "heading_line_no": 362,
+       "heading_line": "Corner Suite – 65 م²:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 35500,
+         "sar": "1658.88",
+         "source_line_no": 364,
+         "source_line": "* مع إفطار لشخص: 35,500 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 37000,
+         "sar": "1728.97",
+         "source_line_no": 365,
+         "source_line": "* مع إفطار لشخصين: 37,000 روبل."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "key": "p2",
+     "label_ar": "الفترة الثانية",
+     "label_en": "Period 2",
+     "dates_ar": "20 سبتمبر – 19 نوفمبر 2026",
+     "dates_en": "20 Sep – 19 Nov 2026",
+     "dates_as_written": [
+      "20 سبتمبر – 19 نوفمبر 2026."
+     ],
+     "date_line_nos": [
+      369
+     ],
+     "start_iso_derived": "2026-09-20",
+     "end_iso_derived": "2026-11-19",
+     "rooms": [
+      {
+       "name": "Deluxe King / Twin",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 371,
+       "heading_line": "Deluxe King / Twin:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 12500,
+         "sar": "584.11",
+         "source_line_no": 373,
+         "source_line": "* بدون إفطار: 12,500 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 14000,
+         "sar": "654.21",
+         "source_line_no": 374,
+         "source_line": "* مع إفطار لشخص: 14,000 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 17000,
+         "sar": "794.39",
+         "source_line_no": 375,
+         "source_line": "* مع إفطار لشخصين: 17,000 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Superior",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 377,
+       "heading_line": "Superior:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 15000,
+         "sar": "700.93",
+         "source_line_no": 379,
+         "source_line": "* بدون إفطار: 15,000 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 16500,
+         "sar": "771.03",
+         "source_line_no": 380,
+         "source_line": "* مع إفطار لشخص: 16,500 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 18000,
+         "sar": "841.12",
+         "source_line_no": 381,
+         "source_line": "* مع إفطار لشخصين: 18,000 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Junior Suite",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 383,
+       "heading_line": "Junior Suite:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 26000,
+         "sar": "1214.95",
+         "source_line_no": 385,
+         "source_line": "* مع إفطار لشخص: 26,000 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 27500,
+         "sar": "1285.05",
+         "source_line_no": 386,
+         "source_line": "* مع إفطار لشخصين: 27,500 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Corner Suite",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": 65,
+       "heading_line_no": 388,
+       "heading_line": "Corner Suite – 65 م²:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 37000,
+         "sar": "1728.97",
+         "source_line_no": 390,
+         "source_line": "* مع إفطار لشخص: 37,000 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 38500,
+         "sar": "1799.07",
+         "source_line_no": 391,
+         "source_line": "* مع إفطار لشخصين: 38,500 روبل."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "key": "p3",
+     "label_ar": "الفترة الثالثة",
+     "label_en": "Period 3",
+     "dates_ar": "20 نوفمبر – 29 ديسمبر 2026",
+     "dates_en": "20 Nov – 29 Dec 2026",
+     "dates_as_written": [
+      "20 نوفمبر – 29 ديسمبر 2026."
+     ],
+     "date_line_nos": [
+      395
+     ],
+     "start_iso_derived": "2026-11-20",
+     "end_iso_derived": "2026-12-29",
+     "rooms": [
+      {
+       "name": "Deluxe King / Twin",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 397,
+       "heading_line": "Deluxe King / Twin:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 14500,
+         "sar": "677.57",
+         "source_line_no": 399,
+         "source_line": "* بدون إفطار: 14,500 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 16000,
+         "sar": "747.66",
+         "source_line_no": 400,
+         "source_line": "* مع إفطار لشخص: 16,000 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 17500,
+         "sar": "817.76",
+         "source_line_no": 401,
+         "source_line": "* مع إفطار لشخصين: 17,500 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Superior",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 403,
+       "heading_line": "Superior:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 17000,
+         "sar": "794.39",
+         "source_line_no": 405,
+         "source_line": "* بدون إفطار: 17,000 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 18500,
+         "sar": "864.49",
+         "source_line_no": 406,
+         "source_line": "* مع إفطار لشخص: 18,500 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 20000,
+         "sar": "934.58",
+         "source_line_no": 407,
+         "source_line": "* مع إفطار لشخصين: 20,000 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Junior Suite",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 409,
+       "heading_line": "Junior Suite:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 29000,
+         "sar": "1355.14",
+         "source_line_no": 411,
+         "source_line": "* مع إفطار لشخص: 29,000 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 30500,
+         "sar": "1425.23",
+         "source_line_no": 412,
+         "source_line": "* مع إفطار لشخصين: 30,500 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Corner Suite",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": 65,
+       "heading_line_no": 414,
+       "heading_line": "Corner Suite – 65 م²:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 40000,
+         "sar": "1869.16",
+         "source_line_no": 416,
+         "source_line": "* مع إفطار لشخص: 40,000 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 41500,
+         "sar": "1939.25",
+         "source_line_no": 417,
+         "source_line": "* مع إفطار لشخصين: 41,500 روبل."
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "extras": [
+    {
+     "kind": "child",
+     "item_ar": "الأطفال دون 5 سنوات",
+     "item_en": "Children under 5",
+     "condition_ar": "دون سرير إضافي",
+     "condition_en": "Without extra bed",
+     "rub": null,
+     "sar": null,
+     "value_ar": "مجاناً",
+     "value_en": "Free",
+     "source_line_nos": [
+      421
+     ],
+     "source_lines": [
+      "* الأطفال دون 5 سنوات: مجاناً دون سرير إضافي."
+     ]
+    },
+    {
+     "kind": "breakfast",
+     "item_ar": "فطور الأطفال من 5 سنوات",
+     "item_en": "Children's breakfast from 5 years",
+     "condition_ar": "—",
+     "condition_en": "—",
+     "rub": 1500,
+     "sar": "70.09",
+     "value_ar": null,
+     "value_en": null,
+     "source_line_nos": [
+      422
+     ],
+     "source_lines": [
+      "* فطور الأطفال من 5 سنوات: 1,500 روبل."
+     ]
+    },
+    {
+     "kind": "extra_bed",
+     "item_ar": "سرير إضافي",
+     "item_en": "Extra bed",
+     "condition_ar": "حسب نوع الغرفة والتوفر؛ لم يُذكر سعر",
+     "condition_en": "Depends on room type and availability; no fee stated",
+     "rub": null,
+     "sar": null,
+     "value_ar": "غير مذكور",
+     "value_en": "Not stated",
+     "source_line_nos": [
+      423
+     ],
+     "source_lines": [
+      "* السرير الإضافي حسب نوع الغرفة والتوفر."
+     ]
+    },
+    {
+     "kind": "on_request",
+     "item_ar": "30 ديسمبر – 8 يناير",
+     "item_en": "30 Dec – 8 Jan",
+     "condition_ar": "الأسعار عند الطلب",
+     "condition_en": "Rates on request",
+     "rub": null,
+     "sar": null,
+     "value_ar": "عند الطلب",
+     "value_en": "On request",
+     "source_line_nos": [
+      424
+     ],
+     "source_lines": [
+      "* من 30 ديسمبر إلى 8 يناير: الأسعار عند الطلب."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "safmar-grand",
+   "city": "moscow",
+   "order": 7,
+   "name_en": "Safmar Grand Moscow",
+   "name_ar": "فندق سافمار جراند",
+   "name_lines": [
+    426,
+    428
+   ],
+   "stars": 5,
+   "stars_line": 428,
+   "economy": false,
+   "facts_ar": [
+    "خمس نجوم (وفق المصدر)",
+    "أسعار Deluxe King / Twin شاملة الإفطار"
+   ],
+   "facts_en": [
+    "Five-star (as stated in the source)",
+    "Deluxe King / Twin rates include breakfast"
+   ],
+   "booking_notes_ar": [
+    "من 29 ديسمبر إلى 10 يناير: الأسعار عند الطلب."
+   ],
+   "booking_notes_en": [
+    "29 December to 10 January: rates on request."
+   ],
+   "periods": [
+    {
+     "key": "p1",
+     "label_ar": "الفترة",
+     "label_en": "Period",
+     "dates_ar": "25 أغسطس – 28 ديسمبر 2026",
+     "dates_en": "25 Aug – 28 Dec 2026",
+     "dates_as_written": [
+      "الفترة: 25 أغسطس – 28 ديسمبر 2026."
+     ],
+     "date_line_nos": [
+      430
+     ],
+     "start_iso_derived": "2026-08-25",
+     "end_iso_derived": "2026-12-28",
+     "rooms": [
+      {
+       "name": "Deluxe King / Twin",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 432,
+       "heading_line": "Deluxe King / Twin، الأسعار شاملة الإفطار:",
+       "rows": [
+        {
+         "occupancy": "1 person",
+         "occupancy_ar": "شخص واحد",
+         "occupancy_en": "1 person",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 9800,
+         "sar": "457.94",
+         "source_line_no": 434,
+         "source_line": "* شخص واحد: 9,800 روبل.",
+         "context_line_no": 432,
+         "context_line": "Deluxe King / Twin، الأسعار شاملة الإفطار:"
+        },
+        {
+         "occupancy": "2 persons",
+         "occupancy_ar": "شخصان",
+         "occupancy_en": "2 persons",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 10300,
+         "sar": "481.31",
+         "source_line_no": 435,
+         "source_line": "* شخصان: 10,300 روبل.",
+         "context_line_no": 432,
+         "context_line": "Deluxe King / Twin، الأسعار شاملة الإفطار:"
+        },
+        {
+         "occupancy": "3 persons with extra bed",
+         "occupancy_ar": "ثلاثة أشخاص مع سرير إضافي",
+         "occupancy_en": "3 persons with extra bed",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 13800,
+         "sar": "644.86",
+         "source_line_no": 436,
+         "source_line": "* ثلاثة أشخاص مع سرير إضافي: 13,800 روبل.",
+         "context_line_no": 432,
+         "context_line": "Deluxe King / Twin، الأسعار شاملة الإفطار:"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "extras": [
+    {
+     "kind": "extra_bed",
+     "item_ar": "سرير إضافي",
+     "item_en": "Extra bed",
+     "condition_ar": "لليلة",
+     "condition_en": "Per night",
+     "rub": 1500,
+     "sar": "70.09",
+     "value_ar": null,
+     "value_en": null,
+     "source_line_nos": [
+      440
+     ],
+     "source_lines": [
+      "* السرير الإضافي: 1,500 روبل لليلة."
+     ]
+    },
+    {
+     "kind": "breakfast",
+     "item_ar": "فطور الشخص الثالث",
+     "item_en": "Third person's breakfast",
+     "condition_ar": "لليلة",
+     "condition_en": "Per night",
+     "rub": 1500,
+     "sar": "70.09",
+     "value_ar": null,
+     "value_en": null,
+     "source_line_nos": [
+      441
+     ],
+     "source_lines": [
+      "* فطور الشخص الثالث: 1,500 روبل لليلة."
+     ]
+    },
+    {
+     "kind": "on_request",
+     "item_ar": "29 ديسمبر – 10 يناير",
+     "item_en": "29 Dec – 10 Jan",
+     "condition_ar": "الأسعار عند الطلب",
+     "condition_en": "Rates on request",
+     "rub": null,
+     "sar": null,
+     "value_ar": "عند الطلب",
+     "value_en": "On request",
+     "source_line_nos": [
+      443
+     ],
+     "source_lines": [
+      "من 29 ديسمبر إلى 10 يناير: الأسعار عند الطلب."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "national",
+   "city": "moscow",
+   "order": 8,
+   "name_en": "Hotel National Moscow",
+   "name_ar": "فندق ناشيونال موسكو",
+   "name_lines": [
+    445,
+    447
+   ],
+   "stars": 5,
+   "stars_line": 447,
+   "economy": false,
+   "facts_ar": [
+    "خمس نجوم (وفق المصدر)"
+   ],
+   "facts_en": [
+    "Five-star (as stated in the source)"
+   ],
+   "booking_notes_ar": [
+    "يذكر المصدر «مع إفطار لشخص / لشخصين» دون ذكر عدد النزلاء صراحة.",
+    "غرفة Classic لا تسمح بإضافة شخص ثالث.",
+    "بعض الغرف غير متاحة في تواريخ محددة.",
+    "لم تُذكر أسعار بعد 22 ديسمبر 2026."
+   ],
+   "booking_notes_en": [
+    "The source gives 'with breakfast for 1 / for 2' without stating occupancy explicitly.",
+    "The Classic room does not allow a third person.",
+    "Some rooms are unavailable on specific dates.",
+    "No rates given after 22 December 2026."
+   ],
+   "periods": [
+    {
+     "key": "p1",
+     "label_ar": "الفترة الأولى",
+     "label_en": "Period 1",
+     "dates_ar": "25 أغسطس – 24 سبتمبر 2026",
+     "dates_en": "25 Aug – 24 Sep 2026",
+     "dates_as_written": [
+      "25 أغسطس – 24 سبتمبر 2026."
+     ],
+     "date_line_nos": [
+      451
+     ],
+     "start_iso_derived": "2026-08-25",
+     "end_iso_derived": "2026-09-24",
+     "rooms": [
+      {
+       "name": "Classic King / Twin",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 453,
+       "heading_line": "Classic King / Twin:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 12300,
+         "sar": "574.77",
+         "source_line_no": 455,
+         "source_line": "* بدون إفطار: 12,300 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 13800,
+         "sar": "644.86",
+         "source_line_no": 456,
+         "source_line": "* مع إفطار لشخص: 13,800 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 15300,
+         "sar": "714.95",
+         "source_line_no": 457,
+         "source_line": "* مع إفطار لشخصين: 15,300 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Studio",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 459,
+       "heading_line": "Studio:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 14300,
+         "sar": "668.22",
+         "source_line_no": 461,
+         "source_line": "* بدون إفطار: 14,300 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 15800,
+         "sar": "738.32",
+         "source_line_no": 462,
+         "source_line": "* مع إفطار لشخص: 15,800 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 17300,
+         "sar": "808.41",
+         "source_line_no": 463,
+         "source_line": "* مع إفطار لشخصين: 17,300 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Junior Suite – No View",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 465,
+       "heading_line": "Junior Suite – No View:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 15800,
+         "sar": "738.32",
+         "source_line_no": 467,
+         "source_line": "* بدون إفطار: 15,800 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 17300,
+         "sar": "808.41",
+         "source_line_no": 468,
+         "source_line": "* مع إفطار لشخص: 17,300 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 18800,
+         "sar": "878.50",
+         "source_line_no": 469,
+         "source_line": "* مع إفطار لشخصين: 18,800 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Studio – Tverskaya View",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 471,
+       "heading_line": "Studio – Tverskaya View:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 17800,
+         "sar": "831.78",
+         "source_line_no": 473,
+         "source_line": "* مع إفطار لشخص: 17,800 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 19300,
+         "sar": "901.87",
+         "source_line_no": 474,
+         "source_line": "* مع إفطار لشخصين: 19,300 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Junior Suite – Tverskaya View",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 476,
+       "heading_line": "Junior Suite – Tverskaya View:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 20800,
+         "sar": "971.96",
+         "source_line_no": 478,
+         "source_line": "* مع إفطار لشخص: 20,800 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 22300,
+         "sar": "1042.06",
+         "source_line_no": 479,
+         "source_line": "* مع إفطار لشخصين: 22,300 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Studio – Red Square / Kremlin View",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 481,
+       "heading_line": "Studio – Red Square / Kremlin View:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 27800,
+         "sar": "1299.07",
+         "source_line_no": 483,
+         "source_line": "* مع إفطار لشخص: 27,800 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 29300,
+         "sar": "1369.16",
+         "source_line_no": 484,
+         "source_line": "* مع إفطار لشخصين: 29,300 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Kremlin Suite",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 486,
+       "heading_line": "Kremlin Suite:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 55300,
+         "sar": "2584.11",
+         "source_line_no": 488,
+         "source_line": "* مع إفطار لشخص: 55,300 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 56800,
+         "sar": "2654.21",
+         "source_line_no": 489,
+         "source_line": "* مع إفطار لشخصين: 56,800 روبل."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "key": "p2",
+     "label_ar": "الفترة الثانية",
+     "label_en": "Period 2",
+     "dates_ar": "25 سبتمبر – 19 نوفمبر 2026",
+     "dates_en": "25 Sep – 19 Nov 2026",
+     "dates_as_written": [
+      "25 سبتمبر – 19 نوفمبر 2026."
+     ],
+     "date_line_nos": [
+      493
+     ],
+     "start_iso_derived": "2026-09-25",
+     "end_iso_derived": "2026-11-19",
+     "rooms": [
+      {
+       "name": "Classic King / Twin",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 495,
+       "heading_line": "Classic King / Twin:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 12800,
+         "sar": "598.13",
+         "source_line_no": 497,
+         "source_line": "* بدون إفطار: 12,800 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 14300,
+         "sar": "668.22",
+         "source_line_no": 498,
+         "source_line": "* مع إفطار لشخص: 14,300 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 15300,
+         "sar": "714.95",
+         "source_line_no": 499,
+         "source_line": "* مع إفطار لشخصين: 15,300 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Studio",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 501,
+       "heading_line": "Studio:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 14300,
+         "sar": "668.22",
+         "source_line_no": 503,
+         "source_line": "* بدون إفطار: 14,300 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 15800,
+         "sar": "738.32",
+         "source_line_no": 504,
+         "source_line": "* مع إفطار لشخص: 15,800 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 17300,
+         "sar": "808.41",
+         "source_line_no": 505,
+         "source_line": "* مع إفطار لشخصين: 17,300 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Junior Suite – No View",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 507,
+       "heading_line": "Junior Suite – No View:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 16300,
+         "sar": "761.68",
+         "source_line_no": 509,
+         "source_line": "* بدون إفطار: 16,300 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 17800,
+         "sar": "831.78",
+         "source_line_no": 510,
+         "source_line": "* مع إفطار لشخص: 17,800 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 19300,
+         "sar": "901.87",
+         "source_line_no": 511,
+         "source_line": "* مع إفطار لشخصين: 19,300 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Studio – Tverskaya View",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 513,
+       "heading_line": "Studio – Tverskaya View:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 18300,
+         "sar": "855.14",
+         "source_line_no": 515,
+         "source_line": "* مع إفطار لشخص: 18,300 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 19800,
+         "sar": "925.23",
+         "source_line_no": 516,
+         "source_line": "* مع إفطار لشخصين: 19,800 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Junior Suite – Tverskaya View",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 518,
+       "heading_line": "Junior Suite – Tverskaya View:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 21800,
+         "sar": "1018.69",
+         "source_line_no": 520,
+         "source_line": "* مع إفطار لشخص: 21,800 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 23300,
+         "sar": "1088.79",
+         "source_line_no": 521,
+         "source_line": "* مع إفطار لشخصين: 23,300 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Studio – Red Square / Kremlin View",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 523,
+       "heading_line": "Studio – Red Square / Kremlin View:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 28300,
+         "sar": "1322.43",
+         "source_line_no": 525,
+         "source_line": "* مع إفطار لشخص: 28,300 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 29800,
+         "sar": "1392.52",
+         "source_line_no": 526,
+         "source_line": "* مع إفطار لشخصين: 29,800 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Kremlin Suite",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 528,
+       "heading_line": "Kremlin Suite:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 54300,
+         "sar": "2537.38",
+         "source_line_no": 530,
+         "source_line": "* مع إفطار لشخص: 54,300 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 56800,
+         "sar": "2654.21",
+         "source_line_no": 531,
+         "source_line": "* مع إفطار لشخصين: 56,800 روبل."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "key": "p3",
+     "label_ar": "الفترة الثالثة",
+     "label_en": "Period 3",
+     "dates_ar": "20 نوفمبر – 22 ديسمبر 2026",
+     "dates_en": "20 Nov – 22 Dec 2026",
+     "dates_as_written": [
+      "20 نوفمبر – 22 ديسمبر 2026."
+     ],
+     "date_line_nos": [
+      535
+     ],
+     "start_iso_derived": "2026-11-20",
+     "end_iso_derived": "2026-12-22",
+     "rooms": [
+      {
+       "name": "Classic King / Twin",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 537,
+       "heading_line": "Classic King / Twin:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 14300,
+         "sar": "668.22",
+         "source_line_no": 539,
+         "source_line": "* بدون إفطار: 14,300 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 15800,
+         "sar": "738.32",
+         "source_line_no": 540,
+         "source_line": "* مع إفطار لشخص: 15,800 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 17300,
+         "sar": "808.41",
+         "source_line_no": 541,
+         "source_line": "* مع إفطار لشخصين: 17,300 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Studio",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 543,
+       "heading_line": "Studio:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 15800,
+         "sar": "738.32",
+         "source_line_no": 545,
+         "source_line": "* بدون إفطار: 15,800 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 17300,
+         "sar": "808.41",
+         "source_line_no": 546,
+         "source_line": "* مع إفطار لشخص: 17,300 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 18800,
+         "sar": "878.50",
+         "source_line_no": 547,
+         "source_line": "* مع إفطار لشخصين: 18,800 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Junior Suite – No View",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 549,
+       "heading_line": "Junior Suite – No View:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 17300,
+         "sar": "808.41",
+         "source_line_no": 551,
+         "source_line": "* بدون إفطار: 17,300 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 18800,
+         "sar": "878.50",
+         "source_line_no": 552,
+         "source_line": "* مع إفطار لشخص: 18,800 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 20300,
+         "sar": "948.60",
+         "source_line_no": 553,
+         "source_line": "* مع إفطار لشخصين: 20,300 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Studio – Tverskaya View",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 555,
+       "heading_line": "Studio – Tverskaya View:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 18800,
+         "sar": "878.50",
+         "source_line_no": 557,
+         "source_line": "* مع إفطار لشخص: 18,800 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 20300,
+         "sar": "948.60",
+         "source_line_no": 558,
+         "source_line": "* مع إفطار لشخصين: 20,300 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Junior Suite – Tverskaya View",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 560,
+       "heading_line": "Junior Suite – Tverskaya View:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 22800,
+         "sar": "1065.42",
+         "source_line_no": 562,
+         "source_line": "* مع إفطار لشخص: 22,800 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 24300,
+         "sar": "1135.51",
+         "source_line_no": 563,
+         "source_line": "* مع إفطار لشخصين: 24,300 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Studio – Red Square / Kremlin View",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 565,
+       "heading_line": "Studio – Red Square / Kremlin View:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 28800,
+         "sar": "1345.79",
+         "source_line_no": 567,
+         "source_line": "* مع إفطار لشخص: 28,800 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 30300,
+         "sar": "1415.89",
+         "source_line_no": 568,
+         "source_line": "* مع إفطار لشخصين: 30,300 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Kremlin Suite",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 570,
+       "heading_line": "Kremlin Suite:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 55300,
+         "sar": "2584.11",
+         "source_line_no": 572,
+         "source_line": "* مع إفطار لشخص: 55,300 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 56800,
+         "sar": "2654.21",
+         "source_line_no": 573,
+         "source_line": "* مع إفطار لشخصين: 56,800 روبل."
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "extras": [
+    {
+     "kind": "extra_bed",
+     "item_ar": "سرير إضافي",
+     "item_en": "Extra bed",
+     "condition_ar": "لليلة، حسب نوع الغرفة",
+     "condition_en": "Per night, depending on room type",
+     "rub": 1500,
+     "sar": "70.09",
+     "value_ar": null,
+     "value_en": null,
+     "source_line_nos": [
+      577
+     ],
+     "source_lines": [
+      "* السرير الإضافي: 1,500 روبل لليلة حسب نوع الغرفة."
+     ]
+    },
+    {
+     "kind": "breakfast",
+     "item_ar": "فطور الأطفال من 5 سنوات",
+     "item_en": "Children's breakfast from 5 years",
+     "condition_ar": "—",
+     "condition_en": "—",
+     "rub": 1500,
+     "sar": "70.09",
+     "value_ar": null,
+     "value_en": null,
+     "source_line_nos": [
+      578
+     ],
+     "source_lines": [
+      "* فطور الأطفال من 5 سنوات: 1,500 روبل."
+     ]
+    },
+    {
+     "kind": "child",
+     "item_ar": "فطور الأطفال دون 5 سنوات",
+     "item_en": "Breakfast for children under 5",
+     "condition_ar": "—",
+     "condition_en": "—",
+     "rub": null,
+     "sar": null,
+     "value_ar": "مجاناً",
+     "value_en": "Free",
+     "source_line_nos": [
+      579
+     ],
+     "source_lines": [
+      "* الأطفال دون 5 سنوات: الفطور مجاناً."
+     ]
+    },
+    {
+     "kind": "restriction",
+     "item_ar": "غرفة Classic",
+     "item_en": "Classic room",
+     "condition_ar": "لا تسمح بإضافة شخص ثالث",
+     "condition_en": "Does not allow a third person",
+     "rub": null,
+     "sar": null,
+     "value_ar": "—",
+     "value_en": "—",
+     "source_line_nos": [
+      580
+     ],
+     "source_lines": [
+      "* غرفة Classic لا تسمح بإضافة شخص ثالث."
+     ]
+    },
+    {
+     "kind": "restriction",
+     "item_ar": "توفر الغرف",
+     "item_en": "Room availability",
+     "condition_ar": "بعض الغرف غير متاحة في تواريخ محددة",
+     "condition_en": "Some rooms unavailable on specific dates",
+     "rub": null,
+     "sar": null,
+     "value_ar": "—",
+     "value_en": "—",
+     "source_line_nos": [
+      581
+     ],
+     "source_lines": [
+      "* بعض الغرف غير متاحة في تواريخ محددة."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "brosko",
+   "city": "moscow",
+   "order": 9,
+   "name_en": "Brosko Hotels Group",
+   "name_ar": "فندق بروسكو",
+   "name_lines": [
+    583,
+    585
+   ],
+   "stars": 4,
+   "stars_line": 585,
+   "economy": true,
+   "economy_line": 585,
+   "facts_ar": [
+    "فندق اقتصادي أربع نجوم في أربات (وفق المصدر)"
+   ],
+   "facts_en": [
+    "Economy four-star hotel in Arbat (as stated in the source)"
+   ],
+   "booking_notes_ar": [
+    "يذكر المصدر «مع إفطار لشخص / لشخصين» دون ذكر عدد النزلاء صراحة.",
+    "السرير الإضافي متوفر في Deluxe وSuite حسب التوفر."
+   ],
+   "booking_notes_en": [
+    "The source gives 'with breakfast for 1 / for 2' without stating occupancy explicitly.",
+    "Extra bed available in Deluxe and Suite, subject to availability."
+   ],
+   "periods": [
+    {
+     "key": "p1",
+     "label_ar": "الأسعار",
+     "label_en": "Rates",
+     "dates_ar": "لم تُحدَّد فترة الصلاحية في المصدر",
+     "dates_en": "No validity dates given in the source",
+     "dates_as_written": null,
+     "date_line_nos": null,
+     "start_iso_derived": null,
+     "end_iso_derived": null,
+     "rooms": [
+      {
+       "name": "Standard Double",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 587,
+       "heading_line": "Standard Double:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 6800,
+         "sar": "317.76",
+         "source_line_no": 589,
+         "source_line": "* بدون إفطار: 6,800 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 8500,
+         "sar": "397.20",
+         "source_line_no": 590,
+         "source_line": "* مع إفطار لشخص: 8,500 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 10200,
+         "sar": "476.64",
+         "source_line_no": 591,
+         "source_line": "* مع إفطار لشخصين: 10,200 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Standard Twin",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 593,
+       "heading_line": "Standard Twin:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 6800,
+         "sar": "317.76",
+         "source_line_no": 595,
+         "source_line": "* بدون إفطار: 6,800 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 8500,
+         "sar": "397.20",
+         "source_line_no": 596,
+         "source_line": "* مع إفطار لشخص: 8,500 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 10200,
+         "sar": "476.64",
+         "source_line_no": 597,
+         "source_line": "* مع إفطار لشخصين: 10,200 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Deluxe",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 599,
+       "heading_line": "Deluxe:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 9300,
+         "sar": "434.58",
+         "source_line_no": 601,
+         "source_line": "* بدون إفطار: 9,300 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 11000,
+         "sar": "514.02",
+         "source_line_no": 602,
+         "source_line": "* مع إفطار لشخص: 11,000 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 12700,
+         "sar": "593.46",
+         "source_line_no": 603,
+         "source_line": "* مع إفطار لشخصين: 12,700 روبل."
+        }
+       ]
+      },
+      {
+       "name": "Suite",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 605,
+       "heading_line": "Suite:",
+       "rows": [
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "without",
+         "breakfast_ar": "بدون إفطار",
+         "breakfast_en": "Without breakfast",
+         "rub": 11800,
+         "sar": "551.40",
+         "source_line_no": 607,
+         "source_line": "* بدون إفطار: 11,800 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 1",
+         "breakfast_ar": "مع إفطار لشخص",
+         "breakfast_en": "With breakfast for 1",
+         "rub": 13500,
+         "sar": "630.84",
+         "source_line_no": 608,
+         "source_line": "* مع إفطار لشخص: 13,500 روبل."
+        },
+        {
+         "occupancy": "not stated",
+         "occupancy_ar": "غير مذكور",
+         "occupancy_en": "Not stated",
+         "breakfast": "with breakfast for 2",
+         "breakfast_ar": "مع إفطار لشخصين",
+         "breakfast_en": "With breakfast for 2",
+         "rub": 15200,
+         "sar": "710.28",
+         "source_line_no": 609,
+         "source_line": "* مع إفطار لشخصين: 15,200 روبل."
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "extras": [
+    {
+     "kind": "child",
+     "item_ar": "الأطفال دون 6 سنوات",
+     "item_en": "Children under 6",
+     "condition_ar": "دون سرير إضافي",
+     "condition_en": "Without extra bed",
+     "rub": null,
+     "sar": null,
+     "value_ar": "مجاناً",
+     "value_en": "Free",
+     "source_line_nos": [
+      613
+     ],
+     "source_lines": [
+      "* الأطفال دون 6 سنوات: مجاناً دون سرير إضافي."
+     ]
+    },
+    {
+     "kind": "child",
+     "item_ar": "سرير الأطفال دون 3 سنوات",
+     "item_en": "Cot for children under 3",
+     "condition_ar": "لليلة",
+     "condition_en": "Per night",
+     "rub": 500,
+     "sar": "23.36",
+     "value_ar": null,
+     "value_en": null,
+     "source_line_nos": [
+      614
+     ],
+     "source_lines": [
+      "* سرير الأطفال دون 3 سنوات: 500 روبل لليلة."
+     ]
+    },
+    {
+     "kind": "extra_bed",
+     "item_ar": "سرير إضافي",
+     "item_en": "Extra bed",
+     "condition_ar": "لليلة، متوفر في Deluxe وSuite حسب التوفر",
+     "condition_en": "Per night, in Deluxe and Suite, subject to availability",
+     "rub": 1500,
+     "sar": "70.09",
+     "value_ar": null,
+     "value_en": null,
+     "source_line_nos": [
+      615
+     ],
+     "source_lines": [
+      "* السرير الإضافي: 1,500 روبل لليلة، متوفر في Deluxe وSuite حسب التوفر."
+     ]
+    },
+    {
+     "kind": "breakfast",
+     "item_ar": "فطور الأطفال من 6 إلى 12 سنة",
+     "item_en": "Children's breakfast 6–12 years",
+     "condition_ar": "—",
+     "condition_en": "—",
+     "rub": 1000,
+     "sar": "46.73",
+     "value_ar": null,
+     "value_en": null,
+     "source_line_nos": [
+      616
+     ],
+     "source_lines": [
+      "* فطور الأطفال من 6 إلى 12 سنة: 1,000 روبل."
+     ]
+    },
+    {
+     "kind": "breakfast",
+     "item_ar": "الفطور الإضافي للبالغين",
+     "item_en": "Additional adult breakfast",
+     "condition_ar": "—",
+     "condition_en": "—",
+     "rub": 1700,
+     "sar": "79.44",
+     "value_ar": null,
+     "value_en": null,
+     "source_line_nos": [
+      617
+     ],
+     "source_lines": [
+      "* الفطور الإضافي للبالغين: 1,700 روبل."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cosmos-royal-nevsky",
+   "city": "spb",
+   "order": 10,
+   "name_en": "Cosmos Royal Nevsky",
+   "name_ar": "فندق كوسموس رويال نيفسكي",
+   "name_lines": [
+    623,
+    625
+   ],
+   "stars": 5,
+   "stars_line": 625,
+   "economy": false,
+   "facts_ar": [
+    "خمس نجوم (وفق المصدر)",
+    "جميع الأسعار شاملة الإفطار"
+   ],
+   "facts_en": [
+    "Five-star (as stated in the source)",
+    "All rates include breakfast"
+   ],
+   "booking_notes_ar": [
+    "رسم الطفل حتى 5 سنوات (1,500 روبل) ورد مرتين في المصدر: تحت غرفة Standard وضمن الإقامة الإضافية؛ يُعرض هنا مرة واحدة."
+   ],
+   "booking_notes_en": [
+    "The child-up-to-5 charge (1,500 RUB) appears twice in the source: under the Standard room and under additional stay; shown once here."
+   ],
+   "periods": [
+    {
+     "key": "p1",
+     "label_ar": "الفترة",
+     "label_en": "Period",
+     "dates_ar": "1 سبتمبر – 30 ديسمبر 2026",
+     "dates_en": "1 Sep – 30 Dec 2026",
+     "dates_as_written": [
+      "الفترة: 1 سبتمبر – 30 ديسمبر 2026."
+     ],
+     "date_line_nos": [
+      627
+     ],
+     "start_iso_derived": "2026-09-01",
+     "end_iso_derived": "2026-12-30",
+     "rooms": [
+      {
+       "name": "Standard",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 631,
+       "heading_line": "Standard:",
+       "rows": [
+        {
+         "occupancy": "1 person",
+         "occupancy_ar": "شخص واحد",
+         "occupancy_en": "1 person",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 9100,
+         "sar": "425.23",
+         "source_line_no": 633,
+         "source_line": "* شخص واحد: 9,100 روبل.",
+         "context_line_no": 629,
+         "context_line": "جميع الأسعار شاملة الإفطار."
+        },
+        {
+         "occupancy": "2 persons",
+         "occupancy_ar": "شخصان",
+         "occupancy_en": "2 persons",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 10800,
+         "sar": "504.67",
+         "source_line_no": 634,
+         "source_line": "* شخصان: 10,800 روبل.",
+         "context_line_no": 629,
+         "context_line": "جميع الأسعار شاملة الإفطار."
+        }
+       ]
+      },
+      {
+       "name": "Premium",
+       "qualifier_ar": "مع الإطلالة",
+       "qualifier_en": "With view",
+       "size_m2": null,
+       "heading_line_no": 637,
+       "heading_line": "Premium مع الإطلالة:",
+       "rows": [
+        {
+         "occupancy": "1 person",
+         "occupancy_ar": "شخص واحد",
+         "occupancy_en": "1 person",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 13100,
+         "sar": "612.15",
+         "source_line_no": 639,
+         "source_line": "* شخص واحد: 13,100 روبل.",
+         "context_line_no": 629,
+         "context_line": "جميع الأسعار شاملة الإفطار."
+        },
+        {
+         "occupancy": "2 persons",
+         "occupancy_ar": "شخصان",
+         "occupancy_en": "2 persons",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 14800,
+         "sar": "691.59",
+         "source_line_no": 640,
+         "source_line": "* شخصان: 14,800 روبل.",
+         "context_line_no": 629,
+         "context_line": "جميع الأسعار شاملة الإفطار."
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "extras": [
+    {
+     "kind": "child",
+     "item_ar": "طفل حتى 5 سنوات",
+     "item_en": "Child up to 5 years",
+     "condition_ar": "ورد تحت غرفة Standard وضمن الإقامة الإضافية",
+     "condition_en": "Listed under the Standard room and under additional stay",
+     "rub": 1500,
+     "sar": "70.09",
+     "value_ar": null,
+     "value_en": null,
+     "source_line_nos": [
+      635,
+      644
+     ],
+     "source_lines": [
+      "* طفل حتى 5 سنوات: 1,500 روبل.",
+      "* طفل حتى 5 سنوات: 1,500 روبل."
+     ]
+    },
+    {
+     "kind": "child",
+     "item_ar": "طفل من 6 إلى 12 سنة",
+     "item_en": "Child 6–12 years",
+     "condition_ar": "إقامة إضافية",
+     "condition_en": "Additional stay",
+     "rub": 2500,
+     "sar": "116.82",
+     "value_ar": null,
+     "value_en": null,
+     "source_line_nos": [
+      645
+     ],
+     "source_lines": [
+      "* طفل من 6 إلى 12 سنة: 2,500 روبل."
+     ]
+    },
+    {
+     "kind": "adult",
+     "item_ar": "بالغ من 13 سنة",
+     "item_en": "Adult from 13 years",
+     "condition_ar": "إقامة إضافية",
+     "condition_en": "Additional stay",
+     "rub": 3500,
+     "sar": "163.55",
+     "value_ar": null,
+     "value_en": null,
+     "source_line_nos": [
+      646
+     ],
+     "source_lines": [
+      "* بالغ من 13 سنة: 3,500 روبل."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "corinthia",
+   "city": "spb",
+   "order": 11,
+   "name_en": "Corinthia Hotel",
+   "name_ar": "فندق كورنثيا",
+   "name_lines": [
+    648,
+    650
+   ],
+   "stars": 5,
+   "stars_line": 650,
+   "economy": false,
+   "facts_ar": [
+    "سانت بطرسبرغ",
+    "خمس نجوم (وفق المصدر)",
+    "جميع الأسعار شاملة الإفطار"
+   ],
+   "facts_en": [
+    "Saint Petersburg",
+    "Five-star (as stated in the source)",
+    "All rates include breakfast"
+   ],
+   "booking_notes_ar": [
+    "لم يذكر المصدر إضافات أو أسعار سرير إضافي أو أطفال لهذا الفندق."
+   ],
+   "booking_notes_en": [
+    "The source gives no extras, extra-bed or child rates for this hotel."
+   ],
+   "periods": [
+    {
+     "key": "p1",
+     "label_ar": "الفترة الأولى",
+     "label_en": "Period 1",
+     "dates_ar": "1 سبتمبر – 10 أكتوبر 2026",
+     "dates_en": "1 Sep – 10 Oct 2026",
+     "dates_as_written": [
+      "1 سبتمبر – 10 أكتوبر 2026."
+     ],
+     "date_line_nos": [
+      656
+     ],
+     "start_iso_derived": "2026-09-01",
+     "end_iso_derived": "2026-10-10",
+     "rooms": [
+      {
+       "name": "Superior",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 658,
+       "heading_line": "Superior:",
+       "rows": [
+        {
+         "occupancy": "1 person",
+         "occupancy_ar": "شخص واحد",
+         "occupancy_en": "1 person",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 15000,
+         "sar": "700.93",
+         "source_line_no": 660,
+         "source_line": "* شخص واحد: 15,000 روبل.",
+         "context_line_no": 652,
+         "context_line": "جميع الأسعار شاملة الإفطار."
+        },
+        {
+         "occupancy": "2 persons",
+         "occupancy_ar": "شخصان",
+         "occupancy_en": "2 persons",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 18000,
+         "sar": "841.12",
+         "source_line_no": 661,
+         "source_line": "* شخصان: 18,000 روبل.",
+         "context_line_no": 652,
+         "context_line": "جميع الأسعار شاملة الإفطار."
+        }
+       ]
+      },
+      {
+       "name": "Deluxe Room",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 663,
+       "heading_line": "Deluxe Room:",
+       "rows": [
+        {
+         "occupancy": "1 person",
+         "occupancy_ar": "شخص واحد",
+         "occupancy_en": "1 person",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 16500,
+         "sar": "771.03",
+         "source_line_no": 665,
+         "source_line": "* شخص واحد: 16,500 روبل.",
+         "context_line_no": 652,
+         "context_line": "جميع الأسعار شاملة الإفطار."
+        },
+        {
+         "occupancy": "2 persons",
+         "occupancy_ar": "شخصان",
+         "occupancy_en": "2 persons",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 19500,
+         "sar": "911.21",
+         "source_line_no": 666,
+         "source_line": "* شخصان: 19,500 روبل.",
+         "context_line_no": 652,
+         "context_line": "جميع الأسعار شاملة الإفطار."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "key": "p2",
+     "label_ar": "الفترة الثانية",
+     "label_en": "Period 2",
+     "dates_ar": "11 أكتوبر – 29 ديسمبر 2026",
+     "dates_en": "11 Oct – 29 Dec 2026",
+     "dates_as_written": [
+      "11 أكتوبر – 29 ديسمبر 2026."
+     ],
+     "date_line_nos": [
+      670
+     ],
+     "start_iso_derived": "2026-10-11",
+     "end_iso_derived": "2026-12-29",
+     "rooms": [
+      {
+       "name": "Superior",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 672,
+       "heading_line": "Superior:",
+       "rows": [
+        {
+         "occupancy": "1 person",
+         "occupancy_ar": "شخص واحد",
+         "occupancy_en": "1 person",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 13300,
+         "sar": "621.50",
+         "source_line_no": 674,
+         "source_line": "* شخص واحد: 13,300 روبل.",
+         "context_line_no": 652,
+         "context_line": "جميع الأسعار شاملة الإفطار."
+        },
+        {
+         "occupancy": "2 persons",
+         "occupancy_ar": "شخصان",
+         "occupancy_en": "2 persons",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 16300,
+         "sar": "761.68",
+         "source_line_no": 675,
+         "source_line": "* شخصان: 16,300 روبل.",
+         "context_line_no": 652,
+         "context_line": "جميع الأسعار شاملة الإفطار."
+        }
+       ]
+      },
+      {
+       "name": "Deluxe Room",
+       "qualifier_ar": null,
+       "qualifier_en": null,
+       "size_m2": null,
+       "heading_line_no": 677,
+       "heading_line": "Deluxe Room:",
+       "rows": [
+        {
+         "occupancy": "1 person",
+         "occupancy_ar": "شخص واحد",
+         "occupancy_en": "1 person",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 14800,
+         "sar": "691.59",
+         "source_line_no": 679,
+         "source_line": "* شخص واحد: 14,800 روبل.",
+         "context_line_no": 652,
+         "context_line": "جميع الأسعار شاملة الإفطار."
+        },
+        {
+         "occupancy": "2 persons",
+         "occupancy_ar": "شخصان",
+         "occupancy_en": "2 persons",
+         "breakfast": "with",
+         "breakfast_ar": "مع الإفطار",
+         "breakfast_en": "With breakfast",
+         "rub": 17800,
+         "sar": "831.78",
+         "source_line_no": 680,
+         "source_line": "* شخصان: 17,800 روبل.",
+         "context_line_no": 652,
+         "context_line": "جميع الأسعار شاملة الإفطار."
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "extras": []
+  }
+ ],
+ "anomalies": [
+  {
+   "id": "A01",
+   "hotels": [
+    "marriott-royal-aurora",
+    "national",
+    "corinthia",
+    "ararat-park"
+   ],
+   "ar": "عدة فترات صلاحية انتهت قبل تاريخ إعداد الكتالوج (15 نوفمبر 2026): ماريوت الفترة الأولى (25 أغسطس – 19 سبتمبر)، ناشيونال الفترة الأولى (25 أغسطس – 24 سبتمبر)، كورنثيا الفترة الأولى (1 سبتمبر – 10 أكتوبر)، والجزء الأول من عرض الخريف في أرارات بارك (7 سبتمبر – 23 أكتوبر). وتنتهي فترات أخرى خلال أيام: ماريوت وناشيونال الفترة الثانية (19 نوفمبر)، عرض الخريف في أرارات (25 نوفمبر)، وأسعار «حتى نهاية نوفمبر» في كوسموس أربات وإنتركونتيننتال. عُرضت كما وردت.",
+   "en": "Several validity periods ended before the catalogue date (15 Nov 2026): Marriott period 1, National period 1, Corinthia period 1 and the first range of the Ararat autumn offer. Others end within days (Marriott and National period 2 on 19 Nov; Ararat autumn on 25 Nov; 'until end of November' at Cosmos Arbat and InterContinental). Shown as supplied."
+  },
+  {
+   "id": "A02",
+   "hotels": [
+    "marriott-royal-aurora"
+   ],
+   "ar": "ماريوت رويال أورورا، الفترة الثانية، Deluxe King / Twin مع إفطار لشخصين = 17,000 روبل، بفارق 3,000 عن سعر الإفطار لشخص (14,000)، بينما الفارق 1,500 في بقية الصفوف والفترات.",
+   "en": "Marriott period 2, Deluxe King / Twin with breakfast for 2 = 17,000 RUB: a 3,000 step over breakfast for 1 (14,000), against 1,500 in every other row and period."
+  },
+  {
+   "id": "A03",
+   "hotels": [
+    "national"
+   ],
+   "ar": "ناشيونال، الفترة الثانية، Classic King / Twin مع إفطار لشخصين = 15,300 روبل (نفس قيمة الفترة الأولى)، بفارق 1,000 فقط عن الإفطار لشخص (14,300) بدلاً من 1,500.",
+   "en": "National period 2, Classic King / Twin with breakfast for 2 = 15,300 RUB (same as period 1), only 1,000 above breakfast for 1 (14,300) instead of 1,500."
+  },
+  {
+   "id": "A04",
+   "hotels": [
+    "national"
+   ],
+   "ar": "ناشيونال، الفترة الثانية، Kremlin Suite مع إفطار لشخص = 54,300 روبل، بينما هو 55,300 في الفترتين الأولى والثالثة؛ وسعر الإفطار لشخصين 56,800 ثابت في الفترات الثلاث.",
+   "en": "National period 2, Kremlin Suite with breakfast for 1 = 54,300 RUB, against 55,300 in periods 1 and 3; breakfast for 2 is 56,800 in all three periods."
+  },
+  {
+   "id": "A05",
+   "hotels": [
+    "ararat-park"
+   ],
+   "ar": "أرارات بارك، عرض الخريف: فروق الإفطار في Park City View (شخص واحد 26,000 ← 30,000؛ شخصان 28,500 ← 32,000) وفي Park King / Twin لشخصين (25,500 ← 28,500) لا تتبع النمط الظاهر في Park Deluxe وPark Suite وفي الفترتين اللاحقتين (2,000 لشخص واحد و4,500 لشخصين).",
+   "en": "Ararat autumn offer: the breakfast steps for Park City View (1 person 26,000 → 30,000; 2 persons 28,500 → 32,000) and Park King / Twin 2 persons (25,500 → 28,500) do not follow the pattern of Park Deluxe, Park Suite and the later periods (2,000 for 1 person, 4,500 for 2 persons)."
+  },
+  {
+   "id": "A06",
+   "hotels": [
+    "ararat-park"
+   ],
+   "ar": "أرارات بارك: تاريخ 25 نوفمبر مذكور في عرض الخريف والعرض الموسمي، و21 ديسمبر في العرض الموسمي وعرض الشتاء؛ والفترة 24 – 29 أكتوبر 2026 غير مغطاة بأي سعر.",
+   "en": "Ararat: 25 November falls in both the autumn and the seasonal offer, and 21 December in both the seasonal and the winter offer; 24–29 October 2026 has no rate."
+  },
+  {
+   "id": "A07",
+   "hotels": [
+    "garden-plaza"
+   ],
+   "ar": "جاردن بلازا: سعر Suite متطابق مع الإفطار وبدونه (مفردة 20,000؛ مزدوجة 21,300)، وأسعار Club Junior Suite مطابقة لأسعار Suite؛ وسعر Standard بدون إفطار (10,000) دون ذكر الإشغال؛ ولا أسعار بدون إفطار لـ Club Premium وClub Junior Suite.",
+   "en": "Garden Plaza: the Suite rate is identical with and without breakfast (single 20,000; double 21,300); Club Junior Suite rates equal Suite rates; Standard without breakfast (10,000) has no occupancy; no room-only rates for Club Premium and Club Junior Suite."
+  },
+  {
+   "id": "A08",
+   "hotels": [
+    "cosmos-arbat"
+   ],
+   "ar": "كوسموس أربات: شمول الإفطار غير مذكور لأسعار Superior في الفترتين ولسعر Deluxe في ديسمبر؛ ولم يُذكر هل تنطبق إضافة الإفطار (1,800) في ديسمبر وهل هي للشخص؛ ولم يُذكر عدد النزلاء ولا تاريخ بداية الفترة الأولى.",
+   "en": "Cosmos Arbat: breakfast status not stated for Superior in both periods nor for the December Deluxe rate; not stated whether the 1,800 breakfast supplement applies in December or per person; occupancy and the first period's start date not stated."
+  },
+  {
+   "id": "A09",
+   "hotels": [
+    "intercontinental"
+   ],
+   "ar": "إنتركونتيننتال: شمول الإفطار في السعر الأساسي وعدد النزلاء غير مذكورين؛ «نهاية نوفمبر» ليست تاريخاً محدداً، ولا أسعار بعد 18 ديسمبر.",
+   "en": "InterContinental: breakfast status of the base rate and occupancy not stated; 'end of November' is not an exact date; no rates after 18 December."
+  },
+  {
+   "id": "A10",
+   "hotels": [
+    "safmar-grand"
+   ],
+   "ar": "سافمار جراند: سعر ثلاثة أشخاص مع سرير إضافي (13,800) لا يساوي مجموع سعر الشخصين (10,300) والسرير الإضافي (1,500) وفطور الشخص الثالث (1,500)؛ للتأكد من أن الإضافات غير مشمولة أو مشمولة في سعر الثلاثة أشخاص.",
+   "en": "Safmar Grand: the 3-persons-with-extra-bed rate (13,800) does not equal the 2-person rate (10,300) plus the extra bed (1,500) plus third-person breakfast (1,500); confirm whether the supplements are included in the triple rate."
+  },
+  {
+   "id": "A11",
+   "hotels": [
+    "cosmos-royal-nevsky"
+   ],
+   "ar": "كوسموس رويال نيفسكي: رسم «طفل حتى 5 سنوات: 1,500» ورد مرتين (تحت Standard وضمن الإقامة الإضافية)؛ عُرض مرة واحدة مع الإشارة، وللتأكد هل ينطبق على غرفة Premium.",
+   "en": "Cosmos Royal Nevsky: 'child up to 5: 1,500' appears twice (under Standard and under additional stay); shown once with a note; confirm whether it also applies to Premium."
+  },
+  {
+   "id": "A12",
+   "hotels": [
+    "st-regis",
+    "garden-plaza",
+    "brosko"
+   ],
+   "ar": "لم تُذكر تواريخ صلاحية لأسعار سانت ريجيس وجاردن بلازا وبروسكو.",
+   "en": "No validity dates are given for St. Regis, Garden Plaza and Brosko."
+  },
+  {
+   "id": "A13",
+   "hotels": [
+    "st-regis",
+    "cosmos-arbat",
+    "intercontinental",
+    "marriott-royal-aurora",
+    "national",
+    "brosko"
+   ],
+   "ar": "لم يُذكر الإشغال (عدد النزلاء) في أسعار سانت ريجيس وكوسموس أربات وإنتركونتيننتال؛ وفي ماريوت وناشيونال وبروسكو يذكر المصدر «مع إفطار لشخص / لشخصين» فقط، فعُرض الإشغال «غير مذكور» والإفطار كما ورد.",
+   "en": "Occupancy is not stated at St. Regis, Cosmos Arbat and InterContinental; at Marriott, National and Brosko the source says only 'with breakfast for 1 / for 2', so occupancy is shown as 'not stated' and breakfast as written."
+  },
+  {
+   "id": "A14",
+   "hotels": [
+    "st-regis"
+   ],
+   "ar": "سانت ريجيس: السرير الإضافي (5,000) ورد ضمن بيانات غرفة Deluxe دون توضيح هل ينطبق على Superior، ودون ذكر «لليلة».",
+   "en": "St. Regis: the extra bed (5,000) is listed under Deluxe, without saying whether it applies to Superior or that it is per night."
+  },
+  {
+   "id": "A15",
+   "hotels": [
+    "marriott-royal-aurora"
+   ],
+   "ar": "ماريوت: لا أسعار بدون إفطار لـ Junior Suite وCorner Suite؛ السرير الإضافي «حسب نوع الغرفة والتوفر» دون سعر؛ والأسعار من 30 ديسمبر إلى 8 يناير عند الطلب (سنة يناير غير مذكورة).",
+   "en": "Marriott: no room-only rates for Junior Suite and Corner Suite; extra bed 'by room type and availability' with no fee; 30 Dec – 8 Jan on request (year of January not stated)."
+  },
+  {
+   "id": "A16",
+   "hotels": [
+    "brosko"
+   ],
+   "ar": "بروسكو: الاسم الإنجليزي في المصدر «Brosko Hotels Group» (اسم مجموعة) والعربي «فندق بروسكو – موسكو ... في أربات»؛ لم يُسمَّ الفندق المحدد ضمن المجموعة. أسعار Standard Double وStandard Twin متطابقة.",
+   "en": "Brosko: the source's English name is 'Brosko Hotels Group' (a group) while the Arabic says 'Brosko hotel – Moscow ... in Arbat'; the specific property is not named. Standard Double and Standard Twin rates are identical."
+  },
+  {
+   "id": "A17",
+   "hotels": [
+    "garden-plaza",
+    "ararat-park",
+    "cosmos-arbat"
+   ],
+   "ar": "لم يُذكر تصنيف النجوم لجاردن بلازا وأرارات بارك وكوسموس أربات، فلم يُعرض لها تصنيف ولم تُدرج في مقارنة الخمس نجوم.",
+   "en": "No star rating is stated for Garden Plaza, Ararat Park and Cosmos Arbat; none is shown and they are excluded from the five-star comparison."
+  },
+  {
+   "id": "A18",
+   "hotels": [
+    "national",
+    "safmar-grand"
+   ],
+   "ar": "ناشيونال: لا أسعار بعد 22 ديسمبر 2026. سافمار: الفترة حتى 28 ديسمبر، ومن 29 ديسمبر إلى 10 يناير عند الطلب.",
+   "en": "National: no rates after 22 Dec 2026. Safmar: period to 28 Dec; 29 Dec – 10 Jan on request."
+  },
+  {
+   "id": "A19",
+   "hotels": [],
+   "ar": "اسم الوكالة كُتب في رسالة العميل «حكايات موسكو للسفر والسياحية»؛ اعتُمد «والسياحة» افتراضاً للتأكيد، والاسم الإنجليزي «Hikayat Moscow Travel & Tourism» افتراض أيضاً. لم يُقدَّم شعار ولا بيانات تواصل.",
+   "en": "The client typed «والسياحية»; «والسياحة» is assumed (to confirm); the English name 'Hikayat Moscow Travel & Tourism' is also an assumption. No logo or contact details were supplied."
+  }
+ ],
+ "general_terms": {
+  "ar": [
+   "جميع الأسعار بالروبل الروسي كما وردت من العميل، ولليلة الواحدة ما لم يُذكر خلاف ذلك.",
+   "السعر بالريال السعودي = السعر بالروبل ÷ 21.4، مقرّباً إلى منزلتين عشريتين؛ دون أي عمولة أو هامش ربح أو زيادة.",
+   "الأسعار سارية خلال الفترات المذكورة لكل فندق فقط؛ وحيث لا تُذكر فترة يُشار إلى ذلك صراحة.",
+   "رسوم السرير الإضافي والأطفال والإفطار الإضافي منفصلة عن سعر الغرفة وتظهر في جدول الإضافات.",
+   "الأسعار المعلّمة «عند الطلب» تُؤكَّد عند الحجز."
+  ],
+  "en": [
+   "All prices are in Russian roubles as supplied by the client, per night unless stated otherwise.",
+   "SAR = RUB ÷ 21.4, rounded to two decimals; no commission, margin or mark-up.",
+   "Rates apply only within the periods stated for each hotel; where no period is stated, this is said explicitly.",
+   "Extra-bed, child and additional-breakfast charges are separate from the room rate and shown in the extras table.",
+   "Rates marked 'on request' are confirmed at booking."
+  ],
+  "source_line_nos": [
+   126,
+   38,
+   41,
+   46,
+   50
+  ]
+ }
+}
