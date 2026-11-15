@@ -126,3 +126,5 @@
 - 2026-11-15 — CLIENT FEEDBACK on v14 cover: rejected the new centred arrangement ("why did you invent a new shape"). He wants the SAME arrangement as before (v13: large hero diamond bleeding off the right, small diamonds at its left), with a blue overlay on the SIDE (small) images, and fewer frames. The Creative Director misread "two and two on the sides" in v14; corrected for v15.
 
 - 2026-11-15 — Profile v15 built and sent: cover back to the v13 arrangement; blue overlay (70%) on the two side photo diamonds only, hero in full colour; frames reduced to two photo and two brand-colour diamonds. Everything else as v14.
+
+- 2026-11-15 — CLIENT FEEDBACK on v15: General Contracting page — the unclear photos are replaced with the two images he sent (helmet and plans; engineer in vest at site).
