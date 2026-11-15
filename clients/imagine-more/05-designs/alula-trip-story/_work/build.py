@@ -34,7 +34,7 @@ TPL = '''<!doctype html>
 <link rel="stylesheet" href="story.css">
 <style>
 /* option {L}: {subject} */
-:root{{--photo:url("assets/photos/{photo}");--bg-size:{size};--bg-pos:{pos};--top-a:{top};--bot-a:{bot};--glass-a:{glass};--under-a:{under};--chip-under:{chip};--hl-w:{hlw};--hl-s:{hls}px}}
+:root{{--photo:url("assets/photos/{photo}");--bg-size:{size};--bg-pos:{pos};--top-a:{top};{toprgb}--bot-a:{bot};--glass-a:{glass};--under-a:{under};--chip-under:{chip};--hl-w:{hlw};--hl-s:{hls}px}}
 </style>
 </head>
 <body>
@@ -87,8 +87,8 @@ TPL = '''<!doctype html>
 for o in OPTS:
     inc = '\n'.join(f'  <div class="abs inc" style="left:{x}px">{ICONS[k]}{a}<br>{b}</div>' for x, k, a, b in INC)
     html = TPL.format(L=o['letter'].upper(), subject=o['subject'], photo=o['photo'], size=o.get('size', 'cover'), pos=o.get('pos', '50% 50%'),
-                      top=o.get('top', .62), bot=o.get('bot', 1), glass=o.get('glass', .2), under=o.get('under', .5), chip=o.get('chip', .25), hlw=HL[0], hls=HL[1], sar=SAR, group=GROUP, inc=inc,
+                      top=o.get('top', .62), toprgb=o.get('toprgb',''), bot=o.get('bot', 1), glass=o.get('glass', .2), under=o.get('under', .5), chip=o.get('chip', .25), hlw=HL[0], hls=HL[1], sar=SAR, group=GROUP, inc=inc,
                       star_r=STAR.format(c='r'), star_l=STAR.format(c='l'))
-    p = os.path.join(OUT, f"imagine-more_alula-trip-story_option-{o['letter']}_ar_v02.html")
+    p = os.path.join(OUT, f"imagine-more_alula-trip-story_option-{o['letter']}_ar_v03.html")
     open(p, 'w', encoding='utf8').write(html)
     print('wrote', p)

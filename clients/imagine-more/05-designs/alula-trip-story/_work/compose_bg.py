@@ -3,7 +3,7 @@
 If the photo does not reach the top, the sky is continued upward from the photo's own top rows
 (colour trend extrapolated, slight grain). If it does not reach the bottom, the ground fades into
 the footer brown (that area sits under the dark footer gradient anyway)."""
-import sys, numpy as np
+import os, sys, numpy as np
 from PIL import Image, ImageFilter
 src, out, w, x, y = sys.argv[1], sys.argv[2], int(sys.argv[3]), int(sys.argv[4]), int(sys.argv[5])
 im = Image.open(src).convert('RGB')
@@ -21,6 +21,8 @@ if y > 0:  # extend sky upward
     band = crop[:60]
     top = band[:12].mean(axis=0)                    # per-column colour at the top edge
     top = np.asarray(Image.fromarray(top[None].astype('uint8')).resize((W, 1)).filter(ImageFilter.GaussianBlur(40))).astype(float)[0]
+    if os.environ.get('FLAT_SKY'):  # sky colour taken as the median across the width (used when a building edge touches the top rows)
+        top = np.tile(np.median(top, axis=0), (W, 1))
     slope = (band[:12].mean(axis=(0, 1)) - band[48:60].mean(axis=(0, 1))) / 42.0   # colour change per px going up
     slope = np.clip(slope, -0.06, 0.06)
     for r in range(y):

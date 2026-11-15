@@ -1,32 +1,33 @@
 [
  {
   "letter": "a",
-  "subject": "Elephant Rock (Jabal AlFil), AlUla",
-  "photo": "imagine-more_alula-trip-story_bg-a.jpg",
-  "top": 0.5,
-  "bot": 1,
+  "subject": "Maraya (mirrored concert hall), Ashar Valley, AlUla",
+  "photo": "imagine-more_alula-trip-story_bg-d_maraya_v03.jpg",
+  "top": 0.45,
+  "bot": 1.1,
   "glass": 0.1,
-  "under": 0.62,
-  "chip": 0.22
+  "under": 0.55,
+  "chip": 0.25
  },
  {
   "letter": "b",
-  "subject": "Hegra (Mada'in Salih), Qasr al-Bint necropolis, Tomb 21",
-  "photo": "imagine-more_alula-trip-story_bg-b.jpg",
-  "top": 0.3,
-  "bot": 1.45,
+  "subject": "Hot-air balloon over the AlUla rock formations at golden hour",
+  "photo": "imagine-more_alula-trip-story_bg-e_balloon_v03.jpg",
+  "top": 0.55,
+  "bot": 1.2,
   "glass": 0.1,
-  "under": 0.48,
-  "chip": 0.12
+  "under": 0.5,
+  "chip": 0.3
  },
  {
   "letter": "c",
-  "subject": "AlUla Old Town, mud-brick houses under the sandstone cliffs",
-  "photo": "imagine-more_alula-trip-story_bg-c.jpg",
-  "top": 0.68,
-  "bot": 1.2,
+  "subject": "Sunset seen from a cave, AlUla",
+  "photo": "imagine-more_alula-trip-story_bg-f_cave-sunset_v03.jpg",
+  "top": 0.82,
+  "bot": 1.0,
   "glass": 0.1,
-  "under": 0.42,
-  "chip": 0.36
+  "under": 0.45,
+  "chip": 0.5,
+  "toprgb": "--top1:24,13,8;--top2:26,14,9;--top3:30,16,10;"
  }
 ]

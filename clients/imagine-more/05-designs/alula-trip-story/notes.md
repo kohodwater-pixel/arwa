@@ -1,12 +1,12 @@
-# AlUla trip story — notes (v02)
+# AlUla trip story — notes (v03)
 
 **What:** the client's existing 9:16 story rebuilt at 1080×1920 px, sRGB PNG, in three options that differ only in the background photo. Client picks one.
 
 | Option | Background | Files |
 |---|---|---|
-| A | Elephant Rock (Jabal AlFil) | `imagine-more_alula-trip-story_option-a_ar_v02.png` / `.html` |
-| B | Hegra, Qasr al-Bint necropolis, Tomb 21 | `imagine-more_alula-trip-story_option-b_ar_v02.png` / `.html` |
-| C | AlUla Old Town under the cliffs | `imagine-more_alula-trip-story_option-c_ar_v02.png` / `.html` |
+| A | Maraya with the Ashar valley cliffs | `imagine-more_alula-trip-story_option-a_ar_v03.png` / `.html` |
+| B | Hot-air balloon over the AlUla rock field, golden hour | `imagine-more_alula-trip-story_option-b_ar_v03.png` / `.html` |
+| C | Sunburst seen from inside a cave, AlUla | `imagine-more_alula-trip-story_option-c_ar_v03.png` / `.html` |
 
 Shared source: `story.css`, `assets/` (fonts, lifted logos and footer icons, photos). Photo licences: `photo-credits.md`.
 
@@ -36,3 +36,13 @@ Shared source: `story.css`, `assets/` (fonts, lifted logos and footer icons, pho
 - Breakfast icon redrawn after zooming on the reference: solid cup with handle and three steam lines, croissant in front.
 - Headline weight: 500 and 600 were compared against a reference crop at the same scale; 600 is closer in stroke thickness and keeps the width match, so it stays.
 - PNGs carry an embedded sRGB ICC profile.
+
+**v03 (client rejected the v02 photos on 2026-11-14; v02 is in `_archive/`):**
+- Only the backgrounds and their overlays changed. Layout, copy, logos, dates, prices and panels are as v02.
+- New photos chosen for depth after reviewing 247 Commons candidates (`_work/contact_v03_*.jpg`, shortlist `_work/shortlist_v03.jpg`, Maraya set `_work/maraya_options.jpg`). Details and licences in `photo-credits.md`.
+- Photos are colour-graded (`_work/grade.py`); the top gradient colour is now configurable per option (dark brown on C). Settings in `_work/options.json`; v02 settings kept in `_work/options_v02.json`.
+- Measured contrast, median (worst 5%), from `_work/contrast_v03.txt`:
+  - A: headline 6.0 (5.6), sub 5.2 (4.9), chips 4.8–4.9 (4.5), price label 10.5 (6.9), 299 10.5 (5.3), 320 6.4 (5.2), group note 10.1 (5.8), include tag 11.7, include labels 13.4 (11.9), phone 18.6
+  - B: headline 7.0 (6.3), sub 6.1 (5.4), chips 5.3–5.6 (5.0), price label 8.8 (8.2), 299 8.1 (7.3), 320 7.8 (7.7), group note 7.9 (7.6), include tag 12.1, include labels 16.2 (10.1), phone 18.9
+  - C: headline 19.2 (7.5), sub 19.2 (5.5), chips 13.7–14.0 (5.8), price label 12.5 (9.7), 299 8.9 (7.4), 320 9.8 (8.8), group note 14.5, include tag 13.5, include labels 18.1 (7.1), phone 19.1
+- Comparison with the client's mood reference: `_work/side-by-side_mood-reference-vs-v03-abc.png`.

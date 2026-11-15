@@ -17,7 +17,7 @@ body{font-family:"Alexandria",sans-serif;color:#fff;-webkit-font-smoothing:antia
 /* background photo + treatment */
 .bg{position:absolute;inset:0;background-image:var(--photo);background-size:var(--bg-size,cover);background-position:var(--bg-pos,50% 50%);background-repeat:no-repeat}
 .shade-top{position:absolute;left:0;right:0;top:0;height:760px;
-  background:linear-gradient(180deg,rgba(28,54,76,var(--top-a,.62)) 0%,rgba(40,70,95,calc(var(--top-a,.62)*.72)) 38%,rgba(60,90,115,calc(var(--top-a,.62)*.3)) 72%,rgba(60,90,115,0) 100%)}
+  background:linear-gradient(180deg,rgba(var(--top1,28,54,76),var(--top-a,.62)) 0%,rgba(var(--top2,40,70,95),calc(var(--top-a,.62)*.72)) 38%,rgba(var(--top3,60,90,115),calc(var(--top-a,.62)*.3)) 72%,rgba(var(--top3,60,90,115),0) 100%)}
 .shade-bottom{position:absolute;left:0;right:0;bottom:0;height:1000px;
   background:linear-gradient(180deg,rgba(30,16,10,0) 0%,rgba(30,16,10,calc(var(--bot-a,1)*.2)) 22%,rgba(29,15,9,calc(var(--bot-a,1)*.42)) 40%,rgba(28,15,9,calc(var(--bot-a,1)*.6)) 54%,rgba(26,14,9,.8) 66%,rgba(24,13,8,.93) 78%,rgba(23,12,7,.985) 90%,#170c07 100%)}
 
