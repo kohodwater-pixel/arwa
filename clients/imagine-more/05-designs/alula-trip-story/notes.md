@@ -1,12 +1,12 @@
-# AlUla trip story — notes (v03)
+# AlUla trip story — notes (A/B/C v04, D/E/F v01)
 
 **What:** the client's existing 9:16 story rebuilt at 1080×1920 px, sRGB PNG, in three options that differ only in the background photo. Client picks one.
 
 | Option | Background | Files |
 |---|---|---|
-| A | Maraya with the Ashar valley cliffs | `imagine-more_alula-trip-story_option-a_ar_v03.png` / `.html` |
-| B | Hot-air balloon over the AlUla rock field, golden hour | `imagine-more_alula-trip-story_option-b_ar_v03.png` / `.html` |
-| C | Sunburst seen from inside a cave, AlUla | `imagine-more_alula-trip-story_option-c_ar_v03.png` / `.html` |
+| A | Maraya with the Ashar valley cliffs | `imagine-more_alula-trip-story_option-a_ar_v04.png` / `.html` |
+| B | Hot-air balloon over the AlUla rock field, golden hour | `imagine-more_alula-trip-story_option-b_ar_v04.png` / `.html` |
+| C | Sunburst seen from inside a cave, AlUla | `imagine-more_alula-trip-story_option-c_ar_v04.png` / `.html` |
 
 Shared source: `story.css`, `assets/` (fonts, lifted logos and footer icons, photos). Photo licences: `photo-credits.md`.
 
@@ -46,3 +46,9 @@ Shared source: `story.css`, `assets/` (fonts, lifted logos and footer icons, pho
   - B: headline 7.0 (6.3), sub 6.1 (5.4), chips 5.3–5.6 (5.0), price label 8.8 (8.2), 299 8.1 (7.3), 320 7.8 (7.7), group note 7.9 (7.6), include tag 12.1, include labels 16.2 (10.1), phone 18.9
   - C: headline 19.2 (7.5), sub 19.2 (5.5), chips 13.7–14.0 (5.8), price label 12.5 (9.7), 299 8.9 (7.4), 320 9.8 (8.8), group note 14.5, include tag 13.5, include labels 18.1 (7.1), phone 19.1
 - Comparison with the client's mood reference: `_work/side-by-side_mood-reference-vs-v03-abc.png`.
+
+**2026-11-15 — copy change and three more options:**
+- Copy change from the client, all options: `وجبة عشاء لذيذة` became `وجبة غداء لذيذة` (lunch instead of dinner); same icon, same two-line break. A/B/C re-exported as v04 with only this change; v03 is in `_archive/`. Checked: `وجبة غداء` present and `عشاء` absent in all six HTML files; include row inspected in `_work/zoom_include-row_abcdef.png`. Note: `01-brief/brief.md` still lists the dinner wording under fixed content.
+- New options, first versions: D `imagine-more_alula-trip-story_option-d_ar_v01` (Elephant Rock at dusk with camel riders), E `..._option-e_ar_v01` (Qasr al-Farid at golden hour), F `..._option-f_ar_v01` (Sharaan rock field under sun rays). Same layout, copy, logos and panels. D uses a dark brown top gradient because the headline sits on red rock; E and F keep the blue one.
+- Candidates reviewed for this round: 357 more Commons thumbnails (`_work/contact_def_0..6.jpg`), shortlist `_work/shortlist_def.jpg`.
+- Contrast for all six: `_work/contrast_v04_def.txt`. Comparison with the mood reference and option B: `_work/side-by-side_mood-reference-vs-b-d-e-f.png`.

@@ -1,6 +1,6 @@
 # Photo credits — AlUla trip story
 
-## Current: v03 (options A, B, C)
+## Current: options A, B, C (photos chosen for v03; artwork now v04)
 
 All three photos come from Wikimedia Commons. Licence and author were read from each file's Commons page on 2026-11-14/15. Each was downloaded as a standard Commons thumbnail size (3840 px wide, scaled down for use, never upscaled) and saved unchanged as `*_source-*.jpg`; the `*_bg-*_v03.jpg` files are our graded 1080×1920 adaptations.
 
@@ -33,6 +33,39 @@ All three photos come from Wikimedia Commons. Licence and author were read from 
 - People: option A shows small, distant figures on the forecourt (one walking, back to camera; two at the right edge) and parked vehicles. They are not recognisable at this size but are present.
 - Subject check: A is Maraya with the Ashar valley cliffs reflected in its façade (Commons title, and the building is unmistakable). B and C are identified as AlUla by SPA's titles; B's rock field matches AlUla's formations. C's exact location inside AlUla is not stated.
 - Sources tried and not used: Unsplash pages (bot check, not bypassed), Commons API (429). 247 Commons candidates were reviewed on contact sheets (`_work/contact_v03_0..5.jpg`).
+
+## Current: options D, E, F (v01, added 2026-11-15)
+
+All three from Wikimedia Commons; licence and author read from each file page on 2026-11-15. Downloaded at 3840 px wide, scaled down for use, never upscaled. **All three are CC BY-SA 4.0: attribution required and share-alike.**
+
+| Option | File in `assets/photos/` | Title on Commons | Author | Source page | Licence |
+|---|---|---|---|---|---|
+| D | `alula_elephant-rock-dusk_spa_cc-by-sa-4-0_source-3840.jpg` → `imagine-more_alula-trip-story_bg-g_elephant-rock-dusk_v01.jpg` | Elephant rock, Al-'Ula (2024).jpg — dated 18 February 2025 on Commons, from the SPA "Saudi Photos" platform | Saudi Press Agency (SPA) | https://commons.wikimedia.org/wiki/File:Elephant_rock,_Al-%27Ula_(2024).jpg | CC BY-SA 4.0 |
+| E | `alula_hegra-qasr-al-farid-golden-hour_alhasanat_cc-by-sa-4-0_source-3840.jpg` → `imagine-more_alula-trip-story_bg-h_qasr-al-farid_v01.jpg` | Madain Saleh 2017 02.jpg — Qasr al-Farid, taken 16 February 2017, 17:38, own work | Ahmad AlHasanat | https://commons.wikimedia.org/wiki/File:Madain_Saleh_2017_02.jpg | CC BY-SA 4.0 |
+| F | `alula_sharaan-reserve_spa_cc-by-sa-4-0_source-3840.jpg` → `imagine-more_alula-trip-story_bg-i_sharaan_v01.jpg` | Geological Wonders of Sharaan Nature Reserve (2021).jpg — uploaded 28 April 2025, from the SPA "Saudi Photos" platform | Saudi Press Agency (SPA) | https://commons.wikimedia.org/wiki/File:Geological_Wonders_of_Sharaan_Nature_Reserve_(2021).jpg | CC BY-SA 4.0 |
+
+### Suggested credit lines (D, E, F)
+
+- D: Photo: Saudi Press Agency (SPA) / Wikimedia Commons, CC BY-SA 4.0 (cropped, colour-graded)
+- E: Photo: Ahmad AlHasanat / Wikimedia Commons, CC BY-SA 4.0 (cropped, sky extended, colour-graded)
+- F: Photo: Saudi Press Agency (SPA) / Wikimedia Commons, CC BY-SA 4.0 (cropped, colour-graded)
+
+### Changes made (D, E, F)
+
+- Cropped to 9:16 and scaled down. D keeps the arch, the two camel riders and the reflection; the right-hand outcrop is outside the crop. F is the left-centre part of the frame.
+- Sky extension: E only, 185 px at the top from the photo's own sky colour. D: the water at the bottom fades into the footer colour. F: none.
+- Colour grade as for A–C (contrast, warm highlights, deeper shadows, vignette); D is graded lightly because the source is already strongly processed.
+- No sky replacement, no added or removed objects, no AI generation and no compositing by us.
+
+### Notes and risks (D, E, F)
+
+- **D — source processing unknown.** The SPA photo's very smooth reflection and colour suggest heavy processing at source. We cannot tell from the file page how it was made; it is published by SPA as a photograph of Elephant Rock and we used it as supplied.
+- **D — people.** Two camel riders in mid-distance, small, faces not distinguishable.
+- **E** shows Qasr al-Farid, the same tomb as the client's original poster, in a different, wider golden-hour frame.
+- **F**: Sharaan is a nature reserve in AlUla; whether the trip visits it is not known to us. Confirm the post should show a place the itinerary may not include.
+- Share-alike on all three: same open question as for B and C. Not legal advice.
+- Maraya: no whole-building frame clearly better than option A exists on Commons (all ten are from one clear morning), so no second Maraya option was made.
+- Passed over: SPA "Summer Untold" (Qasr al-Farid with three balloons, one carrying the "AlUla" destination logo, and it looks composited at source); SPA night-sky frames (too dark); the full balloon frame (car-brand name on the largest balloon).
 
 ---
 

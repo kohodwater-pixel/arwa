@@ -7,7 +7,8 @@
   "bot": 1.1,
   "glass": 0.1,
   "under": 0.55,
-  "chip": 0.25
+  "chip": 0.25,
+  "ver": "v04"
  },
  {
   "letter": "b",
@@ -17,7 +18,8 @@
   "bot": 1.2,
   "glass": 0.1,
   "under": 0.5,
-  "chip": 0.3
+  "chip": 0.3,
+  "ver": "v04"
  },
  {
   "letter": "c",
@@ -28,6 +30,41 @@
   "glass": 0.1,
   "under": 0.45,
   "chip": 0.5,
-  "toprgb": "--top1:24,13,8;--top2:26,14,9;--top3:30,16,10;"
+  "toprgb": "--top1:24,13,8;--top2:26,14,9;--top3:30,16,10;",
+  "ver": "v04"
+ },
+ {
+  "letter": "d",
+  "ver": "v01",
+  "subject": "Elephant Rock (Jabal AlFil) at dusk with camel riders and reflection",
+  "photo": "imagine-more_alula-trip-story_bg-g_elephant-rock-dusk_v01.jpg",
+  "top": 0.8,
+  "toprgb": "--top1:30,14,10;--top2:34,16,11;--top3:40,18,12;",
+  "bot": 1.1,
+  "glass": 0.1,
+  "under": 0.55,
+  "chip": 0.5
+ },
+ {
+  "letter": "e",
+  "ver": "v01",
+  "subject": "Qasr al-Farid, Hegra, at golden hour",
+  "photo": "imagine-more_alula-trip-story_bg-h_qasr-al-farid_v01.jpg",
+  "top": 0.6,
+  "bot": 1.2,
+  "glass": 0.1,
+  "under": 0.55,
+  "chip": 0.42
+ },
+ {
+  "letter": "f",
+  "ver": "v01",
+  "subject": "Sharaan Nature Reserve rock formations under sun rays",
+  "photo": "imagine-more_alula-trip-story_bg-i_sharaan_v01.jpg",
+  "top": 0.88,
+  "bot": 1.1,
+  "glass": 0.1,
+  "under": 0.5,
+  "chip": 0.45
  }
 ]

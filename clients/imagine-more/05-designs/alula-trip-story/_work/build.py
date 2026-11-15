@@ -23,7 +23,7 @@ ICONS = {
 }
 GROUP = '<svg viewBox="0 0 50 30"><g fill="#fff"><circle cx="25" cy="6.5" r="6.5"/><circle cx="9.5" cy="10" r="4.8"/><circle cx="40.5" cy="10" r="4.8"/><path d="M12.5 30c0-8 5-13.5 12.5-13.500S37.5 22 37.5 30Z"/><path d="M0 30c0-6.5 3.8-11 9.5-11 1.6 0 3 .4 4.3 1-2.6 2.6-4 6-4.3 10Z"/><path d="M50 30c0-6.5-3.8-11-9.5-11-1.6 0-3 .4-4.3 1 2.6 2.6 4 6 4.3 10Z"/></g></svg>'
 
-INC = [(702, 'cup', 'ضيافة', 'على الرحلة'), (579, 'breakfast', 'وجبة إفطار', 'من هيبو'), (457, 'dinner', 'وجبة عشاء', 'لذيذة'), (334, 'bus', 'تنقلات', 'مريحة'), (212, 'ticket', 'رسوم الدخول', 'للمواقع')]
+INC = [(702, 'cup', 'ضيافة', 'على الرحلة'), (579, 'breakfast', 'وجبة إفطار', 'من هيبو'), (457, 'dinner', 'وجبة غداء', 'لذيذة'), (334, 'bus', 'تنقلات', 'مريحة'), (212, 'ticket', 'رسوم الدخول', 'للمواقع')]
 
 TPL = '''<!doctype html>
 <html lang="ar" dir="rtl">
@@ -89,6 +89,6 @@ for o in OPTS:
     html = TPL.format(L=o['letter'].upper(), subject=o['subject'], photo=o['photo'], size=o.get('size', 'cover'), pos=o.get('pos', '50% 50%'),
                       top=o.get('top', .62), toprgb=o.get('toprgb',''), bot=o.get('bot', 1), glass=o.get('glass', .2), under=o.get('under', .5), chip=o.get('chip', .25), hlw=HL[0], hls=HL[1], sar=SAR, group=GROUP, inc=inc,
                       star_r=STAR.format(c='r'), star_l=STAR.format(c='l'))
-    p = os.path.join(OUT, f"imagine-more_alula-trip-story_option-{o['letter']}_ar_v03.html")
+    p = os.path.join(OUT, f"imagine-more_alula-trip-story_option-{o['letter']}_ar_{o['ver']}.html")
     open(p, 'w', encoding='utf8').write(html)
     print('wrote', p)
