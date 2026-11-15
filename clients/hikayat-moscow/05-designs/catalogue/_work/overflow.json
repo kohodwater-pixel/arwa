@@ -1,0 +1,492 @@
+[
+ {
+  "page": 1,
+  "fill_mm": 0,
+  "info": true
+ },
+ {
+  "page": 2,
+  "issue": "content taller than frame",
+  "by_mm": 14.816666666666665
+ },
+ {
+  "page": 2,
+  "issue": "element outside content frame",
+  "tag": "DIV",
+  "cls": "intro",
+  "text": "قبل أن تبدأAbout this catalogueجميع الأس"
+ },
+ {
+  "page": 2,
+  "issue": "element outside content frame",
+  "tag": "DIV",
+  "cls": "grid2",
+  "text": "سعر الصرف وطريقة التحويلExchange rate1 S"
+ },
+ {
+  "page": 2,
+  "issue": "element outside content frame",
+  "tag": "DIV",
+  "cls": "",
+  "text": "سعر الصرف وطريقة التحويلExchange rate1 S"
+ },
+ {
+  "page": 2,
+  "issue": "element outside content frame",
+  "tag": "TABLE",
+  "cls": "legend",
+  "text": "تصنيف النجوم كما ورد في المصدر فقطفترة م"
+ },
+ {
+  "page": 2,
+  "issue": "element outside content frame",
+  "tag": "TBODY",
+  "cls": "",
+  "text": "تصنيف النجوم كما ورد في المصدر فقطفترة م"
+ },
+ {
+  "page": 2,
+  "issue": "element outside content frame",
+  "tag": "TR",
+  "cls": "",
+  "text": "غير مذكورمعلومة لم يذكرها المصدر"
+ },
+ {
+  "page": 2,
+  "issue": "element outside content frame",
+  "tag": "TD",
+  "cls": "",
+  "text": "غير مذكور"
+ },
+ {
+  "page": 2,
+  "issue": "element outside content frame",
+  "tag": "SPAN",
+  "cls": "ns",
+  "text": "غير مذكور"
+ },
+ {
+  "page": 2,
+  "issue": "element outside content frame",
+  "tag": "TD",
+  "cls": "",
+  "text": "معلومة لم يذكرها المصدر"
+ },
+ {
+  "page": 2,
+  "issue": "element outside content frame",
+  "tag": "DIV",
+  "cls": "",
+  "text": "فهرس الفنادقIndexموسكوMoscow01فندق سانت "
+ },
+ {
+  "page": 2,
+  "issue": "element outside content frame",
+  "tag": "DIV",
+  "cls": "idx",
+  "text": "موسكوMoscow01فندق سانت ريجيس موسكوThe St"
+ },
+ {
+  "page": 2,
+  "issue": "element outside content frame",
+  "tag": "DIV",
+  "cls": "row",
+  "text": "A7موسكو وسانت بطرسبرغ33"
+ },
+ {
+  "page": 2,
+  "issue": "element outside content frame",
+  "tag": "SPAN",
+  "cls": "n",
+  "text": "A7"
+ },
+ {
+  "page": 2,
+  "issue": "element outside content frame",
+  "tag": "SPAN",
+  "cls": "nm",
+  "text": "موسكو وسانت بطرسبرغ"
+ },
+ {
+  "page": 2,
+  "issue": "element outside content frame",
+  "tag": "SPAN",
+  "cls": "pg",
+  "text": "33"
+ },
+ {
+  "page": 2,
+  "issue": "element outside content frame",
+  "tag": "DIV",
+  "cls": "row",
+  "text": "Nملاحظات للتأكيد والشروط العامة34"
+ },
+ {
+  "page": 2,
+  "issue": "element outside content frame",
+  "tag": "SPAN",
+  "cls": "n",
+  "text": "N"
+ },
+ {
+  "page": 2,
+  "issue": "element outside content frame",
+  "tag": "SPAN",
+  "cls": "nm",
+  "text": "ملاحظات للتأكيد والشروط العامة"
+ },
+ {
+  "page": 2,
+  "issue": "element outside content frame",
+  "tag": "SPAN",
+  "cls": "pg",
+  "text": "34"
+ },
+ {
+  "page": 2,
+  "fill_mm": 265.93932291666664,
+  "info": true
+ },
+ {
+  "page": 3,
+  "issue": "content taller than frame",
+  "by_mm": 29.36875
+ },
+ {
+  "page": 3,
+  "issue": "element outside content frame",
+  "tag": "DIV",
+  "cls": "lst",
+  "text": "فندق سانت ريجيس موسكوThe St. Regis Mosco"
+ },
+ {
+  "page": 3,
+  "issue": "element outside content frame",
+  "tag": "DIV",
+  "cls": "row",
+  "text": "فندق ناشيونال موسكوHotel National Moscow"
+ },
+ {
+  "page": 3,
+  "issue": "element outside content frame",
+  "tag": "SPAN",
+  "cls": "",
+  "text": "فندق ناشيونال موسكو"
+ },
+ {
+  "page": 3,
+  "issue": "element outside content frame",
+  "tag": "BDI",
+  "cls": "",
+  "text": "Hotel National Moscow"
+ },
+ {
+  "page": 3,
+  "issue": "element outside content frame",
+  "tag": "SPAN",
+  "cls": "pg",
+  "text": "16"
+ },
+ {
+  "page": 3,
+  "issue": "element outside content frame",
+  "tag": "DIV",
+  "cls": "row",
+  "text": "فندق بروسكوBrosko Hotels Group20"
+ },
+ {
+  "page": 3,
+  "issue": "element outside content frame",
+  "tag": "SPAN",
+  "cls": "",
+  "text": "فندق بروسكو"
+ },
+ {
+  "page": 3,
+  "issue": "element outside content frame",
+  "tag": "BDI",
+  "cls": "",
+  "text": "Brosko Hotels Group"
+ },
+ {
+  "page": 3,
+  "issue": "element outside content frame",
+  "tag": "SPAN",
+  "cls": "pg",
+  "text": "20"
+ },
+ {
+  "page": 3,
+  "issue": "element outside content frame",
+  "tag": "P",
+  "cls": "",
+  "text": "9 فنادق في هذا القسم، بترتيب ورودها في ا"
+ },
+ {
+  "page": 3,
+  "fill_mm": 286.23369140625,
+  "info": true
+ },
+ {
+  "page": 4,
+  "fill_mm": 171.04485677083332,
+  "info": true
+ },
+ {
+  "page": 5,
+  "fill_mm": 234.13144531249998,
+  "info": true
+ },
+ {
+  "page": 6,
+  "fill_mm": 147.0339192708333,
+  "info": true
+ },
+ {
+  "page": 7,
+  "fill_mm": 193.77835286458333,
+  "info": true
+ },
+ {
+  "page": 8,
+  "fill_mm": 193.77835286458333,
+  "info": true
+ },
+ {
+  "page": 9,
+  "fill_mm": 193.77835286458333,
+  "info": true
+ },
+ {
+  "page": 10,
+  "fill_mm": 227.10345052083332,
+  "info": true
+ },
+ {
+  "page": 11,
+  "fill_mm": 194.5597005208333,
+  "info": true
+ },
+ {
+  "page": 12,
+  "fill_mm": 145.99625651041666,
+  "info": true
+ },
+ {
+  "page": 13,
+  "fill_mm": 219.72819010416666,
+  "info": true
+ },
+ {
+  "page": 14,
+  "fill_mm": 114.77542317708333,
+  "info": true
+ },
+ {
+  "page": 15,
+  "fill_mm": 183.38105468749998,
+  "info": true
+ },
+ {
+  "page": 16,
+  "fill_mm": 166.31129557291666,
+  "info": true
+ },
+ {
+  "page": 17,
+  "fill_mm": 170.07747395833331,
+  "info": true
+ },
+ {
+  "page": 18,
+  "fill_mm": 170.07747395833331,
+  "info": true
+ },
+ {
+  "page": 19,
+  "fill_mm": 170.07747395833331,
+  "info": true
+ },
+ {
+  "page": 20,
+  "fill_mm": 151.90390624999998,
+  "info": true
+ },
+ {
+  "page": 21,
+  "fill_mm": 130.57600911458331,
+  "info": true
+ },
+ {
+  "page": 22,
+  "fill_mm": 215.30468749999997,
+  "info": true
+ },
+ {
+  "page": 23,
+  "fill_mm": 196.9781575520833,
+  "info": true
+ },
+ {
+  "page": 24,
+  "fill_mm": 223.22978515625,
+  "info": true
+ },
+ {
+  "page": 25,
+  "fill_mm": 164.94703776041666,
+  "info": true
+ },
+ {
+  "page": 26,
+  "fill_mm": 158.00172526041666,
+  "info": true
+ },
+ {
+  "page": 27,
+  "fill_mm": 85.31572265624999,
+  "info": true
+ },
+ {
+  "page": 28,
+  "issue": "element outside content frame",
+  "tag": "BDI",
+  "cls": "sar",
+  "text": "1,028.04 SAR"
+ },
+ {
+  "page": 28,
+  "issue": "cell text wider than cell",
+  "text": "1,074.77 SAR"
+ },
+ {
+  "page": 28,
+  "issue": "cell text wider than cell",
+  "text": "1,028.04 SAR"
+ },
+ {
+  "page": 28,
+  "fill_mm": 241.57698567708331,
+  "info": true
+ },
+ {
+  "page": 29,
+  "fill_mm": 177.06826171875,
+  "info": true
+ },
+ {
+  "page": 30,
+  "issue": "cell text wider than cell",
+  "text": "1,495.33 SAR"
+ },
+ {
+  "page": 30,
+  "fill_mm": 169.65166015625,
+  "info": true
+ },
+ {
+  "page": 31,
+  "issue": "cell text wider than cell",
+  "text": "20,000 RUB"
+ },
+ {
+  "page": 31,
+  "issue": "cell text wider than cell",
+  "text": "934.58 SAR"
+ },
+ {
+  "page": 31,
+  "issue": "cell text wider than cell",
+  "text": "20,000 RUB"
+ },
+ {
+  "page": 31,
+  "issue": "cell text wider than cell",
+  "text": "934.58 SAR"
+ },
+ {
+  "page": 31,
+  "issue": "cell text wider than cell",
+  "text": "47,000 RUB"
+ },
+ {
+  "page": 31,
+  "issue": "cell text wider than cell",
+  "text": "2,196.26 SAR"
+ },
+ {
+  "page": 31,
+  "issue": "cell text wider than cell",
+  "text": "25,000 RUB"
+ },
+ {
+  "page": 31,
+  "issue": "cell text wider than cell",
+  "text": "1,168.22 SAR"
+ },
+ {
+  "page": 31,
+  "issue": "cell text wider than cell",
+  "text": "35,500 RUB"
+ },
+ {
+  "page": 31,
+  "issue": "cell text wider than cell",
+  "text": "1,658.88 SAR"
+ },
+ {
+  "page": 31,
+  "issue": "cell text wider than cell",
+  "text": "15,800 RUB"
+ },
+ {
+  "page": 31,
+  "issue": "cell text wider than cell",
+  "text": "738.32 SAR"
+ },
+ {
+  "page": 31,
+  "issue": "cell text wider than cell",
+  "text": "20,800 RUB"
+ },
+ {
+  "page": 31,
+  "issue": "cell text wider than cell",
+  "text": "54,300 RUB"
+ },
+ {
+  "page": 31,
+  "issue": "cell text wider than cell",
+  "text": "2,537.38 SAR"
+ },
+ {
+  "page": 31,
+  "fill_mm": 220.58808593749998,
+  "info": true
+ },
+ {
+  "page": 32,
+  "fill_mm": 143.26774088541666,
+  "info": true
+ },
+ {
+  "page": 33,
+  "fill_mm": 175.23684895833333,
+  "info": true
+ },
+ {
+  "page": 34,
+  "fill_mm": 233.63121744791664,
+  "info": true
+ },
+ {
+  "page": 35,
+  "fill_mm": 225.72265624999997,
+  "info": true
+ },
+ {
+  "page": 36,
+  "fill_mm": 114.15530598958333,
+  "info": true
+ }
+]

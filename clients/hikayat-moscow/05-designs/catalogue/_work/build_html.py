@@ -14,7 +14,7 @@ VERSION = sys.argv[1] if len(sys.argv) > 1 else "v01"
 OUT_HTML = ROOT / f"hikayat-moscow_russia-hotel-collection_catalogue_ar-en_{VERSION}.html"
 D = L.DATA
 M = D["meta"]
-CONTENT_H = 251.0   # mm available inside .content
+CONTENT_H = 249.0   # mm available inside .content
 GAP = 6.5           # mm between blocks
 
 PHOTOS = {
@@ -430,7 +430,8 @@ plan.append({"kind": "intro"})
 for city in L.CITY_ORDER:
     plan.append({"kind": "opener", "city": city})
     for h in L.hotels(city):
-        seq = [(f"hh:{h['id']}", True)] + [(f"pt:{h['id']}:{p['key']}", False) for p in h["periods"]] + [(f"ex:{h['id']}", False), (f"bn:{h['id']}", False)]
+        # master order for every hotel: header -> booking notes -> extras -> one table per period
+        seq = [(f"hh:{h['id']}", False), (f"bn:{h['id']}", False), (f"ex:{h['id']}", False)] + [(f"pt:{h['id']}:{p['key']}", False) for p in h["periods"]]
         for pg in pack(seq, cont_id=f"hc:{h['id']}"):
             plan.append({"kind": "flow", "blocks": pg, "hotel": h["id"], "city": city})
 for a in ANA:

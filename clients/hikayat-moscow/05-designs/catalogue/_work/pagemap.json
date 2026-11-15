@@ -15,18 +15,18 @@
  "analysis": {
   "economy": 25,
   "five_star": 26,
-  "lowest": 27,
-  "double_bf": 28,
-  "suites": 30,
-  "extra_bed": 31,
-  "cities": 32
+  "lowest": 28,
+  "double_bf": 29,
+  "suites": 31,
+  "extra_bed": 32,
+  "cities": 33
  },
  "openers": {
   "moscow": 3,
   "spb": 22
  },
- "notes": 33,
- "total": 35,
+ "notes": 34,
+ "total": 36,
  "plan": [
   {
    "kind": "cover",
@@ -45,9 +45,9 @@
    "kind": "flow",
    "blocks": [
     "hh:st-regis",
-    "pt:st-regis:p1",
+    "bn:st-regis",
     "ex:st-regis",
-    "bn:st-regis"
+    "pt:st-regis:p1"
    ],
    "hotel": "st-regis",
    "city": "moscow",
@@ -57,9 +57,9 @@
    "kind": "flow",
    "blocks": [
     "hh:garden-plaza",
-    "pt:garden-plaza:p1",
+    "bn:garden-plaza",
     "ex:garden-plaza",
-    "bn:garden-plaza"
+    "pt:garden-plaza:p1"
    ],
    "hotel": "garden-plaza",
    "city": "moscow",
@@ -69,7 +69,8 @@
    "kind": "flow",
    "blocks": [
     "hh:ararat-park",
-    "pt:ararat-park:autumn"
+    "bn:ararat-park",
+    "ex:ararat-park"
    ],
    "hotel": "ararat-park",
    "city": "moscow",
@@ -79,7 +80,7 @@
    "kind": "flow",
    "blocks": [
     "hc:ararat-park",
-    "pt:ararat-park:seasonal"
+    "pt:ararat-park:autumn"
    ],
    "hotel": "ararat-park",
    "city": "moscow",
@@ -89,8 +90,7 @@
    "kind": "flow",
    "blocks": [
     "hc:ararat-park",
-    "pt:ararat-park:winter",
-    "ex:ararat-park"
+    "pt:ararat-park:seasonal"
    ],
    "hotel": "ararat-park",
    "city": "moscow",
@@ -100,7 +100,7 @@
    "kind": "flow",
    "blocks": [
     "hc:ararat-park",
-    "bn:ararat-park"
+    "pt:ararat-park:winter"
    ],
    "hotel": "ararat-park",
    "city": "moscow",
@@ -110,10 +110,10 @@
    "kind": "flow",
    "blocks": [
     "hh:cosmos-arbat",
-    "pt:cosmos-arbat:nov",
-    "pt:cosmos-arbat:dec",
+    "bn:cosmos-arbat",
     "ex:cosmos-arbat",
-    "bn:cosmos-arbat"
+    "pt:cosmos-arbat:nov",
+    "pt:cosmos-arbat:dec"
    ],
    "hotel": "cosmos-arbat",
    "city": "moscow",
@@ -123,10 +123,10 @@
    "kind": "flow",
    "blocks": [
     "hh:intercontinental",
-    "pt:intercontinental:nov",
-    "pt:intercontinental:dec",
+    "bn:intercontinental",
     "ex:intercontinental",
-    "bn:intercontinental"
+    "pt:intercontinental:nov",
+    "pt:intercontinental:dec"
    ],
    "hotel": "intercontinental",
    "city": "moscow",
@@ -136,7 +136,8 @@
    "kind": "flow",
    "blocks": [
     "hh:marriott-royal-aurora",
-    "pt:marriott-royal-aurora:p1"
+    "bn:marriott-royal-aurora",
+    "ex:marriott-royal-aurora"
    ],
    "hotel": "marriott-royal-aurora",
    "city": "moscow",
@@ -146,8 +147,8 @@
    "kind": "flow",
    "blocks": [
     "hc:marriott-royal-aurora",
-    "pt:marriott-royal-aurora:p2",
-    "pt:marriott-royal-aurora:p3"
+    "pt:marriott-royal-aurora:p1",
+    "pt:marriott-royal-aurora:p2"
    ],
    "hotel": "marriott-royal-aurora",
    "city": "moscow",
@@ -157,8 +158,7 @@
    "kind": "flow",
    "blocks": [
     "hc:marriott-royal-aurora",
-    "ex:marriott-royal-aurora",
-    "bn:marriott-royal-aurora"
+    "pt:marriott-royal-aurora:p3"
    ],
    "hotel": "marriott-royal-aurora",
    "city": "moscow",
@@ -168,9 +168,9 @@
    "kind": "flow",
    "blocks": [
     "hh:safmar-grand",
-    "pt:safmar-grand:p1",
+    "bn:safmar-grand",
     "ex:safmar-grand",
-    "bn:safmar-grand"
+    "pt:safmar-grand:p1"
    ],
    "hotel": "safmar-grand",
    "city": "moscow",
@@ -180,7 +180,8 @@
    "kind": "flow",
    "blocks": [
     "hh:national",
-    "pt:national:p1"
+    "bn:national",
+    "ex:national"
    ],
    "hotel": "national",
    "city": "moscow",
@@ -190,7 +191,7 @@
    "kind": "flow",
    "blocks": [
     "hc:national",
-    "pt:national:p2"
+    "pt:national:p1"
    ],
    "hotel": "national",
    "city": "moscow",
@@ -200,8 +201,7 @@
    "kind": "flow",
    "blocks": [
     "hc:national",
-    "pt:national:p3",
-    "ex:national"
+    "pt:national:p2"
    ],
    "hotel": "national",
    "city": "moscow",
@@ -211,7 +211,7 @@
    "kind": "flow",
    "blocks": [
     "hc:national",
-    "bn:national"
+    "pt:national:p3"
    ],
    "hotel": "national",
    "city": "moscow",
@@ -221,7 +221,7 @@
    "kind": "flow",
    "blocks": [
     "hh:brosko",
-    "pt:brosko:p1",
+    "bn:brosko",
     "ex:brosko"
    ],
    "hotel": "brosko",
@@ -232,7 +232,7 @@
    "kind": "flow",
    "blocks": [
     "hc:brosko",
-    "bn:brosko"
+    "pt:brosko:p1"
    ],
    "hotel": "brosko",
    "city": "moscow",
@@ -247,9 +247,9 @@
    "kind": "flow",
    "blocks": [
     "hh:cosmos-royal-nevsky",
-    "pt:cosmos-royal-nevsky:p1",
+    "bn:cosmos-royal-nevsky",
     "ex:cosmos-royal-nevsky",
-    "bn:cosmos-royal-nevsky"
+    "pt:cosmos-royal-nevsky:p1"
    ],
    "hotel": "cosmos-royal-nevsky",
    "city": "spb",
@@ -259,10 +259,10 @@
    "kind": "flow",
    "blocks": [
     "hh:corinthia",
-    "pt:corinthia:p1",
-    "pt:corinthia:p2",
+    "bn:corinthia",
     "ex:corinthia",
-    "bn:corinthia"
+    "pt:corinthia:p1",
+    "pt:corinthia:p2"
    ],
    "hotel": "corinthia",
    "city": "spb",
@@ -281,11 +281,18 @@
    "kind": "flow",
    "blocks": [
     "ah:five_star",
-    "at:five_star:0",
-    "at:five_star:1"
+    "at:five_star:0"
    ],
    "analysis": "five_star",
    "pn": 26
+  },
+  {
+   "kind": "flow",
+   "blocks": [
+    "at:five_star:1"
+   ],
+   "analysis": "five_star",
+   "pn": 27
   },
   {
    "kind": "flow",
@@ -294,7 +301,7 @@
     "at:lowest:0"
    ],
    "analysis": "lowest",
-   "pn": 27
+   "pn": 28
   },
   {
    "kind": "flow",
@@ -303,7 +310,7 @@
     "at:double_bf:0"
    ],
    "analysis": "double_bf",
-   "pn": 28
+   "pn": 29
   },
   {
    "kind": "flow",
@@ -312,7 +319,7 @@
     "at:double_bf:2"
    ],
    "analysis": "double_bf",
-   "pn": 29
+   "pn": 30
   },
   {
    "kind": "flow",
@@ -321,7 +328,7 @@
     "at:suites:0"
    ],
    "analysis": "suites",
-   "pn": 30
+   "pn": 31
   },
   {
    "kind": "flow",
@@ -330,7 +337,7 @@
     "at:extra_bed:0"
    ],
    "analysis": "extra_bed",
-   "pn": 31
+   "pn": 32
   },
   {
    "kind": "flow",
@@ -340,7 +347,7 @@
     "at:cities:1"
    ],
    "analysis": "cities",
-   "pn": 32
+   "pn": 33
   },
   {
    "kind": "flow",
@@ -356,7 +363,7 @@
     "nt:A08"
    ],
    "notes": true,
-   "pn": 33
+   "pn": 34
   },
   {
    "kind": "flow",
@@ -374,7 +381,7 @@
     "nt:A19"
    ],
    "notes": true,
-   "pn": 34
+   "pn": 35
   },
   {
    "kind": "flow",
@@ -383,7 +390,7 @@
     "cr"
    ],
    "notes": true,
-   "pn": 35
+   "pn": 36
   }
  ]
 }
