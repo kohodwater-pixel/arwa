@@ -846,13 +846,7 @@ h2.st{display:block;width:100%}
 .crow>.en,.crow>.ar{width:60mm}
 .cv{font-weight:500;font-size:16pt;color:#fff;text-align:center}
 .ca{font-size:9.5pt;line-height:1.6;margin-top:1mm} .ar .ca{font-size:11pt;line-height:1.8}
-/* back cover credits: M1 — grey on white 7.6:1; English 7 pt, Arabic 8.5 pt */
-.credit{color:var(--grey)}
-.en.credit{font-size:7pt;line-height:1.5} .ar.credit{font-size:8.5pt;line-height:1.75}
-.credit p+p{margin-top:1.2mm}
 .bkl .cv-f,.bkl .cv-fa{color:#fff !important}
-.back .en.credit{font-size:6.8pt;line-height:1.38;color:#5F6573} .back .ar.credit{font-size:8pt;line-height:1.6}
-.credit b{font-weight:600;color:var(--navy)}
 '''
 
 def build():
