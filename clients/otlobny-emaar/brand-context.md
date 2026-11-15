@@ -128,3 +128,5 @@
 - 2026-11-15 — Profile v15 built and sent: cover back to the v13 arrangement; blue overlay (70%) on the two side photo diamonds only, hero in full colour; frames reduced to two photo and two brand-colour diamonds. Everything else as v14.
 
 - 2026-11-15 — CLIENT FEEDBACK on v15: General Contracting page — the unclear photos are replaced with the two images he sent (helmet and plans; engineer in vest at site).
+
+- 2026-11-15 — Profile v16 built and sent: client's two contracting images on p7 (old stock photos removed from the page); cover side-image blue overlay darkened to navy at 86% at the client's request. Everything else as v15.
