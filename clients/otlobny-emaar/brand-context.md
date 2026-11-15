@@ -122,3 +122,5 @@
 - 2026-11-15 — CLIENT FEEDBACK on v13: (1) Manpower Supply page: his hospitality-waiter image replaces the tea-pouring photo. (2) Cover: put a light blue tint over the images, and use fewer frames — "two and two on the sides" (Creative Director reading: the hero plus two small frames on each side, the extra empty/brand diamonds reduced).
 
 - 2026-11-15 — Profile v14 built and sent to the client: waiter image leads the Manpower page (tea-pouring photo removed); cover simplified to a centred hero with two small frames each side (window cleaner, landscaping; navy and royal diamonds) and an 18% brand-blue tint on the photos. Alternative cover trials kept in `06-profiles/_work/v14/`. Checked by the Creative Director on pp1 and 11 and by the maker's automated checks.
+
+- 2026-11-15 — CLIENT FEEDBACK on v14 cover: rejected the new centred arrangement ("why did you invent a new shape"). He wants the SAME arrangement as before (v13: large hero diamond bleeding off the right, small diamonds at its left), with a blue overlay on the SIDE (small) images, and fewer frames. The Creative Director misread "two and two on the sides" in v14; corrected for v15.
