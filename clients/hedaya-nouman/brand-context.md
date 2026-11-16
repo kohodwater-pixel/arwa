@@ -62,6 +62,7 @@
 | 2026-11-16 | Hospital title kept as أخصائية خدمة عملاء with scope «الخدمات الفندقية وخدمات الغرف»; end date December 2026 as instructed; official title still to confirm | Client (answers in chat) |
 | 2026-11-16 | No figures printed: client gave none. No hotel employment or hotel systems claimed in the hospitality model | Creative Director |
 | 2026-11-16 | Template made more decorative but ATS-safe (paragraph shading and borders only) at the client's request | Client |
+| 2026-11-16 | Client approved the hospitality Executive CV (Arabic and English, v02) and asked for Word versions of it. Files keep `v02` naming; lines-to-confirm list still open | Client (in chat) |
 
 ## 7. Deliveries
 
