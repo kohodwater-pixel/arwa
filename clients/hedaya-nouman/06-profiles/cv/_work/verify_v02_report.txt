@@ -1,0 +1,173 @@
+PASS  hedaya-nouman_cv_customer-service-ats_ar_v02.pdf
+      [ok] pages = 2 (max 2)
+      [ok] page 2 starts with a section heading and its content (التعليم)
+      [ok] fonts embedded, intended only: Tajawal-Bold, Tajawal-Medium, Tajawal-Regular
+      [ok] pdftotext plain: complete text, logical reading order (band included)
+      [ok] pdftotext -layout: complete text, logical reading order
+      [ok] section headings intact
+      [ok] email extractable
+      [ok] phone extractable
+      [ok] email is a mailto link
+      [ok] no replacement/garbage characters
+      [ok] no withdrawn or forbidden wording
+PASS  hedaya-nouman_cv_customer-service-ats_ar_v02.docx
+      [ok] python-docx re-read equals the expected lines exactly, same order
+      [ok] no tables / images / text boxes / shapes / columns
+      [ok] header and footer empty
+      [ok] heading styles: 1 x Heading 1 (name), 8 x Heading 2 (sections), 3 x Heading 3 (roles)
+      [ok] real bullet lists (List Bullet style)
+      [ok] section headings match
+      [ok] header band = paragraph shading on the first 4 paragraphs only (name, title, contact)
+      [ok] section rules = paragraph bottom border on the 8 section headings
+      [ok] email and phone present
+      [ok] no bidi control characters anywhere (no U+200E)
+      [ok] font named in every run: Arial (ascii, hAnsi, cs)
+      [ok] core properties: author = name, title set, description empty, created 2026-11-16
+      [ok] every paragraph has w:bidi
+      [ok] every run with Arabic letters has w:rtl
+      [ok] no explicit w:jc (start edge = right in a bidi paragraph)
+      [ok] section is bidi
+      [ok] page break before: التعليم
+      [ok] no withdrawn or forbidden wording
+PASS    (LibreOffice render of the DOCX) hedaya-nouman_cv_customer-service-ats_ar_v02.pdf
+      [ok] LibreOffice opens it, pages = 2
+      [ok] LibreOffice render: same word sequence as expected
+      [ok] LibreOffice render: phone reads +966 54 093 0121
+PASS  hedaya-nouman_cv_customer-service-executive_ar_v02.pdf
+      [ok] pages = 1
+      [ok] fonts embedded, intended only: Tajawal-Bold, Tajawal-Medium, Tajawal-Regular
+      [ok] pdftotext by zone (band, side, main): every phrase of the ATS content extractable (85/85)
+      [ok] nothing clipped or added: word count = content + Contact heading + location caption
+      [ok] lowest text at 284 mm of 297 (bottom margin kept)
+      [ok] email and phone extractable
+      [ok] email is a mailto link
+      [ok] no withdrawn or forbidden wording
+
+PASS  hedaya-nouman_cv_customer-service-ats_en_v02.pdf
+      [ok] pages = 2 (max 2)
+      [ok] page 2 starts with a section heading and its content (Education)
+      [ok] fonts embedded, intended only: IBMPlexSans, IBMPlexSans-Medm, IBMPlexSans-SmBld
+      [ok] pdftotext plain: complete text, logical reading order (band included)
+      [ok] pdftotext -layout: complete text, logical reading order
+      [ok] section headings intact and in order
+      [ok] email extractable
+      [ok] phone extractable
+      [ok] email is a mailto link
+      [ok] no replacement/garbage characters
+      [ok] no withdrawn or forbidden wording
+PASS  hedaya-nouman_cv_customer-service-ats_en_v02.docx
+      [ok] python-docx re-read equals the expected lines exactly, same order
+      [ok] no tables / images / text boxes / shapes / columns
+      [ok] header and footer empty
+      [ok] heading styles: 1 x Heading 1 (name), 8 x Heading 2 (sections), 3 x Heading 3 (roles)
+      [ok] real bullet lists (List Bullet style)
+      [ok] section headings match
+      [ok] header band = paragraph shading on the first 4 paragraphs only (name, title, contact)
+      [ok] section rules = paragraph bottom border on the 8 section headings
+      [ok] email and phone present
+      [ok] no bidi control characters anywhere (no U+200E)
+      [ok] font named in every run: Arial (ascii, hAnsi, cs)
+      [ok] core properties: author = name, title set, description empty, created 2026-11-16
+      [ok] page break before: Education
+      [ok] no withdrawn or forbidden wording
+PASS    (LibreOffice render of the DOCX) hedaya-nouman_cv_customer-service-ats_en_v02.pdf
+      [ok] LibreOffice opens it, pages = 2
+      [ok] LibreOffice render: same word sequence as expected
+      [ok] LibreOffice render: phone reads +966 54 093 0121
+PASS  hedaya-nouman_cv_customer-service-executive_en_v02.pdf
+      [ok] pages = 1
+      [ok] fonts embedded, intended only: IBMPlexSans, IBMPlexSans-Medm, IBMPlexSans-SmBld
+      [ok] pdftotext by zone (band, side, main): every phrase of the ATS content extractable (86/86)
+      [ok] nothing clipped or added: word count = content + Contact heading + location caption
+      [ok] lowest text at 282 mm of 297 (bottom margin kept)
+      [ok] email and phone extractable
+      [ok] email is a mailto link
+      [ok] no withdrawn or forbidden wording
+
+PASS  hedaya-nouman_cv_hospitality-ats_ar_v02.pdf
+      [ok] pages = 2 (max 2)
+      [ok] page 2 starts with a section heading and its content (العمل التطوعي)
+      [ok] fonts embedded, intended only: Tajawal-Bold, Tajawal-Medium, Tajawal-Regular
+      [ok] pdftotext plain: complete text, logical reading order (band included)
+      [ok] pdftotext -layout: complete text, logical reading order
+      [ok] section headings intact
+      [ok] email extractable
+      [ok] phone extractable
+      [ok] email is a mailto link
+      [ok] no replacement/garbage characters
+      [ok] no withdrawn or forbidden wording
+PASS  hedaya-nouman_cv_hospitality-ats_ar_v02.docx
+      [ok] python-docx re-read equals the expected lines exactly, same order
+      [ok] no tables / images / text boxes / shapes / columns
+      [ok] header and footer empty
+      [ok] heading styles: 1 x Heading 1 (name), 8 x Heading 2 (sections), 3 x Heading 3 (roles)
+      [ok] real bullet lists (List Bullet style)
+      [ok] section headings match
+      [ok] header band = paragraph shading on the first 5 paragraphs only (name, title, contact)
+      [ok] section rules = paragraph bottom border on the 8 section headings
+      [ok] email and phone present
+      [ok] no bidi control characters anywhere (no U+200E)
+      [ok] font named in every run: Arial (ascii, hAnsi, cs)
+      [ok] core properties: author = name, title set, description empty, created 2026-11-16
+      [ok] every paragraph has w:bidi
+      [ok] every run with Arabic letters has w:rtl
+      [ok] no explicit w:jc (start edge = right in a bidi paragraph)
+      [ok] section is bidi
+      [ok] page break before: العمل التطوعي
+      [ok] no withdrawn or forbidden wording
+PASS    (LibreOffice render of the DOCX) hedaya-nouman_cv_hospitality-ats_ar_v02.pdf
+      [ok] LibreOffice opens it, pages = 2
+      [ok] LibreOffice render: same word sequence as expected
+      [ok] LibreOffice render: phone reads +966 54 093 0121
+PASS  hedaya-nouman_cv_hospitality-executive_ar_v02.pdf
+      [ok] pages = 1
+      [ok] fonts embedded, intended only: Tajawal-Bold, Tajawal-Medium, Tajawal-Regular
+      [ok] pdftotext by zone (band, side, main): every phrase of the ATS content extractable (87/87)
+      [ok] nothing clipped or added: word count = content + Contact heading + location caption
+      [ok] lowest text at 284 mm of 297 (bottom margin kept)
+      [ok] email and phone extractable
+      [ok] email is a mailto link
+      [ok] no withdrawn or forbidden wording
+
+PASS  hedaya-nouman_cv_hospitality-ats_en_v02.pdf
+      [ok] pages = 2 (max 2)
+      [ok] page 2 starts with a section heading and its content (Volunteer Experience)
+      [ok] fonts embedded, intended only: IBMPlexSans, IBMPlexSans-Medm, IBMPlexSans-SmBld
+      [ok] pdftotext plain: complete text, logical reading order (band included)
+      [ok] pdftotext -layout: complete text, logical reading order
+      [ok] section headings intact and in order
+      [ok] email extractable
+      [ok] phone extractable
+      [ok] email is a mailto link
+      [ok] no replacement/garbage characters
+      [ok] no withdrawn or forbidden wording
+PASS  hedaya-nouman_cv_hospitality-ats_en_v02.docx
+      [ok] python-docx re-read equals the expected lines exactly, same order
+      [ok] no tables / images / text boxes / shapes / columns
+      [ok] header and footer empty
+      [ok] heading styles: 1 x Heading 1 (name), 8 x Heading 2 (sections), 3 x Heading 3 (roles)
+      [ok] real bullet lists (List Bullet style)
+      [ok] section headings match
+      [ok] header band = paragraph shading on the first 5 paragraphs only (name, title, contact)
+      [ok] section rules = paragraph bottom border on the 8 section headings
+      [ok] email and phone present
+      [ok] no bidi control characters anywhere (no U+200E)
+      [ok] font named in every run: Arial (ascii, hAnsi, cs)
+      [ok] core properties: author = name, title set, description empty, created 2026-11-16
+      [ok] page break before: Volunteer Experience
+      [ok] no withdrawn or forbidden wording
+PASS    (LibreOffice render of the DOCX) hedaya-nouman_cv_hospitality-ats_en_v02.pdf
+      [ok] LibreOffice opens it, pages = 2
+      [ok] LibreOffice render: same word sequence as expected
+      [ok] LibreOffice render: phone reads +966 54 093 0121
+PASS  hedaya-nouman_cv_hospitality-executive_en_v02.pdf
+      [ok] pages = 1
+      [ok] fonts embedded, intended only: IBMPlexSans, IBMPlexSans-Medm, IBMPlexSans-SmBld
+      [ok] pdftotext by zone (band, side, main): every phrase of the ATS content extractable (87/87)
+      [ok] nothing clipped or added: word count = content + Contact heading + location caption
+      [ok] lowest text at 282 mm of 297 (bottom margin kept)
+      [ok] email and phone extractable
+      [ok] email is a mailto link
+      [ok] no withdrawn or forbidden wording
+
+ALL PASS
