@@ -4,7 +4,7 @@ set -euo pipefail
 W=/home/user/arwa/clients/hedaya-nouman/06-profiles/cv/_work
 python3 "$W/build_exec_docx.py"
 rm -rf "$W/exec-docx-render"; mkdir -p "$W/exec-docx-render"
-soffice --headless --convert-to pdf --outdir "$W/exec-docx-render" "$W"/../*executive*_v03.docx >/dev/null 2>&1
+soffice --headless --convert-to pdf --outdir "$W/exec-docx-render" "$W"/../*executive*_v04.docx >/dev/null 2>&1
 for f in "$W"/exec-docx-render/*.pdf; do
   echo "$(basename "$f") pages=$(pdfinfo "$f" | awk '/^Pages/{print $2}') fonts=$(pdffonts "$f" | tail -n +3 | awk '{print $1}' | sed 's/.*+//' | sort -u | tr '\n' ' ')"
 done

@@ -1,0 +1,101 @@
+PASS  hedaya-nouman_cv_customer-service-executive_ar_v04.docx
+      [ok] approved PDF and its HTML unchanged (md5)
+      [ok] python-docx re-read: every word of the source data, in reading order (346 words)
+      [ok] approved PDF carries exactly the same words (pdftotext by zone)
+      [ok] e-mail and phone present as plain text
+      [ok] one layout table; no text boxes, drawings, pictures or floating shapes
+      [ok] no bidi control characters
+      [ok] font named in every run: Tajawal
+      [ok] fonts embedded in the package: 2 files (regular + bold), embedTrueTypeFonts set
+      [ok] core properties: author = name, title set, description empty, created 2026-11-16
+      [ok] table is w:bidiVisual; section is bidi
+      [ok] every text paragraph is w:bidi, except the phone and e-mail values (left-to-right, set right)
+      [ok] every run with Arabic letters has w:rtl
+      [ok] LibreOffice render: Arabic date ranges read «يونيو 2022 إلى ديسمبر 2026» and «2016 إلى 2017»
+      [ok] LibreOffice render (fonts installed): pages = 1, fonts Tajawal-Bold, Tajawal-Regular
+      [ok] LibreOffice render (fonts NOT installed, embedded fonts only): pages = 1, fonts Tajawal-Bold, Tajawal-Regular
+      [ok] LibreOffice render: same words as the approved PDF (nothing clipped or lost)
+      [ok] LibreOffice render: phone reads +966 54 093 0121
+      [ok] LibreOffice render: vertical slack under the table 26.6 mm (fonts installed), 26.6 mm (embedded fonts only)
+      [ok] stress render, embedding stripped and DejaVu Sans substituted (DejaVuSans, DejaVuSans-Bold): pages = 1, slack 26.6 mm
+      [ok] rows: no w:cantSplit; only the band row has a height (<w:trHeight w:val="1701" w:hRule="exact"/>); body row free to grow and split
+      [ok] no keepNext / keepLines / pageBreakBefore / contextualSpacing; no document grid
+      [ok] every paragraph (74): exact line height, explicit spacing before and after, snapToGrid off
+      [ok] table: fixed layout, grid columns sum to 11906 twips (page 11906), no negative indents
+      [ok] page margins and header/footer distances all 0
+      [ok] e-mail is a real mailto hyperlink (external relationship)
+
+PASS  hedaya-nouman_cv_customer-service-executive_en_v04.docx
+      [ok] approved PDF and its HTML unchanged (md5)
+      [ok] python-docx re-read: every word of the source data, in reading order (379 words)
+      [ok] approved PDF carries exactly the same words (pdftotext by zone)
+      [ok] e-mail and phone present as plain text
+      [ok] one layout table; no text boxes, drawings, pictures or floating shapes
+      [ok] no bidi control characters
+      [ok] font named in every run: IBM Plex Sans
+      [ok] fonts embedded in the package: 2 files (regular + bold), embedTrueTypeFonts set
+      [ok] core properties: author = name, title set, description empty, created 2026-11-16
+      [ok] LibreOffice render (fonts installed): pages = 1, fonts IBMPlexSans-Regular
+      [ok] LibreOffice render (fonts NOT installed, embedded fonts only): pages = 1, fonts IBMPlexSans, IBMPlexSans-Bold
+      [ok] LibreOffice render: same words as the approved PDF (nothing clipped or lost)
+      [ok] LibreOffice render: phone reads +966 54 093 0121
+      [ok] LibreOffice render: vertical slack under the table 40.8 mm (fonts installed), 40.8 mm (embedded fonts only)
+      [ok] stress render, embedding stripped and DejaVu Sans substituted (DejaVuSans, DejaVuSans-Bold): pages = 1, slack 29.8 mm
+      [ok] rows: no w:cantSplit; only the band row has a height (<w:trHeight w:val="1701" w:hRule="exact"/>); body row free to grow and split
+      [ok] no keepNext / keepLines / pageBreakBefore / contextualSpacing; no document grid
+      [ok] every paragraph (74): exact line height, explicit spacing before and after, snapToGrid off
+      [ok] table: fixed layout, grid columns sum to 11906 twips (page 11906), no negative indents
+      [ok] page margins and header/footer distances all 0
+      [ok] e-mail is a real mailto hyperlink (external relationship)
+
+PASS  hedaya-nouman_cv_hospitality-executive_ar_v04.docx
+      [ok] approved PDF and its HTML unchanged (md5)
+      [ok] python-docx re-read: every word of the source data, in reading order (358 words)
+      [ok] approved PDF carries exactly the same words (pdftotext by zone)
+      [ok] e-mail and phone present as plain text
+      [ok] one layout table; no text boxes, drawings, pictures or floating shapes
+      [ok] no bidi control characters
+      [ok] font named in every run: Tajawal
+      [ok] fonts embedded in the package: 2 files (regular + bold), embedTrueTypeFonts set
+      [ok] core properties: author = name, title set, description empty, created 2026-11-16
+      [ok] table is w:bidiVisual; section is bidi
+      [ok] every text paragraph is w:bidi, except the phone and e-mail values (left-to-right, set right)
+      [ok] every run with Arabic letters has w:rtl
+      [ok] LibreOffice render: Arabic date ranges read «يونيو 2022 إلى ديسمبر 2026» and «2016 إلى 2017»
+      [ok] LibreOffice render (fonts installed): pages = 1, fonts Tajawal-Bold, Tajawal-Regular
+      [ok] LibreOffice render (fonts NOT installed, embedded fonts only): pages = 1, fonts Tajawal-Bold, Tajawal-Regular
+      [ok] LibreOffice render: same words as the approved PDF (nothing clipped or lost)
+      [ok] LibreOffice render: phone reads +966 54 093 0121
+      [ok] LibreOffice render: vertical slack under the table 26.6 mm (fonts installed), 26.6 mm (embedded fonts only)
+      [ok] stress render, embedding stripped and DejaVu Sans substituted (DejaVuSans, DejaVuSans-Bold): pages = 1, slack 26.6 mm
+      [ok] rows: no w:cantSplit; only the band row has a height (<w:trHeight w:val="1701" w:hRule="exact"/>); body row free to grow and split
+      [ok] no keepNext / keepLines / pageBreakBefore / contextualSpacing; no document grid
+      [ok] every paragraph (75): exact line height, explicit spacing before and after, snapToGrid off
+      [ok] table: fixed layout, grid columns sum to 11906 twips (page 11906), no negative indents
+      [ok] page margins and header/footer distances all 0
+      [ok] e-mail is a real mailto hyperlink (external relationship)
+
+PASS  hedaya-nouman_cv_hospitality-executive_en_v04.docx
+      [ok] approved PDF and its HTML unchanged (md5)
+      [ok] python-docx re-read: every word of the source data, in reading order (392 words)
+      [ok] approved PDF carries exactly the same words (pdftotext by zone)
+      [ok] e-mail and phone present as plain text
+      [ok] one layout table; no text boxes, drawings, pictures or floating shapes
+      [ok] no bidi control characters
+      [ok] font named in every run: IBM Plex Sans
+      [ok] fonts embedded in the package: 2 files (regular + bold), embedTrueTypeFonts set
+      [ok] core properties: author = name, title set, description empty, created 2026-11-16
+      [ok] LibreOffice render (fonts installed): pages = 1, fonts IBMPlexSans-Regular
+      [ok] LibreOffice render (fonts NOT installed, embedded fonts only): pages = 1, fonts IBMPlexSans, IBMPlexSans-Bold
+      [ok] LibreOffice render: same words as the approved PDF (nothing clipped or lost)
+      [ok] LibreOffice render: phone reads +966 54 093 0121
+      [ok] LibreOffice render: vertical slack under the table 43.9 mm (fonts installed), 43.9 mm (embedded fonts only)
+      [ok] stress render, embedding stripped and DejaVu Sans substituted (DejaVuSans, DejaVuSans-Bold): pages = 1, slack 26.7 mm
+      [ok] rows: no w:cantSplit; only the band row has a height (<w:trHeight w:val="1701" w:hRule="exact"/>); body row free to grow and split
+      [ok] no keepNext / keepLines / pageBreakBefore / contextualSpacing; no document grid
+      [ok] every paragraph (75): exact line height, explicit spacing before and after, snapToGrid off
+      [ok] table: fixed layout, grid columns sum to 11906 twips (page 11906), no negative indents
+      [ok] page margins and header/footer distances all 0
+      [ok] e-mail is a real mailto hyperlink (external relationship)
+
+ALL PASS

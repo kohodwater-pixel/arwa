@@ -24,6 +24,7 @@ from docx.opc.constants import RELATIONSHIP_TYPE as RT
 from docx.oxml import OxmlElement, parse_xml
 from docx.oxml.ns import nsdecls, qn
 from docx.shared import Mm, Pt
+from docx.text.run import Run
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import build_cv as B
@@ -37,9 +38,10 @@ FONT_FILES = {
 TEAL, SAND, SANDL, TINT = B.TEAL, B.SAND, B.SAND_LIGHT, "F5F1E8"
 INK, MUTED, WHITE, TAG_LINE, TAG_TEXT = "20282B", "566266", "FFFFFF", "9DB7BA", "184A52"
 # column grid in mm: outer margin, side content, tinted gap, white gap, main content, outer margin
-GRID = [13, 41, 4, 7, 132, 13]
-BAND_MM, BODY_MM = 33, 254.5   # body row minimum: leaves about 9 mm of real slack on the page
-DOCX_V = "v03"
+GRID = [13, 43, 3, 7, 131, 13]
+BAND_MM = 30          # band row: exact height
+TOP_MM, BOTTOM_MM = 4, 2   # body cell margins; the body row has NO height and may split across pages
+DOCX_V = "v04"
 NBSP = "\u00a0"
 BOXED_TAGS = {"en": False, "ar": False}   # competencies as boxed tags (True) or as middle-dot lines (False)
 
@@ -53,7 +55,7 @@ class Doc:
         self.m, self.b = m, m["base"]
         self.rtl = self.b["lang"] == "ar"
         self.font = "Tajawal" if self.rtl else "IBM Plex Sans"
-        self.body = (10, 16.0) if self.rtl else (9.5, 13.8)   # size pt, exact line pt (as in the PDF)
+        self.body = (10, 16.0) if self.rtl else (9.5, 13.3)   # exact line: Arabic 1.6 x size, English 1.4 x size   # size pt, exact line pt (as in the PDF)
 
     # ---- low level -------------------------------------------------------------------------
     def run(self, p, text, size, bold=False, color=INK, rtl=None, caps=False, track=0, box=False, underline=None):
@@ -110,9 +112,10 @@ class Doc:
         if pos < len(text):
             self.run(p, text[pos:], size, rtl=True, **kw)
 
-    def par(self, cell, line, before=0, after=0, keep=False, ltr_right=False, exact=False):
-        """New paragraph in a cell. Line height is a minimum (at least), so a substituted font can grow the
-        line instead of clipping Arabic marks; only the rule and spacer paragraphs are exact."""
+    def par(self, cell, line, before=0, after=0, keep=False, ltr_right=False, exact=True):
+        """New paragraph in a cell. Every paragraph has an EXACT line height and explicit spacing before and
+        after, so the height of the page is arithmetic and the same in every renderer. No keep-with-next
+        (Word applies it to whole table rows) and no document grid snapping."""
         ps = cell.paragraphs
         if len(ps) == 1 and not ps[0].runs:   # the empty paragraph every new cell starts with
             p = ps[0]
@@ -121,8 +124,9 @@ class Doc:
         pf = p.paragraph_format
         pf.space_before, pf.space_after = Pt(before), Pt(after)
         pf.line_spacing = Pt(line)
-        pf.line_spacing_rule = WD_LINE_SPACING.EXACTLY if exact else WD_LINE_SPACING.AT_LEAST
-        pf.keep_with_next = keep
+        pf.line_spacing_rule = WD_LINE_SPACING.EXACTLY
+        snap = OxmlElement("w:snapToGrid"); snap.set(qn("w:val"), "0")
+        p._p.get_or_add_pPr().insert_element_before(snap, *B.PPR_ORDER[B.PPR_ORDER.index("w:snapToGrid") + 1:])
         ppr = p._p.get_or_add_pPr()
         if self.rtl and not ltr_right:
             ppr.insert_element_before(OxmlElement("w:bidi"), *B.PPR_ORDER[B.PPR_ORDER.index("w:bidi") + 1:])
@@ -133,16 +137,16 @@ class Doc:
 
     # ---- components ------------------------------------------------------------------------
     def heading(self, cell, text, width, first=False):
-        gap = 11 if self.rtl else 12.2
+        gap = 6.5 if self.rtl else 10
         if self.rtl:
-            p = self.par(cell, 17.1, before=0 if first else gap, keep=True)
+            p = self.par(cell, 18.9, before=0 if first else gap)
             self.text(p, text, 11.8, bold=True, color=TEAL)
         else:
-            p = self.par(cell, 12.8, before=0 if first else gap, keep=True)
+            p = self.par(cell, 12.4, before=0 if first else gap)
             self.run(p, text, 8.8, bold=True, color=TEAL, caps=True, track=14)
         # short sand accent bar: an empty paragraph whose bottom border is cut to 9 mm by its end indent
         # (in a right-to-left paragraph w:right is the trailing edge, so the bar stays at the start side)
-        bar = self.par(cell, 2.5, after=5.6 if self.rtl else 6.6, keep=True, exact=True)
+        bar = self.par(cell, 2.5, after=3 if self.rtl else 5.5)
         self.run(bar, "", 1)
         ppr = bar._p.get_or_add_pPr()
         bd = parse_xml(f'<w:pBdr {nsdecls("w")}><w:bottom w:val="single" w:sz="12" w:space="0" w:color="{SAND}"/></w:pBdr>')
@@ -152,7 +156,7 @@ class Doc:
 
     def bullets(self, cell, items):
         for x in items:
-            p = self.par(cell, self.body[1], after=1.1)
+            p = self.par(cell, self.body[1], after=0.6)
             ppr = p._p.get_or_add_pPr()
             num = parse_xml(f'<w:numPr {nsdecls("w")}><w:ilvl w:val="0"/><w:numId w:val="{self.num_id}"/></w:numPr>')
             ppr.insert_element_before(num, *B.PPR_ORDER[B.PPR_ORDER.index("w:numPr") + 1:])
@@ -224,19 +228,17 @@ class Doc:
                 tcpr.append(parse_xml(f'<w:vAlign {nsdecls("w")} w:val="{valign}"/>'))
 
         def spacer(cell):
-            p = self.par(cell, 1, exact=True)
+            p = self.par(cell, 1)
             self.run(p, "", 1)
 
         r0, r1 = t.rows
         r0.height, r0.height_rule = Mm(BAND_MM), WD_ROW_HEIGHT_RULE.EXACTLY
-        r1.height, r1.height_rule = Mm(BODY_MM), WD_ROW_HEIGHT_RULE.AT_LEAST
-        for r in (r0, r1):
-            r._tr.get_or_add_trPr().append(OxmlElement("w:cantSplit"))
+        # body row: no w:trHeight and no w:cantSplit, so Word can never push it whole to the next page
         band = r0.cells[0].merge(r0.cells[5])
         cellfmt(band, sum(GRID), TEAL, valign="center", bottom_rule=True)
         fills = [TINT, TINT, TINT, None, None, None]
         for i, c in enumerate(r1.cells):
-            cellfmt(c, GRID[i], fills[i], top=6.5, bottom=2)
+            cellfmt(c, GRID[i], fills[i], top=TOP_MM, bottom=BOTTOM_MM)
             if i not in (1, 4):
                 spacer(c)
         side, main = r1.cells[1], r1.cells[4]
@@ -247,30 +249,26 @@ class Doc:
             p._p.get_or_add_pPr().insert_element_before(ind, *B.PPR_ORDER[B.PPR_ORDER.index("w:ind") + 1:])
             return p
 
-        p = inset(self.par(band, 36.5 if rtl else 31))
-        self.text(p, b["name"], 28 if rtl else 27, bold=True, color=WHITE)
-        p = inset(self.par(band, 18.3 if rtl else 16.7, before=0.5 if rtl else 4))
+        p = inset(self.par(band, 41.6 if rtl else 37.8))
+        self.text(p, b["name"], 26 if rtl else 27, bold=True, color=WHITE)
+        p = inset(self.par(band, 19.6 if rtl else 16.1, before=0 if rtl else 2))
         self.text(p, m["title"][0], 12.2 if rtl else 11.5, color=SANDL)
         for extra in m["title"][1:]:
-            p = inset(self.par(band, 16.5 if rtl else 15.2))
+            p = inset(self.par(band, 17.6 if rtl else 14.7))
             self.text(p, extra, 11 if rtl else 10.5, color=WHITE)
 
         # ---- side column ----
-        cap = (9, 13.5) if rtl else (8.5, 11.5)
-        small = (9.2, 14.7) if rtl else (8.8, 12.8)
+        cap = (9, 14.4) if rtl else (8.5, 11.9)
+        small = (9.2, 14.8) if rtl else (8.8, 12.4)
         self.heading(side, b["contact_heading"], GRID[1], first=True)
         contact = [(b["city_label"], b["city"], False), (b["nat_label"], b["nat"], False),
                    (b["phone_label"], B.PHONE, True), (b["email_label"], B.EMAIL, True)]
         for i, (label, value, latin) in enumerate(contact):
-            p = self.par(side, cap[1], keep=True)
+            p = self.par(side, cap[1])
             self.text(p, label, cap[0], color=MUTED)
             # phone and e-mail: a left-to-right paragraph set to the right, so the digits can never reorder
-            p = self.par(side, line, after=0 if i == 3 else 5.4, ltr_right=latin)
+            p = self.par(side, line, after=0 if i == 3 else 4, ltr_right=latin)
             if latin:
-                # let the e-mail use the tinted gap beside the column instead of wrapping
-                side_attr = "w:left" if rtl else "w:right"
-                ind = parse_xml(f'<w:ind {nsdecls("w")} {side_attr}="-{tw(GRID[2] - 0.5)}"/>')
-                p._p.get_or_add_pPr().insert_element_before(ind, *B.PPR_ORDER[B.PPR_ORDER.index("w:ind") + 1:])
                 if value == B.EMAIL:
                     self.mailto(p, self.run(p, value, size, rtl=False))
                 else:
@@ -281,19 +279,19 @@ class Doc:
             self.heading(side, H[k], GRID[1])
             if k == "tech":
                 for i, x in enumerate(b["tech"]):
-                    p = self.par(side, line, after=0 if i == len(b["tech"]) - 1 else 5.4)
+                    p = self.par(side, line, after=0 if i == len(b["tech"]) - 1 else 4)
                     self.text(p, x, size)
             elif k in ("edu", "train"):
                 for i, parts in enumerate(b[k]):
                     last = i == len(b[k]) - 1
-                    p = self.par(side, line, keep=True, after=0 if len(parts) > 1 or last else 6.5)
+                    p = self.par(side, line, after=0 if len(parts) > 1 or last else 5)
                     self.text(p, parts[0], size)
                     if len(parts) > 1:
-                        p = self.par(side, small[1], after=0 if last else 6.5)
+                        p = self.par(side, small[1], after=0 if last else 5)
                         self.text(p, " | ".join(parts[1:]), small[0], color=MUTED)
             elif k == "lang":
                 for i, x in enumerate(b["langs"]):
-                    p = self.par(side, line, after=0 if i == len(b["langs"]) - 1 else 5.4)
+                    p = self.par(side, line, after=0 if i == len(b["langs"]) - 1 else 4)
                     self.text(p, x, size)
 
         # ---- main column ----
@@ -308,9 +306,9 @@ class Doc:
                 self.competencies(main)
             elif k == "exp":
                 for j, ((title, org, dates), bl) in enumerate(B.roles(m)):
-                    p = self.par(main, 17.6 if rtl else 15.2, before=0 if j == 0 else (5.7 if rtl else 7), keep=True)
+                    p = self.par(main, 17.6 if rtl else 14.7, before=0 if j == 0 else (3.5 if rtl else 6))
                     self.text(p, title, 11 if rtl else 10.5, bold=True)
-                    p = self.par(main, line, after=2.6, keep=True)
+                    p = self.par(main, line, after=1.5 if rtl else 2)
                     ppr = p._p.get_or_add_pPr()
                     tabs = parse_xml(f'<w:tabs {nsdecls("w")}><w:tab w:val="right" w:pos="{tw(GRID[4])}"/></w:tabs>')
                     ppr.insert_element_before(tabs, *B.PPR_ORDER[B.PPR_ORDER.index("w:tabs") + 1:])
@@ -320,7 +318,7 @@ class Doc:
                     self.bullets(main, bl)
             elif k == "vol":
                 for i, parts in enumerate(b["vol"]):
-                    p = self.par(main, line, after=0 if i == len(b["vol"]) - 1 else (3.1 if rtl else 4.8))
+                    p = self.par(main, line, after=0 if i == len(b["vol"]) - 1 else (1.5 if rtl else 3.5))
                     self.text(p, parts[0], size, bold=True)
                     self.text(p, " | " + " | ".join(parts[1:]), size, color=MUTED)
 
@@ -330,6 +328,12 @@ class Doc:
         tail.paragraph_format.line_spacing_rule = WD_LINE_SPACING.EXACTLY
         tail.paragraph_format.space_before = tail.paragraph_format.space_after = Pt(0)
         self.run(tail, "", 1)
+
+        for g in sec._sectPr.findall(qn("w:docGrid")):
+            sec._sectPr.remove(g)
+        # arithmetic page height (mm): band + cell margins + the taller column (exact lines x estimated line count)
+        self.side_mm, self.main_mm = column_mm(self, side, GRID[1]), column_mm(self, main, GRID[4])
+        self.used_mm = BAND_MM + TOP_MM + max(self.side_mm, self.main_mm) + BOTTOM_MM + 1 / 72 * 25.4
 
         now = datetime.datetime.now(datetime.timezone.utc).replace(microsecond=0, tzinfo=None)
         cp = doc.core_properties
@@ -363,20 +367,49 @@ class Doc:
                     self.run(p, "  ", 8.7)
             return
         size, line = self.body
-        font = ImageFont.truetype(str(FONT_FILES[self.font]["Regular"]), 100)
-        width = lambda t: font.getlength(t) / 100 * size / 72 * 25.4   # mm
+        width = lambda t: text_mm(self.font, t, size, direction="rtl" if self.rtl else "ltr")
         rows, cur = [], []
         for x in items:
-            if cur and width(" · ".join(cur + [x])) > GRID[4] - 8:
+            if cur and width(" · ".join(cur + [x])) > GRID[4] - 10:
                 rows.append(cur); cur = []
             cur.append(x)
         rows.append(cur)
         for i, row in enumerate(rows):
-            p = self.par(cell, line, after=0 if i == len(rows) - 1 else 1.5)
+            p = self.par(cell, line, after=0 if i == len(rows) - 1 else 0.8)
             for j, x in enumerate(row):
                 self.text(p, x, size)
                 if j < len(row) - 1:
                     self.run(p, " · ", size, bold=True, color="A8873F")
+
+
+def text_mm(family, text, size, bold=False, direction="ltr"):
+    font = ImageFont.truetype(str(FONT_FILES[family]["Bold" if bold else "Regular"]), 100, layout_engine=ImageFont.Layout.RAQM)
+    return font.getlength(text, direction=direction) / 100 * size / 72 * 25.4
+
+
+def column_mm(doc, cell, width):
+    """Height of a column from our own numbers: for each paragraph, space before + exact line height x number
+    of lines + space after. The line count is estimated by wrapping the text at the column width with the
+    real font metrics (shaped with Raqm); Word may wrap a few paragraphs differently."""
+    total = 0.0
+    for p in cell.paragraphs:
+        pf = p.paragraph_format
+        avail = width - (4 if p._p.pPr.find(qn("w:numPr")) is not None else 0)
+        segs = [(r.text, r.font.size.pt, bool(r.bold)) for r in (Run(x, p) for x in p._p.xpath(".//w:r"))]
+        text = "".join(t for t, _, _ in segs)
+        lines = 1
+        if text.strip() and "\t" not in text:
+            size = max(sz for _, sz, _ in segs); bold = any(bd for t, _, bd in segs if t.strip()) and all(bd for t, _, bd in segs if t.strip())
+            direction = "rtl" if doc.rtl else "ltr"
+            cur = ""
+            for word in text.split(" "):
+                trial = (cur + " " + word) if cur else word
+                if cur and text_mm(doc.font, trial, size, bold, direction) > avail:
+                    lines += 1; cur = word
+                else:
+                    cur = trial
+        total += (pf.space_before.pt + pf.line_spacing.pt * lines + pf.space_after.pt) / 72 * 25.4
+    return total
 
 
 # ---- font embedding (ECMA-376 obfuscated fonts, written straight into the package) --------------
@@ -424,7 +457,9 @@ if __name__ == "__main__":
         out = B.OUT / B.fname(m, "executive", "docx").replace(f"_{B.V}.docx", f"_{DOCX_V}.docx")
         d.build(out)
         embed_fonts(out, d.font)
-        print("built", out.name)
+        print(f"built {out.name}  computed: side {d.side_mm:.0f} mm, main {d.main_mm:.0f} mm, used {d.used_mm:.0f} mm, slack {297 - d.used_mm:.0f} mm")
+        (B.OUT / "_work" / "exec-docx-noembed").mkdir(exist_ok=True)   # scratch copies WITHOUT embedded fonts, for the fallback-font test
+        d.build(B.OUT / "_work" / "exec-docx-noembed" / out.name)
     # fallback fonts beside the files, with their licences
     fdir = B.OUT / "fonts"
     for fam, sub in (("Tajawal", "tajawal"), ("IBM Plex Sans", "ibmplexsans-static")):

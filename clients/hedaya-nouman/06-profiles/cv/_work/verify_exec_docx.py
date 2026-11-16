@@ -68,9 +68,10 @@ def expected_exec(m):
 approved = dict(l.split()[::-1] for l in (W / "approved_exec_md5.txt").read_text().splitlines())
 for key, m in B.MODELS.items():
     b = m["base"]; rtl = b["lang"] == "ar"
-    name = B.fname(m, "executive", "docx").replace("_v02.docx", "_v03.docx")
+    name = B.fname(m, "executive", "docx").replace("_v02.docx", "_v04.docx")
     dx, pdf = CV / name, CV / B.fname(m, "executive", "pdf")
     lo, lo_nf = W / "exec-docx-render" / (name[:-4] + "pdf"), W / "exec-docx-render-nofonts" / (name[:-4] + "pdf")
+    lo_fb = W / "exec-docx-render-fallback" / (name[:-4] + "pdf")
     d = docx.Document(dx)
     ps = docx_paragraphs(d)
     text = "\n".join(p.text for p in ps)
@@ -127,13 +128,25 @@ for key, m in B.MODELS.items():
     def slack(f):   # white space left on the page under the layout table = how much it can grow before page 2
         g = pymupdf.open(f)[0]
         return 297 - max(dr["rect"].y1 for dr in g.get_drawings() if dr.get("fill")) / 72 * 25.4
-    s1, s2 = slack(lo), slack(lo_nf)
-    c[f"LibreOffice render: lowest text at {low:.0f} mm; vertical slack under the table {s1:.1f} mm (fonts installed), {s2:.1f} mm (embedded only)"] = min(s1, s2) >= 7
+    s1, s2, s3 = slack(lo), slack(lo_nf), slack(lo_fb)
+    c[f"LibreOffice render: vertical slack under the table {s1:.1f} mm (fonts installed), {s2:.1f} mm (embedded fonts only)"] = min(s1, s2) >= 25
+    c[f"stress render, embedding stripped and DejaVu Sans substituted ({', '.join(pdf_fonts(lo_fb))}): pages = {pages(lo_fb)}, slack {s3:.1f} mm"] = pages(lo_fb) == 1 and s3 >= 20
+    heights = re.findall(r'<w:trHeight[^>]*>', xml)
+    c[f"rows: no w:cantSplit; only the band row has a height ({heights[0] if heights else '-'}); body row free to grow and split"] = (
+        "cantSplit" not in xml and len(heights) == 1 and 'w:hRule="exact"' in heights[0])
+    c["no keepNext / keepLines / pageBreakBefore / contextualSpacing; no document grid"] = not re.search(
+        r'<w:keepNext/>|<w:keepNext w:val="(1|true)"|keepLines|pageBreakBefore|contextualSpacing|<w:docGrid', xml)
+    npar = xml.count("<w:p>") + xml.count("<w:p ")
+    c[f"every paragraph ({npar}): exact line height, explicit spacing before and after, snapToGrid off"] = (
+        xml.count('w:lineRule="exact"') == npar and xml.count('<w:snapToGrid w:val="0"/>') >= npar - 1
+        and len(re.findall(r'<w:spacing [^>]*w:before="\d+"[^>]*w:after="\d+"|<w:spacing [^>]*w:after="\d+"[^>]*w:before="\d+"', xml)) == npar)
+    grid = [int(v) for v in re.findall(r'<w:gridCol w:w="(\d+)"', xml)]
+    c[f"table: fixed layout, grid columns sum to {sum(grid)} twips (page 11906), no negative indents"] = (
+        'w:tblLayout w:type="fixed"' in xml and abs(sum(grid) - 11906) <= 6 and '="-' not in xml)
+    c["page margins and header/footer distances all 0"] = 'w:top="0" w:right="0" w:bottom="0" w:left="0" w:header="0" w:footer="0"' in xml
     hl = re.findall(r'<w:hyperlink r:id="(rId\d+)"', xml)
     rels = zipfile.ZipFile(dx).read("word/_rels/document.xml.rels").decode()
     c["e-mail is a real mailto hyperlink (external relationship)"] = len(hl) == 1 and f'Target="mailto:{B.EMAIL}"' in rels and 'TargetMode="External"' in rels
-    rules = re.findall(r'w:lineRule="(\w+)"', xml)
-    c[f"line heights: {rules.count('atLeast')} paragraphs at-least, {rules.count('exact')} exact (rules, spacers, closing paragraph)"] = rules.count("atLeast") > 40
     bad = [k for k, v in c.items() if not v]
     ok_all &= not bad
     print(("PASS  " if not bad else "FAIL  ") + name)
@@ -141,13 +154,13 @@ for key, m in B.MODELS.items():
         print(f'      [{"ok" if v else "XX"}] {k}')
     # side-by-side: approved PDF (left) and LibreOffice render of the DOCX (right)
     ims = []
-    for f in (pdf, lo, lo_nf):
+    for f in (pdf, lo, lo_fb):
         px = pymupdf.open(f)[0].get_pixmap(dpi=62)
         ims.append(Image.frombytes("RGB", (px.width, px.height), px.samples))
     sheet = Image.new("RGB", (sum(i.width for i in ims) + 24, max(i.height for i in ims)), "#888888")
     x = 0
     for im in ims:
         sheet.paste(im, (x, 0)); x += im.width + 12
-    sheet.save(W / "check-png" / f'compare_exec_pdf-vs-docx-v03_{m["slug"]}_{b["lang"]}.png')
+    sheet.save(W / "check-png" / f'compare_exec_pdf-vs-docx-v04_{m["slug"]}_{b["lang"]}.png')
     print()
 print("ALL PASS" if ok_all else "SOME CHECKS FAILED")
