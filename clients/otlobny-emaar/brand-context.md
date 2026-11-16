@@ -130,3 +130,5 @@
 - 2026-11-15 — CLIENT FEEDBACK on v15: General Contracting page — the unclear photos are replaced with the two images he sent (helmet and plans; engineer in vest at site).
 
 - 2026-11-15 — Profile v16 built and sent: client's two contracting images on p7 (old stock photos removed from the page); cover side-image blue overlay darkened to navy at 86% at the client's request. Everything else as v15.
+
+- 2026-11-16 — CLIENT FEEDBACK on v16: on the services overview page (p6) the banner photo is shown in full colour (no blue tint) and carries the Saudi Vision 2030 logo he supplied. The logo is an official third-party mark: used unaltered (no recolouring, proportions and clear space kept); permission/eligibility to use it rests with the client (told to the client).
