@@ -1,0 +1,73 @@
+PASS  hedaya-nouman_cv_customer-service-executive_ar_v02.docx
+      [ok] approved PDF and its HTML unchanged (md5)
+      [ok] python-docx re-read: every word of the source data, in reading order (346 words)
+      [ok] approved PDF carries exactly the same words (pdftotext by zone)
+      [ok] e-mail and phone present as plain text
+      [ok] one layout table; no text boxes, drawings, pictures or floating shapes
+      [ok] no bidi control characters
+      [ok] font named in every run: Tajawal
+      [ok] fonts embedded in the package: 2 files (regular + bold), embedTrueTypeFonts set
+      [ok] core properties: author = name, title set, description empty, created 2026-11-16
+      [ok] table is w:bidiVisual; section is bidi
+      [ok] every text paragraph is w:bidi, except the phone and e-mail values (left-to-right, set right)
+      [ok] every run with Arabic letters has w:rtl
+      [ok] LibreOffice render: Arabic date ranges read «يونيو 2022 إلى ديسمبر 2026» and «2016 إلى 2017»
+      [ok] LibreOffice render (fonts installed): pages = 1, fonts Tajawal-Bold, Tajawal-Regular
+      [ok] LibreOffice render (fonts NOT installed, embedded fonts only): pages = 1, fonts Tajawal-Bold, Tajawal-Regular
+      [ok] LibreOffice render: same words as the approved PDF (nothing clipped or lost)
+      [ok] LibreOffice render: phone reads +966 54 093 0121
+      [ok] LibreOffice render: lowest text at 287 mm of 297
+
+PASS  hedaya-nouman_cv_customer-service-executive_en_v02.docx
+      [ok] approved PDF and its HTML unchanged (md5)
+      [ok] python-docx re-read: every word of the source data, in reading order (379 words)
+      [ok] approved PDF carries exactly the same words (pdftotext by zone)
+      [ok] e-mail and phone present as plain text
+      [ok] one layout table; no text boxes, drawings, pictures or floating shapes
+      [ok] no bidi control characters
+      [ok] font named in every run: IBM Plex Sans
+      [ok] fonts embedded in the package: 2 files (regular + bold), embedTrueTypeFonts set
+      [ok] core properties: author = name, title set, description empty, created 2026-11-16
+      [ok] LibreOffice render (fonts installed): pages = 1, fonts IBMPlexSans-Regular
+      [ok] LibreOffice render (fonts NOT installed, embedded fonts only): pages = 1, fonts IBMPlexSans, IBMPlexSans-Bold
+      [ok] LibreOffice render: same words as the approved PDF (nothing clipped or lost)
+      [ok] LibreOffice render: phone reads +966 54 093 0121
+      [ok] LibreOffice render: lowest text at 276 mm of 297
+
+PASS  hedaya-nouman_cv_hospitality-executive_ar_v02.docx
+      [ok] approved PDF and its HTML unchanged (md5)
+      [ok] python-docx re-read: every word of the source data, in reading order (358 words)
+      [ok] approved PDF carries exactly the same words (pdftotext by zone)
+      [ok] e-mail and phone present as plain text
+      [ok] one layout table; no text boxes, drawings, pictures or floating shapes
+      [ok] no bidi control characters
+      [ok] font named in every run: Tajawal
+      [ok] fonts embedded in the package: 2 files (regular + bold), embedTrueTypeFonts set
+      [ok] core properties: author = name, title set, description empty, created 2026-11-16
+      [ok] table is w:bidiVisual; section is bidi
+      [ok] every text paragraph is w:bidi, except the phone and e-mail values (left-to-right, set right)
+      [ok] every run with Arabic letters has w:rtl
+      [ok] LibreOffice render: Arabic date ranges read «يونيو 2022 إلى ديسمبر 2026» and «2016 إلى 2017»
+      [ok] LibreOffice render (fonts installed): pages = 1, fonts Tajawal-Bold, Tajawal-Regular
+      [ok] LibreOffice render (fonts NOT installed, embedded fonts only): pages = 1, fonts Tajawal-Bold, Tajawal-Regular
+      [ok] LibreOffice render: same words as the approved PDF (nothing clipped or lost)
+      [ok] LibreOffice render: phone reads +966 54 093 0121
+      [ok] LibreOffice render: lowest text at 287 mm of 297
+
+PASS  hedaya-nouman_cv_hospitality-executive_en_v02.docx
+      [ok] approved PDF and its HTML unchanged (md5)
+      [ok] python-docx re-read: every word of the source data, in reading order (392 words)
+      [ok] approved PDF carries exactly the same words (pdftotext by zone)
+      [ok] e-mail and phone present as plain text
+      [ok] one layout table; no text boxes, drawings, pictures or floating shapes
+      [ok] no bidi control characters
+      [ok] font named in every run: IBM Plex Sans
+      [ok] fonts embedded in the package: 2 files (regular + bold), embedTrueTypeFonts set
+      [ok] core properties: author = name, title set, description empty, created 2026-11-16
+      [ok] LibreOffice render (fonts installed): pages = 1, fonts IBMPlexSans-Regular
+      [ok] LibreOffice render (fonts NOT installed, embedded fonts only): pages = 1, fonts IBMPlexSans, IBMPlexSans-Bold
+      [ok] LibreOffice render: same words as the approved PDF (nothing clipped or lost)
+      [ok] LibreOffice render: phone reads +966 54 093 0121
+      [ok] LibreOffice render: lowest text at 276 mm of 297
+
+ALL PASS
