@@ -375,7 +375,7 @@ def p01():
 <img class="a" src="assets/logo/otlobny-emaar_logo_lockup-colour_ar-en_v02.svg" alt="اطلبني — شركة اطلبني إعمار المحدودة — OTLOBNY EMAR COMPANY LTD." style="left:{X0}mm;top:22mm;width:{lw}mm;height:{lw*138.25/307.711:.2f}mm">
 <div class="a" style="left:{X0}mm;top:170mm;width:{lw}mm">{en('Company Profile', 'cv-te')}</div>
 <div class="a cvline" style="left:{X0}mm;top:184mm;width:{lw}mm"></div>
-<div class="a pair" style="left:{X0}mm;top:187.5mm;width:{lw}mm">{en('otlobny.net', 'cv-f')}{ar('المدينة المنورة', 'cv-fa')}</div>''', 'cover')
+<div class="a pair" style="left:{X0}mm;top:187.5mm;width:{lw}mm">{en('otlobny.net', 'cv-f')}{ar('المملكة العربية السعودية', 'cv-fa')}</div>''', 'cover')
 
 # =============================================================== p2 contents (type only; navy panel with the lattice)
 def p02():
@@ -396,21 +396,21 @@ def p02():
                 f'<div class="a hr" style="left:{x0}mm;top:60mm;width:{x1-x0}mm"></div>' + r +
                 foot(2, x0, x1, 0))
 
-# =============================================================== p3 about (Madinah plaza)
+# =============================================================== p3 about (Prophet's Mosque plaza photo)
 def p03():
     im = prep('p03_madinah-plaza', ST + 'opener_madinah-haram-plaza-umbrellas_wikimedia-masjid-al-nabawi-2024-3.jpg', 148.5, 210, cx=.42, cy=0.0, zoom=1.18, page='3')
     x0, x1 = 18, 134
-    a_ = ('«اطلبني إعمار» شركة ذات مسؤولية محدودة، تأسست عام 2021 في المدينة المنورة، وتعمل بموجب السجل التجاري رقم 4650245200. '
+    a_ = ('«اطلبني إعمار» شركة ذات مسؤولية محدودة، تأسست عام 2021 وتعمل بموجب السجل التجاري رقم 4650245200، وتخدم جميع مناطق المملكة العربية السعودية. '   # client 2026-11-16: service area
           'تقدم الشركة خدماتها في ستة مجالات: المقاولات العامة، والزراعة والتشجير، والصيانة، والنظافة، وتأمين الكوادر، والخدمات اللوجستية، وتخدم المنشآت الحكومية والتجارية والخاصة.')
-    e_ = ('OTLOBNY Emar is a limited liability company founded in 2021 in Al Madinah Al Munawwarah, Saudi Arabia, operating under Commercial Registration No. 4650245200. '
+    e_ = ('OTLOBNY Emar is a limited liability company founded in 2021, operating under Commercial Registration No. 4650245200 and serving all regions of the Kingdom of Saudi Arabia. '
           'The company works in six fields: general contracting, landscaping, maintenance, cleaning, manpower supply and logistics services. It serves government, commercial and private facilities.')
     facts = [('سنة التأسيس', 'Founded', N('2021'), N('2021'), True),
-             ('المقر', 'Based in', 'المدينة المنورة', 'Al Madinah Al Munawwarah', False),
+             ('نطاق الخدمة', 'Service area', 'جميع مناطق المملكة', 'All regions of the Kingdom', False),
              ('الشكل القانوني', 'Legal form', 'شركة ذات مسؤولية محدودة', 'Limited liability company', False),
              ('السجل التجاري', 'Commercial Registration', N('4650245200'), N('4650245200'), True)]
     rows = ''.join(f'<div class="fr">{en(f"<div class=fl2>{le}</div><div class=fv>{ve}</div>")}{ar(f"<div class=fl2>{la}</div><div class=fv>{va}</div>")}</div>'
                    for la, le, va, ve, _ in facts)
-    return page(3, img(im, 148.5, 0, 148.5, 210, 'The Prophet’s Mosque plaza, Al Madinah Al Munawwarah') +
+    return page(3, img(im, 148.5, 0, 148.5, 210, 'The Prophet’s Mosque plaza') +
                 flow(x0, x1, 20, kicker(1) + stack_title('من نحن', 'About Us') + '<div class="rule-g"></div>' + fcols(ar(a_, 'body ab'), en(e_, 'body'))) +
                 f'<div class="a facts" style="left:{x0}mm;top:135mm;width:{x1-x0}mm">{rows}</div>' + foot(3, x0, x1, 1))
 
@@ -456,7 +456,7 @@ def p06():
     # panorama cropped above the "TAIBA FRONT HOTEL" sign and left of the toilets sign (M5)
     im = prep('p06_madinah-panorama', ST + 'opener_madinah-haram-panorama_wikimedia-mezquita-del-profeta-dd01.jpg', 297, 68, box=(80, 240, 3000, 1180), cx=.5, cy=.5, page='6')   # v17: full colour (client 2026-11-16), standard light grade
     x0, x1 = 18, 279
-    out = img(im, 0, 0, 297, 68, 'The Prophet’s Mosque, Al Madinah Al Munawwarah')
+    out = img(im, 0, 0, 297, 68, 'The Prophet’s Mosque')
     # v17: Saudi Vision 2030 logo (client-supplied official mark, used unaltered) on a white tab rising from the page
     # into the banner's lower right corner (Arabic reading start). Logo 36 mm wide; clear space 15 % of its width (5.4 mm)
     VW = 36.0; VH = VW * 857 / 1280; CS = 0.15 * VW
@@ -754,7 +754,7 @@ def p20():
     y0 = (210 - (LH + 9 + 5)) / 2 - 4
     out = (f'<div class="a" style="left:0;top:0;width:297mm;height:210mm;background:linear-gradient(115deg,#1F3162 0%,#2B458A 52%,#3758B0 100%)"></div>'
            f'<img class="a" src="assets/logo/otlobny-emaar_logo_lockup-white_ar-en_v02.svg" alt="اطلبني — شركة اطلبني إعمار المحدودة — OTLOBNY EMAR COMPANY LTD." style="left:{148.5-50}mm;top:{y0:.2f}mm;width:100mm;height:{LH:.2f}mm">'
-           f'<div class="a pair bkl" style="left:{148.5-50}mm;top:{y0+LH+10:.2f}mm;width:100mm">{en("otlobny.net", "cv-f")}{ar("المدينة المنورة", "cv-fa")}</div>')
+           f'<div class="a pair bkl" style="left:{148.5-50}mm;top:{y0+LH+10:.2f}mm;width:100mm">{en("otlobny.net", "cv-f")}{ar("المملكة العربية السعودية", "cv-fa")}</div>')
     return page(20, out, 'back')
 
 # =============================================================== CSS
