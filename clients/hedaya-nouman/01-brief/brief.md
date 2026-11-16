@@ -50,3 +50,16 @@ No dates or hours are given for the courses.
 
 ## Open questions for the client (asked in chat)
 Actual duties and any numbers at the hospital; systems used; nationality line; exact title at the school; course dates/hours; real English level; LinkedIn; whether she is available immediately / notice.
+
+## Client answers — 2026-11-16 (these are now verified facts and override the assumptions above)
+1. **Hospital role, actual work:** hotel (hospitality) services and room services within the hospital — client's words: «أخصائية خدمات فندقية وخدمات الغرف». The title on the original CV is «أخصائية خدمة عملاء»; the title is kept and the hospitality/room-services scope is stated beside or under it. (Exact official title still to be confirmed by the client; no figures were given, so none are printed.)
+2. **Achievements / responsibilities:** trained new female employees; led the work team. (No team size given — print none.)
+3. **Systems:** the hospital's information system (name not given — do not name a product) and Microsoft Excel.
+4. **Nationality:** Saudi — print «الجنسية: سعودية» / "Nationality: Saudi".
+5. **School 2016–2017:** job title was **منسقة إدارية / Administrative Coordinator** (replaces «العمل الإرشادي»; the student-guidance bullets are withdrawn — bullets must now fit an administrative coordinator in a school).
+6. **Courses:** no hours; **all taken in 2020** — print the year 2020 on each of the four.
+7. **English:** Basic — confirmed.
+8. **LinkedIn:** none. **Availability:** yes, available. (Not printed as a date; may be printed as «متاحة للعمل» only if space allows — default: leave out.)
+9. **English name spelling:** Hedaya Fakhri Nouman — confirmed.
+
+Effect on positioning: the hospitality model is no longer a pure career transition — she has 4+ years delivering hotel-style services and room services **in a hospital setting**. Say exactly that; still never claim employment in a hotel or knowledge of hotel systems.
