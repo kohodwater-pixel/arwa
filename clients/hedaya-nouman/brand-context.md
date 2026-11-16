@@ -69,3 +69,4 @@
 | Date | What was delivered | Where |
 |---|---|---|
 | 2026-11-16 | CV set v02 (12 files + content file) shown to the client as drafts; review r2 PASS WITH MINOR FIXES; minors n1–n6 and client confirmations go into v03 | `06-profiles/cv/` |
+| 2026-11-16 | Word versions of the four Executive CVs: v02 sent, then v03 after review r3 (page slack, dot-separated competencies, mailto). Not tested in Microsoft Word | `06-profiles/cv/` |

@@ -19,6 +19,8 @@ import zipfile
 from docx import Document
 from PIL import ImageFont
 from docx.enum.table import WD_ROW_HEIGHT_RULE
+from docx.enum.text import WD_LINE_SPACING
+from docx.opc.constants import RELATIONSHIP_TYPE as RT
 from docx.oxml import OxmlElement, parse_xml
 from docx.oxml.ns import nsdecls, qn
 from docx.shared import Mm, Pt
@@ -36,9 +38,10 @@ TEAL, SAND, SANDL, TINT = B.TEAL, B.SAND, B.SAND_LIGHT, "F5F1E8"
 INK, MUTED, WHITE, TAG_LINE, TAG_TEXT = "20282B", "566266", "FFFFFF", "9DB7BA", "184A52"
 # column grid in mm: outer margin, side content, tinted gap, white gap, main content, outer margin
 GRID = [13, 41, 4, 7, 132, 13]
-BAND_MM, BODY_MM = 33, 262.5
+BAND_MM, BODY_MM = 33, 254.5   # body row minimum: leaves about 9 mm of real slack on the page
+DOCX_V = "v03"
 NBSP = "\u00a0"
-BOXED_TAGS = {"en": True, "ar": False}   # competencies as boxed tags (True) or as middle-dot lines (False)
+BOXED_TAGS = {"en": False, "ar": False}   # competencies as boxed tags (True) or as middle-dot lines (False)
 
 
 def tw(mm):
@@ -107,8 +110,9 @@ class Doc:
         if pos < len(text):
             self.run(p, text[pos:], size, rtl=True, **kw)
 
-    def par(self, cell, line, before=0, after=0, keep=False, ltr_right=False):
-        """New paragraph in a cell with exact line height (pt), like the CSS line boxes of the PDF."""
+    def par(self, cell, line, before=0, after=0, keep=False, ltr_right=False, exact=False):
+        """New paragraph in a cell. Line height is a minimum (at least), so a substituted font can grow the
+        line instead of clipping Arabic marks; only the rule and spacer paragraphs are exact."""
         ps = cell.paragraphs
         if len(ps) == 1 and not ps[0].runs:   # the empty paragraph every new cell starts with
             p = ps[0]
@@ -117,6 +121,7 @@ class Doc:
         pf = p.paragraph_format
         pf.space_before, pf.space_after = Pt(before), Pt(after)
         pf.line_spacing = Pt(line)
+        pf.line_spacing_rule = WD_LINE_SPACING.EXACTLY if exact else WD_LINE_SPACING.AT_LEAST
         pf.keep_with_next = keep
         ppr = p._p.get_or_add_pPr()
         if self.rtl and not ltr_right:
@@ -137,7 +142,7 @@ class Doc:
             self.run(p, text, 8.8, bold=True, color=TEAL, caps=True, track=14)
         # short sand accent bar: an empty paragraph whose bottom border is cut to 9 mm by its end indent
         # (in a right-to-left paragraph w:right is the trailing edge, so the bar stays at the start side)
-        bar = self.par(cell, 2.5, after=5.6 if self.rtl else 6.6, keep=True)
+        bar = self.par(cell, 2.5, after=5.6 if self.rtl else 6.6, keep=True, exact=True)
         self.run(bar, "", 1)
         ppr = bar._p.get_or_add_pPr()
         bd = parse_xml(f'<w:pBdr {nsdecls("w")}><w:bottom w:val="single" w:sz="12" w:space="0" w:color="{SAND}"/></w:pBdr>')
@@ -219,7 +224,7 @@ class Doc:
                 tcpr.append(parse_xml(f'<w:vAlign {nsdecls("w")} w:val="{valign}"/>'))
 
         def spacer(cell):
-            p = self.par(cell, 1)
+            p = self.par(cell, 1, exact=True)
             self.run(p, "", 1)
 
         r0, r1 = t.rows
@@ -231,7 +236,7 @@ class Doc:
         cellfmt(band, sum(GRID), TEAL, valign="center", bottom_rule=True)
         fills = [TINT, TINT, TINT, None, None, None]
         for i, c in enumerate(r1.cells):
-            cellfmt(c, GRID[i], fills[i], top=6.5, bottom=4)
+            cellfmt(c, GRID[i], fills[i], top=6.5, bottom=2)
             if i not in (1, 4):
                 spacer(c)
         side, main = r1.cells[1], r1.cells[4]
@@ -266,7 +271,10 @@ class Doc:
                 side_attr = "w:left" if rtl else "w:right"
                 ind = parse_xml(f'<w:ind {nsdecls("w")} {side_attr}="-{tw(GRID[2] - 0.5)}"/>')
                 p._p.get_or_add_pPr().insert_element_before(ind, *B.PPR_ORDER[B.PPR_ORDER.index("w:ind") + 1:])
-                self.run(p, value, size, rtl=False)
+                if value == B.EMAIL:
+                    self.mailto(p, self.run(p, value, size, rtl=False))
+                else:
+                    self.run(p, value, size, rtl=False)
             else:
                 self.text(p, value, size)
         for k in [x for x in m["order"] if x in B.SIDE_KEYS]:
@@ -319,6 +327,7 @@ class Doc:
         # a table cannot be the last thing in a Word document: one 1 pt paragraph closes it
         tail = doc.add_paragraph()
         tail.paragraph_format.line_spacing = Pt(1)
+        tail.paragraph_format.line_spacing_rule = WD_LINE_SPACING.EXACTLY
         tail.paragraph_format.space_before = tail.paragraph_format.space_after = Pt(0)
         self.run(tail, "", 1)
 
@@ -332,6 +341,14 @@ class Doc:
         cp.language = "ar-SA" if rtl else "en-GB"
         doc.save(path)
 
+    def mailto(self, p, run):
+        """Wrap an existing run in a real hyperlink (external relationship), keeping its look."""
+        rid = p.part.relate_to("mailto:" + B.EMAIL, RT.HYPERLINK, is_external=True)
+        h = OxmlElement("w:hyperlink")
+        h.set(qn("r:id"), rid)
+        run._r.addprevious(h)
+        h.append(run._r)
+
     def competencies(self, cell):
         """English: tags — each competency is a real-text run with a thin box border (w:bdr); words inside a
         tag are joined by no-break spaces so a tag never splits across lines.
@@ -341,7 +358,7 @@ class Doc:
         if BOXED_TAGS[self.b["lang"]]:
             p = self.par(cell, 20)
             for i, x in enumerate(items):
-                self.run(p, NBSP + x.replace(" ", NBSP) + NBSP, 8.7, color=TAG_TEXT, box=True)
+                self.run(p, NBSP * 2 + x.replace(" ", NBSP) + NBSP * 2, 8.7, color=TAG_TEXT, box=True)
                 if i < len(items) - 1:
                     self.run(p, "  ", 8.7)
             return
@@ -404,7 +421,7 @@ def embed_fonts(path, family):
 if __name__ == "__main__":
     for key, m in B.MODELS.items():
         d = Doc(m)
-        out = B.OUT / B.fname(m, "executive", "docx")
+        out = B.OUT / B.fname(m, "executive", "docx").replace(f"_{B.V}.docx", f"_{DOCX_V}.docx")
         d.build(out)
         embed_fonts(out, d.font)
         print("built", out.name)

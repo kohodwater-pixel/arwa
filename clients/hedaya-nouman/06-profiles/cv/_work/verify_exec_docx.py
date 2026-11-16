@@ -68,9 +68,9 @@ def expected_exec(m):
 approved = dict(l.split()[::-1] for l in (W / "approved_exec_md5.txt").read_text().splitlines())
 for key, m in B.MODELS.items():
     b = m["base"]; rtl = b["lang"] == "ar"
-    name = B.fname(m, "executive", "docx")
+    name = B.fname(m, "executive", "docx").replace("_v02.docx", "_v03.docx")
     dx, pdf = CV / name, CV / B.fname(m, "executive", "pdf")
-    lo, lo_nf = W / "exec-docx-render" / pdf.name, W / "exec-docx-render-nofonts" / pdf.name
+    lo, lo_nf = W / "exec-docx-render" / (name[:-4] + "pdf"), W / "exec-docx-render-nofonts" / (name[:-4] + "pdf")
     d = docx.Document(dx)
     ps = docx_paragraphs(d)
     text = "\n".join(p.text for p in ps)
@@ -124,7 +124,16 @@ for key, m in B.MODELS.items():
     c["LibreOffice render: phone reads +966 54 093 0121"] = B.PHONE in lot
     pg = pymupdf.open(lo)[0]
     low = max(x[3] for x in pg.get_text("blocks")) / 72 * 25.4
-    c[f"LibreOffice render: lowest text at {low:.0f} mm of 297"] = low < 292
+    def slack(f):   # white space left on the page under the layout table = how much it can grow before page 2
+        g = pymupdf.open(f)[0]
+        return 297 - max(dr["rect"].y1 for dr in g.get_drawings() if dr.get("fill")) / 72 * 25.4
+    s1, s2 = slack(lo), slack(lo_nf)
+    c[f"LibreOffice render: lowest text at {low:.0f} mm; vertical slack under the table {s1:.1f} mm (fonts installed), {s2:.1f} mm (embedded only)"] = min(s1, s2) >= 7
+    hl = re.findall(r'<w:hyperlink r:id="(rId\d+)"', xml)
+    rels = zipfile.ZipFile(dx).read("word/_rels/document.xml.rels").decode()
+    c["e-mail is a real mailto hyperlink (external relationship)"] = len(hl) == 1 and f'Target="mailto:{B.EMAIL}"' in rels and 'TargetMode="External"' in rels
+    rules = re.findall(r'w:lineRule="(\w+)"', xml)
+    c[f"line heights: {rules.count('atLeast')} paragraphs at-least, {rules.count('exact')} exact (rules, spacers, closing paragraph)"] = rules.count("atLeast") > 40
     bad = [k for k, v in c.items() if not v]
     ok_all &= not bad
     print(("PASS  " if not bad else "FAIL  ") + name)
@@ -132,11 +141,13 @@ for key, m in B.MODELS.items():
         print(f'      [{"ok" if v else "XX"}] {k}')
     # side-by-side: approved PDF (left) and LibreOffice render of the DOCX (right)
     ims = []
-    for f in (pdf, lo):
-        px = pymupdf.open(f)[0].get_pixmap(dpi=84)
+    for f in (pdf, lo, lo_nf):
+        px = pymupdf.open(f)[0].get_pixmap(dpi=62)
         ims.append(Image.frombytes("RGB", (px.width, px.height), px.samples))
-    sheet = Image.new("RGB", (ims[0].width + ims[1].width + 12, max(i.height for i in ims)), "#888888")
-    sheet.paste(ims[0], (0, 0)); sheet.paste(ims[1], (ims[0].width + 12, 0))
-    sheet.save(W / "check-png" / f'compare_exec_pdf-vs-docx_{m["slug"]}_{b["lang"]}.png')
+    sheet = Image.new("RGB", (sum(i.width for i in ims) + 24, max(i.height for i in ims)), "#888888")
+    x = 0
+    for im in ims:
+        sheet.paste(im, (x, 0)); x += im.width + 12
+    sheet.save(W / "check-png" / f'compare_exec_pdf-vs-docx-v03_{m["slug"]}_{b["lang"]}.png')
     print()
 print("ALL PASS" if ok_all else "SOME CHECKS FAILED")
