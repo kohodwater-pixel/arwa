@@ -63,3 +63,8 @@ Actual duties and any numbers at the hospital; systems used; nationality line; e
 9. **English name spelling:** Hedaya Fakhri Nouman — confirmed.
 
 Effect on positioning: the hospitality model is no longer a pure career transition — she has 4+ years delivering hotel-style services and room services **in a hospital setting**. Say exactly that; still never claim employment in a hotel or knowledge of hotel systems.
+
+## Design feedback — 2026-11-16
+Client: the template should have some beauty instead of being plain, while staying compatible with ATS. Applies to v02:
+- **ATS version:** keep single column, real text, real headings, no tables/text boxes/images — but add visual polish that parsers ignore: a coloured header band or accent block behind the name and title (paragraph shading, not a shape), accent-coloured section headings with a thin rule (paragraph border), refined spacing and type scale, competencies set as a tidy separated line, a calm two-colour palette.
+- **Executive version:** more character than v01 — a tinted side column or header band, stronger name treatment, section markers, refined accent details; still calm and professional, no photo, no skill bars, no clip-art.
