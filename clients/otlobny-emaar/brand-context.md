@@ -146,3 +146,5 @@
 - 2026-11-17 — CLIENT INSTRUCTION: the cover's image arrangement must be the same design as the ORIGINAL printed cover (photo sent; also `01-brief/assets-received/pages/p-01.png`): the large diamond photo bleeding off the right edge, one small rounded diamond photo below-left of it, partial diamonds cut by the top edge and by the bottom-right corner. Content stays current (lockup v02, client's images, "Company Profile", blue tint on the side images).
 
 - 2026-11-17 — Profile v19 built and sent: cover image arrangement copied from the original printed cover (shape positions measured from p-01.png and overlaid); p6 banner frame fixed at 297 × 85 mm (3.5:1 — size given to the client: 3500 × 1000 px), Riyadh image cropped to it, white Vision 2030 logo built from the official file placed on the photo (the copy baked into the client's image misspells «رؤية»), white tab removed.
+
+- 2026-11-17 — CLIENT FEEDBACK on v19: p6 banner uses the 3:1 Riyadh banner image he made, shown whole. Cover: the large image (two engineers) is replaced by the rebar-worker image he sent, with a LIGHT blue tint so it harmonises with the palette.
