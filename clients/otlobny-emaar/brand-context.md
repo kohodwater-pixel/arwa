@@ -142,3 +142,5 @@
 - 2026-11-17 — Profile v18 built and sent: p6 banner is the client's Riyadh skyline (full colour, 82 mm high, malformed baked-in wordmark painted out, baked-in Vision logo cropped out); official Vision 2030 logo on the white tab as in v17. The umbrella photo is out of the book.
 
 - 2026-11-17 — CLIENT FEEDBACK on v18 (p6): use the wider Riyadh image, fitted exactly to the banner; show the Vision 2030 logo the way it appears in his image (white, directly on the photo, bottom-right) and remove the white tab the agency added. Ruling kept: the malformed green OTLOBNY wordmark in the image is replaced by the real wordmark, never shown as supplied.
+
+- 2026-11-17 — CLIENT INSTRUCTION: the cover's image arrangement must be the same design as the ORIGINAL printed cover (photo sent; also `01-brief/assets-received/pages/p-01.png`): the large diamond photo bleeding off the right edge, one small rounded diamond photo below-left of it, partial diamonds cut by the top edge and by the bottom-right corner. Content stays current (lockup v02, client's images, "Company Profile", blue tint on the side images).
