@@ -148,3 +148,5 @@
 - 2026-11-17 — Profile v19 built and sent: cover image arrangement copied from the original printed cover (shape positions measured from p-01.png and overlaid); p6 banner frame fixed at 297 × 85 mm (3.5:1 — size given to the client: 3500 × 1000 px), Riyadh image cropped to it, white Vision 2030 logo built from the official file placed on the photo (the copy baked into the client's image misspells «رؤية»), white tab removed.
 
 - 2026-11-17 — CLIENT FEEDBACK on v19: p6 banner uses the 3:1 Riyadh banner image he made, shown whole. Cover: the large image (two engineers) is replaced by the rebar-worker image he sent, with a LIGHT blue tint so it harmonises with the palette.
+
+- 2026-11-17 — Profile v20 built and sent: p6 banner 297 × 99 mm shows the client's 3:1 Riyadh image whole (baked-in Vision logo misspelt → replaced in place by the official white version); cover hero is the client's rebar-worker image with a 30% royal-blue tint; two-engineers image no longer used.

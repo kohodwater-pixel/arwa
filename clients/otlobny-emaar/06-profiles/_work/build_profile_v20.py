@@ -127,6 +127,14 @@ def veil(im, a=0.15):
     y = 0.5 + (y - 0.5) * (1 + a * 0.35)                       # restore the contrast the wash takes away
     return Image.fromarray((np.clip(y, 0, 1) * 255 + .5).astype(np.uint8))
 
+def hero_tone(im):
+    """Royal-blue tone for the cover hero: navy shadows, royal mid-tones, cool near-white highlights."""
+    a = np.asarray(im).astype(float) / 255
+    L = (a * [0.2126, 0.7152, 0.0722]).sum(axis=2, keepdims=True)
+    lo, mid, hi = np.array([24, 38, 84]) / 255, np.array([55, 88, 176]) / 255, np.array([226, 233, 248]) / 255
+    out = np.where(L < .5, lo + (mid - lo) * (L / .5), mid + (hi - mid) * ((L - .5) / .5))
+    return Image.fromarray((np.clip(out, 0, 1) * 255 + .5).astype(np.uint8))
+
 def side_tone(im):
     """Brand-blue tone for the cover's side photos: navy shadows, royal mid-tones, periwinkle-white highlights
     (lighter end kept bluer than the page duotone so the blend reads clearly blue)."""
@@ -151,7 +159,7 @@ def load(src):
         _cache[src] = retouch(Path(src).name, Image.open(BASE / src).convert('RGB'))
     return _cache[src]
 
-def prep(name, src, w_mm, h_mm, cx=.5, cy=.5, zoom=1.0, box=None, page='', graded=True, whiten=False, duo=False, tint=0.0, blue=0.0):
+def prep(name, src, w_mm, h_mm, cx=.5, cy=.5, zoom=1.0, box=None, page='', graded=True, whiten=False, duo=False, tint=0.0, blue=0.0, cool=0.0):
     """Crop to the frame's aspect around (cx, cy), never upscale; grade; save assets/derived/v20_<name>.jpg; log ppi."""
     fn = Path(src).name
     assert fn not in DEMOTED, fn
@@ -171,6 +179,8 @@ def prep(name, src, w_mm, h_mm, cx=.5, cy=.5, zoom=1.0, box=None, page='', grade
         c = c.resize((tw, round(tw / asp)), Image.LANCZOS)
     if tint:
         c = veil(c, tint)
+    if cool:   # v20 cover hero: light royal-blue tone blended over the photo (sepia -> cool, still natural)
+        c = Image.blend(c.convert('RGB'), hero_tone(c), cool)
     if blue:   # v20 side images: navy->royal duotone mixed over the photo at strength 'blue'
         c = Image.blend(c.convert('RGB'), side_tone(c), blue)
     if duo:
@@ -339,7 +349,7 @@ def p01():
                 f'transform="rotate(45 {c[0]:.3f} {c[1]:.3f})"/>')
     # visible boxes for the photos (only what can show on the page is prepared, so resolution is not wasted)
     big_box = (Lx, 0, 297, 210)
-    hero = prep('p01_hero_engineers', 'assets/derived/v13_client_triptych-engineers.png', big_box[2] - big_box[0], 210, cx=.0, cy=.5, page='1', graded=False)   # left edge of the panel: pointing engineer's head clear of the diamond edge; pointing engineer + crane inside the diamond
+    hero = prep('p01_hero_rebar-worker', 'assets/mockups/photo_cover-hero_rebar-worker.png', big_box[2] - big_box[0], 210, cx=.607, cy=.5, page='1', graded=False, cool=float(os.environ.get('HERO_COOL', '0.30')))   # v20: client's rebar worker, as his original cover   # left edge of the panel: pointing engineer's head clear of the diamond edge; pointing engineer + crane inside the diamond
     top_box = (tc[0] - tr, 0, tc[0] + tr, tr)
     t_top = prep('p01_top_landscaping', 'assets/derived/v13_client_triptych-landscaping.png', 2 * tr, tr, cx=.42, cy=.62, page='1', graded=False, blue=BLUE)
     t_small = prep('p01_small_cleaner', 'assets/derived/v13_client_triptych-cleaner.png', 2 * sr, 2 * sr, cx=.36, cy=.64, zoom=1.3, page='1', graded=False, blue=BLUE)
@@ -347,7 +357,7 @@ def p01():
     svg = (f'<svg class="a" style="left:0;top:0" width="297mm" height="210mm" viewBox="0 0 297 210" role="img" aria-label="Photographs">'
            f'<defs><linearGradient id="gcv" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1F3162"/><stop offset="1" stop-color="#3758B0"/></linearGradient>'
            f'<clipPath id="cvB">{dpath(Bc, RB, rad_big)}</clipPath><clipPath id="cvT">{dpath(tc, tr, rad)}</clipPath><clipPath id="cvS">{dpath(sc, sr, rad)}</clipPath></defs>'
-           f'<image href="{hero}" x="{big_box[0]:.3f}" y="0" width="{297-big_box[0]:.3f}" height="210" preserveAspectRatio="xMidYMid slice" clip-path="url(#cvB)"><title>Two engineers in company vests at a construction site</title></image>'
+           f'<image href="{hero}" x="{big_box[0]:.3f}" y="0" width="{297-big_box[0]:.3f}" height="210" preserveAspectRatio="xMidYMid slice" clip-path="url(#cvB)"><title>Worker in helmet and vest tying reinforcement steel</title></image>'
            f'<image href="{t_top}" x="{top_box[0]:.3f}" y="0" width="{2*tr:.3f}" height="{tr:.3f}" preserveAspectRatio="xMidYMid slice" clip-path="url(#cvT)"><title>Landscaped street planting</title></image>'
            f'<image href="{t_small}" x="{sc[0]-sr:.3f}" y="{sc[1]-sr:.3f}" width="{2*sr:.3f}" height="{2*sr:.3f}" preserveAspectRatio="xMidYMid slice" clip-path="url(#cvS)"><title>Window cleaner in company uniform</title></image>'
            f'{dpath(bc, br, rad).replace("/>", " fill=\"url(#gcv)\"/>")}'
