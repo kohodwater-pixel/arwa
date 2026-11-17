@@ -138,3 +138,5 @@
 - 2026-11-16 — Profile v17 built and sent: p6 banner in full colour with the Vision 2030 logo (36 mm, unaltered, on a white tab); «المدينة المنورة» removed as a location label (cover/back cover now «المملكة العربية السعودية»; p3 states service to all regions of the Kingdom). Madinah remains only in the Chamber's name, the postal address and inside partner logos.
 
 - 2026-11-17 — CLIENT FEEDBACK on v17: on p6 the Prophet's Mosque umbrella banner is replaced by the Riyadh skyline image he sent; the Vision 2030 logo stays on that banner. Creative Director ruling: the malformed green OTLOBNY wordmark baked into the image is cropped out or removed (never shown); the Vision 2030 logo is shown once, cleanly (the supplied official file, unaltered), not doubled with the baked-in copy.
+
+- 2026-11-17 — Profile v18 built and sent: p6 banner is the client's Riyadh skyline (full colour, 82 mm high, malformed baked-in wordmark painted out, baked-in Vision logo cropped out); official Vision 2030 logo on the white tab as in v17. The umbrella photo is out of the book.
