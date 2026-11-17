@@ -140,3 +140,5 @@
 - 2026-11-17 — CLIENT FEEDBACK on v17: on p6 the Prophet's Mosque umbrella banner is replaced by the Riyadh skyline image he sent; the Vision 2030 logo stays on that banner. Creative Director ruling: the malformed green OTLOBNY wordmark baked into the image is cropped out or removed (never shown); the Vision 2030 logo is shown once, cleanly (the supplied official file, unaltered), not doubled with the baked-in copy.
 
 - 2026-11-17 — Profile v18 built and sent: p6 banner is the client's Riyadh skyline (full colour, 82 mm high, malformed baked-in wordmark painted out, baked-in Vision logo cropped out); official Vision 2030 logo on the white tab as in v17. The umbrella photo is out of the book.
+
+- 2026-11-17 — CLIENT FEEDBACK on v18 (p6): use the wider Riyadh image, fitted exactly to the banner; show the Vision 2030 logo the way it appears in his image (white, directly on the photo, bottom-right) and remove the white tab the agency added. Ruling kept: the malformed green OTLOBNY wordmark in the image is replaced by the real wordmark, never shown as supplied.
