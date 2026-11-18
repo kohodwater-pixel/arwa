@@ -50,3 +50,23 @@ Instagram post 4:5 (1080×1350) and story 9:16 (1080×1920), sRGB PNG, with HTML
 - Put the client's burger photo (`_originals/tbc-restaurants-company_burger-photo_client-supplied.webp`) on the phone screen instead of the drawn burger, fitted properly.
 - Client's judgement: the designs look primitive, not professional. The craft level of direction A must rise (applies to the statics and the motion piece).
 - 2026-11-18: client sent two more food photos for the MOTION graphic: `_originals/tbc-restaurants-company_chicken-roll-photo_client-supplied.webp` (fried-chicken roll) and `_originals/tbc-restaurants-company_cheeseburger-photo_client-supplied.webp` (cheeseburger with pickles). Three client photos are now available; the first burger stays the hero of the statics.
+
+## Client copy changes — 2026-11-18 (supersede the copy above; apply to every piece: statics A and B, motion, voice-over)
+1. REMOVE the «العمل عن بُعد» tag everywhere (the advert no longer mentions remote work).
+2. Experience requirement becomes: «خبرة لا تقل عن 3 سنوات في التسويق وإدارة حسابات التواصل الاجتماعي» (replaces «خبرة سابقة في التسويق وإدارة حسابات التواصل الاجتماعي»).
+3. ADD «راتب مجزٍ» (client's words: «راتب مجزيء»; correct spelling مجزٍ). Shown as the badge near the headline, in the slot the remote tag used.
+
+### Current advert copy (v-current)
+- Kicker: فرصة وظيفية
+- Headline: موظف/ـة تسويق وإدارة حسابات التواصل الاجتماعي
+- Line: لشركة متخصصة في قطاع المطاعم
+- Badge: راتب مجزٍ
+- المهام: إعداد خطة المحتوى الشهرية وتنفيذها · إدارة حسابات التواصل الاجتماعي والنشر والتفاعل مع العملاء · كتابة المحتوى الإعلاني والتنسيق مع المصممين والمصورين · إدارة الحملات الإعلانية المدفوعة ومتابعة نتائجها · إعداد تقارير الأداء الدورية
+- المتطلبات: خبرة لا تقل عن 3 سنوات في التسويق وإدارة حسابات التواصل الاجتماعي · خبرة في التصميم (شرط أساسي) · معرفة جيدة بمنصات إنستغرام وتيك توك وسناب شات وإكس · مهارة في كتابة المحتوى وحس إبداعي · يُفضَّل من لديه خبرة في قطاع المطاعم
+- Apply: للتقديم: أرسل/ي سيرتك الذاتية وسابقة أعمالك على البريد الإلكتروني — hr@otlobny.co
+
+### Voice-over script v02 (replaces v01; same voice)
+«تحب التسويق وعندك حس إبداعي؟ هذي فرصتك! مطلوب موظف أو موظفة تسويق وإدارة حسابات التواصل الاجتماعي، لشركة متخصصة في قطاع المطاعم. خبرة لا تقل عن ثلاث سنوات، وخبرة التصميم شرط أساسي، والراتب مجزي. أرسل سيرتك الذاتية وسابقة أعمالك على الإيميل اللي قدامك، وننتظرك!»
+
+### Creative Director rulings for the motion (review r4, client did not answer)
+- The four small requirement chips are removed from the film. Beat 4 shows three clear items in turn: «خبرة لا تقل عن 3 سنوات», «خبرة في التصميم (شرط أساسي)», «راتب مجزٍ».
