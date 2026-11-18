@@ -165,7 +165,7 @@
     add('plate', { kind: 'svg', init: { x: 0, y: 0, s: 0 }, moves: [['sector+0.15', 0.6, { s: 1 }, 'back']] });
     add('fork', { kind: 'svg', init: { x: -900, y: -10, r: -40 }, moves: [['sector+0.45', 0.65, { x: -445, r: 0 }, 'back']] });
     add('knife', { kind: 'svg', init: { x: 900, y: -10, r: 40 }, moves: [['sector+0.55', 0.65, { x: 445, r: 0 }, 'back']] });
-    add('foodBurger', { kind: 'svg', init: { x: 0, y: -1700, o: 1 }, moves: [['sector+0.55', 0.75, { y: 0 }, 'bounce']] });
+    add('foodBurger', { kind: 'svg', init: { x: 0, y: -2600, o: 1 }, moves: [['sector+0.55', 0.75, { y: 0 }, 'bounce']] });
     add('burgerShadow', { kind: 'svg', init: { x: 0, y: 0, s: 0 }, moves: [['sector+0.7', 0.5, { s: 1 }, 'out']] });
     add('hat', { kind: 'svg', init: { x: 14, y: -360, r: 34, s: 0 }, moves: [['sector+1.15', 0.35, { s: 1 }, 'back'], ['sector+1.2', 0.6, { y: -252, r: 8 }, 'bounce']] });
 

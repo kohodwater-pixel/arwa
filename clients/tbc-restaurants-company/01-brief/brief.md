@@ -45,3 +45,7 @@ Instagram post 4:5 (1080×1350) and story 9:16 (1080×1920), sRGB PNG, with HTML
 - Voice-over script v01 (Saudi white dialect, agency-written; the email is shown on screen, not spoken):
   «تحب التسويق وعندك حس إبداعي؟ هذي فرصتك! مطلوب موظف أو موظفة تسويق وإدارة حسابات التواصل الاجتماعي، لشركة متخصصة في قطاع المطاعم. الدوام عن بُعد، وخبرة التصميم شرط أساسي. أرسل سيرتك الذاتية وسابقة أعمالك على الإيميل اللي قدامك، وننتظرك!»
 - Format: vertical 1080×1920 MP4 (H.264, AAC), length follows the voice-over (about 15–20 s). No music unless a licensed track is supplied.
+
+## Client feedback on v02 direction A — 2026-11-18
+- Put the client's burger photo (`_originals/tbc-restaurants-company_burger-photo_client-supplied.webp`) on the phone screen instead of the drawn burger, fitted properly.
+- Client's judgement: the designs look primitive, not professional. The craft level of direction A must rise (applies to the statics and the motion piece).
