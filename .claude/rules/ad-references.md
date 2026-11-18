@@ -17,6 +17,13 @@ Source of this rule: the agency owner's instruction of 2026-11-18, with the eigh
 | adforum.com | Work sorted by agency and brand, with the agencies' own profiles | You want to study one agency's style from its beginnings |
 | theinspirationroom.com | Blog collecting notable ads from around the world, with campaign links | You want a quick dose of ideas before starting a brief |
 
+## Status of the sites (checked 2026-11-18 — details in `templates/ad-reference-sources.md`)
+
+- **Work from the agency's cloud environment:** adsoftheworld.com (by HTTP fetch; search by sector and country at `/campaigns`), dandad.org (full archive needs a free account), musebyclios.com (by browser).
+- **Read for market context only:** thedrum.com (deeper content is paid).
+- **For a person in an ordinary browser, not for agents:** canneslions.com — its terms forbid automated access and putting its content into AI tools, and the winners archive lives on lovethework.com; oneshow.org — the archive lives on oneclub.org, not reachable from here; adforum.com — blocks automated access. Agents record links supplied by a person; they do not fetch these.
+- **DO NOT OPEN: theinspirationroom.com** — on 2026-11-18 both hosts redirect to an unrelated domain; the ad blog is no longer there. It stays in the table only until the owner confirms its removal.
+
 ## The step
 
 1. **Who:** the market-researcher gathers; the art-director reads and draws the conclusions. The Creative Director does not skip the step to save time.
