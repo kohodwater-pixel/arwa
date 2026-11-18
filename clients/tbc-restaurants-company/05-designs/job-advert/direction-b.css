@@ -1,4 +1,4 @@
-/* Direction B — "Menu board": colour-blocked, sticker badges.
+/* Direction B v03 — "Menu board": colour-blocked, sticker badges.
    Palette is neutral (no brand supplied); change the variables to re-skin.
    Colours used inside the SVG stickers are set in the HTML <defs>. */
 
@@ -14,18 +14,18 @@
 }
 
 body.post {
-  --side: 44px;
+  --side: 60px;
   --head-top: 44px;
-  --kicker: 32px; --h1-a: 116px; --h1-b: 62px;
+  --kicker: 32px; --h1-a: 112px; --h1-b: 60px;
   --sector: 30px; --tag: 34px;
   --cards-top: 584px; --card-h: 490px;
   --card-title: 34px; --body: 28px; --body-lh: 1.6;
   --apply-top: 1120px; --apply: 29px; --email: 64px; --email-h: 112px;
 }
 body.story {
-  --side: 44px;
+  --side: 60px;
   --head-top: 322px;
-  --kicker: 34px; --h1-a: 116px; --h1-b: 62px;
+  --kicker: 34px; --h1-a: 112px; --h1-b: 60px;
   --sector: 30px; --tag: 36px;
   --cards-top: 852px; --card-h: 490px;
   --card-title: 35px; --body: 28px; --body-lh: 1.6;
@@ -78,7 +78,7 @@ h1 .b { font-size: var(--h1-b); line-height: 1.4; color: var(--yellow); }
 .block + .block h2 { background: var(--pink); transform: rotate(-2.500deg); }
 .block li {
   position: relative; padding-inline-start: 28px;
-  font-size: var(--body); font-weight: 600; line-height: var(--body-lh);
+  font-size: var(--body); font-weight: 600; line-height: var(--body-lh); text-wrap: balance;
 }
 .block li::before {
   content: ""; position: absolute; inset-inline-start: 0; top: calc(var(--body) * var(--body-lh) / 2 - 8px);
