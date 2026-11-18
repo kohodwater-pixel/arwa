@@ -4,7 +4,7 @@ const { chromium } = require('playwright');
 const path = require('path');
 const fs = require('fs');
 const motion = path.resolve(__dirname, '..');
-const html = path.join(motion, 'tbc-restaurants-company_job-advert_motion-direction-a_ar_v01.html');
+const html = path.join(motion, 'tbc-restaurants-company_job-advert_motion-direction-a_ar_v02.html');
 const TL = JSON.parse(fs.readFileSync(path.join(motion, 'timeline.json'), 'utf8'));
 const ALLOWED = [
   'فرصة وظيفية', 'موظف/ـة تسويق وإدارة حسابات التواصل الاجتماعي', 'لشركة متخصصة في قطاع المطاعم', 'العمل عن بُعد',
@@ -18,6 +18,7 @@ const ALLOWED = [
   const errs = []; page.on('pageerror', e => errs.push(String(e)));
   await page.goto('file://' + html);
   await page.evaluate(() => document.fonts.ready);
+  await page.evaluate(() => Promise.all([...document.images].map(i => i.decode().catch(() => {}))));
   await page.evaluate(tl => window.initTimeline(tl), TL);
   const sc = await page.evaluate(() => { window.seek(3); return [scrollX, scrollY, document.documentElement.scrollWidth, document.documentElement.scrollHeight]; });
   console.log('scroll state', sc);
@@ -29,6 +30,9 @@ const ALLOWED = [
       email: (() => { const e = document.getElementById('email'), cs = getComputedStyle(e); const r = document.createRange(); r.selectNodeContents(e); return [e.getAttribute('dir'), cs.direction, cs.unicodeBidi, r.getClientRects().length]; })() };
   });
   const issues = [];
+  const ph = await page.evaluate(() => [...document.images].map(im => ({ src: im.getAttribute('src'), nat: im.naturalWidth / im.naturalHeight, shown: im.offsetWidth / im.offsetHeight, w: im.naturalWidth, f: getComputedStyle(im).filter })));
+  for (const q of ph) { if (!/^\.\.\/assets\/tbc-restaurants-company_(burger|chicken-roll|cheeseburger)-photo_client-supplied\.png$/.test(q.src) || !q.w || Math.abs(q.nat - q.shown) > 0.01 || /hue|saturate|sepia|invert|contrast|brightness|blur/.test(q.f)) issues.push('photo problem ' + JSON.stringify(q)); }
+  console.log('photos:', ph.length, 'all client-supplied, aspect kept');
   if (JSON.stringify(txt.units) !== JSON.stringify(ALLOWED)) issues.push('COPY MISMATCH ' + JSON.stringify(txt.units));
   if (txt.all !== txt.units.join('').replace(/\s/g, '')) issues.push('extra visible text');
   if (txt.email.join() !== 'ltr,ltr,isolate,1') issues.push('email: ' + txt.email);

@@ -1,0 +1,127 @@
+"""Generates the motion v02 HTML source (v03 look, three client photographs).
+Run once; the HTML it writes is the editable source."""
+import os
+MOTION = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+A = '../assets/tbc-restaurants-company_%s-photo_client-supplied.png'
+BURGER, ROLL, CHEESE = A % 'burger', A % 'chicken-roll', A % 'cheeseburger'
+
+HEART = ('<svg class="heart3d" viewBox="0 0 100 92" width="{w}" height="{h}" aria-hidden="true">'
+         '<path d="M50 88C50 88 6 62 6 31A24 24 0 0 1 50 18A24 24 0 0 1 94 31C94 62 50 88 50 88Z" fill="url(#gH{g})"/>'
+         '<path d="M50 88C50 88 6 62 6 31A24 24 0 0 1 50 18A24 24 0 0 1 94 31C94 62 50 88 50 88Z" fill="url(#gHs)"/>'
+         '<path d="M20 34A14 14 0 0 1 33 20" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity=".75"/></svg>')
+def heart(i, w, g=1): return f'<div class="it" id="{i}">' + HEART.format(w=w, h=round(w * .92), g=g) + '</div>'
+IC_HEART = '<svg viewBox="0 0 24 24"><path d="M12 20.500C12 20.500 3.500 15.300 3.500 9.300A4.600 4.600 0 0 1 12 6.800A4.600 4.600 0 0 1 20.500 9.300C20.500 15.300 12 20.500 12 20.500Z" fill="#fff"/></svg>'
+IC_CHAT = '<svg viewBox="0 0 24 24"><path d="M5.500 4.500H18.500A2.500 2.500 0 0 1 21 7V14.500A2.500 2.500 0 0 1 18.500 17H12L7.500 20.500V17H5.500A2.500 2.500 0 0 1 3 14.500V7A2.500 2.500 0 0 1 5.500 4.500Z" fill="#3A1A08"/></svg>'
+def card(i, icon, w1, w2):
+    return (f'<div class="it card-g" id="{i}"><span class="ic{" s" if icon is IC_CHAT else ""}">{icon}</span>'
+            f'<span class="ln"><i style="width:{w1}px"></i><i style="width:{w2}px"></i></span></div>')
+def post(src, img_id=''):
+    i = f' id="{img_id}"' if img_id else ''
+    return f'''<div class="post">
+        <div class="ui-head"><span class="av"></span><span class="n1"></span><span class="n2"></span><span class="dots"></span></div>
+        <div class="ui-photo"><img{i} src="{src}" alt=""></div>
+        <div class="ui-actions">
+          <svg class="a1" viewBox="0 0 28 28"><path d="M14 24C14 24 4 18 4 11A5.400 5.400 0 0 1 14 8A5.400 5.400 0 0 1 24 11C24 18 14 24 14 24Z" fill="#E5412D" stroke="#E5412D"/></svg>
+          <svg class="a2" viewBox="0 0 28 28"><path d="M7 5H21A3 3 0 0 1 24 8V16.500A3 3 0 0 1 21 19.500H14L9 23.500V19.500H7A3 3 0 0 1 4 16.500V8A3 3 0 0 1 7 5Z"/></svg>
+          <svg class="a3" viewBox="0 0 28 28"><path d="M4 13.500L24 4.500L18 24L13.500 16Z"/><path d="M13.500 16L24 4.500"/></svg>
+          <svg class="a4" viewBox="0 0 28 28"><path d="M7 4.500H21V24L14 18.500L7 24Z"/></svg>
+        </div>
+        <div class="ui-cap"><i></i><i></i><i></i></div>
+      </div>'''
+
+HTML = f'''<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Job advert — motion graphic, direction A — 1080x1920 — ar — v02</title>
+<meta name="viewport" content="width=1080">
+<link rel="stylesheet" href="motion.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gH1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF8A6B"/><stop offset=".5" stop-color="#EE4A32"/><stop offset="1" stop-color="#B71F12"/></linearGradient>
+    <linearGradient id="gH2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE08A"/><stop offset=".5" stop-color="#FFB52E"/><stop offset="1" stop-color="#E07F06"/></linearGradient>
+    <radialGradient id="gHs" cx=".32" cy=".24" r=".7"><stop offset="0" stop-color="#fff" stop-opacity=".45"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/></radialGradient>
+    <filter id="fGrain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="2" seed="11" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
+  </defs>
+  <symbol id="i-megaphone" viewBox="0 0 34 34"><path d="M6 13.500V20.500H10.500L21 26.500V7.500L10.500 13.500Z"/><path d="M11.500 21L13 27.500H16.500L15.200 22.500"/><path d="M25 13A5.500 5.500 0 0 1 25 21"/></symbol>
+  <symbol id="i-home" viewBox="0 0 48 48"><path d="M6 23L24 7L42 23"/><path d="M11 21V40H37V21"/><path d="M18.500 33A8 8 0 0 1 29.500 33"/></symbol>
+  <symbol id="i-send" viewBox="0 0 96 96"><circle cx="48" cy="48" r="48" fill="#2B1430"/><circle cx="48" cy="48" r="47" fill="none" stroke="#fff" stroke-opacity=".14" stroke-width="2"/><path d="M24 49L71 27L57 72L46 55Z" fill="#FFB52E"/><path d="M46 55L71 27L41 59L42 69Z" fill="#E58A0C"/></symbol>
+</svg>
+
+<div id="frame">
+  <div class="it" id="glow"></div>
+  <svg class="grain" aria-hidden="true"><rect width="100%" height="100%" filter="url(#fGrain)"/></svg>
+  <div class="vignette"></div>
+  <svg class="it" id="shock" width="700" height="700" viewBox="-350 -350 700 700" aria-hidden="true"><circle r="330" fill="none" stroke="#FFB52E" stroke-width="10"/></svg>
+
+  <!-- the two supporting photographs sit behind the hero burger -->
+  <img class="it food" id="roll" src="{ROLL}" alt="">
+  <img class="it food" id="cheese" src="{CHEESE}" alt="">
+
+  <!-- phone mock: the feed swipes burger, chicken roll, cheeseburger, burger -->
+  <div class="it phone" id="phone" aria-hidden="true">
+    <span class="btn r"></span><span class="btn l1"></span><span class="btn l2"></span>
+    <div class="glass"><div class="screen">
+      <div class="island"></div>
+      <div class="feed" id="feed">
+      {post(BURGER)}
+      {post(ROLL)}
+      {post(CHEESE)}
+      {post(BURGER, 'feedBurger')}
+      </div>
+      <div class="sheen"></div>
+    </div></div>
+  </div>
+
+  <!-- hero burger: pops out of the phone -->
+  <img class="it food" id="hero" src="{BURGER}" alt="">
+
+  <!-- reactions -->
+  {card('cardA', IC_HEART, 96, 60)}
+  {card('cardB', IC_CHAT, 86, 54)}
+  {card('cardC', IC_HEART, 80, 50)}
+  {''.join(heart(f'bh{p}{j}', 44 + 10 * j, 1 + (j + p) % 2) for p in range(3) for j in range(3))}
+  {heart('am0', 78, 1)}{heart('am1', 54, 2)}{heart('am2', 46, 1)}{heart('am3', 60, 2)}{heart('am4', 40, 1)}{heart('am5', 34, 2)}
+
+  <!-- on-screen text: only strings from the advert copy in 01-brief/brief.md -->
+  <div class="it" id="kicker" data-copy><svg aria-hidden="true"><use href="#i-megaphone"/></svg><span>فرصة وظيفية</span></div>
+
+  <h1 class="it" id="h1" data-copy><span class="ln a"><span class="w" id="w0">موظف/ـة</span> <span class="w" id="w1">تسويق</span></span> <span class="ln b"><span class="w" id="w2">وإدارة</span> <span class="w" id="w3">حسابات</span></span> <span class="ln b"><span class="w" id="w4">التواصل</span> <span class="w" id="w5">الاجتماعي</span></span></h1>
+
+  <p class="it" id="sector" data-copy>لشركة متخصصة في قطاع المطاعم</p>
+
+  <div class="it" id="tag" data-copy><svg aria-hidden="true"><use href="#i-home"/></svg><span>العمل عن بُعد</span></div>
+
+  <div class="it" id="design">
+    <svg viewBox="0 0 860 150" aria-hidden="true">
+      <path d="M60 112L136 26M430 52L352 124" stroke="#2B1430" stroke-width="3" opacity=".4"/>
+      <circle cx="136" cy="26" r="8" fill="#FFFAF1" stroke="#2B1430" stroke-width="4"/><circle cx="352" cy="124" r="8" fill="#FFFAF1" stroke="#2B1430" stroke-width="4"/>
+      <path id="penPath" d="M60 112C170 -20 300 170 430 52" fill="none" stroke="#E5412D" stroke-width="8" stroke-linecap="round"/>
+      <rect x="49" y="101" width="22" height="22" rx="4" fill="#FFFAF1" stroke="#2B1430" stroke-width="5"/><rect x="419" y="41" width="22" height="22" rx="4" fill="#FFFAF1" stroke="#2B1430" stroke-width="5"/>
+      <g id="penNib"><path d="M0 0L-15 -34V-62H15V-34Z" fill="#2B1430" stroke="#2B1430" stroke-width="5" stroke-linejoin="round"/><path d="M0 -6V-30" stroke="#FFFAF1" stroke-width="3.500" stroke-linecap="round"/><circle cx="0" cy="-34" r="4.500" fill="#FFFAF1"/><rect x="-17" y="-76" width="34" height="12" rx="4" fill="#FFB52E"/></g>
+      <g id="sw0"><rect x="-30" y="-30" width="60" height="60" rx="18" fill="#E5412D"/></g>
+      <g id="sw1"><rect x="-30" y="-30" width="60" height="60" rx="18" fill="#FFB52E"/></g>
+      <g id="sw2"><rect x="-30" y="-30" width="60" height="60" rx="18" fill="#6DBE45"/></g>
+      <g id="sw3"><rect x="-30" y="-30" width="60" height="60" rx="18" fill="#5A2A62"/></g>
+      <g id="sw4"><rect x="-30" y="-30" width="60" height="60" rx="18" fill="#2B1430"/></g>
+    </svg>
+    <p data-copy>خبرة في التصميم (شرط أساسي)</p>
+  </div>
+
+  <p class="it chip" id="chip0" data-copy>خبرة سابقة في التسويق وإدارة حسابات التواصل الاجتماعي</p>
+  <p class="it chip" id="chip1" data-copy>معرفة جيدة بمنصات إنستغرام وتيك توك وسناب شات وإكس</p>
+  <p class="it chip" id="chip2" data-copy>مهارة في كتابة المحتوى وحس إبداعي</p>
+  <p class="it chip" id="chip3" data-copy>يُفضَّل من لديه خبرة في قطاع المطاعم</p>
+
+  <p class="it" id="applyline" data-copy>للتقديم: أرسل/ي سيرتك الذاتية وسابقة أعمالك على البريد الإلكتروني</p>
+  <div class="it" id="pill"><div id="shine"></div><svg class="send" aria-hidden="true"><use href="#i-send"/></svg><bdi id="email" dir="ltr" data-copy>hr@otlobny.co</bdi></div>
+</div>
+<script src="motion.js"></script>
+</body>
+</html>
+'''
+name = 'tbc-restaurants-company_job-advert_motion-direction-a_ar_v02.html'
+open(os.path.join(MOTION, name), 'w', encoding='utf-8').write(HTML)
+print('wrote', name)

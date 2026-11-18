@@ -2,7 +2,7 @@
 # Frames -> video-only master (H.264 yuv420p, 30 fps) -> silent deliverable with a silent AAC track.
 set -euo pipefail
 W="$(cd "$(dirname "$0")" && pwd)"; M="$(dirname "$W")"
-NAME="tbc-restaurants-company_job-advert_motion-direction-a_ar_v01"
+NAME="tbc-restaurants-company_job-advert_motion-direction-a_ar_v02"
 ffmpeg -y -v error -framerate 30 -i "$W/frames/f_%04d.jpg" -c:v libx264 -preset slow -crf 17 -pix_fmt yuv420p \
   -vf "scale=in_range=pc:out_range=tv:out_color_matrix=bt709,format=yuv420p" -color_primaries bt709 -color_trc bt709 -colorspace bt709 -color_range tv \
   -r 30 -movflags +faststart "$W/${NAME}_video-only.mp4"

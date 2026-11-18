@@ -1,4 +1,4 @@
-/* Motion graphic, direction A — deterministic timeline.
+/* Motion graphic v02, direction A — deterministic timeline.
    window.initTimeline(json) builds the tracks from timeline.json;
    window.seek(t) puts every element where it belongs at second t.
    Nothing depends on the wall clock, so frame capture is repeatable.
@@ -82,58 +82,97 @@
   function build() {
     tracks.length = 0;
     const CX = 540;
+    const SC = ['headline', 'sector', 'remote', 'apply'];
 
-    /* ---------- red disc behind the hero ---------- */
-    add('disc', { kind: 'svg', init: { x: CX, y: 1060, s: 0, o: 1 }, float: { as: 0.012, p: 5 }, moves: [
-      ['hook+0.15', 0.8, { s: 1 }, 'back'],
-      ['headline+0', 0.9, { y: 1370, s: 0.86 }, 'io'],
-      ['sector+0', 0.8, { y: 1330, s: 1.02 }, 'io'],
-      ['remote+0', 0.7, { y: 1290, s: 1.0 }, 'io'],
-      ['apply+0', 0.8, { y: 1020, s: 0.48 }, 'io'],
-    ] });
-    add('ring', { kind: 'svg', init: { x: 0, y: 0, o: 1 }, apply: (el, p, t) => el.setAttribute('transform', `rotate(${(t * 6).toFixed(2)})`) });
-
-    /* ---------- phone ---------- */
-    add('phone', { kind: 'svg', suffix: 'translate(-180 -350)', init: { x: CX, y: 2700, s: 1.6, r: 22, o: 1 }, float: { ax: 5, ay: 9, ar: 0.8, p: 4.2 }, moves: [
-      ['hook+0.1', 0.95, { y: 1060, r: -8 }, 'softback'],
-      ['headline+0', 0.9, { y: 1400, s: 1.36, r: -6 }, 'io'],
-      ['sector+0', 0.75, { x: -520, y: 1750, r: -46 }, 'in'],
-    ] });
-    add('screenOff', { kind: 'svg', init: { o: 1 }, apply: (el, p) => el.setAttribute('opacity', Math.max(0, Math.min(1, p.o)).toFixed(3)), moves: [['hook+0.95', 0.3, { o: 0 }, 'out']] });
-    add('phoneBurger', { kind: 'svg', suffix: 'translate(-180 -330)', init: { x: 180, y: 330, s: 0 }, moves: [
-      ['hook+1.05', 0.55, { s: 1 }, 'back'],
-    ] });
-    add('likeHeart', { kind: 'svg', suffix: 'translate(-288 -482)', init: { x: 288, y: 482, s: 0 }, moves: [
-      ['hook+1.5', 0.4, { s: 1.5 }, 'back'], ['hook+1.9', 0.3, { s: 1 }, 'io'],
+    /* ---------- warm glow follows the hero ---------- */
+    add('glow', { init: { x: CX, y: 1010, s: 0.5, o: 0 }, float: { as: 0.03, p: 5 }, moves: [
+      ['hook+0', 0.9, { s: 1, o: 1 }, 'out'],
+      ['headline+0', 0.9, { y: 1340, s: 0.95 }, 'io'],
+      ['sector+0', 0.8, { y: 1300, s: 1.12 }, 'io'],
+      ['remote+0', 0.7, { y: 900, s: 0.9 }, 'io'],
+      ['apply+0', 0.8, { y: 1060, s: 0.86 }, 'io'],
     ] });
 
-    /* ---------- reactions: burst out of the phone, then drift; one home per scene ---------- */
-    const R = [
-      ['r0', 1.25, 8, [[862, 610], [880, 1010], [935, 1010], [870, 220], [915, 1090]]],
-      ['r1', 1.05, -10, [[188, 700], [180, 1080], [150, 1000], [180, 210], [160, 960]]],
-      ['r2', 0.85, 0, [[940, 980], [945, 1340], [960, 1730], [950, 1720], [930, 1700]]],
-      ['r3', 0.95, -12, [[128, 1130], [128, 1470], [110, 1760], [120, 1730], [130, 1710]]],
-      ['r4', 0.85, 12, [[936, 1350], [920, 1660], [560, 1800], [540, 1790], [540, 1790]]],
-      ['h0', 1.3, 14, [[300, 520], [100, 900], [80, 300], [330, 170], [240, 800]]],
-      ['h1x', 1.0, -18, [[880, 800], [985, 1150], [1010, 820], [760, 250], [870, 860]]],
-      ['h2', 0.85, 10, [[104, 900], [70, 1290], [330, 1790], [80, 1640], [70, 1250]]],
-      ['h3', 0.95, 20, [[968, 1160], [1010, 1520], [800, 1790], [1000, 1600], [1010, 1280]]],
-      ['h4', 0.75, -8, [[176, 1400], [70, 1680], [990, 240], [620, 150], [330, 1740]]],
-      ['sp0', 1.0, 0, [[900, 470], [960, 860], [960, 330], [960, 380], [960, 760]]],
-      ['sp1', 0.8, 0, [[120, 520], [90, 720], [110, 780], [100, 380], [110, 700]]],
-      ['sp2', 0.7, 0, [[980, 1560], [300, 1800], [760, 250], [240, 1620], [760, 1640]]],
+    /* ---------- phone: enters, feed swipes through three posts ---------- */
+    const PS = 1.6, PR = -6, PY = 1030;           // phone scale, tilt and centre in the hook
+    add('phone', { init: { x: CX, y: 2750, s: PS, r: 16, o: 1 }, moves: [
+      ['hook+0', 0.85, { y: PY, r: PR }, 'softback'],
+      ['headline+0', 0.9, { y: 1440, s: 1.3, r: -5 }, 'io'],
+      ['sector+0', 0.7, { y: 2800, r: -16 }, 'in'],
+      ['sector+0.7', 0.01, { o: 0 }, 'io'],
+    ] });
+    add('feed', { kind: 'rel', init: { x: 0, y: 0, o: 1 }, moves: [
+      ['hook+1.25', 0.36, { y: -540 }, 'io'], ['hook+2.1', 0.36, { y: -1080 }, 'io'], ['hook+2.9', 0.34, { y: -1620 }, 'io'],
+    ] });
+    add('feedBurger', { kind: 'rel', init: { o: 1 }, apply: (el, p) => { el.style.opacity = p.o < 0.5 ? 0 : 1; }, moves: [['hook+3.3', 0.02, { o: 0 }, 'io']] });
+
+    /* ---------- hero burger: starts exactly over the in-screen photo, then pops out ---------- */
+    const rad = PR * Math.PI / 180;
+    const hx = CX + 70 * PS * Math.sin(rad), hy = PY - 70 * PS * Math.cos(rad) - 252 * 0.02 * PS;   // photo centre on the screen
+    add('hero', { init: { x: hx, y: hy, s: 252 * PS / 800, r: PR, o: 0 }, float: { ay: 5, p: 4.4 }, moves: [
+      ['hook+3.3', 0.02, { o: 1 }, 'io'],
+      ['hook+3.32', 0.6, { x: CX, y: 936, s: 0.94, r: -3 }, 'back'],
+      ['headline+0', 0.9, { y: 1290, s: 0.76 }, 'io'],
+      ['sector+0', 0.9, { y: 1372, s: 0.78, r: -2 }, 'io'],
+      ['remote+0', 0.8, { y: 1716, s: 0.5, r: 0 }, 'io'],
+      ['apply+0.1', 0.9, { y: 1062, s: 0.56, r: -2 }, 'softback'],
+    ] });
+
+    /* ---------- supporting photographs: float in with parallax ---------- */
+    add('roll', { init: { x: -320, y: 1150, s: 0.5, r: -14, o: 1 }, float: { ax: 6, ay: 10, ar: 0.8, p: 5.2, ph: 0.2 }, moves: [
+      ['sector+0.2', 0.9, { x: 205, y: 1078, r: -6 }, 'out'], ['sector+1.1', 1.6, { x: 236 }, 'io'],
+      ['remote+0', 0.8, { x: 186, y: 1692, s: 0.34, r: -4 }, 'io'],
+      ['apply+0.2', 0.9, { x: 196, y: 1022, s: 0.33, r: -8 }, 'softback'],
+    ] });
+    add('cheese', { init: { x: 1400, y: 1170, s: 0.5, r: 14, o: 1 }, float: { ax: 5, ay: 8, ar: 0.7, p: 4.6, ph: 0.6 }, moves: [
+      ['sector+0.35', 0.9, { x: 868, y: 1092, r: 5 }, 'out'], ['sector+1.25', 1.5, { x: 842 }, 'io'],
+      ['remote+0', 0.8, { x: 894, y: 1696, s: 0.34, r: 3 }, 'io'],
+      ['apply+0.3', 0.9, { x: 884, y: 1026, s: 0.33, r: 6 }, 'softback'],
+    ] });
+
+    /* ---------- reactions: a glass card and three hearts fire on each post ---------- */
+    const like = [CX + (120 * Math.cos(rad) - 110 * Math.sin(rad)) * PS, PY + (120 * Math.sin(rad) + 110 * Math.cos(rad)) * PS]; // like button on screen
+    const fire = [0.95, 1.85, 2.65];
+    fire.forEach((t0, p) => {
+      for (let j = 0; j < 3; j++) {
+        const dx = (j - 1) * 120 + (p - 1) * 30, rise = 300 + j * 70 + p * 20, st = 'hook+' + (t0 + j * 0.08).toFixed(2);
+        add('bh' + p + j, { init: { x: like[0], y: like[1], s: 0, r: (j - 1) * 18, o: 0 }, moves: [
+          [st, 0.05, { o: 1 }, 'out'], [st, 0.35, { s: 1 }, 'back'],
+          [st, 1.0, { x: like[0] + dx, y: like[1] - rise }, 'out'],
+          ['hook+' + (t0 + j * 0.08 + 0.55).toFixed(2), 0.45, { o: 0 }, 'in'],
+        ] });
+      }
+    });
+    const cards = [
+      ['cardA', 0.9, 1.15, 5, [[884, 624], [900, 1010], [938, 1330], [900, 250], [900, 1690]]],
+      ['cardB', 1.8, 1.05, -5, [[186, 760], [170, 1090], [140, 1330], [176, 236], [176, 1684]]],
     ];
-    const scenes = ['headline', 'sector', 'remote', 'apply'];
-    R.forEach(([id, s, r, pos], i) => {
-      const moves = [['hook+' + (1.35 + i * 0.09).toFixed(2), 0.7, { x: pos[0][0], y: pos[0][1], s, r }, 'back']];
-      scenes.forEach((sc, k) => moves.push([sc + '+' + (0.05 + (i % 5) * 0.06).toFixed(2), 0.95, { x: pos[k + 1][0], y: pos[k + 1][1] }, 'io']));
-      add(id, { kind: 'svg', init: { x: CX, y: 1010, s: 0, r: r - 40, o: 1 }, moves,
-        float: { ax: 7 + (i % 3) * 3, ay: 12 + (i % 4) * 3, ar: 3, p: 3.2 + (i % 5) * 0.55, ph: i * 0.17, as: id.startsWith('sp') ? 0.25 : 0 } });
+    cards.forEach(([id, t0, s, r, pos], i) => {
+      const moves = [['hook+' + t0, 0.5, { s }, 'back'], ['hook+' + t0, 0.15, { o: 1 }, 'out']];
+      SC.forEach((sc, k) => moves.push([sc + '+' + (0.05 + i * 0.08).toFixed(2), 0.95, { x: pos[k + 1][0], y: pos[k + 1][1] }, 'io']));
+      add(id, { init: { x: pos[0][0], y: pos[0][1], s: 0, r, o: 0 }, moves, float: { ax: 6, ay: 11, ar: 1.5, p: 4 + i * 0.7, ph: i * 0.3 } });
+    });
+    add('cardC', { init: { x: 892, y: 930, s: 0, r: 4, o: 0 }, float: { ay: 8, p: 3.6 }, moves: [
+      ['hook+2.6', 0.5, { s: 1.05 }, 'back'], ['hook+2.6', 0.15, { o: 1 }, 'out'], ['hook+3.3', 0.4, { y: 870, o: 0 }, 'in'],
+    ] });
+    const am = [
+      [[150, 566], [86, 900], [58, 934], [56, 640], [58, 884]],
+      [[934, 800], [990, 1150], [1022, 940], [1024, 700], [1022, 892]],
+      [[110, 1016], [70, 1290], [70, 1500], [50, 1050], [350, 1700]],
+      [[960, 1244], [1004, 1500], [1012, 1524], [1030, 1100], [730, 1722]],
+      [[172, 1330], [140, 1560], [330, 1650], [330, 180], [540, 1790]],
+      [[904, 476], [962, 884], [762, 1660], [760, 170], [80, 1600]],
+    ];
+    am.forEach((pos, i) => {
+      const st = 'hook+' + (3.38 + i * 0.05).toFixed(2);
+      const moves = [[st, 0.05, { o: 1 }, 'out'], [st, 0.7, { x: pos[0][0], y: pos[0][1], s: 1, r: (i % 2 ? 14 : -14) }, 'back']];
+      SC.forEach((sc, k) => moves.push([sc + '+' + (0.04 + (i % 3) * 0.07).toFixed(2), 1.0, { x: pos[k + 1][0], y: pos[k + 1][1] }, 'io']));
+      add('am' + i, { init: { x: CX, y: 936, s: 0, r: 0, o: 0 }, moves, float: { ax: 6 + (i % 3) * 3, ay: 12 + (i % 4) * 3, ar: 4, p: 3.2 + (i % 5) * 0.5, ph: i * 0.19 } });
     });
 
     /* ---------- kicker ---------- */
-    add('kicker', { init: { x: CX, y: 392, s: 0, o: 1 }, moves: [
-      ['hook+1.9', 0.55, { s: 1 }, 'back'],
+    add('kicker', { init: { x: CX, y: 372, s: 0, o: 1 }, moves: [
+      ['hook+0.45', 0.55, { s: 1 }, 'back'],
       ['headline+0', 0.7, { y: 334, s: 0.5 }, 'io'],
       ['remote+0', 0.4, { y: 290, o: 0 }, 'in'],
       ['apply+0.25', 0.5, { y: 330, o: 1 }, 'out'],
@@ -150,31 +189,20 @@
       ['headline+' + d, 0.5, { y: 0, s: 1 }, 'back'], ['headline+' + d, 0.22, { o: 1 }, 'out'],
     ] }));
 
-    /* ---------- sector line + food settling in ---------- */
+    /* ---------- sector line ---------- */
     add('sector', { init: { x: CX + 140, y: 852, s: 1, o: 0 }, moves: [
       ['sector+0.25', 0.55, { x: CX, o: 1 }, 'out'],
       ['remote+0', 0.4, { y: 800, o: 0 }, 'in'],
       ['apply+0', 0.01, { y: 760, s: 0.7 }, 'io'],
       ['apply+0.35', 0.5, { y: 722, o: 1 }, 'out'],
     ] });
-    add('food', { kind: 'svg', init: { x: CX, y: 1424, s: 0.88, o: 1 }, float: { ay: 6, p: 4.6 }, moves: [
-      ['remote+0', 0.6, { y: 2500 }, 'in'],
-      ['apply+0', 0.01, { s: 0.46 }, 'io'],
-      ['apply+0.2', 0.8, { y: 1112 }, 'softback'],
-    ] });
-    add('plate', { kind: 'svg', init: { x: 0, y: 0, s: 0 }, moves: [['sector+0.15', 0.6, { s: 1 }, 'back']] });
-    add('fork', { kind: 'svg', init: { x: -900, y: -10, r: -40 }, moves: [['sector+0.45', 0.65, { x: -445, r: 0 }, 'back']] });
-    add('knife', { kind: 'svg', init: { x: 900, y: -10, r: 40 }, moves: [['sector+0.55', 0.65, { x: 445, r: 0 }, 'back']] });
-    add('foodBurger', { kind: 'svg', init: { x: 0, y: -2600, o: 1 }, moves: [['sector+0.55', 0.75, { y: 0 }, 'bounce']] });
-    add('burgerShadow', { kind: 'svg', init: { x: 0, y: 0, s: 0 }, moves: [['sector+0.7', 0.5, { s: 1 }, 'out']] });
-    add('hat', { kind: 'svg', init: { x: 14, y: -360, r: 34, s: 0 }, moves: [['sector+1.15', 0.35, { s: 1 }, 'back'], ['sector+1.2', 0.6, { y: -252, r: 8 }, 'bounce']] });
 
     /* ---------- remote badge stamps in, then the design requirement ---------- */
     add('tag', { init: { x: CX, y: 520, s: 2.6, r: -12, o: 0 }, moves: [
       ['remote+0.2', 0.32, { s: 1, r: -4 }, 'softback'], ['remote+0.2', 0.12, { o: 1 }, 'out'],
       ['apply+0', 0.7, { y: 806, s: 0.44, r: 0 }, 'io'],
     ] });
-    add('shock', { kind: 'svg', init: { x: CX, y: 520, s: 0.2, o: 0 }, moves: [
+    add('shock', { init: { x: CX, y: 520, s: 0.2, o: 0 }, moves: [
       ['remote+0.42', 0.01, { o: 0.7 }, 'out'], ['remote+0.43', 0.7, { s: 1.5, o: 0 }, 'out'],
     ] });
     add('design', { init: { x: CX, y: 1120, s: 0.8, o: 0 }, moves: [
