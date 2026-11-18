@@ -70,3 +70,4 @@ Instagram post 4:5 (1080×1350) and story 9:16 (1080×1920), sRGB PNG, with HTML
 
 ### Creative Director rulings for the motion (review r4, client did not answer)
 - The four small requirement chips are removed from the film. Beat 4 shows three clear items in turn: «خبرة لا تقل عن 3 سنوات», «خبرة في التصميم (شرط أساسي)», «راتب مجزٍ».
+- 2026-11-18: voice-over downloaded into `05-designs/job-advert/motion/audio/` (script v02, two takes). Client chose TAKE 2 and asked for professional sound effects on the motion transitions. Five SFX (whoosh, swipe, pop, stamp, chime) were generated in the client's ElevenLabs account (same flow as the voice) and saved in `motion/audio/sfx/`. No music.
