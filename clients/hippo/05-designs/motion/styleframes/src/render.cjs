@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* Renders the twelve style frames from styleframes.html with Chromium (Playwright).
-   node render.cjs [ids...]   -> ../hippo_franchise-motion-ad_styleframe-<a|b|c>-<1..4>_ar_v01.png
+   node render.cjs [ids...]   -> ../hippo_franchise-motion-ad_styleframe-<a|b|c>-<1..4>_ar_v02.png
    Also writes ../_work/bg_<id>.png (same frame with all text hidden) and ../_work/metrics.json
    (rectangle, colour and font of every text element) for check.py (contrast and safe areas). */
 const path = require('path'), fs = require('fs');
@@ -18,7 +18,7 @@ const ALL = ['a1', 'a2', 'a3', 'a4', 'b1', 'b2', 'b3', 'b4', 'c1', 'c2', 'c3', '
     const base = 'file://' + path.join(__dirname, 'styleframes.html') + '?f=' + id;
     await page.goto(base); await page.evaluate(() => window.ready);
     const clip = { x: 0, y: 0, width: 1080, height: 1920 };
-    await page.screenshot({ path: path.join(out, `hippo_franchise-motion-ad_styleframe-${id[0]}-${id[1]}_ar_v01.png`), clip });
+    await page.screenshot({ path: path.join(out, `hippo_franchise-motion-ad_styleframe-${id[0]}-${id[1]}_ar_v02.png`), clip });
     metrics[id] = await page.evaluate(() => ({
       fonts: window.fontsOk,
       texts: [...document.querySelectorAll('.frame.on .t')].map(el => {
@@ -32,5 +32,11 @@ const ALL = ['a1', 'a2', 'a3', 'a4', 'b1', 'b2', 'b3', 'b4', 'c1', 'c2', 'c3', '
     console.log(id, 'fonts', JSON.stringify(metrics[id].fonts));
   }
   fs.writeFileSync(mfile, JSON.stringify(metrics, null, 1));
+  // comparison sheet (Arabic labels in Tajawal, shaped by the browser), 3 rows x 4 frames, read right to left
+  const sp = await browser.newPage({ viewport: { width: 2360, height: 3300 }, deviceScaleFactor: 1 });
+  await sp.goto('file://' + path.join(__dirname, 'sheet.html')); await sp.evaluate(() => document.fonts.ready);
+  await sp.evaluate(() => Promise.all([...document.images].map(i => i.decode())));
+  const el = await sp.$('#sheet');
+  await el.screenshot({ path: path.join(out, 'hippo_franchise-motion-ad_styleframes_ar_v02.jpg'), type: 'jpeg', quality: 90 });
   await browser.close();
 })();

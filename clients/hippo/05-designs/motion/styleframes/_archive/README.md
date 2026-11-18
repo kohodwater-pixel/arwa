@@ -1,0 +1,1 @@
+v01 (12 frames, sheet, note) — superseded 2026-11-18 after Creative Director review: line collision in F2, ears device read as a bear, sheet labels not Arabic, box cropped in a-3/c-3, c-2 food covered.

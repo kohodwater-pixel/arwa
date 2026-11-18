@@ -6,15 +6,14 @@
   - photo scale (shown width / natural width) no more than 110 %
   - no letter-spacing, fonts loaded
   - QR decodes from the rendered end cards (OpenCV)
-  - builds the comparison sheet
 Usage: python3 check.py"""
 import json, os, re, sys
 import numpy as np
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image
 import cv2
 
 HERE = os.path.dirname(os.path.abspath(__file__)); OUT = os.path.dirname(HERE); WORK = os.path.join(OUT, '_work')
-NAME = 'hippo_franchise-motion-ad_styleframe-%s-%s_ar_v01.png'
+NAME = 'hippo_franchise-motion-ad_styleframe-%s-%s_ar_v02.png'
 SAFE_TOP, SAFE_BOTTOM = 250, 1920 - 350
 QR_EXPECT = 'https://otlobny.net/HIPPO-franchise-form-final/franchise/index.html'
 
@@ -69,24 +68,5 @@ for d in 'abc':
         if not ok: fails += 1
         print('QR %s4 %-18s %s %r' % (d, label, 'OK ' if ok else 'XX ', s))
 
-# ---- comparison sheet: 3 rows x 4 frames, labels outside the frames
-ROWS = [('a', 'A  —  Dark cinematic'), ('b', 'B  —  Pop maximal'), ('c', 'C  —  Floating cards')]
-COLS = ['F1  Hook  ≈ 1.0 s', 'F2  Presence / proof  ≈ 9–13 s', 'F3  The offer  ≈ 26–31 s', 'F4  End card  ≈ 36 s']
-fw, fh, gap, lab, head, pad = 540, 960, 28, 64, 70, 40
-W = pad * 2 + 4 * fw + 3 * gap; H = pad + head + 3 * (lab + fh) + 2 * gap + pad
-sheet = Image.new('RGB', (W, H), '#F3F3F1'); dr = ImageDraw.Draw(sheet)
-fp = os.path.join(HERE, '..', '..', '..', '..', '..', '..', 'assets', 'fonts')
-def font(sz):
-    for cand in ('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',):
-        if os.path.exists(cand): return ImageFont.truetype(cand, sz)
-    return ImageFont.load_default()
-for c, t in enumerate(COLS): dr.text((pad + c * (fw + gap), pad + 14), t, fill='#555555', font=font(24))
-for r, (d, title) in enumerate(ROWS):
-    y = pad + head + r * (lab + fh + gap)
-    dr.text((pad, y + 12), title, fill='#181717', font=font(34))
-    for c in range(4):
-        im = Image.open(os.path.join(OUT, NAME % (d, c + 1))).convert('RGB').resize((fw, fh), Image.LANCZOS)
-        sheet.paste(im, (pad + c * (fw + gap), y + lab))
-sheet.save(os.path.join(OUT, 'hippo_franchise-motion-ad_styleframes_ar_v01.jpg'), quality=90)
-print('sheet', sheet.size, '| failures:', fails)
+print('failures:', fails)
 sys.exit(1 if fails else 0)

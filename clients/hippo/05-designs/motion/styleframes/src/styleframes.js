@@ -1,4 +1,4 @@
-/* hippo style frames v01 — builds the vector graphic devices and fits the headline widths.
+/* hippo style frames v02 — builds the vector graphic devices and fits the headline widths.
    The "ears" device is our own vector approximation of the brand's lid/ear graphic (a rounded head with two ear bumps,
    drawn as a thick outline). It is not traced or cropped from the logo mark. */
 (function () {
@@ -11,14 +11,13 @@
   const rng = seed => () => { seed = (seed * 1664525 + 1013904223) >>> 0; return seed / 4294967296; };
   let uid = 0;
 
-  // ---- ears: outline of (rounded head ∪ two ear circles), stroke drawn outside the shape via a mask
+  // ---- ears device: an OPEN band, never a closed head — a wide low arc between two small bumps, sides running on
+  // (our own vector drawing after the lime device on the gathering-box lid and the big outline in the client's profile).
   document.querySelectorAll('.ears').forEach(el => {
-    const c = el.dataset.color, sw = +el.dataset.sw, id = 'e' + (uid++);
-    el.style.color = c;
-    const shape = `<rect x="100" y="220" width="800" height="720" rx="330"/><circle cx="170" cy="290" r="92"/><circle cx="830" cy="290" r="92"/>`;
-    el.innerHTML = `<svg viewBox="0 0 1000 1000"><defs><mask id="${id}" maskUnits="userSpaceOnUse" x="-200" y="-200" width="1400" height="1400">
-      <g fill="#fff" stroke="#fff" stroke-width="${sw * 2}" stroke-linejoin="round">${shape}</g><g fill="#000">${shape}</g></mask></defs>
-      <rect x="-200" y="-200" width="1400" height="1400" fill="${c}" mask="url(#${id})"/></svg>`;
+    const c = el.dataset.color, sw = +el.dataset.sw;
+    el.style.color = c; el.style.height = 'auto';
+    const d = 'M -40 1500 C -30 900 0 520 120 330 C 30 270 20 120 140 85 C 250 55 320 140 300 235 C 430 165 570 165 700 235 C 680 140 750 55 860 85 C 980 120 970 270 880 330 C 1000 520 1030 900 1040 1500';
+    el.innerHTML = `<svg viewBox="0 0 1000 700" style="height:auto"><path d="${d}" fill="none" stroke="${c}" stroke-width="${sw}" stroke-linejoin="round" stroke-linecap="round"/></svg>`;
   });
 
   // ---- organic blob with the cluster of dots
