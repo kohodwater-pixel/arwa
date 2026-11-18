@@ -6,12 +6,12 @@
 | Direction | Post 1080 × 1350 | Story 1080 × 1920 |
 |---|---|---|
 | A v04 "Phone on the pass" — device mock with the client's burger photograph breaking out of the screen, frosted reaction cards | `tbc-restaurants-company_job-advert_post-direction-a_ar_v04.png/.html` | `tbc-restaurants-company_job-advert_story-direction-a_ar_v04.png/.html` |
-| B v02 "Menu board" — colour blocks, tilted sticker badges, die-cut food and social stickers (unchanged) | `tbc-restaurants-company_job-advert_post-direction-b_ar_v02.png/.html` | `tbc-restaurants-company_job-advert_story-direction-b_ar_v02.png/.html` |
+| B v03 "Menu board" — colour blocks, tilted sticker badges, die-cut food and social stickers (drawn, no photographs) | `tbc-restaurants-company_job-advert_post-direction-b_ar_v03.png/.html` | `tbc-restaurants-company_job-advert_story-direction-b_ar_v03.png/.html` |
 
-Direction C was dropped by the client before any file was made. A v03 (previous copy: remote tag, old experience line), A v02 (drawn burger, flat look) and v01 are in `_archive/` with reasons.
+Direction C was dropped by the client before any file was made. A v03 and B v02 (previous copy: remote tag, old experience line), A v02 (drawn burger, flat look) and v01 are in `_archive/` with reasons.
 
-Sources: `base.css`, `direction-a.css` (v04), `direction-b.css`, `fonts/`, `assets/`. The HTML files are the editable sources; `_work/build_a_v04.py` and `_work/build_b.py` regenerate them.
-Rebuild: `python3 _work/build_a_v04.py && python3 _work/build_b.py && NODE_PATH=/opt/node-tools/node_modules node _work/render_v02.cjs && python3 _work/finish_v02.py`.
+Sources: `base.css`, `direction-a.css` (v04), `direction-b.css`, `fonts/`, `assets/`. The HTML files are the editable sources; `_work/build_a_v04.py` and `_work/build_b_v03.py` regenerate them.
+Rebuild: `python3 _work/build_a_v04.py && python3 _work/build_b_v03.py && NODE_PATH=/opt/node-tools/node_modules node _work/render_v02.cjs && python3 _work/finish_v02.py`.
 
 ## Client photograph (A v04)
 `assets/tbc-restaurants-company_burger-photo_client-supplied.png` is a lossless PNG copy of `_originals/tbc-restaurants-company_burger-photo_client-supplied.webp` (1339 × 874, transparent cut-out). Client-supplied; **source and licence not stated by the client**. Used unaltered: proportional scaling (404 px wide in the post, 584 px in the story), a 3° tilt and drop shadows only; no recolouring, redrawing or cropping. The render script asserts the aspect ratio and that no colour filter is applied.

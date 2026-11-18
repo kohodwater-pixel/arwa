@@ -138,14 +138,14 @@ def scene(fmt):
   <path d="M0 0H1080V452Q560 548 0 470Z" fill="#0F3D2E"/>
   <path d="M0 0H1080V452Q560 548 0 470Z" fill="url(#pDotsB)"/>
   <circle cx="36" cy="20" r="132" fill="#FFD23F"/>
-  <circle cx="150" cy="506" r="128" fill="#FF5A1F"/>
+  <circle cx="150" cy="490" r="124" fill="#FF5A1F"/>
   <circle cx="1076" cy="548" r="74" fill="#FF8FB8"/>
-  <path d="M0 1122Q540 1076 1080 1112V1350H0Z" fill="#FF5A1F"/>
+  <path d="M0 1136Q540 1090 1080 1126V1350H0Z" fill="#FF5A1F"/>
   <circle cx="1050" cy="1350" r="84" fill="#FFD23F"/>'''
         stickers = [
             st('sPizza', 86, 78, 132, -14), st('sHeart', 234, 58, 64, 12), st('sChat', 368, 90, 94, -8),
             st('sHash', 508, 54, 56, 10), st('sPlay', 640, 84, 78, -6),
-            st('sBurger', 146, 480, 196, -8), st('sFries', 290, 520, 100, 10),
+            st('sBurger', 150, 462, 190, -8), st('sFries', 292, 500, 96, 10),
             st('sHeart', 1030, 1300, 72, 12), st('sShare', 50, 1302, 70, -10),
         ]
     else:
@@ -155,9 +155,9 @@ def scene(fmt):
   <path d="M0 0H1080V716Q560 812 0 734Z" fill="url(#pDotsB)"/>
   <circle cx="60" cy="40" r="210" fill="#FFD23F"/>
   <circle cx="1010" cy="150" r="150" fill="#FF5A1F"/>
-  <circle cx="150" cy="772" r="128" fill="#FF5A1F"/>
+  <circle cx="150" cy="762" r="124" fill="#FF5A1F"/>
   <circle cx="1076" cy="812" r="74" fill="#FF8FB8"/>
-  <path d="M0 1386Q540 1340 1080 1376V1920H0Z" fill="#FF5A1F"/>
+  <path d="M0 1400Q540 1354 1080 1390V1920H0Z" fill="#FF5A1F"/>
   <circle cx="1000" cy="1880" r="230" fill="#FFD23F"/>
   <circle cx="90" cy="1900" r="170" fill="#0F3D2E"/>'''
         stickers = [
@@ -165,7 +165,7 @@ def scene(fmt):
             st('sPizza', 150, 138, 230, -14), st('sMega', 420, 150, 170, -10), st('sChat', 640, 110, 130, 8),
             st('sHeart', 800, 214, 104, 12), st('sHash', 300, 44, 70, 10), st('sPlay', 964, 120, 130, -8), st('sShare', 548, 236, 72, -10),
             # boundary cluster
-            st('sBurger', 146, 746, 196, -8), st('sFries', 290, 788, 100, 10),
+            st('sBurger', 150, 734, 190, -8), st('sFries', 292, 772, 96, 10),
             # bottom zone
             st('sBurger', 300, 1744, 300, 8), st('sFries', 640, 1752, 210, -8), st('sStar', 930, 1776, 190, 12),
             st('sHeart', 494, 1640, 84, -12), st('sChat', 800, 1640, 96, 8), st('sPizza', 90, 1650, 130, -20), st('sHash', 500, 1868, 70, 10),

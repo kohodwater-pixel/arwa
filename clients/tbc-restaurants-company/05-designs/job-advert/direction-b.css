@@ -18,18 +18,18 @@ body.post {
   --head-top: 44px;
   --kicker: 32px; --h1-a: 112px; --h1-b: 60px;
   --sector: 30px; --tag: 34px;
-  --cards-top: 584px; --card-h: 490px;
+  --cards-top: 574px; --card-h: 518px;
   --card-title: 34px; --body: 28px; --body-lh: 1.6;
-  --apply-top: 1120px; --apply: 29px; --email: 64px; --email-h: 112px;
+  --apply-top: 1134px; --apply: 29px; --email: 64px; --email-h: 112px;
 }
 body.story {
   --side: 60px;
   --head-top: 322px;
   --kicker: 34px; --h1-a: 112px; --h1-b: 60px;
   --sector: 30px; --tag: 36px;
-  --cards-top: 852px; --card-h: 490px;
+  --cards-top: 846px; --card-h: 518px;
   --card-title: 35px; --body: 28px; --body-lh: 1.6;
-  --apply-top: 1384px; --apply: 29px; --email: 66px; --email-h: 116px;
+  --apply-top: 1398px; --apply: 29px; --email: 66px; --email-h: 116px;
 }
 
 body { font-family: var(--font); color: var(--ink); background: var(--cream); }
