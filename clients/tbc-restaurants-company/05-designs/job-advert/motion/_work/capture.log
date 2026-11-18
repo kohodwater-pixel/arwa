@@ -2,3 +2,27 @@ scroll state [ 0, 0, 1080, 1920 ]
 photos: 7 all client-supplied, aspect kept
 copy/dir check: ok | fonts: Tajawal 500, Tajawal 700, Tajawal 800
 frame 0 / 705 0s
+frame 100 / 705 16s
+frame 200 / 705 36s
+frame 300 / 705 53s
+frame 400 / 705 70s
+frame 500 / 705 86s
+frame 600 / 705 105s
+frame 700 / 705 121s
+done 705 frames in 121s
+wrote video-only master /home/user/arwa/clients/tbc-restaurants-company/05-designs/job-advert/motion/_work/tbc-restaurants-company_job-advert_motion-direction-a_ar_v04_video-only.mp4 — now run: bash mux.sh <audio file>
+video 23.50s, voice 22.05s placed at 0.15s, 13 sfx cues
+voice measured: -22.82 LUFS, true peak -2.34 dBTP
+tbc-restaurants-company_job-advert_motion-direction-a_ar_v04.mp4: integrated -16.2 LUFS, loudness range 2.0 LU, true peak -3.9 dBTP
+wrote /home/user/arwa/clients/tbc-restaurants-company/05-designs/job-advert/motion/tbc-restaurants-company_job-advert_motion-direction-a_ar_v04.mp4
+video 23.50s, voice 22.05s placed at 0.15s, voice only
+voice measured: -22.82 LUFS, true peak -2.34 dBTP
+tbc-restaurants-company_job-advert_motion-direction-a_ar_v04_voice-only.mp4: integrated -16.2 LUFS, loudness range 2.0 LU, true peak -4.2 dBTP
+wrote /home/user/arwa/clients/tbc-restaurants-company/05-designs/job-advert/motion/tbc-restaurants-company_job-advert_motion-direction-a_ar_v04_voice-only.mp4
+scroll state [ 0, 0, 1080, 1920 ]
+photos: 7 all client-supplied, aspect kept
+copy/dir check: ok | fonts: Tajawal 500, Tajawal 700, Tajawal 800
+scroll state [ 0, 0, 1080, 1920 ]
+photos: 7 all client-supplied, aspect kept
+copy/dir check: ok | fonts: Tajawal 500, Tajawal 700, Tajawal 800
+{"kicker":{"readable":2.7,"settled":2.8},"hero burger pop-out":{"readable":2.8,"settled":2.933333333333333},"w0":{"readable":4.5,"settled":4.633333333333334},"w1":{"readable":5.666666666666667,"settled":5.766666666666667},"w2":{"readable":6.2,"settled":6.3},"w3":{"readable":6.666666666666667,"settled":6.766666666666667},"w4":{"readable":7.3,"settled":7.4},"w5":{"readable":7.766666666666667,"settled":7.866666666666666},"sector":{"readable":8.733333333333333,"settled":8.966666666666667},"exp":{"readable":11.4,"settled":11.5},"design":{"readable":13.433333333333334,"settled":13.533333333333333},"badge":{"readable":15.633333333333333,"settled":15.7},"applyline":{"readable":17.433333333333334,"settled":17.533333333333335},"pill":{"readable":18.533333333333335,"settled":18.7}}

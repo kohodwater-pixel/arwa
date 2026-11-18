@@ -22,7 +22,7 @@ T = {
         "hook": {"start": 0.0, "end": 4.0, "cues": {"swipes": [0.8, 1.42, 2.08], "fire": [0.62, 1.2, 1.82], "kicker": 2.6, "pop": 2.7}},
         "headline": {"start": 4.0, "end": 8.5, "words": [0.45, 1.6, 2.12, 2.6, 3.22, 3.7]},
         "sector": {"start": 8.5, "end": 11.05, "line": 0.1},
-        "require": {"start": 11.05, "end": 16.9, "items": [0.28, 2.3, 4.45]},
+        "require": {"start": 11.05, "end": 16.9, "items": [0.28, 2.3, 4.55]},
         "apply": {"start": 16.9, "end": 23.5, "sentence": 0.45, "email": 1.55},
     },
 }
@@ -41,7 +41,7 @@ cues = [
     (rq, 0.10, "sfx_whoosh.mp3", -19, "scene change: sector to requirements"),
     (rq + S["require"]["items"][0], 0.03, "sfx_pop.mp3", -13, "item 1 appears («خبرة لا تقل عن 3 سنوات»)"),
     (rq + S["require"]["items"][1], 0.0, "sfx_pop.mp3", -13, "item 2 appears (design card)"),
-    (rq + S["require"]["items"][2] + 0.19, 0.0, "sfx_stamp.mp3", -10, "salary badge lands (stamp reaches size)"),
+    (rq + S["require"]["items"][2] + 0.10, 0.0, "sfx_stamp.mp3", -10, "salary badge lands (stamp reaches size)"),
     (ap, 0.02, "sfx_whoosh.mp3", -18, "scene change: end card builds"),
     (ap + S["apply"]["email"], 0.0, "sfx_chime.mp3", -14, "email pill starts to rise (settles 0.5 s later)"),
 ]

@@ -1,0 +1,50 @@
+SYNC CHECK — motion v04, voice-over take 2, film length 23.5 s, audio placed at +0.15 s
+Phrase times: ffmpeg silencedetect (-35 dB, d=0.08) on take 2 plus a 20 ms energy scan for the sector phrase, plus the offset.
+Visual times: first frame (1/30 s steps) at which the element is at least 60 % opaque and 70 % of its settled size ("readable"), and the frame it settles.
+delta = visual readable minus phrase start; negative = the picture leads the voice. Target: lead up to 0.2 s, lag no more than 0.2 s.
+
+voice    readable  settled  delta     phrase  ->  visual
+0.15     0.00                         «تحب التسويق وعندك حس إبداعي؟»  ->  phone enters and the feed starts (no text cue)
+2.81     2.70      2.80     -0.11     «هذي فرصتك!»  ->  kicker «فرصة وظيفية»
+2.81     2.80      2.93                 same phrase  ->  burger pops out of the phone
+4.14     4.50      4.63     +0.36     «مطلوب موظف أو موظفة تسويق وإدارة حسابات التواصل الاجتماعي» (phrase start; opens with «مطلوب», which is not on screen)  ->  first headline word «موظف/ـة»
+8.46     7.77      7.87                 headline complete (phrase ends 8.46)  ->  last headline word «الاجتماعي»
+8.73     8.73      8.97     +0.00     «لشركة متخصصة في قطاع المطاعم»  ->  sector line
+11.36    11.40     11.50    +0.04     «خبرة لا تقل عن ثلاث سنوات»  ->  «خبرة لا تقل عن 3 سنوات»
+13.47    13.43     13.53    -0.04     «وخبرة التصميم شرط أساسي»  ->  design card «خبرة في التصميم (شرط أساسي)»
+15.80    15.63     15.70    -0.17     «والراتب مجزي»  ->  badge «راتب مجزٍ» stamp
+17.30    17.43     17.53    +0.13     «أرسل سيرتك الذاتية وسابقة أعمالك على الإيميل اللي قدامك»  ->  apply sentence
+17.30    18.53     18.70                same phrase (the word «الإيميل» falls later in it; not measured)  ->  email pill hr@otlobny.co
+21.32                                 «وننتظرك!»  ->  end card held (no new cue)
+
+Headline words (voice times estimated from the short dips inside the phrase at -28/-24 dB; less certain):
+  موظف/ـة    voice ~4.64   readable 4.50   delta -0.14
+  تسويق      voice ~5.76   readable 5.67   delta -0.09
+  وإدارة     voice ~6.27   readable 6.20   delta -0.07
+  حسابات     voice ~6.75   readable 6.67   delta -0.08
+  التواصل    voice ~7.37   readable 7.30   delta -0.07
+  الاجتماعي  voice ~7.85   readable 7.77   delta -0.08
+
+Email: settled at 18.70 s; film ends 23.5 s; held 4.80 s.
+
+SFX CUES (time in the mix vs the animation keyframe each one marks; lead = keyframe minus cue)
+cue     keyframe  lead   peak    file               marks / nearest voice onset
+0.00    0.00      0.00   -23 dB  sfx_whoosh.mp3     phone entrance starts; 0.15 s before the onset at 0.15
+0.80    0.80      0.00   -17 dB  sfx_swipe.mp3      feed swipe 1 starts; under speech
+1.42    1.42      0.00   -17 dB  sfx_swipe.mp3      feed swipe 2 starts; under speech
+2.08    2.08      0.00   -17 dB  sfx_swipe.mp3      feed swipe 3 starts; under speech
+2.68    2.70      0.02   -11 dB  sfx_pop.mp3        burger pop-out starts (kicker is mid-pop); 0.13 s before the onset at 2.81
+3.78    4.00      0.22   -18 dB  sfx_whoosh.mp3     scene change: hook to headline; under speech
+8.36    8.50      0.14   -18 dB  sfx_whoosh.mp3     scene change: headline to sector; under speech
+10.95   11.05     0.10   -19 dB  sfx_whoosh.mp3     scene change: sector to requirements; under speech
+11.30   11.33     0.03   -13 dB  sfx_pop.mp3        item 1 appears («خبرة لا تقل عن 3 سنوات»); 0.06 s before the onset at 11.36
+13.35   13.35     0.00   -13 dB  sfx_pop.mp3        item 2 appears (design card); 0.12 s before the onset at 13.47
+15.70   15.70     0.00   -10 dB  sfx_stamp.mp3      salary badge lands (stamp reaches size); 0.10 s before the onset at 15.80
+16.88   16.90     0.02   -18 dB  sfx_whoosh.mp3     scene change: end card builds; under speech
+18.45   18.45     0.00   -14 dB  sfx_chime.mp3      email pill starts to rise (settles 0.5 s later); under speech
+
+13 cues; last cue at 18.45 s (film ends 23.5 s).
+
+LOUDNESS (ffmpeg ebur128=peak=true on the final files)
+  tbc-restaurants-company_job-advert_motion-direction-a_ar_v04.mp4: integrated -16.2 LUFS, loudness range 2.0 LU, true peak -3.9 dBTP
+  tbc-restaurants-company_job-advert_motion-direction-a_ar_v04_voice-only.mp4: integrated -16.2 LUFS, loudness range 2.0 LU, true peak -4.2 dBTP

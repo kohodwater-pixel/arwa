@@ -4,55 +4,55 @@
   "settled": 2.8
  },
  "hero burger pop-out": {
-  "readable": 2.933333333333333,
-  "settled": 3.1
+  "readable": 2.8,
+  "settled": 2.933333333333333
  },
  "w0": {
   "readable": 4.5,
   "settled": 4.633333333333334
  },
  "w1": {
-  "readable": 5.6,
-  "settled": 5.733333333333333
+  "readable": 5.666666666666667,
+  "settled": 5.766666666666667
  },
  "w2": {
   "readable": 6.2,
-  "settled": 6.333333333333333
+  "settled": 6.3
  },
  "w3": {
-  "readable": 6.7,
-  "settled": 6.833333333333333
+  "readable": 6.666666666666667,
+  "settled": 6.766666666666667
  },
  "w4": {
-  "readable": 7.2,
-  "settled": 7.333333333333333
+  "readable": 7.3,
+  "settled": 7.4
  },
  "w5": {
   "readable": 7.766666666666667,
   "settled": 7.866666666666666
  },
  "sector": {
-  "readable": 8.8,
-  "settled": 9.033333333333333
+  "readable": 8.733333333333333,
+  "settled": 8.966666666666667
  },
  "exp": {
-  "readable": 11.566666666666666,
-  "settled": 11.666666666666666
+  "readable": 11.4,
+  "settled": 11.5
  },
  "design": {
-  "readable": 13.733333333333333,
-  "settled": 13.833333333333334
+  "readable": 13.433333333333334,
+  "settled": 13.533333333333333
  },
  "badge": {
-  "readable": 16.133333333333333,
-  "settled": 16.2
+  "readable": 15.633333333333333,
+  "settled": 15.7
  },
  "applyline": {
-  "readable": 17.866666666666667,
-  "settled": 18
+  "readable": 17.433333333333334,
+  "settled": 17.533333333333335
  },
  "pill": {
-  "readable": 18.966666666666665,
-  "settled": 19.133333333333333
+  "readable": 18.533333333333335,
+  "settled": 18.7
  }
 }

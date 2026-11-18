@@ -93,7 +93,7 @@
    "items": [
     0.28,
     2.3,
-    4.45
+    4.55
    ]
   },
   "apply": {
@@ -185,11 +185,11 @@
    "marks": "item 2 appears (design card)"
   },
   {
-   "t": 15.69,
+   "t": 15.7,
    "file": "audio/sfx/sfx_stamp.mp3",
    "gain_db": -8.5,
    "peak_dbfs": -10,
-   "keyframe": 15.69,
+   "keyframe": 15.7,
    "marks": "salary badge lands (stamp reaches size)"
   },
   {

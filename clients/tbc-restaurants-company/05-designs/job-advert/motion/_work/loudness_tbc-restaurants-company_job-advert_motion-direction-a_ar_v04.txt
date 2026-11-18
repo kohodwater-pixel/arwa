@@ -1,0 +1,2 @@
+tbc-restaurants-company_job-advert_motion-direction-a_ar_v04.mp4: integrated -16.2 LUFS, loudness range 2.0 LU, true peak -3.9 dBTP
+(measured on the final file with ffmpeg ebur128=peak=true)
