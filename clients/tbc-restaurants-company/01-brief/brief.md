@@ -12,6 +12,7 @@ Company name and logo, brand colours/fonts, city, employment type (full-time/par
 - Kicker: فرصة وظيفية
 - Headline: موظف/ـة تسويق وإدارة حسابات التواصل الاجتماعي
 - Line: لشركة متخصصة في قطاع المطاعم
+- Tag (prominent, near the headline): العمل عن بُعد
 - المهام:
   - إعداد خطة المحتوى الشهرية وتنفيذها
   - إدارة حسابات التواصل الاجتماعي والنشر والتفاعل مع العملاء
@@ -20,11 +21,18 @@ Company name and logo, brand colours/fonts, city, employment type (full-time/par
   - إعداد تقارير الأداء الدورية
 - المتطلبات:
   - خبرة سابقة في التسويق وإدارة حسابات التواصل الاجتماعي
+  - خبرة في التصميم (شرط أساسي)
   - معرفة جيدة بمنصات إنستغرام وتيك توك وسناب شات وإكس
   - مهارة في كتابة المحتوى وحس إبداعي
   - يُفضَّل من لديه خبرة في قطاع المطاعم
-- Apply line: للتقديم: أرسل/ي سيرتك الذاتية ونماذج من أعمالك — then the contact (GAP)
+- Apply line: للتقديم: أرسل/ي سيرتك الذاتية وسابقة أعمالك على البريد الإلكتروني — then the email **hr@otlobny.co** (LTR, prominent)
 - Numerals: Western. Language: Arabic only.
 
 ## Formats
 Instagram post 4:5 (1080×1350) and story 9:16 (1080×1920), sRGB PNG, with HTML sources.
+
+## Client additions — 2026-11-18
+- The candidate must have design experience (a requirement, not a nice-to-have).
+- The job is remote: «العمل عن بُعد». City is therefore not needed.
+- Apply method (client, 2026-11-18): CV and portfolio («سابقة الأعمال») by email to **hr@otlobny.co**. The apply field is no longer a gap.
+- Company identity: the email domain is otlobny.co, but the client described the advertiser only as «شركة مختصة في مجال المطاعم» and supplied no logo for this advert. Creative Director ruling for v01: the advert is UNBRANDED (no logo box, no company name) until the client says which name/logo to show. Nothing is taken from any other client folder.
