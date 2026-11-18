@@ -1,4 +1,4 @@
-/* Direction A v03 — "Phone on the pass": device mock with the client's burger
+/* Direction A v04 — "Phone on the pass": device mock with the client's burger
    photograph popping out of the screen. Palette is neutral (no brand supplied);
    change the variables to re-skin. The photograph is never recoloured. */
 
@@ -17,22 +17,22 @@
 body.post {
   --glow-x: 232px; --glow-y: 330px; --glow-d: 900px;
   --phone-l: 62px; --phone-t: 38px; --phone-k: 1; --phone-r: -7deg; --ui-shift: 0px;
-  --bg-l: 26px; --bg-t: 192px; --bg-w: 404px; --bg-r: -3deg;
+  --bg-l: 41px; --bg-t: 192px; --bg-w: 404px; --bg-r: -3deg;
   --kicker-t: 52px;
   --head-t: 104px; --head-w: 652px;
   --h1-a: 84px; --h1-b: 58px; --sector: 30px; --tag: 31px;
-  --cards-t: 574px; --card-h: 508px; --body: 28px; --card-title: 32px;
-  --apply-t: 1100px; --apply: 29px; --pill-h: 122px; --email: 64px;
+  --cards-t: 572px; --card-h: 534px; --body: 28px; --card-title: 32px;
+  --apply-t: 1122px; --apply: 29px; --pill-h: 122px; --email: 64px;
 }
 body.story {
   --glow-x: 440px; --glow-y: 330px; --glow-d: 1240px;
-  --phone-l: 236px; --phone-t: -186px; --phone-k: 1.16; --phone-r: -6deg; --ui-shift: 196px;
-  --bg-l: 142px; --bg-t: 142px; --bg-w: 584px; --bg-r: -3deg;
-  --kicker-t: 304px;
-  --head-t: 584px; --head-w: 968px;
-  --h1-a: 114px; --h1-b: 58px; --sector: 30px; --tag: 31px;
-  --cards-t: 902px; --card-h: 508px; --body: 28px; --card-title: 32px;
-  --apply-t: 1420px; --apply: 29px; --pill-h: 108px; --email: 62px;
+  --phone-l: 236px; --phone-t: -208px; --phone-k: 1.16; --phone-r: -6deg; --ui-shift: 196px;
+  --bg-l: 142px; --bg-t: 118px; --bg-w: 584px; --bg-r: -3deg;
+  --kicker-t: 556px;
+  --head-t: 598px; --head-w: 968px;
+  --h1-a: 106px; --h1-b: 58px; --sector: 30px; --tag: 31px;
+  --cards-t: 884px; --card-h: 534px; --body: 28px; --card-title: 32px;
+  --apply-t: 1426px; --apply: 29px; --pill-h: 102px; --email: 62px;
 }
 
 html { overflow: hidden; }   /* keeps the RTL viewport from scrolling to the glow's overflow */
@@ -69,7 +69,7 @@ body.story { background: radial-gradient(90% 60% at 42% 17%, var(--plum) 0%, var
 .phone .island::after { content: ""; position: absolute; right: 8px; top: 7px; width: 12px; height: 12px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #4B5A8C 0%, #1A2040 45%, #05060C 100%); box-shadow: 0 0 0 1.500px #15101A; }
 .ui { position: absolute; left: 0; right: 0; top: var(--ui-shift); }
 .ui-head { position: absolute; top: 52px; left: 16px; right: 16px; height: 46px; }
-.ui-head .av { position: absolute; right: 0; top: 2px; width: 42px; height: 42px; border-radius: 50%; background: conic-gradient(from 210deg, var(--saffron), var(--tomato), #B7357E, var(--saffron)); }
+.ui-head .av { position: absolute; right: 0; top: 2px; width: 42px; height: 42px; border-radius: 50%; background: var(--saffron); }
 .ui-head .av::after { content: ""; position: absolute; inset: 3px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #FFD58A, #F08A24); border: 2px solid var(--paper); }
 .ui-head .n1 { position: absolute; right: 54px; top: 9px; width: 104px; height: 11px; border-radius: 6px; background: #2B1430; }
 .ui-head .n2 { position: absolute; right: 54px; top: 28px; width: 66px; height: 8px; border-radius: 4px; background: rgba(43,20,48,.28); }
@@ -134,6 +134,9 @@ h1 { font-weight: 800; }
 h1 .a { font-size: var(--h1-a); line-height: 1.24; color: #FFFAF1; text-shadow: 0 2px 0 rgba(14,6,17,.35), 0 14px 30px rgba(14,6,17,.55); }
 h1 .b { font-size: var(--h1-b); line-height: 1.3; color: var(--saffron); text-shadow: 0 10px 24px rgba(14,6,17,.5); }
 body.story h1 { text-align: center; }
+body.story .kicker { inset-inline-start: 0; width: var(--w); justify-content: center; }
+body.story .kicker::after { display: none; }
+body.story .ui-actions .a4 { display: none; }   /* would peek half-hidden under the burger */
 body.story h1 .b1, body.story h1 .b2 { display: inline; }
 .sector { font-size: var(--sector); font-weight: 500; line-height: 1.6; color: #EFE2CF; white-space: nowrap; }
 .tag {
@@ -151,12 +154,12 @@ body.story .meta { margin-top: 10px; display: flex; align-items: center; justify
 /* ---------- list cards ---------- */
 .cards { position: absolute; left: 48px; right: 48px; top: var(--cards-t); display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .block {
-  height: var(--card-h); padding: 24px 26px 22px;
+  height: var(--card-h); padding: 20px 26px 22px;
   background: linear-gradient(180deg, #FFFCF6 0%, var(--paper) 100%); color: var(--aubergine);
   border-radius: 30px; border: 1px solid rgba(255,255,255,.7);
   box-shadow: 0 30px 60px rgba(6,2,8,.5), 0 6px 14px rgba(6,2,8,.25);
 }
-.block h2 { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; font-size: var(--card-title); font-weight: 800; line-height: 1.5; }
+.block h2 { display: flex; align-items: center; gap: 12px; margin-bottom: 2px; font-size: var(--card-title); font-weight: 800; line-height: 1.5; }
 .block h2::before { content: ""; width: 7px; height: 30px; border-radius: 4px; background: linear-gradient(180deg, var(--saffron), var(--tomato)); margin-top: -4px; }
 .block li { position: relative; padding-inline-start: 24px; font-size: var(--body); font-weight: 500; line-height: 1.6; text-wrap: balance; }
 .block li::before { content: ""; position: absolute; inset-inline-start: 2px; top: calc(var(--body) * .8 - 6px); width: 10px; height: 10px; border-radius: 50%; background: var(--tomato); }

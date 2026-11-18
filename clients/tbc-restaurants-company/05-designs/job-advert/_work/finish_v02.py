@@ -15,7 +15,7 @@ here = os.path.dirname(os.path.abspath(__file__))
 out = os.path.dirname(here)
 icc = ImageCms.ImageCmsProfile(ImageCms.createProfile("sRGB")).tobytes()
 dirs = [a for a in sys.argv[1:]] or ['a', 'b']
-VER = {'a': 'v03', 'b': 'v02'}
+VER = {'a': 'v04', 'b': 'v03'}
 
 
 def lin(c):

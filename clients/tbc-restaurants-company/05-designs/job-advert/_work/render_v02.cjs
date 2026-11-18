@@ -6,7 +6,7 @@ const path = require('path');
 const fs = require('fs');
 const dir = path.resolve(__dirname, '..');
 const only = process.argv.slice(2).filter(a => !a.startsWith('--'));
-const VER = { a: 'v03', b: 'v02' }; // current version per direction
+const VER = { a: 'v04', b: 'v03' }; // current version per direction
 const jobs = [];
 for (const d of ['a', 'b']) {
   if (only.length && !only.includes(d)) continue;
@@ -17,7 +17,7 @@ const COPY = [
   'فرصة وظيفية',
   'موظف/ـة تسويق وإدارة حسابات التواصل الاجتماعي',
   'لشركة متخصصة في قطاع المطاعم',
-  'العمل عن بُعد',
+  'راتب مجزٍ',
   'المهام',
   'إعداد خطة المحتوى الشهرية وتنفيذها',
   'إدارة حسابات التواصل الاجتماعي والنشر والتفاعل مع العملاء',
@@ -25,7 +25,7 @@ const COPY = [
   'إدارة الحملات الإعلانية المدفوعة ومتابعة نتائجها',
   'إعداد تقارير الأداء الدورية',
   'المتطلبات',
-  'خبرة سابقة في التسويق وإدارة حسابات التواصل الاجتماعي',
+  'خبرة لا تقل عن 3 سنوات في التسويق وإدارة حسابات التواصل الاجتماعي',
   'خبرة في التصميم (شرط أساسي)',
   'معرفة جيدة بمنصات إنستغرام وتيك توك وسناب شات وإكس',
   'مهارة في كتابة المحتوى وحس إبداعي',
@@ -48,6 +48,9 @@ const SEL = '.kicker,h1,.sector,.tag,.block h2,.block li,.apply p,.email';
       const els = [...document.querySelectorAll(SEL)];
       const units = els.map(e => norm(e.textContent));
       if (JSON.stringify(units) !== JSON.stringify(COPY)) out.issues.push('COPY MISMATCH: ' + JSON.stringify(units));
+      if (/العمل عن بُعد|عن بعد|خبرة سابقة/.test(document.documentElement.outerHTML)) out.issues.push('withdrawn copy still present');
+      // no single-word last lines in the lists
+      for (const li of document.querySelectorAll('.block li')) { const r = document.createRange(); r.selectNodeContents(li.firstChild); const rs = [...r.getClientRects()]; if (rs.length > 1) { const last = rs[rs.length - 1], widest = Math.max(...rs.map(q => q.width)); const tn = li.firstChild, words = norm(li.textContent).split(' '); const lw = words[words.length - 1]; const rr = document.createRange(); rr.setStart(tn, tn.textContent.lastIndexOf(lw)); rr.setEnd(tn, tn.textContent.length); if (last.width <= rr.getBoundingClientRect().width + 4) out.issues.push('single-word last line: ' + norm(li.textContent).slice(0, 24)); } }
       // no visible text anywhere else (svg <text>, pseudo content, stray nodes)
       if (norm(document.body.innerText) .replace(/\s/g, '') !== units.join('').replace(/\s/g, '')) out.issues.push('extra visible text: ' + norm(document.body.innerText).slice(0, 200));
       if (document.querySelector('svg text, svg image')) out.issues.push('svg text / svg image present');
