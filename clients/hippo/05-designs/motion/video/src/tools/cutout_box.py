@@ -8,7 +8,8 @@ sys.path.insert(0, os.path.dirname(__file__))
 from cutout import finish, preview
 SCALE=1.0
 ROUGH=[(74,549),(713,418),(729,889),(758,901),(1129,1156),(1117,1313),(430,1543),(121,1230),(109,1066)]
-SNAP=[12,10,0,0,6,6,7,8,10]   # search half-width per side (side i = vertex i -> i+1)
+SNAP=[12,10,0,0,6,6,7,8,10]
+RETOUCH=[(173,537,7),(191,544,7)]   # white specks on the lid (photo px, radius): inpainted from the surrounding lid colour   # search half-width per side (side i = vertex i -> i+1)
 
 def snap(img, P, R):
     g=cv2.cvtColor(img,cv2.COLOR_BGR2Lab).astype(np.float32)
@@ -46,6 +47,9 @@ def snap(img, P, R):
 if __name__=='__main__':
     src,out=sys.argv[1],sys.argv[2]
     img=cv2.imread(src); H,W=img.shape[:2]
+    rm=np.zeros((H,W),np.uint8)
+    for x,y,r in RETOUCH: cv2.circle(rm,(round(x*SCALE),round(y*SCALE)),round(r*SCALE),255,-1)
+    img=cv2.inpaint(img,rm,5,cv2.INPAINT_TELEA)
     P=[(x*SCALE,y*SCALE) for x,y in ROUGH]
     V=snap(img,P,SNAP)
     ov=img.copy()

@@ -1,6 +1,7 @@
-/* HIPPO — franchise motion ad «حُطّ ثقلك» — picture draft v01, 9:16, 1080x1920, 30 fps, 40 s.
+/* HIPPO — franchise motion ad «حُطّ ثقلك» — picture draft v02, 9:16, 1080x1920, 30 fps, 40 s.
    Deterministic: everything is a pure function of film time t (seconds). window.seek(t) draws one frame.
    Cut to audio mix v02 (see ../../audio/_work/mix-v02_report_2026-11-18.md). All hit times are in HIT below.
+   v01 source is kept in ../_archive/film_v01.js.
 
    EDIT HERE ---------------------------------------------------------------------------------- */
 const CFG = {
@@ -10,8 +11,8 @@ const CFG = {
     logo:     'assets/logo.png',       // client logo file, unmodified copy
   },
   qr: null,          // when the client sends the link: put the QR image at e.g. 'assets/qr.png' and set this path
-  blink: false,      // eye-blink on the logo at 38.2 s. OFF in v01: see notes.md (which shapes are the eyes is unconfirmed)
-  guides: false,     // draw platform safe-area guides (250 px top, 350 px bottom)
+  blink: false,      // eye-blink on the logo. OFF by Creative Director ruling: ears only (see notes.md)
+  guides: false,     // draw platform safe-area guides (250 px top, 350 px bottom) and 60 px side margins
 };
 const COPY = {       // on-screen lines exactly as in concept-script v03 — do not rewrite
   s1: 'خفيف؟',
@@ -44,38 +45,29 @@ const P = (t, a, b) => clamp01((t - a) / (b - a));
 const E = {
   lin: x => x, in2: x => x * x, in3: x => x * x * x, out2: x => 1 - (1 - x) * (1 - x), out3: x => 1 - Math.pow(1 - x, 3),
   io: x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2,
-  back: x => { const c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); },
 };
 const spring01 = (tau, f, d) => tau <= 0 ? 0 : 1 - Math.exp(-d * tau) * Math.cos(2 * Math.PI * f * tau);
 const wob = (tau, f, d) => tau <= 0 ? 0 : Math.exp(-d * tau) * Math.sin(2 * Math.PI * f * tau);
 // squash amount after a landing at tau=0 (0 on the contact frame, peak one frame later, springs back)
 const squash = (tau, A, f = 3.0, d = 6) => tau <= 0 ? 0 : A * Math.exp(-d * tau) * Math.cos(2 * Math.PI * f * tau) * Math.min(1, tau / 0.035);
-// keyframe track: [[t, v, ease|'step'], ...] (ease belongs to the segment that ARRIVES at the key)
-function key(tr, t) {
-  if (t <= tr[0][0]) return tr[0][1];
-  for (let i = 1; i < tr.length; i++) {
-    const [t1, v1, e] = tr[i], [t0, v0] = tr[i - 1];
-    if (t < t1) return e === 'step' ? v0 : lerp(v0, v1, (E[e] || E.io)(P(t, t0, t1)));
-  }
-  return tr[tr.length - 1][1];
-}
 
-// ---------- the scale: horizon tilt, camera, shake ----------
-// [time, target degrees (+ = right side down), spring Hz, damping]
+// ---------- the scale: horizon tilt, shake ----------
+const T67 = -7.5;   // settled tilt of scenes 6–7 (degrees; + = right side down)
+// [time, target degrees, spring Hz, damping]
 const TILT_EV = [
   [HIT.hook, 7, 1.5, 3.4], [HIT.squish, 8, 3, 7],
   [HIT.names[0], -7, 1.6, 4.4], [HIT.names[1], 7, 1.6, 4.4], [HIT.names[2], -7, 1.6, 4.4],
-  [11.0, -4, 0.7, 5], [HIT.heavy, -6, 2.0, 4.5],
-  [HIT.blocks[0], -6.5, 2.6, 6], [HIT.blocks[1], -7, 2.6, 6], [HIT.blocks[2], -7.5, 2.6, 6], [HIT.blocks[3], -8, 2.6, 6], [HIT.blocks[4], -8.5, 2.6, 6],
-  [HIT.box, -9, 1.5, 3.2],
+  [11.0, -5, 0.7, 5], [HIT.heavy, -6, 2.0, 4.5],
+  [HIT.box, T67, 1.5, 3.2],
   [HIT.cta, 0, 3.2, 7.5],
 ];
-let tiltFn = () => 0;
-for (const [te, to, f, d] of TILT_EV) { const prev = tiltFn, s = prev(te); tiltFn = tt => tt < te ? prev(tt) : s + (to - s) * spring01(tt - te, f, d); }
+let tiltBase = () => 0;
+for (const [te, to, f, d] of TILT_EV) { const prev = tiltBase, s = prev(te); tiltBase = tt => tt < te ? prev(tt) : s + (to - s) * spring01(tt - te, f, d); }
+const tiltFn = t => tiltBase(t) + HIT.blocks.reduce((s, b) => s - 0.9 * wob(t - b, 3, 7), 0) - 2.2 * wob(t - HIT.box, 1.7, 3.6);
 
 const SHAKES = [[HIT.hook, 30], [HIT.cups[0], 3], [HIT.cups[1], 3], [HIT.cups[2], 3], [HIT.cups[3], 3], [HIT.squish, 4],
   [HIT.names[0], 17], [HIT.names[1], 17], [HIT.names[2], 17], [HIT.heavy, 22], [HIT.thaqeel, 8],
-  ...HIT.blocks.map((b, i) => [b, 8 + i]), [HIT.box, 36], [HIT.athqal, 14], [HIT.cta, 24]];
+  ...HIT.blocks.map((b, i) => [b, 8 + i]), [HIT.box, 36], [HIT.athqal + 0.023, 14], [HIT.cta, 24]];
 function shake(t) {
   let x = 0, y = 0;
   for (let i = 0; i < SHAKES.length; i++) { const tau = t - SHAKES[i][0]; if (tau < 0 || tau > 0.7) continue; const a = SHAKES[i][1] * Math.exp(-9 * tau); x += a * Math.sin(2 * Math.PI * 13 * tau + i * 1.7) * 0.6; y += a * Math.cos(2 * Math.PI * 11 * tau + i); }
@@ -84,16 +76,68 @@ function shake(t) {
 const DIPS = [[HIT.hook, 34], [HIT.names[0], 18], [HIT.names[1], 18], [HIT.names[2], 18], [HIT.heavy, 22], ...HIT.blocks.map(b => [b, 12]), [HIT.box, 42], [HIT.cta, 26]];
 const dip = t => DIPS.reduce((s, [te, a]) => s + a * wob(t - te, 2.6, 7), 0);
 
-const CAM_Z = [[0, 1], [2.7, 1], [3.5, .9], [7.0, .9], [7.0, 1, 'step'], [19.4, 1], [19.72, .85, 'out3'], [22.5, .85], [24.0, .74], [28.85, .74], [29.5, .66, 'io'], [40, .66]];
-const CAM_X = [[0, 0], [2.7, 0], [3.5, -46], [7.0, -46], [7.0, 0, 'step'], [19.0, 0], [19.4, 120, 'io'], [22.5, 120], [24.0, 130], [28.85, 130], [29.5, 203, 'io'], [40, 203]];
-const CAM_H = [[0, 1000], [2.7, 1000], [3.5, 1086], [7.0, 1086], [7.0, 1150, 'step'], [15.2, 1150], [18.6, 1330], [19.0, 1330], [19.4, 1000, 'in2'], [19.72, 1040, 'out3'], [22.5, 1040], [24.0, 900], [28.85, 900], [29.5, 780, 'io'], [40, 780]];
-const camera = t => ({ z: key(CAM_Z, t), x: key(CAM_X, t), h: key(CAM_H, t) });
-// screen point -> world point for a given camera and tilt (used to lay text out in screen space)
+// ---------- cameras ----------
+// A camera is {z: zoom, x: world x at screen centre, h: screen y of the horizon at screen centre}. World y = 0 is the horizon.
+// screen point -> world point, and "which camera puts world point w at screen point s"
 function s2w(sx, sy, cam, tiltDeg) {
   const dx = sx - 540, dy = sy - cam.h, c = Math.cos(tiltDeg * DEG), s = Math.sin(tiltDeg * DEG);
   return { x: (dx * c + dy * s) / cam.z + cam.x, y: (-dx * s + dy * c) / cam.z };
 }
-const CAM6 = { z: .85, x: 120, h: 1040 }, CAM7 = { z: .74, x: 130, h: 900 }, CAM8 = { z: .66, x: 203, h: 780 };
+function camFor(w, sx, sy, z, tiltDeg) {
+  const c = Math.cos(tiltDeg * DEG), s = Math.sin(tiltDeg * DEG), dx = sx - 540;
+  const h = sy - (w.y * z + dx * s) / c;
+  return { z, x: w.x - (dx * c + (sy - h) * s) / z, h };
+}
+const CAM7 = { z: 0.447, x: 0, h: 880 };
+
+// ---------- layouts (SCREEN px, at the settled tilt of each scene) -> world ----------
+const SW_SC = 0.95, BOX_SC = 0.9, CUP_SC = 1.2, BW = 460, BH = 190;
+// scene 7: the full pan (pile on the low left, empty circle on the high right)
+const L7 = { box: [470, 1150], heap: [[170, 1075, -4], [300, 1035, 3], [195, 988, 6], [320, 950, -5], [240, 900, -10]],
+  sw: [262, 1290], cups: [[92, 1388], [172, 1410], [252, 1390], [140, 1478]], circle: [790, 1445, 240, 95], t1: [780, 1250], t2: [780, 1312] };
+const w7 = p => s2w(p[0], p[1], CAM7, T67);
+const WD = { box: w7(L7.box), heap: L7.heap.map(p => ({ ...w7(p), r: p[2] })), sw: w7(L7.sw), cups: L7.cups.map(w7), circle: w7(L7.circle), t1: w7(L7.t1), t2: w7(L7.t2), tower: w7([240, 1060]) };
+// scene 6 is the same world seen closer; scene 8 is level, the box does not move
+const CAM6 = camFor(WD.box, 640, 1480, 0.62, T67), CAM8 = camFor(WD.box, 485, 1120, 0.416, 0);
+// scenes 1–4 are staged around the spot where the tower will stand, so the camera barely travels into scene 5
+const CAM5b = camFor(WD.tower, 600, 1334, 0.83, -6), CAM5a = camFor(WD.tower, 600, 1250, 0.83, -6), CAM5c = camFor(WD.box, 720, 1470, 0.72, -6);
+const CAM34 = { z: 0.83, x: CAM5b.x, h: 1000 }, OX = CAM34.x - 60;   // OX: x offset of the scene 1–2 staging
+const CAM1 = { z: 1, x: OX, h: 1000 }, CAM2 = { z: 0.65, x: -290 + OX, h: 1172 };
+const w8 = p => s2w(p[0], p[1], CAM8, 0);
+const L8 = { tower: [166, 1140], sw: [842, 1130], cups: [[398, 1245], [478, 1245], [558, 1245], [638, 1245]], circle: [540, 1420, 400, 150], text: [540, 1452], en: [540, 1508] };
+const W8 = { tower: w8(L8.tower), sw: w8(L8.sw), cups: L8.cups.map(w8), circle: w8(L8.circle), text: w8(L8.text), en: w8(L8.en) };
+const T6a = s2w(560, 455, CAM6, T67), T6b = s2w(560, 790, CAM6, T67);
+
+// camera track: [time, camera, ease of the move that ARRIVES here]
+const CAMS = [[0, CAM1], [2.7, CAM1], [3.5, CAM2, 'io'], [6.85, CAM2], [7.2, CAM34, 'io'], [14.55, CAM34], [15.2, CAM5a, 'io'], [18.6, CAM5b, 'io'], [19.0, CAM5b],
+  [19.4, CAM5c, 'io'], [19.72, CAM6, 'out3'], [22.6, CAM6], [24.0, CAM7, 'io'], [28.85, CAM7], [29.5, CAM8, 'io'], [40, CAM8]];
+function camera(t) {
+  if (t <= CAMS[0][0]) return CAMS[0][1];
+  for (let i = 1; i < CAMS.length; i++) {
+    const [t1, c1, e] = CAMS[i], [t0, c0] = CAMS[i - 1];
+    if (t < t1) { const k = (E[e] || E.io)(P(t, t0, t1)); return { z: lerp(c0.z, c1.z, k), x: lerp(c0.x, c1.x, k), h: lerp(c0.h, c1.h, k) }; }
+  }
+  return CAMS[CAMS.length - 1][1];
+}
+
+// ---------- the hero sandwich is on stage from 1.0 s to 33.3 s and is thrown about by every weight ----------
+const SWP1 = { x: 75 + OX, y: 640 };
+const SWP3L = s2w(450, 1640, CAM34, -7), SWP3R = s2w(630, 1640, CAM34, 7), SWP5 = s2w(560, 1690, CAM5b, -6);
+// [time of the hit, where it lands, flight seconds, hop height (world px)]
+const SWK = [[HIT.names[0], SWP3L, 0.4, 130], [HIT.names[1], SWP3R, 0.4, 130], [HIT.names[2], SWP3L, 0.4, 130], [HIT.heavy, SWP3L, 0.36, 90],
+  [HIT.blocks[0], SWP5, 0.4, 90], [HIT.blocks[1], SWP5, 0.28, 40], [HIT.blocks[2], SWP5, 0.28, 44], [HIT.blocks[3], SWP5, 0.28, 48], [HIT.blocks[4], SWP5, 0.28, 52],
+  [HIT.box, WD.sw, 0.5, 260], [HIT.cta, W8.sw, 0.42, 300]];
+function sandwichState(t) {
+  let x = SWP1.x, y = SWP1.y, q = 0, lift = 0, rot = 0;
+  for (const [tk, p, d, hop] of SWK) {
+    if (t < tk) break;
+    const k = P(t, tk, tk + d), e = E.out2(k), arc = Math.sin(Math.PI * k);
+    const nx = lerp(x, p.x, e), ny = lerp(y, p.y, e);
+    rot = (p.x - x > 5 ? 1 : p.x - x < -5 ? -1 : 0) * 5 * arc; x = nx; y = ny; lift = hop * arc;
+    q = squash(t - tk - d, 0.13, 3.2, 6.5);
+  }
+  return { x, y, q, lift, rot };
+}
 
 // ---------- drawing helpers ----------
 function font(weight, size, fam = 'Tajawal', italic = false) { ctx.font = `${italic ? 'italic ' : ''}${weight} ${size}px "${fam}"`; }
@@ -106,7 +150,6 @@ function en(str, x, y, size, color, weight = 500, align = 'center') {
 }
 function arWidth(str, size, weight) { ctx.direction = 'rtl'; font(weight, size); return ctx.measureText(str).width; }
 function arBox(str, size, weight) { ctx.direction = 'rtl'; font(weight, size); ctx.textAlign = 'center'; const m = ctx.measureText(str); return { w: m.width, up: m.actualBoundingBoxAscent, down: m.actualBoundingBoxDescent }; }
-// transform about an anchor: translate, rotate, squash (sx, sy)
 function at(x, y, rot, sx, sy, fn) { ctx.save(); ctx.translate(x, y); if (rot) ctx.rotate(rot * DEG); if (sx !== 1 || sy !== 1) ctx.scale(sx, sy); fn(); ctx.restore(); }
 function rrect(x, y, w, h, r) { ctx.beginPath(); ctx.roundRect(x, y, w, h, r); }
 function softShadow(points, blur, alpha) {
@@ -118,23 +161,21 @@ function ellipseShadow(x, y, rx, ry, alpha, blur = 10) { ctx.save(); ctx.filter 
 // ---------- objects ----------
 // hero sandwich (photo cut-out). anchor = middle of its base line in sprite px.
 const SW = { ax: 470, ay: 560, shadow: [[70, 500], [110, 600], [250, 668], [560, 545], [905, 345], [890, 262], [520, 420]] };
-function sandwich(x, y, scale, rot, q, alpha = 1, shadowA = 1) {
-  const im = IMG.sandwich;
-  at(x, y, 0, scale, scale, () => { ctx.translate(-SW.ax, -SW.ay); softShadow(SW.shadow, 16, 0.34 * shadowA); });
-  ctx.globalAlpha = alpha;
-  at(x, y, rot, scale * (1 + 0.6 * q), scale * (1 - q), () => ctx.drawImage(im, -SW.ax, -SW.ay));
-  ctx.globalAlpha = 1;
+function sandwich(x, y, scale, rot, q, lift = 0, yOff = 0, shadowA = 1) {
+  const im = IMG.sandwich, sa = shadowA * (1 - 0.55 * clamp01(lift / 260));
+  at(x, y, 0, scale, scale, () => { ctx.translate(-SW.ax, -SW.ay); softShadow(SW.shadow, 16, 0.34 * sa); });
+  at(x, y - lift + yOff, rot, scale * (1 + 0.6 * q), scale * (1 - q), () => ctx.drawImage(im, -SW.ax, -SW.ay));
 }
 // gathering box (photo cut-out). Sprite px. Hinge line H->C splits the lid from the tray.
 const BX = { ax: 560, ay: 1000, H: [40, 653], Cc: [660, 476],
   shadow: [[20, 800], [350, 1160], [1075, 915], [1066, 840], [370, 1040], [50, 730]],
   food: [[66, 677], [676, 502], [941, 692], [746, 852], [356, 932]] };
-function gbox(x, y, scale, q, lidW, hop, shadowA = 1) {
+function gbox(x, y, scale, q, lidW, hop, shadowA = 1, yOff = 0) {
   const im = IMG.box, [hx, hy] = BX.H, [cx, cy] = BX.Cc;
   const L = Math.hypot(cx - hx, cy - hy), ux = (cx - hx) / L, uy = (cy - hy) / L, nx = uy, ny = -ux;   // n points up, away from the tray
   const yAt = X => hy + (X - hx) * (cy - hy) / (cx - hx);
   at(x, y, 0, scale, scale, () => { ctx.translate(-BX.ax, -BX.ay); softShadow(BX.shadow, 20, 0.36 * shadowA); });
-  at(x, y, 0, scale * (1 + 0.5 * q), scale * (1 - q), () => {
+  at(x, y + yOff, 0, scale * (1 + 0.5 * q), scale * (1 - q), () => {
     ctx.translate(-BX.ax, -BX.ay);
     // lid: affine that keeps every point of the hinge line fixed (shear + slight foreshortening)
     ctx.save();
@@ -152,9 +193,9 @@ function gbox(x, y, scale, q, lidW, hop, shadowA = 1) {
 }
 // flat sauce cup: black cup, coloured top (identity colours, no photo)
 const CUP_TOP = [C.lime, C.hot, C.white, C.lime2];
-function cup(x, y, s, rot, wave, col) {
-  ellipseShadow(x - 14 * s, y - 4 * s, 78 * s, 20 * s, 0.30, 8);
-  at(x, y, rot, s, s, () => {
+function cup(x, y, s, rot, wave, col, lift = 0) {
+  ellipseShadow(x - 14 * s, y - 4 * s, 78 * s, 20 * s, 0.30 * (1 - 0.5 * clamp01(lift / 200)), 8);
+  at(x, y - lift, rot, s, s, () => {
     ctx.fillStyle = C.black; ctx.beginPath();
     ctx.moveTo(-75, -104); ctx.lineTo(75, -104); ctx.lineTo(56, -14); ctx.quadraticCurveTo(0, 12, -56, -14); ctx.closePath(); ctx.fill();
     ctx.beginPath(); ctx.ellipse(0, -104, 75, 25, 0, 0, 7); ctx.fill();
@@ -162,22 +203,22 @@ function cup(x, y, s, rot, wave, col) {
   });
 }
 // flat carton block: pink with a lime band (blank: the word HIPPO is never typeset)
-const BW = 380, BH = 200;
 function block(x, y, rot, q) {
   at(x, y, rot, 1 + 0.5 * q, 1 - q, () => {
-    ctx.fillStyle = C.hot; rrect(-BW / 2, -BH, BW, BH, 14); ctx.fill();
+    ctx.fillStyle = C.hot; rrect(-BW / 2, -BH, BW, BH, 16); ctx.fill();
     ctx.fillStyle = C.lime; ctx.fillRect(-BW / 2, -BH * 0.64, BW, BH * 0.28);
-    ctx.fillStyle = 'rgba(24,23,23,0.16)'; ctx.save(); rrect(-BW / 2, -BH, BW, BH, 14); ctx.clip(); ctx.fillRect(-BW / 2, -9, BW, 9); ctx.restore();
+    ctx.fillStyle = 'rgba(24,23,23,0.16)'; ctx.save(); rrect(-BW / 2, -BH, BW, BH, 16); ctx.clip(); ctx.fillRect(-BW / 2, -10, BW, 10); ctx.restore();
   });
 }
-function dust(x, y, tau, n = 9, spread = 420) {
-  if (tau < 0 || tau > 0.9) return;
-  const k = tau / 0.9;
-  ctx.save(); ctx.filter = 'blur(14px)';
+// dust: only where something meets the floor, tinted (a darker violet), never behind lettering
+function dust(x, y, tau, n = 7, spread = 420, s = 1) {
+  if (tau < 0 || tau > 0.8) return;
+  const k = tau / 0.8;
+  ctx.save(); ctx.filter = `blur(${12 * s}px)`;
   for (let i = 0; i < n; i++) {
-    const u = (i / (n - 1)) * 2 - 1, r = 16 + 34 * E.out2(k) + (i % 3) * 8;
-    ctx.fillStyle = `rgba(255,255,255,${0.30 * (1 - k) * (1 - k)})`;
-    ctx.beginPath(); ctx.ellipse(x + u * spread * (0.55 + 0.45 * E.out2(k)), y - 4 - (10 + (i % 2) * 14) * E.out2(k), r * 1.5, r * 0.7, 0, 0, 7); ctx.fill();
+    const u = (i / (n - 1)) * 2 - 1, r = (18 + 30 * E.out2(k) + (i % 3) * 8) * s;
+    ctx.fillStyle = `rgba(52,34,104,${0.34 * (1 - k) * (1 - k)})`;
+    ctx.beginPath(); ctx.ellipse(x + u * spread * (0.6 + 0.4 * E.out2(k)), y - (6 + (i % 2) * 10) * E.out2(k) * s, r * 1.5, r * 0.6, 0, 0, 7); ctx.fill();
   }
   ctx.restore();
 }
@@ -185,204 +226,187 @@ function dust(x, y, tau, n = 9, spread = 420) {
 function limeCircle(x, y, rx, ry, a) {
   if (a <= 0) return;
   ctx.save(); ctx.globalAlpha = a;
-  ctx.save(); ctx.filter = 'blur(26px)'; ctx.fillStyle = 'rgba(187,208,50,0.45)'; ctx.beginPath(); ctx.ellipse(x, y, rx * 1.1, ry * 1.14, 0, 0, 7); ctx.fill(); ctx.restore();
+  ctx.save(); ctx.filter = `blur(${rx * 0.07}px)`; ctx.fillStyle = 'rgba(187,208,50,0.45)'; ctx.beginPath(); ctx.ellipse(x, y, rx * 1.1, ry * 1.14, 0, 0, 7); ctx.fill(); ctx.restore();
   ctx.fillStyle = C.lime; ctx.beginPath(); ctx.ellipse(x, y, rx, ry, 0, 0, 7); ctx.fill();
   ctx.restore();
 }
 
-// ---------- layout constants ----------
-const S1 = { sx: 255, sy: 290, sc: 0.62, wordX: -70, wordSize: 86 };
-const CUPX = [-42, -207, -372, -537], CUPY = 334;
-const S3 = [{ x: -285, size: 150, maxW: 440 }, { x: 285, size: 158, maxW: 440 }, { x: -250, size: 215, maxW: 500 }];
-const TOWER = { x: -40, y: 110, dx: [0, 14, -10, 8, -4], r: [0.6, -1.2, 1, -0.8, 0.5] };
-const HEAP = [[-330, 170, -2], [-660, 215, 3], [-510, -32, 5], [-280, -30, -6], [-420, -232, -11]];   // after the box hit
-const ROW_T = { x: -400, y: 300 };                                                                     // neat stack in scene 8
-const BOXP = { x: 260, y: 470, sc: 0.7 };
-const SW7 = { x: -385, y: 640, sc: 0.6 }, SW8 = { x: 760, y: 440, sc: 0.6 };
-const CUP7 = [[-95, 620], [35, 680], [-215, 735], [-545, 745]], CUP8 = [[-560, 610], [-420, 610], [-280, 610], [-140, 610]];
-const T6a = s2w(570, 440, CAM6, -9), T6b = s2w(570, 690, CAM6, -9);
-const CIR7 = s2w(838, 1258, CAM7, -9), T7a = s2w(770, 1468, CAM7, -9), T7b = s2w(770, 1540, CAM7, -9);
-const CIR8 = { x: 203, y: 900, rx: 660, ry: 250 };
+// ---------- scene constants (world px) ----------
+const S1 = { wordSize: 150, slide: 150 };
+const CUPX = [-330, -516, -702, -888].map(x => x + OX), CUPY = 735;
+const S3 = [{ x: -25, maxW: 843 }, { x: 145, maxW: 843 }, { x: -25, maxW: 843 }], S3_MAX_SIZE = 330;   // names ≈ 65 % of the frame width
+const TOWER = { dx: [0, 16, -12, 9, -5], r: [0.6, -1.2, 1, -0.8, 0.5] };
 
-// ---------- scenes: wall layer (behind the floor) and floor layer ----------
+function nameMetrics(i) {
+  const lines = COPY.s3[i]; let sz = S3_MAX_SIZE;
+  sz = Math.min(sz, sz * S3[i].maxW / Math.max(...lines.map(l => arBox(l, sz, 800).w)));
+  const lh = sz * 1.06, boxes = lines.map(l => arBox(l, sz, 800));
+  return { lines, sz, lh, down: boxes[boxes.length - 1].down, height: (lines.length - 1) * lh + boxes[0].up + boxes[boxes.length - 1].down };
+}
+const nameFallY = (i, t) => -1800 * (1 - E.in2(P(t, HIT.names[i] - 0.3, HIT.names[i])));
+
+// ---------- wall layer: drawn BEFORE the floor, so anything below the horizon is hidden by the floor ----------
 function wallLayer(t) {
-  // S1 «خفيف؟» — stands on the horizon, slides down the tilt, piles up against the sandwich, tips behind the floor edge
-  if (t < 3.2) {
+  // S1 «خفيف؟» — centred on the level horizon; after the hit it slides down the tilt and settles upright beside the sandwich
+  if (t < 2.96) {
     const b = arBox(COPY.s1, S1.wordSize, 300);
-    const slide = 118 * E.in2(P(t, 1.08, 1.62));
-    const tip = 13 * spring01(t - 1.62, 2.4, 6) + 70 * E.in2(P(t, 2.7, 3.1));
-    const q = squash(t - 1.62, 0.16, 3.5, 7);
-    const hop = -26 * Math.sin(Math.PI * P(t, 1.0, 1.3));
-    const fall = 190 * E.in2(P(t, 2.72, 3.12));
-    at(S1.wordX + slide + b.w / 2, -4 + hop + fall, tip, 1 - q, 1 + 0.5 * q, () => ar(COPY.s1, -b.w / 2, -b.down, S1.wordSize, 300, C.black));
+    const k = P(t, 1.08, 1.72), slide = S1.slide * E.io(k);
+    const q = squash(t - 1.72, 0.14, 3.5, 7);
+    const hop = -30 * Math.sin(Math.PI * P(t, 1.0, 1.3));
+    const tip = 2.5 * wob(t - 1.72, 3, 6) + 75 * E.in2(P(t, 2.62, 2.95)), fall = 460 * E.in2(P(t, 2.62, 2.95));
+    at(OX + slide + b.w / 2, -6 + hop + fall, tip, 1 - q, 1 + 0.5 * q, () => ar(COPY.s1, -b.w / 2, -b.down, S1.wordSize, 300, C.black));
   }
-  // S2 «بريوش طري.» — soft word, squashes with the bread
-  if (t >= 4.5 && t < 7.0) {
-    const land = 4.76, y = -70 - 900 * (1 - E.in2(P(t, land - 0.26, land)));
+  // S2 «بريوش طري.» — soft word, squashes with the bread; slides out with the push-in to scene 3
+  if (t >= 4.5 && t < 7.4) {
+    const land = 4.76, y = -62 - 1300 * (1 - E.in2(P(t, land - 0.26, land)));
     const q = squash(t - land, 0.14, 3.2, 6) + squash(t - HIT.squish, 0.2, 3.4, 6);
-    at(-250, y, 0, 1 + 0.6 * q, 1 - q, () => ar(COPY.s2, 0, 0, 132, 300, C.black));
+    at(OX - 560 - 1500 * E.in2(P(t, 6.85, 7.3)), y, 0, 1 + 0.6 * q, 1 - q, () => ar(COPY.s2, 0, 0, 190, 300, C.black));
   }
-  // S4 light line floats up; heavy line falls and sinks into the floor (the floor layer hides what is below the horizon)
-  if (t >= 11.3 && t < 15.0) {
+  // S3 — the three names are the weights. Each one stamps the previous one down into the floor.
+  if (t >= 6.9 && t < 11.5) {
+    for (let i = 0; i < 3; i++) {
+      const T = HIT.names[i]; if (t < T - 0.3) continue;
+      const m = nameMetrics(i);
+      let y = nameFallY(i, t), x = S3[i].x + CAM34.x, q = squash(t - T, 0.2, 3.0, 6);
+      if (i < 2) { const sink = nameFallY(i + 1, t) + m.height + 14; if (t >= HIT.names[i + 1] - 0.3 && sink > 0) { y += sink; if (sink > m.height + 10) continue; } }
+      if (i === 2) x -= 2200 * E.in2(P(t, 10.9, 11.4));
+      at(x, y, 0, 1 + 0.6 * q, 1 - q, () => m.lines.forEach((l, k) => ar(l, 0, -m.down - (m.lines.length - 1 - k) * m.lh, m.sz, 800, C.black)));
+    }
+  }
+  // S4 light line floats up; heavy line falls, hits the floor line and tilts the line above
+  if (t >= 11.0 && t < 15.0) {
     const tau = t - HIT.heavy;
-    const a = P(t, 11.3, 11.8) * (1 - P(t, 14.5, 14.9));
-    const y = -372 - 20 * (t - 11.3) - 34 * wob(tau, 1.2, 3) - 150 * E.in2(P(t, 14.5, 14.9));
-    ctx.globalAlpha = a; at(0, y, 4.5 * spring01(tau, 1.8, 3.5), 1, 1, () => ar(COPY.s4a, 0, 0, 150, 300, C.black)); ctx.globalAlpha = 1;
+    const a = P(t, 11.05, 11.6) * (1 - P(t, 14.1, 14.45));
+    const y = -520 - 22 * (t - 11.0) - 40 * wob(tau, 1.2, 3) - 180 * E.in2(P(t, 14.1, 14.45));
+    ctx.globalAlpha = a; at(CAM34.x, y, 4.5 * spring01(tau, 1.8, 3.5), 1, 1, () => ar(COPY.s4a, 0, 0, 180, 300, C.black)); ctx.globalAlpha = 1;
   }
   if (t >= 12.15 && t < 15.05) heavyLine(t, false);
   // S6 «وبوكس الجَمعات؟ أثقل.»
-  if (t >= 20.45 && t < 23.8) {
-    const a = 1 - P(t, 23.3, 23.7);
-    ctx.globalAlpha = a;
-    const la = 20.62, ya = T6a.y - 700 * (1 - E.in2(P(t, la - 0.2, la))), qa = squash(t - la, 0.1, 3.4, 7);
-    at(T6a.x, ya, 0, 1 + 0.6 * qa, 1 - qa, () => ar(COPY.s6a, 0, 0, 112, 300, C.black));
-    if (t >= HIT.athqal - 0.22) {
-      const yb = T6b.y - 1300 * (1 - E.in2(P(t, HIT.athqal - 0.22, HIT.athqal))), qb = squash(t - HIT.athqal, 0.2, 3.0, 6);
-      at(T6b.x, yb, 0, 1 + 0.6 * qb, 1 - qb, () => ar(COPY.s6b, 0, 0, 270, 800, C.black));
+  if (t >= 20.45 && t < 23.7) {
+    ctx.globalAlpha = 1 - P(t, 23.2, 23.6);
+    const s = 1 / CAM6.z, la = 20.62, ya = T6a.y - 900 * (1 - E.in2(P(t, la - 0.2, la))), qa = squash(t - la, 0.1, 3.4, 7);
+    at(T6a.x, ya, 0, 1 + 0.6 * qa, 1 - qa, () => ar(COPY.s6a, 0, 0, 112 * s, 300, C.black));
+    const lb = HIT.athqal + 0.023;   // contact on frame 655, the first frame after 21.810
+    if (t >= lb - 0.2) {
+      const yb = T6b.y - 3200 * (1 - E.in2(P(t, lb - 0.2, lb))), qb = squash(t - lb, 0.2, 3.0, 6);
+      at(T6b.x, yb, 0, 1 + 0.6 * qb, 1 - qb, () => ar(COPY.s6b, 0, 0, 300 * s, 800, C.black));
     }
     ctx.globalAlpha = 1;
   }
 }
 function heavyLine(t, asShadow) {
-  const size = 186, gap = size * 0.26;
+  const size = 224, gap = size * 0.26;
   const w1 = arWidth(COPY.s4b1, size, 800), w2 = arWidth(COPY.s4b2, size, 800), total = w1 + gap + w2;
   const tau = t - HIT.heavy, tau2 = t - HIT.thaqeel;
-  const fall = -1500 * (1 - E.in2(P(t, HIT.heavy - 0.3, HIT.heavy)));
-  const sink = -60 + 30 * (tau > 0 ? Math.exp(-6 * tau) : 0) + 460 * E.in2(P(t, 14.6, 15.0));
+  const fall = -3600 * (1 - E.in2(P(t, HIT.heavy - 0.3, HIT.heavy)));
+  const sink = -72 + 36 * (tau > 0 ? Math.exp(-6 * tau) : 0) + 620 * E.in2(P(t, 14.2, 14.55));   // rests just above the floor line (keeps the dots of the ي visible)
   const q = squash(tau, 0.2, 3.0, 6);
-  const y = fall + sink;
+  const col = asShadow ? 'rgba(24,23,23,0.9)' : C.black;
   const draw = () => {
-    ar(COPY.s4b1, total / 2, 0, size, 800, asShadow ? 'rgba(24,23,23,0.9)' : C.black, 'right');             // first word sits on the right (RTL)
-    const pop = tau2 > 0 ? 1 + 0.085 * Math.exp(-8 * tau2) : 1, drop = tau2 > 0 ? 12 * Math.exp(-6 * tau2) : 0;
-    at(-total / 2 + w2 / 2, drop, 0, pop, pop, () => ar(COPY.s4b2, 0, 0, size, 800, asShadow ? 'rgba(24,23,23,0.9)' : C.black, 'center'));
+    ar(COPY.s4b1, total / 2, 0, size, 800, col, 'right');             // first word sits on the right (RTL)
+    const pop = tau2 > 0 ? 1 + 0.085 * Math.exp(-8 * tau2) : 1, drop = tau2 > 0 ? 14 * Math.exp(-6 * tau2) : 0;
+    at(-total / 2 + w2 / 2, drop, 0, pop, pop, () => ar(COPY.s4b2, 0, 0, size, 800, col, 'center'));
   };
-  if (!asShadow) at(0, y, 0, 1 + 0.6 * q, 1 - q, draw);
-  else if (tau > -0.3) { ctx.save(); ctx.globalAlpha = 0.2 * P(t, HIT.heavy - 0.3, HIT.heavy) * (1 - P(t, 14.6, 14.85)); ctx.filter = 'blur(7px)'; ctx.transform(1, 0, -0.5, -0.34, 0, 2); draw(); ctx.restore(); }
+  if (!asShadow) at(CAM34.x, fall + sink, 0, 1 + 0.6 * q, 1 - q, draw);
+  else if (tau > -0.3) { ctx.save(); ctx.globalAlpha = 0.2 * P(t, HIT.heavy - 0.3, HIT.heavy) * (1 - P(t, 14.2, 14.4)); ctx.filter = 'blur(8px)'; ctx.translate(CAM34.x, 0); ctx.transform(1, 0, -0.5, -0.34, 0, 2); draw(); ctx.restore(); }
 }
 
+// ---------- floor layer ----------
 function floorLayer(t) {
-  // ---- S1–S2: hero sandwich + sauce cups ----
-  if (t >= 0.5 && t < 7.0) {
-    const pf = P(t, 0.5, HIT.hook), off = -1750 * (1 - pf * pf);
-    const q = squash(t - HIT.hook, 0.2, 3.0, 5.5) + squash(t - HIT.squish, 0.06, 4, 8);
-    const sA = pf * pf;
-    at(0, 0, 0, 1, 1, () => {
-      const im = IMG.sandwich;
-      at(S1.sx, S1.sy, 0, S1.sc, S1.sc, () => { ctx.translate(-SW.ax, -SW.ay); softShadow(SW.shadow, 16, 0.34 * sA); });
-      at(S1.sx + 5 * wob(t - HIT.squish, 5, 8), S1.sy + off, -5 * (1 - pf), S1.sc * (1 + 0.6 * q), S1.sc * (1 - q), () => ctx.drawImage(im, -SW.ax, -SW.ay));
-    });
-    dust(S1.sx - 20, S1.sy + 40, t - HIT.hook, 7, 330);
-    for (let i = 0; i < 4; i++) {
-      const T = HIT.cups[i]; if (t < T - 0.62) continue;
-      let x = CUPX[i] - 950 * (1 - E.in2(P(t, T - 0.62, T)));
-      for (let j = i + 1; j < 4; j++) x += 5 * wob(t - HIT.cups[j], 5, 9);
-      x += 13 * E.out2(P(t, HIT.squish - 0.07, HIT.squish));
-      const wave = wob(t - T, 4.2, 4.5) + 0.7 * wob(t - HIT.squish, 4.2, 5);
-      cup(x, CUPY, 1, 7 * wob(t - T, 4, 7), wave, CUP_TOP[i]);
-    }
-  }
-  // ---- S3: the three names are the falling weights (ExtraBold); the horizon is a see-saw ----
-  if (t >= 6.9 && t < 11.5) {
-    for (let i = 0; i < 3; i++) {
-      const T = HIT.names[i], next = i < 2 ? HIT.names[i + 1] : null; if (t < T - 0.3) continue;
-      const lines = COPY.s3[i]; let sz = S3[i].size;
-      sz = Math.min(sz, sz * S3[i].maxW / Math.max(...lines.map(l => arBox(l, sz, 800).w)));
-      const lh = sz * 1.08, boxes = lines.map(l => arBox(l, sz, 800)), wmax = Math.max(...boxes.map(b => b.w)), down = boxes[boxes.length - 1].down;
-      let x = S3[i].x, y = -1500 * (1 - E.in2(P(t, T - 0.3, T))), rot = 0, q = squash(t - T, 0.22, 3.0, 6);
-      if (next !== null && t >= next) { const tau = t - next; if (tau > 0.62) continue; y += -3300 * tau + 2600 * tau * tau; x += (i === 0 ? -1 : 1) * 380 * tau; rot = (i === 0 ? -1 : 1) * 70 * tau; }
-      if (i === 2) x -= 1700 * E.in2(P(t, 10.92, 11.45));
-      const cy = -(lines.length * lh) / 2;
-      at(x, y + 2, 0, 1 + 0.6 * q, 1 - q, () => at(0, cy, rot, 1, 1, () => {
-        lines.forEach((l, k) => ar(l, 0, -cy - down - (lines.length - 1 - k) * lh, sz, 800, C.black));
-      }));
-      dust(S3[i].x, 0, t - T, 8, wmax * 0.55);
-    }
-  }
-  // ---- S4: shadow of the heavy line on the floor, dust, English support line ----
+  const sw = sandwichState(t);
+  const k8 = E.out3(P(t, HIT.cta, HIT.cta + 0.42)), hop8 = Math.sin(Math.PI * P(t, HIT.cta, HIT.cta + 0.42)), q8 = squash(t - HIT.cta - 0.42, 0.1, 3.2, 7);
+
+  // S4: shadow of the heavy line and the English support line (white on violet)
   if (t >= 12.15 && t < 15.0) {
     heavyLine(t, true);
-    dust(0, 4, t - HIT.heavy, 10, 440);
-    const a = P(t, 12.9, 13.3) * (1 - P(t, 14.45, 14.8));
-    if (a > 0) { ctx.globalAlpha = a; en(COPY.s4en, 0, 150, 50, C.white); ctx.globalAlpha = 1; }
+    const a = P(t, 12.9, 13.3) * (1 - P(t, 14.05, 14.35));
+    if (a > 0) { ctx.globalAlpha = a; en(COPY.s4en, CAM34.x, 118, 62, C.white); ctx.globalAlpha = 1; }
   }
-  // ---- S5–S8: blocks, box, wide shot, call to action ----
-  if (t >= 14.8) {
-    const k8 = E.out3(P(t, HIT.cta, HIT.cta + 0.42)), hop8 = Math.sin(Math.PI * P(t, HIT.cta, HIT.cta + 0.42)), q8 = squash(t - HIT.cta - 0.42, 0.1, 3.2, 7);
-    // light circle (floor) — scene 7 on the empty high side, scene 8 it takes the weight
-    const cin = E.out2(P(t, 24.2, 24.95)), cg = E.io(P(t, 28.85, 29.5));
-    if (t >= 24.2) {
-      const pulse = 1 + 0.05 * wob(t - HIT.cta, 3, 6) * -1;
-      limeCircle(lerp(CIR7.x, CIR8.x, cg), lerp(CIR7.y, CIR8.y, cg), lerp(300, CIR8.rx, cg) * (0.9 + 0.1 * cin) * pulse, lerp(105, CIR8.ry, cg) * (0.9 + 0.1 * cin) * pulse, cin);
-    }
-    // blocks
+  // S7–S8: the lime light circle
+  if (t >= 24.2) {
+    const cin = E.out2(P(t, 24.2, 24.95)), cg = E.io(P(t, 28.85, 29.5)), pulse = 1 - 0.05 * wob(t - HIT.cta, 3, 6);
+    limeCircle(lerp(WD.circle.x, W8.circle.x, cg), lerp(WD.circle.y, W8.circle.y, cg),
+      lerp(L7.circle[2] / CAM7.z, L8.circle[2] / CAM8.z, cg) * (0.9 + 0.1 * cin) * pulse, lerp(L7.circle[3] / CAM7.z, L8.circle[3] / CAM8.z, cg) * (0.9 + 0.1 * cin) * pulse, cin);
+  }
+  // S5–S8: blocks (tower -> heap after the box hit -> neat stack)
+  if (t >= HIT.blocks[0] - 0.34) {
     const kh = E.out3(P(t, HIT.box, HIT.box + 0.7)), hopH = Math.sin(Math.PI * P(t, HIT.box, HIT.box + 0.7));
-    const order = [0, 1, 2, 3, 4];
-    for (const i of order) {
+    for (let i = 0; i < 5; i++) {
       const T = HIT.blocks[i]; if (t < T - 0.34) continue;
-      let x = TOWER.x + TOWER.dx[i], y = TOWER.y - BH * i - 1750 * (1 - E.in2(P(t, T - 0.34, T))), r = TOWER.r[i];
+      let x = WD.tower.x + TOWER.dx[i], y = WD.tower.y - BH * i - 2100 * (1 - E.in2(P(t, T - 0.34, T))), r = TOWER.r[i];
       let q = squash(t - T, 0.17, 3.2, 6.5);
       for (let j = i + 1; j < 5; j++) q += squash(t - HIT.blocks[j], 0.05, 3.2, 7);
       if (t >= HIT.box) {
-        x = lerp(x, HEAP[i][0], kh); y = lerp(y, HEAP[i][1], kh) - (90 + 40 * i) * hopH * (1 - kh * 0.5); r = lerp(r, HEAP[i][2], kh) + (i % 2 ? 1 : -1) * 14 * hopH * (1 - kh);
+        const hp = WD.heap[i];
+        x = lerp(x, hp.x, kh); y = lerp(y, hp.y, kh) - (120 + 60 * i) * hopH * (1 - kh * 0.5); r = lerp(r, hp.r, kh) + (i % 2 ? 1 : -1) * 14 * hopH * (1 - kh);
         q += squash(t - HIT.box - 0.7, 0.06, 3.2, 7);
       }
-      if (t >= HIT.cta) { x = lerp(x, ROW_T.x, k8); y = lerp(y, ROW_T.y - BH * i, k8) - (180 + 30 * i) * hop8; r = lerp(r, 0, k8); q += q8; }
+      if (t >= HIT.cta) { x = lerp(x, W8.tower.x, k8); y = lerp(y, W8.tower.y - BH * i, k8) - (260 + 50 * i) * hop8; r = lerp(r, 0, k8); q += q8; }
       block(x, y, r, q);
     }
-    // gathering box
-    if (t >= HIT.box - 0.36) {
-      const y = BOXP.y - 2000 * (1 - E.in2(P(t, HIT.box - 0.36, HIT.box))) - 120 * hop8;
-      const q = squash(t - HIT.box, 0.1, 2.6, 5) + q8;
-      const lidW = 1.25 * wob(t - (HIT.lid[0] - 0.0575), 4.35, 3.6) + 0.5 * wob(t - HIT.cta - 0.42, 4.35, 5);
-      const hop = 30 * Math.sin(Math.PI * P(t, HIT.box + 0.02, HIT.box + 0.34)) + 16 * Math.sin(Math.PI * P(t, HIT.cta + 0.42, HIT.cta + 0.66));
-      gbox(BOXP.x, y, BOXP.sc, q, lidW, hop, P(t, HIT.box - 0.3, HIT.box) * (1 - 0.6 * hop8));
-      dust(BOXP.x - 40, BOXP.y + 60, t - HIT.box, 11, 430);
+    if (t < HIT.box) dust(WD.tower.x, WD.tower.y + 12, t - HIT.blocks[0], 6, 260);
+  }
+  // S6–S8: the gathering box
+  if (t >= HIT.box - 0.36) {
+    const yOff = -2600 * (1 - E.in2(P(t, HIT.box - 0.36, HIT.box))) - 240 * hop8;
+    const q = squash(t - HIT.box, 0.1, 2.6, 5) + q8;
+    const lidW = 1.25 * wob(t - (HIT.lid[0] - 0.0575), 4.35, 3.6) + 0.5 * wob(t - HIT.cta - 0.42, 4.35, 5);
+    const hop = 30 * Math.sin(Math.PI * P(t, HIT.box + 0.02, HIT.box + 0.34)) + 16 * Math.sin(Math.PI * P(t, HIT.cta + 0.42, HIT.cta + 0.66));
+    gbox(WD.box.x, WD.box.y, BOX_SC, q, lidW, hop, P(t, HIT.box - 0.3, HIT.box) * (1 - 0.6 * hop8), yOff);
+    dust(WD.box.x - 60, WD.box.y + 90, t - HIT.box, 9, 560, 1.4);
+  }
+  // S2: cups slide in from the high side, stop on the four taps, leave with the first name
+  if (t >= HIT.cups[0] - 0.62 && t < 7.9) {
+    for (let i = 0; i < 4; i++) {
+      const T = HIT.cups[i]; if (t < T - 0.62) continue;
+      let x = CUPX[i] - 1300 * (1 - E.in2(P(t, T - 0.62, T)));
+      for (let j = i + 1; j < 4; j++) x += 6 * wob(t - HIT.cups[j], 5, 9);
+      x += 14 * E.out2(P(t, HIT.squish - 0.07, HIT.squish)) - 2600 * E.in2(P(t, HIT.names[0], HIT.names[0] + 0.6));
+      const wave = wob(t - T, 4.2, 4.5) + 0.7 * wob(t - HIT.squish, 4.2, 5);
+      cup(x, CUPY, CUP_SC, 7 * wob(t - T, 4, 7), wave, CUP_TOP[i]);
     }
-    // hero sandwich and cups slide down the tilted floor into the pile (scene 7), then line up (scene 8)
-    if (t >= 22.5) {
-      const ks = E.out2(P(t, 22.5, 23.55));
-      const sx = lerp(lerp(1650, SW7.x, ks), SW8.x, k8), sy = lerp(SW7.y, SW8.y, k8) - 260 * hop8;
-      const q = squash(t - 23.55, 0.07, 3.2, 7) + q8;
-      const cupsBehind = [], cupsFront = [];
-      for (let i = 0; i < 4; i++) {
-        const t0 = 22.8 + i * 0.13, kc = E.out2(P(t, t0, t0 + 1.0));
-        const x = lerp(lerp(1500, CUP7[i][0], kc), CUP8[i][0], k8), y = lerp(CUP7[i][1], CUP8[i][1], k8) - (150 + 20 * i) * hop8;
-        const wave = wob(t - t0 - 1.0, 4.2, 4.5) + wob(t - HIT.cta - 0.42, 4.2, 4.5);
-        (y < sy ? cupsBehind : cupsFront).push(() => cup(x, y, 0.9, 6 * wob(t - t0 - 1.0, 4, 7), wave, CUP_TOP[i]));
-      }
-      cupsBehind.forEach(f => f());
-      sandwich(sx, sy, SW7.sc, 0, q, 1, 1 - 0.6 * hop8);
-      cupsFront.forEach(f => f());
+  }
+  // the hero sandwich
+  if (t >= 0.3) {
+    const pf = P(t, 0.3, HIT.hook), off = -2300 * (1 - pf * pf);
+    const q = squash(t - HIT.hook, 0.2, 3.0, 5.5) + squash(t - HIT.squish, 0.06, 4, 8) + sw.q;
+    sandwich(sw.x + 5 * wob(t - HIT.squish, 5, 8), sw.y, SW_SC, sw.rot - 5 * (1 - pf), q, sw.lift, off, pf * pf);
+    dust(SWP1.x - 20, SWP1.y + 50, t - HIT.hook, 7, 420, 1.2);
+  }
+  // S7–S8: cups slide back in during the pull-back, rest in front of the pile, then line up
+  if (t >= 22.7) {
+    for (let i = 0; i < 4; i++) {
+      const t0 = 22.7 + i * 0.12, kc = E.out2(P(t, t0, t0 + 1.15));
+      const x = lerp(lerp(WD.cups[i].x + 2900, WD.cups[i].x, kc), W8.cups[i].x, k8), y = lerp(WD.cups[i].y, W8.cups[i].y, k8);
+      const wave = wob(t - t0 - 1.15, 4.2, 4.5) + wob(t - HIT.cta - 0.42, 4.2, 4.5);
+      cup(x, y, CUP_SC, 6 * wob(t - t0 - 1.15, 4, 7), wave, CUP_TOP[i], (240 + 30 * i) * hop8);
     }
-    // S7 text at the empty circle (white on violet)
-    if (t >= 26.9 && t < 29.3) {
-      const out = 1 - P(t, 28.85, 29.2);
-      ctx.globalAlpha = E.out2(P(t, 26.9, 27.25)) * out; at(T7a.x, T7a.y + 26 / CAM7.z * (1 - E.out3(P(t, 26.9, 27.3))), 0, 1, 1, () => ar(COPY.s7a, 0, 0, 84 / CAM7.z, 800, C.white));
-      ctx.globalAlpha = E.out2(P(t, 27.6, 27.95)) * out; ar(COPY.s7b, T7b.x, T7b.y, 46 / CAM7.z, 300, C.white);
-      ctx.globalAlpha = 1;
-    }
-    // S8 «حُطّ ثقلك.» falls into the circle (black on lime)
-    if (t >= HIT.cta - 0.26) {
-      const y = CIR8.y + 22 - 1900 * (1 - E.in2(P(t, HIT.cta - 0.26, HIT.cta))), q = squash(t - HIT.cta, 0.2, 3.0, 6);
-      at(CIR8.x, y, 0, 1 + 0.6 * q, 1 - q, () => ar(COPY.s8, 0, 0, 205, 800, C.black));
-      dust(CIR8.x, CIR8.y + 40, t - HIT.cta, 9, 520);
-      const a = P(t, 30.05, 30.4); if (a > 0) { ctx.globalAlpha = a; en(COPY.s8en, CIR8.x, CIR8.y + 132, 62, C.black, 500); ctx.globalAlpha = 1; }
-    }
+  }
+  // S7 text over the empty circle (white on violet)
+  if (t >= 26.6 && t < 29.2) {
+    const out = 1 - P(t, 28.8, 29.1), s = 1 / CAM7.z;
+    ctx.globalAlpha = E.out2(P(t, 26.6, 26.95)) * out; at(WD.t1.x, WD.t1.y + 26 * s * (1 - E.out3(P(t, 26.6, 27.0))), 0, 1, 1, () => ar(COPY.s7a, 0, 0, 72 * s, 800, C.white));
+    ctx.globalAlpha = E.out2(P(t, 27.3, 27.65)) * out; ar(COPY.s7b, WD.t2.x, WD.t2.y, 46 * s, 300, C.white);
+    ctx.globalAlpha = 1;
+  }
+  // S8 «حُطّ ثقلك.» falls into the circle (black on lime)
+  if (t >= HIT.cta - 0.2) {
+    const s = 1 / CAM8.z, y = W8.text.y - 9000 * (1 - E.in2(P(t, HIT.cta - 0.2, HIT.cta))), q = squash(t - HIT.cta, 0.2, 3.0, 6);
+    at(W8.text.x, y, 0, 1 + 0.6 * q, 1 - q, () => ar(COPY.s8, 0, 0, 124 * s, 800, C.black));
+    const a = P(t, 30.05, 30.4); if (a > 0) { ctx.globalAlpha = a; en(COPY.s8en, W8.en.x, W8.en.y, 38 * s, C.black, 500); ctx.globalAlpha = 1; }
   }
 }
 
 // ---------- end card (scene 9) ----------
-// Logo: the client's PNG, drawn as is. Approved exception: at 38.2 s the ears piece (a separate shape in the file) twitches;
-// optional blink (CFG.blink) flattens the two shapes that hang under the brow line. Nothing is redrawn; proportions never change at rest.
+// Logo: the client's PNG, drawn as is. Approved exception: at 38.2 s the ears piece (a separate shape in the file) twitches.
+// Blink is off by ruling (CFG.blink kept for reference only). Nothing is redrawn; proportions never change at rest.
 const LG = { w: 1343, h: 2127, ears: [396, 0, 552, 210], earPivot: [671.5, 205], eyes: [[388, 524, 226, 122], [729, 524, 226, 122]] };
 function logo(x, y, hgt, t) {
   const im = IMG.logo, s = hgt / LG.h;
   ctx.save(); ctx.translate(x - LG.w * s / 2, y); ctx.scale(s, s);
   const tau = t - HIT.logoBlink, tw = tau > 0 && tau < 0.7 ? wob(tau, 5.2, 7) : 0;
   const [ex, ey, ew, eh] = LG.ears;
-  // everything except the ears piece
   ctx.save(); ctx.beginPath(); ctx.rect(0, eh, LG.w, LG.h - eh); ctx.rect(0, 0, ex, eh); ctx.rect(ex + ew, 0, LG.w - ex - ew, eh); ctx.clip(); ctx.drawImage(im, 0, 0); ctx.restore();
-  // ears piece: rigid twitch (small rotation + lift) about the middle of its base
   ctx.save(); ctx.translate(LG.earPivot[0], LG.earPivot[1] - 9 * Math.abs(tw)); ctx.rotate(3.6 * tw * DEG); ctx.translate(-LG.earPivot[0], -LG.earPivot[1]);
   ctx.beginPath(); ctx.rect(ex, ey - 40, ew, eh + 40 - 1); ctx.clip(); ctx.drawImage(im, 0, 0); ctx.restore();
   if (CFG.blink && tau > 0 && tau < 0.3) {
@@ -396,7 +420,6 @@ function logo(x, y, hgt, t) {
 }
 function endCard(t) {
   ctx.fillStyle = C.white; ctx.fillRect(0, 0, W, H);
-  // logo enters with position and size only
   const k = E.out3(P(t, HIT.endCard, HIT.endCard + 0.55)), hgt = 560 * lerp(0.86, 1, k), ly = 300 + 70 * (1 - k) + (560 - hgt) / 2;
   logo(540, ly, hgt, t);
   let a = E.out2(P(t, 34.2, 34.6));
@@ -424,11 +447,14 @@ function render(t) {
     ctx.save();
     ctx.translate(540 + sh.x, cam.h + dip(t) + sh.y); ctx.rotate(tilt * DEG); ctx.scale(cam.z, cam.z); ctx.translate(-cam.x, 0);
     wallLayer(t);
-    ctx.fillStyle = C.violet; ctx.fillRect(-9000, 0, 18000, 9000);
+    ctx.fillStyle = C.violet; ctx.fillRect(-20000, 0, 40000, 20000);
     floorLayer(t);
     ctx.restore();
   }
-  if (CFG.guides) { ctx.strokeStyle = 'rgba(0,255,255,.8)'; ctx.lineWidth = 2; ctx.setLineDash([10, 8]); ctx.strokeRect(0, 250, W, H - 600); ctx.setLineDash([]); }
+  if (CFG.guides) {
+    ctx.save(); ctx.strokeStyle = 'rgba(0,255,255,.9)'; ctx.lineWidth = 2; ctx.setLineDash([10, 8]); ctx.strokeRect(0, 250, W, H - 600);
+    ctx.strokeStyle = 'rgba(255,255,0,.9)'; ctx.strokeRect(60, -10, W - 120, H + 20); ctx.restore();
+  }
 }
 window.seek = t => { render(Math.max(0, Math.min(DUR, t))); return true; };
 

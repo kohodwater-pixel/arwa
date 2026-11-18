@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Full build: render 1200 frames (30 fps, 40 s) -> H.264 MP4 muxed with the approved audio mix.
-# Usage: bash build.sh [version]   (default v01). Frames go to ../_work/frames (git-ignored).
+# Usage: bash build.sh [version]   (default v02). Frames go to ../_work/frames (git-ignored).
 set -euo pipefail
-HERE="$(cd "$(dirname "$0")" && pwd)"; VID="$HERE/.."; V="${1:-v01}"
+HERE="$(cd "$(dirname "$0")" && pwd)"; VID="$HERE/.."; V="${1:-v02}"
 AUDIO="$VID/../audio/hippo_franchise-motion-ad_audio-mix_ar_v02.wav"
 OUT="$VID/hippo_franchise-motion-ad_draft_9x16_ar_${V}.mp4"
 rm -rf "$VID/_work/frames"; mkdir -p "$VID/_work/frames"
