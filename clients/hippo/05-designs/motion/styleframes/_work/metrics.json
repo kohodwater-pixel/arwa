@@ -1,0 +1,1106 @@
+{
+ "a1": {
+  "fonts": [
+   true,
+   true,
+   true
+  ],
+  "texts": [
+   {
+    "text": "خفيف؟",
+    "x": 0,
+    "y": 226,
+    "w": 1080,
+    "h": 402.875,
+    "color": "rgb(187, 208, 50)",
+    "size": "309.9px",
+    "weight": "300",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "assets/sandwich.png",
+    "natural": 899,
+    "shown": 989,
+    "x": -3.819523334503174,
+    "y": 1362.396484375,
+    "w": 1068.63916015625,
+    "h": 829.17578125
+   },
+   {
+    "src": "assets/sandwich.png",
+    "natural": 899,
+    "shown": 989,
+    "x": 6.180476665496826,
+    "y": 742.3965454101562,
+    "w": 1068.63916015625,
+    "h": 829.1757202148438
+   }
+  ]
+ },
+ "a2": {
+  "fonts": [
+   true,
+   true,
+   true
+  ],
+  "texts": [
+   {
+    "text": "خبز خفيف.",
+    "x": 0,
+    "y": 262,
+    "w": 1080,
+    "h": 176.796875,
+    "color": "rgb(255, 255, 255)",
+    "size": "136px",
+    "weight": "300",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "حضور ثقيل.",
+    "x": 0,
+    "y": 398,
+    "w": 1080,
+    "h": 228.921875,
+    "color": "rgb(187, 208, 50)",
+    "size": "176.1px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "Soft bread. Heavy presence.",
+    "x": 0,
+    "y": 628,
+    "w": 1080,
+    "h": 62.390625,
+    "color": "rgb(255, 255, 255)",
+    "size": "48px",
+    "weight": "500",
+    "family": "\"Playfair Display\", serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "علامة سعودية",
+    "x": 583.2931518554688,
+    "y": 817.40576171875,
+    "w": 415.0367431640625,
+    "h": 94.6832275390625,
+    "color": "rgb(187, 208, 50)",
+    "size": "64px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "من",
+    "x": 387.51776123046875,
+    "y": 819.80029296875,
+    "w": 117.01449584960938,
+    "h": 113.44122314453125,
+    "color": "rgb(255, 255, 255)",
+    "size": "84px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "2021",
+    "x": 73.29681396484375,
+    "y": 803.0420532226562,
+    "w": 297.7284240722656,
+    "h": 176.0726318359375,
+    "color": "rgb(187, 208, 50)",
+    "size": "150px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "6",
+    "x": 861.3201293945312,
+    "y": 1054.5372314453125,
+    "w": 84.56976318359375,
+    "h": 166.9190673828125,
+    "color": "rgb(187, 208, 50)",
+    "size": "150px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "فروع",
+    "x": 657.3706665039062,
+    "y": 1078.9896240234375,
+    "w": 185.1600341796875,
+    "h": 113.6148681640625,
+    "color": "rgb(255, 255, 255)",
+    "size": "84px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "3",
+    "x": 328.19329833984375,
+    "y": 1075.8076171875,
+    "w": 81.91513061523438,
+    "h": 167.5589599609375,
+    "color": "rgb(187, 208, 50)",
+    "size": "150px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "مدن",
+    "x": 152.07679748535156,
+    "y": 1091.5560302734375,
+    "w": 159.12217712402344,
+    "h": 114.5445556640625,
+    "color": "rgb(255, 255, 255)",
+    "size": "84px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "جودة",
+    "x": 764.28125,
+    "y": 1306,
+    "w": 187.109375,
+    "h": 94,
+    "color": "rgb(255, 255, 255)",
+    "size": "50px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "ابتكار",
+    "x": 548.28125,
+    "y": 1306,
+    "w": 198,
+    "h": 94,
+    "color": "rgb(255, 255, 255)",
+    "size": "50px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "بيئة",
+    "x": 366.21875,
+    "y": 1306,
+    "w": 164.0625,
+    "h": 94,
+    "color": "rgb(255, 255, 255)",
+    "size": "50px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "أسعار",
+    "x": 128.609375,
+    "y": 1306,
+    "w": 219.609375,
+    "h": 94,
+    "color": "rgb(255, 255, 255)",
+    "size": "50px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "assets/sandwich.png",
+    "natural": 899,
+    "shown": 820,
+    "x": 105.76343536376953,
+    "y": 1365.3924560546875,
+    "w": 868.47314453125,
+    "h": 661.183837890625
+   }
+  ]
+ },
+ "a3": {
+  "fonts": [
+   true,
+   true,
+   true
+  ],
+  "texts": [
+   {
+    "text": "حُطّ ثقلك.",
+    "x": 0,
+    "y": 262,
+    "w": 1080,
+    "h": 263.625,
+    "color": "rgb(187, 208, 50)",
+    "size": "202.8px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "Put your weight behind it.",
+    "x": 0,
+    "y": 486,
+    "w": 1080,
+    "h": 70.1875,
+    "color": "rgb(255, 255, 255)",
+    "size": "54px",
+    "weight": "500",
+    "family": "\"Playfair Display\", serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "ناقصها ثقلك.",
+    "x": 570,
+    "y": 770,
+    "w": 480,
+    "h": 260,
+    "color": "rgb(255, 255, 255)",
+    "size": "104px",
+    "weight": "300",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "امتياز هيبو التجاري",
+    "x": 435.46875,
+    "y": 1452,
+    "w": 600.53125,
+    "h": 106,
+    "color": "rgb(24, 23, 23)",
+    "size": "60px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "assets/box.png",
+    "natural": 1068,
+    "shown": 640,
+    "x": -88.29759979248047,
+    "y": 576.7316284179688,
+    "w": 776.59521484375,
+    "h": 806.6773071289062
+   },
+   {
+    "src": "assets/sandwich.png",
+    "natural": 899,
+    "shown": 640,
+    "x": -103.76387023925781,
+    "y": 1133.9364013671875,
+    "w": 727.5277099609375,
+    "h": 594.142822265625
+   }
+  ]
+ },
+ "a4": {
+  "fonts": [
+   true,
+   true,
+   true
+  ],
+  "texts": [
+   {
+    "text": "امتياز هيبو التجاري",
+    "x": 0,
+    "y": 806,
+    "w": 1080,
+    "h": 114.390625,
+    "color": "rgb(187, 208, 50)",
+    "size": "88px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "Franchise",
+    "x": 0,
+    "y": 916,
+    "w": 1080,
+    "h": 70.1875,
+    "color": "rgb(255, 255, 255)",
+    "size": "54px",
+    "weight": "500",
+    "family": "\"Playfair Display\", serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "للاستفسار عن الامتياز:",
+    "x": 0,
+    "y": 1000,
+    "w": 1080,
+    "h": 67.59375,
+    "color": "rgb(255, 255, 255)",
+    "size": "52px",
+    "weight": "300",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "assets/logo.png",
+    "natural": 1343,
+    "shown": 278,
+    "x": 401.09375,
+    "y": 302,
+    "w": 277.8125,
+    "h": 440
+   },
+   {
+    "src": "assets/qr.png",
+    "natural": 1172,
+    "shown": 470,
+    "x": 305,
+    "y": 1092,
+    "w": 470,
+    "h": 470
+   }
+  ]
+ },
+ "b1": {
+  "fonts": [
+   true,
+   true,
+   true
+  ],
+  "texts": [
+   {
+    "text": "خفيف؟",
+    "x": 0,
+    "y": 228,
+    "w": 1080,
+    "h": 412.21875,
+    "color": "rgb(24, 23, 23)",
+    "size": "317.1px",
+    "weight": "300",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "assets/sandwich.png",
+    "natural": 899,
+    "shown": 989,
+    "x": 6.180476665496826,
+    "y": 752.3965454101562,
+    "w": 1068.63916015625,
+    "h": 829.1757202148438
+   }
+  ]
+ },
+ "b2": {
+  "fonts": [
+   true,
+   true,
+   true
+  ],
+  "texts": [
+   {
+    "text": "خبز خفيف.",
+    "x": 0,
+    "y": 252,
+    "w": 1080,
+    "h": 182,
+    "color": "rgb(24, 23, 23)",
+    "size": "140px",
+    "weight": "300",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "حضور ثقيل.",
+    "x": 0,
+    "y": 384,
+    "w": 1080,
+    "h": 241.015625,
+    "color": "rgb(24, 23, 23)",
+    "size": "185.4px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "Soft bread. Heavy presence.",
+    "x": 0,
+    "y": 612,
+    "w": 1080,
+    "h": 62.390625,
+    "color": "rgb(24, 23, 23)",
+    "size": "48px",
+    "weight": "500",
+    "family": "\"Playfair Display\", serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "من",
+    "x": 355.76220703125,
+    "y": 835.89111328125,
+    "w": 91.62454223632812,
+    "h": 88.98614501953125,
+    "color": "rgb(24, 23, 23)",
+    "size": "64px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "2021",
+    "x": 77.23692321777344,
+    "y": 791.7814331054688,
+    "w": 266.112060546875,
+    "h": 162.7340087890625,
+    "color": "rgb(24, 23, 23)",
+    "size": "132px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "علامة سعودية",
+    "x": 493.4864196777344,
+    "y": 741.4254760742188,
+    "w": 495.9786682128906,
+    "h": 132.7564697265625,
+    "color": "rgb(187, 208, 50)",
+    "size": "76px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "6",
+    "x": 735.5199584960938,
+    "y": 985.4439697265625,
+    "w": 144.47637939453125,
+    "h": 218.7769775390625,
+    "color": "rgb(24, 23, 23)",
+    "size": "230px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "فروع",
+    "x": 702.0714721679688,
+    "y": 1189.1761474609375,
+    "w": 181.253662109375,
+    "h": 97.7332763671875,
+    "color": "rgb(24, 23, 23)",
+    "size": "80px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "3",
+    "x": 366.87567138671875,
+    "y": 1060.4969482421875,
+    "w": 126.41448974609375,
+    "h": 239.41943359375,
+    "color": "rgb(187, 208, 50)",
+    "size": "210px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "مدن",
+    "x": 173.7509765625,
+    "y": 1114.20361328125,
+    "w": 187.81027221679688,
+    "h": 139.8017578125,
+    "color": "rgb(255, 255, 255)",
+    "size": "96px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "جودة",
+    "x": 784.8809814453125,
+    "y": 1348.5980224609375,
+    "w": 223.628662109375,
+    "h": 128.803955078125,
+    "color": "rgb(187, 208, 50)",
+    "size": "56px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "ابتكار",
+    "x": 542.9421997070312,
+    "y": 1358.0902099609375,
+    "w": 234.05950927734375,
+    "h": 125.797607421875,
+    "color": "rgb(187, 208, 50)",
+    "size": "56px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "بيئة",
+    "x": 338.0526428222656,
+    "y": 1349.4984130859375,
+    "w": 197.87905883789062,
+    "h": 127.003173828125,
+    "color": "rgb(187, 208, 50)",
+    "size": "56px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "أسعار",
+    "x": 71.97437286376953,
+    "y": 1357.457275390625,
+    "w": 258.2138977050781,
+    "h": 127.0634765625,
+    "color": "rgb(187, 208, 50)",
+    "size": "56px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "assets/sandwich.png",
+    "natural": 899,
+    "shown": 860,
+    "x": 186.73333740234375,
+    "y": 1436.554931640625,
+    "w": 946.5333862304688,
+    "h": 747.73388671875
+   }
+  ]
+ },
+ "b3": {
+  "fonts": [
+   true,
+   true,
+   true
+  ],
+  "texts": [
+   {
+    "text": "ناقصها ثقلك.",
+    "x": 0,
+    "y": 1004,
+    "w": 1080,
+    "h": 135.1875,
+    "color": "rgb(24, 23, 23)",
+    "size": "104px",
+    "weight": "300",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "حُطّ ثقلك.",
+    "x": 0,
+    "y": 1146,
+    "w": 1080,
+    "h": 269.484375,
+    "color": "rgb(24, 23, 23)",
+    "size": "207.3px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "Put your weight behind it.",
+    "x": 0,
+    "y": 1362,
+    "w": 1080,
+    "h": 67.59375,
+    "color": "rgb(24, 23, 23)",
+    "size": "52px",
+    "weight": "500",
+    "family": "\"Playfair Display\", serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "امتياز هيبو التجاري",
+    "x": 223.0625,
+    "y": 1448,
+    "w": 633.890625,
+    "h": 110,
+    "color": "rgb(187, 208, 50)",
+    "size": "64px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "assets/box.png",
+    "natural": 1068,
+    "shown": 620,
+    "x": -8.738200187683105,
+    "y": 201.40090942382812,
+    "w": 685.4764404296875,
+    "h": 720.0887451171875
+   },
+   {
+    "src": "assets/sandwich.png",
+    "natural": 899,
+    "shown": 720,
+    "x": 353.8341979980469,
+    "y": 370.8308410644531,
+    "w": 812.33154296875,
+    "h": 658.10400390625
+   }
+  ]
+ },
+ "b4": {
+  "fonts": [
+   true,
+   true,
+   true
+  ],
+  "texts": [
+   {
+    "text": "امتياز هيبو التجاري",
+    "x": 0,
+    "y": 824,
+    "w": 1080,
+    "h": 135.1875,
+    "color": "rgb(24, 23, 23)",
+    "size": "104px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "Franchise",
+    "x": 0,
+    "y": 950,
+    "w": 1080,
+    "h": 72.796875,
+    "color": "rgb(24, 23, 23)",
+    "size": "56px",
+    "weight": "500",
+    "family": "\"Playfair Display\", serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "للاستفسار عن الامتياز:",
+    "x": 0,
+    "y": 1024,
+    "w": 1080,
+    "h": 70.1875,
+    "color": "rgb(24, 23, 23)",
+    "size": "54px",
+    "weight": "300",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "assets/logo.png",
+    "natural": 1343,
+    "shown": 308,
+    "x": 386,
+    "y": 262,
+    "w": 308.125,
+    "h": 488
+   },
+   {
+    "src": "assets/qr.png",
+    "natural": 1172,
+    "shown": 434,
+    "x": 318,
+    "y": 1116,
+    "w": 434,
+    "h": 434
+   }
+  ]
+ },
+ "c1": {
+  "fonts": [
+   true,
+   true,
+   true
+  ],
+  "texts": [
+   {
+    "text": "خفيف؟",
+    "x": 0,
+    "y": 232,
+    "w": 1080,
+    "h": 374.78125,
+    "color": "rgb(255, 255, 255)",
+    "size": "288.3px",
+    "weight": "300",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "assets/sandwich.png",
+    "natural": 899,
+    "shown": 989,
+    "x": 6.180476665496826,
+    "y": 692.3965454101562,
+    "w": 1068.63916015625,
+    "h": 829.1757202148438
+   }
+  ]
+ },
+ "c2": {
+  "fonts": [
+   true,
+   true,
+   true
+  ],
+  "texts": [
+   {
+    "text": "خبز خفيف.",
+    "x": 0,
+    "y": 256,
+    "w": 1080,
+    "h": 171.59375,
+    "color": "rgb(255, 255, 255)",
+    "size": "132px",
+    "weight": "300",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "حضور ثقيل.",
+    "x": 0,
+    "y": 384,
+    "w": 1080,
+    "h": 219.171875,
+    "color": "rgb(255, 255, 255)",
+    "size": "168.6px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "Soft bread. Heavy presence.",
+    "x": 0,
+    "y": 604,
+    "w": 1080,
+    "h": 62.390625,
+    "color": "rgb(255, 255, 255)",
+    "size": "48px",
+    "weight": "500",
+    "family": "\"Playfair Display\", serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "3",
+    "x": 263.65325927734375,
+    "y": 821.42822265625,
+    "w": 108.52072143554688,
+    "h": 196.13262939453125,
+    "color": "rgb(24, 23, 23)",
+    "size": "170px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "مدن",
+    "x": 93.3514404296875,
+    "y": 865.3161010742188,
+    "w": 167.55447387695312,
+    "h": 127.3128662109375,
+    "color": "rgb(24, 23, 23)",
+    "size": "84px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "6",
+    "x": 885.9310302734375,
+    "y": 841.9425048828125,
+    "w": 107.24761962890625,
+    "h": 194.2454833984375,
+    "color": "rgb(24, 23, 23)",
+    "size": "170px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "فروع",
+    "x": 688.2213134765625,
+    "y": 855.3270874023438,
+    "w": 191.3685302734375,
+    "h": 124.6820068359375,
+    "color": "rgb(24, 23, 23)",
+    "size": "84px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "من",
+    "x": 378.74951171875,
+    "y": 1306.5855712890625,
+    "w": 103.07424926757812,
+    "h": 100.1168212890625,
+    "color": "rgb(255, 255, 255)",
+    "size": "72px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "2021",
+    "x": 84.75521850585938,
+    "y": 1262.1851806640625,
+    "w": 282.2513732910156,
+    "h": 172.610595703125,
+    "color": "rgb(187, 208, 50)",
+    "size": "140px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "علامة سعودية",
+    "x": 594.47265625,
+    "y": 1319.8624267578125,
+    "w": 403.6385498046875,
+    "h": 101.416015625,
+    "color": "rgb(24, 23, 23)",
+    "size": "62px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "جودة",
+    "x": 758.28125,
+    "y": 1474,
+    "w": 181.109375,
+    "h": 88,
+    "color": "rgb(24, 23, 23)",
+    "size": "50px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "ابتكار",
+    "x": 548.28125,
+    "y": 1462,
+    "w": 192,
+    "h": 88,
+    "color": "rgb(24, 23, 23)",
+    "size": "50px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "بيئة",
+    "x": 372.21875,
+    "y": 1482,
+    "w": 158.0625,
+    "h": 88,
+    "color": "rgb(24, 23, 23)",
+    "size": "50px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "أسعار",
+    "x": 140.609375,
+    "y": 1474,
+    "w": 213.609375,
+    "h": 88,
+    "color": "rgb(24, 23, 23)",
+    "size": "50px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "assets/sandwich.png",
+    "natural": 899,
+    "shown": 780,
+    "x": 122.7076187133789,
+    "y": 810.7761840820312,
+    "w": 834.584716796875,
+    "h": 641.5256958007812
+   }
+  ]
+ },
+ "c3": {
+  "fonts": [
+   true,
+   true,
+   true
+  ],
+  "texts": [
+   {
+    "text": "حُطّ ثقلك.",
+    "x": 0,
+    "y": 262,
+    "w": 1080,
+    "h": 257.78125,
+    "color": "rgb(255, 255, 255)",
+    "size": "198.3px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "Put your weight behind it.",
+    "x": 0,
+    "y": 482,
+    "w": 1080,
+    "h": 70.1875,
+    "color": "rgb(255, 255, 255)",
+    "size": "54px",
+    "weight": "500",
+    "family": "\"Playfair Display\", serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "ناقصها ثقلك.",
+    "x": 647.5497436523438,
+    "y": 847.6384887695312,
+    "w": 318.1112060546875,
+    "h": 270.41607666015625,
+    "color": "rgb(255, 255, 255)",
+    "size": "100px",
+    "weight": "300",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "امتياز هيبو التجاري",
+    "x": 223.0625,
+    "y": 1466,
+    "w": 633.890625,
+    "h": 110,
+    "color": "rgb(24, 23, 23)",
+    "size": "64px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "assets/box.png",
+    "natural": 1068,
+    "shown": 590,
+    "x": -26.200761795043945,
+    "y": 595.4819946289062,
+    "w": 642.4014892578125,
+    "h": 676.0359497070312
+   },
+   {
+    "src": "assets/sandwich.png",
+    "natural": 899,
+    "shown": 600,
+    "x": -70.18556213378906,
+    "y": 1005.7360229492188,
+    "w": 660.37109375,
+    "h": 521.6686401367188
+   }
+  ]
+ },
+ "c4": {
+  "fonts": [
+   true,
+   true,
+   true
+  ],
+  "texts": [
+   {
+    "text": "امتياز هيبو التجاري",
+    "x": 0,
+    "y": 722,
+    "w": 1080,
+    "h": 109.1875,
+    "color": "rgb(24, 23, 23)",
+    "size": "84px",
+    "weight": "800",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "Franchise",
+    "x": 0,
+    "y": 828,
+    "w": 1080,
+    "h": 65,
+    "color": "rgb(24, 23, 23)",
+    "size": "50px",
+    "weight": "500",
+    "family": "\"Playfair Display\", serif",
+    "spacing": "normal"
+   },
+   {
+    "text": "للاستفسار عن الامتياز:",
+    "x": 0,
+    "y": 908,
+    "w": 1080,
+    "h": 65,
+    "color": "rgb(24, 23, 23)",
+    "size": "50px",
+    "weight": "300",
+    "family": "Tajawal, sans-serif",
+    "spacing": "normal"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "assets/logo.png",
+    "natural": 1343,
+    "shown": 240,
+    "x": 420,
+    "y": 292,
+    "w": 239.921875,
+    "h": 380
+   },
+   {
+    "src": "assets/qr.png",
+    "natural": 1172,
+    "shown": 448,
+    "x": 316,
+    "y": 1016,
+    "w": 448,
+    "h": 448
+   },
+   {
+    "src": "assets/sandwich.png",
+    "natural": 899,
+    "shown": 600,
+    "x": 506.95062255859375,
+    "y": 1441.1956787109375,
+    "w": 666.0986938476562,
+    "h": 530.749267578125
+   }
+  ]
+ }
+}
