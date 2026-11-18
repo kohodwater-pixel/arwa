@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>hippo — franchise motion ad — draft v01 (9:16)</title>
+<style>
+  @font-face{font-family:"Tajawal";font-weight:300;src:url("assets/fonts/Tajawal-Light.ttf") format("truetype");}
+  @font-face{font-family:"Tajawal";font-weight:800;src:url("assets/fonts/Tajawal-ExtraBold.ttf") format("truetype");}
+  @font-face{font-family:"Playfair Display";font-style:italic;font-weight:400 900;src:url("assets/fonts/PlayfairDisplay-Italic-VF.ttf") format("truetype");}
+  html,body{margin:0;padding:0;background:#181717;overflow:hidden}
+  canvas{display:block;width:1080px;height:1920px}
+  body.preview canvas{height:100vh;width:auto;margin:0 auto}
+  #ui{position:fixed;left:8px;top:8px;font:14px sans-serif;color:#fff;direction:ltr;display:none}
+  body.preview #ui{display:block}
+</style>
+</head>
+<body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<div id="ui"><button id="play">play / pause</button> <span id="tc"></span></div>
+<!-- Preview with sound: open index.html in a browser (not ?render). Render: node render.cjs -->
+<audio id="aud" src="../../audio/hippo_franchise-motion-ad_audio-mix_ar_v02.wav" preload="auto"></audio>
+<script src="film.js"></script>
+</body>
+</html>
