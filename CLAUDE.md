@@ -74,6 +74,7 @@ brief ──► research ──► strategy ──► [naming] ──► creativ
 - `file-management.md` — client isolation, originals, versions, no deletion
 - `file-delivery.md` — output formats, naming, colour modes, delivery package
 - `quality-standards.md` — the bar every deliverable must clear
+- `ad-references.md` — the eight advertising reference sites checked before any ad or campaign is designed
 
 ## Honesty rules
 
