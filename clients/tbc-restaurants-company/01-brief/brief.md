@@ -36,3 +36,4 @@ Instagram post 4:5 (1080×1350) and story 9:16 (1080×1920), sRGB PNG, with HTML
 - The job is remote: «العمل عن بُعد». City is therefore not needed.
 - Apply method (client, 2026-11-18): CV and portfolio («سابقة الأعمال») by email to **hr@otlobny.co**. The apply field is no longer a gap.
 - Company identity: the email domain is otlobny.co, but the client described the advertiser only as «شركة مختصة في مجال المطاعم» and supplied no logo for this advert. Creative Director ruling for v01: the advert is UNBRANDED (no logo box, no company name) until the client says which name/logo to show. Nothing is taken from any other client folder.
+- 2026-11-18, client decision (supersedes the ruling above and the gaps list): the advert stays GENERAL — no company name, no logo («بدون شركة وشعار خليه كدا عام»). Employment type is answered (remote) and the apply method is answered (email). Still not supplied and not printed: years of experience, salary, deadline.

@@ -17,8 +17,8 @@
 
 ## 2. Project
 
-- **Scope and deliverables:**
-- **Languages:** Arabic / English / bilingual (primary: )
+- **Scope and deliverables:** one job advert (marketing and social media accounts officer), Instagram post 1080×1350 and story 1080×1920. See `01-brief/brief.md`.
+- **Languages:** Arabic
 - **Timeline and key dates:**
 - **Mandatory elements and constraints:**
 
@@ -38,7 +38,7 @@
 - **Tone in Arabic:** (and register: Modern Standard, Gulf, Levantine, Egyptian…)
 - **Tone in English:**
 - **Words we use / avoid:**
-- **Numerals:** Western (0123) / Arabic-Indic (٠١٢٣)
+- **Numerals:** Western (0123)
 
 ## 5. Visual identity (approved: date)
 
@@ -58,10 +58,11 @@
 
 | Date | Decision | Approved by |
 |---|---|---|
-| | | |
+| 2026-11-18 | Advert stays general: no company name, no logo. Apply by email hr@otlobny.co. Remote job; design experience is a required condition | Client (in chat) |
+| 2026-11-18 | Neutral palette (ground #15302A, accent #F2A93B, text #F7F1E5) and IBM Plex Sans Arabic are agency choices — ASSUMPTION, no brand supplied. Duties and requirements lines are agency-proposed copy awaiting the client's approval | Creative Director |
 
 ## 7. Deliveries
 
 | Date | What was delivered | Where |
 |---|---|---|
-| | | |
+| 2026-11-18 | Job advert v01, post and story; review r1 PASS WITH NOTES; shown to the client | `05-designs/job-advert/` |
