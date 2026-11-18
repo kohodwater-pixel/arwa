@@ -1,1 +1,2 @@
 - src_v01/, README_v01.md, ux-brief_v01.md — v01 (single-step form, built before the reference page's structure was known). Superseded 2026-11-18 by v02 (two-step form) on the Creative Director's instruction. Screens: ../hippo_franchise-form_screens_ar-en_v01/.
+- src_v02/, README_v02.md, ux-brief_v02.md, integrations_v02/Code.gs — v02 (two-step form). Superseded 2026-11-18 by v03 after review: three majors (client-side honeypot drop, no send timeout, step 2 too long) and the Creative Director's ruling for three steps. Screens: ../hippo_franchise-form_screens_ar-en_v02/.

@@ -14,6 +14,9 @@ window.HIPPO_FORM_CONFIG = {
   // or "text" (JSON sent as text/plain, no CORS preflight).
   FORM_FORMAT: "json",
 
+  // How long the page waits for the reply before showing "couldn't send" (milliseconds).
+  SEND_TIMEOUT_MS: 25000,
+
   // Simple alternative with no server: international number, digits only, no "+".
   // Used only when FORM_ENDPOINT is empty. The visitor's WhatsApp opens with the
   // enquiry written out; they press send themselves.

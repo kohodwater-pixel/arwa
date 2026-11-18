@@ -150,7 +150,7 @@ form { margin-block-start: 22px; }
 .steps-name { font-weight: 800; font-size: 1.25rem; }
 .steps-bar { display: flex; gap: 8px; margin-block-start: 8px; }
 .steps-bar span { flex: 1; height: 12px; border: 2px solid var(--black); border-radius: 999px; background: var(--white); }
-.steps-bar span:first-child, .steps[data-step="2"] .steps-bar span { background: var(--lime); }
+.steps-bar span:first-child, .steps[data-step="2"] .steps-bar span:nth-child(2), .steps[data-step="3"] .steps-bar span { background: var(--lime); }
 
 .actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: stretch; }
 

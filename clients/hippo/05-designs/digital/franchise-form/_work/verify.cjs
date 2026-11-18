@@ -1,11 +1,11 @@
-// v02: renders the two-step franchise form in Chromium, takes the review screenshots and runs behaviour checks.
+// v03: renders the three-step franchise form in Chromium, takes the review screenshots and runs behaviour checks.
 // Usage: node _work/verify.cjs
 const path = require('path');
 const { chromium } = require('playwright');
 
 const root = path.resolve(__dirname, '..');
 const src = path.join(root, 'src');
-const out = path.join(root, 'hippo_franchise-form_screens_ar-en_v02');
+const out = path.join(root, 'hippo_franchise-form_screens_ar-en_v03');
 const pages = { ar: 'index.html', en: 'index-en.html' };
 const views = { phone: { width: 390, height: 844, dsf: 2 }, desktop: { width: 1440, height: 900, dsf: 1 } };
 const sample = {
@@ -24,10 +24,14 @@ async function fill2(page, lang) {
   const s = sample[lang];
   await page.check('input[name="experience"][value="other"]', { force: true });
   await page.fill('#experience_other', s.other);
-  for (const k of ['own_brand', 'branches_operated', 'why_hippo', 'investment_amount', 'target_cities', 'notes']) await page.fill('#' + k, s[k]);
+  for (const k of ['own_brand', 'branches_operated', 'why_hippo']) await page.fill('#' + k, s[k]);
+}
+async function fill3(page, lang) {
+  const s = sample[lang];
+  for (const k of ['investment_amount', 'target_cities', 'notes']) await page.fill('#' + k, s[k]);
   await page.check('input[name="branches_wanted"][value="two-to-five"]', { force: true });
   await page.check('input[name="investment_source"][value="savings"]', { force: true });
-  await page.check('input[name="start_time"][value="3-6-months"]', { force: true });
+  await page.check('input[name="start_time"][value="within-6-months"]', { force: true });
   await page.check('input[name="has_location"][value="searching"]', { force: true });
   await page.selectOption('#heard_from', 'video-ad');
   await page.check('#consent');
@@ -67,7 +71,7 @@ const structural = () => {
       page.on('pageerror', (e) => errors.push(String(e)));
       page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
       const tag = `${lang} ${vname}`;
-      const shot = async (n, full) => { await page.evaluate(() => document.activeElement && document.activeElement.blur()); await page.waitForTimeout(250); await page.screenshot({ path: path.join(out, `hippo_franchise-form_${vname}-${n}_${lang}_v02.png`), fullPage: !!full }); };
+      const shot = async (n, full) => { await page.evaluate(() => document.activeElement && document.activeElement.blur()); await page.waitForTimeout(250); await page.screenshot({ path: path.join(out, `hippo_franchise-form_${vname}-${n}_${lang}_v03.png`), fullPage: !!full }); };
       const struct = async (label) => {
         const info = await page.evaluate(structural);
         ok(`${tag} ${label}: no overflow`, info.scrollW <= info.W && !info.over.length, `${info.scrollW}/${info.W} ${info.over.join(',')}`);
@@ -85,50 +89,66 @@ const structural = () => {
       ok(`${tag}: step 1 shown, step 2 hidden, indicator 1`, (await page.isVisible('#step-1')) && !(await page.isVisible('#step-2')) && (await page.textContent('#step-now')) === '1');
 
       // step 1 errors
-      await page.click('#next-btn');
+      await page.click('#next-1');
       ok(`${tag}: empty step 1 → 5 errors, stays on step 1, focus on first`, (await errCount(page)) === 5 && (await page.isVisible('#step-1')) && (await page.evaluate(() => document.activeElement.id)) === 'full_name', String(await errCount(page)));
       await page.fill('#age', '17'); await page.fill('#mobile', '12ab'); await page.fill('#email', 'not-an-email'); await page.fill('#company_website', 'not a site');
-      await page.click('#next-btn');
+      await page.click('#next-1');
       ok(`${tag}: under-18, bad phone, bad email, bad website flagged`, (await errCount(page)) === 6 && (await page.textContent('#age-error')).includes('18'));
-      await shot('03-errors-step1', true);
-
-      // step 1 filled → next
+      await shot('04-errors-step1', true);
       await fill1(page, lang);
       ok(`${tag}: step 1 errors clear when corrected`, (await errCount(page)) === 0 && !(await page.isVisible('#alert-1')));
       await shot('01-step1', true);
-      await page.click('#next-btn');
-      ok(`${tag}: next → step 2, indicator 2`, (await page.isVisible('#step-2')) && !(await page.isVisible('#step-1')) && (await page.textContent('#step-now')) === '2' && (await page.getAttribute('#steps', 'data-step')) === '2');
+      await page.click('#next-1');
+      ok(`${tag}: next → step 2, indicator 2 of 3`, (await page.isVisible('#step-2')) && !(await page.isVisible('#step-1')) && !(await page.isVisible('#step-3')) && (await page.textContent('#step-now')) === '2' && (await page.getAttribute('#steps', 'data-step')) === '2' && (await page.locator('.steps-bar span').count()) === 3);
 
-      // step 2 errors (with "other" chosen and left empty)
-      await page.click('#submit-btn');
-      ok(`${tag}: empty step 2 → 8 errors`, (await errCount(page)) === 8, String(await errCount(page)));
+      // step 2 errors
+      await page.click('#next-2');
+      ok(`${tag}: empty step 2 → 2 errors; radio group marked aria-invalid`, (await errCount(page)) === 2 && (await page.getAttribute('#experience-choices', 'aria-invalid')) === 'true', String(await errCount(page)));
       await page.check('input[name="experience"][value="other"]', { force: true });
-      await page.check('input[name="investment_source"][value="other"]', { force: true });
-      await page.fill('#investment_amount', 'abc'); await page.fill('#branches_operated', 'x');
-      await page.click('#submit-btn');
-      ok(`${tag}: "other" reveals a required text field; bad amount and count flagged`, (await page.isVisible('#experience_other')) && (await page.isVisible('#experience_other-error')) && (await page.isVisible('#investment_source_other-error')) && (await page.isVisible('#investment_amount-error')) && (await page.isVisible('#branches_operated-error')) && !(await page.isVisible('#branches_wanted_other')));
-      await shot('04-errors-step2', true);
-
-      // step 2 filled
+      await page.fill('#branches_operated', 'x');
+      await page.click('#next-2');
+      ok(`${tag}: "other" reveals a required text field; bad count flagged; aria-invalid cleared on the group`, (await page.isVisible('#experience_other-error')) && (await page.isVisible('#branches_operated-error')) && (await page.getAttribute('#experience-choices', 'aria-invalid')) === null && (await page.isVisible('#step-2')));
+      await shot('05-errors-step2', true);
       await fill2(page, lang);
-      ok(`${tag}: step 2 errors clear; un-choosing "other" hides its field`, (await errCount(page)) === 0 && !(await page.isVisible('#investment_source_other')) && !(await page.isVisible('#alert-2')));
+      ok(`${tag}: step 2 errors clear`, (await errCount(page)) === 0 && !(await page.isVisible('#alert-2')));
       await struct('step 2');
       await shot('02-step2', true);
+      await page.click('#next-2');
+      ok(`${tag}: next → step 3, indicator 3 of 3`, (await page.isVisible('#step-3')) && !(await page.isVisible('#step-2')) && (await page.textContent('#step-now')) === '3');
 
-      // back keeps answers, forward again keeps answers
-      await page.click('#back-btn');
-      const kept1 = (await page.inputValue('#full_name')) === sample[lang].full_name && (await page.isVisible('#step-1'));
-      await page.click('#next-btn');
-      ok(`${tag}: back/next keeps answers on both steps`, kept1 && (await page.inputValue('#why_hippo')) === sample[lang].why_hippo && (await page.isChecked('input[name="start_time"][value="3-6-months"]')) && (await page.isChecked('#consent')));
+      // step 3 errors
+      await page.click('#submit-btn');
+      ok(`${tag}: empty step 3 → 6 errors`, (await errCount(page)) === 6, String(await errCount(page)));
+      await page.check('input[name="investment_source"][value="other"]', { force: true });
+      await page.fill('#investment_amount', 'abc');
+      await page.click('#submit-btn');
+      ok(`${tag}: step 3 "other" required, bad amount flagged, other "other" fields stay hidden`, (await page.isVisible('#investment_source_other-error')) && (await page.isVisible('#investment_amount-error')) && !(await page.isVisible('#branches_wanted_other')));
+      await shot('06-errors-step3', true);
+      await fill3(page, lang);
+      ok(`${tag}: step 3 errors clear; un-choosing "other" hides its field`, (await errCount(page)) === 0 && !(await page.isVisible('#investment_source_other')) && !(await page.isVisible('#alert-3')));
+      await struct('step 3');
+      await shot('03-step3', true);
+
+      // back twice and forward twice keeps answers
+      await page.click('#back-btn'); const k2 = (await page.inputValue('#why_hippo')) === sample[lang].why_hippo && (await page.isVisible('#step-2'));
+      await page.click('#step-2 [data-prev]'); const k1 = (await page.inputValue('#full_name')) === sample[lang].full_name && (await page.isVisible('#step-1'));
+      await page.click('#next-1'); await page.click('#next-2');
+      ok(`${tag}: back/next keeps answers on all three steps`, k1 && k2 && (await page.isVisible('#step-3')) && (await page.isChecked('input[name="start_time"][value="within-6-months"]')) && (await page.isChecked('#consent')));
 
       // draft confirmation
       await page.click('#submit-btn');
       await page.waitForTimeout(400);
       ok(`${tag}: draft confirmation shown, live one hidden`, (await page.isVisible('#done-draft')) && !(await page.isVisible('#done-live')) && !(await page.isVisible('#enquiry-form')));
       ok(`${tag}: no network request of any kind, no console errors`, external.length === 0 && errors.length === 0, external.concat(errors).join(' | '));
-      await shot('05-confirmation-draft');
+      await shot('07-confirmation-draft');
       await page.click('#done-draft [data-back]');
-      ok(`${tag}: back to form returns to step 2 with answers`, (await page.isVisible('#step-2')) && (await page.inputValue('#target_cities')) === sample[lang].target_cities);
+      ok(`${tag}: back to form returns to step 3 with answers`, (await page.isVisible('#step-3')) && (await page.inputValue('#target_cities')) === sample[lang].target_cities);
+
+      // language switch keeps typed answers and the step (same tab)
+      await page.click('.lang-switch');
+      await page.waitForLoadState('load');
+      const other = lang === 'ar' ? 'en' : 'ar';
+      ok(`${tag}: language switch keeps answers and step`, (await page.evaluate(() => document.documentElement.lang)) === other && (await page.isVisible('#step-3')) && (await page.inputValue('#target_cities')) === sample[lang].target_cities && (await page.isChecked('input[name="experience"][value="other"]')) && (await page.isVisible('#experience_other') === false) && (await page.inputValue('#full_name')) === sample[lang].full_name && !(await page.isChecked('#consent')));
       await ctx.close();
     }
   }
@@ -147,20 +167,21 @@ const structural = () => {
     return { ctx, page, sent };
   };
   const json = (status, body) => (r) => r.fulfill({ status, contentType: 'application/json', headers: { 'access-control-allow-origin': '*' }, body: JSON.stringify(body) });
-  const both = async (page, lang = 'ar') => { await fill1(page, lang); await page.click('#next-btn'); await fill2(page, lang); };
+  const both = async (page, lang = 'ar') => { await fill1(page, lang); await page.click('#next-1'); await fill2(page, lang); await page.click('#next-2'); await fill3(page, lang); };
   const GS = 'https://script.google.com/macros/s/TEST/exec';
   {
     const { ctx, page, sent } = await mk({ FORM_ENDPOINT: GS, PRIVACY_URL_AR: 'https://endpoint.invalid/privacy' }, json(200, { ok: true }));
     ok('apps-script: draft strip hidden; privacy link replaces the marked gap', !(await page.isVisible('#draft-strip')) && (await page.locator('#privacy-slot a').count()) === 1 && (await page.locator('.to-supply').count()) === 0);
     await both(page);
     await page.fill('#investment_amount', '١٢٣٬٤٥٦');
-    await page.click('#back-btn'); await page.fill('#mobile', '٠٥٠ ٠٠٠ ٠٠٠٠'); await page.click('#next-btn');
+    await page.click('#back-btn'); await page.click('#step-2 [data-prev]'); await page.fill('#mobile', '٠٥٠ ٠٠٠ ٠٠٠٠'); await page.click('#next-1'); await page.click('#next-2');
     await page.click('#submit-btn');
     await page.waitForSelector('#done-live:not([hidden])');
     const posts = sent.filter((s) => s.method === 'POST'); const d = JSON.parse(posts[0].body);
-    const keys = ['form', 'lang', 'full_name', 'profession', 'age', 'company_name', 'company_website', 'mobile', 'email', 'experience', 'experience_other', 'own_brand', 'branches_operated', 'why_hippo', 'branches_wanted', 'branches_wanted_other', 'investment_source', 'investment_source_other', 'investment_amount', 'investment_currency', 'start_time', 'target_cities', 'has_location', 'heard_from', 'notes', 'consent', 'submitted_at'];
-    ok('apps-script: one POST as text/plain with no preflight; every field in the payload; digits normalised', posts.length === 1 && sent.length === 1 && posts[0].ct.startsWith('text/plain') && keys.every((k) => k in d) && Object.keys(d).length === keys.length && d.mobile === '0500000000' && d.investment_amount === '123456' && d.experience === 'other' && d.experience_other === sample.ar.other && d.investment_source_other === '' && d.investment_currency === 'SAR' && d.age === '35', posts[0].ct + ' ' + Object.keys(d).length + ' keys');
+    const keys = ['form', 'lang', 'full_name', 'profession', 'age', 'company_name', 'company_website', 'mobile', 'email', 'experience', 'experience_other', 'own_brand', 'branches_operated', 'why_hippo', 'branches_wanted', 'branches_wanted_other', 'investment_source', 'investment_source_other', 'investment_amount', 'investment_currency', 'start_time', 'target_cities', 'has_location', 'heard_from', 'notes', 'consent', 'submitted_at', 'experience_label', 'branches_wanted_label', 'investment_source_label', 'start_time_label', 'has_location_label', 'heard_from_label', 'submission_id', 'trap'];
+    ok('apps-script: one POST as text/plain with no preflight; every field in the payload; digits normalised', posts.length === 1 && sent.length === 1 && posts[0].ct.startsWith('text/plain') && keys.every((k) => k in d) && Object.keys(d).length === keys.length && d.mobile === '0500000000' && d.investment_amount === '123456' && d.experience === 'other' && d.experience_other === sample.ar.other && d.investment_source_other === '' && d.investment_currency === 'SAR' && d.age === '35' && d.trap === '' && d.submission_id.length > 10 && d.start_time === 'within-6-months' && d.start_time_label === 'خلال 6 أشهر' && d.heard_from_label === 'من إعلان الفيديو', posts[0].ct + ' ' + Object.keys(d).length + ' keys');
     await page.screenshot({ path: path.join(root, '_work', 'state_live-success_ar.png') });
+    ok('after a confirmed send the stored answers are cleared', (await page.evaluate(() => sessionStorage.getItem('hippo-franchise-enquiry'))) === null);
     await ctx.close();
   }
   {
@@ -187,8 +208,8 @@ const structural = () => {
       hits.length = 0;
       const { ctx, page } = await mk({ FORM_ENDPOINT: base + '/nocors', FORM_FORMAT: 'text' }, json(200, {}));
       await both(page); await page.click('#submit-btn');
-      await page.waitForSelector('#alert-2:not([hidden])', { timeout: 5000 }).catch(() => {});
-      ok('reply the browser may not read (no CORS header): error shown, no false "sent" — although the server DID receive the POST', (await page.isVisible('#alert-2')) && !(await page.isVisible('#done-live')) && hits.some((h) => h.startsWith('entry POST')), hits.join(' | '));
+      await page.waitForSelector('#alert-3:not([hidden])', { timeout: 5000 }).catch(() => {});
+      ok('reply the browser may not read (no CORS header): error shown, no false "sent" — although the server DID receive the POST', (await page.isVisible('#alert-3')) && !(await page.isVisible('#done-live')) && hits.some((h) => h.startsWith('entry POST')), hits.join(' | '));
       await ctx.close();
     }
     entry.close(); target.close();
@@ -200,8 +221,8 @@ const structural = () => {
   ]) {
     const { ctx, page } = await mk({ FORM_ENDPOINT: GS }, handler);
     await both(page); await page.click('#submit-btn');
-    await page.waitForSelector('#alert-2:not([hidden])', { timeout: 5000 }).catch(() => {});
-    ok(`apps-script: ${label} → error shown, form and answers kept, no false "sent"`, (await page.isVisible('#alert-2')) && (await page.isVisible('#step-2')) && !(await page.isVisible('#done-live')) && (await page.inputValue('#target_cities')) === sample.ar.target_cities && !(await page.isDisabled('#submit-btn')));
+    await page.waitForSelector('#alert-3:not([hidden])', { timeout: 5000 }).catch(() => {});
+    ok(`apps-script: ${label} → error shown, form and answers kept, no false "sent"`, (await page.isVisible('#alert-3')) && (await page.isVisible('#step-3')) && !(await page.isVisible('#done-live')) && (await page.inputValue('#target_cities')) === sample.ar.target_cities && !(await page.isDisabled('#submit-btn')));
     if (label.startsWith('network')) await page.screenshot({ path: path.join(root, '_work', 'state_send-failed_ar.png'), fullPage: true });
     await ctx.close();
   }
@@ -210,23 +231,48 @@ const structural = () => {
     await both(page, 'en'); await page.click('#submit-btn');
     await page.waitForSelector('#done-live:not([hidden])');
     const b = new URLSearchParams(sent[0].body);
-    ok('generic endpoint, "form" format: urlencoded POST, success on 2xx', sent[0].ct.includes('x-www-form-urlencoded') && b.get('mobile') === '+966500000000' && b.get('lang') === 'en' && b.get('start_time') === '3-6-months');
+    ok('generic endpoint, "form" format: urlencoded POST, success on 2xx', sent[0].ct.includes('x-www-form-urlencoded') && b.get('mobile') === '+966500000000' && b.get('lang') === 'en' && b.get('start_time') === 'within-6-months');
     await ctx.close();
   }
   {
     const { ctx, page, sent } = await mk({ FORM_ENDPOINT: 'https://endpoint.invalid/x' }, json(500, {}));
     await both(page); await page.click('#submit-btn');
-    await page.waitForSelector('#alert-2:not([hidden])');
-    ok('generic endpoint, "json" format: HTTP 500 → error shown, form kept', sent[0].ct.includes('application/json') && (await page.isVisible('#step-2')) && !(await page.isVisible('#done-live')));
+    await page.waitForSelector('#alert-3:not([hidden])');
+    ok('generic endpoint, "json" format: HTTP 500 → error shown, form kept', sent[0].ct.includes('application/json') && (await page.isVisible('#step-3')) && !(await page.isVisible('#done-live')));
     await ctx.close();
   }
   {
     const { ctx, page, sent } = await mk({ FORM_ENDPOINT: GS }, json(200, { ok: true }));
     await both(page);
-    await page.evaluate(() => { document.querySelector('[name="hp_field"]').value = 'http://spam'; });
-    await page.click('#submit-btn'); await page.waitForTimeout(500);
-    ok('honeypot: filled trap sends nothing', sent.length === 0);
+    const trap = await page.evaluate(() => { const t = document.querySelector('[name="f_check"]'); t.value = 'autofilled'; return { id: t.id, ac: t.autocomplete, ti: t.tabIndex, hidden: t.closest('[aria-hidden="true"]') !== null }; });
+    await page.click('#submit-btn'); await page.waitForSelector('#done-live:not([hidden])');
+    ok('spam trap: a filled trap is still SENT, flagged in the payload (never dropped in the browser); neutral id, autocomplete off, tabindex -1, aria-hidden', sent.length === 1 && JSON.parse(sent[0].body).trap === 'autofilled' && trap.id === 'f-check' && trap.ac === 'off' && trap.ti === -1 && trap.hidden, JSON.stringify(trap));
     await ctx.close();
+  }
+  {
+    // same submission id on a retry after a failure; a new one after success
+    let n = 0;
+    const { ctx, page, sent } = await mk({ FORM_ENDPOINT: GS }, (r) => (++n === 1 ? r.abort() : json(200, { ok: true })(r)));
+    await both(page); await page.click('#submit-btn');
+    await page.waitForSelector('#alert-3:not([hidden])');
+    await page.click('#submit-btn'); await page.waitForSelector('#done-live:not([hidden])');
+    const ids = sent.map((x) => JSON.parse(x.body).submission_id);
+    ok('retry after a failed send carries the same submission id', ids.length === 2 && ids[0] === ids[1] && ids[0].length > 10, ids.join(' , '));
+    await ctx.close();
+  }
+  {
+    // a server that never answers → timeout → "send failed", answers kept, buttons usable again
+    const http = require('http');
+    const hang = http.createServer(() => {});
+    await new Promise((res) => hang.listen(0, '127.0.0.1', res));
+    const { ctx, page } = await mk({ FORM_ENDPOINT: 'http://127.0.0.1:' + hang.address().port + '/x', FORM_FORMAT: 'text', SEND_TIMEOUT_MS: 1500 }, json(200, {}));
+    await both(page); await page.click('#submit-btn');
+    const busy = (await page.isDisabled('#submit-btn')) && (await page.isDisabled('#back-btn'));
+    await page.screenshot({ path: path.join(root, '_work', 'state_sending_ar.png') });
+    const t0 = Date.now();
+    await page.waitForSelector('#alert-3:not([hidden])', { timeout: 6000 }).catch(() => {});
+    ok('no reply → the send is abandoned after the timeout: error shown, answers kept, Send and Back re-enabled', busy && (await page.isVisible('#alert-3')) && !(await page.isDisabled('#submit-btn')) && !(await page.isDisabled('#back-btn')) && (await page.inputValue('#target_cities')) === sample.ar.target_cities && !(await page.isVisible('#done-live')), 'waited ' + (Date.now() - t0) + ' ms with SEND_TIMEOUT_MS 1500');
+    await ctx.close(); hang.closeAllConnections && hang.closeAllConnections(); hang.close();
   }
   {
     const { ctx, page } = await mk({ WHATSAPP_NUMBER: '000000000000' }, json(200, {}));
@@ -246,11 +292,12 @@ const structural = () => {
     const ph = await probe('mobile', ['0500000000', '+966500000000', '00971500000000', '+44 20 0000 0000', '050-000-0000', '12345', 'abc', '+']);
     ok('phone formats', ph['0500000000'] && ph['+966500000000'] && ph['00971500000000'] && ph['+44 20 0000 0000'] && ph['050-000-0000'] && !ph['12345'] && !ph['abc'] && !ph['+'], JSON.stringify(ph));
     const ag = await probe('age', ['18', '٤٠', '17', '0', 'abc', '200']);
+    ok('age above 120 gets its own message', (await page.textContent('#age-error')).includes('تحقّق'), await page.textContent('#age-error'));
     ok('age: 18+ in digits (Western or Arabic-Indic)', ag['18'] && ag['٤٠'] && !ag['17'] && !ag['0'] && !ag['abc'] && !ag['200'], JSON.stringify(ag));
     const web = await probe('company_website', ['example.com', 'https://www.example.com/path', 'no dots', 'http://']);
     ok('website: optional, loose format', web['example.com'] && web['https://www.example.com/path'] && !web['no dots'] && !web['http://'], JSON.stringify(web));
-    await fill1(page, 'ar'); await page.press('#email', 'Enter');
-    ok('Enter in step 1 moves to step 2 (does not submit)', (await page.isVisible('#step-2')) && !(await page.isVisible('#done-draft')));
+    await fill1(page, 'ar'); await page.press('#email', 'Enter'); await fill2(page, 'ar'); await page.press('#own_brand', 'Enter'); const onStep3 = await page.isVisible('#step-3');
+    ok('Enter in steps 1 and 2 moves on (does not submit)', onStep3 && !(await page.isVisible('#done-draft')));
     const am = await probe('investment_amount', ['123456', '123,456', '١٢٣٤٥٦', '1234.50', '0', 'abc', '-5']);
     ok('amount: free number, no minimum other than above zero', am['123456'] && am['123,456'] && am['١٢٣٤٥٦'] && am['1234.50'] && !am['0'] && !am['abc'] && !am['-5'], JSON.stringify(am));
     await page.setViewportSize({ width: 320, height: 700 });
@@ -258,7 +305,7 @@ const structural = () => {
     await page.waitForTimeout(600);
     const sw = await page.evaluate(() => document.documentElement.scrollWidth);
     console.log(await page.evaluate(() => [...document.querySelectorAll('body *')].filter((el) => el.getClientRects().length && !el.closest('.hp') && !el.classList.contains('skip') && (el.getBoundingClientRect().left < -1 || el.getBoundingClientRect().right > 321)).map((el) => el.tagName + '#' + el.id + '.' + el.className).slice(0, 12).join(', ')));
-    ok('320 px wide at 200% text (step 2): no horizontal scroll', sw <= 320, String(sw));
+    ok('320 px wide at 200% text (step 3): no horizontal scroll', sw <= 320, String(sw));
     await page.screenshot({ path: path.join(root, '_work', 'stress_320px_200pct_ar.png'), fullPage: true });
     await ctx.close();
   }

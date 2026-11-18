@@ -38,12 +38,12 @@
   <section class="sheet" aria-labelledby="form-title">
     <div id="form-panel">
       <h2 id="form-title">استفسار عن الامتياز</h2>
-      <p class="intro">خطوتان قصيرتان. كل الحقول مطلوبة، إلا ما كُتب بجانبه «اختياري».</p>
+      <p class="intro">ثلاث خطوات. كل الحقول مطلوبة، إلا ما كُتب بجانبه «اختياري».</p>
       <noscript><p>هذا النموذج يحتاج إلى تفعيل JavaScript في متصفحك حتى يعمل.</p></noscript>
 
       <div class="steps" id="steps" data-step="1">
-        <p class="steps-text" id="steps-text" tabindex="-1"><span class="steps-count">الخطوة <span id="step-now">1</span> من 2</span> <span class="steps-name" id="step-name" data-s1="بياناتك" data-s2="طلبك">بياناتك</span></p>
-        <div class="steps-bar" aria-hidden="true"><span></span><span></span></div>
+        <p class="steps-text" id="steps-text" tabindex="-1"><span class="steps-count">الخطوة <span id="step-now">1</span> من 3</span> <span class="steps-name" id="step-name" data-s1="بياناتك" data-s2="خبرتك" data-s3="خطتك">بياناتك</span></p>
+        <div class="steps-bar" aria-hidden="true"><span></span><span></span><span></span></div>
       </div>
 
       <form id="enquiry-form" novalidate>
@@ -76,7 +76,7 @@
         </div>
         <div class="field">
           <label for="mobile">رقم الجوال</label>
-          <p class="hint" id="mobile-hint">مثال: <span dir="ltr">05XXXXXXXX</span> — ومن خارج السعودية اكتبه مع مفتاح الدولة.</p>
+          <p class="hint" id="mobile-hint">مثال: <span dir="ltr">05XXXXXXXX</span>. من خارج السعودية؟ اكتبه مع مفتاح الدولة.</p>
           <input class="ltr-value" type="tel" id="mobile" name="mobile" required inputmode="tel" autocomplete="tel" maxlength="24" aria-describedby="mobile-hint mobile-error">
           <p class="error" id="mobile-error" hidden></p>
         </div>
@@ -88,14 +88,14 @@
 
         <p class="form-alert" id="alert-1" role="alert" tabindex="-1" hidden></p>
         <div class="actions">
-          <button class="submit" id="next-btn" type="button">التالي</button>
+          <button class="submit" id="next-1" type="button" data-next="2">التالي</button>
         </div>
        </div>
 
        <div class="step" id="step-2" role="group" aria-labelledby="steps-text" hidden>
-        <fieldset class="field" id="experience-group" aria-describedby="experience-error">
-          <legend>ما خبرتك في المطاعم والمقاهي؟</legend>
-          <div class="choices">
+        <fieldset class="field" id="experience-group">
+          <legend id="experience-legend">ما خبرتك في المطاعم والمقاهي؟</legend>
+          <div class="choices" role="radiogroup" id="experience-choices" aria-labelledby="experience-legend" aria-describedby="experience-error" aria-required="true">
             <label class="choice"><input type="radio" name="experience" value="owner" required><span>أملك مطعمًا أو مقهى</span></label>
             <label class="choice"><input type="radio" name="experience" value="franchisee"><span>أشغّل امتيازًا لعلامة أخرى</span></label>
             <label class="choice"><input type="radio" name="experience" value="both"><span>الاثنان معًا</span></label>
@@ -125,12 +125,21 @@
           <textarea id="why_hippo" name="why_hippo" required rows="4" maxlength="1500" aria-describedby="why_hippo-error"></textarea>
           <p class="error" id="why_hippo-error" hidden></p>
         </div>
-        <fieldset class="field" id="branches_wanted-group" aria-describedby="branches_wanted-error">
-          <legend>كم فرعًا تنوي افتتاحه؟</legend>
-          <div class="choices">
+
+        <p class="form-alert" id="alert-2" role="alert" tabindex="-1" hidden></p>
+        <div class="actions">
+          <button class="again back" type="button" data-prev="1">السابق</button>
+          <button class="submit" id="next-2" type="button" data-next="3">التالي</button>
+        </div>
+       </div>
+
+       <div class="step" id="step-3" role="group" aria-labelledby="steps-text" hidden>
+        <fieldset class="field" id="branches_wanted-group">
+          <legend id="branches_wanted-legend">كم فرعًا تنوي افتتاحه؟</legend>
+          <div class="choices" role="radiogroup" id="branches_wanted-choices" aria-labelledby="branches_wanted-legend" aria-describedby="branches_wanted-error" aria-required="true">
             <label class="choice"><input type="radio" name="branches_wanted" value="one" required><span>فرع واحد</span></label>
             <label class="choice"><input type="radio" name="branches_wanted" value="two-to-five"><span>من فرعين إلى خمسة</span></label>
-            <label class="choice"><input type="radio" name="branches_wanted" value="five-to-ten"><span>من خمسة إلى عشرة</span></label>
+            <label class="choice"><input type="radio" name="branches_wanted" value="six-to-ten"><span>من ستة إلى عشرة</span></label>
             <label class="choice"><input type="radio" name="branches_wanted" value="other"><span>غير ذلك</span></label>
           </div>
           <p class="error" id="branches_wanted-error" hidden></p>
@@ -140,9 +149,9 @@
           <p class="error" id="branches_wanted_other-error" hidden></p>
         </div>
         </fieldset>
-        <fieldset class="field" id="investment_source-group" aria-describedby="investment_source-error">
-          <legend>مصدر الاستثمار</legend>
-          <div class="choices">
+        <fieldset class="field" id="investment_source-group">
+          <legend id="investment_source-legend">مصدر الاستثمار</legend>
+          <div class="choices" role="radiogroup" id="investment_source-choices" aria-labelledby="investment_source-legend" aria-describedby="investment_source-error" aria-required="true">
             <label class="choice"><input type="radio" name="investment_source" value="savings" required><span>مدّخرات شخصية</span></label>
             <label class="choice"><input type="radio" name="investment_source" value="investors"><span>مستثمرون أو شركاء</span></label>
             <label class="choice"><input type="radio" name="investment_source" value="bank"><span>تمويل بنكي</span></label>
@@ -161,11 +170,11 @@
           <div class="with-unit"><input class="ltr-value" type="text" id="investment_amount" name="investment_amount" required inputmode="numeric" autocomplete="off" maxlength="20" aria-describedby="investment_amount-hint investment_amount-error"><span class="unit" aria-hidden="true">ر.س</span></div>
           <p class="error" id="investment_amount-error" hidden></p>
         </div>
-        <fieldset class="field" id="start_time-group" aria-describedby="start_time-error">
-          <legend>متى تتوقع أن تبدأ؟</legend>
-          <div class="choices">
+        <fieldset class="field" id="start_time-group">
+          <legend id="start_time-legend">متى تتوقع أن تبدأ؟</legend>
+          <div class="choices" role="radiogroup" id="start_time-choices" aria-labelledby="start_time-legend" aria-describedby="start_time-error" aria-required="true">
             <label class="choice"><input type="radio" name="start_time" value="now" required><span>فورًا</span></label>
-            <label class="choice"><input type="radio" name="start_time" value="3-6-months"><span>خلال 3 إلى 6 أشهر</span></label>
+            <label class="choice"><input type="radio" name="start_time" value="within-6-months"><span>خلال 6 أشهر</span></label>
             <label class="choice"><input type="radio" name="start_time" value="6-12-months"><span>خلال 6 إلى 12 شهرًا</span></label>
             <label class="choice"><input type="radio" name="start_time" value="1-2-years"><span>خلال سنة إلى سنتين</span></label>
           </div>
@@ -176,9 +185,9 @@
           <input type="text" id="target_cities" name="target_cities" required autocomplete="off" maxlength="300" aria-describedby="target_cities-error">
           <p class="error" id="target_cities-error" hidden></p>
         </div>
-        <fieldset class="field" id="has_location-group" aria-describedby="has_location-error">
-          <legend>هل لديك موقع للمحل؟ <span class="optional">(اختياري)</span></legend>
-          <div class="choices">
+        <fieldset class="field" id="has_location-group">
+          <legend id="has_location-legend">هل لديك موقع للمحل؟ <span class="optional">(اختياري)</span></legend>
+          <div class="choices" role="radiogroup" id="has_location-choices" aria-labelledby="has_location-legend" aria-describedby="has_location-error">
             <label class="choice"><input type="radio" name="has_location" value="yes"><span>نعم، لديّ موقع</span></label>
             <label class="choice"><input type="radio" name="has_location" value="searching"><span>لا، أبحث عن موقع</span></label>
             <label class="choice"><input type="radio" name="has_location" value="undecided"><span>لم أحدّد بعد</span></label>
@@ -204,8 +213,8 @@
         </div>
 
         <div class="hp" aria-hidden="true">
-          <label for="company_website_2">اترك هذا الحقل فارغًا</label>
-          <input type="text" id="company_website_2" name="hp_field" tabindex="-1" autocomplete="off">
+          <label for="f-check">اترك هذا الحقل فارغًا</label>
+          <input type="text" id="f-check" name="f_check" tabindex="-1" autocomplete="off">
         </div>
 
         <div class="field">
@@ -217,9 +226,9 @@
           <p class="error" id="consent-error" hidden></p>
         </div>
 
-        <p class="form-alert" id="alert-2" role="alert" tabindex="-1" hidden></p>
+        <p class="form-alert" id="alert-3" role="alert" tabindex="-1" hidden></p>
         <div class="actions">
-          <button class="again back" id="back-btn" type="button">السابق</button>
+          <button class="again back" id="back-btn" type="button" data-prev="2">السابق</button>
           <button class="submit" id="submit-btn" type="submit">أرسل الاستفسار</button>
         </div>
        </div>
@@ -230,7 +239,7 @@
     <div class="done" id="done-live" tabindex="-1" role="status" hidden>
       <img class="box" src="assets/box.webp" width="640" height="680" alt="بوكس الجَمعات من هيبو">
       <h2>وصل استفسارك.</h2>
-      <p>شكرًا لك. سيتواصل معك فريق هيبو على بيانات التواصل التي كتبتها.</p>
+      <p>شكرًا لك. سيتواصل معك فريق هيبو عبر بيانات التواصل التي كتبتها.</p>
     </div>
 
     <!-- State: WhatsApp opened (only when WHATSAPP_NUMBER is set) -->
@@ -246,7 +255,7 @@
       <p class="demo-preview-label">بعد ربط النموذج ستظهر للزائر هذه الرسالة:</p>
       <img class="box" src="assets/box.webp" width="640" height="680" alt="بوكس الجَمعات من هيبو">
       <h2>وصل استفسارك.</h2>
-      <p>شكرًا لك. سيتواصل معك فريق هيبو على بيانات التواصل التي كتبتها.</p>
+      <p>شكرًا لك. سيتواصل معك فريق هيبو عبر بيانات التواصل التي كتبتها.</p>
       <button class="again" type="button" data-back>العودة إلى النموذج</button>
     </div>
   </section>

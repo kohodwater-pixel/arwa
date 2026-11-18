@@ -37,12 +37,12 @@
   <section class="sheet" aria-labelledby="form-title">
     <div id="form-panel">
       <h2 id="form-title">Franchise enquiry</h2>
-      <p class="intro">Two short steps. Every field is required unless it says “optional”.</p>
+      <p class="intro">Three steps. Every field is required unless it says “optional”.</p>
       <noscript><p>This form needs JavaScript switched on in your browser.</p></noscript>
 
       <div class="steps" id="steps" data-step="1">
-        <p class="steps-text" id="steps-text" tabindex="-1"><span class="steps-count">Step <span id="step-now">1</span> of 2</span> <span class="steps-name" id="step-name" data-s1="About you" data-s2="Your plans">About you</span></p>
-        <div class="steps-bar" aria-hidden="true"><span></span><span></span></div>
+        <p class="steps-text" id="steps-text" tabindex="-1"><span class="steps-count">Step <span id="step-now">1</span> of 3</span> <span class="steps-name" id="step-name" data-s1="About you" data-s2="Your experience" data-s3="Your plan">About you</span></p>
+        <div class="steps-bar" aria-hidden="true"><span></span><span></span><span></span></div>
       </div>
 
       <form id="enquiry-form" novalidate>
@@ -87,18 +87,18 @@
 
         <p class="form-alert" id="alert-1" role="alert" tabindex="-1" hidden></p>
         <div class="actions">
-          <button class="submit" id="next-btn" type="button">Next</button>
+          <button class="submit" id="next-1" type="button" data-next="2">Next</button>
         </div>
        </div>
 
        <div class="step" id="step-2" role="group" aria-labelledby="steps-text" hidden>
-        <fieldset class="field" id="experience-group" aria-describedby="experience-error">
-          <legend>What&#x27;s your restaurant or café experience?</legend>
-          <div class="choices">
+        <fieldset class="field" id="experience-group">
+          <legend id="experience-legend">What&#x27;s your restaurant or café experience?</legend>
+          <div class="choices" role="radiogroup" id="experience-choices" aria-labelledby="experience-legend" aria-describedby="experience-error" aria-required="true">
             <label class="choice"><input type="radio" name="experience" value="owner" required><span>I own a restaurant or café</span></label>
             <label class="choice"><input type="radio" name="experience" value="franchisee"><span>I run another brand&#x27;s franchise</span></label>
             <label class="choice"><input type="radio" name="experience" value="both"><span>Both</span></label>
-            <label class="choice"><input type="radio" name="experience" value="employee"><span>I&#x27;ve worked in the sector</span></label>
+            <label class="choice"><input type="radio" name="experience" value="employee"><span>I&#x27;ve worked in the sector as an employee</span></label>
             <label class="choice"><input type="radio" name="experience" value="none"><span>No experience yet</span></label>
             <label class="choice"><input type="radio" name="experience" value="other"><span>Something else</span></label>
           </div>
@@ -124,12 +124,21 @@
           <textarea id="why_hippo" name="why_hippo" required rows="4" maxlength="1500" aria-describedby="why_hippo-error"></textarea>
           <p class="error" id="why_hippo-error" hidden></p>
         </div>
-        <fieldset class="field" id="branches_wanted-group" aria-describedby="branches_wanted-error">
-          <legend>How many branches do you plan to open?</legend>
-          <div class="choices">
+
+        <p class="form-alert" id="alert-2" role="alert" tabindex="-1" hidden></p>
+        <div class="actions">
+          <button class="again back" type="button" data-prev="1">Back</button>
+          <button class="submit" id="next-2" type="button" data-next="3">Next</button>
+        </div>
+       </div>
+
+       <div class="step" id="step-3" role="group" aria-labelledby="steps-text" hidden>
+        <fieldset class="field" id="branches_wanted-group">
+          <legend id="branches_wanted-legend">How many branches do you plan to open?</legend>
+          <div class="choices" role="radiogroup" id="branches_wanted-choices" aria-labelledby="branches_wanted-legend" aria-describedby="branches_wanted-error" aria-required="true">
             <label class="choice"><input type="radio" name="branches_wanted" value="one" required><span>One</span></label>
             <label class="choice"><input type="radio" name="branches_wanted" value="two-to-five"><span>Two to five</span></label>
-            <label class="choice"><input type="radio" name="branches_wanted" value="five-to-ten"><span>Five to ten</span></label>
+            <label class="choice"><input type="radio" name="branches_wanted" value="six-to-ten"><span>Six to ten</span></label>
             <label class="choice"><input type="radio" name="branches_wanted" value="other"><span>Something else</span></label>
           </div>
           <p class="error" id="branches_wanted-error" hidden></p>
@@ -139,9 +148,9 @@
           <p class="error" id="branches_wanted_other-error" hidden></p>
         </div>
         </fieldset>
-        <fieldset class="field" id="investment_source-group" aria-describedby="investment_source-error">
-          <legend>Source of investment</legend>
-          <div class="choices">
+        <fieldset class="field" id="investment_source-group">
+          <legend id="investment_source-legend">Source of investment</legend>
+          <div class="choices" role="radiogroup" id="investment_source-choices" aria-labelledby="investment_source-legend" aria-describedby="investment_source-error" aria-required="true">
             <label class="choice"><input type="radio" name="investment_source" value="savings" required><span>Personal savings</span></label>
             <label class="choice"><input type="radio" name="investment_source" value="investors"><span>Investors or partners</span></label>
             <label class="choice"><input type="radio" name="investment_source" value="bank"><span>Bank financing</span></label>
@@ -160,11 +169,11 @@
           <div class="with-unit"><input class="ltr-value" type="text" id="investment_amount" name="investment_amount" required inputmode="numeric" autocomplete="off" maxlength="20" aria-describedby="investment_amount-hint investment_amount-error"><span class="unit" aria-hidden="true">SAR</span></div>
           <p class="error" id="investment_amount-error" hidden></p>
         </div>
-        <fieldset class="field" id="start_time-group" aria-describedby="start_time-error">
-          <legend>When do you expect to start?</legend>
-          <div class="choices">
+        <fieldset class="field" id="start_time-group">
+          <legend id="start_time-legend">When do you expect to start?</legend>
+          <div class="choices" role="radiogroup" id="start_time-choices" aria-labelledby="start_time-legend" aria-describedby="start_time-error" aria-required="true">
             <label class="choice"><input type="radio" name="start_time" value="now" required><span>Right away</span></label>
-            <label class="choice"><input type="radio" name="start_time" value="3-6-months"><span>In 3 to 6 months</span></label>
+            <label class="choice"><input type="radio" name="start_time" value="within-6-months"><span>Within 6 months</span></label>
             <label class="choice"><input type="radio" name="start_time" value="6-12-months"><span>In 6 to 12 months</span></label>
             <label class="choice"><input type="radio" name="start_time" value="1-2-years"><span>In 1 to 2 years</span></label>
           </div>
@@ -175,9 +184,9 @@
           <input type="text" id="target_cities" name="target_cities" required autocomplete="off" maxlength="300" aria-describedby="target_cities-error">
           <p class="error" id="target_cities-error" hidden></p>
         </div>
-        <fieldset class="field" id="has_location-group" aria-describedby="has_location-error">
-          <legend>Do you have a site for the shop? <span class="optional">(optional)</span></legend>
-          <div class="choices">
+        <fieldset class="field" id="has_location-group">
+          <legend id="has_location-legend">Do you have a location for the branch? <span class="optional">(optional)</span></legend>
+          <div class="choices" role="radiogroup" id="has_location-choices" aria-labelledby="has_location-legend" aria-describedby="has_location-error">
             <label class="choice"><input type="radio" name="has_location" value="yes"><span>Yes, I have one</span></label>
             <label class="choice"><input type="radio" name="has_location" value="searching"><span>No, I&#x27;m looking</span></label>
             <label class="choice"><input type="radio" name="has_location" value="undecided"><span>Not decided yet</span></label>
@@ -203,8 +212,8 @@
         </div>
 
         <div class="hp" aria-hidden="true">
-          <label for="company_website_2">Leave this field empty</label>
-          <input type="text" id="company_website_2" name="hp_field" tabindex="-1" autocomplete="off">
+          <label for="f-check">Leave this field empty</label>
+          <input type="text" id="f-check" name="f_check" tabindex="-1" autocomplete="off">
         </div>
 
         <div class="field">
@@ -216,9 +225,9 @@
           <p class="error" id="consent-error" hidden></p>
         </div>
 
-        <p class="form-alert" id="alert-2" role="alert" tabindex="-1" hidden></p>
+        <p class="form-alert" id="alert-3" role="alert" tabindex="-1" hidden></p>
         <div class="actions">
-          <button class="again back" id="back-btn" type="button">Back</button>
+          <button class="again back" id="back-btn" type="button" data-prev="2">Back</button>
           <button class="submit" id="submit-btn" type="submit">Send enquiry</button>
         </div>
        </div>
@@ -229,7 +238,7 @@
     <div class="done" id="done-live" tabindex="-1" role="status" hidden>
       <img class="box" src="assets/box.webp" width="640" height="680" alt="A HIPPO gathering box">
       <h2>Your enquiry is in.</h2>
-      <p>Thank you. The HIPPO team will contact you on the details you gave.</p>
+      <p>Thank you. The HIPPO team will contact you using the contact details you gave.</p>
     </div>
 
     <!-- State: WhatsApp opened (only when WHATSAPP_NUMBER is set) -->
@@ -245,7 +254,7 @@
       <p class="demo-preview-label">Once the form is connected, visitors will see this message:</p>
       <img class="box" src="assets/box.webp" width="640" height="680" alt="A HIPPO gathering box">
       <h2>Your enquiry is in.</h2>
-      <p>Thank you. The HIPPO team will contact you on the details you gave.</p>
+      <p>Thank you. The HIPPO team will contact you using the contact details you gave.</p>
       <button class="again" type="button" data-back>Back to the form</button>
     </div>
   </section>

@@ -1,4 +1,4 @@
-/* HIPPO franchise enquiry — two steps, validation and submission. No dependencies. */
+/* HIPPO franchise enquiry — three steps, validation and submission. No dependencies. */
 (function () {
   "use strict";
 
@@ -11,6 +11,7 @@
       profession: "اكتب مهنتك.",
       age_empty: "اكتب عمرك بالأرقام.",
       age_min: "يجب ألا يقل العمر عن 18 سنة.",
+      age_bad: "تحقّق من العمر المكتوب.",
       website_bad: "تحقّق من عنوان الموقع.",
       mobile_empty: "اكتب رقم جوالك.",
       mobile_bad: "الرقم غير مكتمل. اكتبه بالأرقام فقط، ويمكن أن يبدأ بمفتاح الدولة.",
@@ -36,6 +37,7 @@
       profession: "Enter your profession.",
       age_empty: "Enter your age in digits.",
       age_min: "Applicants must be 18 or older.",
+      age_bad: "Check the age you entered.",
       website_bad: "Check the website address.",
       mobile_empty: "Enter your mobile number.",
       mobile_bad: "That number looks incomplete. Use digits only; it can start with a country code.",
@@ -69,8 +71,13 @@
   var form = document.getElementById("enquiry-form");
   var f = form.elements;
   var formPanel = document.getElementById("form-panel");
-  var stepEls = { 1: document.getElementById("step-1"), 2: document.getElementById("step-2") };
-  var alerts = { 1: document.getElementById("alert-1"), 2: document.getElementById("alert-2") };
+  var LAST = 3;
+  var stepEls = {}, alerts = {};
+  [1, 2, 3].forEach(function (n) {
+    stepEls[n] = document.getElementById("step-" + n);
+    alerts[n] = document.getElementById("alert-" + n);
+  });
+  var backBtns = form.querySelectorAll("[data-prev]");
   var stepsBox = document.getElementById("steps");
   var stepsText = document.getElementById("steps-text");
   var stepName = document.getElementById("step-name");
@@ -117,6 +124,33 @@
   function choice(name) { return function () { return picked(name) ? "" : T.choose; }; }
   function otherOf(name) { return function (v) { return picked(name) !== "other" || v.length >= 2 ? "" : T.other; }; }
 
+  // ---------- this tab's session: answers survive the language switch; one id per enquiry ----------
+  var STORE = "hippo-franchise-enquiry";
+  var KEEP = ["full_name", "profession", "age", "company_name", "company_website", "mobile", "email",
+    "experience", "experience_other", "own_brand", "branches_operated", "why_hippo",
+    "branches_wanted", "branches_wanted_other", "investment_source", "investment_source_other",
+    "investment_amount", "start_time", "target_cities", "has_location", "heard_from", "notes"];
+  function newId() {
+    return (window.crypto && crypto.randomUUID) ? crypto.randomUUID()
+      : Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 12);
+  }
+  var session = { id: newId(), step: 1, values: {} };
+  try {
+    var saved = JSON.parse(sessionStorage.getItem(STORE) || "null");
+    if (saved && saved.id && saved.values) session = saved;
+  } catch (e) { /* storage unavailable: the form still works, it just does not remember */ }
+
+  function isRadio(name) { return f[name] && !f[name].tagName; } // a RadioNodeList has no tagName
+  function remember() {
+    KEEP.forEach(function (name) { session.values[name] = isRadio(name) ? picked(name) : f[name].value; });
+    session.step = current;
+    try { sessionStorage.setItem(STORE, JSON.stringify(session)); } catch (e) { /* ignore */ }
+  }
+  function forget() {
+    session = { id: newId(), step: 1, values: {} };
+    try { sessionStorage.removeItem(STORE); } catch (e) { /* ignore */ }
+  }
+
   // ---------- rules: one entry per checked field, in page order ----------
   var RULES = [
     { name: "full_name", step: 1, check: need(T.full_name) },
@@ -124,7 +158,8 @@
     { name: "age", step: 1, check: function (v) {
         v = cleanNumber(v);
         if (!/^\d{1,3}$/.test(v)) return T.age_empty;
-        return Number(v) >= 18 && Number(v) <= 120 ? "" : (Number(v) < 18 ? T.age_min : T.age_empty);
+        if (Number(v) < 18) return T.age_min;
+        return Number(v) <= 120 ? "" : T.age_bad;
       } },
     { name: "company_website", step: 1, check: function (v) {
         return !v || /^(https?:\/\/)?[^\s\/.]+(\.[^\s\/.]+)+(\/\S*)?$/i.test(v) ? "" : T.website_bad;
@@ -141,18 +176,18 @@
     { name: "experience_other", step: 2, check: otherOf("experience") },
     { name: "branches_operated", step: 2, check: function (v) { return !v || /^\d{1,5}$/.test(cleanNumber(v)) ? "" : T.number_bad; } },
     { name: "why_hippo", step: 2, check: need(T.why_hippo) },
-    { name: "branches_wanted", step: 2, group: true, check: choice("branches_wanted") },
-    { name: "branches_wanted_other", step: 2, check: otherOf("branches_wanted") },
-    { name: "investment_source", step: 2, group: true, check: choice("investment_source") },
-    { name: "investment_source_other", step: 2, check: otherOf("investment_source") },
-    { name: "investment_amount", step: 2, check: function (v) {
+    { name: "branches_wanted", step: 3, group: true, check: choice("branches_wanted") },
+    { name: "branches_wanted_other", step: 3, check: otherOf("branches_wanted") },
+    { name: "investment_source", step: 3, group: true, check: choice("investment_source") },
+    { name: "investment_source_other", step: 3, check: otherOf("investment_source") },
+    { name: "investment_amount", step: 3, check: function (v) {
         if (!v) return T.amount_empty;
         v = cleanNumber(v);
         return /^\d{1,15}(\.\d{1,2})?$/.test(v) && Number(v) > 0 ? "" : T.amount_bad;
       } },
-    { name: "start_time", step: 2, group: true, check: choice("start_time") },
-    { name: "target_cities", step: 2, check: need(T.target_cities) },
-    { name: "consent", step: 2, box: true, check: function () { return f.consent.checked ? "" : T.consent; } }
+    { name: "start_time", step: 3, group: true, check: choice("start_time") },
+    { name: "target_cities", step: 3, check: need(T.target_cities) },
+    { name: "consent", step: 3, box: true, check: function () { return f.consent.checked ? "" : T.consent; } }
   ];
 
   function errEl(rule) { return document.getElementById(rule.name + "-error"); }
@@ -164,6 +199,8 @@
     err.hidden = !msg;
     if (rule.group) {
       document.getElementById(rule.name + "-group").classList.toggle("invalid", !!msg);
+      var rg = document.getElementById(rule.name + "-choices");
+      if (msg) rg.setAttribute("aria-invalid", "true"); else rg.removeAttribute("aria-invalid");
     } else if (msg) {
       f[rule.name].setAttribute("aria-invalid", "true");
     } else {
@@ -197,6 +234,9 @@
     });
   });
 
+  form.addEventListener("input", remember);
+  form.addEventListener("change", remember);
+
   // "Other" reveals a required text field under the question.
   ["experience", "branches_wanted", "investment_source"].forEach(function (name) {
     var wrap = document.getElementById(name + "_other-wrap");
@@ -213,22 +253,35 @@
   // ---------- steps ----------
   function goTo(n, focus) {
     current = n;
-    stepEls[1].hidden = n !== 1;
-    stepEls[2].hidden = n !== 2;
+    [1, 2, 3].forEach(function (i) { stepEls[i].hidden = i !== n; });
     stepsBox.setAttribute("data-step", String(n));
     document.getElementById("step-now").textContent = String(n);
     stepName.textContent = stepName.getAttribute("data-s" + n);
+    remember();
     if (focus !== false) {
       stepsText.focus({ preventScroll: true });
       document.getElementById("form-title").scrollIntoView({ block: "start" });
     }
   }
 
-  document.getElementById("next-btn").addEventListener("click", function () { if (validateStep(1)) goTo(2); });
-  document.getElementById("back-btn").addEventListener("click", function () { goTo(1); });
-  // Enter in a step-1 field moves on instead of submitting the hidden second step.
-  stepEls[1].addEventListener("keydown", function (e) {
-    if (e.key === "Enter" && e.target.tagName === "INPUT") { e.preventDefault(); if (validateStep(1)) goTo(2); }
+  Array.prototype.forEach.call(form.querySelectorAll("[data-next]"), function (btn) {
+    btn.addEventListener("click", function () { if (validateStep(current)) goTo(current + 1); });
+  });
+  Array.prototype.forEach.call(backBtns, function (btn) {
+    btn.addEventListener("click", function () { goTo(current - 1); });
+  });
+  // Pressing a step button must not first blur the field being edited: the blur check could
+  // insert an error line, move the button under the pointer and swallow the click.
+  Array.prototype.forEach.call(form.querySelectorAll(".actions button"), function (btn) {
+    btn.addEventListener("mousedown", function (e) { e.preventDefault(); });
+  });
+
+  // Enter in a text field of an earlier step moves on instead of submitting the hidden last step.
+  form.addEventListener("keydown", function (e) {
+    if (e.key === "Enter" && e.target.tagName === "INPUT" && current < LAST) {
+      e.preventDefault();
+      if (validateStep(current)) goTo(current + 1);
+    }
   });
 
   // ---------- data ----------
@@ -250,7 +303,17 @@
     d.mobile = cleanPhone(d.mobile);
     d.branches_operated = cleanNumber(d.branches_operated);
     d.investment_amount = cleanNumber(d.investment_amount);
+    // The answer as the visitor read it (page language), next to the stable code.
+    RADIOS.forEach(function (name) {
+      var el = form.querySelector('input[name="' + name + '"]:checked');
+      d[name + "_label"] = el ? el.parentNode.textContent.trim() : "";
+    });
+    d.heard_from_label = d.heard_from ? f.heard_from.options[f.heard_from.selectedIndex].textContent.trim() : "";
     d.consent = "yes";
+    d.submission_id = session.id;
+    // Spam trap: sent as it is, never judged here. The receiving side files flagged rows separately,
+    // so a real applicant whose autofill touched the hidden field is not lost.
+    d.trap = f.f_check.value;
     d.submitted_at = new Date().toISOString();
     return d;
   }
@@ -287,7 +350,7 @@
 
   function setBusy(busy) {
     submitBtn.disabled = busy;
-    document.getElementById("back-btn").disabled = busy;
+    Array.prototype.forEach.call(backBtns, function (b) { b.disabled = busy; });
     submitBtn.textContent = busy ? T.sending : submitLabel;
     form.setAttribute("aria-busy", busy ? "true" : "false");
   }
@@ -304,10 +367,18 @@
       opts.headers.Accept = "application/json";
       opts.body = JSON.stringify(data);
     }
+    // Give up after a fixed wait so the visitor is never left on "sending".
+    var timer = null;
+    if (window.AbortController) {
+      var ctl = new AbortController();
+      opts.signal = ctl.signal;
+      timer = setTimeout(function () { ctl.abort(); }, Number(cfg.SEND_TIMEOUT_MS) || 25000);
+    }
+    function done(x) { clearTimeout(timer); return x; }
     return fetch(endpoint, opts).then(function (r) {
       if (!r.ok) throw new Error("HTTP " + r.status);
       return r.text();
-    }).then(function (body) {
+    }).then(done, function (err) { done(); throw err; }).then(function (body) {
       var reply = null;
       try { reply = JSON.parse(body); } catch (e) { /* not JSON */ }
       // Apps Script answers 200 even for its own error pages, so only an explicit
@@ -320,14 +391,13 @@
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     sendFailed = false;
-    if (current === 1) { if (validateStep(1)) goTo(2); return; }
-    if (!validateStep(2)) return;
-    // Step 1 was checked on "next"; check again in case it was edited after going back.
-    var step1Bad = RULES.filter(function (r) { return r.step === 1 && r.check(val(r.name)); });
-    if (step1Bad.length) { goTo(1, false); validateStep(1); return; }
-
-    // Honeypot: a filled trap field means a bot. Show the ordinary end state, send nothing.
-    if (f.hp_field.value) { finish(mode); return; }
+    if (current < LAST) { if (validateStep(current)) goTo(current + 1); return; }
+    if (!validateStep(LAST)) return;
+    // Earlier steps were checked on "next"; check again in case they were edited after going back.
+    for (var n = 1; n < LAST; n++) {
+      var bad = RULES.filter(function (r) { return r.step === n && r.check(r.group ? "" : val(r.name)); });
+      if (bad.length) { goTo(n, false); validateStep(n); return; }
+    }
 
     var data = payload();
     if (mode === "draft") { finish("draft"); return; }
@@ -340,13 +410,14 @@
     setBusy(true);
     send(data).then(function () {
       setBusy(false);
+      forget(); // stored answers are cleared and the next enquiry gets a new id
       finish("live");
     }).catch(function () {
       setBusy(false);
       sendFailed = true;
-      alerts[2].textContent = T.send_failed;
-      alerts[2].hidden = false;
-      alerts[2].focus();
+      alerts[LAST].textContent = T.send_failed;
+      alerts[LAST].hidden = false;
+      alerts[LAST].focus();
     });
   });
 
@@ -358,4 +429,26 @@
       goTo(current);
     });
   });
+
+  // ---------- restore what this tab already holds (e.g. after switching language) ----------
+  KEEP.forEach(function (name) {
+    var v = session.values[name];
+    if (!v) return;
+    if (isRadio(name)) {
+      var el = form.querySelector('input[name="' + name + '"][value="' + String(v).replace(/[^a-z0-9\-]/gi, "") + '"]');
+      if (el) el.checked = true;
+    } else {
+      f[name].value = v;
+    }
+  });
+  ["experience", "branches_wanted", "investment_source"].forEach(function (name) {
+    document.getElementById(name + "_other-wrap").hidden = picked(name) !== "other";
+  });
+  if (session.step > 1 && session.step <= LAST) {
+    current = session.step;
+    [1, 2, 3].forEach(function (i) { stepEls[i].hidden = i !== current; });
+    stepsBox.setAttribute("data-step", String(current));
+    document.getElementById("step-now").textContent = String(current);
+    stepName.textContent = stepName.getAttribute("data-s" + current);
+  }
 })();

@@ -17,12 +17,12 @@ AR = dict(
     photo_alt="ساندوتش بريوش من هيبو في حامله الأبيض",
     spot='<h1 id="campaign-line">حُطّ ثقلك.</h1>\n        <p class="support" lang="en" dir="ltr">Put your weight behind it.</p>',
     lead="كفّتنا مليانة، والكفّة الثانية ناقصها ثقلك. اترك بياناتك ونتواصل معك بخصوص امتياز هيبو التجاري.",
-    h2="استفسار عن الامتياز", intro="خطوتان قصيرتان. كل الحقول مطلوبة، إلا ما كُتب بجانبه «اختياري».",
+    h2="استفسار عن الامتياز", intro="ثلاث خطوات. كل الحقول مطلوبة، إلا ما كُتب بجانبه «اختياري».",
     noscript="هذا النموذج يحتاج إلى تفعيل JavaScript في متصفحك حتى يعمل.",
-    step_word="الخطوة", of="من", s1="بياناتك", s2="طلبك", optional="(اختياري)",
+    step_word="الخطوة", of="من", s1="بياناتك", s2="خبرتك", s3="خطتك", optional="(اختياري)",
     full_name="الاسم الكامل", profession="المهنة", age="العمر", age_hint="بالسنوات، بالأرقام.",
     company_name="اسم شركتك", company_website="موقع شركتك الإلكتروني",
-    mobile="رقم الجوال", mobile_hint='مثال: <span dir="ltr">05XXXXXXXX</span> — ومن خارج السعودية اكتبه مع مفتاح الدولة.',
+    mobile="رقم الجوال", mobile_hint='مثال: <span dir="ltr">05XXXXXXXX</span>. من خارج السعودية؟ اكتبه مع مفتاح الدولة.',
     email="البريد الإلكتروني", next="التالي", back="السابق", submit="أرسل الاستفسار",
     experience="ما خبرتك في المطاعم والمقاهي؟",
     experience_opts=[("owner", "أملك مطعمًا أو مقهى"), ("franchisee", "أشغّل امتيازًا لعلامة أخرى"), ("both", "الاثنان معًا"),
@@ -31,12 +31,12 @@ AR = dict(
     own_brand="اسم علامتك التجارية، إن وُجدت", branches_operated="عدد الفروع التي تديرها حاليًا",
     why_hippo="لماذا امتياز هيبو؟",
     branches_wanted="كم فرعًا تنوي افتتاحه؟",
-    branches_wanted_opts=[("one", "فرع واحد"), ("two-to-five", "من فرعين إلى خمسة"), ("five-to-ten", "من خمسة إلى عشرة"), ("other", "غير ذلك")],
+    branches_wanted_opts=[("one", "فرع واحد"), ("two-to-five", "من فرعين إلى خمسة"), ("six-to-ten", "من ستة إلى عشرة"), ("other", "غير ذلك")],
     investment_source="مصدر الاستثمار",
     investment_source_opts=[("savings", "مدّخرات شخصية"), ("investors", "مستثمرون أو شركاء"), ("bank", "تمويل بنكي"), ("other", "غير ذلك")],
     investment_amount="المبلغ الذي تنوي استثماره", amount_hint="بالأرقام، بالريال السعودي.", unit="ر.س",
     start_time="متى تتوقع أن تبدأ؟",
-    start_time_opts=[("now", "فورًا"), ("3-6-months", "خلال 3 إلى 6 أشهر"), ("6-12-months", "خلال 6 إلى 12 شهرًا"), ("1-2-years", "خلال سنة إلى سنتين")],
+    start_time_opts=[("now", "فورًا"), ("within-6-months", "خلال 6 أشهر"), ("6-12-months", "خلال 6 إلى 12 شهرًا"), ("1-2-years", "خلال سنة إلى سنتين")],
     target_cities="المدن التي تستهدفها",
     has_location="هل لديك موقع للمحل؟",
     has_location_opts=[("yes", "نعم، لديّ موقع"), ("searching", "لا، أبحث عن موقع"), ("undecided", "لم أحدّد بعد")],
@@ -46,7 +46,7 @@ AR = dict(
     notes="ملاحظات", hp="اترك هذا الحقل فارغًا",
     consent="أوافق على استخدام بياناتي للتواصل معي بخصوص هذا الاستفسار.",
     privacy_gap="[رابط إشعار الخصوصية — يُضاف عند استلامه من هيبو]",
-    box_alt="بوكس الجَمعات من هيبو", done_h="وصل استفسارك.", done_p="شكرًا لك. سيتواصل معك فريق هيبو على بيانات التواصل التي كتبتها.",
+    box_alt="بوكس الجَمعات من هيبو", done_h="وصل استفسارك.", done_p="شكرًا لك. سيتواصل معك فريق هيبو عبر بيانات التواصل التي كتبتها.",
     wa_h="بقيت خطوة واحدة.", wa_p="فتحنا لك واتساب وفيه استفسارك مكتوبًا. اضغط «إرسال» هناك حتى يصلنا.", back_form="العودة إلى النموذج",
     demo_flag="<b>مسودة — النموذج غير موصول</b> لم يُرسَل أي شيء ولم تُحفَظ بياناتك. هذا عرض لشكل الصفحة فقط.",
     demo_label="بعد ربط النموذج ستظهر للزائر هذه الرسالة:", footer="امتياز هيبو التجاري",
@@ -62,28 +62,28 @@ EN = dict(
     photo_alt="A HIPPO brioche sandwich in its white holder",
     spot='<p class="support" lang="ar" dir="rtl">حُطّ ثقلك.</p>\n        <h1 id="campaign-line">Put your weight behind it.</h1>',
     lead="Our side of the scale is full. The other side is missing your weight. Leave your details and we'll get in touch about the HIPPO franchise.",
-    h2="Franchise enquiry", intro="Two short steps. Every field is required unless it says “optional”.",
+    h2="Franchise enquiry", intro="Three steps. Every field is required unless it says “optional”.",
     noscript="This form needs JavaScript switched on in your browser.",
-    step_word="Step", of="of", s1="About you", s2="Your plans", optional="(optional)",
+    step_word="Step", of="of", s1="About you", s2="Your experience", s3="Your plan", optional="(optional)",
     full_name="Full name", profession="Profession", age="Age", age_hint="In years, in digits.",
     company_name="Your company's name", company_website="Your company's website",
     mobile="Mobile number", mobile_hint="Example: 05XXXXXXXX. Outside Saudi Arabia, include your country code.",
     email="Email", next="Next", back="Back", submit="Send enquiry",
     experience="What's your restaurant or café experience?",
     experience_opts=[("owner", "I own a restaurant or café"), ("franchisee", "I run another brand's franchise"), ("both", "Both"),
-                     ("employee", "I've worked in the sector"), ("none", "No experience yet"), ("other", "Something else")],
+                     ("employee", "I've worked in the sector as an employee"), ("none", "No experience yet"), ("other", "Something else")],
     other_label="Tell us more",
     own_brand="Your own brand's name, if you have one", branches_operated="Branches you currently run",
     why_hippo="Why the HIPPO franchise?",
     branches_wanted="How many branches do you plan to open?",
-    branches_wanted_opts=[("one", "One"), ("two-to-five", "Two to five"), ("five-to-ten", "Five to ten"), ("other", "Something else")],
+    branches_wanted_opts=[("one", "One"), ("two-to-five", "Two to five"), ("six-to-ten", "Six to ten"), ("other", "Something else")],
     investment_source="Source of investment",
     investment_source_opts=[("savings", "Personal savings"), ("investors", "Investors or partners"), ("bank", "Bank financing"), ("other", "Something else")],
     investment_amount="Amount you plan to invest", amount_hint="In digits, in Saudi riyals.", unit="SAR",
     start_time="When do you expect to start?",
-    start_time_opts=[("now", "Right away"), ("3-6-months", "In 3 to 6 months"), ("6-12-months", "In 6 to 12 months"), ("1-2-years", "In 1 to 2 years")],
+    start_time_opts=[("now", "Right away"), ("within-6-months", "Within 6 months"), ("6-12-months", "In 6 to 12 months"), ("1-2-years", "In 1 to 2 years")],
     target_cities="Cities you're targeting",
-    has_location="Do you have a site for the shop?",
+    has_location="Do you have a location for the branch?",
     has_location_opts=[("yes", "Yes, I have one"), ("searching", "No, I'm looking"), ("undecided", "Not decided yet")],
     heard_from="How did you hear about the HIPPO franchise?", choose="Choose",
     heard_opts=[("video-ad", "The video ad"), ("social", "HIPPO's social media accounts"), ("friend", "A friend or contact"),
@@ -91,7 +91,7 @@ EN = dict(
     notes="Notes", hp="Leave this field empty",
     consent="I agree to my details being used to contact me about this enquiry.",
     privacy_gap="[Privacy notice link — to be added once HIPPO supplies it]",
-    box_alt="A HIPPO gathering box", done_h="Your enquiry is in.", done_p="Thank you. The HIPPO team will contact you on the details you gave.",
+    box_alt="A HIPPO gathering box", done_h="Your enquiry is in.", done_p="Thank you. The HIPPO team will contact you using the contact details you gave.",
     wa_h="One step left.", wa_p="We've opened WhatsApp with your enquiry written out. Press send there so it reaches us.", back_form="Back to the form",
     demo_flag="<b>Draft — form not connected</b> Nothing was sent and your details were not saved. This only shows how the page will look.",
     demo_label="Once the form is connected, visitors will see this message:", footer="Franchise",
@@ -128,9 +128,9 @@ def page(t):
             f'            <label class="choice"><input type="radio" name="{name}" value="{v}"{"" if opt or i else " required"}><span>{e(l)}</span></label>'
             for i, (v, l) in enumerate(t[name + "_opts"]))
         o = text(name + "_other", label_key="other_label", attrs='maxlength="200"', wrap_id=name + "_other-wrap", hidden=True).replace("        <div", "          <div", 1) if other else ""
-        return f'''        <fieldset class="field" id="{name}-group" aria-describedby="{name}-error">
-          <legend>{lab(name, opt)}</legend>
-          <div class="choices">
+        return f'''        <fieldset class="field" id="{name}-group">
+          <legend id="{name}-legend">{lab(name, opt)}</legend>
+          <div class="choices" role="radiogroup" id="{name}-choices" aria-labelledby="{name}-legend" aria-describedby="{name}-error"{"" if opt else ' aria-required="true"'}>
 {rows}
           </div>
           <p class="error" id="{name}-error" hidden></p>
@@ -187,8 +187,8 @@ def page(t):
       <noscript><p>{e(t["noscript"])}</p></noscript>
 
       <div class="steps" id="steps" data-step="1">
-        <p class="steps-text" id="steps-text" tabindex="-1"><span class="steps-count">{e(t["step_word"])} <span id="step-now">1</span> {e(t["of"])} 2</span> <span class="steps-name" id="step-name" data-s1="{e(t["s1"])}" data-s2="{e(t["s2"])}">{e(t["s1"])}</span></p>
-        <div class="steps-bar" aria-hidden="true"><span></span><span></span></div>
+        <p class="steps-text" id="steps-text" tabindex="-1"><span class="steps-count">{e(t["step_word"])} <span id="step-now">1</span> {e(t["of"])} 3</span> <span class="steps-name" id="step-name" data-s1="{e(t["s1"])}" data-s2="{e(t["s2"])}" data-s3="{e(t["s3"])}">{e(t["s1"])}</span></p>
+        <div class="steps-bar" aria-hidden="true"><span></span><span></span><span></span></div>
       </div>
 
       <form id="enquiry-form" novalidate>
@@ -196,12 +196,21 @@ def page(t):
 {text("full_name", attrs='autocomplete="name" maxlength="120"')}{text("profession", attrs='autocomplete="organization-title" maxlength="120"')}{text("age", hint="age_hint", cls="ltr-value short", attrs=num + ' maxlength="3"')}{text("company_name", opt=True, attrs='autocomplete="organization" maxlength="160"')}{text("company_website", opt=True, cls="ltr-value", attrs='inputmode="url" autocomplete="url" autocapitalize="none" spellcheck="false" maxlength="200"')}{text("mobile", hint="mobile_hint", cls="ltr-value", attrs='inputmode="tel" autocomplete="tel" maxlength="24"').replace('type="text" id="mobile"', 'type="tel" id="mobile"')}{text("email", cls="ltr-value", attrs='inputmode="email" autocomplete="email" autocapitalize="none" spellcheck="false" maxlength="160"').replace('type="text" id="email"', 'type="email" id="email"')}
         <p class="form-alert" id="alert-1" role="alert" tabindex="-1" hidden></p>
         <div class="actions">
-          <button class="submit" id="next-btn" type="button">{e(t["next"])}</button>
+          <button class="submit" id="next-1" type="button" data-next="2">{e(t["next"])}</button>
         </div>
        </div>
 
        <div class="step" id="step-2" role="group" aria-labelledby="steps-text" hidden>
-{radios("experience", other=True)}{text("own_brand", opt=True, attrs='autocomplete="off" maxlength="160"')}{text("branches_operated", opt=True, cls="ltr-value short", attrs=num + ' maxlength="5"')}{text("why_hippo", tag="textarea", attrs='rows="4" maxlength="1500"')}{radios("branches_wanted", other=True)}{radios("investment_source", other=True)}{text("investment_amount", hint="amount_hint", cls="ltr-value", attrs=num + ' maxlength="20"')}{radios("start_time")}{text("target_cities", attrs='autocomplete="off" maxlength="300"')}{radios("has_location", opt=True)}
+{radios("experience", other=True)}{text("own_brand", opt=True, attrs='autocomplete="off" maxlength="160"')}{text("branches_operated", opt=True, cls="ltr-value short", attrs=num + ' maxlength="5"')}{text("why_hippo", tag="textarea", attrs='rows="4" maxlength="1500"')}
+        <p class="form-alert" id="alert-2" role="alert" tabindex="-1" hidden></p>
+        <div class="actions">
+          <button class="again back" type="button" data-prev="1">{e(t["back"])}</button>
+          <button class="submit" id="next-2" type="button" data-next="3">{e(t["next"])}</button>
+        </div>
+       </div>
+
+       <div class="step" id="step-3" role="group" aria-labelledby="steps-text" hidden>
+{radios("branches_wanted", other=True)}{radios("investment_source", other=True)}{text("investment_amount", hint="amount_hint", cls="ltr-value", attrs=num + ' maxlength="20"')}{radios("start_time")}{text("target_cities", attrs='autocomplete="off" maxlength="300"')}{radios("has_location", opt=True)}
         <div class="field">
           <label for="heard_from">{lab("heard_from", True)}</label>
           <select id="heard_from" name="heard_from">
@@ -211,8 +220,8 @@ def page(t):
         </div>
 {text("notes", opt=True, tag="textarea", attrs='rows="3" maxlength="1500"')}
         <div class="hp" aria-hidden="true">
-          <label for="company_website_2">{e(t["hp"])}</label>
-          <input type="text" id="company_website_2" name="hp_field" tabindex="-1" autocomplete="off">
+          <label for="f-check">{e(t["hp"])}</label>
+          <input type="text" id="f-check" name="f_check" tabindex="-1" autocomplete="off">
         </div>
 
         <div class="field">
@@ -224,9 +233,9 @@ def page(t):
           <p class="error" id="consent-error" hidden></p>
         </div>
 
-        <p class="form-alert" id="alert-2" role="alert" tabindex="-1" hidden></p>
+        <p class="form-alert" id="alert-3" role="alert" tabindex="-1" hidden></p>
         <div class="actions">
-          <button class="again back" id="back-btn" type="button">{e(t["back"])}</button>
+          <button class="again back" id="back-btn" type="button" data-prev="2">{e(t["back"])}</button>
           <button class="submit" id="submit-btn" type="submit">{e(t["submit"])}</button>
         </div>
        </div>
