@@ -15,6 +15,7 @@ here = os.path.dirname(os.path.abspath(__file__))
 out = os.path.dirname(here)
 icc = ImageCms.ImageCmsProfile(ImageCms.createProfile("sRGB")).tobytes()
 dirs = [a for a in sys.argv[1:]] or ['a', 'b']
+VER = {'a': 'v03', 'b': 'v02'}
 
 
 def lin(c):
@@ -30,7 +31,7 @@ def lum(rgb):
 worst = {}
 for d in dirs:
     for fmt, size in (("post", (1080, 1350)), ("story", (1080, 1920))):
-        name = f"tbc-restaurants-company_job-advert_{fmt}-direction-{d}_ar_v02"
+        name = f"tbc-restaurants-company_job-advert_{fmt}-direction-{d}_ar_{VER[d]}"
         raw = Image.open(os.path.join(here, name + "_raw.png")).convert("RGB")
         assert raw.size == size, raw.size
         p = os.path.join(out, name + ".png")

@@ -6,11 +6,12 @@ const path = require('path');
 const fs = require('fs');
 const dir = path.resolve(__dirname, '..');
 const only = process.argv.slice(2).filter(a => !a.startsWith('--'));
+const VER = { a: 'v03', b: 'v02' }; // current version per direction
 const jobs = [];
 for (const d of ['a', 'b']) {
   if (only.length && !only.includes(d)) continue;
-  jobs.push({ name: `tbc-restaurants-company_job-advert_post-direction-${d}_ar_v02`, w: 1080, h: 1350, safeTop: 36, safeBottom: 1314 });
-  jobs.push({ name: `tbc-restaurants-company_job-advert_story-direction-${d}_ar_v02`, w: 1080, h: 1920, safeTop: 290, safeBottom: 1580 });
+  jobs.push({ name: `tbc-restaurants-company_job-advert_post-direction-${d}_ar_${VER[d]}`, w: 1080, h: 1350, safeTop: 36, safeBottom: 1314 });
+  jobs.push({ name: `tbc-restaurants-company_job-advert_story-direction-${d}_ar_${VER[d]}`, w: 1080, h: 1920, safeTop: 290, safeBottom: 1580 });
 }
 const COPY = [
   'فرصة وظيفية',
@@ -40,6 +41,7 @@ const SEL = '.kicker,h1,.sector,.tag,.block h2,.block li,.apply p,.email';
     const page = await browser.newPage({ viewport: { width: j.w, height: j.h }, deviceScaleFactor: 1 });
     await page.goto('file://' + path.join(dir, j.name + '.html'));
     await page.evaluate(() => document.fonts.ready);
+    await page.evaluate(() => Promise.all([...document.images].map(i => i.decode().catch(() => {}))));
     const r = await page.evaluate(({ COPY, SEL, j }) => {
       const out = { issues: [], info: {}, texts: [] };
       const norm = s => s.replace(/\s+/g, ' ').trim();
@@ -48,11 +50,14 @@ const SEL = '.kicker,h1,.sector,.tag,.block h2,.block li,.apply p,.email';
       if (JSON.stringify(units) !== JSON.stringify(COPY)) out.issues.push('COPY MISMATCH: ' + JSON.stringify(units));
       // no visible text anywhere else (svg <text>, pseudo content, stray nodes)
       if (norm(document.body.innerText) .replace(/\s/g, '') !== units.join('').replace(/\s/g, '')) out.issues.push('extra visible text: ' + norm(document.body.innerText).slice(0, 200));
-      if (document.querySelector('svg text, img, image')) out.issues.push('svg text / raster image present');
+      if (document.querySelector('svg text, svg image')) out.issues.push('svg text / svg image present');
+      // the only raster allowed is the client's burger photograph, shown at its own aspect ratio
+      const imgs = [...document.querySelectorAll('img')];
+      for (const im of imgs) { const ok = /assets\/tbc-restaurants-company_burger-photo_client-supplied\.png$/.test(im.getAttribute('src')); const ar = im.naturalWidth / im.naturalHeight, shown = im.offsetWidth / im.offsetHeight; if (!ok || !im.naturalWidth || Math.abs(ar - shown) > 0.01) out.issues.push('image problem: ' + im.getAttribute('src') + ' ' + ar.toFixed(3) + ' vs ' + shown.toFixed(3)); const cs = getComputedStyle(im); out.info.photo = im.offsetWidth + 'x' + im.offsetHeight + ' of ' + im.naturalWidth + 'x' + im.naturalHeight; if (/hue|saturate|sepia|invert|contrast|brightness/.test(cs.filter)) out.issues.push('photo is colour-filtered'); }
       out.info.fonts = [...document.fonts].filter(f => f.status === 'loaded').map(f => f.family + ' ' + f.weight);
       const em = document.querySelector('.email'), ecs = getComputedStyle(em);
       if (em.getAttribute('dir') !== 'ltr' || ecs.direction !== 'ltr' || ecs.unicodeBidi !== 'isolate') out.issues.push('email direction');
-      const leaves = [...document.querySelectorAll('.kicker span,h1 span,.sector,.tag span,.block h2,.block li,.apply p,.email')];
+      const leaves = [...document.querySelectorAll('.kicker span,h1 .a,h1 .b1,h1 .b2,h1 .b:not(:has(span)),.sector,.tag span,.block h2,.block li,.apply p,.email')];
       const rects = [];
       const nLinesOf = ls => Math.max(1, new Set(ls.map(q => Math.round(q.top / 6))).size);
       for (const e of leaves) {
