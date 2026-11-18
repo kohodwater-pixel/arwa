@@ -1,10 +1,4 @@
 scroll state [ 0, 0, 1080, 1920 ]
 photos: 7 all client-supplied, aspect kept
 copy/dir check: ok | fonts: Tajawal 500, Tajawal 700, Tajawal 800
-frame 0 / 720 0s
-frame 100 / 720 15s
-frame 200 / 720 34s
-frame 300 / 720 53s
-frame 400 / 720 69s
-frame 500 / 720 83s
-frame 600 / 720 99s
+frame 0 / 705 0s

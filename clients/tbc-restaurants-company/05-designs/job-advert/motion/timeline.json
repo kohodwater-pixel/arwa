@@ -1,29 +1,212 @@
 {
-  "_note": "The ONE place to retime the film. All values are seconds. Scene 'start' values are film times; everything inside a scene is an offset from that scene's start. 'end' is informational (a scene ends where the next starts). v04 is timed to voice-over take 1 (audio/tbc-restaurants-company_job-advert_voiceover-take1_ar_v02.mp3), which is placed at audio_offset in the film; 'vo_at' is the measured film time of each phrase (silencedetect at -35 dB, plus the offset). Word offsets inside the headline phrase are estimated from the phrase length, not measured per word.",
-  "fps": 30,
-  "duration": 24.0,
-  "audio_offset": 0.15,
-  "scenes": {
-    "hook": {
-      "start": 0.0, "end": 4.0,
-      "vo": "تحب التسويق وعندك حس إبداعي؟ هذي فرصتك!", "vo_at": [0.15, 2.81],
-      "cues": { "swipes": [0.8, 1.42, 2.08], "fire": [0.62, 1.2, 1.82], "kicker": 2.6, "pop": 2.86 }
-    },
-    "headline": {
-      "start": 4.0, "end": 8.55,
-      "vo": "مطلوب موظف أو موظفة تسويق وإدارة حسابات التواصل الاجتماعي", "vo_at": [4.14],
-      "words": [0.45, 1.55, 2.15, 2.65, 3.15, 3.7]
-    },
-    "sector": { "start": 8.55, "end": 11.2, "vo": "لشركة متخصصة في قطاع المطاعم", "vo_at": [8.77], "line": 0.1 },
-    "require": {
-      "start": 11.2, "end": 17.3,
-      "vo": "خبرة لا تقل عن ثلاث سنوات، وخبرة التصميم شرط أساسي، والراتب مجزي", "vo_at": [11.53, 13.77, 16.24],
-      "items": [0.3, 2.45, 4.9]
-    },
-    "apply": {
-      "start": 17.3, "end": 24.0,
-      "vo": "أرسل سيرتك الذاتية وسابقة أعمالك على الإيميل اللي قدامك، وننتظرك!", "vo_at": [17.85, 21.96],
-      "sentence": 0.5, "email": 1.6
-    }
+ "_note": "The ONE place to retime the film. All values are seconds. Scene 'start' values are film times; everything inside a scene is an offset from that scene's start ('end' is informational). v04 is timed to voice-over take 2, placed at audio_offset in the film; 'voice' lists each phrase's measured film time. The 'sfx' list is DERIVED from the keyframes by _work/make_timeline_v04.py: re-run it after changing any time. Word offsets inside the headline phrase come from the short dips found inside that phrase (at -28/-24 dB) and are less certain than the phrase starts.",
+ "fps": 30,
+ "duration": 23.5,
+ "audio_offset": 0.15,
+ "voice_file": "audio/tbc-restaurants-company_job-advert_voiceover-take2_ar_v02.mp3",
+ "voice": [
+  {
+   "text": "تحب التسويق وعندك حس إبداعي؟",
+   "start": 0.15,
+   "end": 2.44
+  },
+  {
+   "text": "هذي فرصتك!",
+   "start": 2.81,
+   "end": 3.8
+  },
+  {
+   "text": "مطلوب موظف أو موظفة تسويق وإدارة حسابات التواصل الاجتماعي",
+   "start": 4.14,
+   "end": 8.46
+  },
+  {
+   "text": "لشركة متخصصة في قطاع المطاعم",
+   "start": 8.73,
+   "end": 11.0
+  },
+  {
+   "text": "خبرة لا تقل عن ثلاث سنوات",
+   "start": 11.36,
+   "end": 13.25
+  },
+  {
+   "text": "وخبرة التصميم شرط أساسي",
+   "start": 13.47,
+   "end": 15.44
+  },
+  {
+   "text": "والراتب مجزي",
+   "start": 15.8,
+   "end": 16.96
+  },
+  {
+   "text": "أرسل سيرتك الذاتية وسابقة أعمالك على الإيميل اللي قدامك",
+   "start": 17.3,
+   "end": 21.0
+  },
+  {
+   "text": "وننتظرك!",
+   "start": 21.32,
+   "end": 22.2
   }
+ ],
+ "scenes": {
+  "hook": {
+   "start": 0.0,
+   "end": 4.0,
+   "cues": {
+    "swipes": [
+     0.8,
+     1.42,
+     2.08
+    ],
+    "fire": [
+     0.62,
+     1.2,
+     1.82
+    ],
+    "kicker": 2.6,
+    "pop": 2.7
+   }
+  },
+  "headline": {
+   "start": 4.0,
+   "end": 8.5,
+   "words": [
+    0.45,
+    1.6,
+    2.12,
+    2.6,
+    3.22,
+    3.7
+   ]
+  },
+  "sector": {
+   "start": 8.5,
+   "end": 11.05,
+   "line": 0.1
+  },
+  "require": {
+   "start": 11.05,
+   "end": 16.9,
+   "items": [
+    0.28,
+    2.3,
+    4.45
+   ]
+  },
+  "apply": {
+   "start": 16.9,
+   "end": 23.5,
+   "sentence": 0.45,
+   "email": 1.55
+  }
+ },
+ "sfx": [
+  {
+   "t": 0,
+   "file": "audio/sfx/sfx_whoosh.mp3",
+   "gain_db": -15.5,
+   "peak_dbfs": -23,
+   "keyframe": 0.0,
+   "marks": "phone entrance starts"
+  },
+  {
+   "t": 0.8,
+   "file": "audio/sfx/sfx_swipe.mp3",
+   "gain_db": -15.3,
+   "peak_dbfs": -17,
+   "keyframe": 0.8,
+   "marks": "feed swipe 1 starts"
+  },
+  {
+   "t": 1.42,
+   "file": "audio/sfx/sfx_swipe.mp3",
+   "gain_db": -15.3,
+   "peak_dbfs": -17,
+   "keyframe": 1.42,
+   "marks": "feed swipe 2 starts"
+  },
+  {
+   "t": 2.08,
+   "file": "audio/sfx/sfx_swipe.mp3",
+   "gain_db": -15.3,
+   "peak_dbfs": -17,
+   "keyframe": 2.08,
+   "marks": "feed swipe 3 starts"
+  },
+  {
+   "t": 2.68,
+   "file": "audio/sfx/sfx_pop.mp3",
+   "gain_db": -9.5,
+   "peak_dbfs": -11,
+   "keyframe": 2.7,
+   "marks": "burger pop-out starts (kicker is mid-pop)"
+  },
+  {
+   "t": 3.78,
+   "file": "audio/sfx/sfx_whoosh.mp3",
+   "gain_db": -10.5,
+   "peak_dbfs": -18,
+   "keyframe": 4.0,
+   "marks": "scene change: hook to headline"
+  },
+  {
+   "t": 8.36,
+   "file": "audio/sfx/sfx_whoosh.mp3",
+   "gain_db": -10.5,
+   "peak_dbfs": -18,
+   "keyframe": 8.5,
+   "marks": "scene change: headline to sector"
+  },
+  {
+   "t": 10.95,
+   "file": "audio/sfx/sfx_whoosh.mp3",
+   "gain_db": -11.5,
+   "peak_dbfs": -19,
+   "keyframe": 11.05,
+   "marks": "scene change: sector to requirements"
+  },
+  {
+   "t": 11.3,
+   "file": "audio/sfx/sfx_pop.mp3",
+   "gain_db": -11.5,
+   "peak_dbfs": -13,
+   "keyframe": 11.33,
+   "marks": "item 1 appears («خبرة لا تقل عن 3 سنوات»)"
+  },
+  {
+   "t": 13.35,
+   "file": "audio/sfx/sfx_pop.mp3",
+   "gain_db": -11.5,
+   "peak_dbfs": -13,
+   "keyframe": 13.35,
+   "marks": "item 2 appears (design card)"
+  },
+  {
+   "t": 15.69,
+   "file": "audio/sfx/sfx_stamp.mp3",
+   "gain_db": -8.5,
+   "peak_dbfs": -10,
+   "keyframe": 15.69,
+   "marks": "salary badge lands (stamp reaches size)"
+  },
+  {
+   "t": 16.88,
+   "file": "audio/sfx/sfx_whoosh.mp3",
+   "gain_db": -10.5,
+   "peak_dbfs": -18,
+   "keyframe": 16.9,
+   "marks": "scene change: end card builds"
+  },
+  {
+   "t": 18.45,
+   "file": "audio/sfx/sfx_chime.mp3",
+   "gain_db": -8.3,
+   "peak_dbfs": -14,
+   "keyframe": 18.45,
+   "marks": "email pill starts to rise (settles 0.5 s later)"
+  }
+ ]
 }
