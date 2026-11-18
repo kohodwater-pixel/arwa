@@ -1,0 +1,133 @@
+/* Job advert — shared styles for post (1080x1350) and story (1080x1920).
+   NO BRAND SUPPLIED: this is a neutral palette. To re-skin, change only the
+   variables in the first :root block. */
+
+:root {
+  /* ---- palette (replace with the brand palette) ---- */
+  --ground: #15302A;        /* deep warm green: canvas */
+  --ground-tint: #21443B;   /* decorative rings, hairlines on the ground */
+  --text: #F7F1E5;          /* off-white: headline and body */
+  --text-soft: #D8D1C0;     /* sector line */
+  --accent: #F2A93B;        /* saffron: kicker, headline line 2, bullets, apply band */
+  --on-accent: #15302A;     /* text on the accent colour */
+
+  /* ---- type ---- */
+  --font: "IBM Plex Sans Arabic", sans-serif;
+}
+
+@font-face { font-family: "IBM Plex Sans Arabic"; font-weight: 400; src: url("../fonts/IBMPlexSansArabic-Regular.ttf") format("truetype"); }
+@font-face { font-family: "IBM Plex Sans Arabic"; font-weight: 500; src: url("../fonts/IBMPlexSansArabic-Medium.ttf") format("truetype"); }
+@font-face { font-family: "IBM Plex Sans Arabic"; font-weight: 600; src: url("../fonts/IBMPlexSansArabic-SemiBold.ttf") format("truetype"); }
+@font-face { font-family: "IBM Plex Sans Arabic"; font-weight: 700; src: url("../fonts/IBMPlexSansArabic-Bold.ttf") format("truetype"); }
+
+/* ---- format scales ---- */
+body.post {
+  --w: 1080px; --h: 1350px;
+  --margin: 64px;
+  --safe-top: 56px; --safe-bottom: 0px;
+  --kicker: 34px;
+  --h1-a: 116px; --h1-b: 62px;
+  --sector: 32px;
+  --block-title: 36px;
+  --body: 30px; --body-lh: 1.6;
+  --apply: 31px; --email: 60px;
+  --icon: 46px;
+  --block-gap: 14px;
+}
+body.story {
+  --w: 1080px; --h: 1920px;
+  --margin: 72px;
+  --safe-top: 250px; --safe-bottom: 340px;
+  --kicker: 38px;
+  --h1-a: 122px; --h1-b: 62px;
+  --sector: 34px;
+  --block-title: 40px;
+  --body: 32px; --body-lh: 1.6;
+  --apply: 30px; --email: 64px;
+  --icon: 52px;
+  --block-gap: 14px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: var(--w); height: var(--h); }
+body {
+  position: relative; overflow: hidden;
+  background: var(--ground); color: var(--text);
+  font-family: var(--font); font-weight: 400;
+  letter-spacing: 0;               /* never track Arabic */
+  font-synthesis: none;            /* no faux bold / italic */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- decoration: plate rings bleeding off the left edge ---- */
+.rings { position: absolute; left: 0; top: 0; width: var(--w); height: var(--h); pointer-events: none; }
+.rings circle { fill: none; stroke: var(--ground-tint); stroke-width: 3; }
+
+/* ---- main column ---- */
+.sheet {
+  position: absolute; inset: 0;
+  padding: var(--safe-top) var(--margin) var(--safe-bottom);
+  display: flex; flex-direction: column;
+}
+
+.top { display: flex; align-items: center; justify-content: space-between; }
+.kicker {
+  display: flex; align-items: center; gap: 18px;
+  font-size: var(--kicker); font-weight: 600; color: var(--accent); line-height: 1.5;
+}
+.kicker::before { content: ""; width: 56px; height: 5px; background: var(--accent); border-radius: 3px; }
+
+h1 { margin-top: 18px; font-weight: 700; }
+h1 .a { display: block; font-size: var(--h1-a); line-height: 1.22; color: var(--text); white-space: nowrap; }
+h1 .b { display: block; font-size: var(--h1-b); line-height: 1.4; color: var(--accent); white-space: nowrap; }
+
+.meta { display: flex; align-items: center; gap: 24px; margin-top: 14px; }
+.sector { font-size: var(--sector); font-weight: 500; color: var(--text-soft); line-height: 1.6; white-space: nowrap; }
+.tag {
+  display: inline-flex; align-items: center; gap: 12px;
+  background: var(--accent); color: var(--on-accent);
+  font-size: var(--sector); font-weight: 700; line-height: 1.7;
+  padding: 4px 26px 6px; border-radius: 999px; white-space: nowrap;
+}
+.tag svg { width: 1.2em; height: 1.2em; }
+
+.rule { height: 2px; background: var(--ground-tint); margin-top: 22px; }
+
+/* ---- lists area: text right, icon rail left ---- */
+.lists { position: relative; margin-top: 16px; flex: 1; display: flex; flex-direction: column; justify-content: flex-start; }
+.block + .block { margin-top: var(--block-gap); }
+.block h2 { font-size: var(--block-title); font-weight: 700; color: var(--accent); line-height: 1.6; }
+.block ul { list-style: none; }
+.block li {
+  position: relative; padding-inline-start: 34px;
+  font-size: var(--body); line-height: var(--body-lh); color: var(--text);
+}
+.block li::before {
+  content: ""; position: absolute; inset-inline-start: 2px; top: calc(var(--body) * var(--body-lh) / 2 - 6px);
+  width: 12px; height: 12px; background: var(--accent); border-radius: 3px; transform: rotate(45deg);
+}
+
+.rail {
+  position: absolute; inset-inline-end: 0; top: 14px; bottom: 18px;
+  display: flex; flex-direction: column; justify-content: space-between; align-items: center;
+  color: var(--accent);
+}
+.rail svg { width: var(--icon); height: var(--icon); }
+.ico { fill: none; stroke: currentColor; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---- apply band ---- */
+.apply { background: var(--accent); color: var(--on-accent); }
+.apply p { font-size: var(--apply); font-weight: 700; line-height: 1.6; white-space: nowrap; }
+/* the call to action: email, LTR, accent on the ground colour */
+.email {
+  display: block; direction: ltr; unicode-bidi: isolate; text-align: center; white-space: nowrap;
+  margin-top: 12px; padding: 8px 24px 12px; border-radius: 18px;
+  background: var(--ground); color: var(--accent);
+  font-size: var(--email); font-weight: 700; line-height: 1.4;
+}
+body.post .apply { margin: 0 calc(var(--margin) * -1); padding: 16px var(--margin) 30px; }
+body.story .apply { border-radius: 26px; padding: 18px 36px 32px; }
+body.story .rule { margin-top: 22px; }
+body.story .lists { margin-top: 14px; }
+body.story h1 { margin-top: 16px; }
+body.story .meta { margin-top: 14px; }

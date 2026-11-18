@@ -1,0 +1,96 @@
+/* Direction A — "Phone on the pass": illustration-led.
+   Palette is neutral (no brand supplied); change the variables to re-skin.
+   Colours used inside the SVG illustration are set in the HTML <defs>/<style>. */
+
+:root {
+  --aubergine: #2B1430;     /* ground and ink */
+  --aubergine-deep: #1B0B1F;
+  --tomato: #E5412D;
+  --saffron: #FFB52E;
+  --cream: #FFF3DC;
+  --font: "Tajawal", sans-serif;
+}
+
+body.post {
+  --side: 48px;
+  --head-top: 58px; --head-w: 560px;
+  --kicker: 32px; --h1-a: 104px; --h1-b: 70px;
+  --sector: 31px; --tag: 34px;
+  --cards-top: 610px; --card-h: 470px;
+  --card-title: 34px; --body: 30px; --body-lh: 1.6;
+  --apply-top: 1102px; --apply: 30px; --email: 66px; --email-h: 124px;
+}
+body.story {
+  --side: 48px;
+  --head-top: 312px; --head-w: 560px;
+  --kicker: 34px; --h1-a: 104px; --h1-b: 70px;
+  --sector: 31px; --tag: 36px;
+  --cards-top: 880px; --card-h: 478px;
+  --card-title: 35px; --body: 30px; --body-lh: 1.6;
+  --apply-top: 1384px; --apply: 30px; --email: 66px; --email-h: 124px;
+}
+
+body {
+  font-family: var(--font); color: var(--cream);
+  background: radial-gradient(120% 90% at 18% 24%, #4B2050 0%, var(--aubergine) 46%, var(--aubergine-deep) 100%);
+}
+
+/* ---- header column (right) ---- */
+.head { position: absolute; inset-inline-start: 56px; top: var(--head-top); width: var(--head-w); }
+.kicker {
+  display: inline-flex; align-items: center; gap: 14px;
+  font-size: var(--kicker); font-weight: 800; line-height: 1.5; color: var(--saffron);
+}
+.kicker svg { width: 1.7em; height: 1.7em; flex: none; }
+h1 { margin-top: 14px; font-weight: 800; }
+h1 .a { font-size: var(--h1-a); line-height: 1.16; color: var(--cream); text-shadow: 0 6px 0 rgba(27,11,31,.55); }
+h1 .b { font-size: var(--h1-b); line-height: 1.26; color: var(--saffron); text-shadow: 0 4px 0 rgba(27,11,31,.55); }
+.sector { margin-top: 14px; font-size: var(--sector); font-weight: 500; line-height: 1.6; color: var(--cream); white-space: nowrap; }
+.tag {
+  display: inline-flex; align-items: center; gap: 12px; margin-top: 12px;
+  background: var(--tomato); color: #fff;
+  font-size: var(--tag); font-weight: 800; line-height: 1.5; white-space: nowrap;
+  padding: 9px 30px 7px; border-radius: 999px;
+  box-shadow: 0 8px 0 #A82A1B, 0 18px 28px rgba(0,0,0,.35);
+}
+.tag svg { width: 1.15em; height: 1.15em; flex: none; margin-top: -4px; }
+
+/* ---- list cards ---- */
+.cards {
+  position: absolute; left: var(--side); right: var(--side); top: var(--cards-top);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+}
+.block {
+  position: relative; height: var(--card-h);
+  background: var(--cream); color: var(--aubergine);
+  border-radius: 34px; padding: 50px 28px 22px 24px;
+  box-shadow: 0 10px 0 #E2CFA8, 0 26px 44px rgba(0,0,0,.45);
+}
+.block h2 {
+  position: absolute; top: -26px; inset-inline-start: 24px;
+  font-size: var(--card-title); font-weight: 800; line-height: 1.5;
+  background: var(--saffron); color: var(--aubergine);
+  padding: 7px 28px 3px; border-radius: 999px;
+  box-shadow: 0 6px 0 #D98E0E;
+}
+.block li {
+  position: relative; padding-inline-start: 30px;
+  font-size: var(--body); font-weight: 500; line-height: var(--body-lh);
+}
+.block li::before {
+  content: ""; position: absolute; inset-inline-start: 2px; top: calc(var(--body) * var(--body-lh) / 2 - 9px);
+  width: 14px; height: 14px; border-radius: 50%; background: var(--tomato);
+}
+
+/* ---- apply: sentence + email pill (the call to action) ---- */
+.apply { position: absolute; left: var(--side); right: var(--side); top: var(--apply-top); text-align: center; }
+.apply p { font-size: var(--apply); font-weight: 700; line-height: 1.6; color: var(--cream); white-space: nowrap; }
+.pill {
+  position: relative; margin-top: 12px; height: var(--email-h);
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(180deg, #FFC653 0%, var(--saffron) 60%, #F7A416 100%);
+  border-radius: 999px;
+  box-shadow: 0 10px 0 #C97F06, 0 26px 40px rgba(0,0,0,.45), inset 0 3px 0 rgba(255,255,255,.45);
+}
+.pill .send { position: absolute; left: 14px; top: 14px; width: calc(var(--email-h) - 28px); height: calc(var(--email-h) - 28px); }
+.email { font-family: var(--font); font-size: var(--email); font-weight: 800; line-height: 1.2; color: var(--aubergine); padding-top: 8px; }

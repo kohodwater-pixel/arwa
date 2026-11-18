@@ -1,0 +1,7 @@
+# Archive — job advert
+
+| Date | Files | Reason |
+|---|---|---|
+| 2026-11-18 | `tbc-restaurants-company_job-advert_post_ar_v01.png/.html`, `tbc-restaurants-company_job-advert_story_ar_v01.png/.html`, `job-advert.css` | Superseded by richer directions (v02 directions A, B, C) after client feedback that v01 read as a plain text poster. |
+
+`job-advert.css` here is the v01 stylesheet with only its font paths changed to `../fonts/` so the archived HTML still opens.

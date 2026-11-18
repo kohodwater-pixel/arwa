@@ -1,0 +1,27 @@
+/* Shared base for the v02 directions: fonts, reset, Arabic rules. */
+
+@font-face { font-family: "IBM Plex Sans Arabic"; font-weight: 400; src: url("fonts/IBMPlexSansArabic-Regular.ttf") format("truetype"); }
+@font-face { font-family: "IBM Plex Sans Arabic"; font-weight: 500; src: url("fonts/IBMPlexSansArabic-Medium.ttf") format("truetype"); }
+@font-face { font-family: "IBM Plex Sans Arabic"; font-weight: 600; src: url("fonts/IBMPlexSansArabic-SemiBold.ttf") format("truetype"); }
+@font-face { font-family: "IBM Plex Sans Arabic"; font-weight: 700; src: url("fonts/IBMPlexSansArabic-Bold.ttf") format("truetype"); }
+@font-face { font-family: "Tajawal"; font-weight: 400; src: url("fonts/Tajawal-Regular.ttf") format("truetype"); }
+@font-face { font-family: "Tajawal"; font-weight: 500; src: url("fonts/Tajawal-Medium.ttf") format("truetype"); }
+@font-face { font-family: "Tajawal"; font-weight: 700; src: url("fonts/Tajawal-Bold.ttf") format("truetype"); }
+@font-face { font-family: "Tajawal"; font-weight: 800; src: url("fonts/Tajawal-ExtraBold.ttf") format("truetype"); }
+@font-face { font-family: "Cairo"; font-weight: 200 1000; src: url("fonts/Cairo-Variable.ttf") format("truetype"); }
+
+body.post  { --w: 1080px; --h: 1350px; }
+body.story { --w: 1080px; --h: 1920px; }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: var(--w); height: var(--h); }
+body {
+  position: relative; overflow: hidden;
+  letter-spacing: 0;          /* never track Arabic */
+  font-synthesis: none;       /* no faux bold / italic */
+  -webkit-font-smoothing: antialiased;
+}
+ul { list-style: none; }
+.scene { position: absolute; left: 0; top: 0; width: var(--w); height: var(--h); pointer-events: none; }
+.email { direction: ltr; unicode-bidi: isolate; white-space: nowrap; }
+h1 span { display: block; white-space: nowrap; }
