@@ -1,0 +1,8 @@
+[
+  {
+    "name": "bart-franchise",
+    "url": "https://bart-cafe.com/franchise",
+    "ok": false,
+    "error": "page.goto: net::ERR_TUNNEL_CONNECTION_FAILED at https://bart-cafe.com/franchise"
+  }
+]
