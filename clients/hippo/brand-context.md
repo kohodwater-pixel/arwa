@@ -75,3 +75,5 @@
 
 ### Decision log
 - 2026-11-18 — Ad reference check (rule `ad-references.md`) runs before the concept.
+- 2026-11-18 — Ad reference check done: `02-research/ad-references_franchise-motion-ad_2026-11-18.md` (case texts read; films not viewed).
+- 2026-11-18 — Concept and short script v02 presented to client (three directions; agency recommends «حُطّ ثقلك»): `05-designs/motion/hippo_franchise-motion-ad_concept-script_ar_v02.md`. v01 archived after review (three lines reworded, one asset corrected). Lead line set to «خبز خفيف. حضور ثقيل.» by the Creative Director. AWAITING CLIENT: choice of direction, CTA contact details, tone approval, length/format/dialect assumptions, HQ photos.
