@@ -49,3 +49,4 @@ Instagram post 4:5 (1080×1350) and story 9:16 (1080×1920), sRGB PNG, with HTML
 ## Client feedback on v02 direction A — 2026-11-18
 - Put the client's burger photo (`_originals/tbc-restaurants-company_burger-photo_client-supplied.webp`) on the phone screen instead of the drawn burger, fitted properly.
 - Client's judgement: the designs look primitive, not professional. The craft level of direction A must rise (applies to the statics and the motion piece).
+- 2026-11-18: client sent two more food photos for the MOTION graphic: `_originals/tbc-restaurants-company_chicken-roll-photo_client-supplied.webp` (fried-chicken roll) and `_originals/tbc-restaurants-company_cheeseburger-photo_client-supplied.webp` (cheeseburger with pickles). Three client photos are now available; the first burger stays the hero of the statics.
