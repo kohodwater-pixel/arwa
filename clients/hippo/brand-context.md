@@ -82,3 +82,4 @@
 - 2026-11-18 — VO voice: client wants the same "Fahad" voice as in his reference video (file supplied in chat, not stored here). Exact voice ID: TBC.
 - Working direction: «أ» «حُطّ ثقلك» (agency recommendation; client's explicit pick still pending).
 - 2026-11-18 — CLIENT APPROVED direction «أ» «حُطّ ثقلك» (chat reply «نعم حط ثقله وولّد») and approved generating a VO test on ElevenLabs for this client.
+- 2026-11-18 — VO test generated on ElevenLabs (voice "Fahad - Saudi Professional & Warm", id YCN2uLvOoKxKJtRmeub3, model eleven_v4), two takes in `05-designs/motion/audio/`. Not listened to by the agency (no audio review possible in this environment); client to judge voice match and pronunciation.
