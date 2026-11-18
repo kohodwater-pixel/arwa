@@ -1,0 +1,70 @@
+/* Motion graphic, direction A — 1080 x 1920. Layout only: every position,
+   scale, rotation and opacity is driven by motion.js seek(t). No CSS animations. */
+
+@font-face { font-family: "Tajawal"; font-weight: 500; src: url("../fonts/Tajawal-Medium.ttf") format("truetype"); }
+@font-face { font-family: "Tajawal"; font-weight: 700; src: url("../fonts/Tajawal-Bold.ttf") format("truetype"); }
+@font-face { font-family: "Tajawal"; font-weight: 800; src: url("../fonts/Tajawal-ExtraBold.ttf") format("truetype"); }
+
+:root {
+  --aubergine: #2B1430; --aubergine-deep: #1B0B1F;
+  --tomato: #E5412D; --saffron: #FFB52E; --cream: #FFF3DC;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; }
+#frame { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: hidden; contain: strict; direction: rtl; }
+body {
+  position: relative; overflow: hidden;
+  font-family: "Tajawal", sans-serif; color: var(--cream);
+  letter-spacing: 0; font-synthesis: none; -webkit-font-smoothing: antialiased;
+  background: radial-gradient(120% 80% at 50% 42%, #4B2050 0%, var(--aubergine) 48%, var(--aubergine-deep) 100%);
+}
+#stage { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+
+/* every animated HTML item is anchored at its centre by motion.js */
+.it { position: absolute; left: 0; top: 0; white-space: nowrap; opacity: 0; will-change: transform, opacity; }
+
+#kicker { display: flex; align-items: center; gap: 30px; font-size: 92px; font-weight: 800; line-height: 1.4; color: var(--saffron); text-shadow: 0 6px 0 rgba(27,11,31,.55); }
+#kicker svg { width: 150px; height: 150px; flex: none; }
+
+#h1 { font-weight: 800; text-align: center; }
+#h1 .ln { display: block; white-space: nowrap; }
+#h1 .a { font-size: 124px; line-height: 1.2; color: var(--cream); text-shadow: 0 8px 0 rgba(27,11,31,.55); }
+#h1 .b { font-size: 98px; line-height: 1.24; color: var(--saffron); text-shadow: 0 6px 0 rgba(27,11,31,.55); }
+#h1 .w { display: inline-block; opacity: 0; will-change: transform, opacity; }
+
+#sector { font-size: 56px; font-weight: 700; line-height: 1.6; color: var(--cream); }
+
+#tag {
+  display: flex; align-items: center; gap: 28px;
+  background: var(--tomato); color: #fff; font-size: 96px; font-weight: 800; line-height: 1.5;
+  padding: 22px 70px 12px; border-radius: 999px;
+  box-shadow: 0 18px 0 #A82A1B, 0 40px 60px rgba(0,0,0,.4);
+}
+#tag svg { width: 104px; height: 104px; flex: none; margin-top: -12px; }
+
+#design {
+  width: 940px; padding: 34px 40px 30px; text-align: center;
+  background: var(--cream); color: var(--aubergine); border-radius: 44px;
+  box-shadow: 0 14px 0 #E2CFA8, 0 40px 60px rgba(0,0,0,.45);
+}
+#design svg { display: block; width: 860px; height: 150px; margin: 0 auto 8px; }
+#design p { font-size: 58px; font-weight: 800; line-height: 1.5; white-space: nowrap; }
+
+.chip {
+  font-size: 34px; font-weight: 700; line-height: 1.6; color: var(--cream);
+  padding: 10px 34px 6px; border-radius: 999px;
+  background: #4A2350; border: 3px solid rgba(255,243,220,.55);
+  box-shadow: 0 10px 24px rgba(0,0,0,.3);
+}
+
+#applyline { width: 940px; white-space: normal; text-align: center; text-wrap: balance; font-size: 44px; font-weight: 700; line-height: 1.5; color: var(--cream); }
+
+#pill {
+  width: 968px; height: 168px; display: flex; align-items: center; justify-content: center; overflow: hidden;
+  background: linear-gradient(180deg, #FFC653 0%, var(--saffron) 60%, #F7A416 100%);
+  border-radius: 999px;
+  box-shadow: 0 12px 0 #C97F06, 0 34px 50px rgba(0,0,0,.45), inset 0 4px 0 rgba(255,255,255,.45);
+}
+#pill .send { position: absolute; left: 18px; top: 18px; width: 132px; height: 132px; }
+#email { direction: ltr; unicode-bidi: isolate; white-space: nowrap; font-size: 98px; font-weight: 800; line-height: 1.2; color: var(--aubergine); padding: 12px 0 0 110px; }
+#shine { position: absolute; top: -20px; left: 0; width: 150px; height: 220px; background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,.55), rgba(255,255,255,0)); transform: translateX(-300px) skewX(-20deg); }
