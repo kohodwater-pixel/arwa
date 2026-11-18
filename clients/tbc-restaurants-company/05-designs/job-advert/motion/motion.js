@@ -1,4 +1,4 @@
-/* Motion graphic v02, direction A — deterministic timeline.
+/* Motion graphic v03, direction A — deterministic timeline.
    window.initTimeline(json) builds the tracks from timeline.json;
    window.seek(t) puts every element where it belongs at second t.
    Nothing depends on the wall clock, so frame capture is repeatable.
@@ -82,14 +82,14 @@
   function build() {
     tracks.length = 0;
     const CX = 540;
-    const SC = ['headline', 'sector', 'remote', 'apply'];
+    const SC = ['headline', 'sector', 'require', 'apply'];
 
     /* ---------- warm glow follows the hero ---------- */
     add('glow', { init: { x: CX, y: 1010, s: 0.5, o: 0 }, float: { as: 0.03, p: 5 }, moves: [
       ['hook+0', 0.9, { s: 1, o: 1 }, 'out'],
       ['headline+0', 0.9, { y: 1340, s: 0.95 }, 'io'],
       ['sector+0', 0.8, { y: 1300, s: 1.12 }, 'io'],
-      ['remote+0', 0.7, { y: 900, s: 0.9 }, 'io'],
+      ['require+0', 0.7, { y: 860, s: 1.05 }, 'io'],
       ['apply+0', 0.8, { y: 1060, s: 0.86 }, 'io'],
     ] });
 
@@ -114,20 +114,20 @@
       ['hook+3.32', 0.6, { x: CX, y: 936, s: 0.94, r: -3 }, 'back'],
       ['headline+0', 0.9, { y: 1290, s: 0.76 }, 'io'],
       ['sector+0', 0.9, { y: 1372, s: 0.78, r: -2 }, 'io'],
-      ['remote+0', 0.8, { y: 1716, s: 0.5, r: 0 }, 'io'],
-      ['apply+0.1', 0.9, { y: 1062, s: 0.56, r: -2 }, 'softback'],
+      ['require+0', 0.8, { y: 1404, s: 0.5, r: 0 }, 'io'],
+      ['apply+0', 0.8, { y: 1062, s: 0.56, r: -2 }, 'io'],
     ] });
 
     /* ---------- supporting photographs: float in with parallax ---------- */
-    add('roll', { init: { x: -320, y: 1150, s: 0.5, r: -14, o: 1 }, float: { ax: 6, ay: 10, ar: 0.8, p: 5.2, ph: 0.2 }, moves: [
-      ['sector+0.2', 0.9, { x: 205, y: 1078, r: -6 }, 'out'], ['sector+1.1', 1.6, { x: 236 }, 'io'],
-      ['remote+0', 0.8, { x: 186, y: 1692, s: 0.34, r: -4 }, 'io'],
-      ['apply+0.2', 0.9, { x: 196, y: 1022, s: 0.33, r: -8 }, 'softback'],
+    add('roll', { init: { x: -320, y: 1150, s: 0.44, r: -14, o: 1 }, float: { ax: 4, ay: 9, ar: 0.6, p: 5.2, ph: 0.2 }, moves: [
+      ['sector+0.2', 0.9, { x: 252, y: 1082, r: -6 }, 'out'], ['sector+1.1', 1.5, { x: 276 }, 'io'],
+      ['require+0', 0.8, { x: 204, y: 1396, s: 0.33, r: -4 }, 'io'],
+      ['apply+0', 0.8, { x: 204, y: 1022, s: 0.33, r: -8 }, 'io'],
     ] });
-    add('cheese', { init: { x: 1400, y: 1170, s: 0.5, r: 14, o: 1 }, float: { ax: 5, ay: 8, ar: 0.7, p: 4.6, ph: 0.6 }, moves: [
-      ['sector+0.35', 0.9, { x: 868, y: 1092, r: 5 }, 'out'], ['sector+1.25', 1.5, { x: 842 }, 'io'],
-      ['remote+0', 0.8, { x: 894, y: 1696, s: 0.34, r: 3 }, 'io'],
-      ['apply+0.3', 0.9, { x: 884, y: 1026, s: 0.33, r: 6 }, 'softback'],
+    add('cheese', { init: { x: 1400, y: 1170, s: 0.44, r: 14, o: 1 }, float: { ax: 4, ay: 8, ar: 0.6, p: 4.6, ph: 0.6 }, moves: [
+      ['sector+0.35', 0.9, { x: 836, y: 1096, r: 5 }, 'out'], ['sector+1.25', 1.4, { x: 814 }, 'io'],
+      ['require+0', 0.8, { x: 876, y: 1400, s: 0.33, r: 3 }, 'io'],
+      ['apply+0', 0.8, { x: 878, y: 1026, s: 0.33, r: 6 }, 'io'],
     ] });
 
     /* ---------- reactions: a glass card and three hearts fire on each post ---------- */
@@ -149,24 +149,24 @@
     ];
     cards.forEach(([id, t0, s, r, pos], i) => {
       const moves = [['hook+' + t0, 0.5, { s }, 'back'], ['hook+' + t0, 0.15, { o: 1 }, 'out']];
-      SC.forEach((sc, k) => moves.push([sc + '+' + (0.05 + i * 0.08).toFixed(2), 0.95, { x: pos[k + 1][0], y: pos[k + 1][1] }, 'io']));
+      SC.forEach((sc, k) => moves.push([sc + '+' + (0.02 + i * 0.05).toFixed(2), 0.6, { x: pos[k + 1][0], y: pos[k + 1][1] }, 'io']));
       add(id, { init: { x: pos[0][0], y: pos[0][1], s: 0, r, o: 0 }, moves, float: { ax: 6, ay: 11, ar: 1.5, p: 4 + i * 0.7, ph: i * 0.3 } });
     });
     add('cardC', { init: { x: 892, y: 930, s: 0, r: 4, o: 0 }, float: { ay: 8, p: 3.6 }, moves: [
       ['hook+2.6', 0.5, { s: 1.05 }, 'back'], ['hook+2.6', 0.15, { o: 1 }, 'out'], ['hook+3.3', 0.4, { y: 870, o: 0 }, 'in'],
     ] });
     const am = [
-      [[150, 566], [86, 900], [58, 934], [56, 640], [58, 884]],
-      [[934, 800], [990, 1150], [1022, 940], [1024, 700], [1022, 892]],
-      [[110, 1016], [70, 1290], [70, 1500], [50, 1050], [350, 1700]],
-      [[960, 1244], [1004, 1500], [1012, 1524], [1030, 1100], [730, 1722]],
+      [[150, 566], [86, 900], [58, 934], [56, 596], [58, 884]],
+      [[934, 800], [990, 1150], [1022, 940], [1024, 606], [1022, 892]],
+      [[110, 1016], [70, 1290], [70, 1500], [56, 1010], [350, 1700]],
+      [[960, 1244], [1004, 1500], [1012, 1524], [1026, 1020], [730, 1722]],
       [[172, 1330], [140, 1560], [330, 1650], [330, 180], [540, 1790]],
       [[904, 476], [962, 884], [762, 1660], [760, 170], [80, 1600]],
     ];
     am.forEach((pos, i) => {
       const st = 'hook+' + (3.38 + i * 0.05).toFixed(2);
       const moves = [[st, 0.05, { o: 1 }, 'out'], [st, 0.7, { x: pos[0][0], y: pos[0][1], s: 1, r: (i % 2 ? 14 : -14) }, 'back']];
-      SC.forEach((sc, k) => moves.push([sc + '+' + (0.04 + (i % 3) * 0.07).toFixed(2), 1.0, { x: pos[k + 1][0], y: pos[k + 1][1] }, 'io']));
+      SC.forEach((sc, k) => moves.push([sc + '+' + (0.02 + (i % 3) * 0.04).toFixed(2), 0.6, { x: pos[k + 1][0], y: pos[k + 1][1] }, 'io']));
       add('am' + i, { init: { x: CX, y: 936, s: 0, r: 0, o: 0 }, moves, float: { ax: 6 + (i % 3) * 3, ay: 12 + (i % 4) * 3, ar: 4, p: 3.2 + (i % 5) * 0.5, ph: i * 0.19 } });
     });
 
@@ -174,16 +174,16 @@
     add('kicker', { init: { x: CX, y: 372, s: 0, o: 1 }, moves: [
       ['hook+0.45', 0.55, { s: 1 }, 'back'],
       ['headline+0', 0.7, { y: 334, s: 0.5 }, 'io'],
-      ['remote+0', 0.4, { y: 290, o: 0 }, 'in'],
-      ['apply+0.25', 0.5, { y: 330, o: 1 }, 'out'],
+      ['require+0', 0.28, { y: 290, o: 0 }, 'in'],
+      ['apply+0.5', 0.45, { y: 330, o: 1 }, 'out'],
     ] });
 
     /* ---------- headline: word by word ---------- */
     add('h1', { init: { x: CX, y: 620, s: 1, o: 1 }, moves: [
       ['sector+0', 0.7, { y: 566, s: 0.92 }, 'io'],
-      ['remote+0', 0.45, { y: 480, o: 0 }, 'in'],
-      ['apply+0', 0.01, { y: 600, s: 0.78 }, 'io'],
-      ['apply+0.15', 0.6, { y: 536, o: 1 }, 'out'],
+      ['require+0', 0.28, { y: 500, o: 0 }, 'in'],
+      ['apply+0', 0.01, { y: 590, s: 0.78 }, 'io'],
+      ['apply+0.55', 0.55, { y: 536, o: 1 }, 'out'],
     ] });
     [0.45, 0.95, 1.75, 2.2, 2.9, 3.4].forEach((d, i) => add('w' + i, { kind: 'rel', init: { x: 0, y: 70, s: 0.7, o: 0 }, moves: [
       ['headline+' + d, 0.5, { y: 0, s: 1 }, 'back'], ['headline+' + d, 0.22, { o: 1 }, 'out'],
@@ -192,43 +192,50 @@
     /* ---------- sector line ---------- */
     add('sector', { init: { x: CX + 140, y: 852, s: 1, o: 0 }, moves: [
       ['sector+0.25', 0.55, { x: CX, o: 1 }, 'out'],
-      ['remote+0', 0.4, { y: 800, o: 0 }, 'in'],
-      ['apply+0', 0.01, { y: 760, s: 0.7 }, 'io'],
-      ['apply+0.35', 0.5, { y: 722, o: 1 }, 'out'],
+      ['require+0', 0.28, { y: 810, o: 0 }, 'in'],
+      ['apply+0', 0.01, { y: 752, s: 0.7 }, 'io'],
+      ['apply+0.8', 0.45, { y: 722, o: 1 }, 'out'],
     ] });
 
-    /* ---------- remote badge stamps in, then the design requirement ---------- */
-    add('tag', { init: { x: CX, y: 520, s: 2.6, r: -12, o: 0 }, moves: [
-      ['remote+0.2', 0.32, { s: 1, r: -4 }, 'softback'], ['remote+0.2', 0.12, { o: 1 }, 'out'],
-      ['apply+0', 0.7, { y: 806, s: 0.44, r: 0 }, 'io'],
+    /* ---------- beat 4: three items in turn — experience, design, salary ---------- */
+    const IT = TL.scenes.require.items;           // start offsets of the three items (timeline.json)
+    const at = (i, d) => 'require+' + (IT[i] + (d || 0)).toFixed(2);
+    add('exp', { init: { x: CX, y: 540, s: 0.9, o: 0 }, moves: [
+      [at(0), 0.45, { y: 470, s: 1 }, 'back'], [at(0), 0.2, { o: 1 }, 'out'],
+      ['apply+0', 0.35, { y: 420, o: 0 }, 'in'],
     ] });
-    add('shock', { init: { x: CX, y: 520, s: 0.2, o: 0 }, moves: [
-      ['remote+0.42', 0.01, { o: 0.7 }, 'out'], ['remote+0.43', 0.7, { s: 1.5, o: 0 }, 'out'],
+    add('n3', { kind: 'rel', init: { x: 0, y: 0, s: 0, r: -25, o: 1 }, moves: [
+      [at(0, 0.12), 0.45, { s: 1.25, r: 0 }, 'back'], [at(0, 0.6), 0.3, { s: 1 }, 'io'],
     ] });
-    add('design', { init: { x: CX, y: 1120, s: 0.8, o: 0 }, moves: [
-      ['remote+1.45', 0.6, { y: 900, s: 1 }, 'back'], ['remote+1.45', 0.25, { o: 1 }, 'out'],
-      ['apply+0', 0.4, { y: 800, o: 0 }, 'in'],
+    add('design', { init: { x: CX, y: 980, s: 0.8, o: 0 }, moves: [
+      [at(1), 0.55, { y: 800, s: 1 }, 'back'], [at(1), 0.22, { o: 1 }, 'out'],
+      ['apply+0.05', 0.35, { y: 740, o: 0 }, 'in'],
     ] });
     const pen = $('penPath'), penLen = pen.getTotalLength();
     pen.setAttribute('stroke-dasharray', penLen.toFixed(1));
-    add('penPath', { kind: 'svg', init: { o: 0 }, apply: (el, p) => el.setAttribute('stroke-dashoffset', (penLen * (1 - Math.max(0, Math.min(1, p.o)))).toFixed(1)), moves: [['remote+1.85', 0.75, { o: 1 }, 'io']] });
+    add('penPath', { kind: 'svg', init: { o: 0 }, apply: (el, p) => el.setAttribute('stroke-dashoffset', (penLen * (1 - Math.max(0, Math.min(1, p.o)))).toFixed(1)), moves: [[at(1, 0.4), 0.75, { o: 1 }, 'io']] });
     add('penNib', { kind: 'svg', init: { o: 0, s: 0 }, apply: (el, p) => {
       const pt = pen.getPointAtLength(penLen * Math.max(0, Math.min(1, p.o)));
       el.setAttribute('transform', `translate(${pt.x.toFixed(1)} ${pt.y.toFixed(1)}) rotate(28) scale(${Math.max(p.s, 0.0001).toFixed(3)})`);
-    }, moves: [['remote+1.7', 0.35, { s: 1 }, 'back'], ['remote+1.85', 0.75, { o: 1 }, 'io']] });
-    for (let i = 0; i < 5; i++) add('sw' + i, { kind: 'svg', init: { x: 520 + i * 74, y: 76, s: 0, r: -20 }, moves: [['remote+' + (1.95 + i * 0.09).toFixed(2), 0.4, { s: 1, r: 0 }, 'back']] });
-    [1170, 1262, 1354, 1446].forEach((y, i) => add('chip' + i, { init: { x: CX + (i % 2 ? -260 : 260), y, s: 0.9, o: 0 }, moves: [
-      ['remote+' + (2.2 + i * 0.13).toFixed(2), 0.5, { x: CX, s: 1 }, 'back'], ['remote+' + (2.2 + i * 0.13).toFixed(2), 0.2, { o: 1 }, 'out'],
-      ['apply+' + (i * 0.05).toFixed(2), 0.35, { y: y - 70, o: 0 }, 'in'],
-    ] }));
+    }, moves: [[at(1, 0.25), 0.35, { s: 1 }, 'back'], [at(1, 0.4), 0.75, { o: 1 }, 'io']] });
+    for (let i = 0; i < 5; i++) add('sw' + i, { kind: 'svg', init: { x: 520 + i * 74, y: 76, s: 0, r: -20 }, moves: [[at(1, 0.5 + i * 0.09), 0.4, { s: 1, r: 0 }, 'back']] });
+    add('badge', { init: { x: CX, y: 1140, s: 2.6, r: -12, o: 0 }, moves: [
+      [at(2), 0.32, { s: 1, r: -4 }, 'softback'], [at(2), 0.12, { o: 1 }, 'out'],
+      ['apply+0.1', 0.35, { o: 0 }, 'in'],
+      ['apply+0.5', 0.01, { y: 806, s: 0.3, r: 0 }, 'io'],
+      ['apply+1.0', 0.4, { s: 0.44 }, 'back'], ['apply+1.0', 0.2, { o: 1 }, 'out'],
+    ] });
+    add('shock', { init: { x: CX, y: 1140, s: 0.2, o: 0 }, moves: [
+      [at(2, 0.22), 0.01, { o: 0.7 }, 'out'], [at(2, 0.23), 0.7, { s: 1.5, o: 0 }, 'out'],
+    ] });
 
     /* ---------- end card: apply sentence + the email ---------- */
-    add('applyline', { init: { x: CX, y: 1352, s: 1, o: 0 }, moves: [['apply+0.45', 0.5, { y: 1314, o: 1 }, 'out']] });
+    add('applyline', { init: { x: CX, y: 1348, s: 1, o: 0 }, moves: [['apply+1.0', 0.45, { y: 1314, o: 1 }, 'out']] });
     add('pill', { init: { x: CX, y: 1790, s: 0.6, o: 0 }, float: { as: 0.008, p: 2.4 }, moves: [
-      ['apply+0.6', 0.6, { y: 1474, s: 1 }, 'back'], ['apply+0.6', 0.2, { o: 1 }, 'out'],
+      ['apply+1.2', 0.55, { y: 1474, s: 1 }, 'back'], ['apply+1.2', 0.2, { o: 1 }, 'out'],
     ] });
     add('shine', { kind: 'rel', init: { x: -300 }, apply: (el, p) => { el.style.transform = `translateX(${p.x.toFixed(1)}px) skewX(-20deg)`; }, moves: [
-      ['apply+1.4', 0.9, { x: 1150 }, 'io'], ['apply+3.0', 0.01, { x: -300 }, 'io'], ['apply+3.2', 0.9, { x: 1150 }, 'io'],
+      ['apply+2.0', 0.9, { x: 1150 }, 'io'], ['apply+3.6', 0.01, { x: -300 }, 'io'], ['apply+3.8', 0.9, { x: 1150 }, 'io'],
     ] });
   }
 

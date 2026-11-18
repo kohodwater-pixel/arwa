@@ -1,4 +1,4 @@
-/* Motion graphic v02, direction A (v03 look) — 1080 x 1920. Layout and skin only:
+/* Motion graphic v03, direction A (A v04 look) — 1080 x 1920. Layout and skin only:
    every position, scale, rotation and opacity is driven by motion.js seek(t).
    No CSS animations or transitions. */
 
@@ -45,7 +45,7 @@ body {
 .feed { position: absolute; left: 0; right: 0; top: 0; will-change: transform; }
 .post { position: relative; height: 540px; }
 .ui-head { position: absolute; top: 52px; left: 16px; right: 16px; height: 46px; }
-.ui-head .av { position: absolute; right: 0; top: 2px; width: 42px; height: 42px; border-radius: 50%; background: conic-gradient(from 210deg, var(--saffron), var(--tomato), #B7357E, var(--saffron)); }
+.ui-head .av { position: absolute; right: 0; top: 2px; width: 42px; height: 42px; border-radius: 50%; background: var(--saffron); }
 .ui-head .av::after { content: ""; position: absolute; inset: 3px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #FFD58A, #F08A24); border: 2px solid var(--paper); }
 .ui-head .n1 { position: absolute; right: 54px; top: 9px; width: 104px; height: 11px; border-radius: 6px; background: #2B1430; }
 .ui-head .n2 { position: absolute; right: 54px; top: 28px; width: 66px; height: 8px; border-radius: 4px; background: rgba(43,20,48,.28); }
@@ -103,14 +103,16 @@ body {
 #h1 .b { font-size: 88px; line-height: 1.26; color: var(--saffron); text-shadow: 0 10px 24px rgba(14,6,17,.5); }
 #h1 .w { display: inline-block; opacity: 0; will-change: transform, opacity; }
 #sector { font-size: 54px; font-weight: 700; line-height: 1.6; color: #F3E7D5; text-shadow: 0 8px 20px rgba(14,6,17,.6); }
-#tag {
+#badge {
   display: flex; align-items: center; gap: 26px;
   font-size: 94px; font-weight: 800; line-height: 1.5; color: #fff;
   padding: 22px 70px 12px; border-radius: 999px;
   background: linear-gradient(180deg, #D8391F 0%, #BC2B16 100%);
   box-shadow: 0 34px 60px rgba(160,24,10,.42), inset 0 3px 0 rgba(255,255,255,.35), inset 0 0 0 2px rgba(255,255,255,.12);
 }
-#tag svg { width: 100px; height: 100px; flex: none; margin-top: -12px; fill: none; stroke: currentColor; stroke-width: 4.200; stroke-linecap: round; stroke-linejoin: round; }
+#badge svg { width: 100px; height: 100px; flex: none; margin-top: -12px; fill: none; stroke: currentColor; stroke-width: 4.200; stroke-linecap: round; stroke-linejoin: round; }
+#exp { font-size: 78px; font-weight: 800; line-height: 1.5; color: #FFFAF1; text-shadow: 0 10px 24px rgba(14,6,17,.6); }
+#n3 { display: inline-block; margin: 0 18px; font-size: 170px; line-height: 1; vertical-align: -0.16em; color: var(--saffron); text-shadow: 0 6px 0 rgba(14,6,17,.4), 0 0 60px rgba(255,170,50,.45); will-change: transform; }
 #design {
   width: 940px; padding: 34px 40px 30px; text-align: center;
   background: linear-gradient(180deg, #FFFCF6 0%, var(--paper) 100%); color: var(--aubergine);
@@ -119,14 +121,6 @@ body {
 }
 #design svg { display: block; width: 860px; height: 150px; margin: 0 auto 8px; }
 #design p { font-size: 58px; font-weight: 800; line-height: 1.5; white-space: nowrap; }
-.chip {
-  font-size: 34px; font-weight: 700; line-height: 1.6; color: #FFFAF1;
-  padding: 10px 34px 6px; border-radius: 999px;
-  background: linear-gradient(135deg, rgba(255,255,255,.2) 0%, rgba(255,255,255,.07) 100%);
-  border: 1px solid rgba(255,255,255,.38);
-  -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
-  box-shadow: 0 16px 30px rgba(8,2,10,.4), inset 0 1px 0 rgba(255,255,255,.4);
-}
 #applyline { width: 940px; white-space: normal; text-align: center; text-wrap: balance; font-size: 44px; font-weight: 700; line-height: 1.5; color: #FFFAF1; text-shadow: 0 8px 20px rgba(14,6,17,.6); }
 #pill {
   width: 968px; height: 168px; display: flex; align-items: center; justify-content: center; overflow: hidden;

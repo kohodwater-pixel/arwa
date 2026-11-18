@@ -1,12 +1,4 @@
 scroll state [ 0, 0, 1080, 1920 ]
 photos: 7 all client-supplied, aspect kept
 copy/dir check: ok | fonts: Tajawal 500, Tajawal 700, Tajawal 800
-frame 0 / 615 0s
-frame 100 / 615 16s
-frame 200 / 615 40s
-frame 300 / 615 60s
-frame 400 / 615 79s
-frame 500 / 615 98s
-frame 600 / 615 116s
-done 615 frames in 118s
-wrote /home/user/arwa/clients/tbc-restaurants-company/05-designs/job-advert/motion/tbc-restaurants-company_job-advert_motion-direction-a_ar_v02.mp4 (silent)
+frame 0 / 660 0s

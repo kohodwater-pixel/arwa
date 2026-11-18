@@ -4,13 +4,12 @@ const { chromium } = require('playwright');
 const path = require('path');
 const fs = require('fs');
 const motion = path.resolve(__dirname, '..');
-const html = path.join(motion, 'tbc-restaurants-company_job-advert_motion-direction-a_ar_v02.html');
+const html = path.join(motion, 'tbc-restaurants-company_job-advert_motion-direction-a_ar_v03.html');
 const TL = JSON.parse(fs.readFileSync(path.join(motion, 'timeline.json'), 'utf8'));
 const ALLOWED = [
-  'فرصة وظيفية', 'موظف/ـة تسويق وإدارة حسابات التواصل الاجتماعي', 'لشركة متخصصة في قطاع المطاعم', 'العمل عن بُعد',
-  'خبرة في التصميم (شرط أساسي)', 'خبرة سابقة في التسويق وإدارة حسابات التواصل الاجتماعي',
-  'معرفة جيدة بمنصات إنستغرام وتيك توك وسناب شات وإكس', 'مهارة في كتابة المحتوى وحس إبداعي',
-  'يُفضَّل من لديه خبرة في قطاع المطاعم', 'للتقديم: أرسل/ي سيرتك الذاتية وسابقة أعمالك على البريد الإلكتروني', 'hr@otlobny.co',
+  'فرصة وظيفية', 'موظف/ـة تسويق وإدارة حسابات التواصل الاجتماعي', 'لشركة متخصصة في قطاع المطاعم',
+  'خبرة لا تقل عن 3 سنوات', 'راتب مجزٍ', 'خبرة في التصميم (شرط أساسي)',
+  'للتقديم: أرسل/ي سيرتك الذاتية وسابقة أعمالك على البريد الإلكتروني', 'hr@otlobny.co',
 ];
 (async () => {
   const browser = await chromium.launch();
@@ -36,12 +35,18 @@ const ALLOWED = [
   if (JSON.stringify(txt.units) !== JSON.stringify(ALLOWED)) issues.push('COPY MISMATCH ' + JSON.stringify(txt.units));
   if (txt.all !== txt.units.join('').replace(/\s/g, '')) issues.push('extra visible text');
   if (txt.email.join() !== 'ltr,ltr,isolate,1') issues.push('email: ' + txt.email);
+  if (/العمل عن بُعد|عن بعد|خبرة سابقة|class="it chip/.test(await page.content())) issues.push('withdrawn copy or chips still present');
   if (errs.length) issues.push('page errors: ' + errs.join(' | '));
   console.log('copy/dir check:', issues.length ? issues : 'ok', '| fonts:', txt.fonts.join(', '));
   if (issues.length) { await browser.close(); process.exit(1); }
   const arg = n => { const i = process.argv.indexOf(n); return i > 0 ? process.argv[i + 1] : null; };
   if (process.argv.includes('--check')) { await browser.close(); return; }
   const clip = { x: 0, y: 0, width: 1080, height: 1920 };
+  if (arg('--cover')) {
+    await page.evaluate(x => window.seek(x), Number(arg('--cover')));
+    await page.screenshot({ path: path.join(__dirname, 'cover_raw.png'), clip });
+    await browser.close(); return;
+  }
   if (arg('--times')) {
     const out = path.join(__dirname, 'stills'); fs.mkdirSync(out, { recursive: true });
     for (const t of arg('--times').split(',').map(Number)) {

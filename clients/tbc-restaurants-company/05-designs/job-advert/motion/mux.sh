@@ -7,7 +7,7 @@
 # No music is added.
 set -euo pipefail
 HERE="$(cd "$(dirname "$0")" && pwd)"
-NAME="tbc-restaurants-company_job-advert_motion-direction-a_ar_v02"
+NAME="tbc-restaurants-company_job-advert_motion-direction-a_ar_v03"
 MASTER="$HERE/_work/${NAME}_video-only.mp4"
 AUDIO="${1:?usage: bash mux.sh <audio file> [output.mp4]}"
 OUT="${2:-$HERE/${NAME}.mp4}"
