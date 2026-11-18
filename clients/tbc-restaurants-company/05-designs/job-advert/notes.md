@@ -38,3 +38,13 @@ v01 (plain typographic poster, post and story) is in `_archive/` with the reason
 
 ## Not done
 Native Arabic proofread by a second reader; on-device preview under the real story UI; confirmation that `hr@otlobny.co` receives mail.
+
+## Motion graphic (direction A, v03 look) — `motion/`
+- `tbc-restaurants-company_job-advert_motion-direction-a_ar_v02.mp4` — 1080 × 1920, 30 fps, 20.5 s, H.264 High yuv420p + a **silent** AAC track. Voice-over not yet added (audio file not in the repo).
+- Source: `tbc-restaurants-company_job-advert_motion-direction-a_ar_v02.html`, `motion.css`, `motion.js` (deterministic `seek(t)`; no CSS animations), `timeline.json` (the one place to retime: scene `start` values; current values are estimates).
+- Add the voice: `bash motion/mux.sh <audio file>` — copies the video stream from `_work/..._video-only.mp4`, encodes AAC 192 kb/s, starts the audio at 0.15 s, keeps the 20.5 s length, overwrites the MP4 above.
+- Re-render after retiming: `NODE_PATH=/opt/node-tools/node_modules node motion/_work/capture.cjs && bash motion/_work/encode.sh`.
+- Scenes: hook (phone feed swipes burger, chicken roll, cheeseburger; a glass card and hearts fire on each; the burger pops out) · headline word by word · sector line with the three foods floating · remote badge stamp, design-requirement card, four requirement chips · end card with the apply sentence and the email (lands at about 16.6 s, held about 3.9 s).
+- On-screen text: advert strings from the brief only (asserted by `capture.cjs`); the dialect voice-over script is not shown.
+- Photographs: three client-supplied cut-outs in `assets/` (burger, chicken roll, cheeseburger), PNG copies of the WebP files in `_originals/`. **Source and licence not stated by the client.** Proportional scaling, tilt and drop shadows only.
+- v01 (drawn burger, flat look) is in `motion/_archive/`.
