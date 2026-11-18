@@ -1,0 +1,247 @@
+"""Builds the two Direction A HTML sources (post, story) from one set of fragments.
+The generated HTML files are the editable sources; this script only avoids
+keeping the illustration in two hand-synchronised copies."""
+import os
+
+OUT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+DEFS = r'''
+<defs>
+  <linearGradient id="gDisc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7604A"/><stop offset="1" stop-color="#C92F1D"/></linearGradient>
+  <linearGradient id="gEdge" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8A6A90"/><stop offset=".35" stop-color="#3A2440"/><stop offset="1" stop-color="#120A14"/></linearGradient>
+  <linearGradient id="gBody" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2A1930"/><stop offset="1" stop-color="#0E070F"/></linearGradient>
+  <radialGradient id="gPhoto" cx=".5" cy=".42" r=".75"><stop offset="0" stop-color="#FFD873"/><stop offset=".55" stop-color="#FFB52E"/><stop offset="1" stop-color="#F58A1F"/></radialGradient>
+  <linearGradient id="gBun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6B356"/><stop offset="1" stop-color="#DC8425"/></linearGradient>
+  <linearGradient id="gBun2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EDA143"/><stop offset="1" stop-color="#C96F1B"/></linearGradient>
+  <linearGradient id="gPatty" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6E3420"/><stop offset="1" stop-color="#3F1A10"/></linearGradient>
+  <linearGradient id="gGlare" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".0"/><stop offset=".5" stop-color="#fff" stop-opacity=".16"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+  <pattern id="pDots" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(30)"><circle cx="5" cy="5" r="3" fill="#FFF3DC" opacity=".16"/></pattern>
+  <clipPath id="cScreen"><rect x="34" y="34" width="292" height="632" rx="42"/></clipPath>
+  <filter id="fSoft" x="-40%" y="-40%" width="180%" height="200%"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#12060F" flood-opacity=".5"/></filter>
+  <filter id="fPhone" x="-30%" y="-20%" width="170%" height="150%"><feDropShadow dx="18" dy="30" stdDeviation="26" flood-color="#0D040F" flood-opacity=".6"/></filter>
+
+  <symbol id="heart" viewBox="0 0 24 24"><path d="M12 21.200C12 21.200 2.800 15.600 2.800 9.200A4.900 4.900 0 0 1 12 6.300A4.900 4.900 0 0 1 21.200 9.200C21.200 15.600 12 21.200 12 21.200Z"/></symbol>
+  <symbol id="spark" viewBox="0 0 24 24"><path d="M12 1C12.900 7.500 16.500 11.100 23 12C16.500 12.900 12.900 16.500 12 23C11.100 16.500 7.500 12.900 1 12C7.500 11.100 11.100 7.500 12 1Z"/></symbol>
+
+  <!-- reaction bubbles: each drawn around its own origin -->
+  <g id="bLike" filter="url(#fSoft)">
+    <path d="M-66 -44H66A34 34 0 0 1 100 -10V10A34 34 0 0 1 66 44H-14L-40 68V44H-66A34 34 0 0 1 -100 10V-10A34 34 0 0 1 -66 -44Z" fill="#E5412D"/>
+    <path d="M-66 -44H66A34 34 0 0 1 100 -10V-4A34 34 0 0 0 66 -38H-66A34 34 0 0 0 -100 -4V-10A34 34 0 0 1 -66 -44Z" fill="#FF7A62" opacity=".7"/>
+    <use href="#heart" x="-74" y="-30" width="60" height="60" fill="#FFF3DC"/>
+    <use href="#heart" x="-8" y="-24" width="46" height="46" fill="#FFF3DC" opacity=".75"/>
+    <use href="#heart" x="44" y="-18" width="34" height="34" fill="#FFF3DC" opacity=".5"/>
+  </g>
+  <g id="bChat" filter="url(#fSoft)">
+    <path d="M-62 -46H62A30 30 0 0 1 92 -16V16A30 30 0 0 1 62 46H40L52 74L8 46H-62A30 30 0 0 1 -92 16V-16A30 30 0 0 1 -62 -46Z" fill="#FFF3DC"/>
+    <circle cx="-40" cy="0" r="11" fill="#2B1430"/><circle cx="0" cy="0" r="11" fill="#2B1430" opacity=".7"/><circle cx="40" cy="0" r="11" fill="#2B1430" opacity=".4"/>
+  </g>
+  <g id="bShare" filter="url(#fSoft)">
+    <circle r="52" fill="#FFB52E"/><path d="M-52 0A52 52 0 0 1 52 0A52 46 0 0 0 -52 0Z" fill="#FFD069" opacity=".8"/>
+    <path d="M-24 2L28 -24L12 28L0 8Z" fill="#2B1430"/><path d="M0 8L28 -24L-6 14Z" fill="#5A3460"/>
+  </g>
+  <g id="bPlay" filter="url(#fSoft)">
+    <rect x="-46" y="-46" width="92" height="92" rx="26" fill="#5A2A62"/><rect x="-46" y="-46" width="92" height="46" rx="26" fill="#7A3F84" opacity=".55"/>
+    <path d="M-12 -22L24 0L-12 22Z" fill="#FFF3DC" stroke="#FFF3DC" stroke-width="8" stroke-linejoin="round"/>
+  </g>
+  <g id="bHash" filter="url(#fSoft)">
+    <rect x="-44" y="-44" width="88" height="88" rx="24" fill="#FFF3DC"/>
+    <path d="M-10 -24L-18 24M18 -24L10 24M-26 -9H26M-28 9H24" stroke="#E5412D" stroke-width="9" stroke-linecap="round" fill="none"/>
+  </g>
+  <g id="bBadge">
+    <circle r="27" fill="#FFF3DC"/><circle r="20" fill="#E5412D"/>
+    <use href="#heart" x="-12" y="-11.500" width="24" height="24" fill="#FFF3DC"/>
+  </g>
+
+  <!-- the phone, drawn in its own 360 x 700 box -->
+  <g id="phone">
+    <rect x="18" y="18" width="324" height="664" rx="56" fill="url(#gEdge)"/>
+    <rect x="22" y="22" width="316" height="656" rx="52" fill="url(#gBody)"/>
+    <rect x="340" y="170" width="7" height="82" rx="3.500" fill="#3A2440"/>
+    <rect x="13" y="150" width="7" height="46" rx="3.500" fill="#3A2440"/><rect x="13" y="212" width="7" height="46" rx="3.500" fill="#3A2440"/>
+    <rect x="34" y="34" width="292" height="632" rx="42" fill="#FFF8EA"/>
+    <g clip-path="url(#cScreen)">
+      <!-- post header (RTL: avatar on the right) -->
+      <circle cx="286" cy="110" r="24" fill="#E5412D"/><circle cx="286" cy="110" r="24" fill="none" stroke="#FFB52E" stroke-width="4"/>
+      <path d="M276 118V111A7 7 0 0 1 277 97.500A9.500 9.500 0 0 1 295 97.500A7 7 0 0 1 296 111V118Z" fill="#FFF3DC"/>
+      <rect x="150" y="96" width="100" height="12" rx="6" fill="#2B1430"/><rect x="186" y="116" width="64" height="9" rx="4.500" fill="#2B1430" opacity=".3"/>
+      <circle cx="58" cy="110" r="3.500" fill="#2B1430"/><circle cx="70" cy="110" r="3.500" fill="#2B1430"/><circle cx="82" cy="110" r="3.500" fill="#2B1430"/>
+      <!-- the food photo -->
+      <rect x="34" y="146" width="292" height="300" fill="url(#gPhoto)"/>
+      <g opacity=".5" fill="#FFE9A8">
+        <path d="M180 300L34 190V146H70Z"/><path d="M180 300L150 146H214Z"/><path d="M180 300L290 146H326V196Z"/><path d="M180 300L326 300V360Z"/><path d="M180 300L34 300V246Z"/>
+      </g>
+      <ellipse cx="180" cy="412" rx="112" ry="15" fill="#9A4A0B" opacity=".45"/>
+      <!-- burger, drawn bottom-up -->
+      <path d="M84 372H276V384A24 24 0 0 1 252 408H108A24 24 0 0 1 84 384Z" fill="url(#gBun2)"/>
+      <path d="M84 372H276V380H84Z" fill="#F4B766" opacity=".7"/>
+      <rect x="76" y="340" width="208" height="36" rx="18" fill="url(#gPatty)"/>
+      <rect x="96" y="347" width="120" height="6" rx="3" fill="#8C4A30" opacity=".8"/><rect x="226" y="347" width="26" height="6" rx="3" fill="#8C4A30" opacity=".8"/>
+      <path d="M74 326H286V338H262L246 362Q241 368 236 362L222 338H154L144 352Q139 358 134 352L124 338H74Z" fill="#FFD23F" stroke="#FFD23F" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M78 327H282" stroke="#FFE98A" stroke-width="4" stroke-linecap="round"/>
+      <rect x="86" y="308" width="188" height="20" rx="10" fill="#E5412D"/><rect x="100" y="312" width="70" height="5" rx="2.500" fill="#FF8A73"/><rect x="186" y="312" width="24" height="5" rx="2.500" fill="#FF8A73"/>
+      <path d="M68 300Q72 290 84 292H276Q288 290 292 300Q294 314 280 312Q270 326 256 312Q244 326 230 312Q218 326 204 312Q192 326 178 312Q166 326 152 312Q140 326 126 312Q114 326 100 312Q88 326 80 312Q66 314 68 300Z" fill="#6DBE45"/>
+      <path d="M80 297H280" stroke="#A4E07A" stroke-width="4" stroke-linecap="round" opacity=".8"/>
+      <path d="M82 296C82 236 124 206 180 206C236 206 278 236 278 296Z" fill="url(#gBun)"/>
+      <path d="M104 262C112 236 136 222 164 219" stroke="#FFE2A6" stroke-width="8" stroke-linecap="round" fill="none" opacity=".75"/>
+      <g fill="#FFF3DC">
+        <ellipse cx="150" cy="246" rx="7" ry="3.800" transform="rotate(-24 150 246)"/><ellipse cx="184" cy="232" rx="7" ry="3.800" transform="rotate(8 184 232)"/>
+        <ellipse cx="218" cy="244" rx="7" ry="3.800" transform="rotate(28 218 244)"/><ellipse cx="170" cy="268" rx="7" ry="3.800" transform="rotate(-10 170 268)"/>
+        <ellipse cx="206" cy="270" rx="7" ry="3.800" transform="rotate(16 206 270)"/><ellipse cx="244" cy="268" rx="7" ry="3.800" transform="rotate(34 244 268)"/>
+        <ellipse cx="126" cy="274" rx="7" ry="3.800" transform="rotate(-30 126 274)"/>
+      </g>
+      <use href="#spark" x="56" y="168" width="34" height="34" fill="#FFF8EA"/><use href="#spark" x="276" y="236" width="24" height="24" fill="#FFF8EA"/><use href="#spark" x="70" y="252" width="18" height="18" fill="#FFF8EA" opacity=".8"/>
+      <!-- action row -->
+      <use href="#heart" x="268" y="462" width="40" height="40" fill="#E5412D"/>
+      <path d="M222 468H250A7 7 0 0 1 257 475V489A7 7 0 0 1 250 496H238L229 503V496H222A7 7 0 0 1 215 489V475A7 7 0 0 1 222 468Z" fill="none" stroke="#2B1430" stroke-width="4.500" stroke-linejoin="round"/>
+      <path d="M166 484L198 468L188 500L181 488Z" fill="none" stroke="#2B1430" stroke-width="4.500" stroke-linejoin="round"/>
+      <path d="M56 468H80V500L68 490L56 500Z" fill="none" stroke="#2B1430" stroke-width="4.500" stroke-linejoin="round"/>
+      <!-- caption -->
+      <rect x="126" y="524" width="180" height="11" rx="5.500" fill="#2B1430"/><rect x="74" y="546" width="232" height="9" rx="4.500" fill="#2B1430" opacity=".3"/><rect x="150" y="564" width="156" height="9" rx="4.500" fill="#2B1430" opacity=".3"/>
+      <rect x="236" y="590" width="70" height="26" rx="13" fill="#FFB52E"/><rect x="156" y="590" width="70" height="26" rx="13" fill="#F9D9D2"/><rect x="96" y="590" width="50" height="26" rx="13" fill="#E9DDF0"/>
+      <rect x="34" y="634" width="292" height="2" fill="#2B1430" opacity=".08"/>
+      <!-- glare -->
+      <path d="M60 34L170 34L40 420L34 300Z" fill="url(#gGlare)"/>
+    </g>
+    <rect x="138" y="46" width="84" height="24" rx="12" fill="#120A14"/><circle cx="206" cy="58" r="5" fill="#2E1D33"/>
+  </g>
+</defs>
+'''
+
+ICONS = r'''
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-megaphone" viewBox="0 0 48 48"><circle cx="24" cy="24" r="24" fill="#E5412D"/><path d="M12 20.500V27.500H17L29 34.500V13.500L17 20.500Z" fill="#FFF3DC" stroke="#FFF3DC" stroke-width="2.500" stroke-linejoin="round"/><path d="M17.500 28L19.500 35.500H23L21.500 29.500" fill="none" stroke="#FFF3DC" stroke-width="2.800" stroke-linejoin="round" stroke-linecap="round"/><path d="M33 19.500A6.500 6.500 0 0 1 33 28.500" fill="none" stroke="#FFF3DC" stroke-width="2.800" stroke-linecap="round"/></symbol>
+  <symbol id="i-home" viewBox="0 0 48 48"><path d="M6 23L24 7L42 23" fill="none" stroke="currentColor" stroke-width="4.500" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 21V40H37V21" fill="none" stroke="currentColor" stroke-width="4.500" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.500 33A8 8 0 0 1 29.500 33" fill="none" stroke="currentColor" stroke-width="3.800" stroke-linecap="round"/><circle cx="24" cy="36.500" r="2.400" fill="currentColor"/></symbol>
+  <symbol id="i-send" viewBox="0 0 96 96"><circle cx="48" cy="48" r="48" fill="#2B1430"/><path d="M22 50L72 26L58 74L46 56Z" fill="#FFB52E"/><path d="M46 56L72 26L40 60L41 71Z" fill="#E5412D"/></symbol>
+</svg>
+'''
+
+COPY_HEAD = '''
+<header class="head">
+  <div class="kicker"><svg aria-hidden="true"><use href="#i-megaphone"/></svg><span>فرصة وظيفية</span></div>
+  <h1><span class="a">موظف/ـة تسويق</span> <span class="b">وإدارة حسابات</span> <span class="b">التواصل الاجتماعي</span></h1>
+  <p class="sector">لشركة متخصصة في قطاع المطاعم</p>
+  <p class="tag"><svg aria-hidden="true"><use href="#i-home"/></svg><span>العمل عن بُعد</span></p>
+</header>
+
+<section class="cards">
+  <div class="block">
+    <h2>المهام</h2>
+    <ul>
+      <li>إعداد خطة المحتوى الشهرية وتنفيذها</li>
+      <li>إدارة حسابات التواصل الاجتماعي والنشر والتفاعل مع العملاء</li>
+      <li>كتابة المحتوى الإعلاني والتنسيق مع المصممين والمصورين</li>
+      <li>إدارة الحملات الإعلانية المدفوعة ومتابعة نتائجها</li>
+      <li>إعداد تقارير الأداء الدورية</li>
+    </ul>
+  </div>
+  <div class="block">
+    <h2>المتطلبات</h2>
+    <ul>
+      <li>خبرة سابقة في التسويق وإدارة حسابات التواصل الاجتماعي</li>
+      <li>خبرة في التصميم (شرط أساسي)</li>
+      <li>معرفة جيدة بمنصات إنستغرام وتيك توك وسناب شات وإكس</li>
+      <li>مهارة في كتابة المحتوى وحس إبداعي</li>
+      <li>يُفضَّل من لديه خبرة في قطاع المطاعم</li>
+    </ul>
+  </div>
+</section>
+
+<footer class="apply">
+  <p>للتقديم: أرسل/ي سيرتك الذاتية وسابقة أعمالك على البريد الإلكتروني</p>
+  <div class="pill"><svg class="send" aria-hidden="true"><use href="#i-send"/></svg><bdi class="email" dir="ltr">hr@otlobny.co</bdi></div>
+</footer>
+'''
+
+
+def use(ref, x, y, rot=0, s=1.0, extra=''):
+    return f'<use href="#{ref}" transform="translate({x} {y}) rotate({rot}) scale({s})" {extra}/>'
+
+
+def heart(x, y, size, rot, fill, op=1):
+    return f'<use href="#heart" width="{size}" height="{size}" transform="translate({x} {y}) rotate({rot})" fill="{fill}" opacity="{op}"/>'
+
+
+def spark(x, y, size, fill, op=1):
+    return f'<use href="#spark" x="{x}" y="{y}" width="{size}" height="{size}" fill="{fill}" opacity="{op}"/>'
+
+
+def scene(fmt):
+    if fmt == 'post':
+        w, h = 1080, 1350
+        disc = (170, 320, 250)
+        ph = dict(cx=194, cy=396, rot=-9, s=1.13)
+        parts = [
+            use('bLike', 318, 84, 8, .98), use('bChat', 84, 96, -10, .8),
+            use('bPlay', 40, 500, -12, .78), use('bHash', 404, 236, 12, .5),
+            heart(392, 150, 40, 14, '#E5412D'), heart(14, 250, 34, -18, '#FFB52E'), heart(176, 14, 28, -8, '#FFF3DC', .9),
+            heart(404, 470, 26, 20, '#FF7A62'),
+            spark(440, 28, 30, '#FFB52E'), spark(10, 170, 22, '#FFF3DC', .8),
+            spark(1012, 560, 30, '#FFB52E', .9), spark(700, 62, 20, '#FFF3DC', .6),
+        ]
+        deco = ''
+    else:
+        w, h = 1080, 1920
+        disc = (170, 310, 268)
+        ph = dict(cx=176, cy=470, rot=-9, s=1.3)
+        parts = [
+            use('bLike', 372, 120, 8, 1.2), use('bChat', 96, 84, -10, 1.0),
+            use('bPlay', 36, 700, -12, .85), use('bHash', 890, 200, 12, .8),
+            use('bChat', 690, 150, 6, .72), use('bShare', 1000, 86, 0, .55),
+            heart(408, 236, 46, 14, '#E5412D'), heart(14, 300, 38, -18, '#FFB52E'), heart(236, 10, 36, -8, '#FFF3DC', .9),
+            heart(560, 60, 44, -14, '#FFB52E'), heart(800, 60, 54, 12, '#E5412D'), heart(990, 236, 30, 20, '#FF7A62'),
+            heart(404, 560, 26, 20, '#FF7A62'),
+            spark(520, 200, 34, '#FFB52E'), spark(10, 190, 26, '#FFF3DC', .8), spark(900, 20, 24, '#FFF3DC', .7),
+            spark(1012, 826, 30, '#FFB52E', .9),
+        ]
+        # bottom zone (below the story safe area): the reactions keep drifting, no text
+        deco = (
+            f'<circle cx="930" cy="1890" r="250" fill="url(#gDisc)"/><circle cx="930" cy="1890" r="250" fill="url(#pDots)"/>'
+            f'<circle cx="930" cy="1890" r="286" fill="none" stroke="#FFB52E" stroke-width="3" stroke-dasharray="2 14" stroke-linecap="round"/>'
+            + use('bLike', 250, 1716, -8, 1.1) + use('bChat', 560, 1790, 8, .95) + use('bPlay', 96, 1850, -10, .8)
+            + use('bHash', 760, 1668, 10, .7) + use('bShare', 930, 1800, 0, .9)
+            + heart(420, 1640, 46, -12, '#E5412D') + heart(640, 1650, 30, 14, '#FFB52E') + heart(36, 1650, 34, 16, '#FF7A62')
+            + heart(380, 1830, 36, 10, '#FFF3DC', .85) + spark(690, 1860, 30, '#FFB52E') + spark(170, 1620, 24, '#FFF3DC', .7)
+        )
+    cx, cy, r = disc
+    p = ph
+    badge_x, badge_y = 300, 40  # in phone coordinates: top-right corner of the handset
+    return f'''<svg class="scene" viewBox="0 0 {w} {h}" aria-hidden="true">
+{DEFS}
+  <circle cx="{cx}" cy="{cy}" r="{r + 14}" fill="none" stroke="#FFB52E" stroke-width="3" stroke-dasharray="2 14" stroke-linecap="round"/>
+  <circle cx="{cx}" cy="{cy}" r="{r}" fill="url(#gDisc)"/>
+  <circle cx="{cx}" cy="{cy}" r="{r}" fill="url(#pDots)"/>
+  {deco}
+  <g transform="translate({p['cx']} {p['cy']}) rotate({p['rot']}) scale({p['s']}) translate(-180 -350)">
+    <use href="#phone" filter="url(#fPhone)"/>
+  </g>
+  {chr(10).join('  ' + x for x in parts)}
+</svg>'''
+
+
+def page(fmt):
+    size = '1080x1350' if fmt == 'post' else '1080x1920'
+    return f'''<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Job advert — direction A "Phone on the pass" — {fmt} {size} — ar — v02</title>
+<meta name="viewport" content="width=1080">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="direction-a.css">
+</head>
+<body class="{fmt} dir-a">
+{ICONS}
+<!-- illustration: everything is inline vector, drawn for this piece -->
+{scene(fmt)}
+<main>
+{COPY_HEAD}
+</main>
+</body>
+</html>
+'''
+
+
+for fmt in ('post', 'story'):
+    name = f'tbc-restaurants-company_job-advert_{fmt}-direction-a_ar_v02.html'
+    open(os.path.join(OUT, name), 'w', encoding='utf-8').write(page(fmt))
+    print('wrote', name)

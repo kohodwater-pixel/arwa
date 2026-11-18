@@ -1,30 +1,37 @@
-# Job advert — notes (v01)
+# Job advert — notes
 
-**Status:** finished unbranded advert, no placeholders. Awaiting quality review and client approval.
+**Current:** v02, two directions (A and B), each as post and story. General advert by client decision: no company name, no logo. Awaiting quality review and the client's choice.
 
-## Pieces
-| File | Size | Use |
+## v02 pieces
+| Direction | Post 1080 × 1350 | Story 1080 × 1920 |
 |---|---|---|
-| `tbc-restaurants-company_job-advert_post_ar_v01.png` / `.html` | 1080 × 1350, sRGB | Instagram / Facebook feed 4:5 |
-| `tbc-restaurants-company_job-advert_story_ar_v01.png` / `.html` | 1080 × 1920, sRGB | Story 9:16; all text between y 250 and y 1580 |
+| A "Phone on the pass" — a tilted phone showing a burger post, reactions floating out | `tbc-restaurants-company_job-advert_post-direction-a_ar_v02.png/.html` | `tbc-restaurants-company_job-advert_story-direction-a_ar_v02.png/.html` |
+| B "Menu board" — colour blocks, tilted sticker badges, die-cut food and social stickers | `tbc-restaurants-company_job-advert_post-direction-b_ar_v02.png/.html` | `tbc-restaurants-company_job-advert_story-direction-b_ar_v02.png/.html` |
 
-Shared: `job-advert.css` (palette variables in the first `:root` block), `fonts/` (IBM Plex Sans Arabic static, SIL OFL, copied from `assets/fonts/`).
-Rebuild: `NODE_PATH=/opt/node-tools/node_modules node _work/render.cjs && python3 _work/finish.py`.
+Direction C ("Night service") was dropped by the client before any file was made.
+
+Sources: `base.css` (fonts, reset), `direction-a.css`, `direction-b.css` (palette variables at the top), `fonts/`. The HTML files are the editable sources; `_work/build_a.py` and `_work/build_b.py` regenerate them (the illustration is kept once there, positions per format).
+Rebuild: `python3 _work/build_a.py && python3 _work/build_b.py && NODE_PATH=/opt/node-tools/node_modules node _work/render_v02.cjs && python3 _work/finish_v02.py`.
 
 ## Copy
-Taken character for character from `01-brief/brief.md` (copy v01 plus the 2026-11-18 client additions: «خبرة في التصميم (شرط أساسي)», the tag «العمل عن بُعد», the apply sentence «للتقديم: أرسل/ي سيرتك الذاتية وسابقة أعمالك على البريد الإلكتروني» and the email `hr@otlobny.co`). `_work/render.cjs` asserts every string and their order. Numerals: none appear; Western if added.
+Character for character from `01-brief/brief.md`; `_work/render_v02.cjs` asserts all 18 strings in order in each HTML and that no other visible text exists. In A the headline breaks into three lines, in B into two. Numerals: none.
 
-## Unbranded by ruling
-No logo and no company name appear (Creative Director ruling in the brief). The email is set LTR (`<bdi dir="ltr">`, isolated, no wrap) as the call to action.
+## Palettes (assumptions — no brand supplied)
+- A: aubergine `#2B1430` / `#1B0B1F`, tomato `#E5412D`, saffron `#FFB52E`, cream `#FFF3DC`; illustration extras: lettuce `#6DBE45`, cheese `#FFD23F`, patty `#6E3420`. Type: Tajawal 500/700/800.
+- B: deep green `#0F3D2E`, ink `#0C2E22` (apply sentence `#04120C`), orange `#FF5A1F`, cream `#FFF4DF`, yellow `#FFD23F`, pink `#FF8FB8`, white; sticker extras: red `#EF4B2F`, leaf `#59B947`, bun `#F2A545`. Type: Cairo 600/800/900 (variable file).
 
-## Look (assumption — no brand supplied)
-Neutral restaurants-sector palette, to be replaced by the brand's:
-ground `#15302A`, ground tint `#21443B`, text `#F7F1E5`, soft text `#D8D1C0`, accent `#F2A93B`.
-Type: IBM Plex Sans Arabic 400/500/600/700 (also used for the Latin email). No letter-spacing; body line-height 1.6; body 30 px (post), 32 px (story); email 60 / 64 px.
-Icons: six inline SVG line icons drawn for this piece (megaphone, chat, heart, plate and cutlery, chef hat, home/remote). No photos, stock or AI images.
+## Contrast (measured on rendered pixels, worst pixel under each text element)
+- A: body 13.98:1 (post), 14.22:1 (story); display 4.10:1 (white on the tomato «العمل عن بُعد» pill; every other display element is above 8:1).
+- B: body 6.14:1 (apply sentence on orange); display 4.71:1.
 
-## History inside v01
-The first render carried two dashed gap markers (logo box, apply method). Both were removed the same day when the client supplied the email and the advert was ruled unbranded; that render was never shown to the client.
+## Story safe zone
+All text sits between y 290 and y 1580; the top and bottom zones hold illustration only.
+
+## Illustration
+All inline SVG drawn for this piece: phone, burger, pizza, fries, generic social symbols (heart, comment bubble, share arrow, play, hashtag, megaphone). No photos, stock, AI images or platform marks.
+
+## History
+v01 (plain typographic poster, post and story) is in `_archive/` with the reason.
 
 ## Not done
-Native Arabic proofread by a second reader; on-device preview under the real Instagram story UI; confirmation that the mailbox `hr@otlobny.co` exists and receives mail.
+Native Arabic proofread by a second reader; on-device preview under the real story UI; confirmation that `hr@otlobny.co` receives mail.
