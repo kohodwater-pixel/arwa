@@ -33,8 +33,7 @@ pairs = [
     ("sector line             #D8D1C0 on #15302A", "#D8D1C0", "#15302A"),
     ("accent text (kicker, headline line 2, block titles) #F2A93B on #15302A", "#F2A93B", "#15302A"),
     ("apply line + tag        #15302A on #F2A93B", "#15302A", "#F2A93B"),
-    ("gap label (logo)        #A9B5AE on #15302A", "#A9B5AE", "#15302A"),
-    ("gap label (contact)     #4A3A12 on #F2A93B", "#4A3A12", "#F2A93B"),
+    ("email (call to action) #F2A93B on #15302A", "#F2A93B", "#15302A"),
 ]
 for label, a, b in pairs:
     print(f"{cr(a, b):5.2f}:1  {label}")

@@ -10,7 +10,6 @@
   --text-soft: #D8D1C0;     /* sector line */
   --accent: #F2A93B;        /* saffron: kicker, headline line 2, bullets, apply band */
   --on-accent: #15302A;     /* text on the accent colour */
-  --gap-ink: #A9B5AE;       /* muted ink for the unfinished markers on the ground */
 
   /* ---- type ---- */
   --font: "IBM Plex Sans Arabic", sans-serif;
@@ -25,13 +24,13 @@
 body.post {
   --w: 1080px; --h: 1350px;
   --margin: 64px;
-  --safe-top: 48px; --safe-bottom: 0px;
+  --safe-top: 56px; --safe-bottom: 0px;
   --kicker: 34px;
   --h1-a: 116px; --h1-b: 62px;
   --sector: 32px;
   --block-title: 36px;
   --body: 30px; --body-lh: 1.6;
-  --apply: 31px; --gap-label: 26px;
+  --apply: 31px; --email: 60px;
   --icon: 46px;
   --block-gap: 14px;
 }
@@ -44,7 +43,7 @@ body.story {
   --sector: 34px;
   --block-title: 40px;
   --body: 32px; --body-lh: 1.6;
-  --apply: 33px; --gap-label: 28px;
+  --apply: 30px; --email: 64px;
   --icon: 52px;
   --block-gap: 14px;
 }
@@ -77,16 +76,6 @@ body {
   font-size: var(--kicker); font-weight: 600; color: var(--accent); line-height: 1.5;
 }
 .kicker::before { content: ""; width: 56px; height: 5px; background: var(--accent); border-radius: 3px; }
-
-/* ---- GAP markers: deliberately unfinished (dashed, muted, hatched) ---- */
-.gap {
-  display: flex; align-items: center; justify-content: center; text-align: center;
-  border: 3px dashed currentColor; border-radius: 10px;
-  font-size: var(--gap-label); font-weight: 500; line-height: 1.5;
-  background-image: repeating-linear-gradient(135deg, transparent 0 14px, var(--hatch) 14px 16px);
-}
-.gap--logo { --hatch: rgba(169,181,174,.22); color: var(--gap-ink); width: 230px; height: 92px; }
-.gap--contact { --hatch: rgba(21,48,42,.16); color: #4A3A12; width: 100%; height: 78px; margin-top: 14px; }
 
 h1 { margin-top: 18px; font-weight: 700; }
 h1 .a { display: block; font-size: var(--h1-a); line-height: 1.22; color: var(--text); white-space: nowrap; }
@@ -128,10 +117,16 @@ h1 .b { display: block; font-size: var(--h1-b); line-height: 1.4; color: var(--a
 
 /* ---- apply band ---- */
 .apply { background: var(--accent); color: var(--on-accent); }
-.apply p { font-size: var(--apply); font-weight: 700; line-height: 1.6; }
-body.post .apply { margin: 0 calc(var(--margin) * -1); padding: 16px var(--margin) 26px; }
-body.story .apply { border-radius: 26px; padding: 18px 36px 28px; }
-body.story .gap--contact { height: 80px; }
+.apply p { font-size: var(--apply); font-weight: 700; line-height: 1.6; white-space: nowrap; }
+/* the call to action: email, LTR, accent on the ground colour */
+.email {
+  display: block; direction: ltr; unicode-bidi: isolate; text-align: center; white-space: nowrap;
+  margin-top: 12px; padding: 8px 24px 12px; border-radius: 18px;
+  background: var(--ground); color: var(--accent);
+  font-size: var(--email); font-weight: 700; line-height: 1.4;
+}
+body.post .apply { margin: 0 calc(var(--margin) * -1); padding: 16px var(--margin) 30px; }
+body.story .apply { border-radius: 26px; padding: 18px 36px 32px; }
 body.story .rule { margin-top: 22px; }
 body.story .lists { margin-top: 14px; }
 body.story h1 { margin-top: 16px; }

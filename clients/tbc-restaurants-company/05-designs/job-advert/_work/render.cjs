@@ -25,9 +25,8 @@ const COPY = [
   'معرفة جيدة بمنصات إنستغرام وتيك توك وسناب شات وإكس',
   'مهارة في كتابة المحتوى وحس إبداعي',
   'يُفضَّل من لديه خبرة في قطاع المطاعم',
-  'للتقديم: أرسل/ي سيرتك الذاتية ونماذج من أعمالك',
-  'مكان الشعار',
-  'وسيلة التقديم (بريد / واتساب / رابط)',
+  'للتقديم: أرسل/ي سيرتك الذاتية وسابقة أعمالك على البريد الإلكتروني',
+  'hr@otlobny.co',
 ];
 (async () => {
   const browser = await chromium.launch();
@@ -40,8 +39,12 @@ const COPY = [
       const out = { issues: [], info: {} };
       const norm = s => s.replace(/\s+/g, ' ').trim();
       // exact copy: the visible text units, in order, must equal the brief
-      const units = [...document.querySelectorAll('.kicker,h1,.sector,.tag,.block h2,.block li,.apply p,.gap')].map(e => norm(e.textContent));
-      const order = ['فرصة وظيفية', 'مكان الشعار', ...COPY.slice(1, 17), 'وسيلة التقديم (بريد / واتساب / رابط)'];
+      const units = [...document.querySelectorAll('.kicker,h1,.sector,.tag,.block h2,.block li,.apply p,.email')].map(e => norm(e.textContent));
+      const order = COPY;
+      if (/class="gap|placeholder|dashed|مكان الشعار|وسيلة التقديم/i.test(document.documentElement.outerHTML) || [...document.querySelectorAll('main *')].some(e => getComputedStyle(e).borderStyle.includes('dashed'))) out.issues.push('placeholder remains');
+      const em = document.querySelector('.email'); const ecs = getComputedStyle(em);
+      if (em.textContent !== 'hr@otlobny.co' || em.getAttribute('dir') !== 'ltr' || ecs.direction !== 'ltr' || ecs.unicodeBidi !== 'isolate') out.issues.push('email dir/string');
+      { const r = document.createRange(); r.selectNodeContents(em); if (r.getClientRects().length !== 1) out.issues.push('email broken across lines'); const ar = document.createRange(); ar.selectNodeContents(document.querySelector('.apply p')); if (ar.getClientRects().length !== 1) out.issues.push('apply sentence wraps'); out.info.emailPx = parseFloat(ecs.fontSize); }
       if (JSON.stringify(units) !== JSON.stringify(order)) out.issues.push('COPY MISMATCH: ' + JSON.stringify(units));
       // no text outside those units
       const all = norm(document.querySelector('main').textContent);
@@ -49,9 +52,9 @@ const COPY = [
       // fonts
       out.info.fonts = [...document.fonts].filter(f => f.status === 'loaded').map(f => f.family + ' ' + f.weight);
       const boxes = {};
-      for (const e of document.querySelectorAll('.kicker,.gap,h1 .a,h1 .b,.sector,.tag,.block h2,.block li,.apply,.apply p,.rail')) {
+      for (const e of document.querySelectorAll('.kicker,h1 .a,h1 .b,.sector,.tag,.block h2,.block li,.apply,.apply p,.email,.rail')) {
         const range = document.createRange(); range.selectNodeContents(e);
-        const tb = e.matches('.apply,.rail,.gap,.tag') ? e.getBoundingClientRect() : range.getBoundingClientRect();
+        const tb = e.matches('.apply,.rail,.email,.tag') ? e.getBoundingClientRect() : range.getBoundingClientRect();
         const key = (e.className || e.tagName) + ':' + norm(e.textContent).slice(0, 18);
         boxes[key] = [Math.round(tb.left), Math.round(tb.top), Math.round(tb.right), Math.round(tb.bottom)];
         const m = 40;
