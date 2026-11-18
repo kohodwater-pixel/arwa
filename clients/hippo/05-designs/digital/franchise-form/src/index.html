@@ -37,51 +37,154 @@
 
   <section class="sheet" aria-labelledby="form-title">
     <div id="form-panel">
-      <h2 id="form-title" tabindex="-1">استفسار عن الامتياز</h2>
-      <p class="intro">كل الحقول مطلوبة، إلا ما كُتب بجانبه «اختياري».</p>
+      <h2 id="form-title">استفسار عن الامتياز</h2>
+      <p class="intro">خطوتان قصيرتان. كل الحقول مطلوبة، إلا ما كُتب بجانبه «اختياري».</p>
       <noscript><p>هذا النموذج يحتاج إلى تفعيل JavaScript في متصفحك حتى يعمل.</p></noscript>
 
+      <div class="steps" id="steps" data-step="1">
+        <p class="steps-text" id="steps-text" tabindex="-1"><span class="steps-count">الخطوة <span id="step-now">1</span> من 2</span> <span class="steps-name" id="step-name" data-s1="بياناتك" data-s2="طلبك">بياناتك</span></p>
+        <div class="steps-bar" aria-hidden="true"><span></span><span></span></div>
+      </div>
+
       <form id="enquiry-form" novalidate>
+       <div class="step" id="step-1" role="group" aria-labelledby="steps-text">
         <div class="field">
           <label for="full_name">الاسم الكامل</label>
-          <input type="text" id="full_name" name="full_name" autocomplete="name" maxlength="120" required aria-describedby="full_name-error">
+          <input type="text" id="full_name" name="full_name" required autocomplete="name" maxlength="120" aria-describedby="full_name-error">
           <p class="error" id="full_name-error" hidden></p>
         </div>
-
+        <div class="field">
+          <label for="profession">المهنة</label>
+          <input type="text" id="profession" name="profession" required autocomplete="organization-title" maxlength="120" aria-describedby="profession-error">
+          <p class="error" id="profession-error" hidden></p>
+        </div>
+        <div class="field">
+          <label for="age">العمر</label>
+          <p class="hint" id="age-hint">بالسنوات، بالأرقام.</p>
+          <input class="ltr-value short" type="text" id="age" name="age" required inputmode="numeric" autocomplete="off" maxlength="3" aria-describedby="age-hint age-error">
+          <p class="error" id="age-error" hidden></p>
+        </div>
+        <div class="field">
+          <label for="company_name">اسم شركتك <span class="optional">(اختياري)</span></label>
+          <input type="text" id="company_name" name="company_name" autocomplete="organization" maxlength="160" aria-describedby="company_name-error">
+          <p class="error" id="company_name-error" hidden></p>
+        </div>
+        <div class="field">
+          <label for="company_website">موقع شركتك الإلكتروني <span class="optional">(اختياري)</span></label>
+          <input class="ltr-value" type="text" id="company_website" name="company_website" inputmode="url" autocomplete="url" autocapitalize="none" spellcheck="false" maxlength="200" aria-describedby="company_website-error">
+          <p class="error" id="company_website-error" hidden></p>
+        </div>
         <div class="field">
           <label for="mobile">رقم الجوال</label>
           <p class="hint" id="mobile-hint">مثال: <span dir="ltr">05XXXXXXXX</span> — ومن خارج السعودية اكتبه مع مفتاح الدولة.</p>
-          <input class="ltr-value" type="tel" id="mobile" name="mobile" inputmode="tel" autocomplete="tel" maxlength="24" required aria-describedby="mobile-hint mobile-error">
+          <input class="ltr-value" type="tel" id="mobile" name="mobile" required inputmode="tel" autocomplete="tel" maxlength="24" aria-describedby="mobile-hint mobile-error">
           <p class="error" id="mobile-error" hidden></p>
         </div>
-
         <div class="field">
-          <label for="email">البريد الإلكتروني <span class="optional">(اختياري)</span></label>
-          <input class="ltr-value" type="email" id="email" name="email" inputmode="email" autocomplete="email" autocapitalize="none" spellcheck="false" maxlength="160" aria-describedby="email-error">
+          <label for="email">البريد الإلكتروني</label>
+          <input class="ltr-value" type="email" id="email" name="email" required inputmode="email" autocomplete="email" autocapitalize="none" spellcheck="false" maxlength="160" aria-describedby="email-error">
           <p class="error" id="email-error" hidden></p>
         </div>
 
-        <div class="field">
-          <label for="city">المدينة أو المنطقة التي تريد الافتتاح فيها</label>
-          <input type="text" id="city" name="city" autocomplete="off" maxlength="120" required aria-describedby="city-error">
-          <p class="error" id="city-error" hidden></p>
+        <p class="form-alert" id="alert-1" role="alert" tabindex="-1" hidden></p>
+        <div class="actions">
+          <button class="submit" id="next-btn" type="button">التالي</button>
         </div>
+       </div>
 
-        <fieldset class="field" id="has_location-group" aria-describedby="has_location-error">
-          <legend>هل لديك موقع للمحل؟</legend>
+       <div class="step" id="step-2" role="group" aria-labelledby="steps-text" hidden>
+        <fieldset class="field" id="experience-group" aria-describedby="experience-error">
+          <legend>ما خبرتك في المطاعم والمقاهي؟</legend>
           <div class="choices">
-            <label class="choice"><input type="radio" name="has_location" value="yes" required><span>نعم، لديّ موقع</span></label>
+            <label class="choice"><input type="radio" name="experience" value="owner" required><span>أملك مطعمًا أو مقهى</span></label>
+            <label class="choice"><input type="radio" name="experience" value="franchisee"><span>أشغّل امتيازًا لعلامة أخرى</span></label>
+            <label class="choice"><input type="radio" name="experience" value="both"><span>الاثنان معًا</span></label>
+            <label class="choice"><input type="radio" name="experience" value="employee"><span>عملت موظفًا في القطاع</span></label>
+            <label class="choice"><input type="radio" name="experience" value="none"><span>لا خبرة سابقة</span></label>
+            <label class="choice"><input type="radio" name="experience" value="other"><span>غير ذلك</span></label>
+          </div>
+          <p class="error" id="experience-error" hidden></p>
+          <div class="field" id="experience_other-wrap" hidden>
+          <label for="experience_other">اكتب إجابتك</label>
+          <input type="text" id="experience_other" name="experience_other" required maxlength="200" aria-describedby="experience_other-error">
+          <p class="error" id="experience_other-error" hidden></p>
+        </div>
+        </fieldset>
+        <div class="field">
+          <label for="own_brand">اسم علامتك التجارية، إن وُجدت <span class="optional">(اختياري)</span></label>
+          <input type="text" id="own_brand" name="own_brand" autocomplete="off" maxlength="160" aria-describedby="own_brand-error">
+          <p class="error" id="own_brand-error" hidden></p>
+        </div>
+        <div class="field">
+          <label for="branches_operated">عدد الفروع التي تديرها حاليًا <span class="optional">(اختياري)</span></label>
+          <input class="ltr-value short" type="text" id="branches_operated" name="branches_operated" inputmode="numeric" autocomplete="off" maxlength="5" aria-describedby="branches_operated-error">
+          <p class="error" id="branches_operated-error" hidden></p>
+        </div>
+        <div class="field">
+          <label for="why_hippo">لماذا امتياز هيبو؟</label>
+          <textarea id="why_hippo" name="why_hippo" required rows="4" maxlength="1500" aria-describedby="why_hippo-error"></textarea>
+          <p class="error" id="why_hippo-error" hidden></p>
+        </div>
+        <fieldset class="field" id="branches_wanted-group" aria-describedby="branches_wanted-error">
+          <legend>كم فرعًا تنوي افتتاحه؟</legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="branches_wanted" value="one" required><span>فرع واحد</span></label>
+            <label class="choice"><input type="radio" name="branches_wanted" value="two-to-five"><span>من فرعين إلى خمسة</span></label>
+            <label class="choice"><input type="radio" name="branches_wanted" value="five-to-ten"><span>من خمسة إلى عشرة</span></label>
+            <label class="choice"><input type="radio" name="branches_wanted" value="other"><span>غير ذلك</span></label>
+          </div>
+          <p class="error" id="branches_wanted-error" hidden></p>
+          <div class="field" id="branches_wanted_other-wrap" hidden>
+          <label for="branches_wanted_other">اكتب إجابتك</label>
+          <input type="text" id="branches_wanted_other" name="branches_wanted_other" required maxlength="200" aria-describedby="branches_wanted_other-error">
+          <p class="error" id="branches_wanted_other-error" hidden></p>
+        </div>
+        </fieldset>
+        <fieldset class="field" id="investment_source-group" aria-describedby="investment_source-error">
+          <legend>مصدر الاستثمار</legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="investment_source" value="savings" required><span>مدّخرات شخصية</span></label>
+            <label class="choice"><input type="radio" name="investment_source" value="investors"><span>مستثمرون أو شركاء</span></label>
+            <label class="choice"><input type="radio" name="investment_source" value="bank"><span>تمويل بنكي</span></label>
+            <label class="choice"><input type="radio" name="investment_source" value="other"><span>غير ذلك</span></label>
+          </div>
+          <p class="error" id="investment_source-error" hidden></p>
+          <div class="field" id="investment_source_other-wrap" hidden>
+          <label for="investment_source_other">اكتب إجابتك</label>
+          <input type="text" id="investment_source_other" name="investment_source_other" required maxlength="200" aria-describedby="investment_source_other-error">
+          <p class="error" id="investment_source_other-error" hidden></p>
+        </div>
+        </fieldset>
+        <div class="field">
+          <label for="investment_amount">المبلغ الذي تنوي استثماره</label>
+          <p class="hint" id="investment_amount-hint">بالأرقام، بالريال السعودي.</p>
+          <div class="with-unit"><input class="ltr-value" type="text" id="investment_amount" name="investment_amount" required inputmode="numeric" autocomplete="off" maxlength="20" aria-describedby="investment_amount-hint investment_amount-error"><span class="unit" aria-hidden="true">ر.س</span></div>
+          <p class="error" id="investment_amount-error" hidden></p>
+        </div>
+        <fieldset class="field" id="start_time-group" aria-describedby="start_time-error">
+          <legend>متى تتوقع أن تبدأ؟</legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="start_time" value="now" required><span>فورًا</span></label>
+            <label class="choice"><input type="radio" name="start_time" value="3-6-months"><span>خلال 3 إلى 6 أشهر</span></label>
+            <label class="choice"><input type="radio" name="start_time" value="6-12-months"><span>خلال 6 إلى 12 شهرًا</span></label>
+            <label class="choice"><input type="radio" name="start_time" value="1-2-years"><span>خلال سنة إلى سنتين</span></label>
+          </div>
+          <p class="error" id="start_time-error" hidden></p>
+        </fieldset>
+        <div class="field">
+          <label for="target_cities">المدن التي تستهدفها</label>
+          <input type="text" id="target_cities" name="target_cities" required autocomplete="off" maxlength="300" aria-describedby="target_cities-error">
+          <p class="error" id="target_cities-error" hidden></p>
+        </div>
+        <fieldset class="field" id="has_location-group" aria-describedby="has_location-error">
+          <legend>هل لديك موقع للمحل؟ <span class="optional">(اختياري)</span></legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="has_location" value="yes"><span>نعم، لديّ موقع</span></label>
             <label class="choice"><input type="radio" name="has_location" value="searching"><span>لا، أبحث عن موقع</span></label>
             <label class="choice"><input type="radio" name="has_location" value="undecided"><span>لم أحدّد بعد</span></label>
           </div>
           <p class="error" id="has_location-error" hidden></p>
         </fieldset>
-
-        <div class="field">
-          <label for="experience">خبرتك في المطاعم أو في إدارة الأعمال <span class="optional">(اختياري)</span></label>
-          <p class="hint" id="experience-hint">باختصار: عملك الحالي، وأي تجربة سابقة في قطاع الأغذية والمشروبات.</p>
-          <textarea id="experience" name="experience" rows="3" maxlength="600" aria-describedby="experience-hint"></textarea>
-        </div>
 
         <div class="field">
           <label for="heard_from">كيف سمعت عن امتياز هيبو؟ <span class="optional">(اختياري)</span></label>
@@ -94,15 +197,15 @@
             <option value="other">غير ذلك</option>
           </select>
         </div>
-
         <div class="field">
-          <label for="message">رسالتك <span class="optional">(اختياري)</span></label>
-          <textarea id="message" name="message" rows="4" maxlength="1500"></textarea>
+          <label for="notes">ملاحظات <span class="optional">(اختياري)</span></label>
+          <textarea id="notes" name="notes" rows="3" maxlength="1500" aria-describedby="notes-error"></textarea>
+          <p class="error" id="notes-error" hidden></p>
         </div>
 
         <div class="hp" aria-hidden="true">
-          <label for="company_website">اترك هذا الحقل فارغًا</label>
-          <input type="text" id="company_website" name="company_website" tabindex="-1" autocomplete="off">
+          <label for="company_website_2">اترك هذا الحقل فارغًا</label>
+          <input type="text" id="company_website_2" name="hp_field" tabindex="-1" autocomplete="off">
         </div>
 
         <div class="field">
@@ -114,12 +217,16 @@
           <p class="error" id="consent-error" hidden></p>
         </div>
 
-        <p class="form-alert" id="form-alert" role="alert" tabindex="-1" hidden></p>
-        <button class="submit" id="submit-btn" type="submit">أرسل الاستفسار</button>
+        <p class="form-alert" id="alert-2" role="alert" tabindex="-1" hidden></p>
+        <div class="actions">
+          <button class="again back" id="back-btn" type="button">السابق</button>
+          <button class="submit" id="submit-btn" type="submit">أرسل الاستفسار</button>
+        </div>
+       </div>
       </form>
     </div>
 
-    <!-- State: sent (only when FORM_ENDPOINT is set and the server answered OK) -->
+    <!-- State: sent (only when FORM_ENDPOINT is set and the server confirmed) -->
     <div class="done" id="done-live" tabindex="-1" role="status" hidden>
       <img class="box" src="assets/box.webp" width="640" height="680" alt="بوكس الجَمعات من هيبو">
       <h2>وصل استفسارك.</h2>

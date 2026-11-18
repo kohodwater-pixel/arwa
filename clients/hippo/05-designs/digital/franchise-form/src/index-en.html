@@ -30,78 +30,181 @@
         <p class="support" lang="ar" dir="rtl">حُطّ ثقلك.</p>
         <h1 id="campaign-line">Put your weight behind it.</h1>
       </div>
-      <p class="lead">Our side of the scale is full. The other side is missing your weight. Leave your details and we'll get in touch about the HIPPO franchise.</p>
+      <p class="lead">Our side of the scale is full. The other side is missing your weight. Leave your details and we&#x27;ll get in touch about the HIPPO franchise.</p>
     </div>
   </section>
 
   <section class="sheet" aria-labelledby="form-title">
     <div id="form-panel">
-      <h2 id="form-title" tabindex="-1">Franchise enquiry</h2>
-      <p class="intro">Every field is required unless it says “optional”.</p>
+      <h2 id="form-title">Franchise enquiry</h2>
+      <p class="intro">Two short steps. Every field is required unless it says “optional”.</p>
       <noscript><p>This form needs JavaScript switched on in your browser.</p></noscript>
 
+      <div class="steps" id="steps" data-step="1">
+        <p class="steps-text" id="steps-text" tabindex="-1"><span class="steps-count">Step <span id="step-now">1</span> of 2</span> <span class="steps-name" id="step-name" data-s1="About you" data-s2="Your plans">About you</span></p>
+        <div class="steps-bar" aria-hidden="true"><span></span><span></span></div>
+      </div>
+
       <form id="enquiry-form" novalidate>
+       <div class="step" id="step-1" role="group" aria-labelledby="steps-text">
         <div class="field">
           <label for="full_name">Full name</label>
-          <input type="text" id="full_name" name="full_name" autocomplete="name" maxlength="120" required aria-describedby="full_name-error">
+          <input type="text" id="full_name" name="full_name" required autocomplete="name" maxlength="120" aria-describedby="full_name-error">
           <p class="error" id="full_name-error" hidden></p>
         </div>
-
+        <div class="field">
+          <label for="profession">Profession</label>
+          <input type="text" id="profession" name="profession" required autocomplete="organization-title" maxlength="120" aria-describedby="profession-error">
+          <p class="error" id="profession-error" hidden></p>
+        </div>
+        <div class="field">
+          <label for="age">Age</label>
+          <p class="hint" id="age-hint">In years, in digits.</p>
+          <input class="ltr-value short" type="text" id="age" name="age" required inputmode="numeric" autocomplete="off" maxlength="3" aria-describedby="age-hint age-error">
+          <p class="error" id="age-error" hidden></p>
+        </div>
+        <div class="field">
+          <label for="company_name">Your company&#x27;s name <span class="optional">(optional)</span></label>
+          <input type="text" id="company_name" name="company_name" autocomplete="organization" maxlength="160" aria-describedby="company_name-error">
+          <p class="error" id="company_name-error" hidden></p>
+        </div>
+        <div class="field">
+          <label for="company_website">Your company&#x27;s website <span class="optional">(optional)</span></label>
+          <input class="ltr-value" type="text" id="company_website" name="company_website" inputmode="url" autocomplete="url" autocapitalize="none" spellcheck="false" maxlength="200" aria-describedby="company_website-error">
+          <p class="error" id="company_website-error" hidden></p>
+        </div>
         <div class="field">
           <label for="mobile">Mobile number</label>
           <p class="hint" id="mobile-hint">Example: 05XXXXXXXX. Outside Saudi Arabia, include your country code.</p>
-          <input class="ltr-value" type="tel" id="mobile" name="mobile" inputmode="tel" autocomplete="tel" maxlength="24" required aria-describedby="mobile-hint mobile-error">
+          <input class="ltr-value" type="tel" id="mobile" name="mobile" required inputmode="tel" autocomplete="tel" maxlength="24" aria-describedby="mobile-hint mobile-error">
           <p class="error" id="mobile-error" hidden></p>
         </div>
-
         <div class="field">
-          <label for="email">Email <span class="optional">(optional)</span></label>
-          <input class="ltr-value" type="email" id="email" name="email" inputmode="email" autocomplete="email" autocapitalize="none" spellcheck="false" maxlength="160" aria-describedby="email-error">
+          <label for="email">Email</label>
+          <input class="ltr-value" type="email" id="email" name="email" required inputmode="email" autocomplete="email" autocapitalize="none" spellcheck="false" maxlength="160" aria-describedby="email-error">
           <p class="error" id="email-error" hidden></p>
         </div>
 
-        <div class="field">
-          <label for="city">City or region where you want to open</label>
-          <input type="text" id="city" name="city" autocomplete="off" maxlength="120" required aria-describedby="city-error">
-          <p class="error" id="city-error" hidden></p>
+        <p class="form-alert" id="alert-1" role="alert" tabindex="-1" hidden></p>
+        <div class="actions">
+          <button class="submit" id="next-btn" type="button">Next</button>
         </div>
+       </div>
 
-        <fieldset class="field" id="has_location-group" aria-describedby="has_location-error">
-          <legend>Do you have a site for the shop?</legend>
+       <div class="step" id="step-2" role="group" aria-labelledby="steps-text" hidden>
+        <fieldset class="field" id="experience-group" aria-describedby="experience-error">
+          <legend>What&#x27;s your restaurant or café experience?</legend>
           <div class="choices">
-            <label class="choice"><input type="radio" name="has_location" value="yes" required><span>Yes, I have one</span></label>
-            <label class="choice"><input type="radio" name="has_location" value="searching"><span>No, I'm looking</span></label>
+            <label class="choice"><input type="radio" name="experience" value="owner" required><span>I own a restaurant or café</span></label>
+            <label class="choice"><input type="radio" name="experience" value="franchisee"><span>I run another brand&#x27;s franchise</span></label>
+            <label class="choice"><input type="radio" name="experience" value="both"><span>Both</span></label>
+            <label class="choice"><input type="radio" name="experience" value="employee"><span>I&#x27;ve worked in the sector</span></label>
+            <label class="choice"><input type="radio" name="experience" value="none"><span>No experience yet</span></label>
+            <label class="choice"><input type="radio" name="experience" value="other"><span>Something else</span></label>
+          </div>
+          <p class="error" id="experience-error" hidden></p>
+          <div class="field" id="experience_other-wrap" hidden>
+          <label for="experience_other">Tell us more</label>
+          <input type="text" id="experience_other" name="experience_other" required maxlength="200" aria-describedby="experience_other-error">
+          <p class="error" id="experience_other-error" hidden></p>
+        </div>
+        </fieldset>
+        <div class="field">
+          <label for="own_brand">Your own brand&#x27;s name, if you have one <span class="optional">(optional)</span></label>
+          <input type="text" id="own_brand" name="own_brand" autocomplete="off" maxlength="160" aria-describedby="own_brand-error">
+          <p class="error" id="own_brand-error" hidden></p>
+        </div>
+        <div class="field">
+          <label for="branches_operated">Branches you currently run <span class="optional">(optional)</span></label>
+          <input class="ltr-value short" type="text" id="branches_operated" name="branches_operated" inputmode="numeric" autocomplete="off" maxlength="5" aria-describedby="branches_operated-error">
+          <p class="error" id="branches_operated-error" hidden></p>
+        </div>
+        <div class="field">
+          <label for="why_hippo">Why the HIPPO franchise?</label>
+          <textarea id="why_hippo" name="why_hippo" required rows="4" maxlength="1500" aria-describedby="why_hippo-error"></textarea>
+          <p class="error" id="why_hippo-error" hidden></p>
+        </div>
+        <fieldset class="field" id="branches_wanted-group" aria-describedby="branches_wanted-error">
+          <legend>How many branches do you plan to open?</legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="branches_wanted" value="one" required><span>One</span></label>
+            <label class="choice"><input type="radio" name="branches_wanted" value="two-to-five"><span>Two to five</span></label>
+            <label class="choice"><input type="radio" name="branches_wanted" value="five-to-ten"><span>Five to ten</span></label>
+            <label class="choice"><input type="radio" name="branches_wanted" value="other"><span>Something else</span></label>
+          </div>
+          <p class="error" id="branches_wanted-error" hidden></p>
+          <div class="field" id="branches_wanted_other-wrap" hidden>
+          <label for="branches_wanted_other">Tell us more</label>
+          <input type="text" id="branches_wanted_other" name="branches_wanted_other" required maxlength="200" aria-describedby="branches_wanted_other-error">
+          <p class="error" id="branches_wanted_other-error" hidden></p>
+        </div>
+        </fieldset>
+        <fieldset class="field" id="investment_source-group" aria-describedby="investment_source-error">
+          <legend>Source of investment</legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="investment_source" value="savings" required><span>Personal savings</span></label>
+            <label class="choice"><input type="radio" name="investment_source" value="investors"><span>Investors or partners</span></label>
+            <label class="choice"><input type="radio" name="investment_source" value="bank"><span>Bank financing</span></label>
+            <label class="choice"><input type="radio" name="investment_source" value="other"><span>Something else</span></label>
+          </div>
+          <p class="error" id="investment_source-error" hidden></p>
+          <div class="field" id="investment_source_other-wrap" hidden>
+          <label for="investment_source_other">Tell us more</label>
+          <input type="text" id="investment_source_other" name="investment_source_other" required maxlength="200" aria-describedby="investment_source_other-error">
+          <p class="error" id="investment_source_other-error" hidden></p>
+        </div>
+        </fieldset>
+        <div class="field">
+          <label for="investment_amount">Amount you plan to invest</label>
+          <p class="hint" id="investment_amount-hint">In digits, in Saudi riyals.</p>
+          <div class="with-unit"><input class="ltr-value" type="text" id="investment_amount" name="investment_amount" required inputmode="numeric" autocomplete="off" maxlength="20" aria-describedby="investment_amount-hint investment_amount-error"><span class="unit" aria-hidden="true">SAR</span></div>
+          <p class="error" id="investment_amount-error" hidden></p>
+        </div>
+        <fieldset class="field" id="start_time-group" aria-describedby="start_time-error">
+          <legend>When do you expect to start?</legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="start_time" value="now" required><span>Right away</span></label>
+            <label class="choice"><input type="radio" name="start_time" value="3-6-months"><span>In 3 to 6 months</span></label>
+            <label class="choice"><input type="radio" name="start_time" value="6-12-months"><span>In 6 to 12 months</span></label>
+            <label class="choice"><input type="radio" name="start_time" value="1-2-years"><span>In 1 to 2 years</span></label>
+          </div>
+          <p class="error" id="start_time-error" hidden></p>
+        </fieldset>
+        <div class="field">
+          <label for="target_cities">Cities you&#x27;re targeting</label>
+          <input type="text" id="target_cities" name="target_cities" required autocomplete="off" maxlength="300" aria-describedby="target_cities-error">
+          <p class="error" id="target_cities-error" hidden></p>
+        </div>
+        <fieldset class="field" id="has_location-group" aria-describedby="has_location-error">
+          <legend>Do you have a site for the shop? <span class="optional">(optional)</span></legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="has_location" value="yes"><span>Yes, I have one</span></label>
+            <label class="choice"><input type="radio" name="has_location" value="searching"><span>No, I&#x27;m looking</span></label>
             <label class="choice"><input type="radio" name="has_location" value="undecided"><span>Not decided yet</span></label>
           </div>
           <p class="error" id="has_location-error" hidden></p>
         </fieldset>
 
         <div class="field">
-          <label for="experience">Your restaurant or business experience <span class="optional">(optional)</span></label>
-          <p class="hint" id="experience-hint">In brief: what you do now, and anything you've done in food and beverage.</p>
-          <textarea id="experience" name="experience" rows="3" maxlength="600" aria-describedby="experience-hint"></textarea>
-        </div>
-
-        <div class="field">
           <label for="heard_from">How did you hear about the HIPPO franchise? <span class="optional">(optional)</span></label>
           <select id="heard_from" name="heard_from">
             <option value="">Choose</option>
             <option value="video-ad">The video ad</option>
-            <option value="social">HIPPO's social media accounts</option>
+            <option value="social">HIPPO&#x27;s social media accounts</option>
             <option value="friend">A friend or contact</option>
-            <option value="customer">I've eaten at HIPPO</option>
+            <option value="customer">I&#x27;ve eaten at HIPPO</option>
             <option value="other">Somewhere else</option>
           </select>
         </div>
-
         <div class="field">
-          <label for="message">Your message <span class="optional">(optional)</span></label>
-          <textarea id="message" name="message" rows="4" maxlength="1500"></textarea>
+          <label for="notes">Notes <span class="optional">(optional)</span></label>
+          <textarea id="notes" name="notes" rows="3" maxlength="1500" aria-describedby="notes-error"></textarea>
+          <p class="error" id="notes-error" hidden></p>
         </div>
 
         <div class="hp" aria-hidden="true">
-          <label for="company_website">Leave this field empty</label>
-          <input type="text" id="company_website" name="company_website" tabindex="-1" autocomplete="off">
+          <label for="company_website_2">Leave this field empty</label>
+          <input type="text" id="company_website_2" name="hp_field" tabindex="-1" autocomplete="off">
         </div>
 
         <div class="field">
@@ -113,12 +216,16 @@
           <p class="error" id="consent-error" hidden></p>
         </div>
 
-        <p class="form-alert" id="form-alert" role="alert" tabindex="-1" hidden></p>
-        <button class="submit" id="submit-btn" type="submit">Send enquiry</button>
+        <p class="form-alert" id="alert-2" role="alert" tabindex="-1" hidden></p>
+        <div class="actions">
+          <button class="again back" id="back-btn" type="button">Back</button>
+          <button class="submit" id="submit-btn" type="submit">Send enquiry</button>
+        </div>
+       </div>
       </form>
     </div>
 
-    <!-- State: sent (only when FORM_ENDPOINT is set and the server answered OK) -->
+    <!-- State: sent (only when FORM_ENDPOINT is set and the server confirmed) -->
     <div class="done" id="done-live" tabindex="-1" role="status" hidden>
       <img class="box" src="assets/box.webp" width="640" height="680" alt="A HIPPO gathering box">
       <h2>Your enquiry is in.</h2>
@@ -128,7 +235,7 @@
     <!-- State: WhatsApp opened (only when WHATSAPP_NUMBER is set) -->
     <div class="done" id="done-whatsapp" tabindex="-1" role="status" hidden>
       <h2>One step left.</h2>
-      <p>We've opened WhatsApp with your enquiry written out. Press send there so it reaches us.</p>
+      <p>We&#x27;ve opened WhatsApp with your enquiry written out. Press send there so it reaches us.</p>
       <button class="again" type="button" data-back>Back to the form</button>
     </div>
 

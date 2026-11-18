@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HIPPO Franchise — Enquiry</title>
+<meta name="description" content="Enquiry form for the HIPPO franchise.">
+<meta name="format-detection" content="telephone=no">
+<link rel="alternate" hreflang="ar" href="index.html">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#form-title">Skip to the form</a>
+
+<p class="draft-strip" id="draft-strip"><b>Draft for review</b> — the form is not connected yet. Nothing will be sent.</p>
+
+<header class="masthead">
+  <a class="lang-switch" href="index.html" lang="ar" dir="rtl" hreflang="ar">العربية</a>
+  <img class="logo" src="assets/hippo-logo.png" width="1343" height="2127" alt="HIPPO Brioche Bread logo">
+  <p class="label">Franchise</p>
+</header>
+
+<main>
+  <section class="stage" aria-labelledby="campaign-line">
+    <div class="wall">
+      <div class="hero-photo"><img src="assets/sandwich.webp" width="760" height="549" alt="A HIPPO brioche sandwich in its white holder"></div>
+    </div>
+    <div class="floor">
+      <div class="spot">
+        <p class="support" lang="ar" dir="rtl">حُطّ ثقلك.</p>
+        <h1 id="campaign-line">Put your weight behind it.</h1>
+      </div>
+      <p class="lead">Our side of the scale is full. The other side is missing your weight. Leave your details and we'll get in touch about the HIPPO franchise.</p>
+    </div>
+  </section>
+
+  <section class="sheet" aria-labelledby="form-title">
+    <div id="form-panel">
+      <h2 id="form-title" tabindex="-1">Franchise enquiry</h2>
+      <p class="intro">Every field is required unless it says “optional”.</p>
+      <noscript><p>This form needs JavaScript switched on in your browser.</p></noscript>
+
+      <form id="enquiry-form" novalidate>
+        <div class="field">
+          <label for="full_name">Full name</label>
+          <input type="text" id="full_name" name="full_name" autocomplete="name" maxlength="120" required aria-describedby="full_name-error">
+          <p class="error" id="full_name-error" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="mobile">Mobile number</label>
+          <p class="hint" id="mobile-hint">Example: 05XXXXXXXX. Outside Saudi Arabia, include your country code.</p>
+          <input class="ltr-value" type="tel" id="mobile" name="mobile" inputmode="tel" autocomplete="tel" maxlength="24" required aria-describedby="mobile-hint mobile-error">
+          <p class="error" id="mobile-error" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="email">Email <span class="optional">(optional)</span></label>
+          <input class="ltr-value" type="email" id="email" name="email" inputmode="email" autocomplete="email" autocapitalize="none" spellcheck="false" maxlength="160" aria-describedby="email-error">
+          <p class="error" id="email-error" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="city">City or region where you want to open</label>
+          <input type="text" id="city" name="city" autocomplete="off" maxlength="120" required aria-describedby="city-error">
+          <p class="error" id="city-error" hidden></p>
+        </div>
+
+        <fieldset class="field" id="has_location-group" aria-describedby="has_location-error">
+          <legend>Do you have a site for the shop?</legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="has_location" value="yes" required><span>Yes, I have one</span></label>
+            <label class="choice"><input type="radio" name="has_location" value="searching"><span>No, I'm looking</span></label>
+            <label class="choice"><input type="radio" name="has_location" value="undecided"><span>Not decided yet</span></label>
+          </div>
+          <p class="error" id="has_location-error" hidden></p>
+        </fieldset>
+
+        <div class="field">
+          <label for="experience">Your restaurant or business experience <span class="optional">(optional)</span></label>
+          <p class="hint" id="experience-hint">In brief: what you do now, and anything you've done in food and beverage.</p>
+          <textarea id="experience" name="experience" rows="3" maxlength="600" aria-describedby="experience-hint"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="heard_from">How did you hear about the HIPPO franchise? <span class="optional">(optional)</span></label>
+          <select id="heard_from" name="heard_from">
+            <option value="">Choose</option>
+            <option value="video-ad">The video ad</option>
+            <option value="social">HIPPO's social media accounts</option>
+            <option value="friend">A friend or contact</option>
+            <option value="customer">I've eaten at HIPPO</option>
+            <option value="other">Somewhere else</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="message">Your message <span class="optional">(optional)</span></label>
+          <textarea id="message" name="message" rows="4" maxlength="1500"></textarea>
+        </div>
+
+        <div class="hp" aria-hidden="true">
+          <label for="company_website">Leave this field empty</label>
+          <input type="text" id="company_website" name="company_website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="field">
+          <div class="consent">
+            <input type="checkbox" id="consent" name="consent" value="yes" required aria-describedby="consent-error">
+            <label for="consent">I agree to my details being used to contact me about this enquiry.</label>
+          </div>
+          <p class="privacy" id="privacy-slot"><span class="to-supply">[Privacy notice link — to be added once HIPPO supplies it]</span></p>
+          <p class="error" id="consent-error" hidden></p>
+        </div>
+
+        <p class="form-alert" id="form-alert" role="alert" tabindex="-1" hidden></p>
+        <button class="submit" id="submit-btn" type="submit">Send enquiry</button>
+      </form>
+    </div>
+
+    <!-- State: sent (only when FORM_ENDPOINT is set and the server answered OK) -->
+    <div class="done" id="done-live" tabindex="-1" role="status" hidden>
+      <img class="box" src="assets/box.webp" width="640" height="680" alt="A HIPPO gathering box">
+      <h2>Your enquiry is in.</h2>
+      <p>Thank you. The HIPPO team will contact you on the details you gave.</p>
+    </div>
+
+    <!-- State: WhatsApp opened (only when WHATSAPP_NUMBER is set) -->
+    <div class="done" id="done-whatsapp" tabindex="-1" role="status" hidden>
+      <h2>One step left.</h2>
+      <p>We've opened WhatsApp with your enquiry written out. Press send there so it reaches us.</p>
+      <button class="again" type="button" data-back>Back to the form</button>
+    </div>
+
+    <!-- State: draft (nothing connected). Says plainly that nothing was sent. -->
+    <div class="done" id="done-draft" tabindex="-1" role="status" hidden>
+      <p class="demo-flag"><b>Draft — form not connected</b> Nothing was sent and your details were not saved. This only shows how the page will look.</p>
+      <p class="demo-preview-label">Once the form is connected, visitors will see this message:</p>
+      <img class="box" src="assets/box.webp" width="640" height="680" alt="A HIPPO gathering box">
+      <h2>Your enquiry is in.</h2>
+      <p>Thank you. The HIPPO team will contact you on the details you gave.</p>
+      <button class="again" type="button" data-back>Back to the form</button>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <img class="logo" src="assets/hippo-logo.png" width="1343" height="2127" alt="HIPPO Brioche Bread logo" loading="lazy">
+  <p>Franchise</p>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/form.js"></script>
+</body>
+</html>

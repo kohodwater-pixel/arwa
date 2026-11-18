@@ -4,10 +4,14 @@
    While FORM_ENDPOINT and WHATSAPP_NUMBER are both empty, the page stays in
    DRAFT mode: it validates, sends nothing, and says so on screen. */
 window.HIPPO_FORM_CONFIG = {
-  // Where the enquiry is sent (HTTPS URL that accepts a POST). Empty = not connected.
+  // Where the enquiry is sent. Empty = not connected.
+  // Google Sheet: paste the web-app URL that ends in /exec
+  // (it starts with https://script.google.com/). Nothing else needs changing.
   FORM_ENDPOINT: "",
 
-  // How it is sent: "json" (application/json) or "form" (application/x-www-form-urlencoded).
+  // Only for endpoints that are NOT Google Apps Script:
+  // "json" (application/json), "form" (application/x-www-form-urlencoded)
+  // or "text" (JSON sent as text/plain, no CORS preflight).
   FORM_FORMAT: "json",
 
   // Simple alternative with no server: international number, digits only, no "+".
