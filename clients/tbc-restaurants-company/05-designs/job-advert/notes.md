@@ -39,12 +39,13 @@ v01 (plain typographic poster, post and story) is in `_archive/` with the reason
 ## Not done
 Native Arabic proofread by a second reader; on-device preview under the real story UI; confirmation that `hr@otlobny.co` receives mail.
 
-## Motion graphic (direction A, v03 look) — `motion/`
-- `tbc-restaurants-company_job-advert_motion-direction-a_ar_v02.mp4` — 1080 × 1920, 30 fps, 20.5 s, H.264 High yuv420p + a **silent** AAC track. Voice-over not yet added (audio file not in the repo).
-- Source: `tbc-restaurants-company_job-advert_motion-direction-a_ar_v02.html`, `motion.css`, `motion.js` (deterministic `seek(t)`; no CSS animations), `timeline.json` (the one place to retime: scene `start` values; current values are estimates).
-- Add the voice: `bash motion/mux.sh <audio file>` — copies the video stream from `_work/..._video-only.mp4`, encodes AAC 192 kb/s, starts the audio at 0.15 s, keeps the 20.5 s length, overwrites the MP4 above.
+## Motion graphic v03 (direction A, A v04 look) — `motion/`
+- `tbc-restaurants-company_job-advert_motion-direction-a_ar_v03.mp4` — 1080 × 1920, 30 fps, 22.0 s, H.264 High level 4.2 yuv420p + a **silent** AAC track. Voice-over not yet added (audio file not in the repo).
+- `tbc-restaurants-company_job-advert_motion-direction-a_cover_ar_v03.png` — cover still from the end card (t = 21.2 s), 1080 × 1920, sRGB.
+- Source: `tbc-restaurants-company_job-advert_motion-direction-a_ar_v03.html`, `motion.css`, `motion.js` (deterministic `seek(t)`; no CSS animations), `timeline.json` (the one place to retime: scene `start` values and the three `items` offsets of beat 4; current values are estimates: 0.0, 4.2, 9.2, 11.8, 16.6, end 22.0).
+- Add the voice: `bash motion/mux.sh <audio file>` — copies the video stream from `_work/..._video-only.mp4`, encodes AAC 192 kb/s, starts the audio at 0.15 s, keeps the 22.0 s length, overwrites the MP4 above.
 - Re-render after retiming: `NODE_PATH=/opt/node-tools/node_modules node motion/_work/capture.cjs && bash motion/_work/encode.sh`.
-- Scenes: hook (phone feed swipes burger, chicken roll, cheeseburger; a glass card and hearts fire on each; the burger pops out) · headline word by word · sector line with the three foods floating · remote badge stamp, design-requirement card, four requirement chips · end card with the apply sentence and the email (lands at about 16.6 s, held about 3.9 s).
-- On-screen text: advert strings from the brief only (asserted by `capture.cjs`); the dialect voice-over script is not shown.
+- Beats: hook (phone feed swipes burger, chicken roll, cheeseburger; a glass card and hearts fire on each; the burger pops out) · headline word by word · sector line with the three foods floating · three items in turn: «خبرة لا تقل عن 3 سنوات» (the 3 pops), the «خبرة في التصميم (شرط أساسي)» card, the «راتب مجزٍ» badge stamp · end card with the apply sentence and the email (at rest from about 18.4 s, held about 3.6 s).
+- On-screen text: eight strings, asserted by `capture.cjs`. Seven are advert strings from the brief; «خبرة لا تقل عن 3 سنوات» is the shortened experience line set by the Creative Director's ruling in the brief (review r4). No remote badge, no requirement chips.
 - Photographs: three client-supplied cut-outs in `assets/` (burger, chicken roll, cheeseburger), PNG copies of the WebP files in `_originals/`. **Source and licence not stated by the client.** Proportional scaling, tilt and drop shadows only.
-- v01 (drawn burger, flat look) is in `motion/_archive/`.
+- v02 and v01 are in `motion/_archive/`.
