@@ -1,13 +1,29 @@
 {
-  "_note": "The ONE place to retime the film. Edit the scene 'start' values (seconds) to the measured voice-over timings, then re-run _work/capture.cjs and _work/encode.sh. Every animation is keyed as an offset from its scene start; 'end' is informational (a scene ends where the next starts). 'items' in the 'require' scene are the offsets at which its three items begin to appear. Starts are ESTIMATES until the audio is measured.",
+  "_note": "The ONE place to retime the film. All values are seconds. Scene 'start' values are film times; everything inside a scene is an offset from that scene's start. 'end' is informational (a scene ends where the next starts). v04 is timed to voice-over take 1 (audio/tbc-restaurants-company_job-advert_voiceover-take1_ar_v02.mp3), which is placed at audio_offset in the film; 'vo_at' is the measured film time of each phrase (silencedetect at -35 dB, plus the offset). Word offsets inside the headline phrase are estimated from the phrase length, not measured per word.",
   "fps": 30,
-  "duration": 22.0,
+  "duration": 24.0,
   "audio_offset": 0.15,
   "scenes": {
-    "hook":     { "start": 0.0,  "end": 4.2,  "vo": "تحب التسويق وعندك حس إبداعي؟ هذي فرصتك!" },
-    "headline": { "start": 4.2,  "end": 9.2,  "vo": "مطلوب موظف أو موظفة تسويق وإدارة حسابات التواصل الاجتماعي" },
-    "sector":   { "start": 9.2,  "end": 11.8, "vo": "لشركة متخصصة في قطاع المطاعم" },
-    "require":  { "start": 11.8, "end": 16.6, "vo": "خبرة لا تقل عن ثلاث سنوات، وخبرة التصميم شرط أساسي، والراتب مجزي", "items": [0.32, 1.45, 2.62] },
-    "apply":    { "start": 16.6, "end": 22.0, "vo": "أرسل سيرتك الذاتية وسابقة أعمالك على الإيميل اللي قدامك، وننتظرك!" }
+    "hook": {
+      "start": 0.0, "end": 4.0,
+      "vo": "تحب التسويق وعندك حس إبداعي؟ هذي فرصتك!", "vo_at": [0.15, 2.81],
+      "cues": { "swipes": [0.8, 1.42, 2.08], "fire": [0.62, 1.2, 1.82], "kicker": 2.6, "pop": 2.86 }
+    },
+    "headline": {
+      "start": 4.0, "end": 8.55,
+      "vo": "مطلوب موظف أو موظفة تسويق وإدارة حسابات التواصل الاجتماعي", "vo_at": [4.14],
+      "words": [0.45, 1.55, 2.15, 2.65, 3.15, 3.7]
+    },
+    "sector": { "start": 8.55, "end": 11.2, "vo": "لشركة متخصصة في قطاع المطاعم", "vo_at": [8.77], "line": 0.1 },
+    "require": {
+      "start": 11.2, "end": 17.3,
+      "vo": "خبرة لا تقل عن ثلاث سنوات، وخبرة التصميم شرط أساسي، والراتب مجزي", "vo_at": [11.53, 13.77, 16.24],
+      "items": [0.3, 2.45, 4.9]
+    },
+    "apply": {
+      "start": 17.3, "end": 24.0,
+      "vo": "أرسل سيرتك الذاتية وسابقة أعمالك على الإيميل اللي قدامك، وننتظرك!", "vo_at": [17.85, 21.96],
+      "sentence": 0.5, "email": 1.6
+    }
   }
 }

@@ -1,0 +1,13 @@
+{
+  "_note": "The ONE place to retime the film. Edit the scene 'start' values (seconds) to the measured voice-over timings, then re-run _work/capture.cjs and _work/encode.sh. Every animation is keyed as an offset from its scene start; 'end' is informational (a scene ends where the next starts). 'items' in the 'require' scene are the offsets at which its three items begin to appear. Starts are ESTIMATES until the audio is measured.",
+  "fps": 30,
+  "duration": 22.0,
+  "audio_offset": 0.15,
+  "scenes": {
+    "hook":     { "start": 0.0,  "end": 4.2,  "vo": "تحب التسويق وعندك حس إبداعي؟ هذي فرصتك!" },
+    "headline": { "start": 4.2,  "end": 9.2,  "vo": "مطلوب موظف أو موظفة تسويق وإدارة حسابات التواصل الاجتماعي" },
+    "sector":   { "start": 9.2,  "end": 11.8, "vo": "لشركة متخصصة في قطاع المطاعم" },
+    "require":  { "start": 11.8, "end": 16.6, "vo": "خبرة لا تقل عن ثلاث سنوات، وخبرة التصميم شرط أساسي، والراتب مجزي", "items": [0.32, 1.45, 2.62] },
+    "apply":    { "start": 16.6, "end": 22.0, "vo": "أرسل سيرتك الذاتية وسابقة أعمالك على الإيميل اللي قدامك، وننتظرك!" }
+  }
+}

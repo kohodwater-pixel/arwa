@@ -4,7 +4,7 @@ const { chromium } = require('playwright');
 const path = require('path');
 const fs = require('fs');
 const motion = path.resolve(__dirname, '..');
-const html = path.join(motion, 'tbc-restaurants-company_job-advert_motion-direction-a_ar_v03.html');
+const html = path.join(motion, 'tbc-restaurants-company_job-advert_motion-direction-a_ar_v04.html');
 const TL = JSON.parse(fs.readFileSync(path.join(motion, 'timeline.json'), 'utf8'));
 const ALLOWED = [
   'فرصة وظيفية', 'موظف/ـة تسويق وإدارة حسابات التواصل الاجتماعي', 'لشركة متخصصة في قطاع المطاعم',
@@ -42,6 +42,28 @@ const ALLOWED = [
   const arg = n => { const i = process.argv.indexOf(n); return i > 0 ? process.argv[i + 1] : null; };
   if (process.argv.includes('--check')) { await browser.close(); return; }
   const clip = { x: 0, y: 0, width: 1080, height: 1920 };
+  if (process.argv.includes('--sync')) {
+    // first frame at which each cue is readable: opacity >= 0.6 and at least 70 % of its settled size
+    const cues = [['kicker', '#kicker'], ['hero burger pop-out', '#hero'], ['w0', '#w0'], ['w1', '#w1'], ['w2', '#w2'], ['w3', '#w3'], ['w4', '#w4'], ['w5', '#w5'], ['sector', '#sector'], ['exp', '#exp'], ['design', '#design'], ['badge', '#badge'], ['applyline', '#applyline'], ['pill', '#pill']];
+    const n = Math.round(TL.duration * TL.fps), res = {};
+    const settle = { '#kicker': 3.6, '#hero': 3.9 };  // these two are judged against their hook size, not their later small size
+    for (let f = 0; f < n; f++) {
+      const t = f / TL.fps;
+      const st = await page.evaluate(({ t, sels }) => { window.seek(t); return sels.map(s => { const e = document.querySelector(s), m = new DOMMatrix(getComputedStyle(e).transform); return [parseFloat(getComputedStyle(e).opacity), Math.hypot(m.a, m.b)]; }); }, { t, sels: cues.map(c => c[1]) });
+      cues.forEach((c, i) => { (res[c[0]] = res[c[0]] || []).push([t, st[i][0], st[i][1]]); });
+    }
+    const out = {};
+    for (const [name, sel] of cues) {
+      const rows = res[name];
+      const ref = settle[sel] ? rows[Math.round(settle[sel] * TL.fps)][2] : Math.max(...rows.map(r => r[1] >= 0.99 ? r[2] : 0));
+      const hit = rows.find(r => r[1] >= 0.6 && r[2] >= 0.7 * ref);
+      const full = rows.find(r => r[1] >= 0.99 && r[2] >= 0.97 * ref && r[2] <= 1.03 * ref);
+      out[name] = { readable: hit ? hit[0] : null, settled: full ? full[0] : null };
+    }
+    fs.writeFileSync(path.join(__dirname, 'sync_raw.json'), JSON.stringify(out, null, 1));
+    console.log(JSON.stringify(out));
+    await browser.close(); return;
+  }
   if (arg('--cover')) {
     await page.evaluate(x => window.seek(x), Number(arg('--cover')));
     await page.screenshot({ path: path.join(__dirname, 'cover_raw.png'), clip });
