@@ -39,7 +39,8 @@ h2{font-weight:800;font-size:17pt;line-height:1.3}
 .hero .ears{position:absolute;top:17mm;inset-inline-end:-41mm;width:150mm;height:187.5mm}
 .hero .blob{position:absolute;top:-6mm;inset-inline-end:-6mm;width:50mm;height:42mm}
 .en .hero .blob{transform:scaleX(-1)}
-.hero .sandwich{position:absolute;top:39mm;inset-inline-end:11mm;width:84mm;height:auto}
+/* v03: Philly cheese steak cut-out, 956x668 px incl. baked soft shadow; the sandwich itself is 865 px = 84 mm wide (about 262 ppi) */
+.hero .sandwich{position:absolute;top:35.2mm;inset-inline-end:6.5mm;width:92.8mm;height:auto}
 .logoplate{position:absolute;top:0;inset-inline-start:calc(3mm + var(--m));width:25mm;height:36mm;background:#fff;border-radius:0 0 5mm 5mm;display:flex;align-items:flex-end;justify-content:center;padding-bottom:2.8mm}
 .logoplate img{display:block;width:17mm;height:auto}
 .draft{position:absolute;top:7.5mm;inset-inline-start:calc(3mm + var(--m) + 29mm);font-weight:500;font-size:8pt;line-height:1.5;padding:.5mm 2.4mm .1mm;border:.25mm dashed var(--black);border-radius:1.2mm;white-space:nowrap}
