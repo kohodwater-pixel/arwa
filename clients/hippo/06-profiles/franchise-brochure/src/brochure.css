@@ -249,3 +249,15 @@ h1{font-weight:800;font-size:60pt;line-height:1.2;white-space:nowrap;margin-top:
 .regions{column-gap:4mm}
 
 .row2 .val{min-width:38mm}
+
+/* v07: the black band carries only the four franchise terms, as cards, plus one line on fit-out cost */
+.est .hd{top:5mm}
+.terms{position:absolute;top:17mm;left:0;right:0;height:32mm;display:grid;grid-template-columns:repeat(4,1fr);gap:5mm}
+.term{background:var(--lime);color:var(--black);border-radius:4.5mm;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding-top:1mm}
+.term .tl2{font-weight:800;font-size:11.5pt;line-height:1.3}
+.en .term .tl2{font-family:"Playfair Display",serif;font-size:11.5pt}
+.term .tv{font-weight:800;font-size:30pt;line-height:1.15;direction:ltr}
+.term .ts{font-weight:700;font-size:10.5pt;line-height:1.3}
+.en .term .ts{font-size:10pt}
+.est .fit{position:absolute;top:53mm;left:0;right:0;font-weight:500;font-size:10.5pt;line-height:1.5;color:#fff}
+.en .est .fit{font-size:10pt}
