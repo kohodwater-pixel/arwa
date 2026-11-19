@@ -36,8 +36,10 @@ The render is deterministic: `window.seek(t)` lays out a frame from the time alo
 Edit the text in `src/index.html` inside the elements marked `data-swap`. The facts appear twice: in scene 3–4 (`k1`…`k4`) and in scene 7–8 (`n1`…`n4`). Chips are `c1`…`c4`. Then rebuild and re-run `check.py`.
 Facts in this version (client-confirmed 2026-11-19): «علامة سعودية» · «من 2021» · «5 فروع» · «مدينتان — الرياض · المدينة المنورة». No other figure or claim.
 
-## Swap in the HQ photos
-Replace `src/assets/sandwich.png` (899x649) and `src/assets/box.png` (1068x1135) with cut-outs of the same framing and aspect ratio; sizes in `index.html` are CSS widths, so a larger file needs no layout change. Cut-out tools are in `../video/src/tools/`. Check the edges by eye again.
+## Hero photo and swapping in the HQ photos
+- Hero = fried shrimp (client instruction 2026-11-19). `src/assets/sandwich.png` is cut locally from `_originals/.../04-menu-photos-web/fried-shrimp.jpg` with `python3 src/tools/cutout_shrimp.py <fried-shrimp.jpg> src/assets/sandwich.png [preview-dir]` (OpenCV only; no shadow baked in, the film adds its own). Native size 933x724 px (object 842x671). Largest use: 989 px wide (106 %) in scenes 1–3.
+- The earlier crispy-chicken cut-out is kept in `_archive/`.
+- HQ photos: run the same tool on the HQ file (scale its ROI and kernel sizes by HQ width / 1202) and replace the PNG; sizes in `index.html` are CSS widths, so no layout change is needed. The box is `src/assets/box.png` (1068x1135), tools in `../video/src/tools/`. Check the edges by eye again.
 
 ## Fonts and colours
 Tajawal Light / ExtraBold and Playfair Display Italic from `src/assets/fonts/` (SIL OFL). Lime #BBD032, black #181717, pink #DA6FA2, white. The box keeps its photographed hot pink.
@@ -64,4 +66,4 @@ Run `python3 src/verify.py <mp4> _work` and `python3 src/check.py _work/chk`; th
 ## Known weak spots
 - 29.6–29.9 s: during the hop on the hit the pill and the proof stickers overlap for a few frames.
 - Scene 7–8: the box's lower-left corner comes within a few pixels of the frame edge while the full side is tipped.
-- Photos are the web-size cut-outs; the sandwich reaches 110 % in scenes 1–3.
+- Photos are the web-size cut-outs; the sandwich reaches 106 % in scenes 1–3.

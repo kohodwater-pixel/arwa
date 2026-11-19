@@ -220,7 +220,7 @@
 
   // ---------- scenes 7 + 8 · the full side heavy and low, the empty seat light and high; «حُطّ ثقلك.» lands in the seat and levels the scale
   // proof stickers n1..n4 (same artwork as scene 4): b = big block in the top half, c = compact row above the food; offsets from their CSS place
-  const NC = { n1: [741, 855, 867, 0.47], n2: [264, 915, 607, 0.47], n3: [805, 1161, 402, 0.45], n4: [324, 1210, 187, 0.47] };   // [css centre x, y, row centre x, row scale]
+  const NC = { n1: [757, 831, 867, 0.47], n2: [264, 915, 607, 0.47], n3: [805, 1161, 402, 0.45], n4: [324, 1210, 187, 0.47] };   // [css centre x, y, row centre x, row scale]
   const BIG = 0.86, NB = {};
   Object.keys(NC).forEach(id => { const [x, y, rx, cs] = NC[id]; NB[id] = { bx: 540 + (x - 545) * BIG - x, by: 505 + (y - 1063) * BIG - y, cx: rx - x, cy: 968 - y, cs }; });
   const SEAT = F(792);                             // the seat pops in at 26.4, already with its dots
@@ -247,7 +247,7 @@
         s: pop * lerp(BIG, a.cs, mv) * (1 + 0.012 * beat(te)), r: 1.1 * Math.sin(te * 1.2 + i * 2) });
     });
     // the seat: pops in, floats high and tilted; swells with the riser; is slammed down and level by the headline
-    const sIn = back(tw(te, SEAT, SEAT + 0.26), 2.4), said = on(te, SAY);
+    const sIn = back(tw(te, SEAT, SEAT + 0.26), 1.1), said = on(te, SAY);
     const float = cta ? 0 : 1, sq = cta ? spr(u, 7, 26) : 0;
     P($('s7seat'), {
       o: on(te, SEAT) ? 1 : 0, s: sIn * (1 + rise * (0.03 + 0.012 * Math.sin((te - 28.7) * 34))) * (1 + 0.012 * beat(te)),
