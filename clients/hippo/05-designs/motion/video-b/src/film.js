@@ -78,7 +78,7 @@
   const SCENES = [['s1', 0, 3], ['s2', 3, 7], ['s34', 7, 15], ['s5', 15, HIT.box], ['s6', HIT.box, 24], ['s78', 24, HIT.end], ['s9', HIT.end, 41]];
   const bgAt = t => t < 3 ? P_ : t < 7 ? K_ : t < HIT.heavy ? P_ : t < 15 ? L_ : t < HIT.box ? K_ : t < HIT.end ? L_ : W_;
   // colour bands that peel away behind the new scene's content, starting on the cut
-  const ACCENT = [[7, [L_, W_]], [HIT.heavy, [P_, W_]], [15, [L_, P_]], [HIT.box, [W_, P_]], [HIT.end, [L_, P_]]];   // never a band colour that would swallow the text above it
+  const ACCENT = [[7, [L_, W_]], [HIT.heavy, [P_, W_]], [15, [L_, P_]], [HIT.box, [W_, P_]]];   // never a band colour that would swallow the text above it
   const FLASH = [[HIT.hook, .95], [HIT.box, .7], [HIT.athqal, .4], [HIT.cta, .8]];
   const SHAKE = [[HIT.hook, 34, .6], [F(83), 7, .2], ...HIT.taps.map(x => [x, 5, .15]), [F(199), 10, .3], [HIT.proof[0], 16, .35], [HIT.proof[1], 16, .35], [HIT.proof[2], 20, .4],
     [HIT.heavy, 18, .5], [HIT.punch, 10, .25], ...HIT.chips.map(x => [x, 13, .3]), [HIT.stack, 26, .5], [HIT.box, 46, .9], [HIT.athqal, 20, .45], [HIT.cta, 22, .6], [HIT.end, 8, .25]];
@@ -262,7 +262,7 @@
     return { zoom: 1 + 0.028 * rise * (cta ? 0 : 1), tilt: cta ? 1.2 * Math.exp(-u * 5) * Math.sin(u * 18) : 0 };
   }
 
-  // ---------- scene 9 · end card (the logo file is only placed and scaled uniformly; the QR is untouched after about 34.1 s)
+  // ---------- scene 9 · end card (the logo file is only placed and scaled uniformly; the QR is untouched after about 33.8 s)
   function s9(t) {
     const ul = t - HIT.logo;
     P($('s9ears'), { x: 300 * (1 - eo3(tw(t, HIT.end, HIT.end + 0.4))) + 14 * spr(ul, 5, 26) * -1, y: 14 * Math.sin(t * 0.8), r: 5 * spr(ul, 4.5, 26) });
@@ -272,9 +272,9 @@
     P($('s9blobK'), { y: py + 8 * Math.cos(t * 0.8), x: 8 * Math.sin(t * 0.9), s: 1 + 0.07 * spr(ul, 6, 24) });
     P($('s9blobL'), { s: back(tw(t, F(1003), F(1003) + 0.3), 2.4) * (1 + 0.1 * spr(ul - 0.12, 6, 24) + 0.015 * Math.sin(t * 2)), x: 10 * Math.sin(t * 0.7), y: 8 * Math.cos(t * 0.9) });
     const H = slam(t, HIT.end, { z: 0.1, A: 0.08 }); P($('s9h'), { o: H.o, sx: H.sx, sy: H.sy, y: py });
-    P($('s9en'), { o: on(t, F(1005)) ? 1 : 0, s: back(tw(t, F(1005), F(1005) + 0.22)) });
-    P($('s9q'), { o: tw(t, F(1009), F(1009) + 0.2), y: 24 * (1 - eo3(tw(t, F(1009), F(1009) + 0.3))) });
-    P($('s9qr'), { o: on(t, F(1014)) ? 1 : 0, s: back(tw(t, F(1014), F(1014) + 0.3), 1.8) });
+    P($('s9en'), { o: on(t, F(1002)) ? 1 : 0, s: back(tw(t, F(1002), F(1002) + 0.2)) });
+    P($('s9q'), { o: tw(t, F(1003), F(1003) + 0.15), y: 24 * (1 - eo3(tw(t, F(1003), F(1003) + 0.25))) });
+    P($('s9qr'), { o: on(t, F(1004)) ? 1 : 0, s: lerp(0.5, 1, back(tw(t, F(1004), F(1004) + 0.3), 1.8)) });
     return { zoom: 1 };
   }
 

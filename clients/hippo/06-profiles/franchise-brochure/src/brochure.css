@@ -96,22 +96,33 @@ h1{font-weight:800;font-size:60pt;line-height:1.2;white-space:nowrap;margin-top:
 
 /* ---------- investment summary (black) + QR ---------- */
 .invest{top:226mm;height:60mm;background:var(--black);color:#fff;overflow:hidden}
-.invest .col{position:absolute;top:5mm;inset-inline-start:0;width:126mm}
+.invest .col{position:absolute;top:5mm;inset-inline-start:0;width:93mm}
 .invest h2{color:var(--lime);margin-bottom:1.8mm}
 .total{display:flex;align-items:center;justify-content:space-between;gap:4mm;background:var(--lime);color:var(--black);border-radius:3mm;padding:2mm 4mm 1.6mm;height:12.5mm}
 .total .t{font-weight:800;font-size:12pt;line-height:1.3}
 .en .total .t{font-size:11pt}
-.total .gap{min-width:44mm}
-.cells{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;margin-top:3mm}
-.cell{background:#2a2828;border-radius:3mm;padding:2.2mm 1.6mm 2mm;height:25.5mm;display:flex;flex-direction:column;justify-content:space-between;text-align:center}
-.cell .t{font-weight:700;font-size:10.5pt;line-height:1.35;color:#fff}
+.total .gap{min-width:30mm}
+.total{padding-inline:3mm}
+.ar .total .t{font-size:10pt;white-space:nowrap}
+.ar .cell .gap{font-size:9pt}
+.cells{display:grid;grid-template-columns:repeat(4,1fr);gap:2.4mm;margin-top:3mm}
+.cell{background:#2a2828;border-radius:3mm;padding:1.8mm 1.4mm 1.5mm;height:25.5mm;display:flex;flex-direction:column;justify-content:space-between;text-align:center}
+.cell .t{font-weight:700;font-size:10pt;line-height:1.3;color:#fff}
 .en .cell .t{font-size:9.6pt;line-height:1.25}
-.cell .gap{color:var(--lime);white-space:normal;min-height:11.5mm}
-.qr{position:absolute;top:5.5mm;inset-inline-end:0;width:50mm;height:49mm;background:var(--qr);color:var(--black);border-radius:4mm;box-shadow:1.5mm 1.7mm 0 var(--pink);display:flex;flex-direction:column;align-items:center;padding-top:1mm}
-.qr img{display:block;width:38mm;height:38mm;image-rendering:pixelated}
-.qr .cta{font-weight:800;font-size:11pt;line-height:1.3;margin-top:-.6mm;white-space:nowrap}
-.en .qr .cta{font-size:9.6pt;margin-top:0}
-.qr .sm{font-weight:500;font-size:9pt;line-height:1.3;white-space:nowrap}
+.cell .gap{color:var(--lime);white-space:normal;min-height:11mm;padding-inline:.6mm}
+/* v04: two QR codes, each on its own labelled plate; primary (franchise form) first in reading order */
+.qrs{position:absolute;top:3.5mm;inset-inline-end:0;display:flex;gap:4mm;align-items:stretch}
+.qr{height:53mm;color:var(--black);border-radius:4mm;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;padding-top:2.4mm}
+.qr.one{width:44mm;background:var(--qr);box-shadow:1.3mm 1.5mm 0 var(--pink)}
+.qr.two{width:40mm;background:#fff;box-shadow:1.3mm 1.5mm 0 var(--lime)}
+.qr img{display:block;width:36mm;height:36mm;image-rendering:pixelated}
+.qr .cta{font-weight:800;font-size:11pt;line-height:1.3;white-space:nowrap;padding-top:.8mm}
+.en .qr .cta{font-size:10pt;padding-top:0;padding-bottom:.6mm}
+.en .qr.two .cta{font-size:9pt}
+.qr.two img{margin-top:auto;margin-bottom:auto}
+.en .qr.one .cta,.en .qr.two .cta{line-height:1.5}
+.qr .sm{font-weight:500;font-size:9pt;line-height:1.3;white-space:nowrap;margin-top:-.6mm}
+.en .qr .sm{margin-top:0}
 
 /* ---------- footer (pink) ---------- */
 .foot{top:286mm;height:14mm;background:var(--pink)}
