@@ -1,0 +1,53 @@
+/* hippo — franchise motion ad «حُطّ ثقلك» — look B «هيبو بأعلى صوت» — film v03
+   Brand values: lime #BBD032, black #181717, pink #DA6FA2. Arabic: Tajawal Light / ExtraBold. English: Playfair Display Italic.
+   No letter-spacing anywhere. Every text element carries class "t" (used by the contrast / safe-area check). */
+@font-face{font-family:"Tajawal";font-weight:300;src:url("assets/fonts/Tajawal-Light.ttf") format("truetype");}
+@font-face{font-family:"Tajawal";font-weight:800;src:url("assets/fonts/Tajawal-ExtraBold.ttf") format("truetype");}
+@font-face{font-family:"Playfair Display";font-style:italic;font-weight:400 900;src:url("assets/fonts/PlayfairDisplay-Italic-VF.ttf") format("truetype");}
+
+html,body{margin:0;padding:0;background:#000;overflow:hidden}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:"Tajawal",sans-serif;direction:rtl;background:#181717}
+body.preview #stage{transform-origin:0 0;transform:scale(.45)}
+#stage *{box-sizing:border-box}
+#bg,#accent,#flash,#world{position:absolute;left:0;top:0;width:1080px;height:1920px}
+#accent i{position:absolute;left:-200px;top:-100px;width:1480px;height:2120px;display:block;transform-origin:50% 50%}
+#flash{background:#fff;opacity:0}
+#world{transform-origin:540px 960px}
+.scene{position:absolute;left:0;top:0;width:1080px;height:1920px;display:none}
+.scene>*, .grp>*{position:absolute}
+.grp{position:absolute;left:0;top:0;width:1080px;height:1920px}
+body.notext .t{color:transparent !important;text-shadow:none !important}
+#ui{position:fixed;right:8px;top:8px;font:14px sans-serif;color:#fff;direction:ltr;display:none}
+body.preview #ui{display:block}
+
+/* type */
+.t{white-space:nowrap}
+.hl{left:0;width:1080px;text-align:center;line-height:1.3;margin:0}
+.light{font-weight:300}
+.heavy{font-weight:800}
+.hl [data-fit]{display:inline-block;line-height:1.3}
+.en{left:0;width:1080px;text-align:center;direction:ltr;font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:52px;line-height:1.3}
+.pill{font-weight:800;font-size:64px;line-height:1;padding:24px 50px 22px;border-radius:80px;width:max-content;background:#181717;color:#BBD032}
+
+/* pieces */
+.sw img{display:block;width:100%}
+.sw{transform-origin:50% 92%}
+.pop img{filter:drop-shadow(0 34px 26px rgba(24,23,23,.42))}
+.ears svg,.blob svg,.burst svg,.star svg{display:block;width:100%;overflow:visible}
+.blob svg,.star svg{height:100%}
+.burst{width:0;height:0}
+.burst svg{position:absolute;left:-800px;top:-800px;width:1600px;height:1600px}
+.slabB{left:-200px;top:-100px;width:1480px;height:2220px}
+.logo{display:block;width:auto}
+.qr{background:#FFFDF8;overflow:hidden;border:8px solid #181717;box-shadow:18px 18px 0 #181717;border-radius:40px}
+.qr img{display:block;width:100%;height:100%}
+
+/* stickers */
+.stk{display:flex;align-items:center;justify-content:center;gap:20px;direction:rtl;border:9px solid #fff;box-shadow:14px 16px 0 #181717}
+.stk .num,.stk .lab,.stk .big,.sub{font-weight:800}
+.stk .num{line-height:1.1}
+.stk .lab,.stk .big{line-height:1.3}
+.sub{line-height:1.4}
+.stk .t{position:relative;top:.09em}
+.onk{box-shadow:14px 16px 0 #fff}            /* sticker on a black ground */
+.onk.wh{box-shadow:14px 16px 0 #BBD032;border-color:#BBD032}

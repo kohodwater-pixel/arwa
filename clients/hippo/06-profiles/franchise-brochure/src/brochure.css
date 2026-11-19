@@ -40,15 +40,15 @@ h2{font-weight:800;font-size:17pt;line-height:1.3}
 .hero .blob{position:absolute;top:-6mm;inset-inline-end:-6mm;width:50mm;height:42mm}
 .en .hero .blob{transform:scaleX(-1)}
 .hero .sandwich{position:absolute;top:39mm;inset-inline-end:11mm;width:84mm;height:auto}
-.logoplate{position:absolute;top:0;inset-inline-start:calc(3mm + var(--m));width:25mm;height:38mm;background:#fff;border-radius:0 0 5mm 5mm;display:flex;align-items:flex-end;justify-content:center;padding-bottom:3.2mm}
+.logoplate{position:absolute;top:0;inset-inline-start:calc(3mm + var(--m));width:25mm;height:36mm;background:#fff;border-radius:0 0 5mm 5mm;display:flex;align-items:flex-end;justify-content:center;padding-bottom:2.8mm}
 .logoplate img{display:block;width:17mm;height:auto}
 .draft{position:absolute;top:7.5mm;inset-inline-start:calc(3mm + var(--m) + 29mm);font-weight:500;font-size:8pt;line-height:1.5;padding:.5mm 2.4mm .1mm;border:.25mm dashed var(--black);border-radius:1.2mm;white-space:nowrap}
-.herotext{position:absolute;top:42mm;inset-inline-start:calc(3mm + var(--m));width:104mm}
+.herotext{position:absolute;top:39.5mm;inset-inline-start:calc(3mm + var(--m));width:104mm}
 .en .herotext{top:41mm}
 .kicker{display:inline-block;background:var(--black);color:var(--lime);font-weight:800;font-size:15pt;line-height:1.3;padding:1.9mm 5mm .9mm;border-radius:10mm;white-space:nowrap}
 .en .kicker{font-family:"Playfair Display",serif;font-weight:800;font-size:14pt;padding:1.6mm 5mm 2mm}
-h1{font-weight:800;font-size:66pt;line-height:1.2;white-space:nowrap;margin-top:1mm}
-.en h1{font-family:"Playfair Display",serif;font-weight:900;font-size:34pt;line-height:1.08;margin-top:3.6mm;margin-bottom:3.2mm}
+h1{font-weight:800;font-size:60pt;line-height:1.2;white-space:nowrap;margin-top:6mm}
+.en h1{font-family:"Playfair Display",serif;font-weight:900;font-size:34pt;line-height:1.08;margin-top:4.2mm;margin-bottom:3.2mm}
 .lead{font-weight:700;font-size:12.5pt;line-height:1.55;max-width:96mm}
 .en .lead{font-weight:700;font-size:11.5pt;line-height:1.42;max-width:92mm}
 
@@ -122,3 +122,7 @@ h1{font-weight:800;font-size:66pt;line-height:1.2;white-space:nowrap;margin-top:
 .why p,.lead{text-wrap:balance}
 .about p{text-wrap:pretty}
 .en .about p{text-wrap:balance}
+
+/* v02: English heading highlight sits under the baseline, not through the letters */
+.en .intro h2 span{background:linear-gradient(to top,var(--lime) 0,var(--lime) 1.1mm,transparent 1.1mm);padding-bottom:1.3mm}
+.en .intro h2{margin-bottom:2.2mm}
