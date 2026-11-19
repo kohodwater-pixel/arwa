@@ -116,7 +116,7 @@
     P($('s1shadow'), { o: hit ? 0 : ant * 0.8, s: 0.25 + 0.85 * ant });
     if (!hit) {
       const k = back(tw(te, 0.1, 0.34));
-      P($('s1word'), { s: lerp(0.9, 1.16, k) + ant * 0.035, y: 250 + 9 * Math.sin(te * 4.6) - ant * 34, x: ant * 5 * Math.sin(te * 70), r: 1.3 * Math.sin(te * 3.1) });
+      P($('s1word'), { s: lerp(0.9, 1.06, k) + ant * 0.03, y: 250 + 9 * Math.sin(te * 4.6) - ant * 34, x: ant * 5 * Math.sin(te * 70), r: 1.3 * Math.sin(te * 3.1) });
     } else {
       P($('s1word'), { r: -3.5 - 4 * spr(u, 5, 19), x: -10 - 12 * spr(u, 6, 21), y: 26 + 5 * Math.sin(te * 2.6) - 26 * spr(u, 7, 24), s: 1 + 0.05 * spr(u, 8, 26) });
     }
@@ -255,7 +255,7 @@
     const ul = t - HIT.logo;
     P($('s9ears'), { x: 300 * (1 - eo3(tw(t, HIT.end, HIT.end + 0.4))) + 14 * spr(ul, 5, 26) * -1, y: 14 * Math.sin(t * 0.8), r: 5 * spr(ul, 4.5, 26) });
     P($('s9logo'), { o: 1, s: lerp(0.9, 1, back(tw(t, HIT.end, HIT.end + 0.3), 1.8)) });
-    const pk = back(tw(t, HIT.end, HIT.end + 0.3), 1.1), py = 640 * (1 - pk);
+    const pk = eo3(tw(t, HIT.end, HIT.end + 0.3)), py = 640 * (1 - pk);
     P($('s9pink'), { y: py });
     P($('s9blobK'), { y: py + 8 * Math.cos(t * 0.8), x: 8 * Math.sin(t * 0.9), s: 1 + 0.07 * spr(ul, 6, 24) });
     P($('s9blobL'), { s: back(tw(t, F(1014), F(1014) + 0.3), 2.4) * (1 + 0.1 * spr(ul - 0.12, 6, 24) + 0.015 * Math.sin(t * 2)), x: 10 * Math.sin(t * 0.7), y: 8 * Math.cos(t * 0.9) });

@@ -45,3 +45,27 @@ Tajawal Light / ExtraBold and Playfair Display Italic from `src/assets/fonts/` (
 ## Assumptions
 - Safe areas: 250 px top, 350 px bottom, 60 px sides, applied to settled text.
 - The "ears" band is our own vector drawing after the client's lid print and profile outline, not his file.
+
+## Verified on the built MP4 (measured or seen in stills; not watched)
+- ffprobe: 1080x1920, 30 fps, 1200 frames, 40.000 s, H.264 + AAC; 2 streams.
+- Audio onsets in the MP4: 0.998 s (hook) and 29.599 s (CTA).
+- Every hit frame in the table shows a jump in the picture on that frame (`verify.py`); both freezes hold (0.92–1.00 and 29.52–29.60).
+- QR decodes from MP4 frames at 36.0, 38.4 and 39.5 s, at full and half size, to `https://otlobny.net/HIPPO-franchise-form-final/franchise/index.html`. In the rendered PNG frames the QR tile is pixel-identical from frame 1039 (34.63 s) to the end.
+- `check.py` on 15 settled moments: contrast at least 4.5:1, text inside the safe areas, no letter-spacing — 0 failures.
+
+## Deviations from the scene plan
+1. Scene 1: the word starts big and low and is knocked up to its place by the hit (to fill the frame before the sandwich arrives).
+2. Scene 2 is on black with white type; scene 5 is on black too. Text in the film is therefore black, white or (on black stickers) lime.
+3. Scene 3: on pink, so the «5 فروع» circle is lime there and turns pink with the colour flip at 12.5. The sandwich is the hero in the middle and is knocked down a stage by the second and third stickers.
+4. Scene 5: the chips stack on the bread; the fifth hit squashes stack and bread (no new object lands).
+5. Scene 6: the lid is not separated; the whole box rocks on the three lid taps. The question line enters at 20.43 s.
+6. Scene 7: «ناقصها ثقلك.» appears at 26.2 s, before the VO reaches those words (about 27–28.5 s), so the lower half is not empty for long. The empty side is a dashed outline with walking dashes.
+7. Scene 7–8: only three small proof stickers (the cities card would be too small to read).
+8. Scene 9: logo enters by uniform scale only; at 38.2 the band wiggles and the blobs pop. QR static from 34.63 s.
+9. Colour wipes are bands that sweep behind the content starting on the cut, so the hit frame itself is never covered. No wipe at 3.0 (white type) or 24.0 (music stops).
+10. For two or three frames after the big hits the hero is oversized and may touch the frame edge.
+
+## Known weak spots
+- 19.4–20.4 s: the top third above the box carries only the blob and burst lines until the question line arrives.
+- 24.0–26.2 s: the lower half is the dashed seat, the pill and graphics only; the seat could read as a placeholder.
+- Photos are the web-size cut-outs; the sandwich reaches 110 % in scenes 1–3.
