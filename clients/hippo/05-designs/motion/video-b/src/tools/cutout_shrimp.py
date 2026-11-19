@@ -52,6 +52,10 @@ A = a + (1 - a) * sh
 col = np.empty((H, W, 3), np.float32); k = np.where(A > 1e-4, a / np.maximum(A, 1e-4), 0)[..., None]
 col = rgb.astype(np.float32) * k + np.float32([0x17, 0x17, 0x18]) * (1 - k)
 rgba = np.dstack([np.clip(col, 0, 255).astype(np.uint8), np.clip(A * 255, 0, 255).astype(np.uint8)])[Y0:Y1, X0:X1]
+# retouch: one dark crumb on the bread's lower-left edge (png coords of the 1202 px web photo; scale for HQ)
+RET = np.zeros(rgba.shape[:2], np.uint8); cv2.circle(RET, (90, 603), 10, 255, -1)
+RET[(rgba[..., :3].max(axis=2) >= 110)] = 0; RET = cv2.dilate(RET, np.ones((3, 3), np.uint8))
+keep = rgba[..., 3].copy(); rgba[..., :3] = cv2.inpaint(np.ascontiguousarray(rgba[..., :3]), RET, 4, cv2.INPAINT_TELEA); rgba[..., 3] = keep
 cv2.imwrite(out, rgba)
 print('object px', x1 - x0 + 1, 'x', y1 - y0 + 1, '| png', rgba.shape[1], 'x', rgba.shape[0], '| object offset in png', x0 - X0, y0 - Y0)
 if work:

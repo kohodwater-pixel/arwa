@@ -34,7 +34,7 @@ The render is deterministic: `window.seek(t)` lays out a frame from the time alo
 
 ## Change the facts or chips
 Edit the text in `src/index.html` inside the elements marked `data-swap`. The facts appear twice: in scene 3–4 (`k1`…`k4`) and in scene 7–8 (`n1`…`n4`). Chips are `c1`…`c4`. Then rebuild and re-run `check.py`.
-Facts in this version (client-confirmed 2026-11-19): «علامة سعودية» · «من 2021» · «5 فروع» · «مدينتان — الرياض · المدينة المنورة». No other figure or claim.
+Facts in this version (client-confirmed 2026-11-19): «علامة سعودية» · «من 2021» · «5 فروع» · «منطقتان — الرياض · المدينة المنورة». No other figure or claim.
 
 ## Hero photo and swapping in the HQ photos
 - Hero = fried shrimp (client instruction 2026-11-19). `src/assets/sandwich.png` is cut locally from `_originals/.../04-menu-photos-web/fried-shrimp.jpg` with `python3 src/tools/cutout_shrimp.py <fried-shrimp.jpg> src/assets/sandwich.png [preview-dir]` (OpenCV only; no shadow baked in, the film adds its own). Native size 933x724 px (object 842x671). Largest use: 989 px wide (106 %) in scenes 1–3.
