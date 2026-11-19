@@ -1,0 +1,140 @@
+/* hippo — franchise brochure (fact sheet) v01 — A4 portrait, page 1 Arabic RTL, page 2 English LTR.
+   Brand values: lime #BBD032, black #181717, pink #DA6FA2 (supporting #E75A9E, #7B5FC2, #B8E23A not needed here).
+   Arabic + all body/numerals: Tajawal (static). English headlines: Playfair Display. NO letter-spacing anywhere.
+   Layout is logical (inline-start/end): the Arabic page is the master, the English page follows its own direction.
+   Bleed: every edge-touching colour/graphic already extends 3 mm past the trim. Screen export = --bleed 0mm.
+   Print step: open brochure.html?bleed=1 (sets --bleed 3mm and a 216x303 mm page); crop marks/CMYK are added then. */
+@font-face{font-family:"Tajawal";font-weight:400;src:url("assets/fonts/Tajawal-Regular.ttf") format("truetype");}
+@font-face{font-family:"Tajawal";font-weight:500;src:url("assets/fonts/Tajawal-Medium.ttf") format("truetype");}
+@font-face{font-family:"Tajawal";font-weight:700;src:url("assets/fonts/Tajawal-Bold.ttf") format("truetype");}
+@font-face{font-family:"Tajawal";font-weight:800;src:url("assets/fonts/Tajawal-ExtraBold.ttf") format("truetype");}
+/* static instances (wght 800, 900) cut from the OFL variable file PlayfairDisplay[wght].ttf (google/fonts) so the fonts embed by name */
+@font-face{font-family:"Playfair Display";font-weight:800;src:url("assets/fonts/PlayfairDisplay-ExtraBold.ttf") format("truetype");}
+@font-face{font-family:"Playfair Display";font-weight:900;src:url("assets/fonts/PlayfairDisplay-Black.ttf") format("truetype");}
+
+:root{--lime:#BBD032;--black:#181717;--pink:#DA6FA2;--white:#FFFFFF;--qr:#FFFDF7;--bleed:0mm;--m:12mm;}
+@page{size:210mm 297mm;margin:0}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+p,h1,h2,h3,ul,li{margin:0;padding:0;list-style:none}
+a{color:inherit;text-decoration:none}
+
+.sheet{position:relative;width:calc(210mm + 2*var(--bleed));height:calc(297mm + 2*var(--bleed));overflow:hidden;page-break-after:always;break-after:page;background:#fff}
+.sheet:last-child{page-break-after:auto;break-after:auto}
+.page{position:absolute;left:var(--bleed);top:var(--bleed);width:210mm;height:297mm;font-family:"Tajawal",sans-serif;color:var(--black)}
+.ar{direction:rtl;font-size:10.5pt;line-height:1.65}
+.en{direction:ltr;font-size:9.6pt;line-height:1.5}
+.ltr{direction:ltr;unicode-bidi:isolate;display:inline-block}
+.page>*{position:absolute}
+.band{left:-3mm;right:-3mm}          /* full-bleed colour bands run 3 mm past the trim */
+.in{position:absolute;left:calc(3mm + var(--m));right:calc(3mm + var(--m));top:0;bottom:0}
+
+/* ---------- type scale ---------- */
+h2{font-weight:800;font-size:17pt;line-height:1.3}
+.en h2{font-family:"Playfair Display",serif;font-weight:800;font-size:16pt;line-height:1.2}
+.note{font-weight:500;font-size:9pt;line-height:1.5}
+
+/* ---------- hero (pink) ---------- */
+.hero{top:-3mm;height:111mm;background:var(--pink);overflow:hidden}
+.hero .ears{position:absolute;top:17mm;inset-inline-end:-41mm;width:150mm;height:187.5mm}
+.hero .blob{position:absolute;top:-6mm;inset-inline-end:-6mm;width:50mm;height:42mm}
+.en .hero .blob{transform:scaleX(-1)}
+/* v03: Philly cheese steak cut-out, 956x668 px incl. baked soft shadow; the sandwich itself is 865 px = 84 mm wide (about 262 ppi) */
+.hero .sandwich{position:absolute;top:35.2mm;inset-inline-end:6.5mm;width:92.8mm;height:auto}
+.logoplate{position:absolute;top:0;inset-inline-start:calc(3mm + var(--m));width:25mm;height:36mm;background:#fff;border-radius:0 0 5mm 5mm;display:flex;align-items:flex-end;justify-content:center;padding-bottom:2.8mm}
+.logoplate img{display:block;width:17mm;height:auto}
+.draft{position:absolute;top:7.5mm;inset-inline-start:calc(3mm + var(--m) + 29mm);font-weight:500;font-size:8pt;line-height:1.5;padding:.5mm 2.4mm .1mm;border:.25mm dashed var(--black);border-radius:1.2mm;white-space:nowrap}
+.herotext{position:absolute;top:39.5mm;inset-inline-start:calc(3mm + var(--m));width:104mm}
+.en .herotext{top:41mm}
+.kicker{display:inline-block;background:var(--black);color:var(--lime);font-weight:800;font-size:15pt;line-height:1.3;padding:1.9mm 5mm .9mm;border-radius:10mm;white-space:nowrap}
+.en .kicker{font-family:"Playfair Display",serif;font-weight:800;font-size:14pt;padding:1.6mm 5mm 2mm}
+h1{font-weight:800;font-size:60pt;line-height:1.2;white-space:nowrap;margin-top:6mm}
+.en h1{font-family:"Playfair Display",serif;font-weight:900;font-size:34pt;line-height:1.08;margin-top:4.2mm;margin-bottom:3.2mm}
+.lead{font-weight:700;font-size:12.5pt;line-height:1.55;max-width:96mm}
+.en .lead{font-weight:700;font-size:11.5pt;line-height:1.42;max-width:92mm}
+
+/* ---------- fact cards ---------- */
+.facts{top:95mm;left:var(--m);right:var(--m);height:29mm;display:grid;grid-template-columns:repeat(4,1fr);gap:5mm}
+.fact{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:.7mm solid var(--black);border-radius:4.5mm;box-shadow:1.5mm 1.7mm 0 var(--black);padding:1.5mm 2mm 0}
+.fact.k{background:var(--black);color:#fff}
+.fact.w{background:#fff}
+.fact.l{background:var(--lime)}
+.fact .big{font-weight:800;font-size:31pt;line-height:1.05}
+.fact .word{font-weight:800;font-size:23pt;line-height:1.25}
+.en .fact .word{font-size:24pt;line-height:1.1}
+.fact.k .big,.fact.k .word{color:var(--lime)}
+.fact .lab{font-weight:700;font-size:11pt;line-height:1.35}
+.fact .sub{font-weight:500;font-size:9.5pt;line-height:1.35}
+.en .fact .lab{font-size:10.5pt}
+.en .fact .sub{font-size:9pt}
+
+/* ---------- about + why (white) ---------- */
+.intro{top:131mm;left:var(--m);right:var(--m);height:53mm;display:grid;grid-template-columns:70mm 1fr;column-gap:9mm}
+.intro h2{margin-bottom:1.6mm}
+.intro h2 span{background:linear-gradient(to top,var(--lime) 0,var(--lime) 42%,transparent 42%);padding:0 1.2mm}
+.why{display:grid;grid-template-columns:1fr 1fr;column-gap:6mm;row-gap:2.6mm}
+.why li{display:block}
+.chip{display:inline-block;background:var(--black);color:var(--lime);font-weight:800;font-size:11.5pt;line-height:1.3;padding:1.1mm 3.6mm .3mm;border-radius:8mm;margin-bottom:.9mm}
+.en .chip{font-family:"Playfair Display",serif;font-weight:800;font-size:10.5pt;padding:.7mm 3.6mm 1.1mm;margin-bottom:1.1mm}
+.why p{font-size:10pt;line-height:1.6}
+.en .why p{font-size:9.4pt;line-height:1.45}
+
+/* ---------- gap marker: dashed outline = to be supplied by the client ---------- */
+.gap{display:flex;align-items:center;justify-content:center;text-align:center;border:.45mm dashed currentColor;border-radius:2.4mm;font-weight:700;font-size:9.5pt;line-height:1.35;padding:1mm 2mm .4mm;white-space:nowrap}
+.en .gap{font-size:9pt;padding:.7mm 2mm}
+
+/* ---------- franchise formats (lime) ---------- */
+.formats{top:186mm;height:40mm;background:var(--lime)}
+.formats .head{position:absolute;top:4.6mm;left:0;right:0;display:flex;align-items:baseline;gap:4mm}
+.formats .cards{position:absolute;top:14.5mm;left:0;right:0;height:21mm;display:grid;grid-template-columns:repeat(3,1fr);gap:5mm}
+.fmt{border:.45mm solid var(--black);background:rgba(255,255,255,.28);border-radius:3.4mm;padding:2.2mm 3mm 1.6mm;display:flex;flex-direction:column;justify-content:space-between}
+.fmt .n{font-weight:800;font-size:11pt;line-height:1.3}
+.en .fmt .n{font-family:"Playfair Display",serif;font-size:11pt}
+.fmt{position:relative}
+.fmt .row{position:absolute;top:2.5mm;inset-inline-end:3mm;white-space:nowrap;font-size:9pt;line-height:1.5;font-weight:500}
+.fmt .gap{border-radius:2mm;height:8.5mm}
+
+/* ---------- investment summary (black) + QR ---------- */
+.invest{top:226mm;height:60mm;background:var(--black);color:#fff;overflow:hidden}
+.invest .col{position:absolute;top:5mm;inset-inline-start:0;width:93mm}
+.invest h2{color:var(--lime);margin-bottom:1.8mm}
+.total{display:flex;align-items:center;justify-content:space-between;gap:4mm;background:var(--lime);color:var(--black);border-radius:3mm;padding:2mm 4mm 1.6mm;height:12.5mm}
+.total .t{font-weight:800;font-size:12pt;line-height:1.3}
+.en .total .t{font-size:11pt}
+.total .gap{min-width:30mm}
+.total{padding-inline:3mm}
+.ar .total .t{font-size:10pt;white-space:nowrap}
+.ar .cell .gap{font-size:9pt}
+.cells{display:grid;grid-template-columns:repeat(4,1fr);gap:2.4mm;margin-top:3mm}
+.cell{background:#2a2828;border-radius:3mm;padding:1.8mm 1.4mm 1.5mm;height:25.5mm;display:flex;flex-direction:column;justify-content:space-between;text-align:center}
+.cell .t{font-weight:700;font-size:10pt;line-height:1.3;color:#fff}
+.en .cell .t{font-size:9.6pt;line-height:1.25}
+.cell .gap{color:var(--lime);white-space:normal;min-height:11mm;padding-inline:.6mm}
+/* v04: two QR codes, each on its own labelled plate; primary (franchise form) first in reading order */
+.qrs{position:absolute;top:3.5mm;inset-inline-end:0;display:flex;gap:4mm;align-items:stretch}
+.qr{height:53mm;color:var(--black);border-radius:4mm;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;padding-top:2.4mm}
+.qr.one{width:44mm;background:var(--qr);box-shadow:1.3mm 1.5mm 0 var(--pink)}
+.qr.two{width:40mm;background:#fff;box-shadow:1.3mm 1.5mm 0 var(--lime)}
+.qr img{display:block;width:36mm;height:36mm;image-rendering:pixelated}
+.qr .cta{font-weight:800;font-size:11pt;line-height:1.3;white-space:nowrap;padding-top:.8mm}
+.en .qr .cta{font-size:10pt;padding-top:0;padding-bottom:.6mm}
+.en .qr.two .cta{font-size:9pt}
+.qr.two img{margin-top:auto;margin-bottom:auto}
+.en .qr.one .cta,.en .qr.two .cta{line-height:1.5}
+.qr .sm{font-weight:500;font-size:9pt;line-height:1.3;white-space:nowrap;margin-top:-.6mm}
+.en .qr .sm{margin-top:0}
+
+/* ---------- footer (pink) ---------- */
+.foot{top:286mm;height:14mm;background:var(--pink)}
+.foot .line{position:absolute;top:0;left:0;right:0;height:11mm;display:flex;align-items:center;justify-content:space-between;font-weight:700;font-size:9.5pt;line-height:1.3;white-space:nowrap;padding-top:.5mm}
+.en .foot .line{font-size:9.5pt}
+.foot .lbl{font-weight:800}
+
+/* no single-word last lines */
+.why p,.lead{text-wrap:balance}
+.about p{text-wrap:pretty}
+.en .about p{text-wrap:balance}
+
+/* v02: English heading highlight sits under the baseline, not through the letters */
+.en .intro h2 span{background:linear-gradient(to top,var(--lime) 0,var(--lime) 1.1mm,transparent 1.1mm);padding-bottom:1.3mm}
+.en .intro h2{margin-bottom:2.2mm}
