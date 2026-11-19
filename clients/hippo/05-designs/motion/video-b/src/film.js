@@ -203,11 +203,12 @@
   // ---------- scene 6 · the gathering box
   function s6(t) {
     const u = t - HIT.box, ua = t - HIT.athqal, S = slam(t, HIT.box, { z: 0.12, A: 0.1 });
-    const down = back(tw(t, F(613), F(613) + 0.3), 1.6), by = -235 * (1 - down), bz = 1 + 0.08 * (1 - down), aq = 0.08 * spr(ua, 8, 28);
+    const down = back(tw(t, F(613), F(613) + 0.3), 1.6), by = -300 * (1 - down), bz = 1 + 0.12 * (1 - down), aq = 0.08 * spr(ua, 8, 28);
     P($('s6box'), { o: S.o, s: bz, sx: S.sx * (1 + aq), sy: S.sy * (1 - 1.3 * aq), y: by + 4 * Math.sin(t * 2), r: 4.5 * spr(t - F(583), 4.5, 27) + 0.5 * Math.sin(t * 1.6) });
     const bs = lerp(0.4, 1, back(tw(t, HIT.box, HIT.box + 0.22))) * (1 + 0.03 * Math.sin(t * 7) + 0.08 * spr(ua, 7, 24));
     P($('s6bk'), { s: bs, y: by }); P($('s6bw'), { s: bs, y: by * 0.4, r: 2 * Math.sin(t * 1.3) });
     P($('s6ears'), { x: 46 * Math.sin(t * 0.8), y: by * 0.7 + 24 * spr(u, 5, 18), s: 1 + 0.18 * Math.exp(-Math.max(u, 0) * 9) });
+    P($('s6earsT'), { x: -40 * Math.sin(t * 0.8), y: 560 * back(tw(t, HIT.box, HIT.box + 0.22), 1.4) - 700 * eio(tw(t, F(611), F(611) + 0.3)) + 20 * spr(u, 5, 18) });
     P($('s6blob'), { x: 14 * Math.sin(t * 1.3), y: 10 * Math.cos(t * 1.1) + 26 * spr(u, 6, 20), r: 3 * Math.sin(t * 0.8), s: 1 + 0.1 * spr(ua, 6, 22) + 0.03 * beat(t) });
     P($('s6blob2'), { x: 12 * Math.sin(t * 1.1), y: 10 * Math.cos(t * 0.9), r: 4 * Math.sin(t * 0.6), s: 1 + 0.08 * spr(u, 6, 20) });
     const qk = back(tw(t, F(613), F(613) + 0.24), 2);
@@ -217,52 +218,63 @@
     return { zoom: 1, tilt: 1.6 * Math.exp(-Math.max(u, 0) * 4) * Math.sin(Math.max(u, 0) * 16) };
   }
 
-  // ---------- scenes 7 + 8 · the empty side, then «حُطّ ثقلك.»
+  // ---------- scenes 7 + 8 · the full side heavy and low, the empty seat light and high; «حُطّ ثقلك.» lands in the seat and levels the scale
+  const SAY = F(828);                              // VO «ناقصها ثقلك» starts 27.60 (measured on the voice stem)
   function s78(t) {
     const te = (t >= 29.52 && t < HIT.cta - 1e-6) ? 29.52 : t, u = te - HIT.cta, cta = on(te, HIT.cta), u0 = te - 24;
-    const sink = eio(tw(te, 24.0, 28.7)), rise = tw(te, 28.7, 29.52);
-    const k = cta ? spr(u, 5, 16) : 1, Ly = 1000 + 64 * sink * k, Ry = 790 - 52 * sink * k, sl = (Ry - Ly) / 1080;
-    $('s7pink').style.clipPath = `polygon(0 0,1480px 0,1480px ${(Ry + sl * 200 + 100).toFixed(1)}px,0 ${(Ly - sl * 200 + 100).toFixed(1)}px)`;
-    P($('s7earsL'), { x: 26 * Math.sin(te * 0.7), y: 18 * Math.cos(te * 0.6) });
+    const sink = eio(tw(te, 24.0, 28.7)), rise = tw(te, 28.7, 29.52), k = cta ? spr(u, 5, 16) : 1;
+    // boundary between the lime (empty) top and the pink (full) bottom: tipped while empty, level once the weight is in
+    const Ly = 990 + 70 * sink * k, Ry = 990 - 70 * sink * k, sl = (Ry - Ly) / 1080;
+    $('s7pink').style.clipPath = `polygon(0 ${(Ly - sl * 200 + 100).toFixed(1)}px,1480px ${(Ry + sl * 1280 + 100).toFixed(1)}px,1480px 2220px,0 2220px)`;
+    P($('s7earsT'), { x: 26 * Math.sin(te * 0.7), y: 18 * Math.cos(te * 0.6) });
     P($('s7blobK'), { x: 10 * Math.sin(te * 0.9), y: 8 * Math.cos(te * 0.8), r: 3 * Math.sin(te * 0.5) });
-    $('s7full').style.transform = `translateY(${(34 * spr(u0, 5, 17) + 16 * sink * k + hop(te, HIT.cta, 0.34, 64)).toFixed(2)}px) rotate(${(-1.7 * sink * k).toFixed(3)}deg)`;
-    const fq = 0.06 * spr(u - 0.34, 9, 30);
+    P($('s7earsB'), { x: 22 * Math.sin(te * 0.6 + 1), y: 12 * Math.cos(te * 0.7) + 26 * spr(u, 6, 20) });
+    P($('s7blobD'), { x: 12 * Math.sin(te * 0.9), y: 10 * Math.cos(te * 0.8), r: 3 * Math.sin(te * 0.6), s: 1 + 0.12 * spr(u, 6, 22) + 0.03 * beat(te) });
+    // full side: drops in, sinks and tips while the other side is empty; hops level on the hit
+    $('s7full').style.transform = `translateY(${(40 * spr(u0, 5, 17) + 34 * sink * k + hop(te, HIT.cta, 0.34, 70)).toFixed(2)}px) rotate(${(-2.2 * sink * k).toFixed(3)}deg)`;
+    const fq = 0.07 * spr(u0, 8, 26) + 0.06 * spr(u - 0.34, 9, 30);
     P($('s7box'), { r: 0.5 * Math.sin(te * 1.1), y: 3 * Math.sin(te * 1.4), sx: 1 + fq, sy: 1 - 1.3 * fq });
     P($('s7sw'), { r: 0.7 * Math.sin(te * 1.3 + 1), y: 4 * Math.sin(te * 1.6 + 2), sx: 1 + fq, sy: 1 - 1.3 * fq });
     ['m1', 'm2', 'm3'].forEach((id, i) => {
       const h = 24.1 + i * 0.13;
       P($(id), { o: on(te, h) ? 1 : 0, s: back(tw(te, h, h + 0.24), 2.6) * (1 + 0.012 * beat(te)), r: 1.2 * Math.sin(te * 1.2 + i * 2), y: 4 * Math.sin(te * 1.5 + i) + hop(te, HIT.cta, 0.3, 26) });
     });
-    P($('s7earsP'), { x: 22 * Math.sin(te * 0.6 + 1), y: 12 * Math.cos(te * 0.7) + 26 * spr(u, 6, 20) });
-    P($('s7blobD'), { x: 12 * Math.sin(te * 0.9), y: 10 * Math.cos(te * 0.8) + 12 * rise * Math.sin(te * 22), r: 3 * Math.sin(te * 0.6), s: 1 + 0.12 * spr(u, 6, 22) + 0.03 * beat(te) });
-    // the empty seat: a dashed outline whose dashes keep walking; it swells with the riser and is gone on the hit
-    const seat = $('s7seat');
-    seat.style.opacity = cta ? 0 : tw(te, 24.25, 24.6);
-    seat.style.transform = `scale(${(lerp(0.9, 1, back(tw(te, 24.25, 24.6))) + 0.012 * Math.sin(te * 2.2) + rise * (0.035 + 0.02 * Math.sin((te - 28.7) * 34))).toFixed(4)})`;
-    seat.firstElementChild.setAttribute('stroke-dashoffset', (-te * 46).toFixed(1));
-    P($('s7line'), { o: tw(te, F(786), F(786) + 0.35), y: 34 * (1 - eo3(tw(te, F(786), F(786) + 0.5))) + 6 * Math.sin(te * 2.1) * (cta ? 0.4 : 1) - (cta ? 4 : 0) - 14 * spr(u, 8, 24), r: 0.7 * Math.sin(te * 1.4) });
-    P($('s7pill'), { o: on(te, 24.5) ? 1 : 0, s: back(tw(te, 24.5, 24.75), 2.6) * (1 + 0.012 * Math.sin(te * 2.6) + 0.09 * spr(te - F(910), 7, 26)), y: hop(te, HIT.cta, 0.25, 12) });
-    const S = slam(te, HIT.cta, { z: 0.06, A: 0.11 }), pu = 1 + 0.014 * beat(te);
+    // the seat: pops in, floats high and tilted; swells with the riser; is slammed down and level by the headline
+    const sIn = lerp(0.6, 1, back(tw(te, 24, 24.26), 2.2)), said = on(te, SAY);
+    const float = cta ? 0 : 1, sq = cta ? spr(u, 7, 26) : 0;
+    P($('s7seat'), {
+      o: 1, s: sIn * (1 + rise * (0.03 + 0.012 * Math.sin((te - 28.7) * 34))) * (1 + 0.012 * beat(te)),
+      sx: 1 + 0.035 * sq, sy: 1 - 0.09 * sq,
+      y: float * (-26 * sink + 10 * Math.sin(te * 1.9)) + (cta ? 46 * spr(u, 6, 20) : 0) + 0.2 * 0,
+      r: float * (-4 * sink + 1.1 * Math.sin(te * 1.3)) + (cta ? -4 * spr(u, 5, 17) : 0)
+    });
+    [...$('s7dots').children].forEach((d, i) => {
+      const ph = ((te * 1.6 - i * 0.18) % 1 + 1) % 1, b = ph < 0.4 ? Math.sin(Math.PI * ph / 0.4) : 0;
+      d.style.transform = `translateY(${(-26 * b).toFixed(1)}px) scale(${(said ? 1 - tw(te, SAY, SAY + 0.12) : back(tw(te, 24.5 + i * 0.08, 24.7 + i * 0.08))).toFixed(3)})`;
+    });
+    // light line: appears in the seat with the voice; is knocked out of it by the headline
+    const ko = cta ? tw(te, HIT.cta, HIT.cta + 0.17) : 0;
+    P($('s7line'), { o: said && !cta ? 1 : 0, s: lerp(0.7, 1, back(tw(te, SAY, SAY + 0.24), 2)) * (1 - 0.3 * ko), y: 5 * Math.sin(te * 2.1) - 330 * ko, x: 260 * ko, r: 0.6 * Math.sin(te * 1.4) + 24 * ko });
+    const S = slam(te, HIT.cta, { z: 0.04, A: 0.08 }), pu = 1 + 0.014 * beat(te);
     P($('s8cta'), { o: S.o, sx: S.sx * pu, sy: S.sy * pu });
     P($('s8en'), { o: on(te, F(898)) ? 1 : 0, s: back(tw(te, F(898), F(898) + 0.22)) });
-    const bo = cta ? 1 - tw(te, HIT.cta + 0.25, HIT.cta + 0.8) : 0;
-    P($('s8bk'), { o: 0 });
-    return { zoom: 1 + 0.028 * rise * (cta ? 0 : 1) + 0, tilt: cta ? 1.2 * Math.exp(-u * 5) * Math.sin(u * 18) : 0 };
+    P($('s7pill'), { o: on(te, 24.5) ? 1 : 0, s: back(tw(te, 24.5, 24.75), 2.6) * (1 + 0.012 * Math.sin(te * 2.6) + 0.09 * spr(te - F(910), 7, 26)), y: hop(te, HIT.cta, 0.25, 12) });
+    return { zoom: 1 + 0.028 * rise * (cta ? 0 : 1), tilt: cta ? 1.2 * Math.exp(-u * 5) * Math.sin(u * 18) : 0 };
   }
 
-  // ---------- scene 9 · end card (the logo file is only placed and scaled uniformly; the QR is untouched after 34.65 s)
+  // ---------- scene 9 · end card (the logo file is only placed and scaled uniformly; the QR is untouched after about 34.1 s)
   function s9(t) {
     const ul = t - HIT.logo;
     P($('s9ears'), { x: 300 * (1 - eo3(tw(t, HIT.end, HIT.end + 0.4))) + 14 * spr(ul, 5, 26) * -1, y: 14 * Math.sin(t * 0.8), r: 5 * spr(ul, 4.5, 26) });
     P($('s9logo'), { o: 1, s: lerp(0.9, 1, back(tw(t, HIT.end, HIT.end + 0.3), 1.8)) });
-    const pk = eo3(tw(t, HIT.end, HIT.end + 0.3)), py = 640 * (1 - pk);
+    const pk = eo3(tw(t, HIT.end, HIT.end + 0.2)), py = 260 * (1 - pk);
     P($('s9pink'), { y: py });
     P($('s9blobK'), { y: py + 8 * Math.cos(t * 0.8), x: 8 * Math.sin(t * 0.9), s: 1 + 0.07 * spr(ul, 6, 24) });
-    P($('s9blobL'), { s: back(tw(t, F(1014), F(1014) + 0.3), 2.4) * (1 + 0.1 * spr(ul - 0.12, 6, 24) + 0.015 * Math.sin(t * 2)), x: 10 * Math.sin(t * 0.7), y: 8 * Math.cos(t * 0.9) });
-    const H = land(t, F(1011), { from: 2.2, A: 0.1 }); P($('s9h'), { o: H.o, sx: H.sx, sy: H.sy });
-    P($('s9en'), { o: on(t, F(1017)) ? 1 : 0, s: back(tw(t, F(1017), F(1017) + 0.22)) });
-    P($('s9q'), { o: tw(t, F(1023), F(1023) + 0.25), y: 24 * (1 - eo3(tw(t, F(1023), F(1023) + 0.35))) });
-    P($('s9qr'), { o: on(t, F(1030)) ? 1 : 0, s: back(tw(t, F(1030), F(1030) + 0.3), 1.8) });
+    P($('s9blobL'), { s: back(tw(t, F(1003), F(1003) + 0.3), 2.4) * (1 + 0.1 * spr(ul - 0.12, 6, 24) + 0.015 * Math.sin(t * 2)), x: 10 * Math.sin(t * 0.7), y: 8 * Math.cos(t * 0.9) });
+    const H = slam(t, HIT.end, { z: 0.1, A: 0.08 }); P($('s9h'), { o: H.o, sx: H.sx, sy: H.sy, y: py });
+    P($('s9en'), { o: on(t, F(1005)) ? 1 : 0, s: back(tw(t, F(1005), F(1005) + 0.22)) });
+    P($('s9q'), { o: tw(t, F(1009), F(1009) + 0.2), y: 24 * (1 - eo3(tw(t, F(1009), F(1009) + 0.3))) });
+    P($('s9qr'), { o: on(t, F(1014)) ? 1 : 0, s: back(tw(t, F(1014), F(1014) + 0.3), 1.8) });
     return { zoom: 1 };
   }
 

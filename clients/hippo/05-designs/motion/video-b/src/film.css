@@ -51,3 +51,8 @@ body.preview #ui{display:block}
 .stk .t{position:relative;top:.09em}
 .onk{box-shadow:14px 16px 0 #fff}            /* sticker on a black ground */
 .onk.wh{box-shadow:14px 16px 0 #BBD032;border-color:#BBD032}
+
+/* the empty seat (scene 7-8): texts are stacked in its centre; three waiting dots in the brand's dot motif */
+.ctr{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:34px}
+.ctr>span{display:inline-block}
+#s7dots i{display:block;width:54px;height:54px;border-radius:50%;background:#181717}

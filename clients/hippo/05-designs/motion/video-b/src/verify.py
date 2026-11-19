@@ -52,7 +52,7 @@ for t in (36.0, 38.4, 39.5):
 fr = os.path.join(WORK, 'frames')
 if os.path.isdir(fr):
     ref = cv2.imread(os.path.join(fr, 'f_%05d.png' % 1065))[1116:1550, 318:752]; worst = 0; first = None
-    for f in range(1030, 1200):
+    for f in range(1000, 1200):
         d = np.abs(cv2.imread(os.path.join(fr, 'f_%05d.png' % f))[1116:1550, 318:752].astype(int) - ref.astype(int)).max()
         if d == 0 and first is None: first = f
         if f >= 1065: worst = max(worst, d)
