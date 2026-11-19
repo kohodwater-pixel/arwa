@@ -261,3 +261,14 @@ h1{font-weight:800;font-size:60pt;line-height:1.2;white-space:nowrap;margin-top:
 .en .term .ts{font-size:10pt}
 .est .fit{position:absolute;top:53mm;left:0;right:0;font-weight:500;font-size:10.5pt;line-height:1.5;color:#fff}
 .en .est .fit{font-size:10pt}
+
+/* v07: single lead line; headline slightly larger; term cards get air between label and value */
+.p1 h1{font-size:48pt}
+.p1 .lead{margin-top:2.6mm;white-space:nowrap}
+.en.p1 h1{font-size:39pt;margin-bottom:4mm}
+.en.p1 .herotext{top:48mm}
+.en.p1 .herotext .kicker{top:-35.5mm}
+.en.p1 .lead{margin-top:0}
+.term .tl2{margin-bottom:1.2mm}
+.term .tv{line-height:1.1}
+.term .ts{margin-top:.6mm}

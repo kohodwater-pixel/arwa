@@ -15,7 +15,7 @@ All facts are client-supplied and still pending the client's final confirmation.
 |---|---|---|---|
 | 1 | امتياز هيبو التجاري | The HIPPO Franchise | APPROVED label (motion script v03, scene 7) / AGENCY (EN) |
 | 2 | افتح هيبو في مدينتك. | Open a HIPPO in your city. | Creative Director decision 2026-11-19, after the client withdrew «حُطّ ثقلك» from this file (his own suggestion «خليك شريك نجاح» was not used because «نجاح» implies a result). Still needs the client's approval |
-| 3 | ساندوتشات بريوش سعودية منذ 2021، وامتيازنا التجاري مفتوح الآن للاستفسار. | Saudi brioche sandwiches since 2021. The franchise is now open for enquiries. | AGENCY wording; facts: Saudi brand + 2021 (PROFILE p.001); franchise model launched (PROFILE p.006) and the client's live enquiry form (his QR) |
+| 3 | امتيازنا التجاري مفتوح الآن للاستفسار. | Our franchise is now open for enquiries. | AGENCY wording, single line since v07: the client asked on 2026-11-19 to remove the first clause («ساندوتشات بريوش سعودية منذ 2021،» / "Saudi brioche sandwiches since 2021."). Rests on the franchise-model line in PROFILE p.006 and the client's live enquiry form |
 | 4 | مسودة v07 — بانتظار اعتماد العميل (on both pages) | Draft v07 — awaiting client approval | AGENCY (draft tag; removed in the final) |
 
 ## 2. Fact cards
