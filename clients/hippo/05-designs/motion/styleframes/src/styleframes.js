@@ -1,4 +1,4 @@
-/* hippo style frames v02 — builds the vector graphic devices and fits the headline widths.
+/* hippo style frames v03 — builds the vector graphic devices and fits the headline widths.
    The "ears" device is our own vector approximation of the brand's lid/ear graphic (a rounded head with two ear bumps,
    drawn as a thick outline). It is not traced or cropped from the logo mark. */
 (function () {

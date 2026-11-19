@@ -96,3 +96,6 @@ body.notext .t{color:transparent !important;text-shadow:none !important}
 
 /* Tajawal sits high in its line box: nudge card text down so it reads optically centred */
 .slab .t,.stk .t,.card>.t{position:relative;top:.09em}
+
+/* small supporting line inside a fact card (city names) */
+.sub{font-weight:800;line-height:1.4}

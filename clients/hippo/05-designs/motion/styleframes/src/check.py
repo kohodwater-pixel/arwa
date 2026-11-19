@@ -13,7 +13,7 @@ from PIL import Image
 import cv2
 
 HERE = os.path.dirname(os.path.abspath(__file__)); OUT = os.path.dirname(HERE); WORK = os.path.join(OUT, '_work')
-NAME = 'hippo_franchise-motion-ad_styleframe-%s-%s_ar_v02.png'
+NAME = 'hippo_franchise-motion-ad_styleframe-%s-%s_ar_v03.png'
 SAFE_TOP, SAFE_BOTTOM = 250, 1920 - 350
 QR_EXPECT = 'https://otlobny.net/HIPPO-franchise-form-final/franchise/index.html'
 
