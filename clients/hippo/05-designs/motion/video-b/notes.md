@@ -47,11 +47,7 @@ Tajawal Light / ExtraBold and Playfair Display Italic from `src/assets/fonts/` (
 - The "ears" band is our own vector drawing after the client's lid print and profile outline, not his file.
 
 ## Verified on the built MP4 (measured or seen in stills; not watched)
-- ffprobe: 1080x1920, 30 fps, 1200 frames, 40.000 s, H.264 + AAC; 2 streams.
-- Audio onsets in the MP4: 0.998 s (hook) and 29.599 s (CTA).
-- Every hit frame in the table shows a jump in the picture on that frame (`verify.py`); both freezes hold (0.92–1.00 and 29.52–29.60).
-- QR decodes from MP4 frames at 36.0, 38.4 and 39.5 s, at full and half size, to `https://otlobny.net/HIPPO-franchise-form-final/franchise/index.html`. In the rendered PNG frames the QR tile is pixel-identical from frame 1013 (33.77 s) to the end (6.2 s).
-- `check.py` on 15 settled moments: contrast at least 4.5:1, text inside the safe areas, no letter-spacing — 0 failures.
+Run `python3 src/verify.py <mp4> _work` and `python3 src/check.py _work/chk`; the figures of the last build are in the hand-off. The end card carries two codes: the client's franchise-form code (right, larger, `assets/qr.png`) labelled «قدّم طلب الامتياز», and the agency-generated menu code (left, `assets/qr-menu.png`, copied from `06-profiles/franchise-brochure/src/assets/`) labelled «تصفّح منيو هيبو». «للاستفسار عن الامتياز:» was dropped by the Creative Director's instruction.
 
 ## Deviations from the scene plan
 1. Scene 1: the word starts big and low and is knocked up to its place by the hit (to fill the frame before the sandwich arrives).
@@ -61,7 +57,7 @@ Tajawal Light / ExtraBold and Playfair Display Italic from `src/assets/fonts/` (
 5. Scene 6: the lid is not separated; the whole box rocks on the three lid taps. The question line enters at 20.43 s.
 6. Scene 7: «ناقصها ثقلك.» appears at 27.6 s, the onset of those words measured on the voice stem (the timing table gives only the whole line, 25.09–28.54). The seat is on screen from 26.4 s, never blank: three bouncing dots for 1.2 s, then the phrase. No dashed outlines anywhere.
 7. Scene 7–8: all four proof stickers, large until 26.1 s, then a compact row (city names are about 17 px high in the row).
-8. Scene 9: logo enters by uniform scale only; the franchise line is there on the cut; at 38.2 the band wiggles and the blobs pop. QR static from 33.77 s. No colour wipe on this cut (a band behind the transparent logo hid part of it).
+8. Scene 9: logo enters by uniform scale only; the franchise line is there on the cut; at 38.2 the band wiggles and the blobs pop. Both QR tiles static from about 34 s. No colour wipe on this cut (a band behind the transparent logo hid part of it).
 9. Flashes are a pale tint of the scene's own ground at 60 % or less, never white; each cut has one colour band (two at 15.0). Colour wipes are bands that sweep behind the content starting on the cut, so the hit frame itself is never covered. No wipe at 3.0 (white type), 24.0 (music stops) or 33.3.
 10. For two or three frames after the big hits the hero is oversized and may touch the frame edge.
 

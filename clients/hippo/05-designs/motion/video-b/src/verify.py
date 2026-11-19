@@ -44,18 +44,25 @@ for f in (885, 886, 887):
     print('freeze 29.52-29.60: frame %d vs %d change %.3f' % (f, f + 1, np.abs(frame(f + 1).astype(int) - frame(f).astype(int)).mean()))
 
 det = cv2.QRCodeDetector()
+MENU = 'https://menu-hipoo-qr.vercel.app/'
+TILES = {'form': (540, 1070, 1050, 1570, QR), 'menu': (50, 1100, 480, 1530, MENU)}     # crop x0, y0, x1, y1 around each tile
 for t in (36.0, 38.4, 39.5):
     im = frame(round(t * 30))
-    for label, img in (('full', im), ('half', cv2.resize(im, (540, 960), interpolation=cv2.INTER_AREA))):
-        s, _, _ = det.detectAndDecode(img); ok = s == QR; fails += 0 if ok else 1
-        print('QR from MP4 t=%.1f %s: %s %r' % (t, label, 'OK' if ok else 'XX', s))
+    for name, (x0, y0, x1, y1, want) in TILES.items():
+        crop = im[y0:y1, x0:x1]
+        for label, img in (('full', crop), ('half', cv2.resize(crop, ((x1 - x0) // 2, (y1 - y0) // 2), interpolation=cv2.INTER_AREA))):
+            s, _, _ = det.detectAndDecode(img); ok = s == want; fails += 0 if ok else 1
+            print('QR %s from MP4 t=%.1f %s: %s %r' % (name, t, label, 'OK' if ok else 'XX', s))
 fr = os.path.join(WORK, 'frames')
 if os.path.isdir(fr):
-    ref = cv2.imread(os.path.join(fr, 'f_%05d.png' % 1065))[1116:1550, 318:752]; worst = 0; first = None
-    for f in range(1000, 1200):
-        d = np.abs(cv2.imread(os.path.join(fr, 'f_%05d.png' % f))[1116:1550, 318:752].astype(int) - ref.astype(int)).max()
-        if d == 0 and first is None: first = f
-        if f >= 1065: worst = max(worst, d)
-    ok = worst == 0; fails += 0 if ok else 1
-    print('QR tile in the rendered PNG frames: identical from frame %s (%.3f s); max pixel difference 35.5 s -> end: %d %s' % (first, (first or 0) / 30, worst, 'OK' if ok else 'XX'))
+    INNER = {'form': (600, 1124, 980, 1504), 'menu': (96, 1150, 424, 1478)}     # inside each tile, clear of its rounded corners (graphics drift behind the tiles)
+    for name, (x0, y0, x1, y1) in INNER.items():
+        ref = cv2.imread(os.path.join(fr, 'f_%05d.png' % 1065))[y0:y1, x0:x1]; worst = 0; first = None
+        for f in range(1000, 1200):
+            d = np.abs(cv2.imread(os.path.join(fr, 'f_%05d.png' % f))[y0:y1, x0:x1].astype(int) - ref.astype(int)).max()
+            if d == 0 and first is None: first = f
+            if d != 0: first = None
+            if f >= 1065: worst = max(worst, d)
+        ok = worst == 0; fails += 0 if ok else 1
+        print('QR %s tile in the rendered PNG frames: identical from frame %s (%.3f s) to the end; max pixel difference 35.5 s -> end: %d %s' % (name, first, (first or 0) / 30, worst, 'OK' if ok else 'XX'))
 print('failures:', fails); sys.exit(1 if fails else 0)
