@@ -28,12 +28,12 @@ The render is deterministic: `window.seek(t)` lays out a frame from the time alo
 | 4 | 11.0–15.0 | pink, lime from 12.5 | stickers pull back; «خبز خفيف.» floats; «حضور ثقيل.» lands with the colour flip; punch | 375, 386 |
 | 5 | 15.0–19.4 | black | four chips stack on the bread; fifth hit squashes the stack | 456, 480, 504, 528; 549 |
 | 6 | 19.4–24.0 | lime | gathering box; «وبوكس الجَمعات؟» at 20.43; «أثقل.» | 582; 655 |
-| 7 | 24.0–29.6 | lime over pink | full side (box, sandwich, three proof stickers) heavy and low; the empty seat is a big white sticker floating high and tilted with three waiting dots; «ناقصها ثقلك.» appears inside it at 27.6 with the voice; riser; freeze 29.52–29.60 | — |
+| 7 | 24.0–29.6 | lime over pink | full side (box, sandwich) heavy and low; 24.0–26.1 the four proof stickers sit large in the top half with the franchise pill; at 26.1–26.4 they close up into a row and the empty seat (a big white sticker, tilted, with three bouncing dots) pops in at 26.4; «ناقصها ثقلك.» lands inside it at 27.6 with the voice; riser; freeze 29.52–29.60 | — |
 | 8 | 29.6–33.3 | lime over pink | «حُطّ ثقلك.» lands in the seat, replaces the light line, slams the seat down and the scale levels; English line; pill | 888 |
 | 9 | 33.3–40.0 | white | end card; QR untouched from 33.77 s; band wiggle and blob pop with the sonic logo | 999; 1146 |
 
 ## Change the facts or chips
-Edit the text in `src/index.html` inside the elements marked `data-swap`. The facts appear twice: large in scene 3–4 (`k1`…`k4`) and small in scene 7–8 (`m1`…`m3`). Chips are `c1`…`c4`. Then rebuild and re-run `check.py`.
+Edit the text in `src/index.html` inside the elements marked `data-swap`. The facts appear twice: in scene 3–4 (`k1`…`k4`) and in scene 7–8 (`n1`…`n4`). Chips are `c1`…`c4`. Then rebuild and re-run `check.py`.
 Facts in this version (client-confirmed 2026-11-19): «علامة سعودية» · «من 2021» · «5 فروع» · «مدينتان — الرياض · المدينة المنورة». No other figure or claim.
 
 ## Swap in the HQ photos
@@ -59,14 +59,13 @@ Tajawal Light / ExtraBold and Playfair Display Italic from `src/assets/fonts/` (
 3. Scene 3: on pink, so the «5 فروع» circle is lime there and turns pink with the colour flip at 12.5. The sandwich is the hero in the middle and is knocked down a stage by the second and third stickers.
 4. Scene 5: the chips stack on the bread; the fifth hit squashes stack and bread (no new object lands).
 5. Scene 6: the lid is not separated; the whole box rocks on the three lid taps. The question line enters at 20.43 s.
-6. Scene 7: «ناقصها ثقلك.» appears at 27.6 s, the onset of those words measured on the voice stem (the timing table gives only the whole line, 25.09–28.54). Until then the seat shows three bouncing dots. No dashed outlines anywhere.
-7. Scene 7–8: only three small proof stickers (the cities card would be too small to read).
+6. Scene 7: «ناقصها ثقلك.» appears at 27.6 s, the onset of those words measured on the voice stem (the timing table gives only the whole line, 25.09–28.54). The seat is on screen from 26.4 s, never blank: three bouncing dots for 1.2 s, then the phrase. No dashed outlines anywhere.
+7. Scene 7–8: all four proof stickers, large until 26.1 s, then a compact row (city names are about 17 px high in the row).
 8. Scene 9: logo enters by uniform scale only; the franchise line is there on the cut; at 38.2 the band wiggles and the blobs pop. QR static from 33.77 s. No colour wipe on this cut (a band behind the transparent logo hid part of it).
-9. Colour wipes are bands that sweep behind the content starting on the cut, so the hit frame itself is never covered. No wipe at 3.0 (white type), 24.0 (music stops) or 33.3.
+9. Flashes are a pale tint of the scene's own ground at 60 % or less, never white; each cut has one colour band (two at 15.0). Colour wipes are bands that sweep behind the content starting on the cut, so the hit frame itself is never covered. No wipe at 3.0 (white type), 24.0 (music stops) or 33.3.
 10. For two or three frames after the big hits the hero is oversized and may touch the frame edge.
 
 ## Known weak spots
-- 24.0–27.6 s: the seat is an empty white sticker with three dots for 3.6 s; it could read as a "typing" bubble.
 - 29.6–29.9 s: during the hop on the hit the pill and the proof stickers overlap for a few frames.
 - Scene 7–8: the box's lower-left corner comes within a few pixels of the frame edge while the full side is tipped.
 - Photos are the web-size cut-outs; the sandwich reaches 110 % in scenes 1–3.

@@ -78,8 +78,8 @@
   const SCENES = [['s1', 0, 3], ['s2', 3, 7], ['s34', 7, 15], ['s5', 15, HIT.box], ['s6', HIT.box, 24], ['s78', 24, HIT.end], ['s9', HIT.end, 41]];
   const bgAt = t => t < 3 ? P_ : t < 7 ? K_ : t < HIT.heavy ? P_ : t < 15 ? L_ : t < HIT.box ? K_ : t < HIT.end ? L_ : W_;
   // colour bands that peel away behind the new scene's content, starting on the cut
-  const ACCENT = [[7, [L_, W_]], [HIT.heavy, [P_, W_]], [15, [L_, P_]], [HIT.box, [W_, P_]]];   // never a band colour that would swallow the text above it
-  const FLASH = [[HIT.hook, .95], [HIT.box, .7], [HIT.athqal, .4], [HIT.cta, .8]];
+  const ACCENT = [[7, [L_]], [HIT.heavy, [P_]], [15, [L_, P_]], [HIT.box, [P_]]];   // never a band colour that would swallow the text above it
+  const FLASH = [[HIT.hook, .6, '#F3C4DC'], [HIT.box, .6, '#E4EDA6'], [HIT.athqal, .4, '#E4EDA6'], [HIT.cta, .5, '#E4EDA6']];   // a pale tint of the ground itself: never white, never opaque
   const SHAKE = [[HIT.hook, 34, .6], [F(83), 7, .2], ...HIT.taps.map(x => [x, 5, .15]), [F(199), 10, .3], [HIT.proof[0], 16, .35], [HIT.proof[1], 16, .35], [HIT.proof[2], 20, .4],
     [HIT.heavy, 18, .5], [HIT.punch, 10, .25], ...HIT.chips.map(x => [x, 13, .3]), [HIT.stack, 26, .5], [HIT.box, 46, .9], [HIT.athqal, 20, .45], [HIT.cta, 22, .6], [HIT.end, 8, .25]];
   const accentEls = [...document.querySelectorAll('#accent i')];
@@ -96,7 +96,7 @@
         e.style.transform = `translateX(${(-1380 + k * 3300).toFixed(1)}px) skewX(-14deg)`;
       });
     });
-    let f = 0; FLASH.forEach(([t0, a]) => { if (on(t, t0)) f = Math.max(f, a * Math.exp(-(t - t0) * 20)); });
+    let f = 0; FLASH.forEach(([t0, a, c]) => { if (on(t, t0)) { const v = a * Math.exp(-(t - t0) * 20); if (v > f) { f = v; $('flash').style.background = c; } } });
     $('flash').style.opacity = f < 0.01 ? 0 : f.toFixed(3);
     let x = 0, y = 0, r = 0;
     SHAKE.forEach(([t0, amp, dur], i) => {
@@ -147,7 +147,7 @@
   }
 
   // ---------- scenes 3 + 4 · proof, then «خبز خفيف. حضور ثقيل.»
-  const LA = { k1: { dx: -201, dy: -455, s: 1.5 }, k2: { dx: 276, dy: -150, s: 1.6 }, k3: { dx: -25, dy: 54, s: 1.15 }, k4: { dx: -6, dy: 25, s: 1.05 } };
+  const LA = { k1: { dx: -217, dy: -431, s: 1.5 }, k2: { dx: 276, dy: -150, s: 1.6 }, k3: { dx: -25, dy: 54, s: 1.15 }, k4: { dx: -6, dy: 25, s: 1.05 } };
   const KH = { k1: 0, k2: 1, k3: 2, k4: 2 };
   function s34(t) {
     const m = eio(tw(t, 11.0, 11.55)), lime = on(t, HIT.heavy);
@@ -219,6 +219,11 @@
   }
 
   // ---------- scenes 7 + 8 · the full side heavy and low, the empty seat light and high; «حُطّ ثقلك.» lands in the seat and levels the scale
+  // proof stickers n1..n4 (same artwork as scene 4): b = big block in the top half, c = compact row above the food; offsets from their CSS place
+  const NC = { n1: [741, 855, 867, 0.47], n2: [264, 915, 607, 0.47], n3: [805, 1161, 402, 0.45], n4: [324, 1210, 187, 0.47] };   // [css centre x, y, row centre x, row scale]
+  const BIG = 0.86, NB = {};
+  Object.keys(NC).forEach(id => { const [x, y, rx, cs] = NC[id]; NB[id] = { bx: 540 + (x - 545) * BIG - x, by: 505 + (y - 1063) * BIG - y, cx: rx - x, cy: 968 - y, cs }; });
+  const SEAT = F(792);                             // the seat pops in at 26.4, already with its dots
   const SAY = F(828);                              // VO «ناقصها ثقلك» starts 27.60 (measured on the voice stem)
   function s78(t) {
     const te = (t >= 29.52 && t < HIT.cta - 1e-6) ? 29.52 : t, u = te - HIT.cta, cta = on(te, HIT.cta), u0 = te - 24;
@@ -235,22 +240,24 @@
     const fq = 0.07 * spr(u0, 8, 26) + 0.06 * spr(u - 0.34, 9, 30);
     P($('s7box'), { r: 0.5 * Math.sin(te * 1.1), y: 3 * Math.sin(te * 1.4), sx: 1 + fq, sy: 1 - 1.3 * fq });
     P($('s7sw'), { r: 0.7 * Math.sin(te * 1.3 + 1), y: 4 * Math.sin(te * 1.6 + 2), sx: 1 + fq, sy: 1 - 1.3 * fq });
-    ['m1', 'm2', 'm3'].forEach((id, i) => {
-      const h = 24.1 + i * 0.13;
-      P($(id), { o: on(te, h) ? 1 : 0, s: back(tw(te, h, h + 0.24), 2.6) * (1 + 0.012 * beat(te)), r: 1.2 * Math.sin(te * 1.2 + i * 2), y: 4 * Math.sin(te * 1.5 + i) + hop(te, HIT.cta, 0.3, 26) });
+    const mv = eio(tw(te, 26.1, 26.42));
+    Object.keys(NB).forEach((id, i) => {
+      const a = NB[id], h = 24 + i * 0.1, pop = lerp(0.6, 1, back(tw(te, h, h + 0.24), 2.6));
+      P($(id), { o: on(te, h) ? 1 : 0, x: lerp(a.bx, a.cx, mv), y: lerp(a.by, a.cy, mv) + 5 * Math.sin(te * 1.5 + i * 1.7) + hop(te, HIT.cta, 0.3, 22),
+        s: pop * lerp(BIG, a.cs, mv) * (1 + 0.012 * beat(te)), r: 1.1 * Math.sin(te * 1.2 + i * 2) });
     });
     // the seat: pops in, floats high and tilted; swells with the riser; is slammed down and level by the headline
-    const sIn = lerp(0.6, 1, back(tw(te, 24, 24.26), 2.2)), said = on(te, SAY);
+    const sIn = back(tw(te, SEAT, SEAT + 0.26), 2.4), said = on(te, SAY);
     const float = cta ? 0 : 1, sq = cta ? spr(u, 7, 26) : 0;
     P($('s7seat'), {
-      o: 1, s: sIn * (1 + rise * (0.03 + 0.012 * Math.sin((te - 28.7) * 34))) * (1 + 0.012 * beat(te)),
+      o: on(te, SEAT) ? 1 : 0, s: sIn * (1 + rise * (0.03 + 0.012 * Math.sin((te - 28.7) * 34))) * (1 + 0.012 * beat(te)),
       sx: 1 + 0.035 * sq, sy: 1 - 0.09 * sq,
       y: float * (-26 * sink + 10 * Math.sin(te * 1.9)) + (cta ? 46 * spr(u, 6, 20) : 0) + 0.2 * 0,
       r: float * (-4 * sink + 1.1 * Math.sin(te * 1.3)) + (cta ? -4 * spr(u, 5, 17) : 0)
     });
     [...$('s7dots').children].forEach((d, i) => {
       const ph = ((te * 1.6 - i * 0.18) % 1 + 1) % 1, b = ph < 0.4 ? Math.sin(Math.PI * ph / 0.4) : 0;
-      d.style.transform = `translateY(${(-26 * b).toFixed(1)}px) scale(${(said ? 1 - tw(te, SAY, SAY + 0.12) : back(tw(te, 24.5 + i * 0.08, 24.7 + i * 0.08))).toFixed(3)})`;
+      d.style.transform = `translateY(${(-26 * b).toFixed(1)}px) scale(${(said ? 1 - tw(te, SAY, SAY + 0.12) : 1).toFixed(3)})`;
     });
     // light line: appears in the seat with the voice; is knocked out of it by the headline
     const ko = cta ? tw(te, HIT.cta, HIT.cta + 0.17) : 0;
@@ -258,7 +265,7 @@
     const S = slam(te, HIT.cta, { z: 0.04, A: 0.08 }), pu = 1 + 0.014 * beat(te);
     P($('s8cta'), { o: S.o, sx: S.sx * pu, sy: S.sy * pu });
     P($('s8en'), { o: on(te, F(898)) ? 1 : 0, s: back(tw(te, F(898), F(898) + 0.22)) });
-    P($('s7pill'), { o: on(te, 24.5) ? 1 : 0, s: back(tw(te, 24.5, 24.75), 2.6) * (1 + 0.012 * Math.sin(te * 2.6) + 0.09 * spr(te - F(910), 7, 26)), y: hop(te, HIT.cta, 0.25, 12) });
+    P($('s7pill'), { o: on(te, 24.3) ? 1 : 0, s: back(tw(te, 24.3, 24.55), 2.6) * (1 + 0.012 * Math.sin(te * 2.6) + 0.09 * spr(te - F(910), 7, 26)), y: hop(te, HIT.cta, 0.25, 12) });
     return { zoom: 1 + 0.028 * rise * (cta ? 0 : 1), tilt: cta ? 1.2 * Math.exp(-u * 5) * Math.sin(u * 18) : 0 };
   }
 
