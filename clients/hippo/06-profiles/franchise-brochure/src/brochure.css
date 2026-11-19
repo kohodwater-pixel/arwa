@@ -8,8 +8,9 @@
 @font-face{font-family:"Tajawal";font-weight:500;src:url("assets/fonts/Tajawal-Medium.ttf") format("truetype");}
 @font-face{font-family:"Tajawal";font-weight:700;src:url("assets/fonts/Tajawal-Bold.ttf") format("truetype");}
 @font-face{font-family:"Tajawal";font-weight:800;src:url("assets/fonts/Tajawal-ExtraBold.ttf") format("truetype");}
-@font-face{font-family:"Playfair Display";font-style:normal;font-weight:400 900;src:url("assets/fonts/PlayfairDisplay-VF.ttf") format("truetype");}
-@font-face{font-family:"Playfair Display";font-style:italic;font-weight:400 900;src:url("assets/fonts/PlayfairDisplay-Italic-VF.ttf") format("truetype");}
+/* static instances (wght 800, 900) cut from the OFL variable file PlayfairDisplay[wght].ttf (google/fonts) so the fonts embed by name */
+@font-face{font-family:"Playfair Display";font-weight:800;src:url("assets/fonts/PlayfairDisplay-ExtraBold.ttf") format("truetype");}
+@font-face{font-family:"Playfair Display";font-weight:900;src:url("assets/fonts/PlayfairDisplay-Black.ttf") format("truetype");}
 
 :root{--lime:#BBD032;--black:#181717;--pink:#DA6FA2;--white:#FFFFFF;--qr:#FFFDF7;--bleed:0mm;--m:12mm;}
 @page{size:210mm 297mm;margin:0}
@@ -38,7 +39,7 @@ h2{font-weight:800;font-size:17pt;line-height:1.3}
 .hero .ears{position:absolute;top:17mm;inset-inline-end:-41mm;width:150mm;height:187.5mm}
 .hero .blob{position:absolute;top:-6mm;inset-inline-end:-6mm;width:50mm;height:42mm}
 .en .hero .blob{transform:scaleX(-1)}
-.hero .sandwich{position:absolute;top:39mm;inset-inline-end:11mm;width:84mm;height:auto;filter:drop-shadow(0 2.4mm 2mm rgba(24,23,23,.38))}
+.hero .sandwich{position:absolute;top:39mm;inset-inline-end:11mm;width:84mm;height:auto}
 .logoplate{position:absolute;top:0;inset-inline-start:calc(3mm + var(--m));width:25mm;height:38mm;background:#fff;border-radius:0 0 5mm 5mm;display:flex;align-items:flex-end;justify-content:center;padding-bottom:3.2mm}
 .logoplate img{display:block;width:17mm;height:auto}
 .draft{position:absolute;top:7.5mm;inset-inline-start:calc(3mm + var(--m) + 29mm);font-weight:500;font-size:8pt;line-height:1.5;padding:.5mm 2.4mm .1mm;border:.25mm dashed var(--black);border-radius:1.2mm;white-space:nowrap}
@@ -116,3 +117,8 @@ h1{font-weight:800;font-size:66pt;line-height:1.2;white-space:nowrap;margin-top:
 .foot .line{position:absolute;top:0;left:0;right:0;height:11mm;display:flex;align-items:center;justify-content:space-between;font-weight:700;font-size:9.5pt;line-height:1.3;white-space:nowrap;padding-top:.5mm}
 .en .foot .line{font-size:9.5pt}
 .foot .lbl{font-weight:800}
+
+/* no single-word last lines */
+.why p,.lead{text-wrap:balance}
+.about p{text-wrap:pretty}
+.en .about p{text-wrap:balance}
