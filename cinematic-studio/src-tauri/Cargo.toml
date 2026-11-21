@@ -1,6 +1,17 @@
 [package]
 name = "cinematic-studio"
-version.workspace = true
-edition.workspace = true
+version = "0.1.0"
+edition = "2021"
+description = "Cinematic Studio desktop shell"
+publish = false
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
 
 [dependencies]
+studio-core = { path = "../crates/core" }
+tauri = { version = "2", features = [] }
+tauri-plugin-dialog = "2"
+tauri-plugin-single-instance = "2"
+serde_json = "1"
+url = "2"
