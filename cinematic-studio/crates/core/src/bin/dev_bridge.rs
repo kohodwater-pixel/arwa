@@ -14,8 +14,20 @@ fn main() {
     let _worker = jobs::start_worker(app.clone());
     let server = tiny_http::Server::http(format!("127.0.0.1:{port}")).expect("bind");
     eprintln!("dev bridge on http://127.0.0.1:{port} (library: {})", app.lib().root.display());
+    let allowed_hosts: Vec<String> = [port.as_str(), "1420"].iter().flat_map(|p| [format!("127.0.0.1:{p}"), format!("localhost:{p}")]).collect();
     let header = |k: &str, v: &str| tiny_http::Header::from_bytes(k.as_bytes(), v.as_bytes()).unwrap();
     for mut req in server.incoming_requests() {
+        // Loopback is not enough on its own: a web page in the user's browser could post here (CSRF) or
+        // reach it through DNS rebinding. Accept only our own Host, a same-site Origin, and JSON bodies.
+        let hv = |name: &'static str| req.headers().iter().find(|h| h.field.equiv(name)).map(|h| h.value.as_str().to_string());
+        let ours = |h: &str| allowed_hosts.iter().any(|a| a == h);
+        let host_ok = hv("Host").map(|h| ours(&h)).unwrap_or(false);
+        let origin_ok = hv("Origin").map(|o| o.strip_prefix("http://").map(|h| ours(h)).unwrap_or(false)).unwrap_or(true);
+        let json_ok = req.method() != &tiny_http::Method::Post || hv("Content-Type").map(|c| c.starts_with("application/json")).unwrap_or(false);
+        if !host_ok || !origin_ok || !json_ok {
+            let _ = req.respond(tiny_http::Response::from_string("forbidden").with_status_code(403));
+            continue;
+        }
         let url = req.url().to_string();
         let (path, query) = url.split_once('?').map(|(p, q)| (p.to_string(), q.to_string())).unwrap_or((url.clone(), String::new()));
         if req.method() == &tiny_http::Method::Post && path == "/rpc" {

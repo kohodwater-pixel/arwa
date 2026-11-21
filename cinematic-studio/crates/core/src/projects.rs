@@ -417,6 +417,7 @@ pub fn import_archive(app: &App, archive: &str) -> Result<Value> {
     let folder = format!("Projects/{}-{}", slug(&name, 40), &id[..8]);
     let dir = lib.resolve(&folder)?;
     std::fs::create_dir_all(&dir)?;
+    let mut written: u64 = 0;
     for i in 0..zip.len() {
         let mut e = zip.by_index(i)?;
         let rel = e.enclosed_name().ok_or_else(|| AppError::new("unsafe_archive", "unsafe path"))?;
@@ -427,9 +428,17 @@ pub fn import_archive(app: &App, archive: &str) -> Result<Value> {
             if let Some(p) = out.parent() {
                 std::fs::create_dir_all(p)?;
             }
+            // the sizes declared in the archive are not trusted: count what is really written
             let mut f = std::fs::File::create(&out)?;
-            std::io::copy(&mut e, &mut f)?;
+            let budget = MAX_ARCHIVE_BYTES.saturating_sub(written);
+            let n = std::io::copy(&mut (&mut e).take(budget + 1), &mut f)?;
             f.flush()?;
+            written += n;
+            if written > MAX_ARCHIVE_BYTES {
+                drop(f);
+                let _ = std::fs::remove_dir_all(&dir);
+                return err("unsafe_archive", "the archive expands beyond the size limit");
+            }
         }
     }
     let old_folder = src["folder"].as_str().unwrap_or("").to_string();

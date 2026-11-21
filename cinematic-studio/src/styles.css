@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@font-face { font-family: "Plex Arabic"; src: url("/fonts/IBMPlexSansArabic-Regular.ttf"); font-weight: 400; font-display: block; }
+@font-face { font-family: "Plex Arabic"; src: url("/fonts/IBMPlexSansArabic-Medium.ttf"); font-weight: 500; font-display: block; }
+@font-face { font-family: "Plex Arabic"; src: url("/fonts/IBMPlexSansArabic-SemiBold.ttf"); font-weight: 600; font-display: block; }
+@font-face { font-family: "Plex"; src: url("/fonts/IBMPlexSans-Regular.ttf"); font-weight: 400; font-display: block; }
+@font-face { font-family: "Plex"; src: url("/fonts/IBMPlexSans-Medium.ttf"); font-weight: 500; font-display: block; }
+@font-face { font-family: "Plex"; src: url("/fonts/IBMPlexSans-SemiBold.ttf"); font-weight: 600; font-display: block; }
+
+@theme {
+  --color-ink: #070708;        /* the room */
+  --color-stage: #0d0d0f;      /* work surface */
+  --color-panel: #141416;
+  --color-raised: #1b1b1e;
+  --color-line: #27272b;
+  --color-line-2: #36363b;
+  --color-text: #ececee;
+  --color-soft: #b4b4bb;
+  --color-mute: #7d7d86;
+  --color-accent: #e3a651;     /* the one accent: tungsten amber */
+  --color-accent-ink: #1a1206;
+  --color-ok: #7fbf8e;
+  --color-bad: #e0716a;
+  --font-sans: "Plex", "Plex Arabic", system-ui, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+
+html, body, #root { height: 100%; }
+body { background: var(--color-ink); color: var(--color-text); font-family: var(--font-sans); font-size: 14px; -webkit-font-smoothing: antialiased; overflow: hidden; user-select: none; }
+[dir="rtl"] body, [dir="rtl"] { font-family: "Plex Arabic", "Plex", system-ui, sans-serif; line-height: 1.7; }
+input, textarea, select, .selectable { user-select: text; }
+.ltr { direction: ltr; text-align: left; font-family: "Plex", system-ui, sans-serif; unicode-bidi: isolate; }
+.num { font-variant-numeric: tabular-nums; font-family: "Plex", system-ui, sans-serif; direction: ltr; unicode-bidi: isolate; }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: #2c2c31; border-radius: 6px; border: 2px solid var(--color-stage); }
+::-webkit-scrollbar-track { background: transparent; }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 1px; }
+input[type="range"] { accent-color: var(--color-accent); }
+video { background: #000; }
+
+/* film-frame edge used on previews */
+.frame { background: #000; border: 1px solid var(--color-line); box-shadow: 0 0 0 1px #000, 0 24px 60px -30px #000; }
+.sprockets { background-image: repeating-linear-gradient(to right, transparent 0 10px, #000 10px 12px), linear-gradient(#202024, #202024); background-size: 22px 6px, 100% 6px; }
+@keyframes pulse-soft { 50% { opacity: .45; } }
+.live { animation: pulse-soft 1.6s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .live { animation: none; } * { transition: none !important; } }

@@ -1,0 +1,90 @@
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
+import { rpc } from './rpc';
+import { errText, setLang, type Lang } from './i18n';
+
+export type View = 'dashboard' | 'new' | 'creator' | 'prompt' | 'storyboard' | 'scene' | 'timeline' | 'preview' | 'audio' | 'media' | 'models' | 'gpu' | 'queue' | 'export' | 'settings';
+export type Toast = { id: number; kind: 'ok' | 'bad' | 'info'; text: string };
+type Ctx = {
+  status: any; lang: Lang; view: View; project: any | null; jobs: any[]; sceneId: string | null; toasts: Toast[]; saving: boolean; bootError: string | null;
+  go: (v: View, sceneId?: string) => void; setLanguage: (l: Lang) => void;
+  refreshStatus: () => Promise<void>; openProject: (id: string, view?: View) => Promise<void>; closeProject: () => void; refreshProject: () => Promise<void>; setProject: (p: any) => void;
+  /** Runs a core call; shows the error as a toast and returns undefined when it fails. */
+  run: <T>(fn: () => Promise<T>, okText?: string) => Promise<T | undefined>;
+  /** Saves an edit to the core (this is the auto-save: every edit is written to SQLite as it is made). */
+  save: (fn: () => Promise<any>) => Promise<void>;
+  toast: (text: string, kind?: Toast['kind']) => void;
+};
+const C = createContext<Ctx>(null as any);
+export const useStudio = () => useContext(C);
+const ACTIVE = ['queued', 'blocked', 'submitted', 'running', 'downloading'];
+export const isActive = (j: any) => ACTIVE.includes(j.status);
+
+export function StudioProvider({ children }: { children: ReactNode }) {
+  const [status, setStatus] = useState<any>(null);
+  const [lang, setL] = useState<Lang>('ar');
+  const [view, setView] = useState<View>('dashboard');
+  const [project, setProject] = useState<any | null>(null);
+  const [jobs, setJobs] = useState<any[]>([]);
+  const [sceneId, setSceneId] = useState<string | null>(null);
+  const [toasts, setToasts] = useState<Toast[]>([]);
+  const [saving, setSaving] = useState(false);
+  const [bootError, setBootError] = useState<string | null>(null);
+  const projectRef = useRef<any>(null); projectRef.current = project;
+  const pending = useRef(0);
+
+  const toast = useCallback((text: string, kind: Toast['kind'] = 'info') => {
+    const id = Date.now() + Math.random();
+    setToasts((t) => [...t.slice(-3), { id, kind, text }]);
+    setTimeout(() => setToasts((t) => t.filter((x) => x.id !== id)), kind === 'bad' ? 9000 : 4000);
+  }, []);
+  const run = useCallback(async <T,>(fn: () => Promise<T>, okText?: string) => {
+    try { const r = await fn(); if (okText) toast(okText, 'ok'); return r; } catch (e) { toast(errText(e), 'bad'); return undefined; }
+  }, [toast]);
+  const save = useCallback(async (fn: () => Promise<any>) => {
+    pending.current++; setSaving(true);
+    try { const p = await fn(); if (p && p.scenes) setProject(p); } catch (e) { toast(errText(e), 'bad'); } finally { if (--pending.current === 0) setSaving(false); }
+  }, [toast]);
+
+  const refreshStatus = useCallback(async () => {
+    try { const s = await rpc('app_status'); setStatus(s); setBootError(null); return s; } catch (e) { setBootError(errText(e)); }
+  }, []);
+  const refreshProject = useCallback(async () => { const id = projectRef.current?.id; if (id) { try { setProject(await rpc('project_get', { id })); } catch { /* deleted elsewhere */ } } }, []);
+  const openProject = useCallback(async (id: string, v: View = 'storyboard') => {
+    const p = await run(() => rpc('project_get', { id }));
+    if (p) { setProject(p); setView(p.scenes.length ? v : 'creator'); }
+  }, [run]);
+  const setLanguage = useCallback((l: Lang) => { setLang(l); setL(l); rpc('setting_set', { key: 'language', value: l }).then(setStatus).catch(() => {}); }, []);
+
+  useEffect(() => { (async () => { const s: any = await refreshStatus(); const l = (s?.settings?.language as Lang) || 'ar'; setLang(l); setL(l); })(); }, [refreshStatus]);
+
+  // The queue is polled (the core has no push channel to the web view): fast while something is running.
+  const lastSig = useRef('');
+  useEffect(() => {
+    let stop = false, timer: any;
+    const tick = async () => {
+      try {
+        const list: any[] = await rpc('jobs_list');
+        if (stop) return;
+        setJobs(list);
+        const sig = list.map((j) => j.id + j.status).join('|');
+        if (sig !== lastSig.current) { lastSig.current = sig; refreshProject(); refreshStatus(); }
+        timer = setTimeout(tick, list.some(isActive) ? 1200 : 4000);
+      } catch { timer = setTimeout(tick, 5000); }
+    };
+    tick();
+    return () => { stop = true; clearTimeout(timer); };
+  }, [refreshProject, refreshStatus]);
+
+  const go = useCallback((v: View, sid?: string) => { if (sid !== undefined) setSceneId(sid); setView(v); }, []);
+  const closeProject = useCallback(() => { setProject(null); setView('dashboard'); }, []);
+  const value = useMemo(() => ({ status, lang, view, project, jobs, sceneId, toasts, saving, bootError, go, setLanguage, refreshStatus: async () => { await refreshStatus(); }, openProject, closeProject, refreshProject, setProject, run, save, toast }),
+    [status, lang, view, project, jobs, sceneId, toasts, saving, bootError, go, setLanguage, refreshStatus, openProject, closeProject, refreshProject, run, save, toast]);
+  return <C.Provider value={value}>{children}</C.Provider>;
+}
+
+/** Calls `fn` a short while after the last change (typing in a field saves once, not per key). */
+export function useDebounced<T extends (...a: any[]) => void>(fn: T, ms = 500): T {
+  const t = useRef<any>(null); const f = useRef(fn); f.current = fn;
+  useEffect(() => () => clearTimeout(t.current), []);
+  return useCallback(((...a: any[]) => { clearTimeout(t.current); t.current = setTimeout(() => f.current(...a), ms); }) as T, [ms]);
+}
