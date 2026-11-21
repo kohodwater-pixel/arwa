@@ -84,6 +84,7 @@ memory.
 ## Known limits
 
 - The installer is not code-signed yet; Windows SmartScreen will warn. A signing certificate is the owner's decision.
-- The bundled FFmpeg is a third-party build fetched at build time from one pinned release; its checksum
-  is printed in the build log but not yet compared with a value stored in the repository.
+- The bundled FFmpeg is a third-party build fetched at build time from one pinned release and checked
+  against a SHA-256 stored in the workflow. It is still someone else's binary; a copy the owner hosts and
+  has vetted would be stronger.
 - Automatic updates are not enabled.

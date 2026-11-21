@@ -18,7 +18,7 @@ impl Library {
         for d in SUBDIRS {
             std::fs::create_dir_all(root.join(d))?;
         }
-        Ok(Self { root: root.canonicalize()? })
+        Ok(Self { root: canonical(root)? })
     }
     pub fn dir(&self, name: &str) -> PathBuf {
         self.root.join(name)
@@ -35,7 +35,18 @@ impl Library {
         Ok(p.to_string_lossy().replace('\\', "/"))
     }
     pub fn contains(&self, p: &Path) -> bool {
-        p.canonicalize().map(|c| c.starts_with(&self.root)).unwrap_or(false)
+        canonical(p).map(|c| c.starts_with(&self.root)).unwrap_or(false)
+    }
+}
+
+/// `canonicalize` without the Windows `\\?\` prefix. That prefix switches off separator handling, so a path
+/// carrying it breaks as soon as anything joins onto it with `/` (the interface, FFmpeg filters, Explorer).
+pub fn canonical(p: &Path) -> std::io::Result<PathBuf> {
+    let c = p.canonicalize()?;
+    let s = c.to_string_lossy();
+    match s.strip_prefix(r"\\?\") {
+        Some(rest) if !rest.starts_with("UNC\\") && rest.as_bytes().get(1) == Some(&b':') => Ok(PathBuf::from(rest)),
+        _ => Ok(c),
     }
 }
 

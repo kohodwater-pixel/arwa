@@ -31,6 +31,9 @@ export function StudioProvider({ children }: { children: ReactNode }) {
   const [bootError, setBootError] = useState<string | null>(null);
   const projectRef = useRef<any>(null); projectRef.current = project;
   const pending = useRef(0);
+  // Bumped whenever an edit is written. A background re-read that started before the latest write is thrown
+  // away, so a slow refresh can never put an older copy of the project back on screen.
+  const epoch = useRef(0);
 
   const toast = useCallback((text: string, kind: Toast['kind'] = 'info') => {
     const id = Date.now() + Math.random();
@@ -41,14 +44,14 @@ export function StudioProvider({ children }: { children: ReactNode }) {
     try { const r = await fn(); if (okText) toast(okText, 'ok'); return r; } catch (e) { toast(errText(e), 'bad'); return undefined; }
   }, [toast]);
   const save = useCallback(async (fn: () => Promise<any>) => {
-    pending.current++; setSaving(true);
-    try { const p = await fn(); if (p && p.scenes) setProject(p); } catch (e) { toast(errText(e), 'bad'); } finally { if (--pending.current === 0) setSaving(false); }
+    pending.current++; setSaving(true); epoch.current++;
+    try { const p = await fn(); epoch.current++; if (p && p.scenes) setProject(p); } catch (e) { epoch.current++; toast(errText(e), 'bad'); } finally { if (--pending.current === 0) setSaving(false); }
   }, [toast]);
 
   const refreshStatus = useCallback(async () => {
     try { const s = await rpc('app_status'); setStatus(s); setBootError(null); return s; } catch (e) { setBootError(errText(e)); }
   }, []);
-  const refreshProject = useCallback(async () => { const id = projectRef.current?.id; if (id) { try { setProject(await rpc('project_get', { id })); } catch { /* deleted elsewhere */ } } }, []);
+  const refreshProject = useCallback(async () => { const id = projectRef.current?.id; if (!id) return; const at = epoch.current; try { const p = await rpc('project_get', { id }); if (at === epoch.current && projectRef.current?.id === id) setProject(p); } catch { /* deleted elsewhere */ } }, []);
   const openProject = useCallback(async (id: string, v: View = 'storyboard') => {
     const p = await run(() => rpc('project_get', { id }));
     if (p) { setProject(p); setView(p.scenes.length ? v : 'creator'); }

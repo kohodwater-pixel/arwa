@@ -72,5 +72,5 @@ run is green, phase 2 and acceptance criteria 1–2 are not passed.
 
 - Fix whatever the live ComfyUI run reveals in the Wan 2.2 graphs (most likely the SaveVideo codec field).
 - HunyuanVideo 1.5 adapter and prompt profile (licence conditions in `video-platform/docs/self-hosted-engine-study.md`).
-- Pin the FFmpeg checksum in the repository; code signing; Tauri updater.
+- Code signing; Tauri updater.
 - Voiceover generation and waveform display in the Audio Studio.

@@ -14,9 +14,11 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  # FFmpeg is run as a separate program. One pinned release; its checksum is printed in the log.
+  # FFmpeg is run as a separate program. One pinned release, checked against a pinned checksum.
   FFMPEG_VERSION: '7.1.1'
   FFMPEG_URL: https://github.com/GyanD/codexffmpeg/releases/download/7.1.1/ffmpeg-7.1.1-essentials_build.zip
+  # SHA-256 of that archive, computed on 2026-11-21. The build stops if the download differs.
+  FFMPEG_SHA256: 04861d3339c5ebe38b56c19a15cf2c0cc97f5de4fa8910e4d47e5e6404e4a2d4
 
 jobs:
   windows:
@@ -43,7 +45,9 @@ jobs:
         run: |
           $ErrorActionPreference = 'Stop'
           Invoke-WebRequest $env:FFMPEG_URL -OutFile "$env:RUNNER_TEMP\ffmpeg.zip"
-          "FFmpeg archive SHA-256: $((Get-FileHash "$env:RUNNER_TEMP\ffmpeg.zip" -Algorithm SHA256).Hash)"
+          $hash = (Get-FileHash "$env:RUNNER_TEMP\ffmpeg.zip" -Algorithm SHA256).Hash
+          if ($hash -ne $env:FFMPEG_SHA256) { throw "FFmpeg checksum mismatch: got $hash" }
+          "FFmpeg archive SHA-256 verified: $hash"
           Expand-Archive "$env:RUNNER_TEMP\ffmpeg.zip" "$env:RUNNER_TEMP\ffmpeg"
           $root = (Get-ChildItem "$env:RUNNER_TEMP\ffmpeg" -Directory | Select-Object -First 1).FullName
           Copy-Item "$root\bin\ffmpeg.exe", "$root\bin\ffprobe.exe" src-tauri\resources\ffmpeg\
