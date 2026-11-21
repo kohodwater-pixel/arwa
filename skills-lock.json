@@ -13,6 +13,13 @@
       "skillPath": "skills/algorithmic-art/SKILL.md",
       "computedHash": "4a85abfeaa09f2dd2c4b76c85d57b65f61dc10d55c3cca245989cee8897c2be5"
     },
+    "api-design-principles": {
+      "source": "wshobson/agents",
+      "commit": "42203085cfc5736204bf0f6d436dff7e1da0bf3f",
+      "sourceType": "github",
+      "skillPath": "plugins/backend-development/skills/api-design-principles/SKILL.md",
+      "computedHash": "cd8889e86d651fbc7ec5f1cdf1920cdc0fa6bd2ca6ca01b8d93e9d2f6b54c7a6"
+    },
     "art-direction": {
       "source": "zstvns/design-skills",
       "sourceType": "github",
@@ -24,6 +31,13 @@
       "sourceType": "github",
       "skillPath": "skills/aso/SKILL.md",
       "computedHash": "4fe9eafa2ad0168ffb5e493060982968abe12e652d33ae7abccd0cabe1406b4b"
+    },
+    "auth-implementation-patterns": {
+      "source": "wshobson/agents",
+      "commit": "42203085cfc5736204bf0f6d436dff7e1da0bf3f",
+      "sourceType": "github",
+      "skillPath": "plugins/developer-essentials/skills/auth-implementation-patterns/SKILL.md",
+      "computedHash": "c53f2130133d8e4f36ee586442d4aefd92fb356a205ee1e48c4a86f7911cbe56"
     },
     "b2b-brand-marketing": {
       "source": "harveyiam/brand-building-skills",
@@ -193,17 +207,38 @@
       "skillPath": "skills/docx/SKILL.md",
       "computedHash": "566b0933d95f5a2f981050e781162e19cebacfdff5608ab23dbe556aaf7a59e5"
     },
+    "e2e-testing-patterns": {
+      "source": "wshobson/agents",
+      "commit": "42203085cfc5736204bf0f6d436dff7e1da0bf3f",
+      "sourceType": "github",
+      "skillPath": "plugins/developer-essentials/skills/e2e-testing-patterns/SKILL.md",
+      "computedHash": "4cbd1f5464140eceee76fb75df11e3a30a4d6b3386bfc51af062688aaa425d92"
+    },
     "email-marketing": {
       "source": "harveyiam/brand-building-skills",
       "sourceType": "github",
       "skillPath": "skills/email-marketing/SKILL.md",
       "computedHash": "8fc7f722cc7bae71e78d42564fd636d94c940561de8bded49dae0a3cfcebec24"
     },
+    "error-handling-patterns": {
+      "source": "wshobson/agents",
+      "commit": "42203085cfc5736204bf0f6d436dff7e1da0bf3f",
+      "sourceType": "github",
+      "skillPath": "plugins/developer-essentials/skills/error-handling-patterns/SKILL.md",
+      "computedHash": "0d8261af77de6bae32b82dd28ee58975316d3bad99634699cc34c82f3cb4cb07"
+    },
     "frontend-design": {
       "source": "anthropics/skills",
       "sourceType": "github",
       "skillPath": "skills/frontend-design/SKILL.md",
       "computedHash": "83485963700bcf11d5bf78118facb301676b69d918fee2e45a95e7f1a2840f6c"
+    },
+    "github-actions-templates": {
+      "source": "wshobson/agents",
+      "commit": "42203085cfc5736204bf0f6d436dff7e1da0bf3f",
+      "sourceType": "github",
+      "skillPath": "plugins/cicd-automation/skills/github-actions-templates/SKILL.md",
+      "computedHash": "4cfaaba2a265ae01444e6d0b4f629ef6ce190c6ca336c83c99b8a9afec70f702"
     },
     "google-ads": {
       "source": "harveyiam/brand-building-skills",
@@ -229,6 +264,13 @@
       "skillPath": "skills/internal-comms/SKILL.md",
       "computedHash": "a864e111fed981a514102493dafd2bf426929af06cf35e8943ccbdeb4be65724"
     },
+    "javascript-testing-patterns": {
+      "source": "wshobson/agents",
+      "commit": "42203085cfc5736204bf0f6d436dff7e1da0bf3f",
+      "sourceType": "github",
+      "skillPath": "plugins/javascript-typescript/skills/javascript-testing-patterns/SKILL.md",
+      "computedHash": "df9a91c014dd91ee65d7008cd23929cbe4b9e2087d67cdb31ebd0ab3831134af"
+    },
     "logo-design": {
       "source": "zstvns/design-skills",
       "sourceType": "github",
@@ -252,6 +294,13 @@
       "sourceType": "github",
       "skillPath": "skills/motion-design/SKILL.md",
       "computedHash": "853f770752f81cf0a9a77b53bf2aae98b387b19c55403f1097c452429673e533"
+    },
+    "nodejs-backend-patterns": {
+      "source": "wshobson/agents",
+      "commit": "42203085cfc5736204bf0f6d436dff7e1da0bf3f",
+      "sourceType": "github",
+      "skillPath": "plugins/javascript-typescript/skills/nodejs-backend-patterns/SKILL.md",
+      "computedHash": "e478380e9c9d245d0c4caf6574d00934aca71fc62101e571262cdd26f958f4f1"
     },
     "pdf": {
       "source": "anthropics/skills",
@@ -277,6 +326,13 @@
       "skillPath": "skills/rebranding/SKILL.md",
       "computedHash": "da323b9796eaa016c68b65ad9f3141f702605d67d031ce0129431e23668535a6"
     },
+    "secrets-management": {
+      "source": "wshobson/agents",
+      "commit": "42203085cfc5736204bf0f6d436dff7e1da0bf3f",
+      "sourceType": "github",
+      "skillPath": "plugins/cicd-automation/skills/secrets-management/SKILL.md",
+      "computedHash": "29151cb60e6494d6528526fc32ccef4d21758c220283c87dbcde41b406a68599"
+    },
     "skill-creator": {
       "source": "anthropics/skills",
       "sourceType": "github",
@@ -288,6 +344,13 @@
       "sourceType": "github",
       "skillPath": "skills/slack-gif-creator/SKILL.md",
       "computedHash": "25581243f719e75121f9051ec671e810e53375fe648a6362d673d6bfbbe9d479"
+    },
+    "sql-optimization-patterns": {
+      "source": "wshobson/agents",
+      "commit": "42203085cfc5736204bf0f6d436dff7e1da0bf3f",
+      "sourceType": "github",
+      "skillPath": "plugins/developer-essentials/skills/sql-optimization-patterns/SKILL.md",
+      "computedHash": "99731ea4f27308d7082ae2931a08159e6e91352a5b7658b0b1f68a9e677abd4c"
     },
     "target-audience": {
       "source": "harveyiam/brand-building-skills",
@@ -307,6 +370,20 @@
       "skillPath": "skills/ugc-strategy/SKILL.md",
       "computedHash": "0b20e3d322fc3b1354c4fbf256a5e65b75865c16b9f1a1ba6bb23d1c6121acac"
     },
+    "vercel-composition-patterns": {
+      "source": "vercel-labs/agent-skills",
+      "commit": "5a37a6329fbad3666c3207392a6a7c0110e92efb",
+      "sourceType": "github",
+      "skillPath": "skills/composition-patterns/SKILL.md",
+      "computedHash": "f711ed8b16162eaa712abbcdbbae6c926f86c57e60127735fecc3ad0dd85b3fa"
+    },
+    "vercel-react-best-practices": {
+      "source": "vercel-labs/agent-skills",
+      "commit": "5a37a6329fbad3666c3207392a6a7c0110e92efb",
+      "sourceType": "github",
+      "skillPath": "skills/react-best-practices/SKILL.md",
+      "computedHash": "7991ed4fbecdac23f47c1a40c243e00a212a9e7f3604db93959b3ae11dffe299"
+    },
     "web-artifacts-builder": {
       "source": "anthropics/skills",
       "sourceType": "github",
@@ -318,6 +395,13 @@
       "sourceType": "github",
       "skillPath": "skills/web-design/SKILL.md",
       "computedHash": "957a8f551297c2b119a7a7113635fd1c7f3a9a4fec74d156d53b812e044fb6cf"
+    },
+    "web-design-guidelines": {
+      "source": "vercel-labs/agent-skills",
+      "commit": "5a37a6329fbad3666c3207392a6a7c0110e92efb",
+      "sourceType": "github",
+      "skillPath": "skills/web-design-guidelines/SKILL.md",
+      "computedHash": "5994e4cfd86144903d2ba750f862b9e36af15e3297aac983679e347b99f6cb71"
     },
     "webapp-testing": {
       "source": "anthropics/skills",
