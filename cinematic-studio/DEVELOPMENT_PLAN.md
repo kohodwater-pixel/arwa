@@ -9,7 +9,7 @@ Last update: 2026-11-21.
 | # | Phase | Status | Evidence |
 |---|---|---|---|
 | 1 | Project foundation (workspace, Tauri 2 shell, core crate, UI skeleton) | Verified | `cargo check`, `tauri build --debug`; the desktop app was launched under a virtual display and its interface reached the core |
-| 2 | Windows desktop shell and installer (NSIS, shortcuts, icon, uninstall keeps projects) | **See "Windows installer" below** | `.github/workflows/cinematic-studio-windows.yml`, `tests/windows-install-test.ps1` |
+| 2 | Windows desktop shell and installer (NSIS, shortcuts, icon, uninstall keeps projects) | Verified on a Windows runner (see "Windows installer") | `.github/workflows/cinematic-studio-windows.yml`, `tests/windows-install-test.ps1` |
 | 3 | Local project system (SQLite, library folders, auto-save, recovery, backup, import/export, duplicate, delete, integrity) | Verified | core tests; browser test steps 1, 2, 16, 17 |
 | 4 | Cinematic Director Engine (Arabic and English, twelve decisions, per-model profiles) | Verified | `src/director/director.test.ts` (7 tests) |
 | 5 | Storyboard Studio (add, delete, reorder, edit, new take, regenerate one or all) | Verified | core `storyboard_editing`; browser test step 8 |
@@ -28,7 +28,7 @@ Last update: 2026-11-21.
 | Core (Rust) | `cargo test -p studio-core` | 18 | ffmpeg on PATH |
 | Director engine | `npm test` | 7 | — |
 | Interface, end to end | `npm run build && cargo build -p studio-core --features dev-bridge && node tests/e2e.mjs` | 18 steps | Chromium (Playwright), ffmpeg |
-| Installer on Windows | `pwsh tests/windows-install-test.ps1 -Installer <setup.exe>` | 20 checks | Windows 10/11 |
+| Installer on Windows | `pwsh tests/windows-install-test.ps1 -Installer <setup.exe>` | 25 checks | Windows 10/11 |
 
 The end-to-end test drives the real interface against the real Rust core, a real SQLite database and real
 FFmpeg. The only stand-in is `tests/fake-comfy.mjs`, which answers ComfyUI's HTTP routes and returns a
@@ -38,15 +38,15 @@ test-pattern clip. It is a test tool: it is not shipped, and nothing it returns 
 
 | # | Criterion | Status |
 |---|---|---|
-| 1 | Installs on Windows 10/11 | See "Windows installer" |
-| 2 | Opens from the desktop shortcut | See "Windows installer" |
+| 1 | Installs on Windows 10/11 | Verified on a Windows Server runner; to be repeated on a Windows 10/11 PC |
+| 2 | Opens from the desktop shortcut | Shortcut created and pointing at the app (verified); the app starts (verified) |
 | 3 | Projects are saved and reopened after restart | Verified |
 | 4 | An Arabic description becomes a cinematic prompt | Verified |
 | 5 | A storyboard is created and can be edited | Verified |
 | 6 | A real job is sent to ComfyUI | Built, not yet proven live |
 | 7 | A real video is received from Wan 2.2 | **Open** — needs a ComfyUI server with the Wan 2.2 files |
 | 8 | The video is saved in the project folder | Verified for the pipeline (download, validation, storage); with a real clip once 7 is done |
-| 9 | Preview inside the app | Verified in the browser test (file served and loaded); playback in WebView2 to be confirmed on Windows |
+| 9 | Preview inside the app | Verified: the installed app loaded an H.264 clip in its own player on Windows (start-up self-check) |
 | 10 | MP4 export | Verified |
 | 11 | The project stays after restart | Verified (including after a forced kill) |
 | 12 | GPU usage and cost are shown | Rules and ledger verified; live figures need a RunPod account |
@@ -58,8 +58,15 @@ Linux and cannot run a Windows installer). The workflow builds the NSIS installe
 checks the shortcuts, starts the app, checks that the library was created and the interface reached the
 core, restarts it, uninstalls it, and checks that the user's projects are still there.
 
-**Result of the latest run:** recorded in the final report of the session that pushed this file. Until a
-run is green, phase 2 and acceptance criteria 1–2 are not passed.
+**Result (run 3, 2026-11-21, commit `a50b551`): passed.** On the Windows runner: 18 core tests and 7 director
+tests passed; the NSIS installer was built (about 47 MB); all 25 install checks passed — silent install,
+uninstall entry, executable, bundled FFmpeg, Start menu and desktop shortcuts, first launch creating the
+library and database, the interface reaching the core, the self-check (bundled FFmpeg rendered a test clip
+and the app showed it in its own video player), single instance, restart, uninstall, shortcuts removed, and
+the user's project files still present afterwards.
+
+Limits of that result: the runner is GitHub's Windows Server image, not a physical Windows 10 or 11 PC;
+the installer is unsigned, so SmartScreen will warn; nobody has clicked through the screens on Windows yet.
 
 ## What needs the owner
 
