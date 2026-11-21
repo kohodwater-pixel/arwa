@@ -16,12 +16,12 @@ from runners import RUNNERS, RunnerError  # noqa: E402
 
 class Engine:
     def __init__(self, url, token):
-        self.url, self.token, self.worker_id = url.rstrip("/"), token, None
+        self.url, self.token, self.worker_id, self.worker_secret = url.rstrip("/"), token, None, None
 
     def call(self, method, path, body=None, raw=None, headers=None, timeout=60):
         h = {"authorization": f"Bearer {self.token}", **(headers or {})}
         if self.worker_id:
-            h["x-worker-id"] = self.worker_id
+            h["x-worker-id"], h["x-worker-secret"] = self.worker_id, self.worker_secret or ""
         data = raw
         if body is not None:
             data, h["content-type"] = json.dumps(body).encode(), "application/json"
@@ -34,7 +34,7 @@ class Engine:
         return status, (json.loads(data) if data else None)
 
     def download(self, path, dest):
-        req = urllib.request.Request(self.url + path, headers={"authorization": f"Bearer {self.token}", "x-worker-id": self.worker_id})
+        req = urllib.request.Request(self.url + path, headers={"authorization": f"Bearer {self.token}", "x-worker-id": self.worker_id, "x-worker-secret": self.worker_secret or ""})
         with urllib.request.urlopen(req, timeout=600) as r, open(dest, "wb") as f:
             while chunk := r.read(1 << 20):
                 f.write(chunk)
@@ -123,12 +123,29 @@ def main():
         sys.exit("no NVIDIA GPU found (nvidia-smi failed). Set \"mock\": true only to test the plumbing.")
     work = cfg.get("work_dir") or tempfile.mkdtemp(prefix="engine-worker-")
     os.makedirs(work, exist_ok=True)
+    state_file = cfg.get("state_file") or os.path.join(work, "worker-identity.json")
+
     def register():
+        # The engine gives each worker an id and a secret once; they are kept in a private file so a restart
+        # resumes the same identity. Without a valid pair the engine creates a new worker record.
+        ident = {}
+        if os.path.exists(state_file):
+            try:
+                ident = json.load(open(state_file))
+            except Exception:
+                ident = {}
         engine.worker_id = None
         _, reg = engine.json("POST", "/v1/worker/register", {"name": cfg["name"], "gpu": name or "none (mock)", "vramGb": vram, "region": cfg.get("region", ""), "mock": bool(cfg.get("mock")),
+                                                               "workerId": ident.get("workerId"), "workerSecret": ident.get("workerSecret"),
                                                                "models": [{"id": k, "variants": v.get("variants")} for k, v in cfg["models"].items()]})
         engine.worker_id = reg["workerId"]
-        print(json.dumps({"event": "registered", **reg, "gpu": name, "vramGb": vram}), flush=True)
+        if reg.get("workerSecret"):
+            ident = {"workerId": reg["workerId"], "workerSecret": reg["workerSecret"]}
+            fd = os.open(state_file, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
+            with os.fdopen(fd, "w") as f:
+                json.dump(ident, f)
+        engine.worker_secret = ident.get("workerSecret")
+        print(json.dumps({"event": "registered", "workerId": reg["workerId"], "accepted": reg.get("accepted"), "gpu": name, "vramGb": vram}), flush=True)
 
     register()
     idle = 0

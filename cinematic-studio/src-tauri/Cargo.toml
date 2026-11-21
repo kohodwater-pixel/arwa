@@ -1,0 +1,6 @@
+[package]
+name = "cinematic-studio"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]

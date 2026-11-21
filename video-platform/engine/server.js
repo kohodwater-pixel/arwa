@@ -12,7 +12,7 @@ import { pipeline } from 'node:stream/promises';
 import { all, get, run, now, id, parse, dataDir } from './lib/db.js';
 import { models, licenceAllows, maxSeconds, minSeconds } from './lib/registry.js';
 import { candidates, liveWorkers } from './lib/router.js';
-import { ApiError, createGeneration, publicJob, claim, progress, complete, fail, cancel, reapLeases } from './lib/jobs.js';
+import { ApiError, createGeneration, publicJob, claim, progress, complete, fail, cancel, reapLeases, ownedRunning } from './lib/jobs.js';
 import * as loras from './lib/loras.js';
 import * as evals from './lib/eval.js';
 
@@ -50,9 +50,11 @@ function capabilities() {
   };
 }
 
+const hash = (t) => crypto.createHash('sha256').update(String(t)).digest('hex');
+/** A worker is identified by its id AND the secret it was given when it registered; a name alone proves nothing. */
 function workerOf(req) {
   const w = get('SELECT * FROM workers WHERE id = ?', req.headers['x-worker-id'] || '');
-  if (!w) throw new ApiError(401, 'unknown_worker');
+  if (!w || !w.secret_hash || !safeEq(hash(req.headers['x-worker-secret'] || ''), w.secret_hash)) throw new ApiError(401, 'unknown_worker');
   run('UPDATE workers SET last_seen = ? WHERE id = ?', now(), w.id);
   return w;
 }
@@ -90,28 +92,39 @@ const routes = [
     const b = await json(req);
     if (!b.name || !Array.isArray(b.models)) throw new ApiError(400, 'bad_registration');
     const known = b.models.filter((m) => models.some((x) => x.id === m.id));
-    const wid = get('SELECT id FROM workers WHERE name = ?', String(b.name))?.id || id('wrk');
-    run(`INSERT INTO workers (id, name, gpu, vram_gb, models_json, mock, region, registered_at, last_seen) VALUES (?,?,?,?,?,?,?,?,?)
-         ON CONFLICT(id) DO UPDATE SET gpu = excluded.gpu, vram_gb = excluded.vram_gb, models_json = excluded.models_json, mock = excluded.mock, region = excluded.region, last_seen = excluded.last_seen`,
-      wid, String(b.name).slice(0, 80), String(b.gpu || '').slice(0, 80), Number(b.vramGb) || null, JSON.stringify(known), b.mock ? 1 : 0, String(b.region || '').slice(0, 40), now(), now());
+    // Re-registration keeps the same record only when the caller proves it is that worker (id + secret).
+    // Otherwise a new record is created; an existing worker's id is never handed out by name.
+    const prev = get('SELECT * FROM workers WHERE id = ?', String(b.workerId || ''));
+    const same = prev && prev.secret_hash && safeEq(hash(b.workerSecret || ''), prev.secret_hash);
+    const wid = same ? prev.id : id('wrk');
+    const secret = same ? null : crypto.randomBytes(32).toString('base64url');
+    run(`INSERT INTO workers (id, name, gpu, vram_gb, models_json, mock, region, registered_at, last_seen, secret_hash) VALUES (?,?,?,?,?,?,?,?,?,?)
+         ON CONFLICT(id) DO UPDATE SET name = excluded.name, gpu = excluded.gpu, vram_gb = excluded.vram_gb, models_json = excluded.models_json, mock = excluded.mock, region = excluded.region, last_seen = excluded.last_seen`,
+      wid, String(b.name).slice(0, 80), String(b.gpu || '').slice(0, 80), Number(b.vramGb) || null, JSON.stringify(known), b.mock ? 1 : 0, String(b.region || '').slice(0, 40), now(), now(), same ? prev.secret_hash : hash(secret));
     log('worker.registered', { id: wid, name: b.name, gpu: b.gpu, mock: !!b.mock, models: known.map((m) => m.id) });
-    return { workerId: wid, accepted: known.map((m) => m.id), ignored: b.models.filter((m) => !known.includes(m)).map((m) => m.id) };
+    return { workerId: wid, ...(secret ? { workerSecret: secret } : {}), accepted: known.map((m) => m.id), ignored: b.models.filter((m) => !known.includes(m)).map((m) => m.id) };
   }],
   ['POST', /^\/v1\/worker\/claim$/, 'worker', (req) => { const job = claim(workerOf(req)); if (job) log('job.claimed', { id: job.id, worker: req.headers['x-worker-id'] }); return job ? job : [204, null]; }],
   ['POST', /^\/v1\/worker\/jobs\/([\w-]+)\/progress$/, 'worker', async (req, _s, m) => progress(m[1], workerOf(req), await json(req))],
   ['POST', /^\/v1\/worker\/jobs\/([\w-]+)\/fail$/, 'worker', async (req, _s, m) => { const b = await json(req); fail(m[1], workerOf(req), b); log('job.failed', { id: m[1], error: b.error }); return { ok: true }; }],
   ['PUT', /^\/v1\/worker\/jobs\/([\w-]+)\/result$/, 'worker', async (req, _s, m) => {
     const w = workerOf(req);
+    ownedRunning(m[1], w);                                       // check BEFORE accepting a single byte
     const file = path.join(dataDir, 'outputs', `${m[1]}.mp4`);
+    const part = `${file}.${crypto.randomBytes(6).toString('hex')}.part`;
     let n = 0;
-    await pipeline(req, async function* (src) { for await (const c of src) { n += c.length; if (n > MAX_OUTPUT) throw new ApiError(413, 'output_too_large'); yield c; } }, fs.createWriteStream(file));
-    if (n < 1000) throw new ApiError(400, 'empty_output');
+    try {
+      await pipeline(req, async function* (src) { for await (const c of src) { n += c.length; if (n > MAX_OUTPUT) throw new ApiError(413, 'output_too_large'); yield c; } }, fs.createWriteStream(part));
+      if (n < 1000) throw new ApiError(400, 'empty_output');
+      ownedRunning(m[1], w);                                     // still ours after the upload (the lease may have moved)
+      fs.renameSync(part, file);
+    } catch (e) { fs.rmSync(part, { force: true }); throw e; }
     complete(m[1], w, file, { gpuSeconds: Number(req.headers['x-gpu-seconds']) || null, mock: req.headers['x-mock'] === '1' || !!w.mock });
     log('job.succeeded', { id: m[1], bytes: n, mock: req.headers['x-mock'] === '1' });
     return { ok: true };
   }],
   ['GET', /^\/v1\/worker\/jobs\/([\w-]+)\/image$/, 'worker', (req, res, m) => {
-    workerOf(req); const j = get('SELECT input_image FROM jobs WHERE id = ?', m[1]);
+    const j = ownedRunning(m[1], workerOf(req));               // only the worker that holds the job may read its input
     if (!j?.input_image || !fs.existsSync(j.input_image)) throw new ApiError(404, 'no_image');
     res.writeHead(200, { 'content-type': j.input_image.endsWith('.png') ? 'image/png' : 'image/jpeg' }); fs.createReadStream(j.input_image).pipe(res); return null;
   }],

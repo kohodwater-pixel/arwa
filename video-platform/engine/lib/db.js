@@ -14,7 +14,8 @@ db.exec('PRAGMA journal_mode = WAL; PRAGMA foreign_keys = ON; PRAGMA busy_timeou
 db.exec(`
 CREATE TABLE IF NOT EXISTS workers (
   id TEXT PRIMARY KEY, name TEXT NOT NULL, gpu TEXT, vram_gb REAL, models_json TEXT NOT NULL,
-  mock INTEGER NOT NULL DEFAULT 0, region TEXT, registered_at INTEGER NOT NULL, last_seen INTEGER NOT NULL, current_job TEXT
+  mock INTEGER NOT NULL DEFAULT 0, region TEXT, registered_at INTEGER NOT NULL, last_seen INTEGER NOT NULL, current_job TEXT,
+  secret_hash TEXT
 );
 CREATE TABLE IF NOT EXISTS jobs (
   id TEXT PRIMARY KEY, status TEXT NOT NULL DEFAULT 'queued',          -- queued | running | succeeded | failed | canceled

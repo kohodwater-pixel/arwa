@@ -83,7 +83,7 @@ export function claim(worker) {
   return null;
 }
 
-const owned = (jobId, worker) => { const j = get('SELECT * FROM jobs WHERE id = ?', jobId); if (!j || j.worker_id !== worker.id) throw new ApiError(404, 'job_not_yours'); return j; };
+export const owned = (jobId, worker) => { const j = get('SELECT * FROM jobs WHERE id = ?', jobId); if (!j || j.worker_id !== worker.id) throw new ApiError(404, 'job_not_yours'); return j; };
 
 export function progress(jobId, worker, { progress: p, stage }) {
   const j = owned(jobId, worker);
@@ -91,8 +91,14 @@ export function progress(jobId, worker, { progress: p, stage }) {
   run('UPDATE jobs SET progress = ?, stage = ?, lease_until = ? WHERE id = ?', typeof p === 'number' ? Math.min(1, Math.max(0, p)) : j.progress, String(stage || j.stage || '').slice(0, 120), now() + LEASE_MS, jobId);
   return { cancel: false };
 }
-export function complete(jobId, worker, file, { gpuSeconds, mock }) {
+/** A worker may only touch a job it holds right now. */
+export function ownedRunning(jobId, worker) {
   const j = owned(jobId, worker);
+  if (!['running', 'canceled'].includes(j.status)) throw new ApiError(409, 'job_not_running');
+  return j;
+}
+export function complete(jobId, worker, file, { gpuSeconds, mock }) {
+  const j = ownedRunning(jobId, worker);
   run("UPDATE jobs SET status = CASE WHEN status = 'canceled' THEN 'canceled' ELSE 'succeeded' END, output_file = ?, progress = 1, stage = 'done', gpu_seconds = ?, mock = ?, finished_at = ?, lease_until = NULL WHERE id = ?", file, gpuSeconds ?? null, mock ? 1 : 0, now(), j.id);
   run('UPDATE workers SET current_job = NULL WHERE id = ?', worker.id);
 }

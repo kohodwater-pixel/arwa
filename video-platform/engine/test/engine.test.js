@@ -66,7 +66,9 @@ test('jobs: create → claim → progress → complete; lease expiry requeues; m
   const c2 = jobs.claim(w5); assert.equal(c2.id, j.id);
   assert.deepEqual(jobs.progress(j.id, w5, { progress: 0.5, stage: 'generating' }), { cancel: false });
   assert.throws(() => jobs.progress(j.id, wa, {}), (e) => e.code === 'job_not_yours');
+  assert.throws(() => jobs.ownedRunning(j.id, wa), (e) => e.code === 'job_not_yours');
   jobs.complete(j.id, w5, '/nonexistent.mp4', { gpuSeconds: 12, mock: false });
+  assert.throws(() => jobs.ownedRunning(j.id, w5), (e) => e.code === 'job_not_running', 'a finished job accepts no more uploads');
   const done = jobs.publicJob(get('SELECT * FROM jobs WHERE id = ?', j.id));
   assert.equal(done.status, 'succeeded'); assert.equal(done.attempts, 2); assert.equal(done.mock, false);
 });
