@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
-import { rpc } from './rpc';
-import { errText, setLang, type Lang } from './i18n';
+import { rpc, fileUrl, isTauri } from './rpc';
+import { errText, setLang, L, type Lang } from './i18n';
 
 export type View = 'dashboard' | 'new' | 'creator' | 'prompt' | 'storyboard' | 'scene' | 'timeline' | 'preview' | 'audio' | 'media' | 'models' | 'gpu' | 'queue' | 'export' | 'settings';
 export type Toast = { id: number; kind: 'ok' | 'bad' | 'info'; text: string };
@@ -59,6 +59,20 @@ export function StudioProvider({ children }: { children: ReactNode }) {
   const setLanguage = useCallback((l: Lang) => { setLang(l); setL(l); rpc('setting_set', { key: 'language', value: l }).then(setStatus).catch(() => {}); }, []);
 
   useEffect(() => { (async () => { const s: any = await refreshStatus(); const l = (s?.settings?.language as Lang) || 'ar'; setLang(l); setL(l); })(); }, [refreshStatus]);
+  // Once per start: can this machine's FFmpeg render, and can this web view show the result? (see rpc self_check)
+  useEffect(() => {
+    let done = false;
+    (async () => {
+      const c: any = await rpc('self_check').catch(() => null);
+      if (!c || done) return;
+      let why = '';
+      const image_ok = c.image ? await new Promise<boolean>((resolve) => { const i = new Image(); const t = setTimeout(() => resolve(false), 10000); i.onload = () => { clearTimeout(t); resolve(i.naturalWidth > 0); }; i.onerror = () => { clearTimeout(t); resolve(false); }; i.src = fileUrl(c.image); }) : false;
+      const video_ok = c.path ? await new Promise<boolean>((resolve) => { const v = document.createElement('video'); const t = setTimeout(() => { why = 'timeout'; resolve(false); }, 15000); v.preload = 'auto'; v.muted = true; v.onloadeddata = () => { clearTimeout(t); resolve(v.videoWidth > 0 && v.duration > 0.5); }; v.onerror = () => { clearTimeout(t); why = `media error ${v.error?.code ?? ''} ${v.error?.message ?? ''}`; resolve(false); }; v.src = fileUrl(c.path); }) : false;
+      await rpc('self_check_report', { ffmpeg_ok: !!c.ffmpeg_ok, video_ok, image_ok, detail: `${why ? why + ' | ' : ''}${navigator.userAgent}` }).catch(() => {});
+      if (isTauri && c.ffmpeg_ok && !video_ok) toast(L('تعذّر عرض مقطع اختباري داخل التطبيق. قد لا تعمل المعاينة على هذا الجهاز.', 'A test clip could not be shown inside the app. Preview may not work on this computer.'), 'bad');
+    })();
+    return () => { done = true; };
+  }, [toast]);
 
   // The queue is polled (the core has no push channel to the web view): fast while something is running.
   const lastSig = useRef('');

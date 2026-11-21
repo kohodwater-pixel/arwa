@@ -34,6 +34,14 @@ $app = Start-Process -FilePath $exe.FullName -PassThru
 Check 'library folders created in Documents' (WaitFor { @('Projects','Assets','Models','Cache','Logs','Backups') | ForEach-Object { Test-Path (Join-Path $library $_) } | Where-Object { -not $_ } | Measure-Object | ForEach-Object { $_.Count -eq 0 } } 60)
 Check 'database created' (WaitFor { Test-Path (Join-Path $library 'cinematic-studio.db') } 30)
 Check 'the interface loaded and reached the core' (WaitFor { Test-Path (Join-Path $library 'Logs\ui-connected.txt') } 90)
+$selfCheck = Join-Path $library 'Logs\self-check.json'
+if (WaitFor { Test-Path $selfCheck } 60) {
+  $sc = Get-Content $selfCheck -Raw | ConvertFrom-Json
+  Check 'the bundled FFmpeg rendered a test clip on this machine' ($sc.ffmpeg_ok -eq $true)
+  Check 'the app read a file of the library through its own file scheme' ($sc.image_ok -eq $true)
+  Check 'the app showed that clip in its own video player (H.264 through the studio scheme)' ($sc.video_ok -eq $true)
+  "       web view: $($sc.detail)"
+} else { Check 'self-check report written' $false }
 Check 'process still running after start' (-not $app.HasExited)
 $second = Start-Process -FilePath $exe.FullName -PassThru
 Check 'a second copy does not stay open (single instance)' (WaitFor { $second.HasExited } 30)

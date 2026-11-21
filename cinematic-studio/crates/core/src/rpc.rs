@@ -77,6 +77,26 @@ fn timeline_get(app: &App, project_id: &str) -> Result<Value> {
     Ok(json!({ "timeline": tl, "saved": stored.is_some(), "transitions": timeline::TRANSITIONS, "tracks": timeline::TRACKS }))
 }
 
+/// Start-up self-check, part one: the FFmpeg that will be used renders a one-second test pattern into Cache.
+/// The interface then tries to load that file in a video element and reports back (part two), which proves
+/// on the user's own machine that FFmpeg runs and that generated clips can be shown inside the app.
+fn self_check(app: &App) -> Result<Value> {
+    let out = app.lib().dir("Cache").join("self-check.mp4");
+    let ffmpeg_ok = match app.tools() {
+        Ok(t) => {
+            let args: Vec<String> = ["-v", "error", "-y", "-f", "lavfi", "-i", "testsrc2=size=320x180:rate=24:duration=1", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-movflags", "+faststart"].iter().map(|s| s.to_string()).chain([out.to_string_lossy().to_string()]).collect();
+            crate::ffmpeg::run(&t.ffmpeg, &args).is_ok() && crate::ffmpeg::verify_playable(&t, &out).is_ok() && crate::ffmpeg::thumbnail(&t, &out, &out.with_extension("jpg"), 0.2).is_ok()
+        }
+        Err(_) => false,
+    };
+    Ok(json!({ "ffmpeg_ok": ffmpeg_ok, "path": if ffmpeg_ok { json!(out.to_string_lossy()) } else { Value::Null }, "image": if ffmpeg_ok { json!(out.with_extension("jpg").to_string_lossy()) } else { Value::Null } }))
+}
+fn self_check_report(app: &App, a: &Value) -> Result<Value> {
+    let report = json!({ "ts": db::now(), "version": env!("CARGO_PKG_VERSION"), "ffmpeg_ok": bool_opt(a, "ffmpeg_ok").unwrap_or(false), "video_ok": bool_opt(a, "video_ok").unwrap_or(false), "image_ok": bool_opt(a, "image_ok").unwrap_or(false), "detail": limit(str_opt(a, "detail").unwrap_or(""), 400) });
+    std::fs::write(app.lib().dir("Logs").join("self-check.json"), serde_json::to_string_pretty(&report)?)?;
+    Ok(report)
+}
+
 /// Opens a folder of the library in the system file manager. The program is fixed; only a path inside the library is accepted.
 fn reveal(app: &App, path: &str) -> Result<Value> {
     let p = Path::new(path);
@@ -98,6 +118,8 @@ pub fn dispatch(app: &App, cmd: &str, a: &Value) -> Result<Value> {
         "secret_delete" => { let n = str_req(a, "name")?; secrets::check_name(n)?; app.secrets.delete(n)?; Ok(json!({ "ok": true })) }
         "audit_log" => { let c = app.db.lock().unwrap(); Ok(json!(rows(&c, "SELECT * FROM audit_log ORDER BY id DESC LIMIT 300", &[])?)) }
         "reveal" => reveal(app, str_req(a, "path")?),
+        "self_check" => self_check(app),
+        "self_check_report" => self_check_report(app, a),
         // projects
         "projects_list" => projects::list(app),
         "project_create" => projects::create(app, a),
