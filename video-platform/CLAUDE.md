@@ -38,6 +38,10 @@ A change that crosses stages (for example a new provider that also needs new pro
 
 General engineering skills installed in the repository (React, Node.js, API design, auth, testing, SQL, CI) and the Superpowers plugin (planning, TDD, debugging, review, verification) support these; they do not replace the product knowledge in the eight skills.
 
+## Self-hosted engine
+
+`engine/` is a separate service (own database, own port) that runs open-source video models on GPU workers; the platform reaches it through `server/providers/selfhosted.js`. Licences, costs, version pins and design are in `docs/self-hosted-engine-study.md`; how to run it is in `engine/README.md`. Model facts in `engine/models/*.js` come from each project's own repository at a recorded commit: re-read the source before changing them. The mock worker runs no model, and its output must stay labelled.
+
 ## Standing rules for this product
 
 - No provider key in front-end code, logs, or API responses.

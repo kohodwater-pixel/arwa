@@ -1,0 +1,56 @@
+{
+ "id": "saudi_tourism",
+ "name": "Saudi tourism and cultural videos",
+ "version": 1,
+ "note": "Starter suite. Prompts describe generic scenes only: no brand, no named real person, no claim about a specific property. Extend to 20+ prompts with the client-facing team before using results for a decision.",
+ "criteria": [
+  "prompt_adherence",
+  "motion_naturalness",
+  "visual_quality",
+  "cultural_accuracy",
+  "commercial_usability"
+ ],
+ "negative": "morphing, warped geometry, distorted faces or hands, flicker, on-screen text, watermark, cartoon look",
+ "prompts": [
+  {
+   "id": "alula-rock-dawn",
+   "aspect": "16:9",
+   "prompt": "Wide aerial drone shot gliding toward the sandstone rock formations of a desert valley at dawn, long shadows across the sand, a single 4x4 leaving a dust trail, epic travel film."
+  },
+  {
+   "id": "nabataean-tomb",
+   "aspect": "16:9",
+   "prompt": "Slow crane-down in front of a monumental tomb facade carved into a sandstone cliff, warm morning light raking across the carved columns, two visitors standing small at the base for scale, heritage documentary."
+  },
+  {
+   "id": "red-sea-reef",
+   "aspect": "16:9",
+   "prompt": "Underwater tracking shot over a coral reef in clear turquoise water, sun rays through the surface, a snorkeller above, calm natural motion, coastal tourism film."
+  },
+  {
+   "id": "old-town-alley",
+   "aspect": "9:16",
+   "prompt": "Handheld cinematic walk through a narrow alley of a historic coastal old town with coral-stone houses and carved wooden rawashin balconies, late afternoon light, a shopkeeper arranging brass lamps."
+  },
+  {
+   "id": "mountain-village",
+   "aspect": "16:9",
+   "prompt": "Wide pan across terraced green mountains with stone houses on the ridge and low clouds drifting through the valley, cool morning light, southern highlands travel film."
+  },
+  {
+   "id": "camel-caravan",
+   "aspect": "16:9",
+   "prompt": "Tracking shot alongside a line of camels walking over red dunes at golden hour, long shadows, a guide in traditional dress leading, fine sand blown by the wind, slow motion."
+  },
+  {
+   "id": "ardah-dance",
+   "aspect": "16:9",
+   "prompt": "Medium wide shot of men in white thobes performing a traditional sword dance in a line in a mud-brick courtyard, drums in the foreground, festive flags, warm evening light, cultural festival film."
+  },
+  {
+   "id": "mudbrick-palace",
+   "aspect": "16:9",
+   "prompt": "Slow dolly-in toward a restored mud-brick palace with triangular windows and crenellated walls at blue hour, lanterns lit, palm trees, heritage district travel film."
+  }
+ ]
+}

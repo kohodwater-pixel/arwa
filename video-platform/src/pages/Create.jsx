@@ -123,10 +123,11 @@ export default function Create() {
               {providers.map((p) => (
                 <button key={p.id} className={`chip ${f.providerId === p.id ? 'on' : ''}`} style={{ justifyContent: 'space-between', borderRadius: 12, textDecoration: 'none' }} disabled={!p.configured} onClick={() => set({ providerId: p.id, quality: p.qualities[0].id })} aria-pressed={f.providerId === p.id}>
                   <span className="ltr">{p.label}</span>
-                  {p.demo ? <DemoBadge /> : p.configured ? <span className="badge ok">{L('متصل', 'Connected')}</span> : <span className="badge">{L('غير مهيأ', 'Not configured')}</span>}
+                  {p.demo || p.mockOnly ? <DemoBadge /> : p.configured ? <span className="badge ok">{L('متصل', 'Connected')}</span> : <span className="badge" title={p.statusNote || ''}>{p.statusNote ? L('لا يوجد عامل GPU', 'No GPU worker') : L('غير مهيأ', 'Not configured')}</span>}
                 </button>
               ))}
             </div>
+            {provider?.mockOnly && <div className="banner demo"><Icon name="alert" /><span>{L('المحرك الخاص متصل بعامل تجريبي (Mock) فقط: لا يوجد نموذج يعمل فعلًا، والمخرجات بطاقات بديلة موسومة.', 'The self-hosted engine has only a mock worker connected: no model actually runs, and outputs are labelled placeholders.')}</span></div>}
             {provider?.demo && <div className="banner demo"><Icon name="alert" /><span>{L('الوضع التجريبي لا يولّد فيديو بالذكاء الاصطناعي. ينتج بطاقات بديلة موسومة «DEMO» لتجربة المسار كاملًا فقط.', 'Demo mode does not generate AI video. It produces placeholder cards stamped "DEMO" so you can try the whole workflow.')}</span></div>}
             {!real.some((p) => p.configured) && <p className="hint">{user.role === 'admin' ? <>{L('لربط محرك حقيقي أضف مفتاح API من ', 'To connect a real engine add an API key in ')}<Link to="/admin?tab=providers" style={{ color: 'var(--accent)' }}>{L('لوحة المدير ← المزودون', 'Admin → Providers')}</Link>.</> : L('لم يربط المدير أي محرك توليد حقيقي بعد.', 'The administrator has not connected a real engine yet.')}</p>}
             {provider?.verified === 'unverified' && <div className="banner warn"><Icon name="alert" /><span>{L('محوّل تجريبي: لم يُتحقق من توثيق هذا المزود ولم يُختبر مع خدمته.', 'Experimental adapter: this provider’s documentation was not verified and it has not been tested against the live service.')}</span></div>}

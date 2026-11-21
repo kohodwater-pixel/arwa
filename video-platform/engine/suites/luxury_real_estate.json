@@ -1,0 +1,56 @@
+{
+ "id": "luxury_real_estate",
+ "name": "Luxury real estate cinematography",
+ "version": 1,
+ "note": "Starter suite. Prompts describe generic scenes only: no brand, no named real person, no claim about a specific property. Extend to 20+ prompts with the client-facing team before using results for a decision.",
+ "criteria": [
+  "prompt_adherence",
+  "motion_naturalness",
+  "visual_quality",
+  "cultural_accuracy",
+  "commercial_usability"
+ ],
+ "negative": "morphing, warped geometry, distorted faces or hands, flicker, on-screen text, watermark, cartoon look",
+ "prompts": [
+  {
+   "id": "villa-exterior-dusk",
+   "aspect": "16:9",
+   "prompt": "Smooth aerial drone approach to a contemporary white luxury villa with an infinity pool at dusk, warm interior lights on, palm trees, straight architectural lines, calm water, real estate film."
+  },
+  {
+   "id": "living-room-dolly",
+   "aspect": "16:9",
+   "prompt": "Slow steady dolly-in through a double-height living room with floor-to-ceiling windows, travertine floor, cream sofas, late afternoon sun casting long shadows, all vertical lines perfectly straight, luxury property video."
+  },
+  {
+   "id": "kitchen-detail",
+   "aspect": "16:9",
+   "prompt": "Slow pan across a marble kitchen island with brass fixtures, soft daylight, shallow depth of field, a bowl of lemons in the foreground, high-end interior design film."
+  },
+  {
+   "id": "tower-reveal",
+   "aspect": "9:16",
+   "prompt": "Vertical crane-up along the glass facade of a residential tower at golden hour, sky reflected in the windows, ending on the rooftop terrace, architecture stays rigid and undistorted."
+  },
+  {
+   "id": "master-suite",
+   "aspect": "16:9",
+   "prompt": "Gentle dolly-out from a hotel-style master bedroom toward a balcony overlooking the sea, sheer curtains moving slightly in the breeze, morning light, serene luxury resort film."
+  },
+  {
+   "id": "pool-orbit",
+   "aspect": "16:9",
+   "prompt": "Slow orbit around an infinity pool on a terrace with loungers and a city skyline behind at blue hour, mirror-still water, warm underwater lights."
+  },
+  {
+   "id": "lobby-walk",
+   "aspect": "16:9",
+   "prompt": "Steady forward tracking shot through a grand hotel lobby with a marble floor, a sculptural chandelier and symmetrical columns, warm ambient light, no people, architectural symmetry kept exact."
+  },
+  {
+   "id": "garden-path",
+   "aspect": "9:16",
+   "prompt": "Slow tilt-up from a stone garden path lined with low lights to the entrance of a modern villa at night, wooden door, warm glow, landscaping detail."
+  }
+ ]
+}

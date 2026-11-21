@@ -1,0 +1,7 @@
+{
+  "engine_url": "http://127.0.0.1:4200",
+  "name": "mock-1",
+  "mock": true,
+  "poll_seconds": 1,
+  "models": { "wan22": { "variants": ["ti2v-5b", "a14b-720p"], "font": "../../public/fonts/Inter-Variable.ttf" } }
+}

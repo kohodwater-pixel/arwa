@@ -14,6 +14,7 @@ import { metaRouter, setFfmpeg } from './routes/meta.js';
 import { registerPipeline } from './pipeline.js';
 import { startWorker } from './queue.js';
 import { ffmpegAvailable } from './ffmpeg.js';
+import { startCapabilityRefresh } from './providers/index.js';
 
 export const app = express();
 app.disable('x-powered-by');
@@ -55,6 +56,7 @@ if (fs.existsSync(dist)) {
 if (process.env.NODE_ENV !== 'test' || process.env.START_SERVER === '1') {
   registerPipeline();
   startWorker();
+  startCapabilityRefresh();
   ffmpegAvailable().then((ok) => { setFfmpeg(ok); if (!ok) log.error('startup.ffmpeg', 'ffmpeg was not found: demo clips and final assembly will fail'); });
   app.listen(config.port, () => log.info('startup', `${config.appName} listening on :${config.port}`));
 }

@@ -1,0 +1,56 @@
+{
+ "id": "gulf_ads",
+ "name": "Gulf commercial advertising",
+ "version": 1,
+ "note": "Starter suite. Prompts describe generic scenes only: no brand, no named real person, no claim about a specific property. Extend to 20+ prompts with the client-facing team before using results for a decision.",
+ "criteria": [
+  "prompt_adherence",
+  "motion_naturalness",
+  "visual_quality",
+  "cultural_accuracy",
+  "commercial_usability"
+ ],
+ "negative": "morphing, warped geometry, distorted faces or hands, flicker, on-screen text, watermark, cartoon look",
+ "prompts": [
+  {
+   "id": "hero-car-night",
+   "aspect": "16:9",
+   "prompt": "Low-angle tracking shot of a white luxury SUV driving along a wet coastal boulevard at night in a modern Gulf city, glass towers and palm trees lit warm gold, reflections on the asphalt, shallow depth of field, anamorphic lens, premium automotive commercial."
+  },
+  {
+   "id": "perfume-macro",
+   "aspect": "9:16",
+   "prompt": "Extreme close-up of an amber glass perfume bottle on black marble, slow dolly-in, a wisp of incense smoke crossing a single shaft of warm light, gold cap catching a rim light, luxury fragrance advertisement, 85mm lens."
+  },
+  {
+   "id": "coffee-pour",
+   "aspect": "9:16",
+   "prompt": "Slow-motion close-up of Arabic coffee poured from a brass dallah into a small handleless cup, steam rising, dates on a wooden tray, warm window light, shallow depth of field, hospitality commercial."
+  },
+  {
+   "id": "family-majlis",
+   "aspect": "16:9",
+   "prompt": "Medium shot of a Gulf family gathered in a contemporary majlis with low cushioned seating, a man in a white thobe and red-checked shemagh hands a tablet to his young son, warm practical lamps, gentle dolly-in, telecom advertisement."
+  },
+  {
+   "id": "retail-mall",
+   "aspect": "16:9",
+   "prompt": "Tracking shot following a woman in an elegant black abaya walking through a bright modern shopping mall carrying shopping bags, polished floor reflections, soft daylight from a glass roof, fashion retail commercial."
+  },
+  {
+   "id": "food-delivery",
+   "aspect": "9:16",
+   "prompt": "Handheld cinematic shot of a delivery rider handing a paper bag to a customer at the door of a modern villa at dusk, warm porch light, natural smiles, food delivery app advertisement."
+  },
+  {
+   "id": "bank-skyline",
+   "aspect": "16:9",
+   "prompt": "Slow crane-up from a businessman in a thobe looking at his phone on a rooftop terrace to reveal a financial district skyline at blue hour, clean negative space on the right for a logo, corporate banking film."
+  },
+  {
+   "id": "ramadan-table",
+   "aspect": "16:9",
+   "prompt": "Top-down slow push-in on an iftar table at sunset, lanterns glowing, hands reaching for dates and water glasses, warm golden light, rich textures, Ramadan campaign."
+  }
+ ]
+}

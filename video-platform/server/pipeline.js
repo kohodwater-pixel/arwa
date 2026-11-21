@@ -30,8 +30,9 @@ export const publicAssetUrl = (assetId, ttlMs = 3600e3) => {
   return `${config.publicBaseUrl}/api/public/assets/${assetId}?exp=${exp}&sig=${sign(`${assetId}.${exp}`)}`;
 };
 
-async function download(url, headers, dest) {
-  if (!/^https:\/\//.test(url)) throw new ProviderError('provider returned a non-https video URL');
+async function download(url, headers, dest, allowInsecure = false) {
+  // plain http is accepted only from our own engine service, whose address the administrator configured
+  if (!/^https:\/\//.test(url) && !(allowInsecure && /^http:\/\//.test(url))) throw new ProviderError('provider returned a non-https video URL');
   let res;
   try { res = await fetch(url, { headers: headers || {}, redirect: 'follow', signal: AbortSignal.timeout(10 * 60e3) }); }
   catch (e) { throw new ProviderError(`download failed: ${e.cause?.code || e.message}`, { retryable: true }); }
@@ -130,11 +131,11 @@ async function sceneJob(job) {
     const res = await provider.submit({
       prompt, negativePrompt: quality.negativePrompt && treatment ? negativePrompt(treatment) : undefined,
       duration: scene.duration, aspect: project.aspect, quality: project.quality, image, wantAudio: quality.nativeAudio,
-      meta: { index: scene.position + 1, total, cameraMove: scene.camera_move },
+      meta: { index: scene.position + 1, total, cameraMove: scene.camera_move, videoType: project.video_type, clientRef: `${project.id}:${scene.position + 1}` },
     }, creds);
     update('jobs', job.id, { provider_job_id: res.jobId, payload_json: JSON.stringify({ ...payload, clipDuration: res.clipDuration, submittedAt: now() }), updated_at: now() });
     update('scenes', scene.id, { status: 'generating', progress: 0, error: null });
-    log.info('provider.submitted', `scene ${scene.position + 1} → ${provider.id} job ${res.jobId}`, ctx);
+    log.info('provider.submitted', `scene ${scene.position + 1} → ${provider.id} job ${res.jobId}${res.info ? ` (${res.info})` : ''}`, ctx);
     return { again: provider.minPollMs || config.pollIntervalMs };
   }
 
@@ -148,15 +149,17 @@ async function sceneJob(job) {
 
   // succeeded → bring the clip into our own storage (provider URLs expire)
   const tmp = st.localFile || storage.tmpPath('mp4');
-  if (!st.localFile) await download(st.videoUrl, st.downloadHeaders, tmp);
+  if (!st.localFile) await download(st.videoUrl, st.downloadHeaders, tmp, provider.id === 'selfhosted' && st.allowInsecure);
+  const sceneIsDemo = provider.demo || !!st.demo;   // a mock GPU worker produces placeholders: label them like demo output
+  if (sceneIsDemo && !project.is_demo) update('projects', project.id, { is_demo: 1 });
   let meta;
   try { meta = await probe(tmp); } catch { meta = null; }
   if (!meta?.hasVideo) { await fsp.unlink(tmp).catch(() => {}); throw new ProviderError('the provider returned a file that is not a playable video', { retryable: true }); }
   const key = storage.newKey(project.user_id, 'mp4');
   const size = await storage.putFile(key, tmp);
-  const assetId = createAsset({ userId: project.user_id, projectId: project.id, kind: 'scene_clip', filename: `scene-${scene.position + 1}.mp4`, mime: 'video/mp4', storageKey: key, size, meta, isDemo: provider.demo });
+  const assetId = createAsset({ userId: project.user_id, projectId: project.id, kind: 'scene_clip', filename: `scene-${scene.position + 1}.mp4`, mime: 'video/mp4', storageKey: key, size, meta, isDemo: sceneIsDemo });
   update('scenes', scene.id, { status: 'completed', progress: 1, clip_asset_id: assetId, error: null });
-  run('INSERT INTO usage (user_id, project_id, provider_id, seconds, is_demo, created_at) VALUES (?,?,?,?,?,?)', project.user_id, project.id, provider.id, payload.clipDuration || scene.duration, provider.demo ? 1 : 0, now());
+  run('INSERT INTO usage (user_id, project_id, provider_id, seconds, is_demo, created_at) VALUES (?,?,?,?,?,?)', project.user_id, project.id, provider.id, payload.clipDuration || scene.duration, sceneIsDemo ? 1 : 0, now());
   log.info('scene.completed', `scene ${scene.position + 1} stored (${Math.round(size / 1024)} KB)`, ctx);
   maybeFinish(project.id);
   return { done: true };
