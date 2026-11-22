@@ -63,35 +63,37 @@ n = int(0.75 * SR); t = np.arange(n) / SR
 f = 46 + 34 * np.exp(-t / 0.035)
 sub = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-t / 0.17) * np.minimum(1, t / 0.004)
 sub *= np.minimum(1, (0.75 - t) / 0.1)
-body = lp(rng.normal(0, 1, n), 190, 4) * np.exp(-t / 0.075); body /= np.abs(body).max()
+body = lp(rng.normal(0, 1, n), 240, 4) * np.exp(-t / 0.12); body /= np.abs(body).max()
 smack = bp(rng.normal(0, 1, n), 260, 2300) * np.exp(-t / 0.016); smack /= np.abs(smack).max()
 grit = hp(rng.normal(0, 1, n), 2500) * (rng.random(n) > 0.9985) ; grit = lp(grit, 7000) * ((t > 0.06) & (t < 0.45)) * np.exp(-t / 0.2)
 grit = sg.lfilter([1], [1, -0.97], grit) ; grit = hp(grit, 1800); grit /= (np.abs(grit).max() + 1e-9)
-phone = 0.9 * body + 0.55 * smack + 0.45 * sub
-drive = 1 + 7 * np.exp(-t / 0.045)                          # about 80 ms of mic overload
-phone = np.tanh(drive * phone) / np.tanh(drive)
-phone = bp(phone, 150, 9000) + 0.05 * grit
-thud_phone = np.zeros(N); place(thud_phone, phone, IMPACT, db(-12))
-thud_sub = np.zeros(N); place(thud_sub, lp(sub, 120, 2), IMPACT, db(-10))     # clean, full range
+raw = bp(1.0 * body + 0.5 * smack + 0.8 * sub, 150, 9000)      # what a phone mic would pass
+raw /= np.sqrt((raw[:int(0.1*SR)] ** 2).mean())
+drive = 0.25 + 5.0 * np.exp(-t / 0.13)                       # overloaded for roughly the first 100 ms, then it lets go
+phone = np.tanh(drive * raw) * np.exp(-t / 0.3) + 0.04 * grit
+phone /= np.abs(phone).max()
+thud_phone = np.zeros(N); place(thud_phone, phone, IMPACT, db(-8.5))
+thud_sub = np.zeros(N); place(thud_sub, lp(sub, 120, 2), IMPACT, db(-13))     # clean, full range
 
 # ---- handling rumble over the join ----
 m = int(0.5 * SR); tt = np.arange(m) / SR
 rum = bp(rng.normal(0, 1, m), 150, 420) * np.exp(-((tt - 0.2) / 0.11) ** 2); rum /= np.abs(rum).max()
-handling = np.zeros(N); place(handling, rum, JOIN - 0.22, db(-20))
+handling = np.zeros(N); place(handling, rum, JOIN - 0.22, db(-13))
 
 # ---- gains over time ----
-bed_gain = np.full(N, db(6.0))
+bed_gain = np.full(N, db(14.0))
 agc = np.interp(T, [0, IMPACT - 0.12, IMPACT - 0.07, IMPACT + 0.25, IMPACT + 0.8, TOTAL], [1, 1, db(-12), db(-9), 1, 1])   # mic AGC ducks after the hit
 duck = np.interp(T, [0, VO_AT - 0.25, VO_AT + 0.05, TOTAL], [1, 1, db(-4), db(-4)])                              # ambience 4 dB under the voice
 bed_t = bed * bed_gain * agc * duck
+bed_t = db(-14) * np.tanh(bed_t / db(-14))            # footsteps and cardboard never poke above the voice
 out_fade = np.interp(T, [0, 0.04, TOTAL - 0.25, TOTAL], [0, 1, 1, 0])
 
-# VO: gentle 2.5:1 compression above -24 dBFS so the limiter has little left to do; otherwise untouched (no EQ, no reverb)
-e = np.abs(vo); att = np.exp(-1/(0.008*SR)); rel_ = np.exp(-1/(0.12*SR)); envv = np.empty_like(e); c = 0.0
+# VO: gentle 3:1 compression above -30 dBFS so the limiter has little left to do; otherwise untouched (no EQ, no reverb)
+e = np.abs(vo); att = np.exp(-1/(0.001*SR)); rel_ = np.exp(-1/(0.08*SR)); envv = np.empty_like(e); c = 0.0
 for i in range(len(e)):
     c = att*c + (1-att)*e[i] if e[i] > c else rel_*c + (1-rel_)*e[i]
     envv[i] = c
-thr_v = db(-24); vo_c = vo * np.where(envv > thr_v, (envv/thr_v) ** (1/2.5 - 1), 1.0)
+thr_v = db(-30); vo_c = vo * np.where(envv > thr_v, (envv/thr_v) ** (1/3.0 - 1), 1.0)
 vo_t = np.zeros(N); place(vo_t, fade(vo_c, 0.01, 0.03), VO_AT)
 def limiter(x, ceil):
     look = int(0.004 * SR)
@@ -109,7 +111,7 @@ def measure(path):
     r = subprocess.run(['ffmpeg','-hide_banner','-nostats','-i',path,'-af','ebur128=peak=true','-f','null','-'], capture_output=True, text=True).stderr
     tail = r[r.rfind('Summary:'):]
     return float(re.search(r'I:\s+(-?[\d.]+) LUFS', tail).group(1)), float(re.search(r'Peak:\s+(-?[\d.]+) dBFS', tail).group(1))
-vo_gain = db(7.0); master = 1.0
+vo_gain = db(16.0); master = 1.0
 for it in range(14):
     mix = (bed_t + thud_phone + handling) * 1.0 + thud_sub + vo_t * vo_gain
     mix = limiter(mix * master * out_fade, db(-2.0))
@@ -118,7 +120,7 @@ for it in range(14):
     I, TP = measure(f'{AU}/mix_v01.wav')
     print(f'pass {it}: master {20*np.log10(master):+.2f} dB -> I {I} LUFS, true peak {TP} dBFS')
     if abs(I + 14.0) <= 0.15: break
-    master *= db((-14.0 - I) * 1.5)
+    master *= db((-14.0 - I) * 1.3)
 # report peaks per element after master
 lim_in = (bed_t + thud_phone + handling + thud_sub + vo_t * vo_gain) * master
 print('samples over the limiter ceiling: %.2f %% ; max over %.1f dB' % (100*(np.abs(lim_in) > db(-2.0)).mean(), 20*np.log10(np.abs(lim_in).max()/db(-2.0))))

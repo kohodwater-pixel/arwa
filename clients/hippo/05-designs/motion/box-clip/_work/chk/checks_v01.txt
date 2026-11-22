@@ -1,0 +1,52 @@
+decoded frames: 525 (1920, 1080, 3)
+--- QR at three times in the hold, 1080 wide and 540 wide ---
+t=10.0s 1080w: EXACT MATCH  code width 297 px = 27.5 % of frame width (37 modules -> 8.02 px/module); x 390-687, y 927-1233
+t=10.0s  540w: EXACT MATCH  code width 148 px = 27.4 % of frame width (37 modules -> 4.00 px/module); x 195-343, y 463-616
+t=13.0s 1080w: EXACT MATCH  code width 297 px = 27.5 % of frame width (37 modules -> 8.02 px/module); x 386-684, y 929-1241
+t=13.0s  540w: EXACT MATCH  code width 148 px = 27.4 % of frame width (37 modules -> 3.99 px/module); x 193-341, y 465-620
+t=17.0s 1080w: EXACT MATCH  code width 296 px = 27.4 % of frame width (37 modules -> 8.01 px/module); x 386-682, y 926-1234
+t=17.0s  540w: EXACT MATCH  code width 148 px = 27.4 % of frame width (37 modules -> 4.00 px/module); x 193-341, y 463-617
+--- every frame: does the QR decode to the exact URL? ---
+1080w: first decodable frame 236 (7.87 s), last 524 (17.47 s), decodable frames 288 = 9.60 s; misses after first: 1 [494]
+540w: first decodable frame 236 (7.87 s), last 524 (17.47 s), decodable frames 274 = 9.13 s; misses after first: 15 [287, 298, 320, 321, 334, 341, 363, 371, 391, 394, 395, 480, 484, 495, 513]
+--- ffprobe ---
+codec_name=h264
+profile=High
+width=1080
+height=1920
+pix_fmt=yuv420p
+r_frame_rate=30/1
+avg_frame_rate=30/1
+duration=17.500000
+bit_rate=13988477
+nb_frames=525
+codec_name=aac
+profile=LC
+sample_rate=48000
+channels=2
+r_frame_rate=0/0
+avg_frame_rate=0/0
+duration=17.500000
+bit_rate=248929
+nb_frames=822
+duration=17.500000
+size=31165510
+bit_rate=14247090
+
+--- loudness (ffmpeg ebur128, peak=true) ---
+Summary:
+
+  Integrated loudness:
+    I:         -14.1 LUFS
+    Threshold: -24.6 LUFS
+
+  Loudness range:
+    LRA:         9.0 LU
+    Threshold: -34.1 LUFS
+    LRA low:   -20.5 LUFS
+    LRA high:  -11.5 LUFS
+
+  True peak:
+    Peak:       -1.5 dBFS
+
+loudest momentary (400 ms) loudness: -8.1 LUFS at 11.3 s; around the thud: -10.5 LUFS at 1.8 s

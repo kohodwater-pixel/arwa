@@ -1,0 +1,8 @@
+# heavy frame intermediates, rebuilt by src/build.sh
+A_raw/
+A_30/
+A_clean/
+A_clean_debug/
+B_raw/
+probe/
+test/
