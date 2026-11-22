@@ -177,7 +177,7 @@ def card_quad(f):
 # ---------------- card artwork: only white point and black level are matched; hue and saturation stay ----------------
 card = cv2.imread(CARD).astype(np.float32) / 255.0
 card = 0.045 + 0.955 * card                                       # black level of the footage
-fall = np.linspace(1.0, 0.975, card.shape[0], dtype=np.float32)[:, None, None]
+fall = np.linspace(1.0, 0.985, card.shape[0], dtype=np.float32)[:, None, None]
 card = card * fall
 CH, CW = card.shape[:2]
 CARD_PX = np.array([[0,0],[CW,0],[CW,CH],[0,CH]], np.float32)
@@ -201,7 +201,7 @@ def composite_card(F, quad_out, occ=None):
     if sel.sum() > 50:
         wref = np.median(F[sel], axis=0)
         lum = F.mean(axis=2) / max(1.0, wref.mean())
-        lid = np.clip(lum, 0.5, 1.06)[..., None] * (wref * 1.025)
+        lid = np.clip(lum, 0.5, 1.04)[..., None] * (np.full(3, wref.mean(), np.float32) * 1.06)   # neutral paper white, 6 % above the lid: brand hues are not tinted by the footage
     else:
         lid = F
     out = F * (1 - 0.15 * sh[..., None])
@@ -219,7 +219,7 @@ def lid_matte(src):
     for k in range(1, n):
         if st[k,4] > 900: hand[lab == k] = 1                      # the hand is one big blob; specks on the paper are not
     hand = cv2.dilate(hand, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5,5)))
-    white = ((S < 30) & (V > 95)).astype(np.uint8)
+    white = ((S < 48) & (V > 95)).astype(np.uint8)                 # lid white incl. its pink bounce light; the hand is removed separately
     occ = (white & (1 - hand)).astype(np.float32)
     occ[:, :HX+2] = 0                                             # the card is on the lid only, never left of the hinge
     occ = cv2.erode(occ, np.ones((3,3), np.uint8))
@@ -318,7 +318,7 @@ def vblur(F, length, hsig=0):
         F = cv2.filter2D(F, -1, k, borderType=cv2.BORDER_REFLECT)
     if hsig: F = cv2.GaussianBlur(F, (0,0), sigmaX=hsig, sigmaY=0.1)
     return F
-def vshift(F, dy): return cv2.warpAffine(F, np.float32([[1,0,0],[0,1,dy]]), (W, H), borderMode=cv2.BORDER_REPLICATE)
+def vshift(F, dy): return cv2.warpAffine(F, np.float32([[1,0,0],[0,1,dy]]), (W, H), borderMode=cv2.BORDER_REFLECT)
 A_BL = [10, 26, 60, 130, 250, 420, 620]                          # last 7 A frames
 B_BL = [(620, 420), (460, 260), (300, 140), (170, 70), (80, 30), (30, 10), (8, 3)]   # (blur length, downward offset) first 7 B frames
 MIX = {N_A-2: 0.2, N_A-1: 0.42, N_A: 0.62, N_A+1: 0.82}          # share of B in the 4 frames around the cut

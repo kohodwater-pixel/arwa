@@ -64,7 +64,7 @@ rep('card white (margin beside the proof lines)', region(40, 1560, 140, 1800), '
 rep('lime band (left margin of the band, no text)', region(25, 1000, 95, 1480), '#BBD032')
 rep('lime band (right margin of the band)', region(1105, 1000, 1175, 1480), '#BBD032')
 rep('logo lime (lime pixels of the hippo drawing)', region(400, 84, 800, 500) & (hsv[...,1] > 70) & (hsv[...,0] > 28) & (hsv[...,0] < 50), 'about #B3DB18 (client logo file)')
-rep('pink strip', region(100, 2990, 1100, 3100), '#DA6FA2')
+rep('pink strip', region(100, 3072, 1100, 3112), '#DA6FA2')
 rep('pill black', region(300, 2830, 380, 2960), '#181717')
 rep('lid white beside the card', region(1230, 600, 1260, 2400))
 rep('generated box: lime tab', (~cardm) & (hsv[...,1] > 140) & (hsv[...,0] > 28) & (hsv[...,0] < 50))

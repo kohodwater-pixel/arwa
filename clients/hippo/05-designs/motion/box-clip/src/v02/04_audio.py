@@ -14,7 +14,7 @@ B_LIVE = 62 / 30              # B plays 62 source frames in 62 output frames (12
 HOLD = JOIN + B_LIVE          # 9.10 s
 IMPACT = 1.40
 VO_AT = 8.10                  # card starts to show at 8.03 s
-TARGET_I = -14.6              # allowed window -15 .. -14 LUFS
+TARGET_I = -14.9              # allowed window -15 .. -14 LUFS
 rng = np.random.default_rng(11)
 def dec(src, out, extra=()):
     subprocess.run(['ffmpeg','-v','error','-y','-i',src,*extra,'-ar',str(SR),'-ac','1',out], check=True)
@@ -113,7 +113,7 @@ def measure(path):
     r = subprocess.run(['ffmpeg','-hide_banner','-nostats','-i',path,'-af','ebur128=peak=true','-f','null','-'], capture_output=True, text=True).stderr
     tail = r[r.rfind('Summary:'):]
     return float(re.search(r'I:\s+(-?[\d.]+) LUFS', tail).group(1)), float(re.search(r'Peak:\s+(-?[\d.]+) dBFS', tail).group(1))
-vo_gain = db(15.0); master = 1.0
+vo_gain = db(13.6); master = 1.0
 for it in range(14):
     mix = (bed_t + thud_phone + handling) * 1.0 + thud_sub + vo_t * vo_gain
     mix = limiter(mix * master * out_fade, db(-2.0))

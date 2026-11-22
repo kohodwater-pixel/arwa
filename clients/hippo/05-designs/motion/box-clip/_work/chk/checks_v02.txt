@@ -1,0 +1,62 @@
+decoded frames: 525 (1920, 1080, 3)
+--- QR at three times in the hold, 1080 wide and 540 wide ---
+t=10.0s 1080w: EXACT MATCH  code width 325 px = 30.1 % of frame width (37 modules -> 8.78 px/module); x 375-700, y 924-1263
+t=10.0s  540w: EXACT MATCH  code width 163 px = 30.1 % of frame width (37 modules -> 4.39 px/module); x 187-351, y 462-631
+t=13.0s 1080w: EXACT MATCH  code width 324 px = 30.0 % of frame width (37 modules -> 8.77 px/module); x 372-697, y 920-1258
+t=13.0s  540w: EXACT MATCH  code width 162 px = 29.9 % of frame width (37 modules -> 4.37 px/module); x 186-348, y 459-629
+t=17.0s 1080w: EXACT MATCH  code width 324 px = 30.0 % of frame width (37 modules -> 8.77 px/module); x 372-697, y 916-1255
+t=17.0s  540w: EXACT MATCH  code width 161 px = 29.8 % of frame width (37 modules -> 4.36 px/module); x 186-347, y 458-627
+--- every frame: does the QR decode to the exact URL? ---
+1080w: first decodable frame 246 (8.20 s), last 524 (17.47 s), decodable frames 279 = 9.30 s; misses after first: 0 []
+540w: first decodable frame 246 (8.20 s), last 524 (17.47 s), decodable frames 276 = 9.20 s; misses after first: 3 [275, 392, 457]
+--- colours on the hold frame (frame 400, 13.33 s), median sRGB sampled from the final MP4 ---
+card white (margin beside the proof lines): #F1F3F0  (R 241 G 243 B 240, HSV saturation 1 %, 4326 px)   target #FFFFFF on the lid white
+lime band (left margin of the band, no text): #B6BF31  (R 182 G 191 B 49, HSV saturation 75 %, 6150 px)   target #BBD032
+lime band (right margin of the band): #A9B32D  (R 169 G 179 B 45, HSV saturation 75 %, 7397 px)   target #BBD032
+logo lime (lime pixels of the hippo drawing): #B7CB32  (R 183 G 203 B 50, HSV saturation 75 %, 6595 px)   target about #B3DB18 (client logo file)
+pink strip: #E180A4  (R 225 G 128 B 164, HSV saturation 43 %, 8121 px)   target #DA6FA2
+pill black: #22221E  (R 34 G 34 B 30, HSV saturation 16 %, 1993 px)   target #181717
+lid white beside the card: #BFBABB  (R 191 G 186 B 187, HSV saturation 3 %, 12679 px)
+generated box: lime tab: #B2D200  (R 178 G 210 B 0, HSV saturation 100 %, 10881 px)
+generated box: pink: #FF1E64  (R 255 G 30 B 100, HSV saturation 88 %, 43970 px)
+--- ffprobe ---
+codec_name=h264
+profile=High
+width=1080
+height=1920
+pix_fmt=yuv420p
+r_frame_rate=30/1
+avg_frame_rate=30/1
+duration=17.500000
+bit_rate=14678116
+nb_frames=525
+codec_name=aac
+profile=LC
+sample_rate=48000
+channels=2
+r_frame_rate=0/0
+avg_frame_rate=0/0
+duration=17.500000
+bit_rate=248511
+nb_frames=822
+duration=17.500000
+size=32673136
+bit_rate=14936290
+
+--- loudness (ffmpeg ebur128, peak=true) ---
+Summary:
+
+  Integrated loudness:
+    I:         -14.9 LUFS
+    Threshold: -25.3 LUFS
+
+  Loudness range:
+    LRA:         8.6 LU
+    Threshold: -35.2 LUFS
+    LRA low:   -21.5 LUFS
+    LRA high:  -12.9 LUFS
+
+  True peak:
+    Peak:       -1.6 dBFS
+
+loudest momentary (400 ms) loudness: -7.4 LUFS at 1.8 s; thud: -7.4 LUFS at 1.8 s; loudest during the VO: -9.1 LUFS at 11.5 s
