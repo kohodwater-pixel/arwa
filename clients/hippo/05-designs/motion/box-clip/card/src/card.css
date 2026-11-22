@@ -1,0 +1,146 @@
+/* HIPPO box clip — franchise invitation card (flat artwork for compositing)
+   Every size is a share of the card width W, as in direction v01, section 3.
+   Card = W x 2.6 W. Rendered with the viewport set to W x 2.6 W, so W = 100vw. */
+
+@font-face { font-family: "Tajawal"; font-weight: 500; font-style: normal; src: url("assets/fonts/Tajawal-Medium.ttf") format("truetype"); }
+@font-face { font-family: "Tajawal"; font-weight: 700; font-style: normal; src: url("assets/fonts/Tajawal-Bold.ttf") format("truetype"); }
+@font-face { font-family: "Tajawal"; font-weight: 800; font-style: normal; src: url("assets/fonts/Tajawal-ExtraBold.ttf") format("truetype"); }
+
+:root {
+  --w: 100vw;
+  --black: #181717;
+  --lime: #BBD032;
+  --pink: #DA6FA2;
+  --white: #FFFFFF;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body { background: var(--white); }
+
+body {
+  font-family: "Tajawal";            /* no fallback on purpose: a missing font must show */
+  color: var(--black);
+  letter-spacing: 0;                 /* never track Arabic */
+  font-synthesis: none;              /* no faux bold */
+  font-variant-numeric: normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+.card {
+  position: relative;
+  width: var(--w);
+  height: calc(var(--w) * 2.6);
+  background: var(--white);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: calc(var(--w) * 0.07);          /* outer margin */
+}
+
+/* 1 — logo, as supplied, width 0.34 W */
+.logo {
+  display: block;
+  width: calc(var(--w) * 0.34);
+  height: calc(var(--w) * 0.5375);             /* artwork 533 x 844 pt plus 2 pt of air in the SVG viewBox */
+  object-fit: contain;
+  flex: none;
+}
+
+/* 2 — franchise label, Bold, 0.085 W, one line */
+.kicker {
+  margin-top: calc(var(--w) * 0.05);
+  height: calc(var(--w) * 0.10);
+  line-height: calc(var(--w) * 0.10);
+  font-size: calc(var(--w) * 0.085);
+  font-weight: 700;
+  white-space: nowrap;
+  flex: none;
+}
+
+/* 3 — headline, ExtraBold, 0.15 W, on a full-width lime band 0.45 W high */
+.band {
+  margin-top: calc(var(--w) * 0.05);
+  width: 100%;
+  height: calc(var(--w) * 0.45);
+  background: var(--lime);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: none;
+}
+.headline {
+  font-size: calc(var(--w) * 0.15);
+  font-weight: 800;
+  line-height: 1.25;
+  text-align: center;
+  white-space: nowrap;
+}
+.headline span { display: block; }
+
+/* 4 — proof, Medium, 0.068 W, line height 1.6, two lines */
+.proof {
+  margin-top: calc(var(--w) * 0.05);
+  font-size: calc(var(--w) * 0.068);
+  font-weight: 500;
+  line-height: 1.6;
+  text-align: center;
+  white-space: nowrap;
+  flex: none;
+}
+.proof span { display: block; }
+
+/* 5 — QR: 0.78 W white square including the quiet zone.
+   Code is 37 modules; module = W/60 (8 px at W = 480, 20 px at W = 1200);
+   quiet zone = (0.78 W - 37 modules) / 2 = 4.9 modules on every side.
+   QR and pill are placed from the card's top-left corner (not in the text flow)
+   so that every module edge falls on a whole pixel at W = 480 and W = 1200:
+   code top-left = (23/120 W, 1.625 W). */
+.qr {
+  position: absolute;
+  left: calc(var(--w) * 0.11);
+  top: calc(var(--w) * (1.625 - 4.9 / 60));     /* 1.5433 W; proof ends at 1.525 W */
+  width: calc(var(--w) * 0.78);
+  height: calc(var(--w) * 0.78);
+  background: var(--white);
+}
+.qr img {
+  position: absolute;
+  left: calc(var(--w) * (23 / 120 - 0.11));
+  top: calc(var(--w) * 4.9 / 60);
+  display: block;
+  width: calc(var(--w) * 37 / 60);
+  height: calc(var(--w) * 37 / 60);
+  image-rendering: pixelated;
+}
+
+/* 6 — call to action, ExtraBold 0.08 W, lime on a black pill 0.78 W x 0.15 W */
+.pill {
+  position: absolute;
+  left: calc(var(--w) * 0.11);
+  top: calc(var(--w) * (1.625 - 4.9 / 60 + 0.78 + 0.02));   /* 2.3433 W; strip starts at 2.55 W */
+  width: calc(var(--w) * 0.78);
+  height: calc(var(--w) * 0.15);
+  border-radius: calc(var(--w) * 0.075);
+  background: var(--black);
+  color: var(--lime);
+  font-size: calc(var(--w) * 0.08);
+  font-weight: 800;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+}
+.pill span { position: relative; top: calc(var(--w) * 0.006); }   /* optical centring: shadda above, meem tail below */
+
+/* 7 — pink strip along the bottom edge, 0.05 W */
+.strip {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: calc(var(--w) * 0.05);
+  background: var(--pink);
+}

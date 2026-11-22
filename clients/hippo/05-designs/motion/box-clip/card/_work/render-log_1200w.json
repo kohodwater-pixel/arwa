@@ -1,0 +1,158 @@
+{
+ "W": 1200,
+ "H": 3120,
+ "out": "/home/user/arwa/clients/hippo/05-designs/motion/box-clip/card/hippo_box-clip_invitation-card_ar_v01.png",
+ "failedRequests": [],
+ "boxes": {
+  ".card": {
+   "x": 0,
+   "y": 0,
+   "w": 1200,
+   "h": 3120,
+   "scrollW": 1200
+  },
+  ".logo": {
+   "x": 396,
+   "y": 84,
+   "w": 408,
+   "h": 645,
+   "scrollW": 408
+  },
+  ".kicker": {
+   "x": 189.05,
+   "y": 789,
+   "w": 821.92,
+   "h": 120,
+   "scrollW": 822
+  },
+  ".band": {
+   "x": 0,
+   "y": 969,
+   "w": 1200,
+   "h": 540,
+   "scrollW": 1200
+  },
+  ".headline": {
+   "x": 139.73,
+   "y": 1014,
+   "w": 920.53,
+   "h": 450,
+   "scrollW": 921
+  },
+  ".proof": {
+   "x": 196.44,
+   "y": 1569,
+   "w": 807.14,
+   "h": 261.09,
+   "scrollW": 807
+  },
+  ".qr": {
+   "x": 132,
+   "y": 1852,
+   "w": 936,
+   "h": 936,
+   "scrollW": 936
+  },
+  ".qr img": {
+   "x": 230,
+   "y": 1950,
+   "w": 740,
+   "h": 740,
+   "scrollW": 740
+  },
+  ".pill": {
+   "x": 132,
+   "y": 2812,
+   "w": 936,
+   "h": 180,
+   "scrollW": 936
+  },
+  ".pill span": {
+   "x": 236.83,
+   "y": 2861.19,
+   "w": 726.34,
+   "h": 96,
+   "scrollW": 726
+  },
+  ".strip": {
+   "x": 0,
+   "y": 3060,
+   "w": 1200,
+   "h": 60,
+   "scrollW": 1200
+  },
+  "lines": [
+   {
+    "text": "امتياز هيبو التجاري",
+    "x": 189,
+    "w": 821.9,
+    "fontSize": "102px",
+    "weight": "700",
+    "letterSpacing": "normal"
+   },
+   {
+    "text": "افتح هيبو",
+    "x": 211.5,
+    "w": 777.1,
+    "fontSize": "180px",
+    "weight": "800",
+    "letterSpacing": "normal"
+   },
+   {
+    "text": "في مدينتك.",
+    "x": 139.7,
+    "w": 920.5,
+    "fontSize": "180px",
+    "weight": "800",
+    "letterSpacing": "normal"
+   },
+   {
+    "text": "علامة سعودية منذ 2021",
+    "x": 196.4,
+    "w": 807.1,
+    "fontSize": "81.6px",
+    "weight": "500",
+    "letterSpacing": "normal"
+   },
+   {
+    "text": "5 فروع في منطقتين",
+    "x": 263,
+    "w": 674.1,
+    "fontSize": "81.6px",
+    "weight": "500",
+    "letterSpacing": "normal"
+   },
+   {
+    "text": "قدّم طلب الامتياز",
+    "x": 236.8,
+    "w": 726.3,
+    "fontSize": "96px",
+    "weight": "800",
+    "letterSpacing": "normal"
+   }
+  ],
+  "fontsLoaded": [
+   "Tajawal 500 loaded",
+   "Tajawal 700 loaded",
+   "Tajawal 800 loaded"
+  ],
+  "doc": {
+   "scrollW": 1200,
+   "scrollH": 3120
+  }
+ },
+ "platformFontsUsed": {
+  ".kicker": [
+   "Tajawal / Tajawal-Bold (custom=true, glyphs=19)"
+  ],
+  ".headline": [
+   "Tajawal / Tajawal-ExtraBold (custom=true, glyphs=19)"
+  ],
+  ".proof": [
+   "Tajawal / Tajawal-Medium (custom=true, glyphs=37)"
+  ],
+  ".pill": [
+   "Tajawal / Tajawal-ExtraBold (custom=true, glyphs=16)"
+  ]
+ }
+}
