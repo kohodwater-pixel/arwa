@@ -1,0 +1,12 @@
+frame 0
+frame 50
+frame 100
+frame 150
+frame 200
+frame 250
+frame 300
+frame 350
+frame 400
+frame 450
+frame 500
+ffmpeg exit 0 wrote /home/user/arwa/clients/hippo/05-designs/motion/box-clip/_work/video_v02_silent.mp4

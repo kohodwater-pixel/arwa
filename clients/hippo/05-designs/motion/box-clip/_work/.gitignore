@@ -5,3 +5,8 @@ A*_clean*/
 B*_raw/
 probe*/
 test*/
+A3_raw/
+A3_clean/
+A3_clean_debug/
+A3_seg1/
+A3_seg2/
