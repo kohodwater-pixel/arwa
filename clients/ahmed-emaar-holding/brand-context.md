@@ -8,12 +8,12 @@
 
 | | |
 |---|---|
-| Legal name (EN / AR) | |
+| Legal name (EN / AR) | TBC |
 | Brand name (EN / AR) | AHMED EMAAR HOLDING / أحمد إعمار القابضة — as written on the client's identity board; registration of the trade name NOT verified |
-| Sector | |
-| Markets / countries | |
-| Website and social | |
-| Client contact and approver | |
+| Sector | TBC |
+| Markets / countries | TBC |
+| Website and social | TBC |
+| Client contact and approver | TBC |
 
 ## 2. Project
 
@@ -61,9 +61,11 @@
 | 2026-11-23 | Sign placed on the front of the overhanging slab above the shutter (client photo). Width 2.5 m (client); height 60 cm is an ASSUMPTION pending site measurement | Client (position) / Creative Director (height assumption) |
 | 2026-11-23 | Nothing else from the identity board is used (client logos, figures, phone, email, website): unverified | Creative Director |
 | 2026-11-23 | OPEN with the client: original logo file and right to use the board; confirmation that the trade name is registered (the word «إعمار / EMAAR» coincides with a well-known developer brand — this is not a trademark clearance); slab edge to be inspected and repaired before installation | Pending client |
+| 2026-11-23 | CLIENT CHANGE: no background panel — raised letters fixed directly on the wall, 2.5 m wide. v03 built on option A's content; whole lockup placed on the wall above the crack line. Colour test on the site photo: all-gold measures about 1.9:1 on the wall and is not recommended; V3 (gold face, navy returns and edge) recommended, V2 (navy letters, gold mark) clearest. Two fabrication deviations from the provisional logo: swoosh tip cut, English line in a heavier weight. Panel version v02 kept as an alternative | Client (change) / Creative Director (rulings) |
 
 ## 7. Deliveries
 
 | Date | What was delivered | Where |
 |---|---|---|
 | 2026-11-23 | Shop sign v01, options A and B, shown to the client as drafts before review. Review r1: FAIL on fabrication-readiness (unwelded outlines, lighting note, tagline legibility, Arabic notes on mockups); v02 in progress | `05-designs/shop-sign/` |
+| 2026-11-23 | Sign v02 (panel, options A/B) sent; review r2 PASS WITH MINOR FIXES. Sign v03 (letters on wall, three colour variants) sent before its review at the client's pace; review r3 returned two text-level fixes (mark dimension on the drawing, contrast warning on the all-gold mockup) — drawing and V1 mockup v04 in progress | `05-designs/shop-sign/` |
