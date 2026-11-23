@@ -1,0 +1,98 @@
+{
+ "mark": {
+  "h": 44.4,
+  "w": 44.7,
+  "stroke_min": 3.3,
+  "stroke_bars": [
+   4.2,
+   4.7
+  ],
+  "swoosh_max": 3.8
+ },
+ "name_ar": {
+  "alef_h": 17.0,
+  "full_extent": 31.2,
+  "width": 196.5,
+  "stem": 3.2,
+  "horiz_stroke": 2.8
+ },
+ "name_en": {
+  "cap": 8.5,
+  "tracking_em": 0.3,
+  "width": 196.5,
+  "stem": 2.1,
+  "bar": 1.5,
+  "weight": 800
+ },
+ "pos": {
+  "top": -0.0,
+  "bottom": 44.4,
+  "x_right": 250.0,
+  "mark_left": 205.3,
+  "left": 0.0,
+  "ar_top": 0.0,
+  "ar_base": 23.9,
+  "ar_bottom": 31.2,
+  "lat_top": 35.8,
+  "lat_base": 44.4
+ },
+ "overall_w": 250.0,
+ "overall_h": 44.6,
+ "arabic_body_h": 12.0,
+ "gap_ar_bottom_to_en_top": 4.5,
+ "gap_ar_base_to_en_top": 11.9,
+ "small_pieces": [
+  {
+   "x": 193.6,
+   "y": 2.6,
+   "w": 5.8,
+   "h": 5.2
+  },
+  {
+   "x": 137.1,
+   "y": 28.6,
+   "w": 5.8,
+   "h": 5.2
+  },
+  {
+   "x": 61.2,
+   "y": 8.3,
+   "w": 3.1,
+   "h": 2.7
+  },
+  {
+   "x": 56.8,
+   "y": 8.3,
+   "w": 3.1,
+   "h": 2.7
+  },
+  {
+   "x": 39.2,
+   "y": 27.6,
+   "w": 3.2,
+   "h": 2.7
+  },
+  {
+   "x": 25.0,
+   "y": 8.3,
+   "w": 3.2,
+   "h": 2.7
+  },
+  {
+   "x": 8.3,
+   "y": 8.3,
+   "w": 3.1,
+   "h": 2.7
+  },
+  {
+   "x": 3.9,
+   "y": 8.3,
+   "w": 3.1,
+   "h": 2.7
+  }
+ ],
+ "n_pieces_ar": 16,
+ "n_pieces_en": 17,
+ "n_pieces_mark": 3,
+ "mark_k_cm_per_px": 0.4
+}

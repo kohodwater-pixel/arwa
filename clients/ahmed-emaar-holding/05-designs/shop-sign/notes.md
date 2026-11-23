@@ -88,3 +88,91 @@ In option A the name is about 20% larger than in v01, which had an alef of 12.3 
   - the logo is provisional;
   - the slab must be repaired before installation, and the cracks behind the sign are hidden in the image.
 - I did not make a dusk or LED version.
+
+---
+
+# v03 — raised letters directly on the wall, no panel (2026-11-23)
+
+**Status:** v03 is a new version for the client's change: "no background panel". The v02 files stay in place as the alternative with a panel. Nothing was archived this round.
+
+## What changed
+- Content is option A only: the mark, «أحمد إعمار القابضة» and AHMED EMAAR HOLDING.
+- There is no tagline and there are no corner accent lines.
+- The lettering is **250 cm wide overall, mark included**, by **44.6 cm** high. That leaves about 20–25 cm of clearance on each side to the exposed rebar and the column stubs (an estimate from the photo).
+
+## Placement
+- The **whole lockup sits on the wall above the crack line**:
+  - letter bottoms are about 60 cm above the slab's lower front edge, which is about 30 cm above the crack;
+  - letter tops are about 105 cm above that edge, which leaves about 30 cm below the top of the wall.
+- Why I chose this:
+  - the slab-edge face (about 30–40 cm) is the damaged strip, with cracks, spalling and exposed rebar;
+  - splitting the lockup across the crack would put letters on that strip or straddling it;
+  - the wall above is flush with the slab edge and has about 1 m of clear height.
+- All heights are estimates from one photo. The three site measurements are listed on the drawing.
+
+## Sizes and strokes (cm, real size)
+- **Mark:** 44.4 × 44.7. Bars are 4.2–4.7 wide and the thinnest part of the arch is 3.3.
+  - The swoosh tip is **blunted** where it would be thinner than about 1.5. This is a fabrication change to the provisional trace.
+- **Arabic name:**
+  - alef 17.0; letter-body height 12.0; full extent 31.2; width 196.5;
+  - stem 3.2; horizontal stroke 2.8.
+  - There are 8 small separate pieces, each pinned separately: 2 hamzas (5.8 × 5.2) and 6 dots (3.1 × 2.7).
+- **English name:**
+  - cap height 8.5; width 196.5; tracking 0.30 em;
+  - **Inter ExtraBold (800)** instead of 600, so that the horizontal bars reach about 1.5 cm;
+  - stem 2.1.
+- **Spacing:** Arabic baseline to English cap top 11.9 (lowest hamza to English cap top 4.5); mark to lettering 8.8.
+- **Every stroke is at least 1.5 cm.**
+- **Piece count:** mark 3, Arabic 16, English 17.
+- **Suggested depth:** mark and Arabic 5 cm, English 3 cm.
+- **Stand-off from the wall:** 15–20 mm.
+- **Fixing:** threaded studs with chemical anchors into sound concrete only, positioned with a 1:1 drilling template from the fabricator.
+
+## Weld checks (same as v02)
+- Each element is one outline: 3 paths in total.
+- The file has no stroke, no clipPath and no live text.
+- The nonzero and evenodd fill rules give 0 differing pixels.
+- Each text line, and the blunted mark, matches the raw overlapping parts at 0 differing pixels.
+
+## Contrast on the real wall
+- The wall was sampled from the site photo:
+  - sunlit plaster ground: about #F2F0EC;
+  - rose motif: about #B6AAA8;
+  - shaded soffit: about #605146.
+- WCAG ratios, comparing the swatch colour with the photo pixels (an indicator only):
+
+| Letter colour | Sunlit ground | Rose motif | Shaded soffit |
+|---|---|---|---|
+| Gold #D4A95F | **1.9** | **1.0** | 3.5 |
+| Navy #102232 | **14.2** | 7.2 | 2.1 |
+| Dark bronze #4A3A28 | 9.6 | 4.8 | 1.4 |
+| Gold face on a navy edge | edge vs wall 14.2; gold vs navy 7.4 | | |
+
+- The letters sit on the **sunlit** wall, so the sunlit columns are the ones that matter.
+- The shaded-soffit figures only show that the soffit is much darker than the wall. They are not where the letters will be.
+
+## Which variant reads (honest view)
+- **V1, all gold:**
+  - The ratio is 1.9 against the plaster and about 1.0 against the rose motif. Gold almost disappears into the pattern.
+  - In the mockup it reads mainly because of the dark returns and the cast shadows. These vanish in flat light (overcast, dusk, midday sun straight on).
+  - It does not meet even the 3:1 large-text threshold.
+- **V2, navy names with a gold mark:** best legibility (14:1). It keeps gold in the mark, but the lettering is no longer gold.
+- **V3, gold faces with navy returns and a navy backer edge:**
+  - It keeps the gold identity.
+  - The navy edge outlines every letter against the wall (14:1), and gold on navy is 7.4:1.
+  - It reads close to V2 at street distance, at a higher fabrication cost (backer plates).
+- **Recommendation:**
+  - V3 if the client wants the letters to stay gold.
+  - V2 if legibility comes first.
+  - Do not use V1 on this wall.
+
+## Viewing distance (rule of thumb: about 3 m per 1 cm of letter height)
+- **Arabic:** about 36 m, measured on the 12.0 cm letter-body height, not on the alef.
+- **English:** about 26 m.
+- **Intended viewing distance:** 20–30 m.
+
+## v02 minors from review r2
+- **Range order:** in the v02 Arabic note, "2.5–3.0 م" displays reversed, as 3.0–2.5. Fixing it would mean re-issuing v02, so I did not.
+  - The v03 drawing isolates every range and number as left-to-right text, so the order is correct there.
+  - v02 still carries the reversed range.
+- **Python cache folders:** `__pycache__/` is now ignored via `.gitignore` in both `_work` folders.
