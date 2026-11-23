@@ -1,7 +1,7 @@
 {
  "mark": {
   "h": 44.4,
-  "w": 44.7,
+  "w": 41.9,
   "stroke_min": 3.3,
   "stroke_bars": [
    4.2,
@@ -18,7 +18,7 @@
  },
  "name_en": {
   "cap": 8.5,
-  "tracking_em": 0.3,
+  "tracking_em": 0.26,
   "width": 196.5,
   "stem": 2.1,
   "bar": 1.5,
@@ -28,7 +28,7 @@
   "top": -0.0,
   "bottom": 44.4,
   "x_right": 250.0,
-  "mark_left": 205.3,
+  "mark_left": 208.1,
   "left": 0.0,
   "ar_top": 0.0,
   "ar_base": 23.9,
@@ -94,5 +94,7 @@
  "n_pieces_ar": 16,
  "n_pieces_en": 17,
  "n_pieces_mark": 3,
- "mark_k_cm_per_px": 0.4
+ "mark_k_cm_per_px": 0.4,
+ "mark_to_lettering_gap": 11.6,
+ "note": "mark width and mark_left re-measured from the v03 artwork after the swoosh tip cut (r3); tracking exact 0.256 em"
 }

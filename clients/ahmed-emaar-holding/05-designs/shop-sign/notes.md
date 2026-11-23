@@ -98,35 +98,35 @@ In option A the name is about 20% larger than in v01, which had an alef of 12.3 
 ## What changed
 - Content is option A only: the mark, «أحمد إعمار القابضة» and AHMED EMAAR HOLDING.
 - There is no tagline and there are no corner accent lines.
-- The lettering is **250 cm wide overall, mark included**, by **44.6 cm** high. That leaves about 20–25 cm of clearance on each side to the exposed rebar and the column stubs (an estimate from the photo).
+- The lettering is **250 cm wide overall, mark included**, by **44.6 cm** high. That leaves about 15–25 cm of clearance on each side to the exposed rebar and the column stubs (an estimate from the photo, pending site measurement).
 
 ## Placement
 - The **whole lockup sits on the wall above the crack line**:
-  - letter bottoms are about 60 cm above the slab's lower front edge, which is about 30 cm above the crack;
+  - letter bottoms are about 60 cm above the slab's lower front edge, which is about 35 cm above the crack (the crack is about 25 cm above that edge);
   - letter tops are about 105 cm above that edge, which leaves about 30 cm below the top of the wall.
 - Why I chose this:
   - the slab-edge face (about 30–40 cm) is the damaged strip, with cracks, spalling and exposed rebar;
   - splitting the lockup across the crack would put letters on that strip or straddling it;
-  - the wall above is flush with the slab edge and has about 1 m of clear height.
+  - the wall above is flush with the slab edge and has about 1 m of height. It is not fully sound: there is a vertical crack near the mark and the «أ», and there are pock holes under HOLDING.
 - All heights are estimates from one photo. The three site measurements are listed on the drawing.
 
 ## Sizes and strokes (cm, real size)
-- **Mark:** 44.4 × 44.7. Bars are 4.2–4.7 wide and the thinnest part of the arch is 3.3.
+- **Mark:** 44.4 high × 41.9 wide (re-measured from the artwork after the swoosh tip was cut). Bars are 4.2–4.7 wide and the thinnest part of the arch is 3.3.
   - The swoosh tip is **blunted** where it would be thinner than about 1.5. This is a fabrication change to the provisional trace.
 - **Arabic name:**
   - alef 17.0; letter-body height 12.0; full extent 31.2; width 196.5;
   - stem 3.2; horizontal stroke 2.8.
   - There are 8 small separate pieces, each pinned separately: 2 hamzas (5.8 × 5.2) and 6 dots (3.1 × 2.7).
 - **English name:**
-  - cap height 8.5; width 196.5; tracking 0.30 em;
+  - cap height 8.5; width 196.5; tracking 0.26 em (exactly 0.256);
   - **Inter ExtraBold (800)** instead of 600, so that the horizontal bars reach about 1.5 cm;
   - stem 2.1.
-- **Spacing:** Arabic baseline to English cap top 11.9 (lowest hamza to English cap top 4.5); mark to lettering 8.8.
-- **Every stroke is at least 1.5 cm.**
+- **Spacing:** Arabic baseline to English cap top 11.9 (lowest hamza to English cap top 4.5); mark to lettering 11.6.
+- **Every stroke is at least 1.5 cm.** Sharp corners are to be radiused by the fabricator. The small dots (about 3 cm) could be made as solid or shallower pieces.
 - **Piece count:** mark 3, Arabic 16, English 17.
 - **Suggested depth:** mark and Arabic 5 cm, English 3 cm.
 - **Stand-off from the wall:** 15–20 mm.
-- **Fixing:** threaded studs with chemical anchors into sound concrete only, positioned with a 1:1 drilling template from the fabricator.
+- **Fixing:** threaded studs with chemical anchors into sound concrete only, positioned with a 1:1 drilling template from the fabricator. The wall above the slab may be blockwork, so the substrate has to be identified on site and the anchor chosen to suit.
 
 ## Weld checks (same as v02)
 - Each element is one outline: 3 paths in total.
@@ -176,3 +176,21 @@ In option A the name is about 20% larger than in v01, which had an alef of 12.3 
   - The v03 drawing isolates every range and number as left-to-right text, so the order is correct there.
   - v02 still carries the reversed range.
 - **Python cache folders:** `__pycache__/` is now ignored via `.gitignore` in both `_work` folders.
+
+## v04 (review r3): drawing and V1 mockup only
+- New files:
+  - `letters-on-wall-technical-drawing_ar-en_v04.pdf`
+  - `letters-on-wall-mockup-site-v1-gold_ar-en_v04.png`
+- Their v03 versions are in `_archive/`. The artwork, V2 and V3 are unchanged at v03.
+- **Drawing corrections:**
+  - The mark is 44.4 × 41.9 cm, not 44.7 wide.
+  - The [8] mark-to-lettering gap is 11.6 cm, not 8.8. Both values were re-measured from the v03 artwork paths.
+  - English tracking is 0.26 em.
+  - The crack is given everywhere as about 25 cm above the slab edge, with the letters about 35 cm above it.
+  - The minimum-stroke row now says sharp corners are to be radiused.
+  - The fixing row now covers the substrate (the wall may be blockwork).
+  - The placement note now lists the vertical crack and the pock holes on the wall above.
+  - Side clearance is given as about 15–25 cm, pending measurement.
+  - The small dots are suggested as solid or shallower pieces.
+- **V1 caption:** now says, in Arabic first, then English, that gold measures about 1.9:1 against the sunlit plaster, reads mainly through its shadows, and is not recommended.
+- **Still open:** the V2 and V3 mockups were built with the old mark-width figure, which only enters the depth-offset estimate. The shift this causes is under 0.1 cm and is not visible.

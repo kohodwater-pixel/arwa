@@ -21,3 +21,8 @@ Each file contains three welded compound outlines (mark, Arabic name, English na
 1. **Swoosh tip and the middle bar.** The right end of the swoosh stops about 1.5 board px short of the middle bar. At this resolution the board does not show whether it touches the bar or stops short. The trace stops short.
 2. **Cut line under the swoosh.** The board shows a thin dark sliver under the swoosh, next to the left bar. It may be a cut that separates the swoosh from the bar, or it may only be a bevel shadow. The trace ignores it, so there is no cut.
 3. **Flag at the top of the tall bar.** The tall bar's roof wedge overhangs to the left over the gap, with a flat underside at about 96 board px. The size of the overhang and whether its tip touches the middle bar are uncertain. The trace keeps a small gap.
+
+## Fabrication changes used on the shop sign (v03/v04, letters on the wall)
+These apply to the sign's cut file only. They do not change the logo trace files.
+1. **Swoosh tip cut off** where it would be thinner than about 1.5 cm at sign size. This was cut at 151.6 board px, so the mark becomes 41.9 cm wide instead of 44.7 at 44.4 cm high.
+2. **English line set in Inter ExtraBold (800) instead of SemiBold (600)**, with tracking 0.26 em, so every stroke reaches about 1.5 cm when built as raised letters.
