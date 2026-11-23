@@ -25,3 +25,10 @@
 Client photo: `_originals/ahmed-emaar-holding_shopfront-photo_site.jpg`. Single shop bay with a beige rolling shutter and shutter housing, an overhanging concrete slab above it (front edge face + soffit), patterned beige plaster. Existing electrical boxes/conduit near the slab corners (possible power for lighting). The slab edge shows a long horizontal crack, spalling and exposed rebar stubs at both ends.
 - Creative Director ruling: the sign is designed as a fascia panel on the front face of the slab above this shutter, 2.5 m wide (client); height to be measured on site. Agency estimate from the photo only, to confirm: about 60 cm.
 - Safety note for the client (not a design matter): the slab edge must be inspected and repaired by a contractor before any sign is fixed to it.
+
+## Client change — 2026-11-23 (after seeing v02)
+«بس بدون خلفية حط اللوحة بحروف بارزة على الجدار مباشرة» — no background panel: raised (3D) letters fixed directly on the wall. Width still 2.5 m.
+Creative Director notes for v03:
+- Based on option A's content (mark + Arabic name + English name; no tagline) unless the client says otherwise.
+- Colour must be tested against the real wall: beige plaster with a rose floral pattern. Gold on beige is likely too weak; contrast is measured on the photo and alternatives are shown (see the designer brief).
+- Without a panel the crack and exposed rebar on the slab edge stay visible and the letters' fixings go into that concrete: repair before installation is even more important.
