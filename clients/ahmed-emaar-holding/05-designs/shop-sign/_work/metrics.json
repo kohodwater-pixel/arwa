@@ -1,0 +1,75 @@
+{
+ "W_cm": 250.0,
+ "H_cm": 60.0,
+ "a": {
+  "mark_height_cm": 32.0,
+  "mark_width_cm": 32.2,
+  "arabic_alef_height_cm": 12.3,
+  "arabic_full_extent_cm": 22.7,
+  "arabic_width_cm": 142.8,
+  "latin_cap_height_cm": 6.0,
+  "latin_tracking_em": 0.274,
+  "latin_width_cm": 142.8,
+  "lockup_width_cm": 182.0,
+  "_pos": {
+   "top": 14.0,
+   "bottom": 46.0,
+   "x_right": 215.99558480552957,
+   "mark_left": 183.7690361329632,
+   "text_right": 176.7690361329632,
+   "left": 34.0044151944704,
+   "ar_top": 14.0,
+   "ar_base": 31.367160753956522,
+   "ar_bottom": 36.699999999999996,
+   "lat_top": 39.919463087248324,
+   "lat_base": 46.0
+  },
+  "margins_cm": {
+   "top": 14.0,
+   "bottom": 14.0,
+   "right": 34.0,
+   "left": 34.0
+  }
+ },
+ "b": {
+  "mark_height_cm": 27.0,
+  "mark_width_cm": 27.2,
+  "arabic_alef_height_cm": 10.2,
+  "arabic_full_extent_cm": 18.8,
+  "arabic_width_cm": 118.1,
+  "latin_cap_height_cm": 5.3,
+  "latin_tracking_em": 0.213,
+  "latin_width_cm": 118.1,
+  "lockup_width_cm": 150.8,
+  "_pos": {
+   "top": 7.0,
+   "bottom": 34.0,
+   "x_right": 200.41679558092147,
+   "mark_left": 173.22564513844358,
+   "text_right": 167.72564513844358,
+   "left": 49.5832044190785,
+   "ar_top": 7.000000000000002,
+   "ar_base": 21.37189932876975,
+   "ar_bottom": 25.785,
+   "lat_top": 28.628859060402682,
+   "lat_base": 34.0
+  },
+  "tagline_alef_height_cm": 5.0,
+  "tagline_full_extent_cm": 6.8,
+  "tagline_width_cm": 107.5,
+  "_tag": {
+   "top": 46.18518196361234,
+   "base": 51.263685601809314,
+   "bottom": 53.0,
+   "x0": 71.27078544998602,
+   "x1": 178.72921455001398
+  },
+  "gap_lockup_to_tagline_cm": 12.2,
+  "margins_cm": {
+   "top": 7.0,
+   "bottom": 7.0,
+   "right": 49.6,
+   "left": 49.6
+  }
+ }
+}
