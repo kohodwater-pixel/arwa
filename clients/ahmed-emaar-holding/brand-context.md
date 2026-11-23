@@ -69,3 +69,4 @@
 |---|---|---|
 | 2026-11-23 | Shop sign v01, options A and B, shown to the client as drafts before review. Review r1: FAIL on fabrication-readiness (unwelded outlines, lighting note, tagline legibility, Arabic notes on mockups); v02 in progress | `05-designs/shop-sign/` |
 | 2026-11-23 | Sign v02 (panel, options A/B) sent; review r2 PASS WITH MINOR FIXES. Sign v03 (letters on wall, three colour variants) sent before its review at the client's pace; review r3 returned two text-level fixes (mark dimension on the drawing, contrast warning on the all-gold mockup) — drawing and V1 mockup v04 in progress | `05-designs/shop-sign/` |
+| 2026-11-23 | Letters-on-wall set sent: artwork v03, V2 and V3 mockups v03, technical drawing v04, V1 mockup v04. Review r4: PASS. Not approved by the client; not cleared for fabrication until colour, site measurements, logo, trade name and wall repair are settled | `05-designs/shop-sign/` |
