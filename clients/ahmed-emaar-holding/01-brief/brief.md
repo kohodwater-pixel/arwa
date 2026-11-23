@@ -20,3 +20,8 @@
 - Fascia sign 250 × 80 cm, single sided, landscape.
 - Construction suggested: navy ACP (aluminium composite) panel with raised 3D gold letters and logo, face- or halo-lit LED.
 - Content: logo + «أحمد إعمار القابضة» + "AHMED EMAAR HOLDING". Tagline optional (variant).
+
+## Site — 2026-11-23
+Client photo: `_originals/ahmed-emaar-holding_shopfront-photo_site.jpg`. Single shop bay with a beige rolling shutter and shutter housing, an overhanging concrete slab above it (front edge face + soffit), patterned beige plaster. Existing electrical boxes/conduit near the slab corners (possible power for lighting). The slab edge shows a long horizontal crack, spalling and exposed rebar stubs at both ends.
+- Creative Director ruling: the sign is designed as a fascia panel on the front face of the slab above this shutter, 2.5 m wide (client); height to be measured on site. Agency estimate from the photo only, to confirm: about 60 cm.
+- Safety note for the client (not a design matter): the slab edge must be inspected and repaired by a contractor before any sign is fixed to it.
