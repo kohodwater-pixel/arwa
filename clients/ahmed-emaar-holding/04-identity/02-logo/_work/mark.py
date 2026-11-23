@@ -33,7 +33,7 @@ def mark_paths():
     x0, x1, tip, under = 210.3, 222.3, 202.2, 96.2
     paths.append(f"M{x0},{B} L{x0},{under} L{tip},{under} L{tip},{L(tip):.2f} L{x1},{L(x1):.2f} L{x1},{B} Z")
     # crossbar to the arc (protrudes slightly into the gap, as in the reference)
-    paths.append("M207.6,136 L224,136 L224,146.2 L207.6,146.2 Z")
+    paths.append("M207.6,136 L223.2,136 L223.2,146 L207.6,146 Z")
     # arc (bowl) - outer ellipse c(223,178) 35.1x42, inner c(223,176) 26.8x30
     paths.append("M223,136 A35.1,42 0 0 1 258.1,178 L258.1,191 L249.8,191 L249.8,176 A26.8,30 0 0 0 223,146 Z")
     # foot with diagonal end
