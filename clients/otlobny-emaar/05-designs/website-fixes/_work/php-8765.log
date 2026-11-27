@@ -1202,3 +1202,285 @@
 [Fri Nov 27 23:50:41 2026] 127.0.0.1:35040 Accepted
 [Fri Nov 27 23:50:41 2026] 127.0.0.1:35040 [200]: GET /_fonts/IBMPlexSansArabic-SemiBold.ttf
 [Fri Nov 27 23:50:41 2026] 127.0.0.1:35040 Closing
+[Fri Nov 27 23:50:41 2026] 127.0.0.1:35044 Accepted
+[Fri Nov 27 23:50:41 2026] 127.0.0.1:35044 [404]: GET /?service=zzzz
+[Fri Nov 27 23:50:41 2026] 127.0.0.1:35044 Closing
+[Fri Nov 27 23:50:41 2026] 127.0.0.1:35046 Accepted
+[Fri Nov 27 23:50:41 2026] 127.0.0.1:35048 Accepted
+[Fri Nov 27 23:50:41 2026] 127.0.0.1:35054 Accepted
+[Fri Nov 27 23:50:41 2026] 127.0.0.1:35046 [200]: GET /assets/css/site.css?v=202611271900
+[Fri Nov 27 23:50:41 2026] 127.0.0.1:35048 [200]: GET /assets/js/site.js?v=202611271900
+[Fri Nov 27 23:50:41 2026] 127.0.0.1:35046 Closing
+[Fri Nov 27 23:50:41 2026] 127.0.0.1:35048 Closing
+[Fri Nov 27 23:50:41 2026] 127.0.0.1:35054 [200]: GET /assets/images/logo-test.svg
+[Fri Nov 27 23:50:41 2026] 127.0.0.1:35054 Closing
+[Fri Nov 27 23:50:41 2026] 127.0.0.1:35070 Accepted
+[Fri Nov 27 23:50:41 2026] 127.0.0.1:35076 Accepted
+[Fri Nov 27 23:50:41 2026] 127.0.0.1:35088 Accepted
+[Fri Nov 27 23:50:41 2026] 127.0.0.1:35070 [200]: GET /_fonts/IBMPlexSansArabic-Bold.ttf
+[Fri Nov 27 23:50:41 2026] 127.0.0.1:35070 Closing
+[Fri Nov 27 23:50:41 2026] 127.0.0.1:35076 [200]: GET /_fonts/IBMPlexSansArabic-Regular.ttf
+[Fri Nov 27 23:50:41 2026] 127.0.0.1:35076 Closing
+[Fri Nov 27 23:50:41 2026] 127.0.0.1:35088 [200]: GET /_fonts/IBMPlexSansArabic-SemiBold.ttf
+[Fri Nov 27 23:50:41 2026] 127.0.0.1:35088 Closing
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35100 Accepted
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35100 [301]: GET /?service=operation
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35100 Closing
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35104 Accepted
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35104 [200]: GET /
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35104 Closing
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35116 Accepted
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35116 [200]: GET /assets/css/site.css?v=202611271900
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35116 Closing
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35128 Accepted
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35136 Accepted
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35128 [200]: GET /assets/images/logo-test.svg
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35128 Closing
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35136 [200]: GET /assets/js/site.js?v=202611271900
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35136 Closing
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35142 Accepted
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35150 Accepted
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35142 [200]: GET /_fonts/IBMPlexSansArabic-Regular.ttf
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35150 [200]: GET /_fonts/IBMPlexSansArabic-Bold.ttf
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35142 Closing
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35150 Closing
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35158 Accepted
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35158 [200]: GET /_fonts/IBMPlexSansArabic-SemiBold.ttf
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35158 Closing
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35168 Accepted
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35180 Accepted
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35182 Accepted
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35186 Accepted
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35198 Accepted
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35168 [200]: GET /assets/images/project-01.png
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35168 Closing
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35180 [200]: GET /assets/images/project-02.png
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35180 Closing
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35182 [200]: GET /assets/images/project-default.jpg
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35182 Closing
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35186 [200]: GET /uploads/images/partner-01.png
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35198 [200]: GET /uploads/images/partner-02.png
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35186 Closing
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35198 Closing
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35212 Accepted
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35212 [200]: GET /uploads/images/partner-03.png
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35212 Closing
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35228 Accepted
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35232 Accepted
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35228 [200]: GET /uploads/images/partner-04.png
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35228 Closing
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35232 [200]: GET /uploads/images/partner-05.png
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35232 Closing
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35234 Accepted
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35234 [200]: GET /uploads/images/partner-06.png
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35234 Closing
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35250 Accepted
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35258 Accepted
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35250 [200]: GET /uploads/images/partner-07.png
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35250 Closing
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35258 [200]: GET /uploads/images/partner-08.png
+[Fri Nov 27 23:50:43 2026] 127.0.0.1:35258 Closing
+[Fri Nov 27 23:50:45 2026] 127.0.0.1:35266 Accepted
+[Fri Nov 27 23:50:45 2026] 127.0.0.1:35282 Accepted
+[Fri Nov 27 23:50:45 2026] 127.0.0.1:35294 Accepted
+[Fri Nov 27 23:50:45 2026] 127.0.0.1:35310 Accepted
+[Fri Nov 27 23:50:45 2026] 127.0.0.1:35326 Accepted
+[Fri Nov 27 23:50:45 2026] 127.0.0.1:35342 Accepted
+[Fri Nov 27 23:50:45 2026] 127.0.0.1:35266 [200]: GET /uploads/images/partner-09.png
+[Fri Nov 27 23:50:45 2026] 127.0.0.1:35282 [200]: GET /uploads/images/partner-10.png
+[Fri Nov 27 23:50:45 2026] 127.0.0.1:35266 Closing
+[Fri Nov 27 23:50:45 2026] 127.0.0.1:35294 [200]: GET /uploads/images/partner-11.png
+[Fri Nov 27 23:50:45 2026] 127.0.0.1:35282 Closing
+[Fri Nov 27 23:50:45 2026] 127.0.0.1:35294 Closing
+[Fri Nov 27 23:50:45 2026] 127.0.0.1:35310 [200]: GET /uploads/images/partner-12.png
+[Fri Nov 27 23:50:45 2026] 127.0.0.1:35310 Closing
+[Fri Nov 27 23:50:45 2026] 127.0.0.1:35326 [200]: GET /uploads/images/partner-13.png
+[Fri Nov 27 23:50:45 2026] 127.0.0.1:35326 Closing
+[Fri Nov 27 23:50:45 2026] 127.0.0.1:35342 [200]: GET /uploads/images/partner-14.png
+[Fri Nov 27 23:50:45 2026] 127.0.0.1:35342 Closing
+[Fri Nov 27 23:50:45 2026] 127.0.0.1:35354 Accepted
+[Fri Nov 27 23:50:45 2026] 127.0.0.1:35354 [200]: GET /uploads/images/partner-15.png
+[Fri Nov 27 23:50:45 2026] 127.0.0.1:35354 Closing
+[Fri Nov 27 23:50:45 2026] 127.0.0.1:35366 Accepted
+[Fri Nov 27 23:50:45 2026] 127.0.0.1:35366 [200]: GET /uploads/images/partner-16.png
+[Fri Nov 27 23:50:45 2026] 127.0.0.1:35366 Closing
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51284 Accepted
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51284 [200]: GET /?service=contracting
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51284 Closing
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51298 Accepted
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51298 [200]: GET /assets/css/site.css?v=202611271900
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51298 Closing
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51304 Accepted
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51320 Accepted
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51304 [200]: GET /assets/js/site.js?v=202611271900
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51304 Closing
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51320 [200]: GET /assets/images/logo-test.svg
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51320 Closing
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51326 Accepted
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51334 Accepted
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51346 Accepted
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51326 [200]: GET /_fonts/IBMPlexSansArabic-Regular.ttf
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51326 Closing
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51334 [200]: GET /_fonts/IBMPlexSansArabic-SemiBold.ttf
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51334 Closing
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51346 [200]: GET /_fonts/IBMPlexSansArabic-Bold.ttf
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51346 Closing
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51360 Accepted
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51360 [404]: GET /?service=zzzz
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51360 Closing
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51374 Accepted
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51390 Accepted
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51392 Accepted
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51374 [200]: GET /assets/css/site.css?v=202611271900
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51374 Closing
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51390 [200]: GET /assets/js/site.js?v=202611271900
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51392 [200]: GET /assets/images/logo-test.svg
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51390 Closing
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51392 Closing
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51396 Accepted
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51396 [200]: GET /_fonts/IBMPlexSansArabic-Bold.ttf
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51396 Closing
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51398 Accepted
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51412 Accepted
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51398 [200]: GET /_fonts/IBMPlexSansArabic-Regular.ttf
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51412 [200]: GET /_fonts/IBMPlexSansArabic-SemiBold.ttf
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51398 Closing
+[Fri Nov 27 23:50:48 2026] 127.0.0.1:51412 Closing
+[Fri Nov 27 23:50:50 2026] 127.0.0.1:51428 Accepted
+[Fri Nov 27 23:50:50 2026] 127.0.0.1:51428 [301]: GET /?service=operation
+[Fri Nov 27 23:50:50 2026] 127.0.0.1:51428 Closing
+[Fri Nov 27 23:50:50 2026] 127.0.0.1:51438 Accepted
+[Fri Nov 27 23:50:50 2026] 127.0.0.1:51438 [200]: GET /
+[Fri Nov 27 23:50:50 2026] 127.0.0.1:51438 Closing
+[Fri Nov 27 23:50:50 2026] 127.0.0.1:51444 Accepted
+[Fri Nov 27 23:50:50 2026] 127.0.0.1:51452 Accepted
+[Fri Nov 27 23:50:50 2026] 127.0.0.1:51444 [200]: GET /assets/css/site.css?v=202611271900
+[Fri Nov 27 23:50:50 2026] 127.0.0.1:51444 Closing
+[Fri Nov 27 23:50:50 2026] 127.0.0.1:51452 [200]: GET /assets/images/logo-test.svg
+[Fri Nov 27 23:50:50 2026] 127.0.0.1:51452 Closing
+[Fri Nov 27 23:50:50 2026] 127.0.0.1:51456 Accepted
+[Fri Nov 27 23:50:50 2026] 127.0.0.1:51456 [200]: GET /assets/js/site.js?v=202611271900
+[Fri Nov 27 23:50:50 2026] 127.0.0.1:51456 Closing
+[Fri Nov 27 23:50:50 2026] 127.0.0.1:51464 Accepted
+[Fri Nov 27 23:50:50 2026] 127.0.0.1:51472 Accepted
+[Fri Nov 27 23:50:50 2026] 127.0.0.1:51474 Accepted
+[Fri Nov 27 23:50:50 2026] 127.0.0.1:51464 [200]: GET /_fonts/IBMPlexSansArabic-Regular.ttf
+[Fri Nov 27 23:50:50 2026] 127.0.0.1:51464 Closing
+[Fri Nov 27 23:50:50 2026] 127.0.0.1:51472 [200]: GET /_fonts/IBMPlexSansArabic-Bold.ttf
+[Fri Nov 27 23:50:50 2026] 127.0.0.1:51472 Closing
+[Fri Nov 27 23:50:50 2026] 127.0.0.1:51474 [200]: GET /_fonts/IBMPlexSansArabic-SemiBold.ttf
+[Fri Nov 27 23:50:50 2026] 127.0.0.1:51474 Closing
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51488 Accepted
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51488 [200]: GET /assets/images/project-01.png
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51488 Closing
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51500 Accepted
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51500 [200]: GET /assets/images/project-02.png
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51500 Closing
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51506 Accepted
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51506 [200]: GET /assets/images/project-default.jpg
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51506 Closing
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51510 Accepted
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51520 Accepted
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51522 Accepted
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51510 [200]: GET /uploads/images/partner-01.png
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51520 [200]: GET /uploads/images/partner-02.png
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51522 [200]: GET /uploads/images/partner-03.png
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51510 Closing
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51520 Closing
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51522 Closing
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51526 Accepted
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51540 Accepted
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51546 Accepted
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51526 [200]: GET /uploads/images/partner-04.png
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51540 [200]: GET /uploads/images/partner-05.png
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51546 [200]: GET /uploads/images/partner-06.png
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51526 Closing
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51540 Closing
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51546 Closing
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51550 Accepted
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51560 Accepted
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51550 [200]: GET /uploads/images/partner-07.png
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51568 Accepted
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51550 Closing
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51560 [200]: GET /uploads/images/partner-08.png
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51560 Closing
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51568 [200]: GET /uploads/images/partner-09.png
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51568 Closing
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51580 Accepted
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51592 Accepted
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51580 [200]: GET /uploads/images/partner-10.png
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51604 Accepted
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51592 [200]: GET /uploads/images/partner-11.png
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51604 [200]: GET /uploads/images/partner-12.png
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51580 Closing
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51592 Closing
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51604 Closing
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51616 Accepted
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51628 Accepted
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51640 Accepted
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51616 [200]: GET /uploads/images/partner-13.png
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51628 [200]: GET /uploads/images/partner-14.png
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51640 [200]: GET /uploads/images/partner-15.png
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51616 Closing
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51628 Closing
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51640 Closing
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51644 Accepted
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51644 [200]: GET /uploads/images/partner-16.png
+[Fri Nov 27 23:50:52 2026] 127.0.0.1:51644 Closing
+[Fri Nov 27 23:50:55 2026] 127.0.0.1:51648 Accepted
+[Fri Nov 27 23:50:55 2026] 127.0.0.1:51648 [200]: GET /?service=contracting
+[Fri Nov 27 23:50:55 2026] 127.0.0.1:51648 Closing
+[Fri Nov 27 23:50:55 2026] 127.0.0.1:51656 Accepted
+[Fri Nov 27 23:50:55 2026] 127.0.0.1:51672 Accepted
+[Fri Nov 27 23:50:55 2026] 127.0.0.1:51678 Accepted
+[Fri Nov 27 23:50:55 2026] 127.0.0.1:51656 [200]: GET /assets/css/site.css?v=202611271900
+[Fri Nov 27 23:50:55 2026] 127.0.0.1:51672 [200]: GET /assets/js/site.js?v=202611271900
+[Fri Nov 27 23:50:55 2026] 127.0.0.1:51678 [200]: GET /assets/images/logo-test.svg
+[Fri Nov 27 23:50:55 2026] 127.0.0.1:51656 Closing
+[Fri Nov 27 23:50:55 2026] 127.0.0.1:51672 Closing
+[Fri Nov 27 23:50:55 2026] 127.0.0.1:51678 Closing
+[Fri Nov 27 23:50:55 2026] 127.0.0.1:51690 Accepted
+[Fri Nov 27 23:50:55 2026] 127.0.0.1:51692 Accepted
+[Fri Nov 27 23:50:55 2026] 127.0.0.1:51690 [200]: GET /_fonts/IBMPlexSansArabic-Bold.ttf
+[Fri Nov 27 23:50:55 2026] 127.0.0.1:51692 [200]: GET /_fonts/IBMPlexSansArabic-Regular.ttf
+[Fri Nov 27 23:50:55 2026] 127.0.0.1:51690 Closing
+[Fri Nov 27 23:50:55 2026] 127.0.0.1:51692 Closing
+[Fri Nov 27 23:50:55 2026] 127.0.0.1:51702 Accepted
+[Fri Nov 27 23:50:55 2026] 127.0.0.1:51702 [200]: GET /_fonts/IBMPlexSansArabic-SemiBold.ttf
+[Fri Nov 27 23:50:55 2026] 127.0.0.1:51702 Closing
+[Fri Nov 27 23:50:56 2026] 127.0.0.1:44152 Accepted
+[Fri Nov 27 23:50:56 2026] 127.0.0.1:44152 [404]: GET /?service=zzzz
+[Fri Nov 27 23:50:56 2026] 127.0.0.1:44152 Closing
+[Fri Nov 27 23:50:56 2026] 127.0.0.1:44164 Accepted
+[Fri Nov 27 23:50:56 2026] 127.0.0.1:44164 [200]: GET /assets/css/site.css?v=202611271900
+[Fri Nov 27 23:50:56 2026] 127.0.0.1:44164 Closing
+[Fri Nov 27 23:50:56 2026] 127.0.0.1:44174 Accepted
+[Fri Nov 27 23:50:56 2026] 127.0.0.1:44190 Accepted
+[Fri Nov 27 23:50:56 2026] 127.0.0.1:44174 [200]: GET /assets/js/site.js?v=202611271900
+[Fri Nov 27 23:50:56 2026] 127.0.0.1:44190 [200]: GET /assets/images/logo-test.svg
+[Fri Nov 27 23:50:56 2026] 127.0.0.1:44174 Closing
+[Fri Nov 27 23:50:56 2026] 127.0.0.1:44190 Closing
+[Fri Nov 27 23:50:56 2026] 127.0.0.1:44192 Accepted
+[Fri Nov 27 23:50:56 2026] 127.0.0.1:44194 Accepted
+[Fri Nov 27 23:50:56 2026] 127.0.0.1:44192 [200]: GET /_fonts/IBMPlexSansArabic-Bold.ttf
+[Fri Nov 27 23:50:56 2026] 127.0.0.1:44200 Accepted
+[Fri Nov 27 23:50:56 2026] 127.0.0.1:44194 [200]: GET /_fonts/IBMPlexSansArabic-Regular.ttf
+[Fri Nov 27 23:50:56 2026] 127.0.0.1:44200 [200]: GET /_fonts/IBMPlexSansArabic-SemiBold.ttf
+[Fri Nov 27 23:50:56 2026] 127.0.0.1:44192 Closing
+[Fri Nov 27 23:50:56 2026] 127.0.0.1:44194 Closing
+[Fri Nov 27 23:50:56 2026] 127.0.0.1:44200 Closing
+[Fri Nov 27 23:50:58 2026] 127.0.0.1:44214 Accepted
+[Fri Nov 27 23:50:58 2026] 127.0.0.1:44214 [301]: GET /?service=operation
+[Fri Nov 27 23:50:58 2026] 127.0.0.1:44214 Closing
+[Fri Nov 27 23:50:59 2026] 127.0.0.1:44228 Accepted
+[Fri Nov 27 23:50:59 2026] 127.0.0.1:44228 [200]: GET /
+[Fri Nov 27 23:50:59 2026] 127.0.0.1:44228 Closing
+[Fri Nov 27 23:50:59 2026] 127.0.0.1:44240 Accepted
+[Fri Nov 27 23:50:59 2026] 127.0.0.1:44240 [200]: GET /?service=contracting
+[Fri Nov 27 23:50:59 2026] 127.0.0.1:44240 Closing
+[Fri Nov 27 23:50:59 2026] 127.0.0.1:44252 Accepted
+[Fri Nov 27 23:50:59 2026] 127.0.0.1:44252 [200]: GET /?service=landscaping
+[Fri Nov 27 23:50:59 2026] 127.0.0.1:44252 Closing
+[Fri Nov 27 23:50:59 2026] 127.0.0.1:44254 Accepted
+[Fri Nov 27 23:50:59 2026] 127.0.0.1:44254 [404]: GET /?service=zzzz
+[Fri Nov 27 23:50:59 2026] 127.0.0.1:44254 Closing

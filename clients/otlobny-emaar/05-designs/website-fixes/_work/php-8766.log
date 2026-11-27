@@ -44,3 +44,18 @@
 [Fri Nov 27 23:49:50 2026] 127.0.0.1:58064 Accepted
 [Fri Nov 27 23:49:50 2026] 127.0.0.1:58064 [200]: GET /assets/images/project-01.png
 [Fri Nov 27 23:49:50 2026] 127.0.0.1:58064 Closing
+[Fri Nov 27 23:50:58 2026] 127.0.0.1:40876 Accepted
+[Fri Nov 27 23:50:58 2026] 127.0.0.1:40876 [200]: GET /
+[Fri Nov 27 23:50:58 2026] 127.0.0.1:40876 Closing
+[Fri Nov 27 23:50:58 2026] 127.0.0.1:40878 Accepted
+[Fri Nov 27 23:50:58 2026] 127.0.0.1:40880 Accepted
+[Fri Nov 27 23:50:58 2026] 127.0.0.1:40886 Accepted
+[Fri Nov 27 23:50:58 2026] 127.0.0.1:40878 [200]: GET /assets/css/site.css?v=202611271900
+[Fri Nov 27 23:50:58 2026] 127.0.0.1:40880 [200]: GET /assets/images/logo-test.svg
+[Fri Nov 27 23:50:58 2026] 127.0.0.1:40878 Closing
+[Fri Nov 27 23:50:58 2026] 127.0.0.1:40886 [200]: GET /assets/js/site.js?v=202611271900
+[Fri Nov 27 23:50:58 2026] 127.0.0.1:40880 Closing
+[Fri Nov 27 23:50:58 2026] 127.0.0.1:40886 Closing
+[Fri Nov 27 23:50:58 2026] 127.0.0.1:40900 Accepted
+[Fri Nov 27 23:50:58 2026] 127.0.0.1:40900 [200]: GET /assets/images/project-01.png
+[Fri Nov 27 23:50:58 2026] 127.0.0.1:40900 Closing

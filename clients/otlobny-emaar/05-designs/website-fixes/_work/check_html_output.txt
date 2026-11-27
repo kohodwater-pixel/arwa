@@ -1,0 +1,206 @@
+
+===== 8765 / 200
+title      : اطلبني | شركة تشغيل وصيانة ونظافة للمنشآت في المدينة المنورة
+description: شركة اطلبني اعمار: خدمات التشغيل والصيانة والنظافة والضيافة وتأمين الكوادر والمقاولات للمنشآت، مقرها المدينة المنورة وتخدم جميع مناطق المملكة.
+robots     : index,follow
+og:title   : اطلبني | شركة تشغيل وصيانة ونظافة للمنشآت في المدينة المنورة
+og:description: شركة اطلبني اعمار: خدمات التشغيل والصيانة والنظافة والضيافة وتأمين الكوادر والمقاولات للمنشآت، مقرها المدينة المنورة وتخدم جميع مناطق المملكة.
+og:url     : https://otlobny.net/
+og:type    : website
+og:site_name: اطلبني
+og:locale  : ar_SA
+og:image   : https://otlobny.net/assets/images/logo-test.svg
+canonical  : https://otlobny.net/
+css/js     : ['site.css?v=202611271900', 'site.js?v=202611271900'] data-theme: dark
+json-ld blocks: 1
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Organization",
+    "ProfessionalService"
+   ],
+   "@id": "https://otlobny.net/#organization",
+   "name": "اطلبني",
+   "legalName": "شركة اطلبني اعمار",
+   "alternateName": [
+    "اطلبني اعمار",
+    "أطلبني",
+    "OTLOBNY",
+    "OTLOBNY Emar"
+   ],
+   "url": "https://otlobny.net/",
+   "logo": "https://otlobny.net/assets/images/logo-test.svg",
+   "image": "https://otlobny.net/assets/images/logo-test.svg",
+   "description": "شركة اطلبني اعمار: خدمات التشغيل والصيانة والنظافة والضيافة وتأمين الكوادر والمقاولات للمنشآت، مقرها المدينة المنورة وتخدم جميع مناطق المملكة.",
+   "email": "info@otlobny.co",
+   "telephone": "+966549555514",
+   "identifier": {
+    "@type": "PropertyValue",
+    "name": "الرقم الوطني الموحد",
+    "value": "7029232878"
+   },
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "6710 بنى معاوية 5، حي بني معاوية",
+    "addressLocality": "المدينة المنورة",
+    "postalCode": "42313",
+    "addressCountry": "SA"
+   },
+   "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+966549555514",
+    "contactType": "customer service",
+    "availableLanguage": "ar"
+   },
+   "areaServed": {
+    "@type": "Country",
+    "name": "المملكة العربية السعودية"
+   }
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://otlobny.net/#website",
+   "url": "https://otlobny.net/",
+   "name": "اطلبني",
+   "inLanguage": "ar",
+   "publisher": {
+    "@id": "https://otlobny.net/#organization"
+   }
+  }
+ ]
+}
+hamza-form count in HTML: 4 | header/footer/chat present: True True True True
+project labels: ['أعمال النظافة والضيافة', 'أعمال النظافة والضيافة', 'خدمات اطلبني']
+footer:  |  |  | اطلبني |  | خدمات التشغيل والصيانة والنظافة للمنشآت |  |  |  |  | +966549555514 |  |  | info@otlobny.co |  | واتساب |  |  |  | شركة اطلبني اعمار — شركة ذات مسؤولية محدودة (شركة شخص واحد)، المدينة المنورة |  | الرقم الوطني الموحد: 7029232878 |  | 6710 بنى معاوية 5، حي بني معاوية، المدينة المنورة  | 42313-5041 | ، المملكة العربية السعودية |  |  | © 2026 شركة اطلبني اعمار. جميع الحقوق محفوظة. |  | 
+header small: خدمات التشغيل والصيانة والنظافة للمنشآت
+service titles: [('01', 'أعمال الصيانة'), ('02', 'أعمال النظافة والضيافة'), ('03', 'المقاولات العامة'), ('04', 'تأمين الكوادر'), ('05', 'التشجير وتنسيق الحدائق'), ('06', 'الخدمات اللوجستية'), ('07', 'تأمين كوادر وعمالة فندقية'), ('08', 'توفير عمال نظافة للمنشآت'), ('09', 'تشغيل وصيانة الفنادق')]
+chat: [('مرشد اطلبني', ''), ('', 'مرحبًا، أنا مرشد اطلبني. أخبرني عن منشأتك وما الخدمة التي تحتاجها.')]
+imgs: ['<img src="/assets/images/logo-test.svg" alt="اطلبني" width="57" height="57">', '<img class="hero-logo" src="/assets/images/logo-test.svg" alt="اطلبني">', '<img src="/assets/images/project-01.png" alt="فريق نظافة محترف" loading="lazy" decoding="async">', '<img src="/assets/images/project-02.png" alt="تشغيل نظافة متكامل" loading="lazy" decoding="async">']
+
+===== 8765 /?service=contracting 200
+title      : المقاولات العامة | اطلبني
+description: أعمال ترميم وإنشاء وكهرباء وميكانيكا.
+robots     : index,follow
+og:title   : المقاولات العامة | اطلبني
+og:description: أعمال ترميم وإنشاء وكهرباء وميكانيكا.
+og:url     : https://otlobny.net/?service=contracting
+og:type    : website
+og:site_name: اطلبني
+og:locale  : ar_SA
+og:image   : https://otlobny.net/assets/images/logo-test.svg
+canonical  : https://otlobny.net/?service=contracting
+css/js     : ['site.css?v=202611271900', 'site.js?v=202611271900'] data-theme: dark
+json-ld blocks: 1
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Service",
+   "@id": "https://otlobny.net/?service=contracting#service",
+   "name": "المقاولات العامة",
+   "serviceType": "المقاولات العامة",
+   "description": "ندير نطاق الأعمال من الدراسة إلى التنفيذ في أعمال المقاولات والترميم والتشطيبات والخدمات الفنية.",
+   "provider": {
+    "@id": "https://otlobny.net/#organization"
+   },
+   "areaServed": {
+    "@type": "Country",
+    "name": "المملكة العربية السعودية"
+   },
+   "url": "https://otlobny.net/?service=contracting"
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://otlobny.net/?service=contracting#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "الرئيسية",
+     "item": "https://otlobny.net/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "المقاولات العامة",
+     "item": "https://otlobny.net/?service=contracting"
+    }
+   ]
+  }
+ ]
+}
+hamza-form count in HTML: 0 | header/footer/chat present: True True True True
+main: ||← العودة للرئيسية||تنفيذ مدروس||المقاولات العامة||ندير نطاق الأعمال من الدراسة إلى التنفيذ في أعمال المقاولات والترميم والتشطيبات والخدمات الفنية.||||مزايا الخدمة|||نطاق واضح||تنسيق فني||تنفيذ منظم|||||كيف ننفذ العمل؟|||دراسة المشروع||خطة التنفيذ||تسليم الأعمال|||||اطلب عرض سعر لهذه الخدمة||
+
+===== 8765 /?service=landscaping 200
+title      : التشجير وتنسيق الحدائق | اطلبني
+description: تشجير وتنسيق حدائق وصيانة المنتزهات وأجهزة الري.
+robots     : index,follow
+og:title   : التشجير وتنسيق الحدائق | اطلبني
+og:description: تشجير وتنسيق حدائق وصيانة المنتزهات وأجهزة الري.
+og:url     : https://otlobny.net/?service=landscaping
+og:type    : website
+og:site_name: اطلبني
+og:locale  : ar_SA
+og:image   : https://otlobny.net/assets/images/logo-test.svg
+canonical  : https://otlobny.net/?service=landscaping
+css/js     : ['site.css?v=202611271900', 'site.js?v=202611271900'] data-theme: dark
+json-ld blocks: 1
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Service",
+   "@id": "https://otlobny.net/?service=landscaping#service",
+   "name": "التشجير وتنسيق الحدائق",
+   "serviceType": "التشجير وتنسيق الحدائق",
+   "description": "تنفذ اطلبني أعمال التشجير وتنسيق الحدائق، وصيانة المنتزهات وأشجار الشوارع وما يتصل بها من أجهزة الري.",
+   "provider": {
+    "@id": "https://otlobny.net/#organization"
+   },
+   "areaServed": {
+    "@type": "Country",
+    "name": "المملكة العربية السعودية"
+   },
+   "url": "https://otlobny.net/?service=landscaping"
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://otlobny.net/?service=landscaping#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "الرئيسية",
+     "item": "https://otlobny.net/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "التشجير وتنسيق الحدائق",
+     "item": "https://otlobny.net/?service=landscaping"
+    }
+   ]
+  }
+ ]
+}
+hamza-form count in HTML: 0 | header/footer/chat present: True True True True
+
+===== 8765 /?service=zzzz 404
+title      : الصفحة غير موجودة | اطلبني
+description: None
+robots     : noindex
+og:title   : None
+og:description: None
+og:url     : None
+og:type    : None
+og:site_name: None
+og:locale  : None
+og:image   : None
+canonical  : None
+css/js     : ['site.css?v=202611271900', 'site.js?v=202611271900'] data-theme: dark
+json-ld blocks: 0
+hamza-form count in HTML: 0 | header/footer/chat present: True True True True
+main: ||404||الخدمة غير موجودة||الرابط الذي فتحته غير متاح. يمكنك العودة إلى الصفحة الرئيسية أو طلب عرض سعر.|||العودة للرئيسية||اطلب عرض سعر|||
