@@ -49,6 +49,8 @@ Do not:
 
 ## 1a. Lockup v02 (added 2026-11-14; supersedes the v01 lockup proposal)
 
+> **Superseded on 2026-11-27 by lockup v03 (section 1b).** The v02 files are kept in `04-identity/02-logo/` for the record and must not be used in new work. The colour table, clear space and "do not" list below still apply to v03.
+
 Status: **name strings are an agency decision pending client confirmation** (`03-strategy/name-decision_2026-11-14.md`). Layout follows the client's reference image `_originals/client-uploads_2026-11-14/logo-lockup_client-proposal.png` (arrangement only; nothing traced). The v01 lockup files («… / OTLOBNY Emaar Co.») are superseded and must not be used.
 
 Files in `04-identity/02-logo/` (SVG, paths only, no live text, viewBox 307.711 × 138.25): `otlobny-emaar_logo_lockup-{colour,reversed,white,navy}_ar-en_v02.svg`. Previews: `02-logo/_work/*_v02_transparent.png` (2000 px) and `02-logo/_work/sheet_lockup_v02_all-versions_small-size-test.png`.
@@ -78,6 +80,35 @@ Clear space: X = the width of the alef (21.34 units, 6.9% of the logo width) on 
 Minimum size of the lockup: **45 mm wide in print** (Arabic about 7.5 pt, English about 5.2 pt with 1.3 mm caps) and **320 px wide on screen** (Arabic 18.8 px, English caps 9.2 px). Tested at 45 mm, 30 mm and 20 mm (300 dpi) and at 320, 240 and 160 px: at 30 mm the English line is 3.5 pt and at 20 mm 2.3 pt, too small to rely on; at 240 px the caps are 7 px high (borderline). **Below 45 mm / 320 px use the wordmark alone** (its own minimum is 16 px / 10 mm high).
 
 Do not: re-set the descriptor in live text or another typeface; track the Arabic; change the descriptor's position, size or width; use green for the descriptor; use the v01 lockup.
+
+## 1b. Lockup v03 (added 2026-11-27; supersedes v02) — current
+
+Reason: the descriptor now carries the company's **registered name**. The client showed the commercial registration certificate on 2026-11-27 (registered name «شركة اطلبني اعمار»; the certificate is not filed, at his instruction) and approved the same day that the lockup follows it (`brand-context.md`, log of 2026-11-27). The Latin line is the client-approved "OTLOBNY EMAR COMPANY"; there is no registered Latin name. Not a trademark clearance.
+
+Files in `04-identity/02-logo/` (SVG, paths only, no live text, viewBox **307.711 × 141.848**): `otlobny-emaar_logo_lockup-{colour,reversed,white,navy}_ar-en_v03.svg`. The v02 and v01 lockup files stay in the folder, superseded (this folder keeps superseded lockups in place; nothing was moved or deleted).
+
+Strings:
+- Arabic: «شركة اطلبني اعمار» — «اعمار» with a plain alef (U+0627), **no hamza**; no «المحدودة»
+- English: "OTLOBNY EMAR COMPANY" — no "LTD.", no full stop
+
+What changed from v02: the descriptor only. The wordmark paths are identical to v02 (and to the v01 wordmark files), in the same position. Typefaces, colours per version, right alignment, top alignment, line gap and outlining are the same; built with the v02 scripts (`02-logo/_work/lockup-v03_build/final.py` calls `lockup-v02_build/shape.py` and `build.py`).
+
+Construction (units of the wordmark viewBox; v02 value in brackets where it differs):
+- Descriptor block: ink right edge on the wordmark's right edge (x = 307.711), ink left edge at **x = 136.35** [85.71], the right edge of the stem left of the lam. Block width **171.36 = 55.7% of the wordmark width** [222.0 = 72%], the same for both lines. Clear of the pill by 69.0 [18.3].
+- Arabic line: Tajawal Bold, **21.02 units** [18.05], no letter-spacing, shaped with HarfBuzz. Top of the ink on the top of the pill (y = 103.26) as before; ink height 25.4 [21.8], so the line now ends 4.1 units below the pill. Closest approach to the wordmark: 11.4 [10.4].
+- English line: IBM Plex Sans SemiBold capitals, 12.61 units, cap height 8.8 — **unchanged**; tracking **+0.063 em** [+0.127], set so its ink width equals the Arabic line. Gap from the lowest Arabic ink to the cap line 4.2, unchanged; baseline y = 141.70 [138.10].
+
+Why the block was re-balanced this way: the new Arabic string is 34% shorter than the old one but the English only 15% shorter, so the v02 sizes cannot both be kept with two lines of equal width (Arabic at 18.05 is 147 wide; the English at its v02 size is 156 wide with no tracking at all). The English line was the limit on legibility in v02, so its size is held and the minimum size does not move; the Arabic is enlarged 16.5% and the English tracking halved until the two meet. Keeping the v02 tracking instead would have needed Arabic 27% larger (ink 27.7 high, heavier than the pill beside it); keeping the v02 Arabic size would have needed the English capitals 14% smaller and a larger minimum size. Candidates: `02-logo/_work/lockup-v03_build/candidates_v03_width.png`.
+
+Size and proportion: the lockup is **3.6 units taller** than v02 (141.848 against 138.25; aspect ratio 2.169:1 against 2.226:1). Placed at the same width it is 2.6% taller: 20.7 mm high at 45 mm wide (v02: 20.2 mm). The wordmark inside it is the same size and in the same place when the lockup is placed at the same width and aligned by its top edge.
+
+Colour by version, clear space (X = alef width, 21.34 units, measured from the star badge at the top and the English line at the bottom) and the "do not" list: as section 1a.
+
+Minimum size: **unchanged — 45 mm wide in print, 320 px wide on screen.** At 45 mm the Arabic is about 8.7 pt (v02: 7.5 pt) and the English 5.2 pt with 1.3 mm capitals (as v02); at 320 px the Arabic is 21.9 px and the English capitals 9.2 px. Re-tested at 45, 30 and 20 mm (300 dpi) and at 320, 240 and 160 px: `02-logo/_work/sheet_lockup_v03_all-versions_small-size-test.png`. Below 45 mm / 320 px use the wordmark alone.
+
+Previews (in `02-logo/_work/`): `*_v03_on-white.png`, `*_v03_on-tint.png`, `*_v03_on-navy.png`, `*_v03_on-blue.png`, `*_v03_transparent.png`; v02 against v03: `compare_lockup_v02-left_v03-right.png`.
+
+Not made at this stage, as for v02: black version, vector PDF and 1x/2x/4x PNG exports (final delivery, section 5 point 6).
 
 ## 2. Colour
 

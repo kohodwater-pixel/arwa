@@ -1,1 +1,46 @@
 [Fri Nov 27 23:46:12 2026] PHP 8.3.6 Development Server (http://127.0.0.1:8766) started
+[Fri Nov 27 23:47:43 2026] 127.0.0.1:44714 Accepted
+[Fri Nov 27 23:47:43 2026] 127.0.0.1:44714 [200]: GET /
+[Fri Nov 27 23:47:43 2026] 127.0.0.1:44714 Closing
+[Fri Nov 27 23:47:43 2026] 127.0.0.1:44728 Accepted
+[Fri Nov 27 23:47:43 2026] 127.0.0.1:44738 Accepted
+[Fri Nov 27 23:47:43 2026] 127.0.0.1:44728 [200]: GET /assets/css/site.css?v=202611271900
+[Fri Nov 27 23:47:43 2026] 127.0.0.1:44738 [200]: GET /assets/images/logo-test.svg
+[Fri Nov 27 23:47:43 2026] 127.0.0.1:44728 Closing
+[Fri Nov 27 23:47:43 2026] 127.0.0.1:44738 Closing
+[Fri Nov 27 23:47:43 2026] 127.0.0.1:44754 Accepted
+[Fri Nov 27 23:47:43 2026] 127.0.0.1:44754 [200]: GET /assets/js/site.js?v=202611271900
+[Fri Nov 27 23:47:43 2026] 127.0.0.1:44754 Closing
+[Fri Nov 27 23:47:43 2026] 127.0.0.1:44768 Accepted
+[Fri Nov 27 23:47:43 2026] 127.0.0.1:44768 [200]: GET /assets/images/project-01.png
+[Fri Nov 27 23:47:43 2026] 127.0.0.1:44768 Closing
+[Fri Nov 27 23:48:59 2026] 127.0.0.1:33148 Accepted
+[Fri Nov 27 23:48:59 2026] 127.0.0.1:33148 [200]: GET /
+[Fri Nov 27 23:48:59 2026] 127.0.0.1:33148 Closing
+[Fri Nov 27 23:48:59 2026] 127.0.0.1:33160 Accepted
+[Fri Nov 27 23:48:59 2026] 127.0.0.1:33172 Accepted
+[Fri Nov 27 23:48:59 2026] 127.0.0.1:33160 [200]: GET /assets/css/site.css?v=202611271900
+[Fri Nov 27 23:48:59 2026] 127.0.0.1:33172 [200]: GET /assets/images/logo-test.svg
+[Fri Nov 27 23:48:59 2026] 127.0.0.1:33160 Closing
+[Fri Nov 27 23:48:59 2026] 127.0.0.1:33172 Closing
+[Fri Nov 27 23:48:59 2026] 127.0.0.1:33176 Accepted
+[Fri Nov 27 23:48:59 2026] 127.0.0.1:33176 [200]: GET /assets/js/site.js?v=202611271900
+[Fri Nov 27 23:48:59 2026] 127.0.0.1:33176 Closing
+[Fri Nov 27 23:48:59 2026] 127.0.0.1:33178 Accepted
+[Fri Nov 27 23:48:59 2026] 127.0.0.1:33178 [200]: GET /assets/images/project-01.png
+[Fri Nov 27 23:48:59 2026] 127.0.0.1:33178 Closing
+[Fri Nov 27 23:49:50 2026] 127.0.0.1:58026 Accepted
+[Fri Nov 27 23:49:50 2026] 127.0.0.1:58026 [200]: GET /
+[Fri Nov 27 23:49:50 2026] 127.0.0.1:58026 Closing
+[Fri Nov 27 23:49:50 2026] 127.0.0.1:58038 Accepted
+[Fri Nov 27 23:49:50 2026] 127.0.0.1:58046 Accepted
+[Fri Nov 27 23:49:50 2026] 127.0.0.1:58048 Accepted
+[Fri Nov 27 23:49:50 2026] 127.0.0.1:58038 [200]: GET /assets/css/site.css?v=202611271900
+[Fri Nov 27 23:49:50 2026] 127.0.0.1:58038 Closing
+[Fri Nov 27 23:49:50 2026] 127.0.0.1:58046 [200]: GET /assets/images/logo-test.svg
+[Fri Nov 27 23:49:50 2026] 127.0.0.1:58046 Closing
+[Fri Nov 27 23:49:50 2026] 127.0.0.1:58048 [200]: GET /assets/js/site.js?v=202611271900
+[Fri Nov 27 23:49:50 2026] 127.0.0.1:58048 Closing
+[Fri Nov 27 23:49:50 2026] 127.0.0.1:58064 Accepted
+[Fri Nov 27 23:49:50 2026] 127.0.0.1:58064 [200]: GET /assets/images/project-01.png
+[Fri Nov 27 23:49:50 2026] 127.0.0.1:58064 Closing

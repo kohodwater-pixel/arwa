@@ -1,0 +1,33 @@
+{
+ "size_ar": 21.023555391976444,
+ "size_en": 12.607449856733526,
+ "tracking_em": 0.06295797846889946,
+ "ar_box": [
+  136.34800000000004,
+  103.258,
+  307.711,
+  128.69650202429148
+ ],
+ "en_box": [
+  136.34799999999998,
+  132.74521262601067,
+  307.711,
+  141.84779142257227
+ ],
+ "base_ar": 120.05582075818917,
+ "base_en": 141.69650202429148,
+ "viewbox_h": 141.848,
+ "params": {
+  "ar_font": "tajawal/Tajawal-Bold.ttf",
+  "en_font": "ibmplexsans-static/IBMPlexSans-SemiBold.ttf",
+  "right": 307.711,
+  "width": 171.363,
+  "ar_top": 103.258,
+  "gap": 4.2,
+  "en_cap": 8.8
+ },
+ "strings": {
+  "ar": "شركة اطلبني اعمار",
+  "en": "OTLOBNY EMAR COMPANY"
+ }
+}
