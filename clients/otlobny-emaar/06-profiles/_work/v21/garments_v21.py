@@ -100,7 +100,7 @@ for poly, (cx, cy), w, ang in VESTS:
     h = w * VB_L[1] / VB_L[0]; d = (h - w * VB_L2[1] / VB_L2[0]) / 2          # keep the TOP edge where v02 had it
     a_ = np.radians(ang)
     T = place(T, 'otlobny-emaar_logo_lockup-white_ar-en_v02.svg' if REPRO else 'otlobny-emaar_logo_lockup-white_ar-en_v03.svg',
-              rect(cx + d * np.sin(a_), cy + d * np.cos(a_), w, h, ang))
+              rect(cx - d * np.sin(a_), cy + d * np.cos(a_), w, h, ang))   # local "down" is (-sin, cos)
 if not REPRO: check(T0, T, (1540, 405, 1800, 585), 'cleaner', 3)
 if REPRO: Image.fromarray(np.clip(T[:, 1456:], 0, 255).astype(np.uint8)).save(os.environ['REPRO_OUT'])
 else: save(T[:, 1456:], 'v21_client_triptych-cleaner.png')   # landscaping panel: no lockup, v13 file still used; engineers panel: not in the book
