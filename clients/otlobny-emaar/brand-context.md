@@ -10,6 +10,7 @@
 |---|---|
 | Legal name (EN / AR) | AR VERIFIED from the commercial registration certificate shown by the client on 2026-11-27: **شركة اطلبني اعمار** («اعمار» without hamza; no «المحدودة» in the registered name). EN: TBC (the certificate carries no Latin name). Was: شركة اطلبني للصيانة والنظافة والتشغيل |
 | Unified national number | **7029232878** (commercial registration certificate, shown 2026-11-27; the certificate itself is not stored in this folder, at the client's instruction) |
+| Registered address (National Address) | AR: 6710 بنى معاوية 5، حي بني معاوية، المدينة المنورة 42313-5041، المملكة العربية السعودية. EN: 6710 Bani Muawiyah 5, Bani Muawiyah Dist., Madinah 42313-5041, Kingdom of Saudi Arabia. Short address: DMAG6710. Source: National Address proof shown by the client on 2026-11-27 (issued 25/11/2025, expired 5/5/2026 — client to confirm the address is still current; the document is not stored in this folder) |
 | Brand name (EN / AR) | OTLOBNY Emaar / اطلبني إعمار (client request 2026-11-13; exact spelling to confirm) |
 | Sector | Contracting, facility maintenance, cleaning, landscaping, manpower supply; logistics services being added |
 | Markets / countries | Saudi Arabia; based in Al Madinah Al Munawwarah |
@@ -154,3 +155,4 @@
 
 - 2026-11-27 — Client showed the commercial registration certificate and asked that only its name and unified number be recorded (the document is not filed). Recorded in section 1. OPEN, for the client: the lockup descriptor in use, «شركة اطلبني إعمار المحدودة» (name decision 2026-11-14), differs from the registered name «شركة اطلبني اعمار» in the hamza and in «المحدودة» — existing deliverables are NOT re-issued until the client decides which form to use; the Latin legal name is still TBC.
 - 2026-11-27 — SEO audit of otlobny.net run (health score 48/100): `02-research/otlobny.net-audit/` (report, action plan, eight findings files, screenshots). Internal research; not reviewed by the quality-reviewer and not a client deliverable.
+- 2026-11-27 — Client showed a National Address proof; only the address is recorded (section 1), following his instruction for the registration certificate. The proof's Latin name line, "atlubni aamar Company", is the system's transliteration and is NOT used as the brand's English spelling. The proof document expired on 5/5/2026: confirm the address is current before it is published. VAT number still missing.
