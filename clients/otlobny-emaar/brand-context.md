@@ -2,13 +2,14 @@
 
 > Single source of truth for this client. Read before every task; update when a decision is approved. Use `TBC` for unknowns and label assumptions.
 
-**Last updated:** 2026-11-13  **Current stage:** 06-profiles (profile rebuild); identity capture in 04-identity
+**Last updated:** 2026-11-27  **Current stage:** 06-profiles (profile rebuild); identity capture in 04-identity
 
 ## 1. Client
 
 | | |
 |---|---|
-| Legal name (EN / AR) | TBC — ASSUMED: OTLOBNY Emaar Co. / شركة اطلبني إعمار (was: شركة اطلبني للصيانة والنظافة والتشغيل) |
+| Legal name (EN / AR) | AR VERIFIED from the commercial registration certificate shown by the client on 2026-11-27: **شركة اطلبني اعمار** («اعمار» without hamza; no «المحدودة» in the registered name). EN: TBC (the certificate carries no Latin name). Was: شركة اطلبني للصيانة والنظافة والتشغيل |
+| Unified national number | **7029232878** (commercial registration certificate, shown 2026-11-27; the certificate itself is not stored in this folder, at the client's instruction) |
 | Brand name (EN / AR) | OTLOBNY Emaar / اطلبني إعمار (client request 2026-11-13; exact spelling to confirm) |
 | Sector | Contracting, facility maintenance, cleaning, landscaping, manpower supply; logistics services being added |
 | Markets / countries | Saudi Arabia; based in Al Madinah Al Munawwarah |
@@ -150,3 +151,6 @@
 - 2026-11-17 — CLIENT FEEDBACK on v19: p6 banner uses the 3:1 Riyadh banner image he made, shown whole. Cover: the large image (two engineers) is replaced by the rebar-worker image he sent, with a LIGHT blue tint so it harmonises with the palette.
 
 - 2026-11-17 — Profile v20 built and sent: p6 banner 297 × 99 mm shows the client's 3:1 Riyadh image whole (baked-in Vision logo misspelt → replaced in place by the official white version); cover hero is the client's rebar-worker image with a 30% royal-blue tint; two-engineers image no longer used.
+
+- 2026-11-27 — Client showed the commercial registration certificate and asked that only its name and unified number be recorded (the document is not filed). Recorded in section 1. OPEN, for the client: the lockup descriptor in use, «شركة اطلبني إعمار المحدودة» (name decision 2026-11-14), differs from the registered name «شركة اطلبني اعمار» in the hamza and in «المحدودة» — existing deliverables are NOT re-issued until the client decides which form to use; the Latin legal name is still TBC.
+- 2026-11-27 — SEO audit of otlobny.net run (health score 48/100): `02-research/otlobny.net-audit/` (report, action plan, eight findings files, screenshots). Internal research; not reviewed by the quality-reviewer and not a client deliverable.
