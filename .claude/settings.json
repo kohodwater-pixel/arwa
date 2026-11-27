@@ -17,7 +17,8 @@
     "agricidaniel-claude-seo": {
       "source": {
         "source": "github",
-        "repo": "AgriciDaniel/claude-seo"
+        "repo": "AgriciDaniel/claude-seo",
+        "ref": "c067311b497eff49110b73d4be33bdd3d7e6b40d"
       }
     }
   }
