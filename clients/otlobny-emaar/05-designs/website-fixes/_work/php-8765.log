@@ -1,0 +1,49 @@
+[Fri Nov 27 23:46:12 2026] PHP 8.3.6 Development Server (http://127.0.0.1:8765) started
+[Fri Nov 27 23:46:14 2026] 127.0.0.1:34474 Accepted
+[Fri Nov 27 23:46:14 2026] 127.0.0.1:34474 [200]: GET /
+[Fri Nov 27 23:46:14 2026] 127.0.0.1:34474 Closing
+[Fri Nov 27 23:46:14 2026] 127.0.0.1:34482 Accepted
+[Fri Nov 27 23:46:14 2026] 127.0.0.1:34482 [200]: GET /?service=cleaning
+[Fri Nov 27 23:46:14 2026] 127.0.0.1:34482 Closing
+[Fri Nov 27 23:46:14 2026] 127.0.0.1:34496 Accepted
+[Fri Nov 27 23:46:14 2026] 127.0.0.1:34496 [200]: GET /?service=contracting
+[Fri Nov 27 23:46:14 2026] 127.0.0.1:34496 Closing
+[Fri Nov 27 23:46:14 2026] 127.0.0.1:34512 Accepted
+[Fri Nov 27 23:46:14 2026] 127.0.0.1:34512 [200]: GET /?service=landscaping
+[Fri Nov 27 23:46:14 2026] 127.0.0.1:34512 Closing
+[Fri Nov 27 23:46:14 2026] 127.0.0.1:34520 Accepted
+[Fri Nov 27 23:46:14 2026] 127.0.0.1:34520 [404]: GET /?service=zzzz
+[Fri Nov 27 23:46:14 2026] 127.0.0.1:34520 Closing
+[Fri Nov 27 23:46:14 2026] 127.0.0.1:34522 Accepted
+[Fri Nov 27 23:46:14 2026] 127.0.0.1:34522 [301]: GET /?service=operation
+[Fri Nov 27 23:46:14 2026] 127.0.0.1:34522 Closing
+[Fri Nov 27 23:46:14 2026] 127.0.0.1:34528 Accepted
+[Fri Nov 27 23:46:14 2026] 127.0.0.1:34528 [301]: GET /?service=hospitality
+[Fri Nov 27 23:46:14 2026] 127.0.0.1:34528 Closing
+[Fri Nov 27 23:46:14 2026] 127.0.0.1:34544 Accepted
+[Fri Nov 27 23:46:14 2026] 127.0.0.1:34544 [301]: GET /?service=staffing
+[Fri Nov 27 23:46:14 2026] 127.0.0.1:34544 Closing
+[Fri Nov 27 23:46:14 2026] 127.0.0.1:34554 Accepted
+[Fri Nov 27 23:46:14 2026] 127.0.0.1:34554 [404]: GET /?service=
+[Fri Nov 27 23:46:14 2026] 127.0.0.1:34554 Closing
+[Fri Nov 27 23:46:14 2026] 127.0.0.1:34562 Accepted
+[Fri Nov 27 23:46:14 2026] 127.0.0.1:34562 [404]: GET /?service[]=x
+[Fri Nov 27 23:46:14 2026] 127.0.0.1:34562 Closing
+[Fri Nov 27 23:46:14 2026] 127.0.0.1:34574 Accepted
+[Fri Nov 27 23:46:14 2026] 127.0.0.1:34574 [200]: GET /?quote_service=logistics
+[Fri Nov 27 23:46:14 2026] 127.0.0.1:34574 Closing
+[Fri Nov 27 23:46:14 2026] 127.0.0.1:34590 Accepted
+[Fri Nov 27 23:46:14 2026] 127.0.0.1:34590 [301]: GET /?service=cleaning
+[Fri Nov 27 23:46:14 2026] 127.0.0.1:34590 Closing
+[Fri Nov 27 23:46:25 2026] 127.0.0.1:49500 Accepted
+[Fri Nov 27 23:46:25 2026] 127.0.0.1:49500 [200]: GET /
+[Fri Nov 27 23:46:25 2026] 127.0.0.1:49500 Closing
+[Fri Nov 27 23:46:25 2026] 127.0.0.1:49516 Accepted
+[Fri Nov 27 23:46:25 2026] 127.0.0.1:49516 [200]: GET /?service=contracting
+[Fri Nov 27 23:46:25 2026] 127.0.0.1:49516 Closing
+[Fri Nov 27 23:46:25 2026] 127.0.0.1:49524 Accepted
+[Fri Nov 27 23:46:25 2026] 127.0.0.1:49524 [200]: GET /?service=landscaping
+[Fri Nov 27 23:46:25 2026] 127.0.0.1:49524 Closing
+[Fri Nov 27 23:46:25 2026] 127.0.0.1:49526 Accepted
+[Fri Nov 27 23:46:25 2026] 127.0.0.1:49526 [404]: GET /?service=zzzz
+[Fri Nov 27 23:46:25 2026] 127.0.0.1:49526 Closing
