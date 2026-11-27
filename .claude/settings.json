@@ -4,13 +4,20 @@
     "feature-dev@claude-plugins-official": true,
     "claude-code-setup@claude-plugins-official": true,
     "security-guidance@claude-plugins-official": true,
-    "context7@claude-plugins-official": true
+    "context7@claude-plugins-official": true,
+    "claude-seo@agricidaniel-claude-seo": true
   },
   "extraKnownMarketplaces": {
     "claude-plugins-official": {
       "source": {
         "source": "github",
         "repo": "anthropics/claude-plugins-official"
+      }
+    },
+    "agricidaniel-claude-seo": {
+      "source": {
+        "source": "github",
+        "repo": "AgriciDaniel/claude-seo"
       }
     }
   }
