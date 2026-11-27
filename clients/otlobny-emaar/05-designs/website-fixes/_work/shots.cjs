@@ -1,7 +1,7 @@
 // Browser checks for the v02 files served by the local PHP stub. Scratch tool, not a deliverable.
 const { chromium } = require('playwright');
 const path = require('path');
-const OUT = path.join(__dirname, 'shots');
+const OUT = path.join(__dirname, 'shots-v03');
 const BASE = 'http://127.0.0.1:8765';
 const results = [];
 const ok = (name, pass, detail = '') => { results.push({ name, pass, detail }); console.log((pass ? 'PASS ' : 'FAIL ') + name + (detail ? ' — ' + detail : '')); };
@@ -24,6 +24,7 @@ const tabWalk = async (page, n) => { const seen = []; for (let i = 0; i < n; i++
     page.on('pageerror', (e) => errors.push(String(e)));
     page.on('requestfailed', (r) => { if (/fonts\.g/.test(r.url())) fontReq.failed++; });
     page.on('response', (r) => { if (/fonts\.g/.test(r.url()) && r.ok()) fontReq.ok++; });
+    const cdp = await ctx.newCDPSession(page); await cdp.send('DOM.enable'); await cdp.send('CSS.enable');
     const shot = (name, opts = {}) => page.screenshot({ path: path.join(OUT, `${vp.tag}_${name}.png`), ...opts });
     const mobile = vp.w <= 780;
     const T = `[${vp.tag}] `;
@@ -91,6 +92,16 @@ const tabWalk = async (page, n) => { const seen = []; for (let i = 0; i < n; i++
     ok(T + 'chat panel inside viewport', chat.x >= 0 && chat.r <= vp.w && chat.y >= 0 && chat.b <= vp.h, `x ${Math.round(chat.x)}-${Math.round(chat.r)}, y ${Math.round(chat.y)}-${Math.round(chat.b)}`);
     if (mobile) { const call = await rect(page, '.mobile-contact-bar'), wa = await rect(page, '.mobile-whatsapp-bar'), f2 = await rect(page, '.chat-fab'); ok(T + 'open chat does not overlap call / chat button / WhatsApp', !overlap(chat, call) && !overlap(chat, wa) && !overlap(chat, f2), `chat bottom ${Math.round(chat.b)} / bar top ${Math.round(call.y)}`); }
     else { ok(T + 'open chat does not overlap the chat button', !overlap(chat, await rect(page, '.chat-fab'))); }
+    ok(T + 'opening chat moves focus to the chat input', await page.evaluate(() => document.activeElement === document.querySelector('#chat-message')));
+    for (const sel of ['.chat-fab', '.chat-form button', '.quick button', '[data-close-chat]', '#chat-message'].concat(mobile ? ['.mobile-contact-bar', '.mobile-whatsapp-bar', '.menu'] : ['.header-cta']).concat(['#quote-form button', 'button.ghost', '#quote-form input', '#quote-form select', '#quote-form textarea', 'a.button'])) {
+      if (!(await page.$(sel))) { ok(T + 'font: ' + sel + ' present', false); continue; }
+      const fam = await page.$eval(sel, (el) => { const cs = getComputedStyle(el); return cs.fontFamily + ' / ' + cs.fontWeight + ' / ' + cs.fontSize; });
+      const { nodeId } = await cdp.send('DOM.querySelector', { nodeId: (await cdp.send('DOM.getDocument')).root.nodeId, selector: sel });
+      const used = (await cdp.send('CSS.getPlatformFontsForNode', { nodeId })).fonts.map((x) => x.familyName + ':' + x.glyphCount);
+      const arabicOk = used.length === 0 || sel === '.menu' /* its only glyph is the symbol ☰, which the Arabic font does not contain */ || used.some((u) => u.startsWith('IBM Plex Sans Arabic'));
+      const noArial = !used.some((u) => /Arial|Liberation|DejaVu/.test(u)) || sel === '.menu' || sel === '.chat-fab' || sel === '[data-close-chat]';
+      ok(T + 'font: ' + sel + ' computes to IBM Plex Sans Arabic', /^"?IBM Plex Sans Arabic/.test(fam) && arabicOk && noArial, fam + ' | rendered: ' + used.join(', '));
+    }
     const close = await rect(page, '[data-close-chat]');
     ok(T + 'chat close: accessible name + >= 44px', close.w >= 44 && close.h >= 44 && await page.$eval('[data-close-chat]', (b) => b.getAttribute('aria-label') === 'إغلاق المحادثة'), `${Math.round(close.w)}x${Math.round(close.h)}`);
     ok(T + 'chat input has a label', await page.$eval('#chat-message', (i) => i.labels.length === 1 && i.labels[0].textContent.trim().length > 0));

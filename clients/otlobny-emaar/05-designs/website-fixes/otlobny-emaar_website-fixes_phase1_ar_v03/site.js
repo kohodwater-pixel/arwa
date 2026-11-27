@@ -31,6 +31,7 @@
     if (!chat) return;
     chat.classList.toggle('open', open);
     chat.setAttribute('aria-hidden', String(!open));
+    if (open) chat.querySelector('#chat-message')?.focus();
     if (!open && returnFocus) chatOpener?.focus();
   };
   openers.forEach((button) => button.addEventListener('click', () => { chatOpener = button; setMenu(false); setChat(true); }));
