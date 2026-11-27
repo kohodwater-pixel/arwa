@@ -1,0 +1,313 @@
+{
+  "summary": {
+    "health_score": 48,
+    "business_type": "Local service / B2B facilities management (service-area business), Saudi Arabia",
+    "audit_date": "2026-11-27",
+    "pages_crawled": 23,
+    "top_findings": [
+      "Service pages are thin: 39-68 words of main content each",
+      "No verifiable identity: no address, city, CR or VAT number, About page",
+      "No city named anywhere; ranking pages in this sector are city-scoped",
+      "Sitemap lists 3 URLs that serve the homepage and omits 2 real pages; unknown slugs return 200",
+      "Project images return 403; mobile menu button does nothing; logo is 1.47 MB"
+    ],
+    "quick_wins": [
+      "Fix the sitemap (remove 3 dead URLs, add contracting and workforce)",
+      "Restore project-01.png and project-02.png",
+      "Compress the logo to SVG or ~10 KB WebP",
+      "Fix the mobile menu; add tel: link and sticky WhatsApp button",
+      "301 www.otlobny.net to otlobny.net"
+    ],
+    "limits": "Only otlobny.net was reachable: no PageSpeed/CrUX field data, no Search Console, no Google Business Profile, backlinks or off-site checks. Performance figures are single-run lab measurements."
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "score": 58,
+      "what_works": [
+        "HTTPS with 301 from http",
+        "Server-rendered HTML",
+        "Valid robots.txt and sitemap",
+        "Self-canonicals on real service pages",
+        "HTTP/2 and HTTP/3"
+      ],
+      "findings": [
+        {
+          "title": "Dead URLs in sitemap",
+          "severity": "High",
+          "description": "?service=operation, hospitality, staffing return the homepage with canonical to /",
+          "recommendation": "Build real pages or remove them"
+        },
+        {
+          "title": "Real pages missing from sitemap",
+          "severity": "High",
+          "description": "?service=contracting and ?service=workforce are live but not listed",
+          "recommendation": "Add them"
+        },
+        {
+          "title": "Soft 404",
+          "severity": "High",
+          "description": "/?service=zzzz returns 200",
+          "recommendation": "Return 404 for unknown slugs"
+        },
+        {
+          "title": "www duplicate",
+          "severity": "High",
+          "description": "www.otlobny.net returns 200",
+          "recommendation": "301 to the apex domain"
+        },
+        {
+          "title": "Query-string service URLs",
+          "severity": "High",
+          "description": "/?service=<slug>",
+          "recommendation": "Move to /services/<slug>/ with 301s"
+        },
+        {
+          "title": "HTML not cacheable",
+          "severity": "Medium",
+          "description": "Cache-Control: no-store and a session cookie on every response; cf-cache-status DYNAMIC",
+          "recommendation": "Start sessions only on form use; cache HTML at the edge"
+        },
+        {
+          "title": "Missing security headers",
+          "severity": "Medium",
+          "description": "No HSTS, CSP, X-Frame-Options",
+          "recommendation": "Add them"
+        },
+        {
+          "title": "No Open Graph tags",
+          "severity": "Medium",
+          "description": "None on any page",
+          "recommendation": "Add with og:locale ar_SA"
+        }
+      ]
+    },
+    {
+      "name": "Content Quality",
+      "score": 30,
+      "what_works": [
+        "Service names match buyer search terms",
+        "Clear quote and WhatsApp paths"
+      ],
+      "findings": [
+        {
+          "title": "Thin service pages",
+          "severity": "Critical",
+          "description": "39-68 words of main content; 55-70% template text",
+          "recommendation": "600-900 words per service from client-supplied facts"
+        },
+        {
+          "title": "No verifiable identity",
+          "severity": "Critical",
+          "description": "No address, city, CR, VAT, legal name, About page",
+          "recommendation": "Legal footer block and About page"
+        },
+        {
+          "title": "No privacy policy",
+          "severity": "High",
+          "description": "Quote form collects name, phone, email, company",
+          "recommendation": "Publish and link a privacy policy"
+        },
+        {
+          "title": "Unverifiable proof",
+          "severity": "High",
+          "description": "Two generic project tiles; 32 partner logos all alt 'شريك نجاح'",
+          "recommendation": "Name partners with permission; real case studies"
+        },
+        {
+          "title": "Overlapping pages",
+          "severity": "High",
+          "description": "cleaning / cleaning-staff; workforce / hotel-staffing",
+          "recommendation": "Merge or differentiate"
+        }
+      ]
+    },
+    {
+      "name": "On-Page SEO",
+      "score": 52,
+      "what_works": [
+        "Unique titles on service pages (39-51 chars)",
+        "One H1 per page"
+      ],
+      "findings": [
+        {
+          "title": "Weak homepage title",
+          "severity": "Medium",
+          "description": "34 chars, no head term or location; description 55 chars",
+          "recommendation": "Rewrite with company type, service and region"
+        },
+        {
+          "title": "Repeated description ending",
+          "severity": "Medium",
+          "description": "All 9 service descriptions end with the same sentence",
+          "recommendation": "Unique descriptions"
+        },
+        {
+          "title": "Inconsistent brand name and email",
+          "severity": "Medium",
+          "description": "Logo spells the name without hamza, body text with hamza; two descriptors; email on otlobny.co",
+          "recommendation": "Client decides one form; use it everywhere"
+        },
+        {
+          "title": "Shallow internal linking",
+          "severity": "Medium",
+          "description": "No cross-links, no breadcrumbs, vague anchors",
+          "recommendation": "Add related services and breadcrumbs"
+        }
+      ]
+    },
+    {
+      "name": "Schema / Structured Data",
+      "score": 52,
+      "what_works": [
+        "Valid Organization block on homepage",
+        "Service schema on 9 pages matching visible content"
+      ],
+      "findings": [
+        {
+          "title": "Thin Organization",
+          "severity": "High",
+          "description": "No address, contactPoint, sameAs, hours",
+          "recommendation": "Use Organization+ProfessionalService; code in findings/schema.md"
+        },
+        {
+          "title": "No WebSite or BreadcrumbList",
+          "severity": "Medium",
+          "description": "Absent site-wide",
+          "recommendation": "Add"
+        }
+      ]
+    },
+    {
+      "name": "Performance (CWV)",
+      "score": 62,
+      "what_works": [
+        "TBT 0, very light JavaScript",
+        "Service pages pass all lab metrics"
+      ],
+      "findings": [
+        {
+          "title": "Oversized logo",
+          "severity": "High",
+          "description": "logo.png 1.47 MB, 2048x1104, mobile LCP element; home mobile LCP 16.3 s (throttled lab)",
+          "recommendation": "SVG or ~10 KB WebP with dimensions"
+        },
+        {
+          "title": "Hero video",
+          "severity": "High",
+          "description": "background-one.mp4 4.0 MB, no poster",
+          "recommendation": "Poster, compress, skip on mobile"
+        },
+        {
+          "title": "Unoptimised images",
+          "severity": "Medium",
+          "description": "All PNG, no dimensions or srcset",
+          "recommendation": "WebP/AVIF at display size"
+        },
+        {
+          "title": "Fonts via @import",
+          "severity": "Medium",
+          "description": "6 woff2 files chained through CSS",
+          "recommendation": "Self-host and preload"
+        }
+      ]
+    },
+    {
+      "name": "AI Search Readiness",
+      "score": 46,
+      "what_works": [
+        "AI crawlers not blocked in robots.txt",
+        "Server-rendered, semantic landmarks"
+      ],
+      "findings": [
+        {
+          "title": "No quotable facts",
+          "severity": "High",
+          "description": "No city, founding year, figures, certifications or named clients",
+          "recommendation": "Verified 130-170 word About passage"
+        },
+        {
+          "title": "No llms.txt",
+          "severity": "Low",
+          "description": "404; optional and ignored by Google Search",
+          "recommendation": "Optional"
+        }
+      ]
+    },
+    {
+      "name": "Images",
+      "score": 38,
+      "what_works": [
+        "Alt text present on all 36 images",
+        "Partner logos lazy-loaded"
+      ],
+      "findings": [
+        {
+          "title": "Broken images",
+          "severity": "High",
+          "description": "project-01.png and project-02.png return 403",
+          "recommendation": "Restore files or permissions"
+        },
+        {
+          "title": "Generic alt text",
+          "severity": "Medium",
+          "description": "32 partner logos share one alt",
+          "recommendation": "Name each partner"
+        }
+      ]
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {
+        "name": "Phase 1: Critical Fixes",
+        "timeframe": "Week 1",
+        "items": [
+          "Restore the two 403 project images",
+          "Fix the mobile menu",
+          "Correct the sitemap",
+          "Return 404 for unknown service slugs"
+        ]
+      },
+      {
+        "name": "Phase 2: High-Impact Improvements",
+        "timeframe": "Weeks 2-3",
+        "items": [
+          "Compress logo and hero video",
+          "301 www to apex",
+          "tel: link and sticky WhatsApp",
+          "Legal identity block and About page",
+          "Privacy policy",
+          "Upgrade schema",
+          "Unify brand name and email"
+        ]
+      },
+      {
+        "name": "Phase 3: Content & Authority",
+        "timeframe": "Month 2",
+        "items": [
+          "Clean /services/ URLs with 301s",
+          "Expand service pages to 600-900 words",
+          "Merge overlapping pages",
+          "City pages for confirmed cities only",
+          "Google Business Profile",
+          "Image optimisation and named partners"
+        ]
+      },
+      {
+        "name": "Phase 4: Monitoring & Iteration",
+        "timeframe": "Ongoing",
+        "items": [
+          "Search Console index coverage vs sitemap",
+          "Mobile LCP field data",
+          "Quote requests, WhatsApp and call clicks",
+          "Rankings for service + city queries"
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "findings_dir": "findings/",
+    "screenshots_dir": "screenshots/"
+  }
+}
