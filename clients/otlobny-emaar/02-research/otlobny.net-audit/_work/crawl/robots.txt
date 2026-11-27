@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /setup/
+Disallow: /api/
+Disallow: /config/
+Disallow: /includes/
+Disallow: /storage/
+Disallow: /docs/
+Sitemap: https://otlobny.net/sitemap.xml

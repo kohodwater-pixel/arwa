@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://otlobny.net/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://otlobny.net/?service=cleaning</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://otlobny.net/?service=maintenance</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://otlobny.net/?service=operation</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://otlobny.net/?service=hospitality</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://otlobny.net/?service=staffing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://otlobny.net/?service=landscaping</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://otlobny.net/?service=logistics</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://otlobny.net/?service=hotel-staffing</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://otlobny.net/?service=cleaning-staff</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://otlobny.net/?service=hotel-operations</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+</urlset>
